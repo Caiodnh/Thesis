@@ -1,0 +1,9 @@
+\chapter{$G$-Gradings on Universal Algebras and $\widehat G$-actions}
+
+\section{Correspondence between $G$-gradings and\\ $\widehat G$-actions}\label{ssec:G-hat-action}
+
+One of the important tools for dealing with gradings by abelian groups on (super)algebras is the well-known correspondence between  $G$-gradings and $\widehat G$-actions (see e.g. \cite[\S 1.4]{livromicha}), where $\widehat G$ is the algebraic group of characters of $G$, \ie, group homomorphisms $G \rightarrow \FF^{\times}$. The group $\widehat{G}$ acts on any $G$-graded (super)algebra $A = \bigoplus_{g\in G} A_g$ by $\chi \cdot a = \chi(g) a$ for all $a\in A_g$ (extended to arbitrary $a\in A$ by linearity). The map given by the action of a character $\chi \in \widehat{G}$ is an automorphism of $A$. If $\FF$ is algebraically closed and $\Char \FF = 0$, then $A_g = \{ a\in A \mid \chi \cdot a = \chi (g) a\}$, so the grading can be recovered from the action.
+
+For example, if $A=A\even \oplus A\odd$ is a superalgebra, the action of the nontrivial character of $\ZZ_2$ yields the \emph{parity automorphism} $\upsilon$, which acts as the identity on $A\even$ and as the negative identity on $A\odd$. If $A$ is a $\ZZ$-graded algebra, we get a representation $\widehat \ZZ = \FF^\times \rightarrow \Aut (A)$ given by $\lambda \mapsto \upsilon_\lambda$ where $\upsilon_{\lambda} (x) = \lambda^i x$ for all $x\in A^i$, $i\in \ZZ$.
+
+A grading on a (super)algebra over an algebraically closed field of characteristic $0$ is said to be \emph{inner} if it corresponds to an action by inner automorphisms. For example, the inner gradings on $\Sl(n)$ (also known as Type I gradings) are precisely the restrictions of gradings on the associative algebra $M_n(\FF)$.
