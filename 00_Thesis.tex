@@ -1,24 +1,28 @@
-\makeatletter
-\def\input@path{{../}}
-\makeatother
+% \makeatletter
+% \def\input@path{{../}}
+% \makeatother
 \documentclass[12pt]{pdfathesis}
 \usepackage{my-stuff/basic-preamble}
-\usepackage{subfiles}
-\def\biblio{\bibliographystyle{amsalpha}\bibliography{../02_bibliography}}
+% \usepackage{subfiles}
+% \def\biblio{\bibliographystyle{amsalpha}\bibliography{../02_bibliography}}
 %
 \input{pdfathesis-stuff/preamble}
 %
+%\includeonly{chapters/04_Super-anti-auto}
 \begin{document}
 %
-\def\biblio{}
 %
-\input{pdfathesis-stuff/prefactory}
+\include{pdfathesis-stuff/prefactory}
+%
+\begin{prefatory}
+\end{prefatory}
 %
 \chapter{Introduction}
 %%
 %%
 %%%%%%%%
-\subfile{chapters/02_generalities}
+\include{chapters/02_generalities}
+%\subfile{chapters/02_generalities}
 %%
 %%
 %%%%%%
@@ -30,7 +34,7 @@
 %%
 %%
 %%%%%%
-\subfile{chapters/04_Super-anti-auto}
+\include{chapters/04_Super-anti-auto}
 %
 \bibliographystyle{amsalpha}
 \bibliography{my-stuff/bibliography}  % `mybibliography.bib' has the bibliography database
