@@ -2201,51 +2201,51 @@ We have that $uf = u d + \sum_{\lambda \in \Lambda} u_\lambda d_\lambda$ for $d,
 Them $ uf = (ru)f = r(uf) = r(ud + \sum_{\lambda \in \Lambda} u_\lambda d_\lambda )  = ud$. Hence $f = d$, concluding the proof.
 \end{proof}
 
-% ---------------------------------------------------
-\section{Superdual of a graded module}\label{ssec:superdual}
-% ---------------------------------------------------
+% % ---------------------------------------------------
+% \section{Superdual of a graded module}\label{ssec:superdual}
+% % ---------------------------------------------------
 
-We will need the following concepts. Let $\D$ be an associative superalgebra with a grading by an abelian group $G$, so we may consider $\D$ graded by the group $G^\# = G\times \ZZ_2$. Let $\U$ be a $G^\#$-graded \emph{right} $\D$-module. The parity $|x|$ of a homogeneous element $x \in \D$ or $x\in \U$ is determined by $\deg x \in G^\#$. The \emph{superdual module} of $\U$ is $\U\Star = \Hom_\D (\U,\D)$, with its natural $G^\#$-grading and the $\D$-action defined on the \emph{left}: if $d \in \D$ and $f \in \U \Star$, then $(df)(u) = d\, f(u)$ for all $u\in \mc U$.
+% We will need the following concepts. Let $\D$ be an associative superalgebra with a grading by an abelian group $G$, so we may consider $\D$ graded by the group $G^\# = G\times \ZZ_2$. Let $\U$ be a $G^\#$-graded \emph{right} $\D$-module. The parity $|x|$ of a homogeneous element $x \in \D$ or $x\in \U$ is determined by $\deg x \in G^\#$. The \emph{superdual module} of $\U$ is $\U\Star = \Hom_\D (\U,\D)$, with its natural $G^\#$-grading and the $\D$-action defined on the \emph{left}: if $d \in \D$ and $f \in \U \Star$, then $(df)(u) = d\, f(u)$ for all $u\in \mc U$.
 
-We define the \emph{opposite superalgebra} of $\D$, denoted by $\D\sop$, to be the same graded superspace $\D$, but with a new product $a*b = (-1)^{|a||b|} ba$ for every pair of $\ZZ_2$-homogeneous elements $a,b \in \D$. The left $\D$-module $\U\Star$ can be considered as a right $\D\sop$-module by means of the action defined by $f\cdot d := (-1)^{|d||f|} df$, for every $\ZZ_2$-homogeneous $d\in \D$ and $f\in \U\Star$.
+% We define the \emph{opposite superalgebra} of $\D$, denoted by $\D\sop$, to be the same graded superspace $\D$, but with a new product $a*b = (-1)^{|a||b|} ba$ for every pair of $\ZZ_2$-homogeneous elements $a,b \in \D$. The left $\D$-module $\U\Star$ can be considered as a right $\D\sop$-module by means of the action defined by $f\cdot d := (-1)^{|d||f|} df$, for every $\ZZ_2$-homogeneous $d\in \D$ and $f\in \U\Star$.
 
-\begin{lemma}\label{lemma:Dsop}
-	If $\D$ is a graded division superalgebra associated to the pair $(T,\beta)$, then $\D\sop$ is associated to the pair $(T,\beta\inv)$.\qed
-\end{lemma}
+% \begin{lemma}\label{lemma:Dsop}
+% 	If $\D$ is a graded division superalgebra associated to the pair $(T,\beta)$, then $\D\sop$ is associated to the pair $(T,\beta\inv)$.\qed
+% \end{lemma}
 
-If $\U$ has a homogeneous $\D$-basis $\mc B = \{e_1, \ldots, e_k\}$, we can consider its \emph{superdual basis} $\mc B\Star = \{e_1\Star, \ldots, e_k\Star\}$ in $\U\Star$, where $e_i\Star : \U \rightarrow \D$ is defined by $e_i\Star (e_j) = (-1)^{|e_i||e_j|} \delta_{ij}$.
+% If $\U$ has a homogeneous $\D$-basis $\mc B = \{e_1, \ldots, e_k\}$, we can consider its \emph{superdual basis} $\mc B\Star = \{e_1\Star, \ldots, e_k\Star\}$ in $\U\Star$, where $e_i\Star : \U \rightarrow \D$ is defined by $e_i\Star (e_j) = (-1)^{|e_i||e_j|} \delta_{ij}$.
 
-\begin{remark}\label{rmk:gamma-inv}
-	The superdual basis is a homogeneous basis of $\U\Star$, with $\deg e_i\Star = (\deg e_i)\inv$. So, if $\gamma = (g_1, \ldots, g_k)$ is the $k$-tuple of degrees of $\mc B$, then $\gamma\inv = (g_1\inv, \ldots, g_k\inv)$ is the $k$-tuple of degrees of $\mc B\Star$.
-\end{remark}
+% \begin{remark}\label{rmk:gamma-inv}
+% 	The superdual basis is a homogeneous basis of $\U\Star$, with $\deg e_i\Star = (\deg e_i)\inv$. So, if $\gamma = (g_1, \ldots, g_k)$ is the $k$-tuple of degrees of $\mc B$, then $\gamma\inv = (g_1\inv, \ldots, g_k\inv)$ is the $k$-tuple of degrees of $\mc B\Star$.
+% \end{remark}
 
-For graded right $\D$-modules $\U$ and $\V$, we consider $\U\Star$ and $\V\Star$ as right $\D\sop$-modules as defined above. If $L:\U \rightarrow \V$ is a $\ZZ_2$-homogeneous $\D$-linear map, then the \emph{superadjoint} of $L$ is the $\D\sop$-linear map $L\Star: \V\Star \rightarrow \U\Star$ defined by $L\Star (f) = (-1)^{|L||f|} f \circ L$. We extend the definition of superadjoint to any map in $\Hom_\D (\U, \V)$ by linearity.
+% For graded right $\D$-modules $\U$ and $\V$, we consider $\U\Star$ and $\V\Star$ as right $\D\sop$-modules as defined above. If $L:\U \rightarrow \V$ is a $\ZZ_2$-homogeneous $\D$-linear map, then the \emph{superadjoint} of $L$ is the $\D\sop$-linear map $L\Star: \V\Star \rightarrow \U\Star$ defined by $L\Star (f) = (-1)^{|L||f|} f \circ L$. We extend the definition of superadjoint to any map in $\Hom_\D (\U, \V)$ by linearity.
 
-\begin{remark}
-	In the case $\D=\FF$, if we denote by $[L]$ the matrix of $L$ with respect to the homogeneous bases $\mc B$ of $\U$ and $\mc C$ of $\V$, then the supertranspose $[L]\sT$ is the matrix corresponding to $L\Star$ with respect to the superdual bases $\mc C\Star$ and $\mc B\Star$.
-\end{remark}
+% \begin{remark}
+% 	In the case $\D=\FF$, if we denote by $[L]$ the matrix of $L$ with respect to the homogeneous bases $\mc B$ of $\U$ and $\mc C$ of $\V$, then the supertranspose $[L]\sT$ is the matrix corresponding to $L\Star$ with respect to the superdual bases $\mc C\Star$ and $\mc B\Star$.
+% \end{remark}
 
-We denote by $\vphi: \End_\D (\U) \rightarrow \End_{\D\sop} (\U\Star)$ the map $L \mapsto L\Star$. It is clearly a degree-preserving super-anti-isomorphism. It follows that, if we consider the Lie superalgebras $\End_\D (U)^{(-)}$ and $\End_{\D\sop} (U\Star)^{(-)}$, the map $-\vphi$ is an isomorphism.
+% We denote by $\vphi: \End_\D (\U) \rightarrow \End_{\D\sop} (\U\Star)$ the map $L \mapsto L\Star$. It is clearly a degree-preserving super-anti-isomorphism. It follows that, if we consider the Lie superalgebras $\End_\D (U)^{(-)}$ and $\End_{\D\sop} (U\Star)^{(-)}$, the map $-\vphi$ is an isomorphism.
 
-We summarize these considerations in the following result:
+% We summarize these considerations in the following result:
 
-\begin{lemma}\label{lemma:iso-inv}
-	If $\Gamma = \Gamma(T,\beta,\gamma)$ and $\Gamma' = \Gamma(T,\beta\inv,\gamma\inv)$ are $G$-gradings (considered as $G^\#$-gradings) on the associative superalgebra $M(m,n)$, then, as gradings on the Lie superalgebra $M(m,n)^{(-)}$, $\Gamma$ and $\Gamma'$ are isomorphic via an automorphism of $M(m,n)^{(-)}$ that is the negative of a super-anti-automorphism of 	$M(m,n)$.
-\end{lemma}
+% \begin{lemma}\label{lemma:iso-inv}
+% 	If $\Gamma = \Gamma(T,\beta,\gamma)$ and $\Gamma' = \Gamma(T,\beta\inv,\gamma\inv)$ are $G$-gradings (considered as $G^\#$-gradings) on the associative superalgebra $M(m,n)$, then, as gradings on the Lie superalgebra $M(m,n)^{(-)}$, $\Gamma$ and $\Gamma'$ are isomorphic via an automorphism of $M(m,n)^{(-)}$ that is the negative of a super-anti-automorphism of 	$M(m,n)$.
+% \end{lemma}
 
-\begin{proof}
-	Let $\D$ be a graded division superalgebra associated to $(T,\beta)$ and let $\U$ be the graded right $\D$-module associated to $\gamma$. The grading $\Gamma$ is obtained by an identification $\psi: M(m, n) \xrightarrow{\sim} \End_\D (\U)$. By Lemma \ref{lemma:Dsop} and Remark \ref{rmk:gamma-inv}, $\Gamma'$ is obtained by an identification $\psi': M(m, n) \xrightarrow{\sim} \End_{\D\sop} (\U\Star)$. Hence we have the diagram:
+% \begin{proof}
+% 	Let $\D$ be a graded division superalgebra associated to $(T,\beta)$ and let $\U$ be the graded right $\D$-module associated to $\gamma$. The grading $\Gamma$ is obtained by an identification $\psi: M(m, n) \xrightarrow{\sim} \End_\D (\U)$. By Lemma \ref{lemma:Dsop} and Remark \ref{rmk:gamma-inv}, $\Gamma'$ is obtained by an identification $\psi': M(m, n) \xrightarrow{\sim} \End_{\D\sop} (\U\Star)$. Hence we have the diagram:
 
-	\begin{center}
-		\begin{tikzcd}
-			& \End_\D (\U) \arrow[to=3-2, "-\vphi"]\\
-			M(m, n) \arrow[ur, "\psi"] \arrow[dr, "\psi'"]\\
-			& \End_{\D\sop} (\U\Star)
-		\end{tikzcd}
-	\end{center}
+% 	\begin{center}
+% 		\begin{tikzcd}
+% 			& \End_\D (\U) \arrow[to=3-2, "-\vphi"]\\
+% 			M(m, n) \arrow[ur, "\psi"] \arrow[dr, "\psi'"]\\
+% 			& \End_{\D\sop} (\U\Star)
+% 		\end{tikzcd}
+% 	\end{center}
 
-	Thus, the composition $(\psi')\inv \, (-\vphi) \, \psi$ is an automorphism of the Lie superalgebra $M(m,n)^{(-)}$ sending $\Gamma$ to $\Gamma'$.
-\end{proof}
+% 	Thus, the composition $(\psi')\inv \, (-\vphi) \, \psi$ is an automorphism of the Lie superalgebra $M(m,n)^{(-)}$ sending $\Gamma$ to $\Gamma'$.
+% \end{proof}
 %
 %\bibliographystyle{amsalpha}\bibliography{../02_bibliography}
 %\biblio
