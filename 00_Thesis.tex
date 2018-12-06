@@ -1,0 +1,45 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[12pt]{pdfathesis}
+\usepackage{my-stuff/basic-preamble}
+\usepackage{subfiles}
+\def\biblio{\bibliographystyle{amsalpha}\bibliography{../02_bibliography}}
+%
+\input{pdfathesis-stuff/preamble}
+%
+\begin{document}
+%
+\def\biblio{}
+%
+\input{pdfathesis-stuff/prefactory}
+%
+\chapter{Introduction}
+%%
+%%
+%%%%%%%%
+\subfile{chapters/02_generalities}
+%%
+%%
+%%%%%%
+\chapter{$G$-Gradings on Universal Algebras and $\widehat G$-actions}
+%%
+%%
+%%%%%%
+\chapter{Review of gradings on $M(m,n)$ and Type I gradings on $A$}
+%%
+%%
+%%%%%%
+\subfile{chapters/04_Super-anti-auto}
+%
+\bibliographystyle{amsalpha}
+\bibliography{my-stuff/bibliography}  % `mybibliography.bib' has the bibliography database
+%%
+%%%%%%%%%%
+% \appendix%
+% \chapter{Title of appendix A}
+% %%
+% %%%%%%%%%%
+% \chapter{Title of appendix B}
+% %%
+\end{document}
