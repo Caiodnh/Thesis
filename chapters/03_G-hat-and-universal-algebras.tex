@@ -39,11 +39,11 @@ We note that $0$-ary operations can be interpreted as constants in the $\Omega$-
 
 When dealing with a fixed $\Omega$-algebra, we will usually identify the signature $\Omega$ with the set of all operations.
 
-\begin{ex}
+\begin{ex}\label{ex:omega-vec-space}
     A vector space is a $\emptyset$-algebra.
 \end{ex}
 
-\begin{ex}
+\begin{ex}\label{ex:omega-algebra}
     A algebra in the usual sense, with product $*$, is a $\Omega$-algebra with $\Omega = \Omega_2 = \{ * \}$. 
 \end{ex}
 
@@ -61,9 +61,22 @@ When dealing with a fixed $\Omega$-algebra, we will usually identify the signatu
     % \end{enumerate}
 \end{ex}
 
-\begin{ex}
-    Let $A$ be a $G$-graded algebra
+\begin{ex}\label{ex:omega-graded-algebra}
+    A $G$-graded algebra $A = \bigoplus_{g\in G}$, with operation $*$, is a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_g \mid g\in G\}$, where $\pi_g\from A \to A$ is the projection in the component $A_g$. 
+    As a particular case, superalgebras can be viewed as $\Omega$-algebras.
 \end{ex}
+
+\begin{ex}
+    A superalgebra with super-anti-automorphism $(A, \vphi)$, with product $*$, a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$. 
+    As a particular case, algebras with antiautomorphism can be viewed as $\Omega$-algebras.
+\end{ex}
+
+It is straightforward to check that, in each one of examples above, the usual notion of homomorphism corresponds to the notion of homomorphism as $\Omega$-algebras.
+
+It should be noted that only in Examples \ref{ex:omega-vec-space} and \ref{ex:omega-algebra} the correspondence is bijective
+% \begin{remark}
+%     Axioms of graded algebra?
+% \end{remark}
 
 \section{Old - Correspondence between $G$-gradings and\\ $\widehat G$-actions}\label{ssec:G-hat-action}
 
