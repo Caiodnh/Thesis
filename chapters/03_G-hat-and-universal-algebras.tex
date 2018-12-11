@@ -51,15 +51,15 @@ When dealing with a fixed $\Omega$-algebra, we will usually identify the signatu
     A algebra $A$ with unity $\mathds{1} \in A$ and product $*$ is a  $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_0 = \{ \omega_0 \}$, where $\omega_0\from \FF \to A$ is defined by $\omega_0 (1) = \mathds 1$.
 \end{ex}
 
-\begin{ex}
-    A superalgebra $A = A\even \oplus A\odd$, with product $*$, is a $\Omega$-algebra where $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$ where $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively. 
-    % Conversely, if $A$ is a $\Omega$-algebra with the signature above, it is a superalgebra if, and only if,
-    % \begin{enumerate}[(i)]
-    %     \item $\pi_{\bar 0}^2 = \pi_{\bar 0}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}$;
-    %     \item $\pi_{\bar 0} + \pi_{\bar 1} = \id$; \label{item:sum-projections}
-    %     \item $\pi_{\bar 1}\pi_{\bar 0} = \pi_{\bar 0}\pi_{\bar 1} = 0$;
-    % \end{enumerate}
-\end{ex}
+% \begin{ex}
+%     A superalgebra $A = A\even \oplus A\odd$, with product $*$, is a $\Omega$-algebra where $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$ where $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively. 
+%     % Conversely, if $A$ is a $\Omega$-algebra with the signature above, it is a superalgebra if, and only if,
+%     % \begin{enumerate}[(i)]
+%     %     \item $\pi_{\bar 0}^2 = \pi_{\bar 0}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}$;
+%     %     \item $\pi_{\bar 0} + \pi_{\bar 1} = \id$; \label{item:sum-projections}
+%     %     \item $\pi_{\bar 1}\pi_{\bar 0} = \pi_{\bar 0}\pi_{\bar 1} = 0$;
+%     % \end{enumerate}
+% \end{ex}
 
 \begin{ex}\label{ex:omega-graded-algebra}
     A $G$-graded algebra $A = \bigoplus_{g\in G}$, with operation $*$, is a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_g \mid g\in G\}$, where $\pi_g\from A \to A$ is the projection in the component $A_g$. 
@@ -73,7 +73,22 @@ When dealing with a fixed $\Omega$-algebra, we will usually identify the signatu
 
 It is straightforward to check that, in each one of examples above, the usual notion of homomorphism corresponds to the notion of homomorphism as $\Omega$-algebras.
 
-It should be noted that only in Examples \ref{ex:omega-vec-space} and \ref{ex:omega-algebra} the correspondence is bijective
+It should be noted that among these examples, only in Examples \ref{ex:omega-vec-space} and \ref{ex:omega-algebra} the correspondence is bijective. 
+In the other cases, the original structures correspond to proper subclasses of the $\Omega$-algebras described, which can be axiomitized. 
+We will present axioms for Example \ref{ex:omega-graded-algebra}, since gradings are not usually describe in terms of the projection maps, we will
+
+\begin{itemize}
+    \item[\done] paragraph-remark stating only exs 1 and 2 are ``precisely'', the other are proper inclusions.
+    \item discuss, in a remark, the axioms of graded algebras, noting that one of them is not first-order if the group is not finite.
+\end{itemize}
+
+\section{$G$-gradings on $\Omega$-algebras and $\widehat G$-actions}
+
+We will now consider gradings on univerasal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
+
+\begin{defi}
+    graded $\Omega$-algebra
+\end{defi}
 % \begin{remark}
 %     Axioms of graded algebra?
 % \end{remark}
