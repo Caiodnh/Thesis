@@ -10,7 +10,7 @@ The same sort of transfer has been used in other works (see \cite{livromicha} an
 
 \section{Universal Algebras}
 
-A universal algebra is a space with an arbitrary number (possibly none or infinity) of operations, with may also have different ``arities'' (see Definition \ref{def:universal-algebra} bellow). 
+A universal algebra is a space with an arbitrary collection (possibly empty) of operations, with may also have different ``arities'' (see Definition \ref{def:universal-algebra} bellow). 
 Our approach to universal algebras differs from the one in most books on the subject (see, \eg, ?? and ??) in the sense we will be working on the (monoidal) category of vector spaces instead of the (monoidal) category of sets. 
 This is the approach on ?? (book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??.
 
@@ -21,9 +21,13 @@ This is the approach on ?? (book used by Felipe) and it has recently been applie
 \end{notation}
 
 \begin{defi}\label{def:universal-algebra}
-    Let $A$ be a vector space. 
-    An \emph{$n$-ary}
+    A \emph{signature} $\Omega$ is a set together with a family $\{ \Omega_n \}_{n \geq 0}$ of pairwise disjoint subsets such that $\Omega = \bigcup_{n \geq 0} \Omega_n$. 
+    An \emph{$n$-ary operation} on a vector space $A$ is a linear map from $A^{\tensor n}$ to $A$. 
+    A \emph{$\Omega$-algebra} or a \emph{universal algebra with signature $\Omega$} is a vector space $A$ together with a operation $\omega^A$ for each $\omega \in \Omega$, such that $\omega^A$ is $n$-ary if $\omega \in \Omega_n$.
 \end{defi}
+
+When dealing with a fixed $\Omega$-algebra we will usually identify the signature $\Omega$ with the set of all operations.
+
 
 
 \section{Old - Correspondence between $G$-gradings and\\ $\widehat G$-actions}\label{ssec:G-hat-action}
