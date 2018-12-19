@@ -1288,7 +1288,7 @@ The following is a well known result, but we include a proof here for completene
     Comparing both, we conclude that $\alpha$ is an homomorphism if, and only if, $\mathrm{d}f = \sigma' \sigma\inv$.
 \end{proof}
 
-\begin{cor}
+\begin{cor}\label{cor:self-equivalences-are-homomorphisms}
     Let $\sigma \from H\times H \to K$ be a normalized symmetric $2$-cocycle. 
     The set of self-equivalences of the extension associated with $K \times_\sigma H$ is in bijection with the set of homomorphisms from $H$ to $K$.
 \end{cor}
@@ -1636,7 +1636,7 @@ We are now in position to apply these concepts and results to our original probl
     Also, by the uniqueness of $\pi$, $\pi = \pi' \alpha$ and, by the uniqueness of $\iota'$, $\iota' = \alpha \iota$. 
     We conclude not only that the extensions are equivalent, but also that $\alpha$ is the unique equivalence between them such that ${}^\alpha \Delta = \Delta'$. 
     
-    From the fact that the extensions are equivalent, if we put $\Delta' = \Delta_0$, then Item \eqref{item:equivalent-extension-example} follows from Lemma ??. 
+    From the fact that the extensions are equivalent, if we put $\Delta' = \Delta_0$, then Item \eqref{item:equivalent-extension-example} follows from Lemma \ref{lemma:tildeT-finally}. 
     
     To prove \eqref{item:number-of-extensions}, 
     suppose $\Delta$ and $\Delta'$ correspond to the same group extension. 
@@ -1644,7 +1644,7 @@ We are now in position to apply these concepts and results to our original probl
     Conversely,
     note that for every self-equivalence $\alpha$ of $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$, we have that the grading ${}^\alpha \Delta$ also corresponds to this extension, since $\pi\alpha = \pi$. 
     So the gradings corresponding to $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ are in bijection with its self-equivalences. 
-    Since this extension is equivalent to the one corresponding to $\pmone \times_{\tilde\beta} T$, we can apply Lemma ?? to conclude that the self-equivalences are in bijection with group homomorphisms from $T$ to $\pmone$, concluding the proof.
+    Since this extension is equivalent to the one corresponding to $\pmone \times_{\tilde\beta} T$, we can apply Corollary \ref{cor:self-equivalences-are-homomorphisms} to conclude that the self-equivalences are in bijection with group homomorphisms from $T$ to $\pmone$, concluding the proof.
     
     
     
