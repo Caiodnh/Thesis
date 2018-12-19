@@ -84,11 +84,28 @@ We will present axioms for Example \ref{ex:omega-graded-algebra}, since gradings
 
 \section{$G$-gradings on $\Omega$-algebras and $\widehat G$-actions}
 
-We will now consider gradings on univerasal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
+We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
 
 \begin{defi}
-    graded $\Omega$-algebra
+    A $G$-grading on a $\Omega$-algebra $A$ is a $G$-grading on its vector space underlying such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
 \end{defi}
+
+It is straight forward to verify that this notion of grading corresponds to the usual notion of gradings on algebras, superalgebras, algebras with antiautomorphisms and superalgebras with super-anti-automorphisms.
+
+We will now proceed to generalize the correspondence between $G$-gradings and $\widehat G$-actions (see ?? and ??) to $\Omega$-algebras. 
+We start focusing on graded vector spaces.
+
+Let $V$ be a vector space. 
+Given a $G$-grading $\Gamma\from V= \bigoplus_{g\in G} V_g$ on $V$, we define a $\widehat G$-action in the following way: for $\chi \in \widehat G$ and $a_g \in V_g$, $\chi \cdot v_g = \chi(g)v_g$, and we extend the it by linearity. 
+It is easy to see that this really defines an action. 
+We will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+
+\begin{prop}
+    Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space. 
+    Then $\Gamma$ is a grading on $A$ if, and only if $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
+\end{prop}
+
+
 % \begin{remark}
 %     Axioms of graded algebra?
 % \end{remark}
