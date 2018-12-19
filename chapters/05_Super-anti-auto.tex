@@ -1531,8 +1531,10 @@ We are now in position to apply these concepts and results to our original probl
 \begin{proof}
     By Proposition \ref{prop:existence-involution}, there is a map $\mu\from T \to \{\pm 1\}$ such that $\beta = \mathrm{d}\mu$, hence, using Proposition \ref{prop:coboundary}, the group extensions corresponding to $\pmone \times_{\tilde\beta} T$ and $\pmone \times_\sigma T$ are equivalent. 
     
-    We can consider the $2$-cocycle $\sigma$ as admitting values in $\{\pm 1, \pm i\}$ and, in this case, . 
-    In this case, we have that $\pmone \times_\sigma T \subseteq \{\pm 1, \pm i\} \times_\sigma T$. 
+    We can consider the $2$-cocycle $\sigma$ as admitting values in $\{\pm 1, \pm i\}$. 
+    We then have $\pmone \times_\sigma T \subseteq \{\pm 1, \pm i\} \times_\sigma T$. 
+    But then we can use the quadratic form $\mu_0$ from Example \ref{ex:quadratic-form-polarization-parity} to conclude that, since $\sigma = \mathrm{d} \mu_0$, the extension $\{\pm 1, \pm i\} \to \{\pm 1, \pm i\} \times_\sigma T \to T$ is equivalent to $\{\pm 1, \pm i\} \to \{\pm 1, \pm i\} \times T \to T$ via the isomorphism $\alpha\from \{\pm 1, \pm i\} \times_\sigma T \to \{\pm 1, \pm i\} \times T$ given by $\alpha(\lambda, t) = (\mu_0(t) \lambda, t)$. 
+    Following this isomorphism, we get that the image of $\pmone \times_\sigma T$ goes precisely in the group extension of Example \ref{ex:main-extension} and we get an equivalence if we restrict $\alpha$ accordingly.
 \end{proof}
 
 % The next result show us Our strategy consists in start with a graded division superalgebra $\D$ with $\beta$ taking values in $\{ \pm 1 \}$. 
@@ -1624,7 +1626,7 @@ We are now in position to apply these concepts and results to our original probl
     
     We will now proceed to prove \eqref{item:there-is-extension}. 
     Let $\Delta$ be any division grading on $(\mc E, \vphi)$ refining $\Gamma$ and let $E \coloneqq \supp \Delta$. 
-    Recall that for a division grading, its support is its universal group (Lemma ??). 
+    Recall that for a division grading, its support is its universal group (Lemma \ref{lemma:div-grd-unvrsl-grp}). 
     Since $\Gamma$ is a coarsening of $\Delta$, by the universal property of the universal group, there is a unique map $\pi\from E\to T$ such that ${}^{\pi}\widetilde \Gamma = \Gamma$. 
     Also, since $|\widetilde T| = 2 |T|$, we must have $|\ker \pi| = 2$, and therefore there is a unique monomorphism $\iota\from \pmone \to \widetilde T$ with $\iota(\pmone) = \ker \pi$. 
     Note that in the particular case $\Delta = \Delta_0$, we get the extension associated to $\pmone \times_{\tilde\beta} T$.
