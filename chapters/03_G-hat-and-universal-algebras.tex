@@ -34,7 +34,8 @@ We note that $0$-ary operations can be interpreted as constants in the $\Omega$-
     \[
         \psi( \omega^A (a_1 \tensor \cdots \tensor a_n) ) = \omega^B ( \psi(a_1) \tensor \cdots \tensor \psi(a_n) ),
     \]
-    for all $a_1, \ldots, a_n \in A$.
+    for all $a_1, \ldots, a_n \in A$. 
+    As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to $A$ and the group of automorphisms is denoted by $\Aut(A)$.
 \end{defi}
 
 When dealing with a fixed $\Omega$-algebra, we will usually identify the signature $\Omega$ with the set of all operations.
@@ -95,15 +96,39 @@ It is straight forward to verify that this notion of grading corresponds to the 
 We will now proceed to generalize the correspondence between $G$-gradings and $\widehat G$-actions (see ?? and ??) to $\Omega$-algebras. 
 We start focusing on graded vector spaces.
 
-Let $V$ be a vector space. 
-Given a $G$-grading $\Gamma\from V= \bigoplus_{g\in G} V_g$ on $V$, we define a $\widehat G$-action in the following way: for $\chi \in \widehat G$ and $a_g \in V_g$, $\chi \cdot v_g = \chi(g)v_g$, and we extend the it by linearity. 
+\begin{defi}
+    Let $V$ be a vector space. 
+    Given a $G$-grading $\Gamma\from V= \bigoplus_{g\in G} V_g$ on $V$, we define a $\widehat G$-action in the following way: for $\chi \in \widehat G$ and $a_g \in V_g$, $\chi \cdot v_g = \chi(g)v_g$, and we extend the it by linearity. 
+    We will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+\end{defi}
+
 It is easy to see that this really defines an action. 
-We will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+
+\begin{lemma}
+    Let $V$ be a $G$-graded vector space. 
+    A element $v\in V$ is homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g)v$ for all $\chi \in \widehat G$.
+\end{lemma}
 
 \begin{prop}
     Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space. 
-    Then $\Gamma$ is a grading on $A$ if, and only if $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
+    Then $\Gamma$ is a grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
 \end{prop}
+
+\begin{proof}
+    First, assume $\Gamma$ is a grading on the $\Omega$-algebra $A$.
+    Let $\chi \in \widehat G$ and let $\psi \coloneqq \eta_\Gamma(\chi)$. 
+    We already know that $\psi$ is bijective, it only remains to prove it is a homomorphisms. 
+    Let $\omega \in \Omega_n$ and let $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$, respectively.
+    
+    Then $a_1\tensor \cdots \tensor a_n \in A^{\tensor n}$ has degree $g_1 \cdots g_n$. Hence
+    \begin{align*}
+        \psi(\omega^A(a_1\tensor \cdots \tensor a_n)) &= \chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n)\\
+        &=\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n)\\
+        &= \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)\\
+        &= \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n)),
+    \end{align*}
+    so $\psi$ is a homomorphism.
+\end{proof}
 
 
 % \begin{remark}
