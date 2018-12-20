@@ -99,7 +99,7 @@ the $R$-linear map
 $\vphi_1$ to construct a super-anti-automorphism $\vphi_0$ on $\D$ and a nondegenerate $\vphi_0$-sesquilinear form $B$ on $\U$. 
 
 \begin{defi}\label{def:sesquilinear-form}
-    Let $\vphi_0: \D \to \D$ be a degree preserving su\-per\--an\-ti\--auto\-mor\-phism. We say that a map $B\colon \U \times \U \to \D$ is a \emph{$\vphi_0$-sesquilinear form on $\U$} if it is $\FF$-bilinear, $G^\#$-homogeneous if considered as a linear map $\U\tensor \U \to \D$ and, for all $u,v \in \U$ and $d\in \D$, satisfies
+    Let $\vphi_0: \D \to \D$ be a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism. We say that a map $B\colon \U \times \U \to \D$ is a \emph{$\vphi_0$-sesquilinear form on $\U$} if it is $\FF$-bilinear, $G^\#$-homogeneous if considered as a linear map $\U\tensor \U \to \D$ and, for all $u,v \in \U$ and $d\in \D$, satisfies
     %
     \begin{enumerate}[(i)]
         \item $B(u,vd) = B(u,v)d$; \label{enum:linear-on-the-second}
@@ -109,7 +109,7 @@ $\vphi_1$ to construct a super-anti-automorphism $\vphi_0$ on $\D$ and a nondege
     The \emph{(left) radical} of $B$ is the set $\rad B \coloneqq \{u\in \U \mid B(u, v) = 0 \text{ for all } v\in \U\}$. We say that the form $B$ is \emph{nondegenerate} if $\rad B = 0$.
 \end{defi}
 
-Suppose for now that a degree preserving su\-per\--an\-ti\--auto\-mor\-phism $\vphi_0: \D \to \D$ is given. 
+Suppose for now that a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism $\vphi_0: \D \to \D$ is given. 
 We can use it to define a right $\D$-action on $\U\Star$ by interpreting it as an isomorphism from $\D$ to $\D\sop$ and putting 
 %
 \begin{equation}\label{eq:right-D-action}
@@ -120,7 +120,7 @@ for all $f \in \U\Star$ and $d\in \D$.
 Using this action, we have $\End_\D (\U\Star) = \End_{\D\sop} (\U\Star)$. We also have the following:
 
 \begin{prop}\label{prop:sesquilinear-form-iff-D-linear-map}
-    Fix a degree preserving su\-per\--an\-ti\--auto\-mor\-phism $\vphi_0\from \D \to \D$. 
+    Fix a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism $\vphi_0\from \D \to \D$. 
     The $\vphi_0$-sesquilinear forms $B:\U\times\U \to \D$ are in a one-to-one correspondence with the homogeneous $\D$-linear maps $\theta\from \U \to \U\Star$ via $B \mapsto \theta$ where $\theta(u) \coloneqq B(u, \cdot)$, for all $u \in \U$ or, inversely, $\theta \mapsto B$ where $B(u,v) \coloneqq \theta(u)(v)$, for all $u, v\in \U$. 
     Moreover, $B$ is nondegenerate if, and only if, $\theta$ is an isomorphism.
 \end{prop}
@@ -146,7 +146,7 @@ Using this action, we have $\End_\D (\U\Star) = \End_{\D\sop} (\U\Star)$. We als
 
 % Condition \eqref{enum:linear-on-the-second} on the Definition above allows us to use $B$ to define a map $\U \to \U\Star$ by $u \mapsto B(u, \cdot)$. If this is invertible, we say that the form $B$ is \emph{nondegenerate}.
 
-% Note that a degree preserving super-anti-automorphism $\vphi_0: \D \to \D$ can be seen as an isomorphism between $\D$ and $\D\sop$ and, hence, one can use it to define a right $\D$-action on $\U\Star$ by $v$
+% Note that a degree-preserving super-anti-automorphism $\vphi_0: \D \to \D$ can be seen as an isomorphism between $\D$ and $\D\sop$ and, hence, one can use it to define a right $\D$-action on $\U\Star$ by $v$
 
 Coming back to our map $\vphi_1\from \U \to \U\Star$ and using the identifications $\D = \End_R(\U)$ and $\D\sop = \End_R(\U\Star)$ introduced above, consider the map $\D \to \D\sop$ sending $d \mapsto \sign{d}{\vphi_1}\vphi_1\inv d \,\vphi_1$, where juxtaposition denotes composition of maps on the right. 
 It is straightforward to check that this map is an isomorphism and, hence, we can consider it as a super-anti-automorphism $\vphi_0 \from \D \to \D$. 
@@ -266,7 +266,7 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
 
 
 % \begin{lemma}
-%     Let $\vphi_0\colon \D\to \D$ be a fixed degree preserving su\-per\--an\-ti\--auto\-mor\-phism. 
+%     Let $\vphi_0\colon \D\to \D$ be a fixed degree-preserving su\-per\--an\-ti\--auto\-mor\-phism. 
 %     Given re is a bijective correspondence between the $\vphi_0$-sesquilinear maps $B$ is in bijection with the set of homogeneous maps $\theta\colon \U \to \U\Star$ such that $\theta (ud) = \theta(u) \vphi_0(d)$.
 % \end{lemma}
 
@@ -284,18 +284,18 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
 
 \begin{thm}\label{thm:vphi-iff-vphi0-and-B}
     Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero right graded module of finite rank over $\D$. 
-    If $\vphi$ is degree preserving super-anti-automorphism on $R \coloneqq \End_R(\U)$, then there is a pair $(\vphi_0, B)$, where $\vphi_0$ is a degree preserving super-anti-automorphism on $\D$ and $B\from \U \times \U \to \D$ is a nondegenerate $\vphi_0$-sesquilinear form, such that
+    If $\vphi$ is degree-preserving super-anti-automorphism on $R \coloneqq \End_R(\U)$, then there is a pair $(\vphi_0, B)$, where $\vphi_0$ is a degree-preserving super-anti-automorphism on $\D$ and $B\from \U \times \U \to \D$ is a nondegenerate $\vphi_0$-sesquilinear form, such that
     %
     \begin{equation}\label{eq:superadjunction}
         \forall r\in R\even \cup R\odd,\,\forall u, v \in \U\even \cup \U\odd,  \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
     \end{equation}
     %
-    Conversely, given a pair $(\vphi_0, B)$ as above, there is a unique degree preserving super-anti-automorphism $\vphi$ on $R$ satisfying Equation \eqref{eq:superadjunction}. 
+    Conversely, given a pair $(\vphi_0, B)$ as above, there is a unique degree-preserving super-anti-automorphism $\vphi$ on $R$ satisfying Equation \eqref{eq:superadjunction}. 
     Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $\vphi_0 = \operatorname{sInt}_d \circ \vphi_0$ and $B'(u, v) = dB (u, v)$ for all $u, v \in \U$.
 \end{thm}
 
 \begin{proof}
-    The first assertion is already proved. For the converse, let $\vphi_0$ be a degree preserving super-anti-automorphism on $\D$, let $B\from \U \times \U \to \D$ be a nondegenerate $\vphi_0$-sesquilinear form and consider $\theta$ as in 
+    The first assertion is already proved. For the converse, let $\vphi_0$ be a degree-preserving super-anti-automorphism on $\D$, let $B\from \U \times \U \to \D$ be a nondegenerate $\vphi_0$-sesquilinear form and consider $\theta$ as in 
     Proposition \ref{prop:sesquilinear-form-iff-D-linear-map}. Then Equation \eqref{eq:superadjunction} is equivalent to:
     %
     \begin{alignat*}{2}
@@ -385,7 +385,7 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
 In this section, we are going to express the super-anti-automorphism $\vphi$ in terms of matrices with entries in $\D$. 
 One could do that by following Equation \eqref{eq:vphi-r-Star-is-a-superconjugation}, but we will take a different path. 
 
-As before, we suppose $\D$ is a graded division superalgebra, $\U$ is a nonzero right graded module of finite rank over $\D$, $R = \End_\D (\U)$ and $\vphi$ is a degree preserving super-anti-automorphism on $R$. 
+As before, we suppose $\D$ is a graded division superalgebra, $\U$ is a nonzero right graded module of finite rank over $\D$, $R = \End_\D (\U)$ and $\vphi$ is a degree-preserving super-anti-automorphism on $R$. 
 Also, let $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a nondegenerate $\vphi_0$-sesquilinear form on $\U$ determing $\vphi$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}.
 
 From now on, let $\mc B = \{e_1, \ldots, e_k\}$ be a fixed homogeneous $\D$-basis of $\U$. 
@@ -614,7 +614,7 @@ In this case, we have that $\D\even_e = \FF 1$, so we are under the hypothesis o
 
 \begin{thm}\label{thm:vphi-involution-iff-delta-pm-1}
     % Suppose $\FF$ is an  algebraically closed field. 
-    Let $\D$ be a graded division superalgebra such that $\D\even_e = \FF 1$, let $\U$ be a nonzero right graded module of finite rank over $\D$ and let $\vphi$ be a degree preserving super-anti-automorphism on $R \coloneqq \End_\D (\U)$. 
+    Let $\D$ be a graded division superalgebra such that $\D\even_e = \FF 1$, let $\U$ be a nonzero right graded module of finite rank over $\D$ and let $\vphi$ be a degree-preserving super-anti-automorphism on $R \coloneqq \End_\D (\U)$. 
     Consider a super-anti-automorphism $\vphi_0$ on $\D$ and a nondegenerate $\vphi_0$-sesqui\-li\-near form $B$ on $\U$ determining $\vphi$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}.
     Then $\vphi$ is a superinvolution if, and only if, $\vphi_0$ is a superinvolution and $\overline B = \pm B$. 
 \end{thm}
@@ -1001,10 +1001,10 @@ We will obtain more precise information about $\D$ in the next section.
 % \marginpar{\tt (for the ``see'' part: [EK] $D_4$ and [BK] gradings on classical \\lie algebras)}
 % Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$.
 
-% Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
+% Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
 
 % \begin{prop}\label{prop:superpolarization}
-%     Let $\vphi_0\from \D \to \D$ be the invertible degree preserving map determined by $\eta\from T \to \FF^\times$  such that $\vphi_0(X_t) = \eta(t) X_t$ for all $t\in T$ and $X_t\in \D_t$. 
+%     Let $\vphi_0\from \D \to \D$ be the invertible degree-preserving map determined by $\eta\from T \to \FF^\times$  such that $\vphi_0(X_t) = \eta(t) X_t$ for all $t\in T$ and $X_t\in \D_t$. 
 %     Then $\vphi_0$ is a super-anti-automorphism if, and only if,
 %     %
 %     \begin{equation}\label{eq:superpolarization}
@@ -1051,10 +1051,10 @@ Instead of writing subscripts for the $G$-grading and superscripts for the canon
 
 {\tt (for the ``see'' part: [EK] $D_4$ and [BK] gradings on classical \\lie algebras)}
 
-Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
+Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
 
 \begin{prop}\label{prop:superpolarization}
-    Let $\vphi_0\from \D \to \D$ be the invertible degree preserving map determined by $\eta\from T \to \FF^\times$  such that $\vphi_0(X_t) = \eta(t) X_t$ for all $t\in T$ and $X_t\in \D_t$. 
+    Let $\vphi_0\from \D \to \D$ be the invertible degree-preserving map determined by $\eta\from T \to \FF^\times$  such that $\vphi_0(X_t) = \eta(t) X_t$ for all $t\in T$ and $X_t\in \D_t$. 
     Then $\vphi_0$ is a super-anti-automorphism if, and only if,
     %
     \begin{equation}\label{eq:superpolarization}
@@ -1089,7 +1089,7 @@ Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to 
 \begin{ex}
     If we consider the associative superalgebra $Q(1)$ graded by the trivial group $G = \{e\}$, it is a graded division superalgebra. 
     In this case $G^\# = \ZZ_2$ and, also, $T = \ZZ_2$. 
-    Since $Q(1)$ is commutative, we have that $\beta$ is identically $1$.
+    Since $Q(1)$ is commutative, $\beta$ is identically $1$.
     By Corollary \ref{cor:Q-no-spuerinv-center}, $Q(1)$ does not admit a superinvolution, but the map $\eta\from \ZZ_2 \to \FF^\times$ given by $\eta (\bar 0) = 1$ and $\eta( \bar 1) = i$ defines a super-anti-automorphism on it. 
     Indeed, it is easy to check that $(-1)^{p(a) p(b)} =  \eta(ab) \eta(a)\inv \eta(b)\inv$.
 \end{ex}
@@ -1144,7 +1144,7 @@ Combining Proposition \ref{prop:odd-cant-have-order-2} and Lemma \ref{lemma:beta
 % As we will see in Chapter ??, this implies that all gradings on the Lie superalgebras in the series $B$, $C$, $D$ and $P$ are even.
 
 Corollaries \ref{cor:D-has-the-same-type} and \ref{cor:no-odd-M-vphi} show that the presence of a superinvolution gives a strong restriction on the grading on $M(m,n)$: the grading must be even and its support an elementary $2$-group. 
-Nevertheless, we will now show that we do have odd gradings on $M(n,n)\times M(n,n)\sop$ (Example ??). 
+Nevertheless, we will now show that we do have odd gradings on $M(n,n)\times M(n,n)\sop$ (Example \ref{ex:superalgebra-O}). 
 To this end, we will use the concept of group extension.
 % In our construction we are going to use the following concept:
 
@@ -1159,7 +1159,7 @@ To this end, we will use the concept of group extension.
     is a short exact sequence, \ie,
     $\iota$ is injective, $\pi$ is surjective and $\operatorname{im} \iota = \ker \pi$ (and, hence, $H \iso \frac{E}{\iota(K)}$). 
     % For brevity, we may refer to the short exact sequence \eqref{eq:short-exact-sequence} as the extension. 
-    An \emph{equivalence} between two extensions $K \xrightarrow{\iota} E \xrightarrow{\pi} H$ and $K \xrightarrow{\iota'} E' \xrightarrow{\pi'} H$ is an isomorphism $\alpha\from E \to E'$ such that the diagram
+    An \emph{equivalence} between two extensions $K \xrightarrow{\iota} E \xrightarrow{\pi} H$ and $K \xrightarrow{\iota'} E' \xrightarrow{\pi'} H$ is a homomorphism $\alpha\from E \to E'$ such that the diagram
 %     \begin{center}
 % 		\begin{tikzcd}
 % 			&& |[alias=E]|E \arrow[to=E', "\alpha"] \arrow[to = H, "\pi"]&&\\
@@ -1177,6 +1177,7 @@ To this end, we will use the concept of group extension.
 		\end{tikzcd}
 	\end{center}
 	commutes. 
+	It is easy to see that $\alpha$ is necessarily an isomorphism. 
 	An equivalence from an extension to itself will be refered as a \emph{self-equivalence}.
 \end{defi}
 
@@ -1188,11 +1189,11 @@ To this end, we will use the concept of group extension.
 Group extensions are usually studied in the context of group cohomology (see, for example, ?? and ??).  
 We will need only some basic concepts and elementary results reviewed below. 
 
-Let us fix the abelian groups $H$ and $K$ for the remaining of the section.
+Let us fix the abelian groups $H$ and $K$ for the remainder of the section.
 
 \begin{defi}
     A map $\sigma\from H\times H \to K$ is said to be a \emph{$2$-cocycle} if, for all $a,b,c \in H$, we have $\sigma(a,b) \sigma(ab, c) = \sigma(a, bc) \sigma(b,c)$. 
-    If, further, we have that $\sigma(a,b) = \sigma(b,a)$, we say that $\sigma$ is \emph{symmetric}, and if we have that $\sigma(a, e) = \sigma(e, a) = e$, we say that $\sigma$ is \emph{normalized}. 
+    If, further, we have that $\sigma(a,b) = \sigma(b,a)$, we say that $\sigma$ is \emph{symmetric}, and if we have $\sigma(a, e) = \sigma(e, a) = e$, we say that $\sigma$ is \emph{normalized}. 
 \end{defi}
 
 % In this work, we are only going to deal with normalized symmetric $2$-cocycles, so we may refer to them simply as \emph{cocycles}.  
@@ -1746,7 +1747,7 @@ We then get a grading by $\pmone \times_\sigma T$, where $\sigma(a,b) \coloneqq 
 This can be transplanted to the groups $\big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big)$ and $\ZZ_2\times \ZZ_4$ via the explicit isomorphisms given in the proof of Lemma ?? and above. 
 We then get:
 
-\begin{ex}\label{def:SA-O}
+\begin{ex}\label{ex:superalgebra-O}
     Let $\mc O$ denote the superalgebra $M(1,1) \times M(1,1)\sop$ endowed with the $\ZZ_2\times \ZZ_4$-grading determined by:
     %
     % We can refine the algebra the natural grading on $\D\times \D\sop$ by the division grading determined by:
