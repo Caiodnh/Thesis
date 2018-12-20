@@ -1205,8 +1205,8 @@ Given a normalized symmetric $2$-cocycle $\sigma$, we define the abelian group $
 \]
 for all $k_1, k_2 \in K$ and $h_1, h_2 \in H$. 
 The condition of $\sigma$ being a symmetric $2$-cocycle is precisely what is needed for the associativity and commutativity of $*_\sigma$. 
-The identity element is $(e, e)$ and the inverse is given by $(k, h)\inv = (k\inv \sigma(h,h\inv)\inv, h\inv)$.
-    
+The identity element is $(e, e)$ and the inverse is given by $(k, h)\inv = (k\inv \sigma(h,h\inv)\inv, h\inv)$. 
+
 \begin{defi}
     % Let $\sigma\from H\times H \to K$ be a $2$-cocycle. 
     % The group $K \times_\sigma H$ is the set $K \times H$ endowed with the product $*_\sigma$ defined by
@@ -1218,6 +1218,20 @@ The identity element is $(e, e)$ and the inverse is given by $(k, h)\inv = (k\in
 \end{defi}
 
 % Note that the maps $\iota$ and $\pi$ are independent of the cocycle $\sigma$.
+
+
+\begin{prop}\label{prop:all-ext-are-cocycle}
+    Every abelian group extension $K \xrightarrow{\iota} E \xrightarrow{\pi} H$ is equivalent to the abelian group extension corresponding to $K\times_\sigma H$ for some normalized symmetric cocycle $\sigma\from H \to K$.
+\end{prop}
+
+\begin{proof}
+    Fix $\tau\from H \to E$ a (set theoretical) map such that $\pi\tau = id_H$ and $\tau(e) = e$. 
+    For every $x \in E$, we have that $x (\tau(\pi(x)))\inv$ is in $\ker \pi$ and, hence, it equal to $\iota(k)$ for a unique $k_x\in K$. 
+    It follows that $x = \iota(k_x) \tau(\pi(x))$. 
+    Define $f\from E \to K\times H$ by $f(x) = (k_x, \tau(\pi(x)) )$. 
+    Clearly, $f$ is bijective, so we can make it an isomorphism by using it to define a product on $K\times H$. 
+    It is easy to check that this product is the one on $K \times_\sigma H$ where $\sigma\from H\times H \to K$ is given by $\sigma(h_1, h_2) = \tau(h_1) \tau(h_2) \tau(h_1 h_2)\inv$ and $f$ is the desired equivalence.
+\end{proof}
 
 We will need to know when two extensions determined by different normalized symmetric $2$-cocycles are equivalent.
 
@@ -1290,12 +1304,12 @@ The following is a well known result, but we include a proof here for completene
 \end{proof}
 
 \begin{cor}\label{cor:self-equivalences-are-homomorphisms}
-    Let $\sigma \from H\times H \to K$ be a normalized symmetric $2$-cocycle. 
-    The set of self-equivalences of the extension associated with $K \times_\sigma H$ is in bijection with the set of homomorphisms from $H$ to $K$.
+    The set of self-equivalences of an abelian group extension $K \xrightarrow{\iota} E \xrightarrow{\pi} H$ is in bijection with the set of homomorphisms from $H$ to $K$.
 \end{cor}
 
 \begin{proof}
-    Follows from Proposition \ref{prop:coboundary} and the observation that $\mathrm{d}f = 0$ if, and only if, $f$ is a homomorphism.
+    By Proposition \ref{prop:all-ext-are-cocycle}, we can assume our extension is the one corresponding to $K \times_\sigma H$, for some normalized symmetric $2$-cocycle $\sigma$. 
+    The result follows from Proposition \ref{prop:coboundary} and the observation that $\mathrm{d}f = 0$ if, and only if, $f$ is a homomorphism. 
 \end{proof}
 
 We note that the Equation \eqref{eq:superpolarization} can be rewritten as $\tilde\beta = \mathrm{d}\eta$, where $\tilde\beta\from T\times T \to \FF^\times$ is the bicharacter given by
