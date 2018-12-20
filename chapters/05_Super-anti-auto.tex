@@ -1592,19 +1592,20 @@ We are now in position to apply these concepts and results to our original probl
     Let $\D$ be a graded division superalgebra associated to $(T, \beta, p)$.  
     Consider $\mc E \coloneqq \D \times \D\sop$ with its natural $T$-grading $\Gamma\colon \mc E = \bigoplus_{t\in T} \D_t \times \overline{\D_t}$ and let $\vphi$ be the exchange superinvolution on $\mc E$. 
     There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
-    Further, if $\Delta$ is such a refinement, then:% and $\widetilde T$ is its support, then:
+    If this is the case, we have the following:
+    % and $\widetilde T$ is its support, then:
     
     % Then:
     \begin{enumerate}[(i)]
         % \item There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$; \label{item:refinement-iff-pmone} 
         
         \item %$\widetilde T$ fits into
-        There is a unique group extension $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ such that $\supp \Delta = E$ and ${}^{\pi} \Delta = \Gamma$; \label{item:there-is-extension}
+        If $\Delta$ is such a refinement, then there is a unique group extension $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ such that $\supp \Delta = E$ and ${}^{\pi} \Delta = \Gamma$; \label{item:there-is-extension}
         
         \item This group extension is equivalent to the one of Example \ref{ex:main-extension}; \label{item:equivalent-extension-example}
         %determined by the $2$-cocycle $\sigma(a,b) \coloneqq (-1)^{p(a) p(b)}$, for all $a,b\in T$; 
         
-        \item The set of all such refinements corresponding to $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ is in bijection with the group homomorphisms from $T$ to $\{ \pm 1 \}$. \label{item:number-of-extensions}
+        \item The set of all refinements $\Delta$ such that $\supp \Delta = E$ and ${}^\pi \Delta = \Gamma$ is in bijection with the group homomorphisms from $T$ to $\{ \pm 1 \}$. \label{item:number-of-extensions}
     \end{enumerate}
     % There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
     % If $\widetilde \Gamma$ is a such grading and $\widetilde T$ is its support, then there is a unique group extension $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ such that ${}^\pi \widetilde \Gamma = \Gamma$, and this extension is equivalent to the one given by the $2$-cocycle $\sigma$ given by $\sigma(a,b) = (-1)^{p(a) p(b)}$. 
@@ -1612,11 +1613,11 @@ We are now in position to apply these concepts and results to our original probl
 \end{thm}
 
 \begin{proof}
-    We claim that all division gradings on $(\mc E, \vphi)$ refining $\Gamma$ must have the same vector space decomposition. 
+    We claim that all division gradings on $(\mc E, \vphi)$ refining $\Gamma$ must have the same set of subspaces of $\mc E$ as their homogeneous components. 
     Indeed, for each $t\in T$, let $\mc E_t$ denote the homogeneous component of degree $t$ of $\Gamma$. 
-    Clearly, $\mc E_t$ is $2$-dimensional and it is straightforward that $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ are eigenvectors of $\vphi$, associated to the eigenvalues $1$ and $-1$, respectively. 
+    Clearly, $\mc E_t$ is $2$-dimensional and $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ are eigenvectors of $\vphi$, associated to the eigenvalues $1$ and $-1$, respectively. 
     It follows that the eigenspaces of $\vphi \restriction_{\mc E_t}$ are $1$-dimensional and, hence, $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ must be homogeneous in any grading $\Delta$ on $(\mc E, \vphi)$ refining $\Gamma$. 
-    If $\Delta$ is a division grading, all the components are $1$-dimensional, so the components must be $\mc E_{(\delta, t)} \coloneqq \{ \lambda (X_t, \delta \overline{X_t} \mid \lambda \in \FF)\}$, for $t\in T$ and $\delta \in \pmone$.
+    If $\Delta$ is a division grading, all the components are $1$-dimensional, so the components must be $\mc E_{(\delta, t)} \coloneqq \FF (X_t, \delta \overline{X_t}$, for $t\in T$ and $\delta \in \pmone$.
     
     % the eigenspaces of $\vphi \restriction_{\mc E_t}$ associated to $1$ and $-1$ are both one dimensional, spanned by $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$, respectively. 
     % It follows that $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ must be homogeneous in any grading on $(\mc E, \vphi)$ refining $\Gamma$. 
@@ -1635,16 +1636,15 @@ We are now in position to apply these concepts and results to our original probl
         &= (X_{a} X_{b}, \delta_1 \delta_2 \tilde\beta (a,b) \overline{X_{a} X_{b}}).
     \end{align*}
     %
-    On the one hand, if $\beta(a, b) \neq \pm 1$ for some $a,b \in T$, this direct sum decomposition do not correspond to a grading. 
-    On the other hand, if $\beta$ takes values in $\{ \pm 1 \}$, it follows that $\mc E_{(\delta_1, a)} \mc E_{(\delta_2, b)} \subseteq \mc E_{(\delta_1 \delta_2 \tilde\beta (a,b), ab)}$. 
+    On the one hand, if $\beta(a, b) \neq \pm 1$ for some $a,b \in T$, the direct sum decomposition $\mc E = \bigoplus \mc E_{(\delta, t)}$ do not correspond to a grading. 
+    On the other hand, if $\beta$ takes values in $\{ \pm 1 \}$, it follows that $\mc E_{(\delta_1, a)} \mc E_{(\delta_2, b)} = \mc E_{(\delta_1 \delta_2 \tilde\beta (a,b), ab)}$. 
     Therefore we have a grading by the group $\{ \pm 1\} \times_{\tilde\beta} T$. 
     Let us denote this grading by $\Delta_0$. 
     % If $\pmone \xrightarrow{\tilde\iota} \{ \pm 1\} \times_{\tilde\beta} T \xrightarrow{\tilde\pi} T$ is the extension correponding to $\{ \pm 1\} \times_{\tilde\beta} T$, then it is clear that ${}^{\tilde\pi}\Delta_0 = \Gamma$. 
     % Note that, by Lemma ??, this group extension is equivalent to the one in Example \ref{ex:main-extension}.
     
     We will now proceed to prove \eqref{item:there-is-extension}. 
-    Let $\Delta$ be any division grading on $(\mc E, \vphi)$ refining $\Gamma$ and let $E \coloneqq \supp \Delta$. 
-    Recall that for a division grading, its support is its universal group (Lemma \ref{lemma:div-grd-unvrsl-grp}). 
+    Recall that, for a division grading, its support is its universal group (Lemma \ref{lemma:div-grd-unvrsl-grp}). 
     Since $\Gamma$ is a coarsening of $\Delta$, by the universal property of the universal group, there is a unique map $\pi\from E\to T$ such that ${}^{\pi}\widetilde \Gamma = \Gamma$. 
     Also, since $|\widetilde T| = 2 |T|$, we must have $|\ker \pi| = 2$, and therefore there is a unique monomorphism $\iota\from \pmone \to \widetilde T$ with $\iota(\pmone) = \ker \pi$. 
     Note that in the particular case $\Delta = \Delta_0$, we get the extension associated to $\pmone \times_{\tilde\beta} T$.
