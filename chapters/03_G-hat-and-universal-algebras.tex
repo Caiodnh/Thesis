@@ -104,10 +104,18 @@ We start focusing on graded vector spaces.
 
 It is easy to see that this really defines an action. 
 
+For this action to capture more information about the grading, we need some assumptions on the field $\FF$. 
+From now on, let us assume $\FF$ is algebraically closed and $\Char \FF = 0$.
+
 \begin{lemma}
     Let $V$ be a $G$-graded vector space. 
     A element $v\in V$ is homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g)v$ for all $\chi \in \widehat G$.
 \end{lemma}
+
+\begin{proof}
+    The ``only if'' direction is the definition of the action. 
+    For the other direction, let $v\in V$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$.
+\end{proof}
 
 \begin{prop}
     Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space. 
