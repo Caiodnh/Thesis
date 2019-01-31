@@ -1,21 +1,22 @@
 \chapter{$G$-Gradings on Universal Algebras and $\widehat G$-actions}
 
-In this chapter we will revisit the correspondence between $G$-gradings and $\widehat G$-actions, which can be found in many places in the literature (see, \eg, ??, ?? and ??). 
-Nevertheless, our goal is to generalize it to the context of universal algebras. 
-This way we can handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
+In this chapter we will review the correspondence between $G$-gradings and $\widehat G$-actions on algebras. 
+It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal is to set it up in the context of general (or universal) algebras. 
+This will allow us to handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
 
-Another advantage of this approach is to have a formal result comparing gradings on univeral algebras with different signature (see Definition \ref{def:universal-algebra} and Theorem ??). 
-This will be used in Chapter ?? to transfer gradings on associative superalgebras with superinvolutions to Lie superalgebras. 
-The same sort of transfer has been used in other works (see \cite{livromicha} and Paper with Adrian ??), but without having the result stated properly. 
+Another advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (see Definition \ref{def:universal-algebra} and Theorem ??). 
+This will be used in Chapter ?? to transfer gradings between Lie superalgebras and associative superalgebras with superinvolutions. 
+The same sort of transfer has been used in other works (see \cite{livromicha} and Paper with Adrian ??), but without having the result stated formally. 
 
-\section{Universal Algebras}
+\section{$\Omega$-Algebras}
 
-A universal algebra is a space with an arbitrary collection (possibly empty) of operations, with may also have different ``arities'' (see Definition \ref{def:universal-algebra} bellow). 
-Our approach to universal algebras differs from the one in most books on the subject (see, \eg, ?? and ??) in the sense we will be working on the (monoidal) category of vector spaces instead of the (monoidal) category of sets. 
-This is the approach on ?? (book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??. 
+A \emph{general} or \emph{universal algebra} is a space with an arbitrary collection (possibly empty) of operations, wich may have different ``arities'' (see Definition \ref{def:universal-algebra} bellow). 
+This is a very general concept (see, \eg, ?? and ??), which includes all classical objects in algebra (groups, rings, etc.), but here we will be interested in the linear case: the objects will be vector spaces and the operations will be assumed multilinear.
+%Our approach to universal algebras differs from the one in most books on the subject (see, \eg, ?? and ??) in the sense we will be working on the (monoidal) category of vector spaces instead of the (monoidal) category of sets. 
+This is the approach on ?? (Razmylov: book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??. 
 
 \begin{notation}
-    For a vector space $A$ and nonnegative integer $n$, we will denote the $n^{th}$-tensor power of $A$ by $A^{\tensor n}$, \ie,
+    For a vector space $A$ and a nonnegative integer $n$, we will denote the $n^{th}$-tensor power of $A$ by $A^{\tensor n}$, \ie,
     $A^{\tensor n} \coloneqq \underbrace{A\otimes\cdots\otimes A}_{n \text{ times}}$. 
     In the case $n = 0$, we will follow the convention that $A^{\tensor 0} \coloneqq \FF$.
 \end{notation}
@@ -23,56 +24,56 @@ This is the approach on ?? (book used by Felipe) and it has recently been applie
 \begin{defi}\label{def:universal-algebra}
     A \emph{signature} $\Omega$ is a set together with a family $\{ \Omega_n \}_{n \geq 0}$ of pairwise disjoint subsets such that $\Omega = \bigcup_{n \geq 0} \Omega_n$. 
     An \emph{$n$-ary operation} on a vector space $A$ is a linear map from $A^{\tensor n}$ to $A$. 
-    A \emph{$\Omega$-algebra} or a \emph{universal algebra with signature $\Omega$} is a vector space $A$ together with a operation $\omega^A$ for each $\omega \in \Omega$, such that $\omega^A$ is $n$-ary if $\omega \in \Omega_n$.
+    An \emph{$\Omega$-algebra} or a \emph{algebra with signature $\Omega$} is a vector space $A$ together with a operation $\omega^A$ for each $\omega \in \Omega$, such that $\omega^A$ is $n$-ary if $\omega \in \Omega_n$.
 \end{defi}
 
 We note that $0$-ary operations can be interpreted as constants in the $\Omega$-algebra $A$, since a linear map $\omega^A\from \FF \to A$ is determined by $\omega^A(1)$.
 
 \begin{defi}
     Let $A$ and $B$ be $\Omega$-algebras. 
-    A \emph{homomorphism} $\psi\from A \to B$ is a linear map such that for every $\omega \in \Omega_n$ we have that
+    A \emph{homomorphism} $\psi\from A \to B$ is a linear map such that for every $\omega \in \Omega_n$ we have
     \[
         \psi( \omega^A (a_1 \tensor \cdots \tensor a_n) ) = \omega^B ( \psi(a_1) \tensor \cdots \tensor \psi(a_n) ),
     \]
     for all $a_1, \ldots, a_n \in A$. 
-    As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to $A$ and the group of automorphisms is denoted by $\Aut(A)$.
+    As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to itself and the group of automorphisms is denoted by $\Aut(A)$.
 \end{defi}
 
-When dealing with a fixed $\Omega$-algebra, we will usually identify the signature $\Omega$ with the set of all operations.
+When dealing with a fixed $\Omega$-algebra $A$, we will usually identify the signature $\Omega$ with the set of all operations on $A$.
 
 \begin{ex}\label{ex:omega-vec-space}
-    A vector space is a $\emptyset$-algebra.
+    A vector space is a $\Omega$-algebra with $\Omega = \emptyset$.
 \end{ex}
 
 \begin{ex}\label{ex:omega-algebra}
-    A algebra in the usual sense, with product $*$, is a $\Omega$-algebra with $\Omega = \Omega_2 = \{ * \}$. 
+    An algebra in the usual sense, with product $*$, is an $\Omega$-algebra with $\Omega = \Omega_2 = \{ * \}$. 
 \end{ex}
 
 \begin{ex}
-    A algebra $A$ with unity $\mathds{1} \in A$ and product $*$ is a  $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_0 = \{ \omega_0 \}$, where $\omega_0\from \FF \to A$ is defined by $\omega_0 (1) = \mathds 1$.
+    An algebra $A$ with unity $\mathds{1} \in A$ is a  $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_0 = \{ \omega_0 \}$, where $\omega_0\from \FF \to A$ is defined by $\omega_0 (1) = \mathds 1$.
 \end{ex}
 
-% \begin{ex}
-%     A superalgebra $A = A\even \oplus A\odd$, with product $*$, is a $\Omega$-algebra where $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$ where $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively. 
-%     % Conversely, if $A$ is a $\Omega$-algebra with the signature above, it is a superalgebra if, and only if,
-%     % \begin{enumerate}[(i)]
-%     %     \item $\pi_{\bar 0}^2 = \pi_{\bar 0}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}$;
-%     %     \item $\pi_{\bar 0} + \pi_{\bar 1} = \id$; \label{item:sum-projections}
-%     %     \item $\pi_{\bar 1}\pi_{\bar 0} = \pi_{\bar 0}\pi_{\bar 1} = 0$;
-%     % \end{enumerate}
+\begin{ex}\label{ex:omega-alg-SA}
+    A superalgebra $A = A\even \oplus A\odd$ is a $\Omega$-algebra where $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$ where $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively. 
+    More precisely, we have that an algebra $A$ with such signature is a superalgebra if, and only if,
+    \begin{enumerate}[(i)]
+        \item $\pi_{\bar 0} + \pi_{\bar 1} = \id$; \label{item:sum-projections}
+        \item $\pi_{\bar 0}^2 = \pi_{\bar 0}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}$;
+        \item For every $a,b \in A$ and $i, j\in \ZZ_2$, we have that $\pi_{i+j}( \pi_i(x)*\pi_j(y) ) = \pi_i(x)*\pi_j(y)$.
+    \end{enumerate}
+\end{ex}
+
+% \begin{ex}\label{ex:omega-graded-algebra}
+%     A $G$-graded algebra $A = \bigoplus_{g\in G}$, with operation $*$, is a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_g \mid g\in G\}$, where $\pi_g\from A \to A$ is the projection in the component $A_g$. 
+%     As a particular case, superalgebras can be viewed as $\Omega$-algebras.
 % \end{ex}
 
-\begin{ex}\label{ex:omega-graded-algebra}
-    A $G$-graded algebra $A = \bigoplus_{g\in G}$, with operation $*$, is a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_g \mid g\in G\}$, where $\pi_g\from A \to A$ is the projection in the component $A_g$. 
-    As a particular case, superalgebras can be viewed as $\Omega$-algebras.
-\end{ex}
-
 \begin{ex}
-    A superalgebra with super-anti-automorphism $(A, \vphi)$, with product $*$, a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$. 
-    As a particular case, algebras with antiautomorphism can be viewed as $\Omega$-algebras.
+    A superalgebra with super-anti-automorphism $(A, \vphi)$ a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$. 
+    As a particular case, algebras with anti-automorphism can be viewed as $\Omega$-algebras.
 \end{ex}
 
-It is straightforward to check that, in each one of examples above, the usual notion of homomorphism corresponds to the notion of homomorphism as $\Omega$-algebras.
+It is straightforward to check that, in each of the examples above, the usual notion of homomorphism coincides with the notion of homomorphism as $\Omega$-algebras.
 
 It should be noted that among these examples, only in Examples \ref{ex:omega-vec-space} and \ref{ex:omega-algebra} the correspondence is bijective. 
 In the other cases, the original structures correspond to proper subclasses of the $\Omega$-algebras described, which can be axiomitized. 
