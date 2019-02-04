@@ -73,10 +73,12 @@ It is straightforward to check that, in each of the examples above, the usual no
 
 \begin{remark}
     Example \ref{ex:omega-alg-SA} could be generalized to encompass all $G$-graded algebras for a fixed group $G$. 
-    Such generalization has been used in the study of graded identities (see ??), but we omitted from our work to avoid confusion with the concept of $G$-gradings on $\Omega$-algebras.
+    Such generalization has been used in the study of graded identities (see ??), but we omitted from our work to avoid confusion with Definition \ref{def:grds-on-Omega-algebras}.
 \end{remark}
 
-\begin{defi}
+Finally, we can define gradings on $\Omega$-algebras:
+
+\begin{defi}\label{def:grds-on-Omega-algebras}
     A $G$-grading on a $\Omega$-algebra $A$ is a $G$-grading on its vector space underlying such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
 \end{defi}
 
@@ -103,7 +105,7 @@ The same sort of transfer has been used in other works (see \cite{livromicha} an
 
 % If $\FF$ is algebraically closed of characteristic $0$ and $G$ is finitely generated abelian group, there is a well known correspondence between $G$-gradings and algebraic (rational) $\widehat G$-actions on vector spaces. 
 
-\begin{thm}
+\begin{thm}\label{thm:g-hat-correspondence}
     Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be finitely generated abelian group. 
     Then there is a bijective correspondence between $G$-gradings and $\widehat G$-actions on a vector space $V$ such that
     \begin{enumerate}[(i)]
@@ -112,11 +114,17 @@ The same sort of transfer has been used in other works (see \cite{livromicha} an
     \end{enumerate}
 \end{thm}
 
+\begin{notation}
+    Given a grading $\Gamma$ on $V$, we will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+\end{notation}
+
 \begin{remark}
-    This correspondence can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
+    The correspondence of Theorem \ref{thm:g-hat-correspondence} can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
 \end{remark}
 
-This correspondence carries over to algebras and has been used extensively in the study of gradings.
+We will now see how this correspondence carries over to algebras. 
+To avoid repetition, from now on we will always assume $\FF$ is algebraically closed and $\Char \FF = 0$.
+
 
 
 % We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
@@ -130,26 +138,25 @@ This correspondence carries over to algebras and has been used extensively in th
 % We will now proceed to generalize the correspondence between $G$-gradings and $\widehat G$-actions (see ?? and ??) to $\Omega$-algebras. 
 % We start focusing on graded vector spaces.
 
-\begin{defi}
-    Let $V$ be a vector space. 
-    Given a $G$-grading $\Gamma\from V= \bigoplus_{g\in G} V_g$ on $V$, we define a $\widehat G$-action in the following way: for $\chi \in \widehat G$ and $a_g \in V_g$, $\chi \cdot v_g = \chi(g)v_g$, and we extend the it by linearity. 
-    We will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
-\end{defi}
+% \begin{defi}
+%     Let $V$ be a vector space. 
+%     Given a $G$-grading $\Gamma\from V= \bigoplus_{g\in G} V_g$ on $V$, we define a $\widehat G$-action in the following way: for $\chi \in \widehat G$ and $a_g \in V_g$, $\chi \cdot v_g = \chi(g)v_g$, and we extend the it by linearity. 
+%     We will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+% \end{defi}
 
-It is easy to see that this really defines an action. 
+% It is easy to see that this really defines an action. 
 
-For this action to capture more information about the grading, we need some assumptions on the field $\FF$. 
-From now on, let us assume $\FF$ is algebraically closed and $\Char \FF = 0$.
+% For this action to capture more information about the grading, we need some assumptions on the field $\FF$. 
 
-\begin{lemma}
-    Let $V$ be a $G$-graded vector space. 
-    A element $v\in V$ is homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g)v$ for all $\chi \in \widehat G$.
-\end{lemma}
+% \begin{lemma}
+%     Let $V$ be a $G$-graded vector space. 
+%     A element $v\in V$ is homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g)v$ for all $\chi \in \widehat G$.
+% \end{lemma}
 
-\begin{proof}
-    The ``only if'' direction is the definition of the action. 
-    For the other direction, let $v\in V$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$.
-\end{proof}
+% \begin{proof}
+%     The ``only if'' direction is the definition of the action. 
+%     For the other direction, let $v\in V$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$.
+% \end{proof}
 
 \begin{prop}
     Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space. 
