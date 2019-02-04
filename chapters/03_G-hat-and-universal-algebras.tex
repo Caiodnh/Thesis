@@ -1,19 +1,15 @@
 \chapter{$G$-Gradings on Universal Algebras and $\widehat G$-actions}
 
-In this chapter we will review the correspondence between $G$-gradings and $\widehat G$-actions on algebras. 
-It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal is to set it up in the context of general (or universal) algebras. 
-This will allow us to handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
-
-Another advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (see Definition \ref{def:universal-algebra} and Theorem ??). 
-This will be used in Chapter ?? to transfer gradings between Lie superalgebras and associative superalgebras with superinvolutions. 
-The same sort of transfer has been used in other works (see \cite{livromicha} and Paper with Adrian ??), but without having the result stated formally. 
+ 
 
 \section{$\Omega$-Algebras}
 
 A \emph{general} or \emph{universal algebra} is a space with an arbitrary collection (possibly empty) of operations, wich may have different ``arities'' (see Definition \ref{def:universal-algebra} bellow). 
-This is a very general concept (see, \eg, ?? and ??), which includes all classical objects in algebra (groups, rings, etc.), but here we will be interested in the linear case: the objects will be vector spaces and the operations will be assumed multilinear.
+This is a very general concept (see, \eg, ?? and ??), which includes all classical objects in algebra (groups, rings, etc.), but here we will be interested in the linear case: the objects will be vector spaces and the operations will be assumed multilinear (following ??, book by Razmylov).
 %Our approach to universal algebras differs from the one in most books on the subject (see, \eg, ?? and ??) in the sense we will be working on the (monoidal) category of vector spaces instead of the (monoidal) category of sets. 
-This is the approach on ?? (Razmylov: book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??. 
+% This is the approach on ?? (Razmylov: book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??.
+This will give us a framework to deal with algebras, superalgebras, superalgebras with superinvolution, etc., in a uniform manner.
+Our main app
 
 \begin{notation}
     For a vector space $A$ and a nonnegative integer $n$, we will denote the $n^{th}$-tensor power of $A$ by $A^{\tensor n}$, \ie,
@@ -57,9 +53,9 @@ When dealing with a fixed $\Omega$-algebra $A$, we will usually identify the sig
     A superalgebra $A = A\even \oplus A\odd$ is a $\Omega$-algebra where $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$ where $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively. 
     More precisely, we have that an algebra $A$ with such signature is a superalgebra if, and only if,
     \begin{enumerate}[(i)]
-        \item $\pi_{\bar 0} + \pi_{\bar 1} = \id$; \label{item:sum-projections}
-        \item $\pi_{\bar 0}^2 = \pi_{\bar 0}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}$;
-        \item For every $a,b \in A$ and $i, j\in \ZZ_2$, we have that $\pi_{i+j}( \pi_i(x)*\pi_j(y) ) = \pi_i(x)*\pi_j(y)$.
+        \item $\pi_{\bar 0}^{} + \pi_{\bar 1}^{} = \id$; \label{item:sum-projections}
+        \item $\pi_{\bar 0}^2 = \pi_{\bar 0}^{}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}^{}$;
+        \item For every $a,b \in A$ and $i, j\in \ZZ_2$, we have that $\pi_{i+j}^{}( \pi_i^{} (x)*\pi_j^{} (y) ) = \pi_i^{} (x)*\pi_j^{} (y)$.
     \end{enumerate}
 \end{ex}
 
@@ -70,13 +66,15 @@ When dealing with a fixed $\Omega$-algebra $A$, we will usually identify the sig
 
 \begin{ex}
     A superalgebra with super-anti-automorphism $(A, \vphi)$ a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$. 
-    As a particular case, algebras with anti-automorphism can be viewed as $\Omega$-algebras.
+    In a similar fashion, algebras with anti-automorphism can be viewed as $\Omega$-algebras.
 \end{ex}
 
 It is straightforward to check that, in each of the examples above, the usual notion of homomorphism coincides with the notion of homomorphism as $\Omega$-algebras.
 
-Example \ref{ex:omega-alg-SA} could be generalized to encompass all $G$-graded algebras for a fixed group $G$. 
-Such generalization has been used in the study of graded identities (see ??), but we omitted from our work to avoid confusion with the concept of $G$-gradings on $\Omega$-algebras.
+\begin{remark}
+    Example \ref{ex:omega-alg-SA} could be generalized to encompass all $G$-graded algebras for a fixed group $G$. 
+    Such generalization has been used in the study of graded identities (see ??), but we omitted from our work to avoid confusion with the concept of $G$-gradings on $\Omega$-algebras.
+\end{remark}
 
 \begin{defi}
     A $G$-grading on a $\Omega$-algebra $A$ is a $G$-grading on its vector space underlying such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
@@ -95,29 +93,30 @@ It is easy to verify that this notion of grading corresponds to the usual notion
 
 \section{$G$-gradings on  and $\widehat G$-actions}
 
-If $\FF$ is algebraically closed of characteristic $0$ and $G$ is finitely generated abelian group, there is a well known correspondence between $G$-gradings and algebraic (rational) $\widehat G$-actions on vector spaces. 
+In this section we will review the correspondence between $G$-gradings and $\widehat G$-actions, which has been used extensively in the study of gradings. 
+It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal is to set it up in the context of general algebras. 
+% The main purpose of this approach is to transfer gradings between general algebras with different signatures (Theorem ??).% This will allow us to handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
+
+The main advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (Theorem ??). 
+This will be used in Chapter ?? to transfer gradings between Lie superalgebras and associative superalgebras with superinvolutions. 
+The same sort of transfer has been used in other works (see \cite{livromicha} and Paper with Adrian ??), but without having the result stated formally.
+
+% If $\FF$ is algebraically closed of characteristic $0$ and $G$ is finitely generated abelian group, there is a well known correspondence between $G$-gradings and algebraic (rational) $\widehat G$-actions on vector spaces. 
 
 \begin{thm}
-    state correspondence
+    Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be finitely generated abelian group. 
+    Then there is a bijective correspondence between $G$-gradings and $\widehat G$-actions on a vector space $V$ such that
+    \begin{enumerate}[(i)]
+        \item Given a grading $\Gamma: \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$;
+        \item Given an action, corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$.\qed
+    \end{enumerate}
 \end{thm}
 
-\begin{rmk}
-    This correspondence can be generalized to arbitrary fields, arbitrary abelian groups and arbitrary vector spaces with the use of group schemes instead of algebraic groups.
-\end{rmk}
+\begin{remark}
+    This correspondence can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
+\end{remark}
 
 This correspondence carries over to algebras and has been used extensively in the study of gradings.
-
-In this chapter we will review the correspondence between $G$-gradings and $\widehat G$-actions on algebras. 
-It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal is to set it up in the context of general (or universal) algebras. 
-The advantage of this approach is to have a formal result comparing gradings
-on  general  algebras  with  different  signature  (Theorem  ??).
-This will be used in Chapter ??  to transfer gradings between Lie superalgebras and
-associative superalgebras with superinvolutions.  The same sort of transfer has been
-used in other works (see [
-EK13
-] and Paper with Adrian ??), but without having the
-result stated formally.
-
 
 
 % We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
