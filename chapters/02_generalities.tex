@@ -177,7 +177,7 @@ It is easy to verify that this notion of grading coincides with to the usual not
 \section{$G$-gradings on  and $\widehat G$-actions}
 
 In this section we will review the correspondence between $G$-gradings and $\widehat G$-actions, which has been used extensively in the study of gradings. 
-It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal is to set it up in the context of general algebras. 
+It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal in this section is to set it up in the context of general algebras. 
 % The main purpose of this approach is to transfer gradings between general algebras with different signatures (Theorem ??).% This will allow us to handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
 
 The main advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (Theorem ??). 
@@ -186,27 +186,26 @@ The same sort of transfer has been used in other works (see \cite{livromicha} an
 
 % If $\FF$ is algebraically closed of characteristic $0$ and $G$ is finitely generated abelian group, there is a well known correspondence between $G$-gradings and algebraic (rational) $\widehat G$-actions on vector spaces. 
 
+The following is well known:
+
 \begin{thm}\label{thm:g-hat-correspondence}
-    Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be finitely generated abelian group. 
-    Then there is a bijective correspondence between $G$-gradings and $\widehat G$-actions on a vector space $V$ such that
+    Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be a finitely generated abelian group. 
+    Then there is a bijective correspondence between $G$-gradings and algebraic $\widehat G$-actions on a vector space $V$, definied as follows:
     \begin{enumerate}[(i)]
-        \item Given a grading $\Gamma: \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$;
-        \item Given an action, corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$.\qed
+        \item Given a grading $\Gamma: V = \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$ and extended to all $V$ by linearity;
+        \item Given an algebraic action of $\widehat G$ on $V$, the corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$.\qed
     \end{enumerate}
 \end{thm}
 
 \begin{notation}
-    Given a grading $\Gamma$ on $V$, we will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+    Given a grading $\Gamma$ on $V$, we will denote the corresponding representation of the algebraic group $\widehat G$ on $V$ by $\eta_\Gamma\from \widehat G \to \GL(V)$.
 \end{notation}
 
 \begin{remark}
     The correspondence of Theorem \ref{thm:g-hat-correspondence} can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
 \end{remark}
 
-We will now see how this correspondence carries over to algebras. 
-To avoid repetition, from now on we will always assume $\FF$ is algebraically closed and $\Char \FF = 0$.
-
-
+We will now see how this correspondence applies to $\Omega$-algebras. 
 
 % We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
 
@@ -240,6 +239,7 @@ To avoid repetition, from now on we will always assume $\FF$ is algebraically cl
 % \end{proof}
 
 \begin{prop}
+    Assume $\FF$ is algebraically closed and $\Char \FF = 0$. 
     Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space. 
     Then $\Gamma$ is a grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
 \end{prop}
