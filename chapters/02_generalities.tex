@@ -205,7 +205,7 @@ The following is well known:
     The correspondence of Theorem \ref{thm:g-hat-correspondence} can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
 \end{remark}
 
-We will now see how this correspondence applies to $\Omega$-algebras. 
+We will now see how this correspondence applies to $\Omega$-algebras:
 
 % We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
 
@@ -238,7 +238,7 @@ We will now see how this correspondence applies to $\Omega$-algebras.
 %     For the other direction, let $v\in V$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$.
 % \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:g-hat-Aut-A}
     Assume $\FF$ is algebraically closed and $\Char \FF = 0$. 
     Let $A$ be a $\Omega$-algebra and $\Gamma$ be a $G$-grading on its underlying vector space. 
     Then $\Gamma$ is a $G$-grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
@@ -269,6 +269,10 @@ We will now see how this correspondence applies to $\Omega$-algebras.
     \end{align*}
     hence, by item \eqref{item:action-to-grading} in Theorem \ref{thm:g-hat-correspondence}, $\omega^A(a_1\tensor \cdots \tensor a_n)$ is homogeneous of degree $g_1 \cdots g_n$, \ie, $\omega^A$ preserves degrees.
 \end{proof}
+
+Now let $A$ be an $\Omega$-algebra and $B$ be an $\Omega'$-algebra. 
+If there is a group homomorphism $\theta\from \Aut(A) \to \Aut(B)$, then, as consequence of Proposition \ref{prop:g-hat-Aut-A}, we can use it to transfer $G$-gradings on $A$ to $G$-gradings on $B$, even if $\Omega \neq \Omega'$. 
+Explicitly, for a $G$-grading $\Gamma$ on $A$, we consider the group homomorphism $\eta_\Gamma\from \widehat G \to \Aut (A)$ and then take the composition $\theta \circ \eta_\Gamma\from \widehat G \to \Aut(B)$, which in turn corresponds to a $G$-grading on $B$.
 
 % --------------------------------------------------
 \section{Universal grading group, equivalence and isomorphism of gradings}\label{ssec:universal_group}
