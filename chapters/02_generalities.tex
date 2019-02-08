@@ -193,7 +193,7 @@ The following is well known:
     Then there is a bijective correspondence between $G$-gradings and algebraic $\widehat G$-actions on a vector space $V$, definied as follows:
     \begin{enumerate}[(i)]
         \item Given a grading $\Gamma: V = \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$ and extended to all $V$ by linearity;
-        \item Given an algebraic action of $\widehat G$ on $V$, the corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$.\qed
+        \item Given an algebraic action of $\widehat G$ on $V$, the corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$. \label{item:action-to-grading} \qed
     \end{enumerate}
 \end{thm}
 
@@ -240,14 +240,14 @@ We will now see how this correspondence applies to $\Omega$-algebras.
 
 \begin{prop}
     Assume $\FF$ is algebraically closed and $\Char \FF = 0$. 
-    Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space. 
-    Then $\Gamma$ is a grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
+    Let $A$ be a $\Omega$-algebra and $\Gamma$ be a $G$-grading on its underlying vector space. 
+    Then $\Gamma$ is a $G$-grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
 \end{prop}
 
 \begin{proof}
     First, assume $\Gamma$ is a grading on the $\Omega$-algebra $A$.
     Let $\chi \in \widehat G$ and let $\psi \coloneqq \eta_\Gamma(\chi)$. 
-    We already know that $\psi$ is bijective, it only remains to prove it is a homomorphisms. 
+    We already know that $\psi$ is bijective, it only remains to prove it is a homomorphism. 
     Let $\omega \in \Omega_n$ and let $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$, respectively.
     
     Then $a_1\tensor \cdots \tensor a_n \in A^{\tensor n}$ has degree $g_1 \cdots g_n$. Hence
@@ -258,6 +258,16 @@ We will now see how this correspondence applies to $\Omega$-algebras.
         &= \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n)),
     \end{align*}
     so $\psi$ is a homomorphism.
+    
+    Conversely, let, again, $\omega \in \Omega_n$ and $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$. 
+    Since $\psi$ is an automorphism, we have:
+    \begin{align*}
+        \psi(\omega^A(a_1\tensor \cdots \tensor a_n)) &= \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n))\\
+        &= \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)\\
+        &=\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n)\\
+        &=\chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n),
+    \end{align*}
+    hence, by item \eqref{item:action-to-grading} in Theorem \ref{thm:g-hat-correspondence}, $\omega^A(a_1\tensor \cdots \tensor a_n)$ is homogeneous of degree $g_1 \cdots g_n$, \ie, $\omega^A$ preserves degrees.
 \end{proof}
 
 % --------------------------------------------------
