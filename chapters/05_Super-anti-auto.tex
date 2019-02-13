@@ -1650,21 +1650,22 @@ We are now in position to apply these concepts and results to our original probl
     Note that in the particular case $\Delta = \Delta_0$, we get the extension associated to $\pmone \times_{\tilde\beta} T$.
     
     We will also use the universal property of the universal group to prove items \eqref{item:equivalent-extension-example} and \eqref{item:number-of-extensions}.
-    Let $\Delta$ and $\Delta'$ be division gradings on $(\mc E, \vphi)$ refining $\Gamma$, with the extensions from \eqref{item:there-is-extension} being $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ and $\{ \pm 1 \} \xrightarrow{\iota'} E' \xrightarrow{\pi'} T$, respectively. 
-    Since they have the same components, $\Delta$ is a (nonproper) refinement of $\Delta'$, so there is a unique group homomorphism $\alpha\from E \to E'$ such that ${}^\alpha \Delta = \Delta'$. 
-    Exchanging the roles of $\Delta$ and $\Delta'$ we have that $\alpha$ is an isomorphism. 
-    Also, by the uniqueness of $\pi$, $\pi = \pi' \alpha$ and, by the uniqueness of $\iota'$, $\iota' = \alpha \iota$. 
+    Let $\Delta$ and $\Delta'$ be division gradings on $(\mc E, \vphi)$ refining $\Gamma$, with the correponding extensions being $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ and $\{ \pm 1 \} \xrightarrow{\iota'} E' \xrightarrow{\pi'} T$, respectively. 
+    Since they have the same components, $\Delta$ is a (improper) refinement of $\Delta'$, so there is a unique group homomorphism $\alpha\from E \to E'$ such that ${}^\alpha \Delta = \Delta'$. 
+    % Exchanging the roles of $\Delta$ and $\Delta'$ we have that $\alpha$ is an isomorphism. 
+    Also, by the uniqueness of $\pi$, we have $\pi = \pi' \alpha$ and, by the uniqueness of $\iota'$, we have $\iota' = \alpha \iota$. 
     We conclude not only that the extensions are equivalent, but also that $\alpha$ is the unique equivalence between them such that ${}^\alpha \Delta = \Delta'$. 
     
-    From the fact that the extensions are equivalent, if we put $\Delta' = \Delta_0$, then Item \eqref{item:equivalent-extension-example} follows from Lemma \ref{lemma:tildeT-finally}. 
+    Putting $\Delta' = \Delta_0$, we obtain item \eqref{item:equivalent-extension-example} follows from Lemma \ref{lemma:tildeT-finally}. 
     
     To prove \eqref{item:number-of-extensions}, 
     suppose $\Delta$ and $\Delta'$ correspond to the same group extension. 
     Then there is a unique self-equivalence $\alpha$ of $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ such that ${}^\alpha \Delta = \Delta'$. 
     Conversely,
     note that for every self-equivalence $\alpha$ of $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$, we have that the grading ${}^\alpha \Delta$ also corresponds to this extension, since $\pi\alpha = \pi$. 
-    So the gradings corresponding to $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ are in bijection with its self-equivalences. 
-    Since this extension is equivalent to the one corresponding to $\pmone \times_{\tilde\beta} T$, we can apply Corollary \ref{cor:self-equivalences-are-homomorphisms} to conclude that the self-equivalences are in bijection with group homomorphisms from $T$ to $\pmone$, concluding the proof.
+    So the gradings corresponding to the extension $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ are in bijection with its self-equivalences. 
+    Now Corollary \ref{cor:self-equivalences-are-homomorphisms} concludes the proof.
+    % Since this extension is equivalent to the one corresponding to $\pmone \times_{\tilde\beta} T$, we can apply Corollary \ref{cor:self-equivalences-are-homomorphisms} to conclude that the self-equivalences are in bijection with group homomorphisms from $T$ to $\pmone$, concluding the proof.
     
     
     
@@ -1722,38 +1723,58 @@ This can be seen by looking on the parameters defining their equivalence class.
     \item describe the $\eta$ correponding to exchange sinv
 \end{itemize}
 
-\begin{remark}
-    Note that quadratic forms could have been avoided if we decided to keep working with the group $\pmone \times_{\tilde\beta} T$. 
-    Nevertheless, the quadratic forms allowed us to to find a more explicit model for the extension, not depending on $\beta$.
-\end{remark}
+% \begin{remark}
+%     Note that quadratic forms could have been avoided if we decided to keep working with the group $\pmone \times_{\tilde\beta} T$. 
+%     Nevertheless, the quadratic forms allowed us to to find a more explicit model for the extension, not depending on $\beta$.
+% \end{remark}
 
-\begin{remark}
-    The refinement above could have been construct using the eigenspace decomposition of an automorphism on $\mc E$. 
-    Since $\beta$ takes values in $\{ \pm 1 \}$, there is a super-anti-automorphism $\psi\from \D \to \D$ of order form. 
-    Then the map $\Psi\from \mc E \to \mc E$ defined by $\Psi(x, \bar y) = (\psi (y), \overline{\psi(x)})$ is an automorphism of order $4$ commuting with the exchange superinvolution.
-\end{remark}
+% \begin{remark}
+%     The refinement above could have been construct using the eigenspace decomposition of an automorphism on $\mc E$. 
+%     Since $\beta$ takes values in $\{ \pm 1 \}$, there is a super-anti-automorphism $\psi\from \D \to \D$ of order form. 
+%     Then the map $\Psi\from \mc E \to \mc E$ defined by $\Psi(x, \bar y) = (\psi (y), \overline{\psi(x)})$ is an automorphism of order $4$ commuting with the exchange superinvolution.
+% \end{remark}
 
 We will now present an example of such refinement. 
 Let $\D$ be $M(1,1)$ with the division grading by $T \coloneqq \ZZ_2 \times \ZZ_2$ determined by:
-\begin{center}
-    \begin{tabular}{ c c }
-        $\deg \begin{pmatrix}
+\begin{align*}
+    \deg \begin{pmatrix}
         \phantom{.}1 & \phantom{-}0\phantom{.}\\
         \phantom{.}0 & \phantom{-}1\phantom{.}
-        \end{pmatrix} = (\bar 0, \bar 0)$, & $\deg \begin{pmatrix}
+    \end{pmatrix} = (\bar 0, \bar 0),\quad & \deg \begin{pmatrix}
         \phantom{.}0 & \phantom{-}1\phantom{.} \\
         \phantom{.}1 & \phantom{-}0\phantom{.}
-        \end{pmatrix} = (\bar 0, \bar 1)$,\\
-        $\deg \begin{pmatrix}
+    \end{pmatrix} = (\bar 0, \bar 1),\\
+    \deg \begin{pmatrix}
         \phantom{.}1 & \phantom{-}0\phantom{.}\\
         \phantom{.}0 & -1\phantom{.}
-        \end{pmatrix} = (\bar 1, \bar 0)$, &
-        $\deg \begin{pmatrix}
+    \end{pmatrix} = (\bar 1, \bar 0),\quad &
+    \deg \begin{pmatrix}
         \phantom{.}0 & -1\phantom{.} \\
         \phantom{.}1 & \phantom{-}0\phantom{.}
-        \end{pmatrix} = (\bar 1, \bar 1)$.
-    \end{tabular}
-\end{center}
+    \end{pmatrix} = (\bar 1, \bar 1).
+\end{align*}
+%
+%
+% \begin{center}
+%     \begin{tabular}{ c c }
+%         $\deg \begin{pmatrix}
+%         \phantom{.}1 & \phantom{-}0\phantom{.}\\
+%         \phantom{.}0 & \phantom{-}1\phantom{.}
+%         \end{pmatrix} = (\bar 0, \bar 0)$, & $\deg \begin{pmatrix}
+%         \phantom{.}0 & \phantom{-}1\phantom{.} \\
+%         \phantom{.}1 & \phantom{-}0\phantom{.}
+%         \end{pmatrix} = (\bar 0, \bar 1)$,\\
+%         \rule{0pt}{4ex}   
+%         $\deg \begin{pmatrix}
+%         \phantom{.}1 & \phantom{-}0\phantom{.}\\
+%         \phantom{.}0 & -1\phantom{.}
+%         \end{pmatrix} = (\bar 1, \bar 0)$, &
+%         $\deg \begin{pmatrix}
+%         \phantom{.}0 & -1\phantom{.} \\
+%         \phantom{.}1 & \phantom{-}0\phantom{.}
+%         \end{pmatrix} = (\bar 1, \bar 1)$.
+%     \end{tabular}
+% \end{center}
 %
 From the Theorem \ref{thm:refinement-DxDsop}, we get a grading by the a subgroup $E$ of $\{\pm 1, \pm i\} \times \ZZ_2 \times \ZZ_2$ given by $E \coloneqq \big( \pmone \times \ZZ_2 \times \{ \bar 0 \} \big) \cup \big( \{ \pm i \} \times \ZZ_2 \times \{ \bar 1 \} \big)$. 
 But this group is isomorphic to $\ZZ_2 \times \ZZ_4$ via the homomorphism determined by $(1, \bar 1, \bar 0) \mapsto (\bar 1, \bar 0)$ and $(i, \bar 0, \bar 1) \mapsto (\bar 0, \bar 1)$. 
@@ -1773,71 +1794,135 @@ We then get:
     %
     % We can refine the algebra the natural grading on $\D\times \D\sop$ by the division grading determined by:
     %
-    \setlength\tabcolsep{2pt}
-     \begin{center}
-     \begin{tabular}{c c}
-     % -- 1st row --
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & \phantom{-}1\phantom{.}
-     \end{pmatrix}, \overline{\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & \phantom{-}1\phantom{.}
-     \end{pmatrix}}\right) = (\bar 0, \bar 0),$&
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & \phantom{-}1\phantom{.}
-     \end{pmatrix}, -\overline{\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & \phantom{-}1\phantom{.}
-     \end{pmatrix}}\right) = (\bar 0, \bar 2)$\\
-     % -- 2nd row --
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & -1\phantom{.}
-     \end{pmatrix}, \overline{\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & -1\phantom{.}
-     \end{pmatrix}}\right) = (\bar 1, \bar 0),$&
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & -1\phantom{.}
-     \end{pmatrix}, -\overline{\begin{pmatrix}
-      \phantom{.}1 & \phantom{-}0\phantom{.}\\
-      \phantom{.}0 & -1\phantom{.}
-     \end{pmatrix}}\right) = (\bar 1, \bar 2)$\\
-     % -- 3rd row --
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}0 & \phantom{-}1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}, \overline{\begin{pmatrix}
-      \phantom{.}0 & \phantom{-}1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}}\right) = (\bar 0, \bar 1),$&
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}0 & \phantom{-}1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}, -\overline{\begin{pmatrix}
-      \phantom{.}0 & \phantom{-}1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}}\right) = (\bar 0, \bar 3)$\\
-     % -- 4th row --
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}0 & -1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}, \overline{\begin{pmatrix}
-      \phantom{.}0 & -1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}}\right) = (\bar 1, \bar 3),$&
-     $\deg \left(\begin{pmatrix}
-      \phantom{.}0 & -1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}, -\overline{\begin{pmatrix}
-      \phantom{.}0 & -1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix}}\right) = (\bar 1, \bar 1)$
-     \end{tabular}
-     \end{center}
+    \begin{align*}
+        % -- 1st row --
+        \deg \left(\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & \phantom{-}1\phantom{.}
+        \end{pmatrix}, \overline{\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & \phantom{-}1\phantom{.}
+        \end{pmatrix}}\right) = (\bar 0, \bar 0),\,&
+        \deg \left(\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & \phantom{-}1\phantom{.}
+        \end{pmatrix}, -\overline{\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & \phantom{-}1\phantom{.}
+        \end{pmatrix}}\right) = (\bar 0, \bar 2)\\
+        % -- 2nd row --
+        \deg \left(\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & -1\phantom{.}
+        \end{pmatrix}, \overline{\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & -1\phantom{.}
+        \end{pmatrix}}\right) = (\bar 1, \bar 0),\,&
+        \deg \left(\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & -1\phantom{.}
+        \end{pmatrix}, -\overline{\begin{pmatrix}
+            \phantom{.}1 & \phantom{-}0\phantom{.}\\
+            \phantom{.}0 & -1\phantom{.}
+        \end{pmatrix}}\right) = (\bar 1, \bar 2)\\
+        % -- 3rd row --
+        \deg \left(\begin{pmatrix}
+            \phantom{.}0 & \phantom{-}1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}, \overline{\begin{pmatrix}
+            \phantom{.}0 & \phantom{-}1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}}\right) = (\bar 0, \bar 1),\,&
+        \deg \left(\begin{pmatrix}
+            \phantom{.}0 & \phantom{-}1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}, -\overline{\begin{pmatrix}
+            \phantom{.}0 & \phantom{-}1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}}\right) = (\bar 0, \bar 3)\\
+        % -- 4th row --
+        \deg \left(\begin{pmatrix}
+            \phantom{.}0 & -1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}, \overline{\begin{pmatrix}
+            \phantom{.}0 & -1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}}\right) = (\bar 1, \bar 3),\,&
+        \deg \left(\begin{pmatrix}
+            \phantom{.}0 & -1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}, -\overline{\begin{pmatrix}
+            \phantom{.}0 & -1\phantom{.} \\
+            \phantom{.}1 & \phantom{-}0\phantom{.}
+        \end{pmatrix}}\right) = (\bar 1, \bar 1)
+    \end{align*}
+    %
+    %
+    % \setlength\tabcolsep{2pt}
+    %  \begin{center}
+    %  \begin{tabular}{c c}
+    %  % -- 1st row --
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & \phantom{-}1\phantom{.}
+    %  \end{pmatrix}, \overline{\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & \phantom{-}1\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 0, \bar 0),$&
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & \phantom{-}1\phantom{.}
+    %  \end{pmatrix}, -\overline{\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & \phantom{-}1\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 0, \bar 2)$\\
+    %  % -- 2nd row --
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & -1\phantom{.}
+    %  \end{pmatrix}, \overline{\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & -1\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 1, \bar 0),$&
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & -1\phantom{.}
+    %  \end{pmatrix}, -\overline{\begin{pmatrix}
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}\\
+    %   \phantom{.}0 & -1\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 1, \bar 2)$\\
+    %  % -- 3rd row --
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}0 & \phantom{-}1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}, \overline{\begin{pmatrix}
+    %   \phantom{.}0 & \phantom{-}1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 0, \bar 1),$&
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}0 & \phantom{-}1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}, -\overline{\begin{pmatrix}
+    %   \phantom{.}0 & \phantom{-}1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 0, \bar 3)$\\
+    %  % -- 4th row --
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}0 & -1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}, \overline{\begin{pmatrix}
+    %   \phantom{.}0 & -1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 1, \bar 3),$&
+    %  $\deg \left(\begin{pmatrix}
+    %   \phantom{.}0 & -1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}, -\overline{\begin{pmatrix}
+    %   \phantom{.}0 & -1\phantom{.} \\
+    %   \phantom{.}1 & \phantom{-}0\phantom{.}
+    %  \end{pmatrix}}\right) = (\bar 1, \bar 1)$
+    %  \end{tabular}
+    %  \end{center}
      %
      We have that $\mc O$ is an odd graded division superalgebra and the exchange superinvolution on it preserves degrees. 
     %  The natural grading can then be recovered by coarsening via the group homomorphism $\pi\from \ZZ_2\times \ZZ_4 \to \ZZ_2\times \ZZ_2$ given by $\pi( \bar k, \bar \ell) \coloneqq ( \bar k, \bar \ell)$, for all $k, \ell \in \ZZ$. 
