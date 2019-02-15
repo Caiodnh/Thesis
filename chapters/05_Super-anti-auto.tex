@@ -1776,17 +1776,15 @@ Let $\D$ be $M(1,1)$ with the division grading by $T \coloneqq \ZZ_2 \times \ZZ_
 %     \end{tabular}
 % \end{center}
 %
-From the Theorem \ref{thm:refinement-DxDsop}, we get a grading by the a subgroup $E$ of $\{\pm 1, \pm i\} \times \ZZ_2 \times \ZZ_2$ given by $E \coloneqq \big( \pmone \times \ZZ_2 \times \{ \bar 0 \} \big) \cup \big( \{ \pm i \} \times \ZZ_2 \times \{ \bar 1 \} \big)$. 
+From Theorem \ref{thm:refinement-DxDsop}, we get a grading by the following subgroup of $\{\pm 1, \pm i\} \times \ZZ_2 \times \ZZ_2$: $E \coloneqq \big( \pmone \times \ZZ_2 \times \{ \bar 0 \} \big) \cup \big( \{ \pm i \} \times \ZZ_2 \times \{ \bar 1 \} \big)$. 
 But this group is isomorphic to $\ZZ_2 \times \ZZ_4$ via the homomorphism determined by $(1, \bar 1, \bar 0) \mapsto (\bar 1, \bar 0)$ and $(i, \bar 0, \bar 1) \mapsto (\bar 0, \bar 1)$. 
 
-
-
-Following the construction on the proof of Theorem \ref{thm:refinement-DxDsop}, we get a $\pmone \times_{\tilde\beta} T$-grading on $\D\times \D\sop$ such that $\deg (X_t, \delta \overline{X_t}) = (\delta, t)$, for all $\delta \in \pmone$ and $t\in T$. 
-Then, to get a simpler model for the group, we follow the proof of Lemma ??, where we need to choose a quadratic form $\mu$ on $T$ whose polarization is $\beta$, which is equivalent to choose an involution on the underlying algebra of $\D$. 
+Following the construction in the proof of Theorem \ref{thm:refinement-DxDsop}, we get a grading by $\pmone \times_{\tilde\beta} T$ on $\D\times \D\sop$ given by $\deg (X_t, \delta \overline{X_t}) = (\delta, t)$, for all $\delta \in \pmone$ and $t\in T$. 
+Then, to get a simpler model for the group, we follow the proof of Lemma \ref{lemma:tildeT-finally}, where we need to choose a quadratic form $\mu$ on $T$ whose polarization is $\beta$, which is equivalent to choosing an involution on $\D$ as a graded algebra. 
 
 We can choose the involution to be the transposition, \ie, $\mu(\bar 0, \bar 0) = 1$, $\mu(\bar 0, \bar 1) = 1$, $\mu(\bar 1, \bar 0) = 1$ and $\mu(\bar 1, \bar 1) = -1$. 
-We then get a grading by $\pmone \times_\sigma T$, where $\sigma(a,b) \coloneqq (-1)^{p(a)p(b)}$, where $\deg (X_t, \delta \overline{X_t}) = (\mu(t) \delta, t)$, for all $\delta \in \pmone$ and $t\in T$. 
-This can be transplanted to the groups $\big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big)$ and $\ZZ_2\times \ZZ_4$ via the explicit isomorphisms given in the proof of Lemma ?? and above. 
+We then get a grading by $\pmone \times_\sigma T$, where $\sigma(a,b) \coloneqq (-1)^{p(a)p(b)}$, given by $\deg (X_t, \delta \overline{X_t}) = (\mu(t) \delta, t)$, for all $\delta \in \pmone$ and $t\in T$. 
+This can be transplanted to the groups $\big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big)$ and $\ZZ_2\times \ZZ_4$ via the explicit isomorphisms given in the proof of Lemma \ref{lemma:tildeT-finally} and above. 
 We then get:
 
 \begin{ex}\label{ex:superalgebra-O}
@@ -1923,13 +1921,13 @@ We then get:
     %  \end{pmatrix}}\right) = (\bar 1, \bar 1)$
     %  \end{tabular}
     %  \end{center}
-     %
-     We have that $\mc O$ is an odd graded division superalgebra and the exchange superinvolution on it preserves degrees. 
+    %
+    Then $\mc O$ is an odd graded division superalgebra and the exchange superinvolution on it preserves degrees. 
     %  The natural grading can then be recovered by coarsening via the group homomorphism $\pi\from \ZZ_2\times \ZZ_4 \to \ZZ_2\times \ZZ_2$ given by $\pi( \bar k, \bar \ell) \coloneqq ( \bar k, \bar \ell)$, for all $k, \ell \in \ZZ$. 
     %  We will denote this graded-division superalgebra by $\mc O$.
 \end{ex}
 
-The graded division superalgebra $\mc O$ is of special importance among the odd graded division superalgebras whose underlying superalgebra is $M(m,n)$.
+The graded division superalgebra $\mc O$ is of special importance among the odd graded division superalgebras whose underlying superalgebra is of the form $M(m,n) \times M(m,n)\sop$.
 
 Of course, the construction of the superalgebra $\mc O$ depend on the choice of the involution on $\D$. 
 By item \eqref{item:number-of-extensions} of Theorem \ref{thm:refinement-DxDsop}, there are $4$ other superalgebras we could end up with if we took different choices (since there are $4$ homomorphisms $\ZZ_2 \times \ZZ_2 \to \ZZ_2$). 

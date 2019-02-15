@@ -1,8 +1,16 @@
-\chapter{Gradings on the Lie Superalgebras of types $A$, $C$ and $D$}
+\chapter{Gradings on the Lie Superalgebras of Types $A$, $B$, $C$, $D$, $P$ and $Q$}
 
-\section{Gradings on the Orthosympletic Lie Superalgebras}
-\section{Gradings on the Peripletic Lie Superalgebras, revisited}
-\section{Gradings on the Lie Superalgebras of type A}
+In this chapter we finally complete the task of classifying the group gradings on the Lie superalgebras of types $A$, $C$ and $D$. 
+The techniques we have developed so far also allow us to recover the gradings on the Lie superalgebras of Type $B$ (achieved in ??), $P$ (??) and $Q$ (??).
+
+Our strategy here is to use the tools from Section \ref{ssec:G-hat-action} to transfer the problem to a convenient associative superalgebra with superinvolution, and hence use the results from Chapter \ref{chap:super-inv}. 
+The choice of this associative superalgebra is obvious for the Lie superalgebras of types $B$, $C$, $D$ and $P$. 
+For types $A$ and $Q$, the choice is not so clear and it is useful mainly for the gradings of ``Type II'', the ones that do are not restrictions of the associative superalgebras $A$ and $Q$ are naturally related via the definitions given in Section ??. 
+Hence we still need the results of Chapter \ref{chap:A-type-I}.
+
+\section{Gradings on the Orthosympletic and Peripletic Lie Superalgebras}
+%\section{Gradings on the Peripletic Lie Superalgebras, revisited}
+\section{Gradings on the Lie Superalgebras of type $A$ and $Q$}
 \subsection{A new model for superalgebras of type $A$}
 
 % As we have seem (Section {\tt ??}), all gradings on $M(m+1, n+1)$ restrict to gradings on $A(m, n)$, given us the Type I gradings. Our strategy to obtain the Type II gradings is to embed $\gl(m+1 | n+1)$ in a different associative superalgebra, such that these gradings are restrictions of gradings on the associative superalgebra.
@@ -12,7 +20,7 @@ Our goal here is to construct a different model of $\gl(m+1 | n+1)$. More precis
 Let $R = M(m+1, n+1)$ and let $\psi: R\to R$ be any super-anti-automorphism. Then consider the superalgebra $\mc R = R\times R$. The map $\vphi: \mc R \to \mc R$ given by $\vphi(x,y) = (\psi\inv(y), \psi(x))$ is a superinvolution on $\mc R$. Then the Lie superalgebra $\Skew (\mc R, \vphi) = \{(r, -\psi(r) | r\in R\}$ is isomorphic to $R^{(-)} = \gl(m+1, n+1)$ by the projection on the first component $\mc R = R\times R \to R$.
 
 \begin{remark}
-    For any superalgebra $R$, we could consider the superalgebra $\mc R = R \times R\sop$ and the superinvolution $\vphi: \mc R \to \mc R$ defined by $\vphi(x, y) = (y, x)$. The construction above reduces to this one if we identify $R\sop$ with $R$ via the super-anti-automorphism $\psi$. 
+    For any superalgebra $R$, we could consider the superalgebra $\mc R = R \times R\sop$ and the superinvolution $\vphi: \mc R \to \mc R$ defined by $\vphi(x, y) = (y, x)$. The construction above reduces to this one if we identify $R\sop$ with $R$ via the super-anti-automorphism $\psi$.
 \end{remark}
 
 We can choose any super-anti-isomorphism for $\psi$. One choice would be the supertransposition, but we are going to use a different one that will simplify some computations later. Let $\psi: R \to R$ be the map given by:
