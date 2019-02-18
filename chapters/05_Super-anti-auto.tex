@@ -1612,6 +1612,37 @@ We are now in position to apply these concepts and results to our original probl
     % Moreover, the set of all gradings corresponding to $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ is in bijection with its self-equivalences.
 \end{thm}
 
+\begin{thm}\label{thm:refinement-DxDsop}
+    Let $\D$ be a graded division superalgebra associated to $(T, \beta, p)$.  
+    Consider $\mc E \coloneqq \D \times \D\sop$ with its natural $T$-grading $\Gamma\colon \mc E = \bigoplus_{t\in T} \D_t \times \overline{\D_t}$ and let $\vphi$ be the exchange superinvolution on $\mc E$. 
+    There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
+    If this is the case, let $\Delta$ be such a refinement, associated to $(T_\Delta, \beta_\Delta, p_\Delta, \eta_\Delta)$. 
+    Then: % we have the following:
+    % and $\widetilde T$ is its support, then:
+    
+    % Then:
+    \begin{enumerate}[(i)]
+        % \item There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$; \label{item:refinement-iff-pmone} 
+        
+        \item %$\widetilde T$ fits into
+        $T_\Delta$ fits into a unique group extension $\{ \pm 1 \} \xrightarrow{\iota} T_\Delta \xrightarrow{\pi} T$ such that ${}^{\pi} \Delta = \Gamma$; \label{item:there-is-extension}
+        
+        \item This group extension is equivalent to the one of Example \ref{ex:main-extension}; \label{item:equivalent-extension-example}
+        %determined by the $2$-cocycle $\sigma(a,b) \coloneqq (-1)^{p(a) p(b)}$, for all $a,b\in T$; 
+        \item $\beta_\Delta = \beta \circ (\pi \times \pi)$ and $p_\Delta = p \circ \pi$;
+    \end{enumerate}
+    %  
+    Also, 
+    %
+    \begin{enumerate}[(iv)]  
+        \item The set of all refinements $\Delta$ such that $\supp \Delta = E$ and ${}^\pi \Delta = \Gamma$ is in bijection with the group homomorphisms from $T$ to $\{ \pm 1 \}$. \label{item:number-of-extensions}
+    \end{enumerate}
+    % There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
+    % If $\widetilde \Gamma$ is a such grading and $\widetilde T$ is its support, then there is a unique group extension $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ such that ${}^\pi \widetilde \Gamma = \Gamma$, and this extension is equivalent to the one given by the $2$-cocycle $\sigma$ given by $\sigma(a,b) = (-1)^{p(a) p(b)}$. 
+    % Moreover, the set of all gradings corresponding to $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ is in bijection with its self-equivalences.
+\end{thm}
+
+
 \begin{proof}
     We claim that all division gradings on $(\mc E, \vphi)$ refining $\Gamma$ must have the same set of subspaces of $\mc E$ as their homogeneous components. 
     Indeed, for each $t\in T$, let $\mc E_t$ denote the homogeneous component of degree $t$ of $\Gamma$. 
