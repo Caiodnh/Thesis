@@ -1749,7 +1749,7 @@ The parameters are $(T_\Delta, \beta_\Delta, p_\Delta, \eta_\Delta \circ \alpha)
 % This can be seen by looking on the parameters defining their equivalence class. 
 
 \begin{cor}
-    Under the conditions of Theorem ??, the set of all refinements $\Delta$ such that $\supp \Delta = E$ and ${}^\pi \Delta = \Gamma$ is in bijection with the group homomorphisms from $T$ to $\{ \pm 1 \}$.
+    Under the conditions of Theorem \ref{thm:refinement-DxDsop}, the set of all refinements $\Delta$ such that $\supp \Delta = E$ and ${}^\pi \Delta = \Gamma$ is in bijection with the group homomorphisms from $T$ to $\{ \pm 1 \}$.
 \end{cor}
 
 \begin{proof}
@@ -1970,7 +1970,7 @@ We then get:
 The graded division superalgebra $\mc O$ is of special importance among the odd graded division superalgebras whose underlying superalgebra is of the form $M(m,n) \times M(m,n)\sop$.
 
 Of course, the construction of the superalgebra $\mc O$ depend on the choice of the involution on $\D$. 
-By item \eqref{item:number-of-extensions} of Theorem \ref{thm:refinement-DxDsop}, there are $4$ other superalgebras we could end up with if we took different choices (since there are $4$ homomorphisms $\ZZ_2 \times \ZZ_2 \to \ZZ_2$). 
+Using item \eqref{item:number-of-extensions} of Theorem \ref{thm:refinement-DxDsop} and Corrolary, there are $4$ other superalgebras we could end up with if we took different choices (since there are $4$ homomorphisms $\ZZ_2 \times \ZZ_2 \to \ZZ_2$). 
 All such choices are weakly isomorphic to $\mc O$ as graded superalgebras with superinvolution.
 
 \begin{itemize}
@@ -1983,19 +1983,19 @@ All such choices are weakly isomorphic to $\mc O$ as graded superalgebras with s
     Enphasize what is $\rad \beta \cap T^+$.
 \end{lemma}
 
-\begin{defi}
-    Definition of $\boxtimes$. Should it be here?
-\end{defi}
+%\begin{defi}
+%    Definition of $\boxtimes$. Should it be here?
+%\end{defi}
 
-\begin{lemma}
-    lemma about orthogonality on $\D' \boxtimes \D''$
-\end{lemma}
+%\begin{lemma}
+%    lemma about orthogonality on $\D' \boxtimes \D''$
+%\end{lemma}
 
 \begin{thm}
     Let $\D$ be a finite dimensional involution-simple superalgebra endowed with an odd division grading. 
-    Then there are graded-division superalgebras with involution $\D'$ and $\D''$ such that $\D \iso \D' \boxtimes \D''$ as graded superalgebras with involution, $\D''$ is simple as an algebra (and, hence, even) and
+    Then there are graded-division superalgebras with involution $\D'$ and $\D''$ such that $\D \iso \D' \otimes \D''$ as graded superalgebras with involution, $\D''$ is simple as an algebra (and, hence, even) and
     \begin{enumerate}[(i)]
-        \item if $\D \iso M(m,n)\times M(m,n)\sop$ as superalgebras, then $\D' \iso \mc O$, where $\mc O$ is given in Example ??;
+        \item if $\D \iso M(m,n)\times M(m,n)\sop$ as superalgebras, then $\D' \iso {}^\alpha\mc O$, where $\mc O$ is given in Example ?? and $\alpha\from $;
         \item if $\D \iso Q(n)\times Q(n)\sop$, then $\D' \iso \FF\ZZ_4$ with the grading given on Example ??.
     \end{enumerate}
 \end{thm}
