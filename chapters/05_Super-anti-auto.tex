@@ -384,9 +384,171 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
         
 \end{cor}
 
+
+\section{Superinvolutions and sesquilinear forms}
+
+Our goal now is to specialize the results of Section \ref{sec:super-anti-auto-and-sesquilinear} to the case where $\vphi$ is a superinvolution. 
+To this end, let us investigate what super-anti-automorphism of $\D$ and what sesquilinear form on $\U$ determine the super-anti-automorphism $\vphi\inv$. 
+Again, we suppose $\D$ is a graded division superalgebra, $\U$ is a nonzero right graded module of finite rank over $\D$ and put $R = \End_\D (\U)$.
+
+\begin{defi}\label{def:barB}
+    Given a super-anti-automorphism $\vphi_0$ on $\D$ and a $\vphi_0$-sesqui\-li\-near form $B$ on $\U$,  we define $\overline {B}\from \U\times \U \to \D$ by $\overline {B} (u,v) \coloneqq \sign{u}{v} \vphi_0\inv (B(v, u))$ for all $u, v \in \U$.
+\end{defi}
+
+% \begin{lemma}
+%     Let $B\from \U\times \U\Star \to \D$ be a $\vphi_0$-sesquilinear form. Suppose there is a super-anti-automorphism $\vphi$ on $R = \End_\D(U)$ such that Equation \eqref{eq:superadjunction} holds. If $B$ is nonzero, then it is nondegenerate.
+% \end{lemma}
+
+\begin{prop}\label{prop:barB-determines-vphi-inv}
+    Under the conditions of Definition \ref{def:barB}, we have that $\overline {B}$ is a $\vphi_0\inv$-sesquilinear form of the same degree and parity as $B$. 
+    Further, if $B$ is nondegenerate and $\vphi$ is the super-anti-automorphism on $R$ determined by $(\vphi_0, B)$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}, then $\overline{B}$ is nondegenerate and $\vphi\inv$ is determined by $(\vphi_0\inv, \overline B)$, \ie, 
+    %
+    \begin{equation}\label{eq:barB-superadjunction}
+        \forall r\in R\even \cup R\odd ,\,\forall u, v \in \U\even \cup \U\odd,  \quad \overline {B}(ru,v) = \sign{r}{u} \overline {B}(u,\vphi\inv (r)v).
+    \end{equation}
+    %
+\end{prop}
+
+\begin{proof}
+    Since $B$ is $\FF$-bilinear, so is $\overline {B}$. 
+    Also, since $\vphi_0$ preserves degree and parity, $\overline {B}$ is homogeneous of the same degree and parity as $B$. 
+    Let us check the conditions of Definition \ref{def:sesquilinear-form} and Equation \eqref{eq:barB-superadjunction}.
+    \vspace{2mm}
+    \begin{align*}
+       \intertext{ Condition \eqref{enum:linear-on-the-second}:}
+        \overline {B} (u,vd) &= (-1)^{|u|( |v| + |d|)} \vphi_0\inv (B(vd, u))  \\
+        & = (-1)^{|u|( |v| + |d|)} (-1)^{|d| (|B| + |v|)} \vphi_0\inv \big( \vphi_0(d) B(v, u) \big) \\
+        & = (-1)^{|u||v| + |u||d| + |d||B| + |d||v|} (-1)^{|d| (|B| + |v| + |u|) }  \vphi_0\inv \big(B(v, u)) d \\ &= \sign{u}{v} \vphi_0\inv \big(B(v, u)) d = \overline {B}(u, v) d .
+    \intertext{Condition \eqref{enum:vphi0-linear-on-the-first}:}
+        \overline {B}(ud, v) &= (-1)^{(|u| + |d|) |v|} \vphi_0\inv \big( B(v, ud) \big) \\ &= (-1)^{(|u| + |d|) |v|} \vphi_0\inv \big( B(v, u)d \big) \\ &= (-1)^{(|u| + |d|) |v|} (-1)^{|d| (|B| + |v| + |u|)} \vphi_0\inv (d) \vphi_0\inv\big( B(v, u) \big) \\ &= (-1)^{|u||v| + |d| |B| + |d||u|} \vphi_0\inv (d) \vphi_0\inv\big( B(v, u) \big) \\ &= (-1)^{(|B| + |u|) |d|} \vphi_0\inv (d) \overline {B}(u, v).
+      \intertext{For Equation \eqref{eq:barB-superadjunction}, note that replacing $r$ for $\vphi\inv(r)$, Equation \eqref{eq:superadjunction} can be rewritten as}
+        B(v, ru) &= \sign{r}{v} B(\vphi\inv(r)v,u).
+      \intertext{Hence, we have that}
+        \overline {B}(ru, v) &= (-1)^{(|r| + |u|) |v|} \vphi_0\inv \big( B(v, ru) \big)\\ &= (-1)^{(|r| + |u|) |v|} (-1)^{|r||v|} \vphi_0\inv \big( B(\vphi\inv (r)v, u) \big) \\ &= (-1)^{|u||v|} \vphi_0\inv \big( B(\vphi\inv (r)v, u) \big) \\ &= (-1)^{|u||v|} (-1)^{(|r| + |v|) |u|} \overline {B}(u, \vphi\inv (r)v) \\ &= \sign{r}{u} \overline {B}(u, \vphi\inv (r)v).
+    \end{align*}
+    
+    Finally, Equation \eqref{eq:barB-superadjunction} together with $B$ being nondegenerate implies that $\overline{B}$ is nondegenerate. 
+    To see that, let $u$ be a nonzero homogeneous element in $\rad \overline{B}$. 
+    Then for for every $r\in R\even \cup R\odd$ and $v\in \U\even \cup \U\odd$, we have that $\overline{B}(u, \vphi\inv (r) v) = 0$, hence $\overline{B}(ru, v) = 0$. 
+    Since $r \in R\even \cup R\odd$ and $v\in \U\even \cup \U\odd$ were arbitrary, this implies $\overline{B} (Ru, \U) = 0$. 
+    But $\U$ is simple as a graded $R$-supermodule, so we would have $\overline{B}(\U, \U) = 0$ and then, using that $\vphi_0$ is bijective, $B (\U, \U) = 0$, a contradiction.
+\end{proof}
+
+\begin{lemma}\label{lemma:bar-dB}
+    Under the conditions of Definition \ref{def:barB}, let $d$ be a nonzero $G^\#$-homogeneous element of $\D$ and consider $\vphi_0' \coloneqq \operatorname{sInt}_d\circ\, \vphi_0$ and $B' \coloneqq d B$. 
+    Then $\overline {B'} = (-1)^{|d|} \vphi_0\inv (d) \overline B$.
+\end{lemma}
+
+\begin{proof}
+    Note that $(\vphi_0')\inv = \vphi_0\inv \circ \operatorname{sInt}_{d}\inv = \vphi_0\inv \circ \operatorname{sInt}_{d\inv}$. 
+    Hence, for all $u, v \in \U\even \cup \U\odd$,
+    %
+    \begin{align*}
+        \overline {B'} (u,v) &= \sign{u}{v} (\vphi_0\inv \circ \operatorname{sInt}_{d\inv})  (d B(v, u) ) \\
+        &= \sign{u}{v} \vphi_0\inv \big( (-1)^{|d| (|d| + |B| + |u| + |v|)}\,  d\inv d B (v, u) d \big) \\ &= \sign{u}{v} (-1)^{|d|}\, \vphi_0\inv (d) \vphi_0\inv(B(v, u)) =  (-1)^{|d|}\,\vphi_0\inv (d) \overline {B} (u, v).
+    \end{align*}
+\end{proof}
+
+We are primarily interested in the case $\FF$ is an algebraically closed field and $\D$ is finite dimensional. 
+In this case, we have that $\D\even_e = \FF 1$, so we are under the hypothesis of the following theorem, which is a graded version of \cite[Theorem 7]{racine}:
+
+\begin{thm}\label{thm:vphi-involution-iff-delta-pm-1}
+    % Suppose $\FF$ is an  algebraically closed field. 
+    Let $\D$ be a graded division superalgebra such that $\D\even_e = \FF 1$, let $\U$ be a nonzero right graded module of finite rank over $\D$ and let $\vphi$ be a degree-preserving super-anti-automorphism on $R \coloneqq \End_\D (\U)$. 
+    Consider a super-anti-automorphism $\vphi_0$ on $\D$ and a nondegenerate $\vphi_0$-sesqui\-li\-near form $B$ on $\U$ determining $\vphi$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}.
+    Then $\vphi$ is a superinvolution if, and only if, $\vphi_0$ is a superinvolution and $\overline B = \pm B$. 
+\end{thm}
+
+\begin{proof}
+    Using Proposition \ref{prop:barB-determines-vphi-inv} and Theorem \ref{thm:vphi-iff-vphi0-and-B}, we conclude that $\vphi = \vphi\inv$ if, and only if, there is $\delta \in \D$ such that (i) $\vphi_0\inv = \operatorname{sInt}_\delta \circ \,\vphi_0$ and (ii) $\overline {B} = \delta B$. 
+    % If $\vphi_0^2 =\id_\D$ and $B = \pm \overline{B}$, we have conditions (i) and (ii) sati
+    % To prove the ``if'' part of the statement, we take $\delta \in \{\pm 1\}$, since then (i) becomes $\vphi_0 = \vphi_0\inv$ and (ii), $B = \pm \overline{B}$.
+    
+    If $\vphi_0^2 =\id_\D$ and $\overline{B} = \delta B$ with $\delta \in \{\pm 1\}$, conditions (i) and (ii) are satisfied, proving the ``if'' part of the statement. 
+
+    For the ``only if'' part, since both parity and degree of $B$ and $\overline {B}$ coincide, (ii) implies $\delta \in \D\even_e$. 
+    We are assuming $\D\even_e = \FF 1$, so $\operatorname{sInt}_\delta = \id_\D$ and (i) becomes $\vphi_0 = \vphi_0\inv$, \ie, $\vphi_0$ is a superinvolution. 
+    Also from $\delta \in \FF 1$, $\vphi_0\inv(\delta) = \delta$ and, hence, using Lemma \ref{lemma:bar-dB}, we have that
+    \[
+        B = \overline {\overline B} = \overline {\delta B} = (-1)^{|\delta|} \vphi_0\inv(\delta) \overline B= \delta \overline B = \delta^2 B.
+    \]
+    This implies $\delta^2 = 1$. 
+    Therefore $\delta \in \{ \pm 1 \}$, so $\overline B = \pm B$, concluding the proof. 
+\end{proof}
+
+% it is clear that $B(u,vd) = B(u,v)d$. By Equation \eqref{eq:sesquilinear-before-B}, the map $B: \U \times \U \to \D$ is a \emph{$\vphi_0$-sesquilinear form}, \ie,
+% \[
+%     B(ud, v) = (-1)^ {(|B| + |u|)|d|}
+% \]
+
+% Consider the map $\vphi_0: \D \to \D$ given by 
+
+% Consider the map $\vphi_0(d) := \sign{\vphi_1}{d}\vphi_1\inv d \vphi_1$ (where juxtaposition denotes composition of maps on the right).
+% Then
+% \begin{equation}\label{eq:sesquilinear-before-B}
+%     (ud)\vphi_1 = (u) (d\vphi_1) =  (u)(\vphi_1\vphi_1\inv d \vphi_1) = \sign{d}{\vphi_1}(u)\vphi_1 \,\vphi_0(d).
+% \end{equation}
+% It is straightforward to check that $\vphi_0: \D = \End_R(\mc U) \to \End_R(\mc U\Star) = \D\sop$ is an isomorphism of superalgebras.
+% We will consider $\vphi_0$ as a super-anti-automorphism on $\D$.
+
+%Recall (Subsection \ref{ssec:superlinear-maps}) that $\vphi_1^\circ$ is an $R$-superlinear map on the left. Using it, the Equation \eqref{eq:sesquilinear-before-B} becomes
+% \begin{equation}\label{eq:sesquilinear-with-vphi1-circ}
+%     \vphi_1^\circ (ud) = \vphi_1^\circ (u) \vphi_0 (d)
+% \end{equation}
+
+%For each $u\in \U$, $\vphi_1(u)$ is an $\D$-linear map on the left. We, then, can define \[B(u,v) = \sign{\vphi_1}{u} ((u)\vphi_1)(v),\]
+%or, using the notation introduced in Subsection \ref{ssec:superlinear-maps},
+% \[
+%     B(u,v) = \vphi_1^\circ (u) (v),
+% \]
+% for all $u,v \in U$.
+
+
+%We will consider $\vphi_0$ as a super-anti-automorphism on $\D$.
+
+%Recall (Subsection \ref{ssec:superlinear-maps}) that $\vphi_1^\circ$ is an $R$-superlinear map on the left. Using it, the Equation \eqref{eq:sesquilinear-before-B} becomes
+
+
+%Since  this new action makes $\mc U\Star$ a simple graded left $R$-supermodule. Also, since we had $\D\sop = \End_{R\sop} (\U\Star)$, we c it follows that $\D\sop$ can be identif
+%We, then, have that $\mc U\Star$ is a simple graded left $R$-module and that $\D\sop = \End_R(\mc U\Star)$.
+
+%Since $R$ acts on the left, we will use the convention of writing $R$-superlinear maps on the right. % (see Subsection \ref{ssec:superlinear-maps}).
+%By Proposition {\tt ??}, $R$ has only one graded simple supermodule up to isomorphism and shift, \ie, there is an invertible $R$-linear map $\vphi_1: \mc U \to \mc U\Star$ which is homogeneous of some degree $(g_0, \alpha)\in G^\#$.
+
+
+
+% Using the notation just introduced, Equation \eqref{eq:sesquilinear-before-B} becomes
+% \begin{equation}%\label{eq:sesquilinear-with-vphi1-circ}
+%     \vphi_1^\circ (ud) = \vphi_1^\circ (u) \tilde\vphi_0 (d)
+% \end{equation}
+% or, puting $\vphi_0(d) = (\tilde \vphi_0(d))^\circ$,
+% \begin{equation}\label{eq:sesquilinear-with-vphi1-circ}
+%     \vphi_1^\circ (ud) = (-1)^{|d|(|\vphi_1|+|u|)}\vphi_0 (d)\vphi_1^\circ (u).
+% \end{equation}
+
+
+
+
+
+
+
+% It is important to note that the map $\vphi_1$ is not uniquely determined. For every nonzero homogeneous element $d\in\D$, the map $d\vphi_1: \mc U \to \mc U\Star$ is also an invertible, homogeneous and $R$-superlinear. If we consider $\vphi_1$ fixed, every such map can be obtained this way: if $\vphi_1' : \mc U \to \mc U\Star$ is an invertible homogeneous $R$-superlinear map, then we could take $d := \vphi'\vphi\inv \in \End_R(\mc U) = \D$ and, hence, $\vphi_1' = d \vphi_1$.
+
+% Changing $\vphi_1$ to $\vphi_1'$ also changes the super-anti-automorphism $\vphi_0 (c) = \sign{\vphi_1}{d}\vphi_1\inv d \vphi_1$ to $\vphi_0':= \sign{\delta\vphi_1}{d}\vphi_1\inv\delta\inv d \delta\vphi_1= \sign{\delta}{d} \vphi_0(\delta\inv d \delta)$. In other words, $\vphi_0' = \vphi_0 \circ \operatorname{sInt}_\delta$, where $\operatorname{sInt}_\delta: $
+
+% The choice of the map $\vphi_1$ 
+
+%If $\vphi_1' : \mc U \to \mc U\Star$ is another invertible and homogeneous $R$-superlinear map, then $\vphi'\vphi\inv: \mc U \to \mc U$ is a nonzero homogeneous element of $\D = \End_R(\mc U)$.
+%Conversely, for each nonzero homogeneous element $\delta\in\D$, the map $\vphi_1' := \delta\vphi_1: \mc U \to \mc U\Star$ is $R$-superlinear, invertible and homogeneous.
+% Changing $\vphi_1$ to $\vphi_1'$ also changes the super-anti-automorphism $\vphi_0(d) = \sign{\vphi_1}{d}\vphi_1\inv d \vphi_1$ to $\vphi_0':= $
+
+
+% depends on the choice of $\vphi_1$: if we consider $\delta\vphi_1$ instead, then we change $\vphi_0(d) = \vphi_1\inv d \vphi_1$ to $\vphi_0'(d) = \vphi_0(\delta\inv d \delta)$.
+
+
 \section{Matrix representation of a su\-per\--anti\--auto\-mor\-phism}
 
-In this section, we are going to express the super-anti-automorphism $\vphi$ in terms of matrices with entries in $\D$. 
+In this section, we are going to express the super-anti-automorphism (not necessarily involutive) $\vphi$ in terms of matrices with entries in $\D$. 
 One could do that by following Equation \eqref{eq:vphi-r-Star-is-a-superconjugation}, but we will take a different path. 
 
 As before, we suppose $\D$ is a graded division superalgebra, $\U$ is a nonzero right graded module of finite rank over $\D$, $R = \End_\D (\U)$ and $\vphi$ is a degree-preserving super-anti-automorphism on $R$. 
@@ -555,166 +717,6 @@ Also, we will denote $|e_i|$ simply by $|i|$ for all $i \in \{1, \ldots, k\}$.
 %     Let $\vphi_0$ be a super-anti-automorphism on $\D$ and let $B$ be a nonzero $\vphi_0$-sesquilinear form on $\U$. If $\vphi\from R \to R$ be a parity preserving map satisfying Equation \eqref{eq:superadjunction}. 
 %     Then $B$ is nondegenerate if, and only if, $\vphi$ is a super-anti-automorphism.
 % \end{cor}
-
-\section{Superinvolutions and sesquilinear forms}
-
-Our goal now is to specialize the results of Section \ref{sec:super-anti-auto-and-sesquilinear} to the case where $\vphi$ is a superinvolution. 
-To this end, let us investigate what super-anti-automorphism of $\D$ and what sesquilinear form on $\U$ determine the super-anti-automorphism $\vphi\inv$. 
-Again, we suppose $\D$ is a graded division superalgebra, $\U$ is a nonzero right graded module of finite rank over $\D$ and put $R = \End_\D (\U)$.
-
-\begin{defi}\label{def:barB}
-    Given a super-anti-automorphism $\vphi_0$ on $\D$ and a $\vphi_0$-sesqui\-li\-near form $B$ on $\U$,  we define $\overline {B}\from \U\times \U \to \D$ by $\overline {B} (u,v) \coloneqq \sign{u}{v} \vphi_0\inv (B(v, u))$ for all $u, v \in \U$.
-\end{defi}
-
-% \begin{lemma}
-%     Let $B\from \U\times \U\Star \to \D$ be a $\vphi_0$-sesquilinear form. Suppose there is a super-anti-automorphism $\vphi$ on $R = \End_\D(U)$ such that Equation \eqref{eq:superadjunction} holds. If $B$ is nonzero, then it is nondegenerate.
-% \end{lemma}
-
-\begin{prop}\label{prop:barB-determines-vphi-inv}
-    Under the conditions of Definition \ref{def:barB}, we have that $\overline {B}$ is a $\vphi_0\inv$-sesquilinear form of the same degree and parity as $B$. 
-    Further, if $B$ is nondegenerate and $\vphi$ is the super-anti-automorphism on $R$ determined by $(\vphi_0, B)$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}, then $\overline{B}$ is nondegenerate and $\vphi\inv$ is determined by $(\vphi_0\inv, \overline B)$, \ie, 
-    %
-    \begin{equation}\label{eq:barB-superadjunction}
-        \forall r\in R\even \cup R\odd ,\,\forall u, v \in \U\even \cup \U\odd,  \quad \overline {B}(ru,v) = \sign{r}{u} \overline {B}(u,\vphi\inv (r)v).
-    \end{equation}
-    %
-\end{prop}
-
-\begin{proof}
-    Since $B$ is $\FF$-bilinear, so is $\overline {B}$. 
-    Also, since $\vphi_0$ preserves degree and parity, $\overline {B}$ is homogeneous of the same degree and parity as $B$. 
-    Let us check the conditions of Definition \ref{def:sesquilinear-form} and Equation \eqref{eq:barB-superadjunction}.
-    \vspace{2mm}
-    \begin{align*}
-       \intertext{ Condition \eqref{enum:linear-on-the-second}:}
-        \overline {B} (u,vd) &= (-1)^{|u|( |v| + |d|)} \vphi_0\inv (B(vd, u))  \\
-        & = (-1)^{|u|( |v| + |d|)} (-1)^{|d| (|B| + |v|)} \vphi_0\inv \big( \vphi_0(d) B(v, u) \big) \\
-        & = (-1)^{|u||v| + |u||d| + |d||B| + |d||v|} (-1)^{|d| (|B| + |v| + |u|) }  \vphi_0\inv \big(B(v, u)) d \\ &= \sign{u}{v} \vphi_0\inv \big(B(v, u)) d = \overline {B}(u, v) d .
-    \intertext{Condition \eqref{enum:vphi0-linear-on-the-first}:}
-        \overline {B}(ud, v) &= (-1)^{(|u| + |d|) |v|} \vphi_0\inv \big( B(v, ud) \big) \\ &= (-1)^{(|u| + |d|) |v|} \vphi_0\inv \big( B(v, u)d \big) \\ &= (-1)^{(|u| + |d|) |v|} (-1)^{|d| (|B| + |v| + |u|)} \vphi_0\inv (d) \vphi_0\inv\big( B(v, u) \big) \\ &= (-1)^{|u||v| + |d| |B| + |d||u|} \vphi_0\inv (d) \vphi_0\inv\big( B(v, u) \big) \\ &= (-1)^{(|B| + |u|) |d|} \vphi_0\inv (d) \overline {B}(u, v).
-      \intertext{For Equation \eqref{eq:barB-superadjunction}, note that replacing $r$ for $\vphi\inv(r)$, Equation \eqref{eq:superadjunction} can be rewritten as}
-        B(v, ru) &= \sign{r}{v} B(\vphi\inv(r)v,u).
-      \intertext{Hence, we have that}
-        \overline {B}(ru, v) &= (-1)^{(|r| + |u|) |v|} \vphi_0\inv \big( B(v, ru) \big)\\ &= (-1)^{(|r| + |u|) |v|} (-1)^{|r||v|} \vphi_0\inv \big( B(\vphi\inv (r)v, u) \big) \\ &= (-1)^{|u||v|} \vphi_0\inv \big( B(\vphi\inv (r)v, u) \big) \\ &= (-1)^{|u||v|} (-1)^{(|r| + |v|) |u|} \overline {B}(u, \vphi\inv (r)v) \\ &= \sign{r}{u} \overline {B}(u, \vphi\inv (r)v).
-    \end{align*}
-    
-    Finally, Equation \eqref{eq:barB-superadjunction} together with $B$ being nondegenerate implies that $\overline{B}$ is nondegenerate. 
-    To see that, let $u$ be a nonzero homogeneous element in $\rad \overline{B}$. 
-    Then for for every $r\in R\even \cup R\odd$ and $v\in \U\even \cup \U\odd$, we have that $\overline{B}(u, \vphi\inv (r) v) = 0$, hence $\overline{B}(ru, v) = 0$. 
-    Since $r \in R\even \cup R\odd$ and $v\in \U\even \cup \U\odd$ were arbitrary, this implies $\overline{B} (Ru, \U) = 0$. 
-    But $\U$ is simple as a graded $R$-supermodule, so we would have $\overline{B}(\U, \U) = 0$ and then, using that $\vphi_0$ is bijective, $B (\U, \U) = 0$, a contradiction.
-\end{proof}
-
-\begin{lemma}\label{lemma:bar-dB}
-    Under the conditions of Definition \ref{def:barB}, let $d$ be a nonzero $G^\#$-homogeneous element of $\D$ and consider $\vphi_0' \coloneqq \operatorname{sInt}_d\circ\, \vphi_0$ and $B' \coloneqq d B$. 
-    Then $\overline {B'} = (-1)^{|d|} \vphi_0\inv (d) \overline B$.
-\end{lemma}
-
-\begin{proof}
-    Note that $(\vphi_0')\inv = \vphi_0\inv \circ \operatorname{sInt}_{d}\inv = \vphi_0\inv \circ \operatorname{sInt}_{d\inv}$. 
-    Hence, for all $u, v \in \U\even \cup \U\odd$,
-    %
-    \begin{align*}
-        \overline {B'} (u,v) &= \sign{u}{v} (\vphi_0\inv \circ \operatorname{sInt}_{d\inv})  (d B(v, u) ) \\
-        &= \sign{u}{v} \vphi_0\inv \big( (-1)^{|d| (|d| + |B| + |u| + |v|)}\,  d\inv d B (v, u) d \big) \\ &= \sign{u}{v} (-1)^{|d|}\, \vphi_0\inv (d) \vphi_0\inv(B(v, u)) =  (-1)^{|d|}\,\vphi_0\inv (d) \overline {B} (u, v).
-    \end{align*}
-\end{proof}
-
-We are primarily interested in the case $\FF$ is an algebraically closed field and $\D$ is finite dimensional. 
-In this case, we have that $\D\even_e = \FF 1$, so we are under the hypothesis of the following theorem, which is a graded version of \cite[Theorem 7]{racine}:
-
-\begin{thm}\label{thm:vphi-involution-iff-delta-pm-1}
-    % Suppose $\FF$ is an  algebraically closed field. 
-    Let $\D$ be a graded division superalgebra such that $\D\even_e = \FF 1$, let $\U$ be a nonzero right graded module of finite rank over $\D$ and let $\vphi$ be a degree-preserving super-anti-automorphism on $R \coloneqq \End_\D (\U)$. 
-    Consider a super-anti-automorphism $\vphi_0$ on $\D$ and a nondegenerate $\vphi_0$-sesqui\-li\-near form $B$ on $\U$ determining $\vphi$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}.
-    Then $\vphi$ is a superinvolution if, and only if, $\vphi_0$ is a superinvolution and $\overline B = \pm B$. 
-\end{thm}
-
-\begin{proof}
-    Using Proposition \ref{prop:barB-determines-vphi-inv} and Theorem \ref{thm:vphi-iff-vphi0-and-B}, we conclude that $\vphi = \vphi\inv$ if, and only if, there is $\delta \in \D$ such that (i) $\vphi_0\inv = \operatorname{sInt}_\delta \circ \,\vphi_0$ and (ii) $\overline {B} = \delta B$. 
-    % If $\vphi_0^2 =\id_\D$ and $B = \pm \overline{B}$, we have conditions (i) and (ii) sati
-    % To prove the ``if'' part of the statement, we take $\delta \in \{\pm 1\}$, since then (i) becomes $\vphi_0 = \vphi_0\inv$ and (ii), $B = \pm \overline{B}$.
-    
-    If $\vphi_0^2 =\id_\D$ and $\overline{B} = \delta B$ with $\delta \in \{\pm 1\}$, conditions (i) and (ii) are satisfied, proving the ``if'' part of the statement. 
-
-    For the ``only if'' part, since both parity and degree of $B$ and $\overline {B}$ coincide, (ii) implies $\delta \in \D\even_e$. 
-    We are assuming $\D\even_e = \FF 1$, so $\operatorname{sInt}_\delta = \id_\D$ and (i) becomes $\vphi_0 = \vphi_0\inv$, \ie, $\vphi_0$ is a superinvolution. 
-    Also from $\delta \in \FF 1$, $\vphi_0\inv(\delta) = \delta$ and, hence, using Lemma \ref{lemma:bar-dB}, we have that
-    \[
-        B = \overline {\overline B} = \overline {\delta B} = (-1)^{|\delta|} \vphi_0\inv(\delta) \overline B= \delta \overline B = \delta^2 B.
-    \]
-    This implies $\delta^2 = 1$. 
-    Therefore $\delta \in \{ \pm 1 \}$, so $\overline B = \pm B$, concluding the proof. 
-\end{proof}
-
-% it is clear that $B(u,vd) = B(u,v)d$. By Equation \eqref{eq:sesquilinear-before-B}, the map $B: \U \times \U \to \D$ is a \emph{$\vphi_0$-sesquilinear form}, \ie,
-% \[
-%     B(ud, v) = (-1)^ {(|B| + |u|)|d|}
-% \]
-
-% Consider the map $\vphi_0: \D \to \D$ given by 
-
-% Consider the map $\vphi_0(d) := \sign{\vphi_1}{d}\vphi_1\inv d \vphi_1$ (where juxtaposition denotes composition of maps on the right).
-% Then
-% \begin{equation}\label{eq:sesquilinear-before-B}
-%     (ud)\vphi_1 = (u) (d\vphi_1) =  (u)(\vphi_1\vphi_1\inv d \vphi_1) = \sign{d}{\vphi_1}(u)\vphi_1 \,\vphi_0(d).
-% \end{equation}
-% It is straightforward to check that $\vphi_0: \D = \End_R(\mc U) \to \End_R(\mc U\Star) = \D\sop$ is an isomorphism of superalgebras.
-% We will consider $\vphi_0$ as a super-anti-automorphism on $\D$.
-
-%Recall (Subsection \ref{ssec:superlinear-maps}) that $\vphi_1^\circ$ is an $R$-superlinear map on the left. Using it, the Equation \eqref{eq:sesquilinear-before-B} becomes
-% \begin{equation}\label{eq:sesquilinear-with-vphi1-circ}
-%     \vphi_1^\circ (ud) = \vphi_1^\circ (u) \vphi_0 (d)
-% \end{equation}
-
-%For each $u\in \U$, $\vphi_1(u)$ is an $\D$-linear map on the left. We, then, can define \[B(u,v) = \sign{\vphi_1}{u} ((u)\vphi_1)(v),\]
-%or, using the notation introduced in Subsection \ref{ssec:superlinear-maps},
-% \[
-%     B(u,v) = \vphi_1^\circ (u) (v),
-% \]
-% for all $u,v \in U$.
-
-
-%We will consider $\vphi_0$ as a super-anti-automorphism on $\D$.
-
-%Recall (Subsection \ref{ssec:superlinear-maps}) that $\vphi_1^\circ$ is an $R$-superlinear map on the left. Using it, the Equation \eqref{eq:sesquilinear-before-B} becomes
-
-
-%Since  this new action makes $\mc U\Star$ a simple graded left $R$-supermodule. Also, since we had $\D\sop = \End_{R\sop} (\U\Star)$, we c it follows that $\D\sop$ can be identif
-%We, then, have that $\mc U\Star$ is a simple graded left $R$-module and that $\D\sop = \End_R(\mc U\Star)$.
-
-%Since $R$ acts on the left, we will use the convention of writing $R$-superlinear maps on the right. % (see Subsection \ref{ssec:superlinear-maps}).
-%By Proposition {\tt ??}, $R$ has only one graded simple supermodule up to isomorphism and shift, \ie, there is an invertible $R$-linear map $\vphi_1: \mc U \to \mc U\Star$ which is homogeneous of some degree $(g_0, \alpha)\in G^\#$.
-
-
-
-% Using the notation just introduced, Equation \eqref{eq:sesquilinear-before-B} becomes
-% \begin{equation}%\label{eq:sesquilinear-with-vphi1-circ}
-%     \vphi_1^\circ (ud) = \vphi_1^\circ (u) \tilde\vphi_0 (d)
-% \end{equation}
-% or, puting $\vphi_0(d) = (\tilde \vphi_0(d))^\circ$,
-% \begin{equation}\label{eq:sesquilinear-with-vphi1-circ}
-%     \vphi_1^\circ (ud) = (-1)^{|d|(|\vphi_1|+|u|)}\vphi_0 (d)\vphi_1^\circ (u).
-% \end{equation}
-
-
-
-
-
-
-
-% It is important to note that the map $\vphi_1$ is not uniquely determined. For every nonzero homogeneous element $d\in\D$, the map $d\vphi_1: \mc U \to \mc U\Star$ is also an invertible, homogeneous and $R$-superlinear. If we consider $\vphi_1$ fixed, every such map can be obtained this way: if $\vphi_1' : \mc U \to \mc U\Star$ is an invertible homogeneous $R$-superlinear map, then we could take $d := \vphi'\vphi\inv \in \End_R(\mc U) = \D$ and, hence, $\vphi_1' = d \vphi_1$.
-
-% Changing $\vphi_1$ to $\vphi_1'$ also changes the super-anti-automorphism $\vphi_0 (c) = \sign{\vphi_1}{d}\vphi_1\inv d \vphi_1$ to $\vphi_0':= \sign{\delta\vphi_1}{d}\vphi_1\inv\delta\inv d \delta\vphi_1= \sign{\delta}{d} \vphi_0(\delta\inv d \delta)$. In other words, $\vphi_0' = \vphi_0 \circ \operatorname{sInt}_\delta$, where $\operatorname{sInt}_\delta: $
-
-% The choice of the map $\vphi_1$ 
-
-%If $\vphi_1' : \mc U \to \mc U\Star$ is another invertible and homogeneous $R$-superlinear map, then $\vphi'\vphi\inv: \mc U \to \mc U$ is a nonzero homogeneous element of $\D = \End_R(\mc U)$.
-%Conversely, for each nonzero homogeneous element $\delta\in\D$, the map $\vphi_1' := \delta\vphi_1: \mc U \to \mc U\Star$ is $R$-superlinear, invertible and homogeneous.
-% Changing $\vphi_1$ to $\vphi_1'$ also changes the super-anti-automorphism $\vphi_0(d) = \sign{\vphi_1}{d}\vphi_1\inv d \vphi_1$ to $\vphi_0':= $
-
-
-% depends on the choice of $\vphi_1$: if we consider $\delta\vphi_1$ instead, then we change $\vphi_0(d) = \vphi_1\inv d \vphi_1$ to $\vphi_0'(d) = \vphi_0(\delta\inv d \delta)$.
 
 \section{Parametrization of superalgebras with superinvolution}
 
