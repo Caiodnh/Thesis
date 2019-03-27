@@ -221,6 +221,49 @@ We now turn to the classification of odd gradings. Recall that here we choose th
 
 In Subsection \ref{subsec:odd-gradings}, we will show that odd gradings can exist only if $m=n$. It may be desirable to express the classification in terms of $G$ rather than $G^\#$ (as we did for even gradings). We will return to this in Subsection \ref{ssec:second-odd}.
 
+\section{Temp section to discuss $\mc U$ parameters before talking about $(\vphi_0, B)$}\label{tmpsec:kappa}
+
+{\tt Separation of $\U$ in even and odd modules in the even case and the even\\ bases in the odd case should be here.}
+
+We will now discuss how to classify graded $\D$-supermodules of finite rank up to isomorphism. 
+Recall that $G$-graded supermodules can be seen as $G^\#$-graded modules over the $G^\#$-graded algebra $\D$. 
+We will follow \cite[Section 2.1]{livromicha}, but use different notation. 
+Unlike from vector spaces over a field, graded $\D$-modules cannot be classified by a single natural number.
+
+\subsection{Classification in terms of $G^\#$}\label{U-in-terms-of-GxZZ2}
+
+First, any graded $\D$-module has a basis consisting of homogeneous elements and, hence, is the direct sum of simple submodules of the form $\D^{[g]}$, $g \in G^\#$.
+% note that the simple modules are isomorphic to $\D^{[g]}$, for some $g\in G^\#$, and that $\supp \D^{[g]} = gT$.
+Moreover, it is easy to see that $\D^{[g]}\iso \D^{[g']}$ if, and only if,  $g \equiv g' \,(\operatorname{mod}\, T)$. 
+Given a graded $\D$-module $\mc U$ and $g\in G^\#$, let $\U_{gT} = \bigoplus_{h \in gT} \U_{h}$. 
+It is the sum of all submodules isomorphic to $\D^{[g]}$, so we call $\U_{gT}$ the \emph{isotypic} component of $\mc U$ corresponding to the coset $gT$. 
+Clearly, $\U$ is the direct sum of its isotypic components. 
+If $\U$ has finite rank over $\D$, we can define the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by letting $\kappa (gT) \coloneqq \dim_\D (\U_{gT})$, the rank of the free $\D$-module $\U_{gT}$. 
+Two graded $\D$-supermodules of finite rank are isomorphic if, and only if, they yield the same $\kappa$. 
+Note that $\kappa$ has a finite support.
+
+Conversely, given a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules by choosing a tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in gT$ is equal to $\kappa (gT)$ for every $g\in G$. 
+Then we put $\U \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_k]}$. 
+Note that $k = |\kappa| \coloneqq \sum_{x\in G^\#/T} \kappa(x)$.
+
+\begin{remark}
+    Both parameters $\kappa$ and $\gamma$ have been used in previous works. 
+    Sometimes both are present, as in \cite{livromicha}, sometimes only $\kappa$, as in \cite{paper-adrian} and \cite{felipe-misha}, sometimes only $\gamma$, as in \cite{paper-Qn} and \cite{paper-MAP}. 
+    In this work we decided to use only $\kappa$ since it makes notation more succinct.
+\end{remark}
+
+\subsection{Classification in terms of $G$}
+
+We separate in two cases: $\D\odd = 0$ (even case) and $\D\odd \neq 0$ (odd case). 
+
+In the even case, we have $T = T^+ \subseteq G$. 
+In particular, we can assign a parity to each isotypic component, since all elements of a coset $x \in G^\#/T$ have the same parity. 
+Hence, instead of $\kappa\from G^\#/T \to \ZZ_{\geq 0}$, we can use two maps, $\kappa_{\bar 0}, \kappa_{\bar 1}\from G/T \to \ZZ_{\geq 0}$, defined by $\kappa_i ( gT ) = \kappa ( (g,i)T )$, for all $g\in G$ and $i \in \ZZ_2$.
+
+For the odd case, we first note that we can always choose a even representative for a coset $x \in G^\#/T$. 
+Hence the mapping $g T^+ \mapsto (g, \bar 0) T$ is an isomorphism of $G$-sets $G/T^+ \to G^\#/T$. 
+In view of this isomorphism, the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is completely determined by a map $G/T^+ \to \ZZ_{\geq 0}$, which we will also denote by $\kappa$.
+
 % --------------------------------------------------
 \subsection{Even gradings and Morita context.}\label{subsec:even-gradings}
 % --------------------------------------------------
