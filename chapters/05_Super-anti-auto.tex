@@ -253,7 +253,7 @@ We have proved one direction of Theorem \ref{thm:vphi-iff-vphi0-and-B}, below.
 
 To state the theorem, it is convenient to introduce the following notation. 
 Recall that, any invertible element $d\in \D$ gives rise to the inner automorphism $\operatorname{Int}_d\from \D \to \D$ defined by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$. 
-If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\operatorname{Int}_d$ is an automorphism of $\D$ as a graded superalgebra.
+If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\operatorname{Int}_d$ is an automorphism of $\D$ as a graded superalgebra (Definition \ref{def:inner-automorphism}).
 
 \begin{defi}
     Let $d\in \D$ be a nonzero $G^\#$-homogeneous element. 
@@ -367,10 +367,10 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     Replacing $d$ by $\sign{\theta}{d} d$, we get $B' = dB$. 
     
     It remains to check that $\vphi_0' = \operatorname{sInt}_d \circ\, \vphi_0$. 
-    Since $B' = dB$, Equation \eqref{eq:dB-is-sesquilinear} is valid, hence $B'$ is $(\operatorname{sInt_d \circ \vphi_0})$-sesquilinenar.
+    Since $B' = dB$, Equation \eqref{eq:dB-is-sesquilinear} is valid, hence $B'$ is $(\operatorname{sInt}_d \circ \vphi_0)$-sesquilinenar.
     We then have, for all $c\in \D\even \cup \D\odd$ and $u,v \in \U\even \cup \U\odd$,
     \[
-        \vphi_0'(c)\, B'(u,v) = (-1)^{(|B'| + |u|) |c|} B'(uc,v) = (\operatorname{sInt_d \circ\, \vphi_0}) (c)\, B'(u,v).
+        \vphi_0'(c)\, B'(u,v) = (-1)^{(|B'| + |u|) |c|} B'(uc,v) = (\operatorname{sInt_d} \circ\, \vphi_0) (c)\, B'(u,v).
     \]
     The form $B'$ is nondegenerate, so we can choose $G^\#$-homogeneous $u,v\in \U$ with $B'(u,v)\neq 0$. Then $B'(u,v)$ is invertible, hence $\vphi_0' (c) = (\operatorname{sInt}_d \circ\, \vphi_0) (c)$, concluding the proof.
 \end{proof}
@@ -381,22 +381,37 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
 \end{convention}
 
 We are going to see when two graded-simple superalgebras with superinvolution are isomorphic. 
+For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
 
 \begin{defi}
     Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be $\vphi_0$-sesquilinear forms on $\U$ and $\U'$, respectively. 
     A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
 \end{defi}
 
-\begin{cor}
-    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D, \D'$ are graded division superalgebras and $\U, \U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
-    Let $\vphi, \vphi'$ be degree preserving super-anti-automorphisms on $R, R'$ determined by pairs $(\vphi_0, B), (\vphi_0', B')$. 
-    If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, $0\neq d\in \D$ a homogenous element, an isomorphism $\psi_0\from \D \to \D'$, and an isomorphism
+\begin{defi}
+    Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be $\FF$-bilinear maps on $\U$ and $\U'$, respectively, taking values on $\D$. 
+    A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
+\end{defi}
+
+\begin{cor}\label{cor:iso-abstract-vphi}
+    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
+    Let $\vphi$ and $\vphi'$ be degree preserving super-anti-automorphisms on $R$ and $R'$ determined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$, respectively. 
+    If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, $0\neq d\in \D$ a homogeneous element, an isomorphism $\psi_0\from \D \to \D'$, and an isomorphism
     \[
         \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B ) 
     \] 
-    such that $\psi_1 (r u) = \psi(r) \psi_1 (u)$, for all $r\in R$ and $u\in \U$.
+    such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$ and $u\in \U$.
 \end{cor}
 
+\begin{cor}\label{cor:iso-abstract-vphi}
+    Let $R$, $R'$, $\psi\from R \to R'$ and $(g, \psi_0, \psi_1)$ be as in Theorem \ref{thm:iso-abstract}. 
+    Let $\vphi$ and $\vphi'$ be degree preserving super-anti-automorphisms on $R$ and $R'$ determined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$, respectively. 
+    Then $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism of graded superalgebras with super-anti-automorphism if, and only if, there is $0\neq d\in \D$ a homogeneous element such that
+    \[
+        \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B ) 
+    \] 
+    is an isomorphism of graded supermodules with bilinear map.
+\end{cor}
 
 \section{Superinvolutions and sesquilinear forms}
 
