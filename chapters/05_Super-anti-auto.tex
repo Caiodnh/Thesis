@@ -291,7 +291,7 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     \end{equation}
     %
     Conversely, given a pair $(\vphi_0, B)$ as above, there is a unique degree-preserving super-anti-automorphism $\vphi$ on $R$ satisfying Equation \eqref{eq:superadjunction}. 
-    Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $\vphi_0 = \mathrm{sInt}_d \circ \vphi_0$ and $B'(u, v) = dB (u, v)$ for all $u, v \in \U$.
+    Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $\vphi_0' = \mathrm{sInt}_d \circ \vphi_0$ and $B'(u, v) = dB (u, v)$ for all $u, v \in \U$.
 \end{thm}
 
 \begin{proof}
@@ -380,14 +380,21 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     This is possible since, by the ``moreover'' part, we can substitute an odd form $B$ by $dB$, for some $d\in \D\odd$.
 \end{convention}
 
+We are going to see when two graded-simple superalgebras with superinvolution are isomorphic. 
+
+\begin{defi}
+    Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be $\vphi_0$-sesquilinear forms on $\U$ and $\U'$, respectively. 
+    A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
+\end{defi}
+
 \begin{cor}
     Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D, \D'$ are graded division superalgebras and $\U, \U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
     Let $\vphi, \vphi'$ be degree preserving super-anti-automorphisms on $R, R'$ determined by pairs $(\vphi_0, B), (\vphi_0', B')$. 
-    If $\psi$
-    
-    
-    , and consider $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$. 
-    If $\vphi$ is degree-preserving super-anti-automorphism on $R \coloneqq \End_\D(\U)$, then there is a pair $(\vphi_0, B)$, where $\vphi_0$ is a degree-preserving super-anti-automorphism on $\D$ and $B\from \U \times \U \to \D$ is a nondegenerate $\vphi_0$-sesquilinear form, such that
+    If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, $0\neq d\in \D$ a homogenous element, an isomorphism $\psi_0\from \D \to \D'$, and an isomorphism
+    \[
+        \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B ) 
+    \] 
+    such that $\psi_1 (r u) = \psi(r) \psi_1 (u)$, for all $r\in R$ and $u\in \U$.
 \end{cor}
 
 
@@ -841,7 +848,7 @@ Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of
     If $\mu_{gT} = -1$, then $k$ is even and there is a homogeneous $\D$-basis on $\U_{gT}$ such that the restriction of $B$ to $\U_{gT}$ is represented by $J_k \coloneqq 
     \begin{pmatrix}
         0 & I_{k/2}\\
-        I_{k/2} & 0
+        -I_{k/2} & 0
     \end{pmatrix}$. 
 \end{lemma}
 

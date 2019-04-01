@@ -3,18 +3,22 @@
 
 \section{Isomorphism abstract}
 
+
+The following result (\cite[Theorem 2.10]{livromicha}) tell us when two such graded algebras are isomorphic.
+
 \begin{defi}
-    Ismorphism of pairs $(\D, \U)$.
+    Let $\D$ and $\D'$ be graded-division algebras and let $\U$ and $\U'$ be graded right modules over $\D$ and $\D'$, respectively. 
+    An \emph{isomorphism from $(\D, \U)$ to $(\D, \U')$} is a pair $(\psi_0, \psi_1)$ where $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras and $\psi_1\from \U \to \U'$ is an isomorphism of graded vector spaces such that $\psi_1(ud) = \psi_1(u) \psi_0(d)$, for all $u\in \U$ and $d \in \D$. 
 \end{defi}
 
-The following result (\cite[Theorem 2.10]{livromicha}) tell us when two such graded algebras are isomorphic:
-
 \begin{thm}
-    Let $R \coloneqq \End_\D(\V)$ and $R' \coloneqq \End_{\D'}(\V')$, where $\D, \D'$ are graded division superalgebras and $\V, \V'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
-    Given an isomorphism $\psi\from R \to R'$, there is $g_0 \in G$ and isomorphisms $\psi_0\from \D \to \D'$ and $\psi_1\from \V^{[g_0]} \to \V'$ such that
-    \[
-        \psi_1(rv) = \psi(r)\psi_1(r)
-    \]
+    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D, \D'$ are graded division superalgebras and $\U, \U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
+    Given an isomorphism $\psi\from R \to R'$, there is $g \in G$ and and isomorphism $(\psi_0, \psi_1)$ from $(\D, \U^{[g]})$ to $(\D', \U')$ such that
+    \begin{equation}\label{eq:abstract-iso}
+        \forall r\in R,\,u \in \U, \quad \psi_1(r u) = \psi(r)\psi_1(u).
+    \end{equation}
+    Conversely, given an isomorphism $(\psi_0, \psi_1)$ from $(\D, \U^{[g]})$ to $(\D', \U')$, there is a unique isomorphism $\psi\from R \to R'$ satisfying Equation \eqref{eq:abstract-iso}. 
+    Two isomorphisms $(\psi_0, \psi_1)$ and $(\psi_0', \psi_1')$ determine the same isomorphism $\psi\from R \to R'$ if, and only if, there exists a nonzero homogeneous element $d\in \D'$ such that $\psi_0' (x) = d\inv \psi_0(x) d$ and $\psi_1' (u) = \psi_1 (u) d$ for all $x\in d$ and $u \in \U$.
 \end{thm}
 
 \section{Old chapter on $\vphi$-gradings}
