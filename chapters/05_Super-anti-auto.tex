@@ -294,6 +294,18 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $\vphi_0' = \mathrm{sInt}_d \circ \vphi_0$ and $B'(u, v) = dB (u, v)$ for all $u, v \in \U$.
 \end{thm}
 
+\begin{thm}\label{thm:vphi-iff-vphi0-and-B}
+    Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero right graded module of finite rank over $\D$. 
+    If $\vphi$ is degree-preserving super-anti-automorphism on $R \coloneqq \End_\D(\U)$, then there is a pair $(\vphi_0, B)$, where $\vphi_0$ is a degree-preserving super-anti-automorphism on $\D$ and $B\from \U \times \U \to \D$ is a nondegenerate $\vphi_0$-sesquilinear form, such that
+    %
+    \begin{equation}\label{eq:superadjunction}
+        \forall r\in R\even \cup R\odd,\,\forall u, v \in \U\even \cup \U\odd,  \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
+    \end{equation}
+    %
+    Conversely, given a pair $(\vphi_0, B)$ as above, there is a unique degree-preserving super-anti-automorphism $\vphi$ on $R$ satisfying Equation \eqref{eq:superadjunction}. 
+    Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $B'(u, v) = dB (u, v)$ for all $u, v \in \U$, and, hence, $\vphi_0' = \mathrm{sInt}_d \circ \vphi_0$.
+\end{thm}
+
 \begin{proof}
     The first assertion is already proved. For the converse, let $\vphi_0$ be a degree-preserving super-anti-automorphism on $\D$, let $B\from \U \times \U \to \D$ be a nondegenerate $\vphi_0$-sesquilinear form and consider $\theta$ as in 
     Proposition \ref{prop:sesquilinear-form-iff-D-linear-map}. Then Equation \eqref{eq:superadjunction} is equivalent to:
@@ -412,6 +424,23 @@ For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
     \] 
     is an isomorphism of graded supermodules with bilinear map.
 \end{cor}
+
+\begin{proof}
+    Consider $\vphi'' \coloneqq \psi\inv \vphi' \psi$. 
+    We have that $\psi$ is an isomorphism of graded superalgebras with super-anti-isomorphism if, and only if, $\vphi = \vphi'$. 
+    
+    Put $B'(u, v) = \coloneqq \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
+    We claim that $B''$ is $\psi_0\inv \vphi_0' \psi_0$-sesquilinear. 
+    Indeed:
+    \begin{align*}
+        xx
+    \end{align*}
+    Also, $\vphi''$ is the superadjunction with respect to $B$:
+    \begin{align*}
+        xy
+    \end{align*}
+    Hence, by Theorem \ref{thm:vphi-iff-vphi0-and-B}, $\vphi = \vphi''$ if, and only if, there is $d \in \D$ such that.
+\end{proof}
 
 \section{Superinvolutions and sesquilinear forms}
 
@@ -907,6 +936,7 @@ The considerations above and Lemma \ref{lemma:self-dual-components} motivate the
         \item $\kappa(gT) = \kappa(g_0\inv g\inv T)$ for all $g\in G^\#$; \label{item:kappa-duality}
         \item For any $g\in G^\#$, if $g_0 g^2 \in T$ and $\kappa (gT)$ is odd, then $(-1)^{|g|} \eta (g_0 g^2) \delta = 1$. \label{item:kappa-parity}
     \end{enumerate}
+    The set of $(g_0, \delta, \eta)$-admissible maps will be denoted by $\mathsf{X}(g_0, \delta, \eta)$.
 \end{defi}
 
 To handle the case of a pair of dual components, we will separate in the cases $\D\odd = 0$ and $\D\odd \neq 0$. 
@@ -915,8 +945,21 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
 
 \begin{lemma}
     Let $\U_{gT}$ and $\U_{g'T}$ be a pair of dual isotypic components. 
-    If $\D\odd = 0$, then 
+    If $\D$ is even, then there are graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
+    \[\begin{pmatrix}
+        0 & I\\
+        \sign{g}{g'} \delta I & 0
+    \end{pmatrix}.\]
+    If $\D$ is odd, then there are even graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
+    \[\begin{pmatrix}
+        0 & I\\
+        \delta I & 0
+    \end{pmatrix}.\] 
 \end{lemma}
+
+\begin{proof}
+    Do it again...
+\end{proof}
 
 \begin{prop}
     Converse of Lemmas
