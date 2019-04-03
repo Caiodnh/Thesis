@@ -109,6 +109,10 @@ $\vphi_1$ to construct a super-anti-automorphism $\vphi_0$ on $\D$ and a nondege
     The \emph{(left) radical} of $B$ is the set $\rad B \coloneqq \{u\in \U \mid B(u, v) = 0 \text{ for all } v\in \U\}$. We say that the form $B$ is \emph{nondegenerate} if $\rad B = 0$.
 \end{defi}
 
+\begin{remark}
+    Note that if $B$ is nondegenerate, then $\vphi_0$ is actually determined by $B$.
+\end{remark}
+
 Suppose for now that a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism $\vphi_0: \D \to \D$ is given. 
 We can use it to define a right $\D$-action on $\U\Star$ by interpreting it as an isomorphism from $\D$ to $\D\sop$ and putting 
 %
@@ -396,14 +400,11 @@ We are going to see when two graded-simple superalgebras with superinvolution ar
 For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
 
 \begin{defi}
-    Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be $\vphi_0$-sesquilinear forms on $\U$ and $\U'$, respectively. 
+    Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be sesquilinear forms on $\U$ and $\U'$, respectively. 
     A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
 \end{defi}
 
-\begin{defi}
-    Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be $\FF$-bilinear maps on $\U$ and $\U'$, respectively, taking values on $\D$. 
-    A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
-\end{defi}
+Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are sesquilinear with respect to the same $\vphi_0$. 
 
 \begin{cor}\label{cor:iso-abstract-vphi}
     Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
@@ -412,17 +413,7 @@ For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
     \[
         \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B ) 
     \] 
-    such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$ and $u\in \U$.
-\end{cor}
-
-\begin{cor}\label{cor:iso-abstract-vphi}
-    Let $R$, $R'$, $\psi\from R \to R'$ and $(g, \psi_0, \psi_1)$ be as in Theorem \ref{thm:iso-abstract}. 
-    Let $\vphi$ and $\vphi'$ be degree preserving super-anti-automorphisms on $R$ and $R'$ determined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$, respectively. 
-    Then $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism of graded superalgebras with super-anti-automorphism if, and only if, there is $0\neq d\in \D$ a homogeneous element such that
-    \[
-        \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B ) 
-    \] 
-    is an isomorphism of graded supermodules with bilinear map.
+    such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$.
 \end{cor}
 
 \begin{proof}
