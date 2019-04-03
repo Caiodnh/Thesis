@@ -417,20 +417,32 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are ses
 \end{cor}
 
 \begin{proof}
-    Consider $\vphi'' \coloneqq \psi\inv \vphi' \psi$. 
-    We have that $\psi$ is an isomorphism of graded superalgebras with super-anti-isomorphism if, and only if, $\vphi = \vphi'$. 
-    
-    Put $B'(u, v) = \coloneqq \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
+    Since $\psi$ is, in particular, an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude there are $g\in G^\#$, an isomorphism of graded superalgbras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
+    Let us define $\vphi'' \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
+    Then $\psi$ is an isomorphism of graded superalgebras with super-anti-isomorphism if, and only if, $\vphi = \vphi'$. 
+    Consider $B'(u, v) \coloneqq \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
     We claim that $B''$ is $\psi_0\inv \vphi_0' \psi_0$-sesquilinear. 
     Indeed:
     \begin{align*}
-        xx
+        B''(u, vd) &= \psi_0\inv( B'( \psi_1(u), \psi_1(vd) ) ) 
+        = \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) \psi_0(d) ) = B''(u, v)d
+        \intertext{and}
+        B''(ud, v) &= \psi_0\inv( B'( \psi_1(ud), \psi_1(v) ) ) = \psi_0\inv( B'( \psi_1(u) \psi_0(d), \psi_1(v) ) )\\
+        &= \psi_0\inv( (-1)^{(|B''| + |u|) |d|} \vphi_0(\psi_0(d)) B'( \psi_1(u), \psi_1(v) ) ) \\
+        &= (-1)^{(|B''| + |u|) |d|} \psi_0\inv( \vphi_0( \psi_0 (d) ) ) B''(u, v).
     \end{align*}
     Also, $\vphi''$ is the superadjunction with respect to $B$:
     \begin{align*}
-        xy
+        B''(ru, v) &= \psi_0\inv( B'( \psi_1(ru), \psi_1(v) ) ) 
+        = \psi_0\inv( B'( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) ) ) \\
+        &= \psi_0\inv( B'( \psi(r) \psi_1(u), \psi_1(v) ) ) \\
+        &= \psi_0\inv( \sign{\psi(r)}{\psi_1(u)} B'( \psi_1(u), \vphi'( \psi(r) ) \psi_1(v) ) ) \\
+        &= \sign{r}{u} \psi_0\inv( B'( \psi_1(u), (\vphi'\circ \psi)(r) ) \psi_1(v) ) )\\
+        &= \sign{r}{u} \psi_0\inv( B'( \psi_1(u), (\psi\circ \vphi'')(r) ) \psi_1(v) ) )\\
+        &= 
     \end{align*}
-    Hence, by Theorem \ref{thm:vphi-iff-vphi0-and-B}, $\vphi = \vphi''$ if, and only if, there is $d \in \D$ such that.
+    Hence, by Theorem \ref{thm:vphi-iff-vphi0-and-B}, $\vphi = \vphi''$ if, and only if, there is $0 \neq d \in \D$ such that $B'' = dB$. 
+    The result follows. 
 \end{proof}
 
 % ----- 
@@ -922,7 +934,7 @@ Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of
 The considerations above and Lemma \ref{lemma:self-dual-components} motivate the following:
 
 \begin{defi}
-    Let $g_0 \in G^\#$, $\delta \in \pmone$ and $\eta\from T \to \pmone$. 
+    Let $g_0 \in G^\#$ and $\delta \in \pmone$. 
     We say that a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is \emph{$(g_0, \delta)$-admissible} if:
     \begin{enumerate}[(i)]
         \item $\kappa$ has finite support; \label{item:kappa-finite-support}
