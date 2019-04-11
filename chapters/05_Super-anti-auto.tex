@@ -397,7 +397,18 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
 \end{convention}
 
 We are going to see when two graded-simple superalgebras with superinvolution are isomorphic. 
-For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
+For this, we will need two more definitions. 
+
+Even though, as superalgebras, $\End_\D( \U )$ is the same as $\End_\D( \U^{[g]} )$ for every $g \in G^\#$, an extra care should be taken when considering super-anti-automorphisms. 
+If $g\in G^\#$ is odd, a $\vphi_0$-sesquilinear form $B$ on the $\D$-module $\U$ is not $\vphi_0$-sesquilinear if considered on the $\D$-module $\U^{[g]}$, and Equation \eqref{eq:superadjunction} do not determine the same super-anti-automorphism $\vphi$. 
+This motivates the following:
+
+\begin{defi}
+    Let $\U$ be a graded right $\D$-module and $\vphi_0\from \D \to \D$ be a super-anti-automorphism. 
+    Given $B$ is a $\vphi_0$-sesquilinear form on $\U$ and $g\in G^\#$, we define the $\vphi_0$-sesquilinear for  $B^{[g]}$ on $\U^{[g]}$ by $B^{[g]}(u,v) \coloneqq \sign{u}{g} B(u,v)$, for all $u,v \in \U$, where $|u|$ is the parity of $u$ as an element of $\U$. 
+\end{defi}
+
+% For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
 
 \begin{defi}
     Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be sesquilinear forms on $\U$ and $\U'$, respectively. 
@@ -406,21 +417,23 @@ For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
 
 Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are sesquilinear with respect to the same $\vphi_0$. 
 
+Let $g\in G^\#$ be an odd element. 
+
 \begin{cor}\label{cor:iso-abstract-vphi}
     Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
     Let $\vphi$ and $\vphi'$ be degree preserving super-anti-automorphisms on $R$ and $R'$ determined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$, respectively. 
     If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, $0\neq d\in \D$ a homogeneous element, an isomorphism $\psi_0\from \D \to \D'$, and an isomorphism
     \[
-        \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B ) 
+        \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B' ) 
     \] 
     such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$.
 \end{cor}
 
 \begin{proof}
-    Since $\psi$ is, in particular, an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude there are $g\in G^\#$, an isomorphism of graded superalgbras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
+    Since $\psi$ is, in particular, an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
     Let us define $\vphi'' \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
-    Then $\psi$ is an isomorphism of graded superalgebras with super-anti-isomorphism if, and only if, $\vphi = \vphi'$. 
-    Consider $B'(u, v) \coloneqq \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
+    Then $\psi$ is an isomorphism of graded superalgebras with super-anti-isomorphism if, and only if, $\vphi = \vphi''$. 
+    Consider $B''(u, v) \coloneqq \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
     We claim that $B''$ is $\psi_0\inv \vphi_0' \psi_0$-sesquilinear. 
     Indeed:
     \begin{align*}
