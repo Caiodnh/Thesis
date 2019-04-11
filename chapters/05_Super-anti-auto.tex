@@ -442,7 +442,7 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are ses
 
     Since $\psi$ is, in particular, an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
     
-    Consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B''\from \U^{[g]} \times \U^{[g]} \to \D$ defined by $B''(u, v) \coloneqq \sign{u}{g}\psi_0\inv ( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
+    Consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B''\from \U^{[g]} \times \U^{[g]} \to \D$ defined by \[ B''(u, v) \coloneqq \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1(v) \big) \Big)\] for all $u, v \in \U$. 
     We claim that $B''$ is $\vphi_0''$-sesquilinear. 
     Indeed:
     \begin{align*}
@@ -450,11 +450,12 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are ses
         = \psi_0\inv \Big( B'\big( \psi_1(u), \psi_1(v) \big) \psi_0(d) \Big) = B''(u, v)d
         \intertext{and}
         B''(ud, v) &= \psi_0\inv \Big( B' \big( \psi_1(ud), \psi_1(v) \big) \Big) = \psi_0\inv \Big( B' \big( \psi_1(u) \psi_0(d), \psi_1(v) \big) \Big)\\
-        &= \psi_0\inv \Big( (-1)^{(|B'| + |u|) |d|} \vphi_0 \big( \psi_0(d) \big) B' \big( \psi_1(u), \psi_1(v) \big) \Big) \\
-        &= (-1)^{(|B''| + |u|) |d|} \vphi_0 \big( \psi_0 (d) \big) B''(u, v).
-        \intertext{Also, $\vphi''$ is the superadjunction with respect to $B$:}
+        &= \psi_0\inv \Big( (-1)^{(|B'| + |u|) |d|} \vphi_0' \big( \psi_0(d) \big) B' \big( \psi_1(u), \psi_1(v) \big) \Big) \\
+        &= (-1)^{(|B''| + |u|) |d|} \psi_0\inv \Big( \vphi_0' \big( \psi_0 (d) \big) \Big) B''(u, v)\\
+        &= (-1)^{(|B''| + |u|) |d|} \vphi_0''(d) B''(u, v).
+        \intertext{Also, $\vphi''$ is the superadjunction with respect to $B''$:}
         % \end{align*}
-        % Also, $\vphi''$ is the superadjunction with respect to $B$:
+        % Also, $\vphi''$ is the superadjunction with respect to $B''$:
         % \begin{align*}
         B''(ru, v) &= \psi_0\inv \Big( B' \big( \psi_1(ru), \psi_1(v) \big) \Big) 
         = \psi_0\inv \Big( B' \big( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) \big) \Big) \\
@@ -467,7 +468,7 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are ses
         &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1 (\vphi''(r) v) \big) \Big)\\
         &= \sign{r}{u} B'' \big( u, \vphi''(r) v\big).
     \end{align*}
-    Hence, applying Theorem \ref{thm:vphi-iff-vphi0-and-B} for $\End_\D (\U^{[g]})$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \vphi''$ if, and only if, there is $0 \neq d \in \D$ such that $B'' = dB^{[g]}$. 
+    Hence, applying Theorem \ref{thm:vphi-iff-vphi0-and-B} for $\U^{[g]}$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \vphi''$ if, and only if, there is $0 \neq d \in \D$ such that $B'' = dB^{[g]}$. 
     The result follows. 
 \end{proof}
 
