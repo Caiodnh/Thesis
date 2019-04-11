@@ -400,7 +400,7 @@ We are going to see when two graded-simple superalgebras with superinvolution ar
 For this, we will need two more definitions. 
 
 Even though, as superalgebras, $\End_\D( \U )$ is the same as $\End_\D( \U^{[g]} )$ for every $g \in G^\#$, an extra care should be taken when considering super-anti-automorphisms. 
-If $g\in G^\#$ is odd, a $\vphi_0$-sesquilinear form $B$ on the $\D$-module $\U$ is not $\vphi_0$-sesquilinear if considered on the $\D$-module $\U^{[g]}$, and Equation \eqref{eq:superadjunction} do not determine the same super-anti-automorphism $\vphi$. 
+If $g\in G^\#$ is odd, a $\vphi_0$-sesquilinear form $B$ on the $\D$-module $\U$ is not $\vphi_0$-sesquilinear if considered on the $\D$-module $\U^{[g]}$, and Equation \eqref{eq:superadjunction} does not determine the same super-anti-automorphism $\vphi$. 
 This motivates the following:
 
 \begin{defi}
@@ -408,7 +408,12 @@ This motivates the following:
     Given $B$ is a $\vphi_0$-sesquilinear form on $\U$ and $g\in G^\#$, we define the $\vphi_0$-sesquilinear for  $B^{[g]}$ on $\U^{[g]}$ by $B^{[g]}(u,v) \coloneqq \sign{u}{g} B(u,v)$, for all $u,v \in \U$, where $|u|$ is the parity of $u$ as an element of $\U$. 
 \end{defi}
 
-% For that, we will have an adaptation of Theorem \ref{thm:iso-abstract}.
+\begin{lemma}\label{lemma:B^[b]-does-the-job}
+    xx
+\end{lemma}
+
+Note that $\deg B^{[g]} = g^{-2} \deg B$. 
+In particular, $|B^{[g]}| = |B|$.
 
 \begin{defi}
     Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be sesquilinear forms on $\U$ and $\U'$, respectively. 
@@ -417,44 +422,52 @@ This motivates the following:
 
 Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are sesquilinear with respect to the same $\vphi_0$. 
 
-Let $g\in G^\#$ be an odd element. 
+\begin{remark}
+    odd iso and $B^{[g]}$
+\end{remark}
 
 \begin{cor}\label{cor:iso-abstract-vphi}
     Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
     Let $\vphi$ and $\vphi'$ be degree preserving super-anti-automorphisms on $R$ and $R'$ determined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$, respectively. 
     If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, $0\neq d\in \D$ a homogeneous element, an isomorphism $\psi_0\from \D \to \D'$, and an isomorphism
-    \[
-        \psi_1 \from (\U^{[g]}, dB) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B' ) 
-    \] 
+    \begin{equation}\label{eq:iso-B-implies-vphi}
+        \psi_1 \from (\U^{[g]}, dB^{[g]}) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B' ) 
+    \end{equation}
     such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$.
 \end{cor}
 
 \begin{proof}
-    Since $\psi$ is, in particular, an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
-    Let us define $\vphi'' \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
+    First of all, let us define $\vphi'' \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
     Then $\psi$ is an isomorphism of graded superalgebras with super-anti-isomorphism if, and only if, $\vphi = \vphi''$. 
-    Consider $B''(u, v) \coloneqq \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
-    We claim that $B''$ is $\psi_0\inv \vphi_0' \psi_0$-sesquilinear. 
+
+    Since $\psi$ is, in particular, an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
+    
+    Consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B''\from \U^{[g]} \times \U^{[g]} \to \D$ defined by $B''(u, v) \coloneqq \sign{u}{g}\psi_0\inv ( B'( \psi_1(u), \psi_1(v) ) )$, for all $u, v \in \U$. 
+    We claim that $B''$ is $\vphi_0''$-sesquilinear. 
     Indeed:
     \begin{align*}
-        B''(u, vd) &= \psi_0\inv( B'( \psi_1(u), \psi_1(vd) ) ) 
-        = \psi_0\inv( B'( \psi_1(u), \psi_1(v) ) \psi_0(d) ) = B''(u, v)d
+        B''(u, vd) &= \psi_0\inv \Big( B'\big( \psi_1(u), \psi_1(vd) \big) \Big) 
+        = \psi_0\inv \Big( B'\big( \psi_1(u), \psi_1(v) \big) \psi_0(d) \Big) = B''(u, v)d
         \intertext{and}
-        B''(ud, v) &= \psi_0\inv( B'( \psi_1(ud), \psi_1(v) ) ) = \psi_0\inv( B'( \psi_1(u) \psi_0(d), \psi_1(v) ) )\\
-        &= \psi_0\inv( (-1)^{(|B''| + |u|) |d|} \vphi_0(\psi_0(d)) B'( \psi_1(u), \psi_1(v) ) ) \\
-        &= (-1)^{(|B''| + |u|) |d|} \psi_0\inv( \vphi_0( \psi_0 (d) ) ) B''(u, v).
+        B''(ud, v) &= \psi_0\inv \Big( B' \big( \psi_1(ud), \psi_1(v) \big) \Big) = \psi_0\inv \Big( B' \big( \psi_1(u) \psi_0(d), \psi_1(v) \big) \Big)\\
+        &= \psi_0\inv \Big( (-1)^{(|B'| + |u|) |d|} \vphi_0 \big( \psi_0(d) \big) B' \big( \psi_1(u), \psi_1(v) \big) \Big) \\
+        &= (-1)^{(|B''| + |u|) |d|} \vphi_0 \big( \psi_0 (d) \big) B''(u, v).
+        \intertext{Also, $\vphi''$ is the superadjunction with respect to $B$:}
+        % \end{align*}
+        % Also, $\vphi''$ is the superadjunction with respect to $B$:
+        % \begin{align*}
+        B''(ru, v) &= \psi_0\inv \Big( B' \big( \psi_1(ru), \psi_1(v) \big) \Big) 
+        = \psi_0\inv \Big( B' \big( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) \big) \Big) \\
+        &= \psi_0\inv \Big( B' \big( \psi(r) \psi_1(u), \psi_1(v) \big) \Big) \\
+        &= \psi_0\inv \Big( \sign{\psi(r)}{\psi_1(u)} B' \big( \psi_1(u), \vphi'( \psi(r) ) \psi_1(v) \big) \Big) \\
+        &= \sign{r}{u} \psi_0 \inv \Big( B' \big( \psi_1(u), (\vphi'\circ \psi)(r)\psi_1(v) \big) \Big)\\
+        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), (\psi\circ \vphi'')(r) \psi_1(v) \big) \Big)\\
+        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), \psi (\vphi''(r)) \psi_1(v) \big) \Big)\\
+        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), (\psi_1 \circ \vphi''(r) \circ \psi_1\inv) \psi_1(v) \big) \Big)\\
+        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1 (\vphi''(r) v) \big) \Big)\\
+        &= \sign{r}{u} B'' \big( u, \vphi''(r) v\big).
     \end{align*}
-    Also, $\vphi''$ is the superadjunction with respect to $B$:
-    \begin{align*}
-        B''(ru, v) &= \psi_0\inv( B'( \psi_1(ru), \psi_1(v) ) ) 
-        = \psi_0\inv( B'( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) ) ) \\
-        &= \psi_0\inv( B'( \psi(r) \psi_1(u), \psi_1(v) ) ) \\
-        &= \psi_0\inv( \sign{\psi(r)}{\psi_1(u)} B'( \psi_1(u), \vphi'( \psi(r) ) \psi_1(v) ) ) \\
-        &= \sign{r}{u} \psi_0\inv( B'( \psi_1(u), (\vphi'\circ \psi)(r) ) \psi_1(v) ) )\\
-        &= \sign{r}{u} \psi_0\inv( B'( \psi_1(u), (\psi\circ \vphi'')(r) ) \psi_1(v) ) )\\
-        &= 
-    \end{align*}
-    Hence, by Theorem \ref{thm:vphi-iff-vphi0-and-B}, $\vphi = \vphi''$ if, and only if, there is $0 \neq d \in \D$ such that $B'' = dB$. 
+    Hence, applying Theorem \ref{thm:vphi-iff-vphi0-and-B} for $\End_\D (\U^{[g]})$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \vphi''$ if, and only if, there is $0 \neq d \in \D$ such that $B'' = dB^{[g]}$. 
     The result follows. 
 \end{proof}
 
