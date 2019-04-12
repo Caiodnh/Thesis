@@ -417,6 +417,23 @@ In particular, $|B^{[g]}| = |B|$.
     Further, if $B$ is nondegenerate and the pair $(\vphi_0, B)$ determines the super-anti-automorphism $\vphi$ on $R \coloneqq \End_\D(\U) = \End_\D(\U^{[g]})$, then $B^{[g]}$ is nondegenerate and $(\vphi_0, B^{[g]})$ also determines $\vphi$.
 \end{lemma}
 
+\begin{proof}
+    Let $u, v \in \U$. 
+    To avoid confusion, we will denote $u$ and $v$ by $u'$ and $v'$, respectively, when regarded as elements of $\U^{[g]}$. 
+    For all $d\in D$, we have:
+    \begin{align*}
+        B^{[g]}(u', v'd) &= \sign{g}{u} B(u, vd) = \sign{g}{u} B(u, v)d =  B^{[g]}(u', v')d
+        \intertext{and}
+        B^{[g]}(u'd, v'd) &= \sign{g}{ud} B(ud, v) = (-1)^{|g|( |u| + |d| )} (-1)^{|d|( |B| + |u| )} \vphi_0(d) B(u, v)d\\
+        &= (-1)^{|d| ( |B| + |u| + |g| )} \vphi_0(d) \sign{g}{u} B(u, v) \\ 
+        &= (-1)^{|d| ( |B| + |u'| )} \vphi_0(d) B^{[g]}(u', v')d .
+        \intertext{Also, for all $r\in R$:}
+        B^{[g]}(ru', v'd) &= \sign{g}{ru} B(ru, v) = (-1)^{|g|( |r| + |u| )} (-1)^{|r||u|} B(u, \vphi(r) v)\\
+        &= (-1)^{|r| ( |g| + |u|)} \sign{u}{g} B(u, \vphi(r) v)\\ 
+        &= \sign{r}{u'} B^{[g]}(u, \vphi(r) v).
+    \end{align*}
+\end{proof}
+
 \begin{defi}
     Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be sesquilinear forms on $\U$ and $\U'$, respectively. 
     A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
