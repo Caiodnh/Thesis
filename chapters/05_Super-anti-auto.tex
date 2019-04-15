@@ -998,20 +998,19 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
 \end{lemma}
 
 \begin{proof}
-    Take an $\FF$-basis $\{ u_1, \ldots , u_k \}$ for $\U_g$, which is a graded $\D$-basis for $\U_{gT}$. 
-    Consider its basis in $\U_{g'T}$, \ie, the basis $\{ v_1, \ldots , v_k \}$ defined by $B(u_i, v_j) = \delta_{ij}$. 
-    Put $g'' \coloneqq \deg v_j = g_0\inv (\deg u_i)\inv g_0\inv g\inv$. 
+    Let $\{ u_1, \ldots , u_k \}$ for $\U_g$ be a graded $\D$-basis for $\U_{gT}$. 
+    Consider its dual basis in $\U_{g'T}$, \ie, the basis $\{ v_1, \ldots , v_k \}$ defined by $B(u_i, v_j) = \delta_{ij}$. 
     
-    Since $\overline B(u_i, v_i) = \delta B(u_i, v_i)$, we have
+    Since $\overline B(u_i, v_i) = \delta B(u_i, v_i)$, we have, by definition of $\overline{B}$, that
     \begin{align*}
         \sign{u_i}{v_i} \vphi_0\inv ( B(v_i, u_i) ) = \delta B(u_i, v_i),
     \end{align*}
     so
     \begin{align*}
-        B(v_i, u_i) = \sign{u_i}{v_i} \vphi_0 ( B(u_i, v_i) ) = \sign{g}{g''} B(u_i, v_i) = \sign{g}{g''} \delta.
+        B(v_i, u_i) = \sign{u_i}{v_i} \vphi_0 ( B(u_i, v_i) ) = \sign{u_i}{v_i} B(u_i, v_i) = \sign{u_i}{v_i} \delta.
     \end{align*}
-    If $\D$ is even, then $|g''| = |g'T|$, proving the first statement. 
-    If $\D$ is odd, we can choose $g$ to be even, and, therefore, we have the second statement. 
+    If $\D$ is even, then $|u_i| = |gT|$ and $|v_j| = |g' T|$, for all $i,j \in \{1, \ldots, k\}$, proving the first statement. 
+    If $\D$ is odd, we can follow Convention \ref{conv:pick-even-basis} to pick the elements $u_1, \ldots , u_k$ to be even, and, therefore, we have the second statement. 
     % and then, following Convention \ref{conv:pick-even-form}, we have the second statement.
 \end{proof}
 
@@ -1028,7 +1027,13 @@ The considerations above and Lemma \ref{lemma:self-dual-components} motivate the
     We will denote by $\mathsf{X}(\D, \vphi_0)$ the set of the triples $(g_0, \delta, \kappa)$ such that $g_0\in G^\#$, $\delta \in \pmone$ and $\kappa$ is a $(g_0, \delta)$-admissible map.
 \end{defi}
 
+\begin{lemma}
+    Given a triple $(g_0, \delta, \kappa) \in \mathsf{X}(\D, \vphi_0)$, there are a graded $\D$-module $\U$ of finite rank and a $\vphi_0$-sesquilinear form $B$ on $\U$ such that $\overline{B} = \delta B$.
+\end{lemma}
 
+\begin{proof}
+    xx
+\end{proof}
 
 
 \begin{prop}
