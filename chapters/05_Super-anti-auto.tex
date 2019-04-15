@@ -977,19 +977,6 @@ Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of
     Depending on the case we can fix an orthonormal or a symplectic $\FF$-basis for $\U_g$ and we will use it as our choice of $\D$-basis for $\U_{gT}$. 
 \end{proof}
 
-The considerations above and Lemma \ref{lemma:self-dual-components} motivate the following:
-
-\begin{defi}
-    Let $g_0 \in G^\#$ and $\delta \in \pmone$. 
-    We say that a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is \emph{$(g_0, \delta)$-admissible} if:
-    \begin{enumerate}[(i)]
-        \item $\kappa$ has finite support; \label{item:kappa-finite-support}
-        \item $\kappa(gT) = \kappa(g_0\inv g\inv T)$ for all $g\in G^\#$; \label{item:kappa-duality}
-        \item For any $g\in G^\#$, if $g_0 g^2 \in T$ and $\kappa (gT)$ is odd, then $(-1)^{|g|} \eta (g_0 g^2) \delta = 1$. \label{item:kappa-parity}
-    \end{enumerate}
-    We will denote by $\mathsf{X}(\D, \vphi_0)$ the set of the triples $(g_0, \delta, \kappa)$ such that $g_0\in G^\#$, $\delta \in \pmone$ and $\kappa$ is a $(g_0, \delta)$-admissible map.
-\end{defi}
-
 To handle the case of a pair of dual components, we will separate in the cases $\D\odd = 0$ and $\D\odd \neq 0$. 
 In the first, it makes sense to talk about parity of the isotypic components and, depending on $|g_0|$, we can have a pair of components with different parity. 
 In the later, we follow Convention \ref{conv:pick-even-basis}.  
@@ -999,9 +986,11 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     If $\D$ is even, then there are graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
     \[\begin{pmatrix}
         0 & I\\
-        \sign{g}{g'} \delta I & 0
+        \sign{gT}{g'T} \delta I & 0
     \end{pmatrix}.\]
-    If $\D$ is odd, then there are even graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
+    If $\D$ is odd, then there are 
+    %even 
+    graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
     \[\begin{pmatrix}
         0 & I\\
         \delta I & 0
@@ -1021,9 +1010,24 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     \begin{align*}
         B(v_i, u_i) = \sign{u_i}{v_i} \vphi_0 ( B(u_i, v_i) ) = \sign{g}{g''} B(u_i, v_i) = \sign{g}{g''} \delta.
     \end{align*}
-    If $\D$ is even, then $|g''| = |g'|$, proving the first statement. 
-    If $\D$ is odd, we can choose $g$ to be even, and then, following Convention \ref{conv:pick-even-form}, we have the second statement.
+    If $\D$ is even, then $|g''| = |g'T|$, proving the first statement. 
+    If $\D$ is odd, we can choose $g$ to be even, and, therefore, we have the second statement. 
+    % and then, following Convention \ref{conv:pick-even-form}, we have the second statement.
 \end{proof}
+
+The considerations above and Lemma \ref{lemma:self-dual-components} motivate the following:
+
+\begin{defi}
+    Let $g_0 \in G^\#$ and $\delta \in \pmone$. 
+    We say that a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is \emph{$(g_0, \delta)$-admissible} if:
+    \begin{enumerate}[(i)]
+        \item $\kappa$ has finite support; \label{item:kappa-finite-support}
+        \item $\kappa(gT) = \kappa(g_0\inv g\inv T)$ for all $g\in G^\#$; \label{item:kappa-duality}
+        \item For any $g\in G^\#$, if $g_0 g^2 \in T$ and $\kappa (gT)$ is odd, then $(-1)^{|g|} \eta (g_0 g^2) \delta = 1$. \label{item:kappa-parity}
+    \end{enumerate}
+    We will denote by $\mathsf{X}(\D, \vphi_0)$ the set of the triples $(g_0, \delta, \kappa)$ such that $g_0\in G^\#$, $\delta \in \pmone$ and $\kappa$ is a $(g_0, \delta)$-admissible map.
+\end{defi}
+
 
 
 
