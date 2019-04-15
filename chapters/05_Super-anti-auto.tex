@@ -1009,8 +1009,23 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
 \end{lemma}
 
 \begin{proof}
-    Do it again...
+    Take an $\FF$-basis $\{ u_1, \ldots , u_k \}$ for $\U_g$, which is a graded $\D$-basis for $\U_{gT}$. 
+    Consider its basis in $\U_{g'T}$, \ie, the basis $\{ v_1, \ldots , v_k \}$ defined by $B(u_i, v_j) = \delta_{ij}$. 
+    Put $g'' \coloneqq \deg v_j = g_0\inv (\deg u_i)\inv g_0\inv g\inv$. 
+    
+    Since $\overline B(u_i, v_i) = \delta B(u_i, v_i)$, we have
+    \begin{align*}
+        \sign{u_i}{v_i} \vphi_0\inv ( B(v_i, u_i) ) = \delta B(u_i, v_i),
+    \end{align*}
+    so
+    \begin{align*}
+        B(v_i, u_i) = \sign{u_i}{v_i} \vphi_0 ( B(u_i, v_i) ) = \sign{g}{g''} B(u_i, v_i) = \sign{g}{g''} \delta.
+    \end{align*}
+    If $\D$ is even, then $|g''| = |g'|$, proving the first statement. 
+    If $\D$ is odd, we can choose $g$ to be even, and then, following Convention \ref{conv:pick-even-form}, we have the second statement.
 \end{proof}
+
+
 
 \begin{prop}
     Converse of Lemmas
