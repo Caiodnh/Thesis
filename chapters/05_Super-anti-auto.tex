@@ -396,8 +396,10 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     This is possible since, by the ``moreover'' part, we can substitute an odd form $B$ by $dB$, for some $d\in \D\odd$.
 \end{convention}
 
-We are going to see when two graded-simple superalgebras with superinvolution are isomorphic. 
-For this, we will need two more definitions. 
+\section{Isomorphism of graded superalgebras with\\ super-anti-automorphism}
+
+In this section, we are going to see when two graded-simple superalgebras with super-anti-automorphism are isomorphic. 
+% For this, we will need two more definitions. 
 
 Even though, as superalgebras, $\End_\D( \U )$ is the same as $\End_\D( \U^{[g]} )$ for every $g \in G^\#$, an extra care should be taken when considering super-anti-automorphisms. 
 If $g\in G^\#$ is odd, a $\vphi_0$-sesquilinear form $B$ on the $\D$-module $\U$ is not $\vphi_0$-sesquilinear if considered on the $\D$-module $\U^{[g]}$, and Equation \eqref{eq:superadjunction} does not determine the same super-anti-automorphism $\vphi$. 
@@ -405,14 +407,14 @@ This motivates the following:
 
 \begin{defi}
     Let $\U$ be a graded right $\D$-module and $\vphi_0\from \D \to \D$ be a super-anti-automorphism. 
-    Given $B$ is a $\vphi_0$-sesquilinear form on $\U$ and $g\in G^\#$, we define the $\vphi_0$-sesquilinear for  $B^{[g]}$ on $\U^{[g]}$ by $B^{[g]}(u,v) \coloneqq \sign{u}{g} B(u,v)$, for all $u,v \in \U$, where $|u|$ is the parity of $u$ as an element of $\U$. 
+    Given a homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$ and $g\in G^\#$, we define the $\vphi_0$-sesquilinear form  $B^{[g]}$ on $\U^{[g]}$ by $B^{[g]}(u,v) \coloneqq \sign{u}{g} B(u,v)$, for all $u,v \in \U$, where $|u|$ is the parity of $u$ as an element of $\U$. 
 \end{defi}
 
 Note that $\deg B^{[g]} = g^{-2} \deg B$. 
 In particular, $|B^{[g]}| = |B|$.
 
 \begin{lemma}\label{lemma:B^[b]-does-the-job}
-    Let $\U$ be a graded $\D$-module, $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a $\vphi_0$-sesquilinear form on $\U$. 
+    % Let $\U$ be a graded $\D$-module, $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a $\vphi_0$-sesquilinear form on $\U$. 
     For every $g\in G^\#$, $B^{[g]}$ is a $\vphi_0$-sesquilinear form on $\U^{[g]}$. 
     Further, if $B$ is nondegenerate and the pair $(\vphi_0, B)$ determines the super-anti-automorphism $\vphi$ on $R \coloneqq \End_\D(\U) = \End_\D(\U^{[g]})$, then $B^{[g]}$ is nondegenerate and $(\vphi_0, B^{[g]})$ also determines $\vphi$.
 \end{lemma}
@@ -424,11 +426,11 @@ In particular, $|B^{[g]}| = |B|$.
     \begin{align*}
         B^{[g]}(u', v'd) &= \sign{g}{u} B(u, vd) = \sign{g}{u} B(u, v)d =  B^{[g]}(u', v')d
         \intertext{and}
-        B^{[g]}(u'd, v'd) &= \sign{g}{ud} B(ud, v) = (-1)^{|g|( |u| + |d| )} (-1)^{|d|( |B| + |u| )} \vphi_0(d) B(u, v)d\\
+        B^{[g]}(u'd, v') &= \sign{g}{ud} B(ud, v) = (-1)^{|g|( |u| + |d| )} (-1)^{|d|( |B| + |u| )} \vphi_0(d) B(u, v)\\
         &= (-1)^{|d| ( |B| + |u| + |g| )} \vphi_0(d) \sign{g}{u} B(u, v) \\ 
         &= (-1)^{|d| ( |B| + |u'| )} \vphi_0(d) B^{[g]}(u', v')d .
-        \intertext{Also, for all $r\in R$:}
-        B^{[g]}(ru', v'd) &= \sign{g}{ru} B(ru, v) = (-1)^{|g|( |r| + |u| )} (-1)^{|r||u|} B(u, \vphi(r) v)\\
+        \intertext{Also, for all $r\in R$, we have:}
+        B^{[g]}(ru', v') &= \sign{g}{ru} B(ru, v) = (-1)^{|g|( |r| + |u| )} (-1)^{|r||u|} B(u, \vphi(r) v)\\
         &= (-1)^{|r| ( |g| + |u|)} \sign{u}{g} B(u, \vphi(r) v)\\ 
         &= \sign{r}{u'} B^{[g]}(u, \vphi(r) v).
     \end{align*}
@@ -439,31 +441,44 @@ In particular, $|B^{[g]}| = |B|$.
     A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
 \end{defi}
 
-Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are sesquilinear with respect to the same $\vphi_0$. 
+Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ have the same degree in $G^\#$ and are sesquilinear with respect to the same $\vphi_0$. 
 
-\begin{remark}
-    odd iso and $B^{[g]}$
-\end{remark}
+% \begin{remark}
+%     odd iso and $B^{[g]}$
+% \end{remark}
 
-\begin{cor}\label{cor:iso-abstract-vphi}
-    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
+\begin{defi}
+    Let $(\D, \vphi_0)$ and $(\D', \vphi_0')$ be graded-division superalgebras with super-anti-automorphisms and let $\psi_0 \from (\D, \vphi_0) \to (\D', \vphi_0')$ be a degree preserving homomorphism. 
+    Given a $\D'$-supermodule $\U$ and
+\end{defi}
+
+\begin{thm}\label{thm:iso-abstract-vphi}
+    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded supermodules of finite rank over $\D$ and $\D'$, respectively. 
     Let $\vphi$ and $\vphi'$ be degree preserving super-anti-automorphisms on $R$ and $R'$ determined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$, respectively. 
-    If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, $0\neq d\in \D$ a homogeneous element, an isomorphism $\psi_0\from \D \to \D'$, and an isomorphism
+    If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, a homogeneous element $0\neq d\in \D$, an isomorphism $\psi_0\from (\D, \vphi_0) \to (\D', \vphi_0')$, and an isomorphism
     \begin{equation}\label{eq:iso-B-implies-vphi}
         \psi_1 \from (\U^{[g]}, dB^{[g]}) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B' ) 
     \end{equation}
-    such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$.
-\end{cor}
+    such that 
+    \begin{equation}\label{eq:iso-super-anti-auto}
+        \forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+    \end{equation}
+    % $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
+    Conversely, for any $g$, $d$, $\psi_0$ and $\psi_1$ as above, 
+    % the formula $\psi(r) \coloneqq \psi_1 \circ r \circ \psi_1\inv$ 
+    Equation \eqref{eq:iso-super-anti-auto}
+    defines an isomorphism $\psi \from (R, \vphi) \to (R', \vphi')$.
+\end{thm}
 
 \begin{proof}
-    First of all, let us define $\vphi'' \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
-    Then $\psi$ is an isomorphism of graded superalgebras with super-anti-isomorphism if, and only if, $\vphi = \vphi''$. 
+    Given an isomorphism of graded superalgebras $\psi\from R \to R'$, define $\vphi'' \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
+    Then $\psi$ is an isomorphism $(R, \vphi) \to (R', \vphi')$ if, and only if, $\vphi = \vphi''$. 
 
-    Since $\psi$ is, in particular, an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
+    Since $\psi$ is an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude that there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to \U^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
     
-    Consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B''\from \U^{[g]} \times \U^{[g]} \to \D$ defined by \[ B''(u, v) \coloneqq \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1(v) \big) \Big)\] for all $u, v \in \U$. 
+    Consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B''\from \U^{[g]} \times \U^{[g]} \to \D$ defined by \[ B''(u, v) \coloneqq \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1(v) \big) \Big)\] for all $u, v \in \U^{[g]}$. 
     We claim that $B''$ is $\vphi_0''$-sesquilinear. 
-    Indeed:
+    Indeed,
     \begin{align*}
         B''(u, vd) &= \psi_0\inv \Big( B'\big( \psi_1(u), \psi_1(vd) \big) \Big) 
         = \psi_0\inv \Big( B'\big( \psi_1(u), \psi_1(v) \big) \psi_0(d) \Big) = B''(u, v)d
@@ -480,14 +495,14 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ are ses
         = \psi_0\inv \Big( B' \big( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) \big) \Big) \\
         &= \psi_0\inv \Big( B' \big( \psi(r) \psi_1(u), \psi_1(v) \big) \Big) \\
         &= \psi_0\inv \Big( \sign{\psi(r)}{\psi_1(u)} B' \big( \psi_1(u), \vphi'( \psi(r) ) \psi_1(v) \big) \Big) \\
-        &= \sign{r}{u} \psi_0 \inv \Big( B' \big( \psi_1(u), (\vphi'\circ \psi)(r)\psi_1(v) \big) \Big)\\
-        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), (\psi\circ \vphi'')(r) \psi_1(v) \big) \Big)\\
+        % &= \sign{r}{u} \psi_0 \inv \Big( B' \big( \psi_1(u), (\vphi'\circ \psi)(r)\psi_1(v) \big) \Big)\\
+        % &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), (\psi\circ \vphi'')(r) \psi_1(v) \big) \Big)\\
         &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), \psi (\vphi''(r)) \psi_1(v) \big) \Big)\\
         &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), (\psi_1 \circ \vphi''(r) \circ \psi_1\inv) \psi_1(v) \big) \Big)\\
         &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1 (\vphi''(r) v) \big) \Big)\\
         &= \sign{r}{u} B'' \big( u, \vphi''(r) v\big).
     \end{align*}
-    Hence, applying Theorem \ref{thm:vphi-iff-vphi0-and-B} for $\U^{[g]}$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \vphi''$ if, and only if, there is $0 \neq d \in \D$ such that $B'' = dB^{[g]}$. 
+    Hence, applying Theorem \ref{thm:vphi-iff-vphi0-and-B} for $\U^{[g]}$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \vphi''$ if, and only if, there is a homogeneous $0 \neq d \in \D$ such that $B'' = dB^{[g]}$. 
     The result follows. 
 \end{proof}
 
@@ -1030,7 +1045,15 @@ The considerations above and Lemma \ref{lemma:self-dual-components} motivate the
     The set of all $(\D, \vphi_0)$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
 \end{defi}
 
-Clearly, to each pair $(\U, B)$, where $\U$ is graded $\D$-module of finite rank, $B$ is a nondegenerate $\vphi_0$-sesquilinear map, we can a associate a triple $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$. 
+Clearly, to each pair $(\U, B)$, where $\U$ is graded $\D$-module of finite rank and $B$ is a nondegenerate $\vphi_0$-sesquilinear map such that $\overline B = \delta B$, we can a associate a $(\D, \vphi_0)$-admissible triple $(g_0, \delta, \kappa)$. 
+
+Conversely, given a $(\D, \vphi_0)$-admissible triple $(g_0, \delta, \kappa)$, we can construct a pair $(\U, B)$. 
+For that, we set $k \coloneqq |\kappa|$ and choose a tuple $\gamma = (g_1, \ldots, g_\ell, \ldots g_k) \in (G^\#)^{k}$ such that:
+\begin{enumerate}[(i)]
+    \item 
+\end{enumerate}
+
+We say that a put $|\kappa|$
 
 \begin{prop}
     Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathsf{X} (\D, \vphi_0)$.
