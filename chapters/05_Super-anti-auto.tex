@@ -434,7 +434,7 @@ In particular, $|B^{[g]}| = |B|$.
     \end{align*}
 \end{proof}
 
-\begin{defi}
+\begin{defi}\label{def:iso-(U,B)}
     Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be sesquilinear forms on $\U$ and $\U'$, respectively. 
     A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
 \end{defi}
@@ -1014,20 +1014,20 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     If $\D$ is even, then $|u_i| = |gT|$ and $|v_j| = |g' T|$, for all $i,j \in \{1, \ldots, k\}$, proving the first statement. 
     If $\D$ is odd, we can follow Convention \ref{conv:pick-even-basis} to pick the elements $u_1, \ldots , u_k$ to be even, and, therefore, we have the second statement. 
     % and then, following Convention \ref{conv:pick-even-form}, we have the second statement.
-    To have all elements 
+    If we want to choose the degrees of the elements as in the statement, it suffices to choose $\{u_1, \ldots, u_k\}$ as a $\FF$-basis of $\U_g$.
 \end{proof}
 
 The considerations above and Lemma \ref{lemma:self-dual-components} motivate the following:
 
 \begin{defi}
-    Let $g_0 \in G^\#$ and $\delta \in \pmone$. 
-    We say that a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is \emph{$(g_0, \delta)$-admissible} if:
+    Consider $g_0 \in G^\#$, $\delta \in \pmone$ and a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$. 
+    We say that the triple $(g_0, \delta, \kappa)$ \emph{$(\D, \vphi_0)$-admissible} if:
     \begin{enumerate}[(i)]
         \item $\kappa$ has finite support; \label{item:kappa-finite-support}
         \item $\kappa(gT) = \kappa(g_0\inv g\inv T)$ for all $g\in G^\#$; \label{item:kappa-duality}
         \item For any $g\in G^\#$, if $g_0 g^2 \in T$ and $\kappa (gT)$ is odd, then $(-1)^{|g|} \eta (g_0 g^2) \delta = 1$. \label{item:kappa-parity}
     \end{enumerate}
-    We will denote by $\mathsf{X}(\D, \vphi_0)$ the set of the triples $(g_0, \delta, \kappa)$ such that $g_0\in G^\#$, $\delta \in \pmone$ and $\kappa$ is a $(g_0, \delta)$-admissible map.
+    The set of all $(\D, \vphi_0)$-admissible triples will denote by $\mathsf{X}(\D, \vphi_0)$.
 \end{defi}
 
 Clearly, to each pair $(\U, B)$, where $\U$ is graded $\D$-module of finite rank, $B$ is a nondegenerate $\vphi_0$-sesquilinear map, we can a associate a triple $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$. 
@@ -1037,7 +1037,31 @@ Clearly, to each pair $(\U, B)$, where $\U$ is graded $\D$-module of finite rank
 \end{prop}
 
 \begin{proof}
+    Suppose there is $\psi\from \U \to \U'$ an isomorphism from $(\U, B)$ to $(\U', B')$. Since, in particular, $\psi$ is an isomorphism of graded $\D$-modules, both $\U$ and $\U'$ correspond to the same map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$. 
+    Also, from the fact that $B'(\psi(u), \psi(v)) = B(u, v)$ for all $u, v\in \U$, it is clear that $\deg B' = \deg B$.
+    Moreover, if $\overline{B} = \delta B$, then
+    \begin{align*}
+        \overline{B'} \big(\psi(u), \psi(v) \big) &= \sign{\psi(u)}{\psi(v)} \vphi_0\inv \Big( B'\big( \psi(v) , \psi(u) \big) \Big) \\
+        &= \sign{u}{v} \vphi_0\inv \big( B(v, u) \big) 
+        = \overline{B} (u, v) \\
+        &= \delta B(u, v) = \delta B' \big( \psi(u), \psi(v) \big),
+    \end{align*}
+    for all $u, v \in \U$. 
+    Since $\psi$ is surjective, it follows that $\overline{B'} = \delta B'$. 
     
+    Conversely, suppose that $(\U, B)$ and $(\U, B')$ correspond to the same triple $(g_0, \delta, \kappa)$. 
+    Let $g\in G^\#$
+    Then, for every $g \in G^\#$, $\dim_\D \U_{gT} = \dim_\D \U'_{gT}$, and $\U_{gT}$ is self-dual if, and only if, $\U'_{gT}$ also is (since it happens if, and only if, $g_0 g^2 \in T$).
+    
+    For every coset $x \in G^\#/T$, choose $g\in G^\#$ such that $x = gT$. 
+    
+    and, for every pair of elements $g, g' \in G^\#$ such that $g_0 g g' \in T$, choose an order.  
+    
+    and, in this case, we can use Lemma \ref{lemma:self-dual-components} to find graded $\D$-bases $\mc B = \{u_1, \ldots, u_k\}$ and $\mc B' = \{v_1, \ldots, v_k\}$ on $\U_{gT}$ and $\U'_{gT}$, respectively, such that the restrictions of $B$ and $B'$ to $\U_{gT}$ and $\U'_{gT}$ have the same representing matrix and all elements $u_1, \ldots, u_k, v_1, \ldots, v_k$ have degree $g$. 
+    It follows that the $\D$-linear map $\psi_{gT} \from \U_{gT} \to \U'_{gT}$ defined by $\psi_{gT} (u_i) = v_i$ is invertible, degree preserving and $B'$
+    
+    the number $\mu_{gT}$ defined by Equation \eqref{eq:mu-gT} is the same. 
+
 \end{proof}
 
 We also have that for every triple $(g_0, \delta, \kappa) \in \mathsf{X}(\D, \vphi_0)$, there are a graded $\D$-module $\U$ of finite rank and a nondegenerate $\vphi_0$-sesquilinear form $B$ on $\U$ such that $\overline{B} = \delta B$. 
