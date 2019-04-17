@@ -955,7 +955,10 @@ Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of
 From now on we will specialize our study to the case we are more interested. 
 So we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
 Also, we will assume there is $\delta \in \pmone$ such that $\overline{B} = \delta B$ (see Theorem \ref{thm:vphi-involution-iff-delta-pm-1}). 
-For convenience, we will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk:M(D)=M(FF)-tensor-D}). 
+
+For convenience, we will fix a representative $g\in G^\#$ for every coset $gT \in G^\#/T$, an ordered pair $(g', g'') \in (G^\#)^2$ for all $g', g'' \in G^\#$ such that $g_0 g' g'' \in T$ and a nonzero element $X_t \in \D_t$ for all $t\in T$. 
+In the case $\D$ is odd, we will choose the coset representatives to be even elements. 
+We will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk:M(D)=M(FF)-tensor-D}). 
 
 % For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
 
@@ -997,7 +1000,7 @@ For convenience, we will be also using the identification $M_k (\D) = \M_k(\FF) 
     
     % Now lets us fix a representative $g\in G$ for the coset $gT$. 
     Observe that $\U_g \subseteq \U_{gT}$ is an $\FF$-vector space, and an $\FF$-basis for $\U_g$ is a $\D$-basis for $\U_{gT}$ (in other words, $\U_{gT} = \U_g \tensor \D)$. 
-    Let $t=g_0 g^2$ and choose $0 \neq X_t \in \D_t$. 
+    % Let $t=g_0 g^2$ and choose $0 \neq X_t \in \D_t$. 
     We define $B'\from \U_g \times \U_g \to \FF$ by $B'(u,v) \coloneqq B(u,v) X_t\inv$, for all $u, v \in \U_g$. 
     In other words, $B(u,v) = B'(u,v) X_t$ and, hence, $B'$ determines $B\restriction_{\U_{gT} \times \U_{gT}}$. 
     It follows that $B'$ is a nondegenerate bilinear form on $\U_g$. 
@@ -1014,7 +1017,7 @@ For convenience, we will be also using the identification $M_k (\D) = \M_k(\FF) 
 \end{proof}
 
 \begin{remark}
-    Even though $\mu_{gT}$ does not depend on the choice of the representative $g \in G^\#$, unless $T$ is a elementary $2$-group, the element $g_0g^2 \in T$ does depend on it.
+    Even though $\mu_{gT}$ does not depend on the choice of the representative $g \in G^\#$, unless $T$ is a elementary $2$-group, the element $t = g_0g^2$ does depend on it.
 \end{remark}
 
 To handle the case of a pair of dual components, we will separate in the cases $\D\odd = 0$ and $\D\odd \neq 0$. 
@@ -1023,7 +1026,7 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
 
 \begin{lemma}
     Let $\U_{gT}$ and $\U_{g'T}$ be a pair of dual isotypic components. 
-    If $\D$ is even, then there are graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
+    If $\D$ is even, then there are graded $\D$-bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
     \[\begin{pmatrix}
         0 & I_k\\
         \sign{gT}{g'T} \delta I_k & 0
@@ -1031,7 +1034,7 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     where $t$ can be any element in $T$. 
     If $\D$ is odd, then there are 
     even 
-    graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
+    graded $\D$-bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
     \[\begin{pmatrix}
         0 & I\\
         \delta I & 0
