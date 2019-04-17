@@ -518,7 +518,7 @@ One could do that by following Equation \eqref{eq:vphi-r-Star-is-a-superconjugat
 As before, we suppose $\D$ is a graded division superalgebra, $\U$ is a nonzero right graded module of finite rank over $\D$, $R = \End_\D (\U)$ and $\vphi$ is a degree-preserving super-anti-automorphism on $R$. 
 Also, let $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a nondegenerate $\vphi_0$-sesquilinear form on $\U$ determinig $\vphi$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}.
 
-\begin{defi}
+\begin{defi}\label{def:matrix-representing-B}
     Given a homogeneous $\D$-basis $\{e_1, \ldots, e_k\}$ of $\U$, the \emph{matrix representing the form B} is defined to be $\Phi = (\Phi_{ij}) \in M_k(\D)$, where $\Phi_{ij} = B(e_i, e_j)$.
 \end{defi}
 
@@ -535,7 +535,7 @@ Also, we will denote $|e_i|$ simply by $|i|$ for all $i \in \{1, \ldots, k\}$.
     This is possible because, given any homogeneous $\D$-basis, we can multiply its odd elements by a nonzero homogeneous odd element in $\D$. 
 \end{convention}
 
-\begin{remark}
+\begin{remark}\label{rmk:M(D)=M(FF)-tensor-D}
     It is well know that we a natural isomorphism between $M_k(\D)$ and $M_k(\FF)\tensor \D$, where we use the usual tensor product of algebras. 
     For superalgebras, though, we usually use a different product on the space $M_k(\FF)\tensor \D$, given by \[(r_1 \tensor s_1) (r_2 \tensor s_2) = \sign{r_2}{s_1} (r_1 r_2) \tensor (s_1 s_2).\] 
     If we are following Convention \ref{conv:pick-even-basis}, either $M_k(\FF)$ or $\D$ have trivial canonical $\ZZ_2$-grading, hence both tensor products coincide.
@@ -926,21 +926,23 @@ Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to 
 
 \subsection{Parametrization of $(\U, B)$}
 
-Let $R \coloneqq \End_\D (\U)$ and let $\vphi$ be a superinvolution on R. 
-From Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, $\vphi$ is determined by a pair $(\vphi_0, B)$, where $\vphi_0$ is a superinvolution on $\D$ and $B\from \U \times \U \to \D$ is a homogeneous $\vphi_0$-sesquilinear form on $\U$ such that $\overline B = \delta B$ with $\delta \in \{ \pm 1 \}$. 
-From now on, suppose $(\D, \vphi_0)$ is associated to $(T, \beta, p, \eta)$ and let $g_0\in G^\#$ denote the degree of $B$. 
-For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
+% Let $R \coloneqq \End_\D (\U)$ and let $\vphi$ be a superinvolution on R. 
+% From Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, $\vphi$ is determined by a pair $(\vphi_0, B)$, where $\vphi_0$ is a superinvolution on $\D$ and $B\from \U \times \U \to \D$ is a homogeneous $\vphi_0$-sesquilinear form on $\U$ such that $\overline B = \delta B$ with $\delta \in \{ \pm 1 \}$. 
+
+Let $(\D, \vphi_0)$ be a fixed graded-division superalgebra with super-anti-automorphism associated to $(T, \beta, p, \eta)$. 
+
 
 % In Section ??, we saw that the isomorphism class of $(\D, \vphi_0)$ can be described by $(T, \beta, p, \eta)$. 
-Recall that the $G$-graded supermodule $\U$ can be regarded as a $G^\#$-graded module 
+Recall that a $G$-graded supermodule $\U$ can be regarded as a $G^\#$-graded module 
 % written as a direct sum of its isotypic components % $\U_{gT} = \bigoplus_{h \in gT} \U_h$
 and that its isomorphism class is determined by the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support. 
-More explicitly, $\kappa (gT) = \dim_\D \U_{gT}$, where $\U_{gT}$ is the isotypic component associated to the coset $gT$ (Subsection \ref{U-in-terms-of-GxZZ2}).
+More explicitly, $\kappa (gT) = \dim_\D \U_{gT}$, where $\U_{gT}$ is the isotypic component associated to the coset $gT$ (see Section \ref{U-in-terms-of-GxZZ2}).
 
 % defined by $\kappa (gT) = \dim_\D \U_{gT}$, where $\U_{gT}$ is the isotypic component associated to the coset $gT$ (Subsection \ref{U-in-terms-of-GxZZ2}).
 
 % described by a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support. 
-The presence of $B$ gives us further restrictions on $\kappa$. 
+We will now consider a nondegenerate homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$, with degree $g_0 \in G^\#$.
+Its presence gives us further restrictions on $\kappa$. 
 Since $B$ has degree $g_0$ and takes values in $\D$, if $B(\U_{g}, \U_{g'}) \neq 0$ for some $g, g' \in G^\#$, then $g_0 g g' \in T$. 
 In terms of isotypic components, this means that, given $\U_{g T}$, there is at most one isotypic component $\U_{g'T}$ such that $B(\U_{gT}, \U_{g'T}) \neq 0$, namely, $\U_{g_0\inv g\inv T}$. 
 % we can only have $B(\U_{g T}, \U_{g' T}) \neq 0$ if $\bar {g'} = \bar g_0\inv \bar g\inv \in G^\#/T$. 
@@ -950,22 +952,34 @@ Note that $\U_{g T} = \U_{g_0\inv g\inv T}$ if, and only if, $g_0 g^2 \in T$.
 In this case, we say that $\U_{gT}$ is a \emph{self-dual component}. 
 Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of dual components}.
 
+From now on we will specialize our study to the case we are more interested. 
+So we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
+Also, we will assume there is $\delta \in \pmone$ such that $\overline{B} = \delta B$ (see Theorem \ref{thm:vphi-involution-iff-delta-pm-1}). 
+For convenience, we will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk:M(D)=M(FF)-tensor-D}). 
 
+% For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
 
 \begin{lemma}\label{lemma:self-dual-components}
-    Let $\U_{gT}$ be a self-dual isotypic component of $\U$ and put $k \coloneqq \kappa(gT)$. 
+    Let $\U_{gT}$ be a self-dual isotypic component of $\U$, let $0 \neq X_t \in \D_t$, where $t \coloneqq g_0g^2$, and set $k \coloneqq \kappa(gT)$. 
+    % set 
+    % $t \coloneq g_0g^2$ and 
+    % $k \coloneqq \kappa(gT)$. 
     The number 
     \begin{equation}
-        \mu_{gT} \coloneqq (-1)^{|g|} \eta(g_0 g^2)\delta
+        \mu_{gT} \coloneqq (-1)^{|g|} \eta(t) \delta
     \end{equation}
     % $\mu_{gT} = (-1)^{|g|} \eta(g_0 g^2) \delta \in \pmone$
     does not depend on the choice of the representative $g$ for the coset $gT$. 
-    If $\mu_{gT} = +1$, then there is a homogeneous $\D$-basis on $\U_{gT}$ such that the restriction of $B$ to $\U_{gT}$ is represented by $I_k$. 
-    If $\mu_{gT} = -1$, then $k$ is even and there is a homogeneous $\D$-basis on $\U_{gT}$ such that the restriction of $B$ to $\U_{gT}$ is represented by $J_k \coloneqq 
+    % Further, there is a $\D$-basis on $\U_{gT}$ consisting only of homogeneous elements of degree $g$ such that  that the restriction of $B$ to $\U_{gT}$ is represented by
+    % \begin{enumerate}[(i)]
+    %     \item $I_k \tensor X_{g_0g^2}$ if 
+    % \end{enumerate}
+    If $\mu_{gT} = +1$, then there is a graded $\D$-basis on $\U_{gT}$ such that the restriction of $B$ to $\U_{gT}$ is represented by $I_k \tensor X_t$. 
+    If $\mu_{gT} = -1$, then $k$ is even and there is a graded $\D$-basis on $\U_{gT}$ such that the restriction of $B$ to $\U_{gT}$ is represented by $J_k \coloneqq 
     \begin{pmatrix}
         0 & I_{k/2}\\
         -I_{k/2} & 0
-    \end{pmatrix}$. 
+    \end{pmatrix} \tensor X_t$. 
     In both cases, we can take all elements of the basis to have degree $g$.
 \end{lemma}
 
@@ -999,6 +1013,10 @@ Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of
     Depending on the case we can fix an orthonormal or a symplectic $\FF$-basis for $\U_g$ and we will use it as our choice of $\D$-basis for $\U_{gT}$. 
 \end{proof}
 
+\begin{remark}
+    Even though $\mu_{gT}$ does not depend on the choice of the representative $g \in G^\#$, unless $T$ is a elementary $2$-group, the element $g_0g^2 \in T$ does depend on it.
+\end{remark}
+
 To handle the case of a pair of dual components, we will separate in the cases $\D\odd = 0$ and $\D\odd \neq 0$. 
 In the first, it makes sense to talk about parity of the isotypic components and, depending on $|g_0|$, we can have a pair of components with different parity. 
 In the later, we follow Convention \ref{conv:pick-even-basis}.  
@@ -1007,16 +1025,17 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     Let $\U_{gT}$ and $\U_{g'T}$ be a pair of dual isotypic components. 
     If $\D$ is even, then there are graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
     \[\begin{pmatrix}
-        0 & I\\
-        \sign{gT}{g'T} \delta I & 0
-    \end{pmatrix}.\]
+        0 & I_k\\
+        \sign{gT}{g'T} \delta I_k & 0
+    \end{pmatrix} \tensor X_t,\]
+    where $t$ can be any element in $T$. 
     If $\D$ is odd, then there are 
-    %even 
+    even 
     graded bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
     \[\begin{pmatrix}
         0 & I\\
         \delta I & 0
-    \end{pmatrix}.\] 
+    \end{pmatrix} \tensor X_t,\] where $t\in g_0 T^+$ can be taken arbitrarily. 
     In both cases, we can take all elements of the basis of $\U_{gT}$ to have degree $g$ and all the elements of the basis of $\U_{g'T}$ to have degree $g_0\inv g\inv$.
 \end{lemma}
 
