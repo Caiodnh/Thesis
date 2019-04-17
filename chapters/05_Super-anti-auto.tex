@@ -436,6 +436,13 @@ In particular, $|B^{[g]}| = |B|$.
     \end{align*}
 \end{proof}
 
+The next is a straightforward result about the concept of twist of a module (Definition \ref{def:twist}) in our current context.
+
+\begin{lemma}
+    Let $(\D, \vphi_0)$ and $(\D', \vphi_0')$ be graded-division superalgebras with super-anti-automorphisms and let $\psi_0 \from (\D, \vphi_0) \to (\D', \vphi_0')$ be an isomorphism. 
+    If $\U'$ is a $\D'$-supermodule and $B'$ is a $\vphi_0'$-sesquilinear form on it, then $\psi_0\inv \circ B'$ is a $\vphi_0$-sesquilinear form on $(\U')^{\psi_0}$. \qed
+\end{lemma}
+
 \begin{defi}\label{def:iso-(U,B)}
     Let $\U$ and $\U'$ be graded right $\D$-modules, and let $B$ and $B'$ be sesquilinear forms on $\U$ and $\U'$, respectively. 
     A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
@@ -446,11 +453,6 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ have th
 % \begin{remark}
 %     odd iso and $B^{[g]}$
 % \end{remark}
-
-\begin{defi}
-    Let $(\D, \vphi_0)$ and $(\D', \vphi_0')$ be graded-division superalgebras with super-anti-automorphisms and let $\psi_0 \from (\D, \vphi_0) \to (\D', \vphi_0')$ be a degree preserving homomorphism. 
-    Given a $\D'$-supermodule $\U$ and
-\end{defi}
 
 \begin{thm}\label{thm:iso-abstract-vphi}
     Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded supermodules of finite rank over $\D$ and $\D'$, respectively. 
@@ -927,6 +929,7 @@ Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to 
 Let $R \coloneqq \End_\D (\U)$ and let $\vphi$ be a superinvolution on R. 
 From Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, $\vphi$ is determined by a pair $(\vphi_0, B)$, where $\vphi_0$ is a superinvolution on $\D$ and $B\from \U \times \U \to \D$ is a homogeneous $\vphi_0$-sesquilinear form on $\U$ such that $\overline B = \delta B$ with $\delta \in \{ \pm 1 \}$. 
 From now on, suppose $(\D, \vphi_0)$ is associated to $(T, \beta, p, \eta)$ and let $g_0\in G^\#$ denote the degree of $B$. 
+For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
 
 % In Section ??, we saw that the isomorphism class of $(\D, \vphi_0)$ can be described by $(T, \beta, p, \eta)$. 
 Recall that the $G$-graded supermodule $\U$ can be regarded as a $G^\#$-graded module 
@@ -946,6 +949,8 @@ Since $B$ is nondegenerate, we have that $\U_{g T}$ and $\U_{g_0\inv g\inv T}$ a
 Note that $\U_{g T} = \U_{g_0\inv g\inv T}$ if, and only if, $g_0 g^2 \in T$. 
 In this case, we say that $\U_{gT}$ is a \emph{self-dual component}. 
 Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of dual components}.
+
+
 
 \begin{lemma}\label{lemma:self-dual-components}
     Let $\U_{gT}$ be a self-dual isotypic component of $\U$ and put $k \coloneqq \kappa(gT)$. 
