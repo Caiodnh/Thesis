@@ -963,7 +963,7 @@ We will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see 
 % For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
 
 \begin{lemma}\label{lemma:self-dual-components}
-    Let $\U_{gT}$ be a self-dual isotypic component of $\U$, let $0 \neq X_t \in \D_t$, where $t \coloneqq g_0g^2$, and set $k \coloneqq \kappa(gT)$. 
+    Let $\U_{gT}$ be a self-dual isotypic component of $\U$, and set $t \coloneqq g_0g^2$ and $k \coloneqq \kappa(gT)$. 
     % set 
     % $t \coloneq g_0g^2$ and 
     % $k \coloneqq \kappa(gT)$. 
@@ -1039,7 +1039,7 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
         0 & I\\
         \delta I & 0
     \end{pmatrix} \tensor X_t,\] where $t\in g_0 T^+$ can be taken arbitrarily. 
-    In both cases, we can take all elements of the basis of $\U_{gT}$ to have degree $g$ and all the elements of the basis of $\U_{g'T}$ to have degree $g_0\inv g\inv$.
+    In both cases, we can take all elements of the basis of $\U_{gT}$ to have degree $g$ and all the elements of the basis of $\U_{g'T}$ to have degree $g'$.
 \end{lemma}
 
 \begin{proof}
@@ -1076,12 +1076,6 @@ The considerations above and Lemma \ref{lemma:self-dual-components} motivate the
 Clearly, to each pair $(\U, B)$, where $\U$ is graded $\D$-module of finite rank and $B$ is a nondegenerate $\vphi_0$-sesquilinear map such that $\overline B = \delta B$, we can a associate a $(\D, \vphi_0)$-admissible triple $(g_0, \delta, \kappa)$. 
 
 Conversely, given a $(\D, \vphi_0)$-admissible triple $(g_0, \delta, \kappa)$, we can construct a pair $(\U, B)$. 
-For that, we set $k \coloneqq |\kappa|$ and choose a tuple $\gamma = (g_1, \ldots, g_\ell, \ldots g_k) \in (G^\#)^{k}$ such that:
-\begin{enumerate}[(i)]
-    \item 
-\end{enumerate}
-
-We say that a put $|\kappa|$
 
 \begin{prop}
     Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathsf{X} (\D, \vphi_0)$.
@@ -1104,19 +1098,9 @@ We say that a put $|\kappa|$
     Let $g\in G^\#$
     Then, for every $g \in G^\#$, $\dim_\D \U_{gT} = \dim_\D \U'_{gT}$, and $\U_{gT}$ is self-dual if, and only if, $\U'_{gT}$ also is (since it happens if, and only if, $g_0 g^2 \in T$).
     
-    For every coset $x \in G^\#/T$, choose $g\in G^\#$ such that $x = gT$. 
-    
-    and, for every pair of elements $g, g' \in G^\#$ such that $g_0 g g' \in T$, choose an order.  
-    
     and, in this case, we can use Lemma \ref{lemma:self-dual-components} to find graded $\D$-bases $\mc B = \{u_1, \ldots, u_k\}$ and $\mc B' = \{v_1, \ldots, v_k\}$ on $\U_{gT}$ and $\U'_{gT}$, respectively, such that the restrictions of $B$ and $B'$ to $\U_{gT}$ and $\U'_{gT}$ have the same representing matrix and all elements $u_1, \ldots, u_k, v_1, \ldots, v_k$ have degree $g$. 
-    It follows that the $\D$-linear map $\psi_{gT} \from \U_{gT} \to \U'_{gT}$ defined by $\psi_{gT} (u_i) = v_i$ is invertible, degree preserving and $B'$
-    
-    the number $\mu_{gT}$ defined by Equation \eqref{eq:mu-gT} is the same. 
-
+    It follows that the $\D$-linear map $\psi_{gT} \from \U_{gT} \to \U'_{gT}$ defined by $\psi_{gT} (u_i) = v_i$ is invertible, degree preserving and $B'$.
 \end{proof}
-
-We also have that for every triple $(g_0, \delta, \kappa) \in \mathsf{X}(\D, \vphi_0)$, there are a graded $\D$-module $\U$ of finite rank and a nondegenerate $\vphi_0$-sesquilinear form $B$ on $\U$ such that $\overline{B} = \delta B$. 
-To see that, let $\xi \from G^\#/T \to G^\#$ be a map choosing a representative for each coset. 
 
 
 \subsection{Classification up to isomorphism}
