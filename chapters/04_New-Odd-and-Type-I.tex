@@ -1,5 +1,60 @@
 \chapter{Review of gradings on $M(m,n)$ and Type I gradings on $A$}\label{chap:A-type-I}
 
+In this Chapter, we will review the basic results about gradings on the associative setting. 
+First we will review the results on graded-simple associative algebras, following \cite{BK10}, and then its consequences for graded-simple associative superalgebras, following \cite{paper-MAP} and Helen's thesis. 
+
+We will present a second description of the odd gradings on matrix superalgebras.
+
+Following these results, it is natural to consider our first family of Lie superalgebras, the type $A$. 
+But we will only take care, here, of the gradings that follow easily from the associative case.
+
+
+\section{Graded-simple associative algebras}
+% ----
+
+The following result (\cite[Theorem 2.10]{livromicha}) tells us when two such graded algebras are isomorphic.
+
+\begin{defi}
+    Let $d\in \D$ be a nonzero $G$-homogeneous element. 
+    We define the \emph{inner automorphism} $\operatorname{Int}_d\from \D \to \D$ by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$.
+\end{defi}
+
+The following concept allows us to transform (graded) modules over different (graded) algebras and, also, to construct new modules from a given one:
+
+\begin{defi}\label{def:twist}
+    Let $\psi\from R \to R'$ be a homomorphism of (graded) algebras and let $U$ be a (graded) $R' $-module. 
+    The \emph{twist of $U$ by $\psi$} is the (graded) $R$-module $U^{\psi}$ whose underlying (graded) vector space is the same of $U$, but with action defined by $r \cdot u \coloneqq \psi(r)u$, for all $r\in R$ and $u\in U$.
+\end{defi}
+
+\begin{defi}
+    Let $\D$ and $\D'$ be graded-division algebras and let $\U$ and $\U'$ be graded right modules over $\D$ and $\D'$, respectively. 
+    An \emph{isomorphism from $(\D, \U)$ to $(\D, \U')$} is a pair $(\psi_0, \psi_1)$ where $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras and $\psi_1\from \U \to \U'$ is an isomorphism of graded vector spaces such that $\psi_1(ud) = \psi_1(u) \psi_0(d)$, for all $u\in \U$ and $d \in \D$. 
+\end{defi}
+
+\begin{thm}\label{thm:iso-abstract}
+    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
+    Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$ such that $g \in G$, $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras, $\psi_1\from U^{[g]} \to (U')^{\psi_0}$ is an isomorphism of graded modules and 
+    \begin{equation}\label{eq:def-iso-algebras}
+            \forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+    \end{equation}
+    Conversely, given a triple $(g, \psi_0, \psi_1)$ as above, Equation \eqref{eq:def-iso-algebras} defines an isomorphism of graded algebras $\psi\from R \to R'$. 
+    Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
+\end{thm}
+
+\begin{thm}\label{thm:iso-abstract}
+    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
+    Given an isomorphism $\psi\from R \to R'$, there is $g \in G$ and an isomorphism $(\psi_0, \psi_1)$ from $(\D, \U^{[g]})$ to $(\D', \U')$ such that
+    \begin{equation}\label{eq:abstract-iso}
+        \forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+    \end{equation}
+    Conversely, given an isomorphism $(\psi_0, \psi_1)$ from $(\D, \U^{[g]})$ to $(\D', \U')$, Equation \eqref{eq:abstract-iso} defines an isomorphism $\psi\from R \to R'$ satisfying Equation \eqref{eq:abstract-iso}. 
+    Two isomorphisms $(\psi_0, \psi_1)$ and $(\psi_0', \psi_1')$ determine the same isomorphism $\psi\from R \to R'$ if, and only if, there exists a nonzero homogeneous element $d\in \D'$ such that $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
+\end{thm}
+
+
+\section{Graded-simple associative superalgebras}
+% ----
+
 \section{Gradings on $M(m,n)$}\label{sec:Mmn}
 % ==================================================
 

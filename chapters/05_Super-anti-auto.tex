@@ -1029,7 +1029,7 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     If $\D$ is even, then there are graded $\D$-bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
     \[\begin{pmatrix}
         0 & I_k\\
-        \sign{gT}{g'T} \delta I_k & 0
+        \sign{g}{g'} \delta I_k & 0
     \end{pmatrix} \tensor X_t,\]
     where $t$ can be any element in $T$. 
     If $\D$ is odd, then there are 
@@ -1077,9 +1077,11 @@ Clearly, to each pair $(\U, B)$, where $\U$ is graded $\D$-module of finite rank
 
 Conversely, given a $(\D, \vphi_0)$-admissible triple $(g_0, \delta, \kappa)$, we can construct a pair $(\U, B)$. 
 
-\begin{prop}
-    Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathsf{X} (\D, \vphi_0)$.
-\end{prop}
+\begin{thm}
+    Let $(\D, \vphi_0)$ be a finite dimensional graded-division superalgebra with superinvolution with $\D_e\even = \FF$. 
+    The isomorphism classes of pairs $(\U, B)$, where are $\U$ is a graded $\D$-module of finite rank
+    % Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathsf{X} (\D, \vphi_0)$.
+\end{thm}
 
 \begin{proof}
     Suppose there is $\psi\from \U \to \U'$ an isomorphism from $(\U, B)$ to $(\U', B')$. Since, in particular, $\psi$ is an isomorphism of graded $\D$-modules, both $\U$ and $\U'$ correspond to the same map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$. 
