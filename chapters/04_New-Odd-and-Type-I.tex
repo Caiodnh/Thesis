@@ -12,6 +12,17 @@ But we will only take care, here, of the gradings that follow easily from the as
 \section{Graded-simple associative algebras}
 % ----
 
+
+In this section we will recall the classification of gradings on matrix algebras \cite{BSZ01, BZ02, BK10}. We will follow the exposition of \cite[Chapter 2]{livromicha} but use slightly different notation, which will be extended to superalgebras in Section~??%\ref{sec:Mmn}.
+
+The following is the graded version of a classical result (see e.g. \cite[Theorem 2.6]{livromicha}). 
+We recall that a \emph{graded division algebra} is a graded unital associative algebra such that every nonzero homogeneous element is invertible.
+
+\begin{thm}\label{thm:End-over-D}
+	Let $G$ be a group and let $R$ be a $G$-graded associative algebra that has no nontrivial graded ideals and satisfies the descending chain condition on 
+	graded left ideals. Then there is a $G$-graded division algebra $\D$ and a graded (right) $\D$-module $\mc{V}$ such that $R \simeq \End_{\D} (\mc{V})$ as graded algebras.\qed
+\end{thm}
+
 The following result (\cite[Theorem 2.10]{livromicha}) tells us when two such graded algebras are isomorphic.
 
 \begin{defi}
@@ -26,11 +37,6 @@ The following concept allows us to transform (graded) modules over different (gr
     The \emph{twist of $U$ by $\psi$} is the (graded) $R$-module $U^{\psi}$ whose underlying (graded) vector space is the same of $U$, but with action defined by $r \cdot u \coloneqq \psi(r)u$, for all $r\in R$ and $u\in U$.
 \end{defi}
 
-\begin{defi}
-    Let $\D$ and $\D'$ be graded-division algebras and let $\U$ and $\U'$ be graded right modules over $\D$ and $\D'$, respectively. 
-    An \emph{isomorphism from $(\D, \U)$ to $(\D, \U')$} is a pair $(\psi_0, \psi_1)$ where $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras and $\psi_1\from \U \to \U'$ is an isomorphism of graded vector spaces such that $\psi_1(ud) = \psi_1(u) \psi_0(d)$, for all $u\in \U$ and $d \in \D$. 
-\end{defi}
-
 \begin{thm}\label{thm:iso-abstract}
     Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
     Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$ such that $g \in G$, $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras, $\psi_1\from U^{[g]} \to (U')^{\psi_0}$ is an isomorphism of graded modules and 
@@ -41,38 +47,7 @@ The following concept allows us to transform (graded) modules over different (gr
     Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
 \end{thm}
 
-\begin{thm}\label{thm:iso-abstract}
-    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
-    Given an isomorphism $\psi\from R \to R'$, there is $g \in G$ and an isomorphism $(\psi_0, \psi_1)$ from $(\D, \U^{[g]})$ to $(\D', \U')$ such that
-    \begin{equation}\label{eq:abstract-iso}
-        \forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
-    \end{equation}
-    Conversely, given an isomorphism $(\psi_0, \psi_1)$ from $(\D, \U^{[g]})$ to $(\D', \U')$, Equation \eqref{eq:abstract-iso} defines an isomorphism $\psi\from R \to R'$ satisfying Equation \eqref{eq:abstract-iso}. 
-    Two isomorphisms $(\psi_0, \psi_1)$ and $(\psi_0', \psi_1')$ determine the same isomorphism $\psi\from R \to R'$ if, and only if, there exists a nonzero homogeneous element $d\in \D'$ such that $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
-\end{thm}
-
-
-\section{Graded-simple associative superalgebras}
-% ----
-
-\section{Gradings on $M(m,n)$}\label{sec:Mmn}
-% ==================================================
-
-\section{Gradings on matrix algebras}
-\label{sec:gradings-on-matrix-algebras}
-
-In this section we will recall the classification of gradings on matrix algebras \cite{BSZ01, BZ02, BK10}. We will follow the exposition of \cite[Chapter 2]{livromicha} but use slightly different notation, which will be extended to superalgebras in Section~??%\ref{sec:Mmn}.
-
-The following is the graded version of a classical result (see e.g. \cite[Theorem 2.6]{livromicha}). 
-We recall that a \emph{graded division algebra} is a graded unital associative algebra such that every nonzero homogeneous element is invertible.
-
-\begin{thm}\label{thm:End-over-D}
-	Let $G$ be a group and let $R$ be a $G$-graded associative algebra that has no nontrivial graded ideals and satisfies the descending chain condition on 
-	graded left ideals. Then there is a $G$-graded division algebra $\D$ and a graded (right) $\D$-module $\mc{V}$ such that $R \simeq \End_{\D} (\mc{V})$ as graded algebras.\qed
-\end{thm}
-
-We apply this result to the algebra $R=M_n(\FF)$ equipped with a grading by an \emph{abelian} group $G$. We will now introduce the parameters that determine 
-$\mc D$ and $\mc V$, and give an explicit isomorphism $\End_{\D} (\mc{V})\simeq M_n(\FF)$ (see Definition \ref{def:explicit-grd-assoc}). It should be mentioned that a classification of $G$-gradings on $M_n(\FF)$ is known for non-abelian $G$ but it is less explicit and involves cohomological data (see \cite[Corollary 2.22]{livromicha} and \cite[Theorem 1.3]{GS}); here we restrict ourselves to the abelian case.
+\subsection{Graded-division algebras}
 
 Let $\D$ be a finite-dimensional $G$-graded division algebra. It is easy to see that $T= \supp \D$ is a finite subgroup of $G$. 
 Also, since we are over an algebraically closed field, each homogeneous component $\D_t$, for $t\in T$, is one-dimensional. We can choose a generator $X_t$ for each $\D_t$. It follows that, for every $u,v\in T$, there is a unique nonzero scalar $\beta (u,v)$ such that $X_u X_v = \beta (u,v) X_v X_u$. Clearly, $\beta (u,v)$ does not depend on the choice of $X_u$ and $X_v$.
@@ -90,23 +65,53 @@ and $E_{b'', b'}$ with $b'$, $b'' \in B$, is a matrix unit, namely, the matrix o
 	We will refer to these matrix models of $\mc D$ as its \emph{standard realizations}.
 \end{defi}
 
-\begin{remark}\label{rmk:2-grp-transp}
-	The matrix transposition is always an involution of the algebra structure. As to the grading, we have
-	%
-	\[
-	X_{ab}\transp = \sum_{b'\in B} \beta(a, bb') E_{b',bb'}
-	   = \beta(a,b) \sum_{b''\in B} \beta(a, b^{-1}b'') E_{b^{-1}b'', b''} = \beta(a,b) X_{ab^{-1}}.
-	\]
-	%
-	It follows that if $T$ is an elementary 2-group, then the transposition preserves the degree. 
-	In this case, we will use it to fix an identification between the graded algebras $\D$ and $\D\op$.
+% \begin{remark}\label{rmk:2-grp-transp}
+% 	The matrix transposition is always an involution of the algebra structure. As to the grading, we have
+% 	%
+% 	\[
+% 	X_{ab}\transp = \sum_{b'\in B} \beta(a, bb') E_{b',bb'}
+% 	   = \beta(a,b) \sum_{b''\in B} \beta(a, b^{-1}b'') E_{b^{-1}b'', b''} = \beta(a,b) X_{ab^{-1}}.
+% 	\]
+% 	%
+% 	It follows that if $T$ is an elementary 2-group, then the transposition preserves the degree. 
+% 	In this case, we will use it to fix an identification between the graded algebras $\D$ and $\D\op$.
+% \end{remark}
+
+
+\subsection{Graded $\D$-modules}
+Moreover, it is easy to see that $\D^{[g]}\iso \D^{[g']}$ if, and only if,  $g \equiv g' \,(\operatorname{mod}\, T)$. 
+Given a graded $\D$-module $\mc U$ and $g\in G^\#$, let $\U_{gT} = \bigoplus_{h \in gT} \U_{h}$. 
+It is the sum of all submodules isomorphic to $\D^{[g]}$, so we call $\U_{gT}$ the \emph{isotypic} component of $\mc U$ corresponding to the coset $gT$. 
+Clearly, $\U$ is the direct sum of its isotypic components. 
+If $\U$ has finite rank over $\D$, we can define the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by letting $\kappa (gT) \coloneqq \dim_\D (\U_{gT})$, the rank of the free $\D$-module $\U_{gT}$. 
+Two graded $\D$-supermodules of finite rank are isomorphic if, and only if, they yield the same $\kappa$. 
+Note that $\kappa$ has a finite support.
+
+Conversely, given a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules by choosing a tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in gT$ is equal to $\kappa (gT)$ for every $g\in G$. 
+Then we put $\U \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_k]}$. 
+Note that $k = |\kappa| \coloneqq \sum_{x\in G^\#/T} \kappa(x)$.
+
+\begin{remark}
+    Both parameters $\kappa$ and $\gamma$ have been used in previous works. 
+    Sometimes both are present, as in \cite{livromicha}, sometimes only $\kappa$, as in \cite{paper-adrian} and \cite{felipe-misha}, sometimes only $\gamma$, as in \cite{paper-Qn} and \cite{paper-MAP}. 
+    In this work we decided to use only $\kappa$ since it makes notation more succinct.
 \end{remark}
+
+
+\subsection{Parametrization}
 
 
 %\subsubsection{Graded modules over $\D$}
 
 Graded modules over a graded division algebra $\mc D$ behave similarly to vector spaces. The usual proof that every vector space has a basis, with obvious modifications, shows that every graded $\mc D$-module has a \emph{homogeneous basis}, \ie, a basis formed by homogeneous elements.
 Let $\mc V$ be such a module of finite rank $k$, fix a homogeneous basis $\mc B = \{v_1, \ldots, v_k\}$ and let $g_i := \operatorname{deg} v_i$. We then have $\mc{V}\iso \ \D^{[g_1]}\oplus\cdots\oplus\D^{[g_k]}$, so, the graded $\mc D$-module $\mc V$ is determined by the $k$-tuple $\gamma = (g_1,\ldots, g_k)$. The tuple $\gamma$ is not unique. To capture the precise information that determines the isomorphism class of $\mc V$, we use the concept of \emph{multiset}, \ie, a set together with a map from it to the set of positive integers. If $\gamma = (g_1,\ldots, g_k)$ and $T=\supp \D$, we denote by $\Xi(\gamma)$ the multiset whose underlying set is $\{g_1 T,\ldots, g_k T\} \subseteq G/T$ and the multiplicity of $g_i T$, for $1\leq i\leq k$, is the number of entries of $\gamma$ that are congruent to $g_i$ modulo $T$.
+
+\subsection{Classification on $M_n(\FF)$}
+
+
+We apply this result to the algebra $R=M_n(\FF)$ equipped with a grading by an \emph{abelian} group $G$. We will now introduce the parameters that determine 
+$\mc D$ and $\mc V$, and give an explicit isomorphism $\End_{\D} (\mc{V})\simeq M_n(\FF)$ (see Definition \ref{def:explicit-grd-assoc}). It should be mentioned that a classification of $G$-gradings on $M_n(\FF)$ is known for non-abelian $G$ but it is less explicit and involves cohomological data (see \cite[Corollary 2.22]{livromicha} and \cite[Theorem 1.3]{GS}); here we restrict ourselves to the abelian case.
+
 
 Using $\mc B$ to represent the linear maps by matrices in $M_k(\D) = M_k(\FF)\tensor \D$, we now construct an explicit matrix model for $\End_{\D}(\mc V)$.
 
@@ -121,12 +126,22 @@ We restate \cite[Theorem 2.27]{livromicha} (see also \cite[Theorem 2.6]{BK10}) u
 	Two gradings, $\Gamma(T,\beta,\gamma)$ and $\Gamma(T',\beta',\gamma')$, on the algebra $M_n(\FF)$ are isomorphic if, and only if, $T=T'$, $\beta=\beta'$ and there is an element $g\in G$ such that $g \Xi(\gamma)=\Xi(\gamma')$.\qed
 \end{thm}
 
-The proof of this theorem is based on the following result (see Theorem 2.10 and Proposition 2.18 from \cite{livromicha}), which will also be needed:
+% The proof of this theorem is based on the following result (see Theorem 2.10 and Proposition 2.18 from \cite{livromicha}), which will also be needed:
 
-\begin{prop}\label{prop:inner-automorphism}
-	If $\phi: \End_\D (\mc V) \rightarrow \End_\D (\mc V')$ is an isomorphism of graded algebras, then there is a homogeneous invertible 
-	$\D$-linear map $\psi: \mc V\rightarrow \mc V'$ such that $\phi(r)=\psi \circ r \circ \psi\inv$, for all $r\in \End_\D (\mc V)$.\qed
-\end{prop}
+% \begin{prop}\label{prop:inner-automorphism}
+% 	If $\phi: \End_\D (\mc V) \rightarrow \End_\D (\mc V')$ is an isomorphism of graded algebras, then there is a homogeneous invertible 
+% 	$\D$-linear map $\psi: \mc V\rightarrow \mc V'$ such that $\phi(r)=\psi \circ r \circ \psi\inv$, for all $r\in \End_\D (\mc V)$.\qed
+% \end{prop}
+
+\section{Graded-simple associative superalgebras}
+% ----
+
+\section{Gradings on $M(m,n)$}\label{sec:Mmn}
+% ==================================================
+
+\section{Gradings on matrix algebras}
+\label{sec:gradings-on-matrix-algebras}
+
 
 % --------------------------------------------------
 \subsection{The associative superalgebra $M(m,n)$}\label{M(m,n)}
