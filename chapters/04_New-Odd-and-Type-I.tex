@@ -20,12 +20,13 @@ We recall that a \emph{graded division algebra} is a graded unital associative a
 
 \begin{thm}\label{thm:End-over-D}
 	Let $G$ be a group and let $R$ be a $G$-graded associative algebra that has no nontrivial graded ideals and satisfies the descending chain condition on 
-	graded left ideals. Then there is a $G$-graded division algebra $\D$ and a graded (right) $\D$-module $\mc{V}$ such that $R \simeq \End_{\D} (\mc{V})$ as graded algebras.\qed
+	graded left ideals.
+	Then there is a $G$-graded division algebra $\D$ and a graded (right) $\D$-module $\mc{U}$ such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
 \end{thm}
 
 The following result (\cite[Theorem 2.10]{livromicha}) tells us when two such graded algebras are isomorphic.
 
-\begin{defi}
+\begin{defi}\label{def:inner-automorphism}
     Let $d\in \D$ be a nonzero $G$-homogeneous element. 
     We define the \emph{inner automorphism} $\operatorname{Int}_d\from \D \to \D$ by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$.
 \end{defi}
@@ -48,6 +49,12 @@ The following concept allows us to transform (graded) modules over different (gr
 \end{thm}
 
 \subsection{Graded-division algebras}
+
+
+Recall that a graded division superalgebra is the same as a graded division algebra if we consider the $G^\#$-grading. 
+In particular, the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a pair $(T, \beta)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group and $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter {\tt (see ??)}. 
+Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$. 
+% Sometimes we may want to dis
 
 Let $\D$ be a finite-dimensional $G$-graded division algebra. It is easy to see that $T= \supp \D$ is a finite subgroup of $G$. 
 Also, since we are over an algebraically closed field, each homogeneous component $\D_t$, for $t\in T$, is one-dimensional. We can choose a generator $X_t$ for each $\D_t$. It follows that, for every $u,v\in T$, there is a unique nonzero scalar $\beta (u,v)$ such that $X_u X_v = \beta (u,v) X_v X_u$. Clearly, $\beta (u,v)$ does not depend on the choice of $X_u$ and $X_v$.
@@ -191,7 +198,8 @@ This grading will be called the \emph{canonical $\ZZ$-grading} on $M(m,n)$.% and
 % --------------------------------------------------
 
 It is known that the automorphisms of the superalgebra $\End(U)$ are conjugations by invertible homogeneous operators. 
-(This follows, for example, from Proposition \ref{prop:inner-automorphism}.) The invertible even operators are of the form $\left( \begin{matrix}
+% (This follows, for example, from Proposition \ref{prop:inner-automorphism}.)
+The invertible even operators are of the form $\left( \begin{matrix}
 a&0\\
 0&d\\
 \end{matrix}\right)$ where $a\in \GL(m)$ and $d\in \GL(n)$. The corresponding inner automorphisms of $M(m,n)$ will be called \emph{even automorphisms}. 
