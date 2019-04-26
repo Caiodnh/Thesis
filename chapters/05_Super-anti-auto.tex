@@ -1014,29 +1014,16 @@ So, from now on, we will assume that $\eta$ takes values in $\pmone$.
         &&= \sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t.
     \end{alignat*}
     Hence, $\overline{B_x} (u, v) = \delta {B_x} (u, v)$ if, and only if,
-    $
-        \sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t = \delta \tilde{B}_x(u, v) X_t
-    $,
-    and the result follows.
+    $\sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t = \delta X_t \tilde{B}_x(u, v)$, and the result follows.
 \end{proof}
 
-We will now focus our attention on the self-dual components. 
-
-
-
-
-For convenience, we will fix a (set-theoretical) section of the natural projection map $G^\# \to G^\#/T$, \ie, a map $\xi\from G^\#/T \to G^\#$ such that $\xi(x) \in x$, for all $x\in G^\#/T$. 
-If $\D$ is odd, then we choose $\xi$ to take even values, \ie, $\xi(x) \in G$, for all $x\in G^\#/T$. 
-We will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk:M(D)=M(FF)-tensor-D}). 
+Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk:M(D)=M(FF)-tensor-D}). 
 
 % For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
 
-\begin{lemma}\label{lemma:self-dual-components}
-    Let $\U_{x}$ be a self-dual isotypic component of $\U$, and set $t \coloneqq g_0\xi(x)^2$ and $k \coloneqq \kappa(x)$. 
-    % set 
-    % $t \coloneq g_0g^2$ and 
-    % $k \coloneqq \kappa(gT)$. 
-    The number 
+\begin{prop}\label{prop:self-dual-components}
+    Suppose $x = g_0\inv x\inv$, let $\delta \in \pmone$ and  set $t \coloneqq g_0\xi(x)^2$. 
+    Then the number 
     \begin{equation}\label{eq:mu_x}
         \mu_{x} \coloneqq (-1)^{|\xi(x)|} \eta(t) \delta
     \end{equation}
@@ -1046,19 +1033,21 @@ We will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see 
     % \begin{enumerate}[(i)]
     %     \item $I_k \tensor X_{g_0g^2}$ if 
     % \end{enumerate}
-    If $\mu_{x} = +1$, then there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the restriction of $B$ to $\U_{x}$ is represented by $I_k \tensor X_t$. 
-    If $\mu_{x} = -1$, then $k$ is even and there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the restriction of $B$ to $\U_{x}$ is represented by $J_k \coloneqq 
-    \begin{pmatrix}
-        0 & I_{k/2}\\
-        -I_{k/2} & 0
-    \end{pmatrix} \tensor X_t$. 
-\end{lemma}
+    Moreover, $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the matrix representing $B_x$ is:
+    \begin{enumerate}[(i)]
+        \item $I_{\kappa(x)} \tensor X_t$ if $\mu_x = +1$;
+        \item $J_{\kappa(x)} \coloneqq \begin{pmatrix}
+        0 & I_{\kappa(x)/2}\\
+        -I_{\kappa(x)/2} & 0
+    \end{pmatrix} \tensor X_t$ if $\mu_{x} = -1$ (in this case, $\kappa(x)$ must be even).
+    \end{enumerate}
+\end{prop}
 
 \begin{proof}
-    To show that $\mu_{gT}$ does not depend on the choice of $g$, let $s \in T$ and consider $g' \coloneqq gs$. 
-    Then 
+    Let $g \coloneqq \xi(x)$. If $\xi' \from G^\#/T \to G^\#$ is another section, then there is $s \in T$ such that $\xi' (x) = g s$. 
+    Hence:
     \begin{align*}
-        (-1)^{|g'|} \eta(g_0 (g')^2) &= (-1)^{|gs|} \eta(g_0 g^2 s^2)\\
+        (-1)^{|\xi' (x)|} \eta(g_0 \xi' (x)^2) &= (-1)^{|gs|} \eta(g_0 g^2 s^2)\\
         &= (-1)^{|g| + |s|} \sign{g_0 g^2}{s^2} \beta(g_0 g^2, s^2)\eta(g_0 g^2) \eta(s^2)\\
         &= (-1)^{|g| + |s|} (-1)^{2 |g_0 g^2| |s|} \beta(g_0 g^2, s)^2 \eta(g_0 g^2) \eta(s^2) \\
         &= (-1)^{|g| + |s|} \eta(g_0 g^2) \eta(s^2) \\ 
@@ -1066,22 +1055,8 @@ We will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see 
     \end{align*}
     where we have used Equation \eqref{eq:superpolarization} twice. 
     
-    % Now lets us fix a representative $g\in G$ for the coset $gT$. 
-    Observe that $\U_g \subseteq \U_{gT}$ is an $\FF$-vector space, and an $\FF$-basis for $\U_g$ is a $\D$-basis for $\U_{gT}$ (in other words, $\U_{gT} = \U_g \tensor \D)$. 
-    % Let $t=g_0 g^2$ and choose $0 \neq X_t \in \D_t$. 
-    We define $B'\from \U_g \times \U_g \to \FF$ by $B'(u,v) \coloneqq B(u,v) X_t\inv$, for all $u, v \in \U_g$. 
-    In other words, $B(u,v) = B'(u,v) X_t$ and, hence, $B'$ determines $B\restriction_{\U_{gT} \times \U_{gT}}$. 
-    It follows that $B'$ is a nondegenerate bilinear form on $\U_g$. 
-    Also, 
-    \begin{alignat*}{3}
-        \overline{B} (u, v) &= \sign{u}{v} \vphi_0\inv( B(v, u) )
-        &&= \sign{g}{g} \vphi_0\inv( B'(v, u)X_t )\\
-        &= (-1)^{|g|} B'(v, u) \vphi_0\inv(X_t)
-        &&= (-1)^{|g|} B'(v, u) \eta(t)\inv X_t,
-    \end{alignat*}
-    so we have $\overline{B} (u, v) = \delta B (u, v) = \delta B' (u,v) X_t = (-1)^{|g|} B'(v, u) \eta(t)\inv X_t$ and, hence, $B'(v, u) = \mu_{gT} B'(u,v)$. 
-    Therefore $B'$ is either symmetric or skew-symmetric, depending on $\mu_{gT} \in \pmone$.
-    Depending on the case we can fix an orthonormal or a symplectic $\FF$-basis for $\U_g$ and we will use it as our choice of $\D$-basis for $\U_{gT}$. 
+    For the ``moreover'' part, it follows from Lemmas ?? and ?? that $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, $\tilde B_x$ is nondegenerate and $B_x (u,v) = \mu_x B_x(v, u)$, for all $u,v \in \U_{\xi(x)}$. 
+    Then the result follows from a well-known fact from linear algebra over algebraically closed fields and from the fact that an $\FF$-basis for $\U_{\xi(x)}$ is a $\D$-basis for $\U_x$.
 \end{proof}
 
 \begin{remark}
