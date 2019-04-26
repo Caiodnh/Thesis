@@ -957,44 +957,51 @@ We say that the components $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ are \emph{paired
 
 % From now on, we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
 
-We will now reduce the study of $B$ to the study of regular $\FF$-bilinear forms. 
-Let $\xi\from G^\#/T \to G^\#$ be a set-theoretical section of the quotient homomorphism, \ie, $\xi (x) \in x$ for all $x \in G^\#/T$ and fix a nonzero element $X_t \in \D_t$ for all $t\in T$. 
-Note that $\U_{\xi(x)} \tensor \D \iso \U_x$ via the map $u \tensor d \mapsto ud$ and, hence, a $\FF$-basis of $\U_{\xi(x)}$ is a graded $\D$-basis for $\U_x$. 
+We will now reduce the study of $B$ to the study of $\FF$-bilinear forms. 
+Fix a set-theoretic section $\xi\from G^\#/T \to G^\#$ of the natural homomorphism $ G^\# \to G^\#/T$, \ie, $\xi (x) \in x$ for all $x \in G^\#/T$, and fix a nonzero element $X_t \in \D_t$ for all $t\in T$. 
+Note that $\U_{\xi(x)} \tensor \D \iso \U_x$ via the map $u \tensor d \mapsto ud$ and, hence, an $\FF$-basis of $\U_{\xi(x)}$ is a graded $\D$-basis for $\U_x$. 
+In view of Convention \ref{conv:pick-even-basis}, if $\D$ is odd we choose $\xi$ to take values in $G = G\times \{ \bar 0 \}$.
 
-For a given $x \in G^\#/T$, set $y \coloneqq g_0\inv y\inv \in G^\#/T$ and $t \coloneqq g_0 \xi(x) \xi(y) \in T$. 
+For a given $x \in G^\#/T$, set $y \coloneqq g_0\inv x\inv \in G^\#/T$ and $t \coloneqq g_0 \xi(x) \xi(y) \in T$. 
 Also, set $\V_x \coloneqq \U_x + \U_y$ (so $\V_x = \U_x$ if $x=y$ and $\V_x = \U_x \oplus \U_y$ if $x \neq y$) and $V_x \coloneqq \U_{\xi(x)} + \U_{\xi(y)}$ (so $V_x = \U_{\xi(x)}$ if $x=y$ and $V_x = \U_{\xi(x)} \oplus \U_{\xi(y)}$ if $x \neq y$). 
-We will denote the restriction of $B$ to $\V_x$ by $B_x$ and define the bilinear map $B_x'\from V_x \times V_x \to \FF$ by $B_x' (u,v) \coloneqq B_x (u,v) X_{t}\inv$, for all $u,v \in V_x$. 
+We will denote the restriction of $B$ to $\V_x$ by $B_x$ and define the bilinear map $\tilde{B}_x\from V_x \times V_x \to \FF$ by 
+\begin{equation}\label{eq:B_x-tilde}
+    \tilde{B}_x (u,v) \coloneqq X_{t}\inv B_x (u,v),
+\end{equation}
+for all $u,v \in V_x$. 
+It is clear that $B$ is nondegenerate if, and only if, $B_x$ is nondegenerate for every $x \in G^\#/T$. 
+If this is the case, $\U_x$ and $\U_y$ are dual to each other and, hence, $\kappa(x) = \kappa(y)$. 
+If $x = y$, we say that $\U_x$ is a \emph{self-dual component} and, if $x\neq y$, we say that $\U_x$ and $\U_y$ are a \emph{pair of dual components}. 
 
 \begin{lemma}
-    The $\vphi_0$-sesquilinear form $B_x$ is nondegenerate if, and only if, the bilinear form $B_x'$ is nondegenerate.
+    The $\vphi_0$-sesquilinear form $B_x$ is nondegenerate if, and only if, the bilinear form $\tilde{B}_x$ is nondegenerate.
 \end{lemma}
 
 \begin{proof}
-    Assume $B_x$ is nondegenerate and let $u \in V_x$ be such that $B_x'(u,v) = 0$ for all $v \in V_x$. 
-    Then $B_x(u, v) = B_x'(u,v) X_{t} = 0$ for all $v \in V_x$ and, hence, $B_x(u, vd) = B_x(u, v)d = 0$ for all $v \in \V_x$. 
-    It follows that $B_x(u,v) = 0$ for all $v\in \V_x = V_x \cdot \D$ and, therefore, $u = 0$.
+    Assume $B_x$ is nondegenerate and let $u \in V_x$ be such that $\tilde{B}_x(u,v) = 0$ for all $v \in V_x$. 
+    Then $B_x(u, v) = X_{t} \tilde{B}_x(u,v) = 0$ for all $v \in V_x$ and, hence, $B_x(u, vd) = B_x(u, v)d = 0$ for all $v \in \V_x$. 
+    It follows that $B_x(u,v) = 0$ for all $v\in \V_x = V_x \D$ and, therefore, $u = 0$.
     
-    Now assume $B_x'$ is nondegenerate and let $u \in \V_x$ be such that $B_x (u,v) = 0$ for all $v \in \V_x$.
+    Now assume $\tilde{B}_x$ is nondegenerate and let $u \in \V_x$ be such that $B_x (u,v) = 0$ for all $v \in \V_x$.
     Let $v\in V_x$ be homogeneous and write $u = \sum_{g\in G^\#} u_g$ where $u_g \in \U_g$. 
-    Then $B_x(\sum_{g\in G^\#} u_g, v) = \sum_{g\in G^\#} B_x(u_g, v) = 0$ and, by degree considerations, $B_x(u_g, v) = 0$ for all $g\in G^\#$. 
-    Since $\V_x = V \cdot \D$, we have that $u_g = u_g' d$ for some homogeneous elements $u_g' \in V_x$ and $0 \neq d \in \D$. 
-    Then $B_x(u_g, v) = (-1)^{|d|(|B| + |u_g'|} \vphi_0(d) B_x(u_g', v) = 0$, and hence $B_x(u_g', v) = 0$. 
-    We conclude that $B_x'(u_g', v) = 0$, and, since $v\in V_x$ was taken arbitrarily, $u_g' = 0$. 
+    Then $B_x(\sum_{g\in G^\#} u_g, v) = \sum_{g\in G^\#} B_x(u_g, v) = 0$ and, since the summands have pairwise distinct degrees, $B_x(u_g, v) = 0$ for all $g\in G^\#$. 
+    Also, since $g \xi(gT)\inv \in T$, we have that $u_g = \tilde u_g d$ for some homogeneous elements $\tilde u_g \in V_x$ and $0 \neq d \in \D$. 
+    Then $0 = B_x(u_g, v) = (-1)^{|d|(|B| + |\tilde u_g|)} \vphi_0(d) B_x(\tilde u_g, v)$, and hence $B_x(\tilde u_g, v) = 0$. 
+    We conclude that $\tilde{B}_x(\tilde u_g, v) = 0$, for all $v\in V_x$, which implies $\tilde u_g = 0$. 
     It follows that $u = 0$, concluding the proof.
 \end{proof}
 
-It is clear that $B$ is nondegenerate if, and only if, $B_x$ is nondegenerate for every $x \in G^\#/T$. 
-In this case, if $\U_x$ and $\U_y$ are paired by $B$, then they are actually dual to each other and, hence, $\kappa(x) = \kappa(y)$. 
-If $x = y$, we say that $\U_x$ is a \emph{self-dual component} and, if $x\neq y$, we say that $\U_x$ and $\U_y$ is a \emph{pair of different dual components}. 
-
-% For the next result, we recall Definition ?? $\bar B$.
+We are interested in the case when the superadjunction with respect to $B$ is involutive. 
+By Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, this happens if, and only if, $\vphi_0$ is involutive and $\overline B = \delta B$ for some $\delta \in \pmone$. 
+So, from now on, we will assume that $\eta$ takes values in $\pmone$. 
 
 \begin{lemma}
-    Let $\delta \in \FF$. 
+    Let $\delta \in \pmone$. 
     Then $\overline{B_x} = \delta B_x$ if, and only if, 
     \[
-        B_x' (v, u) = (-1)^{|\xi(x)| |\xi(y)|} \eta(t) \delta B_x' (u, v)
-    \] for all $u, v \in V_x$.
+        \tilde{B}_x (v, u) = (-1)^{|u| |v|} \eta(t) \delta \tilde{B}_x (u, v)
+    \]
+    for all $u, v \in V_x$, where $t \coloneqq g_0 \xi(x) \xi(g_0\inv x\inv)$.
 \end{lemma}
 
 \begin{proof}
@@ -1002,32 +1009,16 @@ If $x = y$, we say that $\U_x$ is a \emph{self-dual component} and, if $x\neq y$
     By definition of $\overline{B_x}$, we have:
     \begin{alignat*}{3}
         \overline{B_x} (u, v) &= \sign{u}{v} \vphi_0\inv( B_x(v, u) )
-        &&= \sign{u}{v} \vphi_0\inv( B_x'(v, u)X_t )\\
-        &= \sign{u}{v} B_x'(v, u) \vphi_0\inv(X_t)
-        &&= \sign{u}{v} B_x'(v, u) \eta(t)\inv X_t.
+        &&= \sign{u}{v} \vphi_0\inv( X_t \tilde{B}_x(v, u) )\\
+        &= \sign{u}{v} \tilde{B}_x(v, u) \vphi_0\inv(X_t)
+        &&= \sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t.
     \end{alignat*}
     Hence, $\overline{B_x} (u, v) = \delta {B_x} (u, v)$ if, and only if,
     $
-        \sign{u}{v} B_x'(v, u) \eta(t)\inv X_t = \delta B_x'(u, v) X_t
+        \sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t = \delta \tilde{B}_x(u, v) X_t
     $,
     and the result follows.
 \end{proof}
-
-From now on, we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
-Also, we will assume there is $\delta \in \pmone$ such that $\overline{B} = \delta B$ (see Theorem \ref{thm:vphi-involution-iff-delta-pm-1}). 
-
-
-\begin{defi}
-    Let $x \in G^\#$ and let $y \coloneqq g_0\inv x\inv$. 
-    We define the number $\mu_x \in \pmone$ by
-    \begin{enumerate}[(i)]
-        \item 
-    \end{enumerate}
-\end{defi}
-
-
-
-
 
 We will now focus our attention on the self-dual components. 
 
