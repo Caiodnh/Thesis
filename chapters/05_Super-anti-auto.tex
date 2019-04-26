@@ -973,7 +973,7 @@ It is clear that $B$ is nondegenerate if, and only if, $B_x$ is nondegenerate fo
 If this is the case, $\U_x$ and $\U_y$ are dual to each other and, hence, $\kappa(x) = \kappa(y)$. 
 If $x = y$, we say that $\U_x$ is a \emph{self-dual component} and, if $x\neq y$, we say that $\U_x$ and $\U_y$ are a \emph{pair of dual components}. 
 
-\begin{lemma}
+\begin{lemma}\label{lemma:B_x-nondeg}
     The $\vphi_0$-sesquilinear form $B_x$ is nondegenerate if, and only if, the bilinear form $\tilde{B}_x$ is nondegenerate.
 \end{lemma}
 
@@ -995,7 +995,7 @@ We are interested in the case when the superadjunction with respect to $B$ is in
 By Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, this happens if, and only if, $\vphi_0$ is involutive and $\overline B = \delta B$ for some $\delta \in \pmone$. 
 So, from now on, we will assume that $\eta$ takes values in $\pmone$. 
 
-\begin{lemma}
+\begin{lemma}\label{lemma:B_x-delta}
     Let $\delta \in \pmone$. 
     Then $\overline{B_x} = \delta B_x$ if, and only if, 
     \[
@@ -1036,10 +1036,10 @@ Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk
     Moreover, $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the matrix representing $B_x$ is:
     \begin{enumerate}[(i)]
         \item $I_{\kappa(x)} \tensor X_t$ if $\mu_x = +1$;
-        \item $J_{\kappa(x)} \coloneqq \begin{pmatrix}
+        \item $J_{\kappa(x)} \tensor X_t$ if $\mu_{x} = -1$, where $J_{\kappa(x)} \coloneqq \begin{pmatrix}
         0 & I_{\kappa(x)/2}\\
         -I_{\kappa(x)/2} & 0
-    \end{pmatrix} \tensor X_t$ if $\mu_{x} = -1$ (in this case, $\kappa(x)$ must be even).
+    \end{pmatrix}$ (in this case, $\kappa(x)$ must be even).
     \end{enumerate}
 \end{prop}
 
@@ -1055,7 +1055,7 @@ Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk
     \end{align*}
     where we have used Equation \eqref{eq:superpolarization} twice. 
     
-    For the ``moreover'' part, it follows from Lemmas ?? and ?? that $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, $\tilde B_x$ is nondegenerate and $B_x (u,v) = \mu_x B_x(v, u)$, for all $u,v \in \U_{\xi(x)}$. 
+    For the ``moreover'' part, it follows from Lemmas \ref{lemma:B_x-nondeg} and \ref{lemma:B_x-delta} that $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, $\tilde B_x$ is nondegenerate and $B_x (u,v) = \mu_x B_x(v, u)$, for all $u,v \in \U_{\xi(x)}$. 
     Then the result follows from a well-known fact from linear algebra over algebraically closed fields and from the fact that an $\FF$-basis for $\U_{\xi(x)}$ is a $\D$-basis for $\U_x$.
 \end{proof}
 
@@ -1068,6 +1068,8 @@ In the first, it makes sense to talk about parity of the isotypic components and
 In the later, we follow Convention \ref{conv:pick-even-basis}.  
 
 \begin{lemma}
+    Suppose $x \neq g_0\inv x\inv$, let $\delta \in \pmone$ and  set $t \coloneqq g_0\xi(x)\xi(g_0\inv x\inv)$. 
+
     Let $\U_{x}$ and $\U_{y}$ be a pair of dual isotypic components, and set $t \coloneqq g_0 \xi(x) \xi(y)$ and $k \coloneqq \kappa(x) = \kappa(y)$. 
     If $\D$ is even, then there are $\D$-bases on $\U_{x}$ and $\U_{y}$ consisting only of elements with degrees $\xi(x)$ and $\xi(y)$, respectively, such that the matrix representing the restriction of $B$ to $\U_{x} \oplus \U_{y}$ is 
     \[\begin{pmatrix}
