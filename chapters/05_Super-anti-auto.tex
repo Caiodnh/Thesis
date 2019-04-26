@@ -941,49 +941,126 @@ More explicitly, $\kappa (gT) = \dim_\D \U_{gT}$, where $\U_{gT}$ is the isotypi
 % defined by $\kappa (gT) = \dim_\D \U_{gT}$, where $\U_{gT}$ is the isotypic component associated to the coset $gT$ (Subsection \ref{U-in-terms-of-GxZZ2}).
 
 % described by a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support. 
-We will now consider a nondegenerate homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$, with degree $g_0 \in G^\#$.
-Its presence gives us further restrictions on $\kappa$. 
+We will now consider a 
+% nondegenerate 
+homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$, $\deg B = g_0 \in G^\#$.
+% Its presence gives us further restrictions on $\kappa$. 
 Since $B$ has degree $g_0$ and takes values in $\D$, if $B(\U_{g}, \U_{g'}) \neq 0$ for some $g, g' \in G^\#$, then $g_0 g g' \in T$. 
 In terms of isotypic components, this means that, given $\U_{g T}$, there is at most one isotypic component $\U_{g'T}$ such that $B(\U_{gT}, \U_{g'T}) \neq 0$, namely, $\U_{g_0\inv g\inv T}$. 
 % we can only have $B(\U_{g T}, \U_{g' T}) \neq 0$ if $\bar {g'} = \bar g_0\inv \bar g\inv \in G^\#/T$. 
-Since $B$ is nondegenerate, we have that $\U_{g T}$ and $\U_{g_0\inv g\inv T}$ are in duality via $B$ and, in particular, $\kappa(g T) = \kappa(g_0\inv g \inv T)$. 
+We say that the components $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ are \emph{paired by $B$}.
+% Since $B$ is nondegenerate, we have that $\U_{g T}$ and $\U_{g_0\inv g\inv T}$ are in duality via $B$ and, in particular, $\kappa(g T) = \kappa(g_0\inv g \inv T)$. 
 
-Note that $\U_{g T} = \U_{g_0\inv g\inv T}$ if, and only if, $g_0 g^2 \in T$. 
-In this case, we say that $\U_{gT}$ is a \emph{self-dual component}. 
-Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of dual components}.
+% Note that $\U_{g T} = \U_{g_0\inv g\inv T}$ if, and only if, $g_0 g^2 \in T$. 
+% In this case, we say that $\U_{gT}$ is a \emph{self-dual component}. 
+% Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of dual components}. 
 
-From now on we will specialize our study to the case we are more interested. 
-So we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
+% From now on, we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
+
+We will now reduce the study of $B$ to the study of regular $\FF$-bilinear forms. 
+Let $\xi\from G^\#/T \to G^\#$ be a set-theoretical section of the quotient homomorphism, \ie, $\xi (x) \in x$ for all $x \in G^\#/T$ and fix a nonzero element $X_t \in \D_t$ for all $t\in T$. 
+Note that $\U_{\xi(x)} \tensor \D \iso \U_x$ via the map $u \tensor d \mapsto ud$ and, hence, a $\FF$-basis of $\U_{\xi(x)}$ is a graded $\D$-basis for $\U_x$. 
+
+For a given $x \in G^\#/T$, set $y \coloneqq g_0\inv y\inv \in G^\#/T$ and $t \coloneqq g_0 \xi(x) \xi(y) \in T$. 
+Also, set $\V_x \coloneqq \U_x + \U_y$ (so $\V_x = \U_x$ if $x=y$ and $\V_x = \U_x \oplus \U_y$ if $x \neq y$) and $V_x \coloneqq \U_{\xi(x)} + \U_{\xi(y)}$ (so $V_x = \U_{\xi(x)}$ if $x=y$ and $V_x = \U_{\xi(x)} \oplus \U_{\xi(y)}$ if $x \neq y$). 
+We will denote the restriction of $B$ to $\V_x$ by $B_x$ and define the bilinear map $B_x'\from V_x \times V_x \to \FF$ by $B_x' (u,v) \coloneqq B_x (u,v) X_{t}\inv$, for all $u,v \in V_x$. 
+
+\begin{lemma}
+    The $\vphi_0$-sesquilinear form $B_x$ is nondegenerate if, and only if, the bilinear form $B_x'$ is nondegenerate.
+\end{lemma}
+
+\begin{proof}
+    Assume $B_x$ is nondegenerate and let $u \in V_x$ be such that $B_x'(u,v) = 0$ for all $v \in V_x$. 
+    Then $B_x(u, v) = B_x'(u,v) X_{t} = 0$ for all $v \in V_x$ and, hence, $B_x(u, vd) = B_x(u, v)d = 0$ for all $v \in \V_x$. 
+    It follows that $B_x(u,v) = 0$ for all $v\in \V_x = V_x \cdot \D$ and, therefore, $u = 0$.
+    
+    Now assume $B_x'$ is nondegenerate and let $u \in \V_x$ be such that $B_x (u,v) = 0$ for all $v \in \V_x$.
+    Let $v\in V_x$ be homogeneous and write $u = \sum_{g\in G^\#} u_g$ where $u_g \in \U_g$. 
+    Then $B_x(\sum_{g\in G^\#} u_g, v) = \sum_{g\in G^\#} B_x(u_g, v) = 0$ and, by degree considerations, $B_x(u_g, v) = 0$ for all $g\in G^\#$. 
+    Since $\V_x = V \cdot \D$, we have that $u_g = u_g' d$ for some homogeneous elements $u_g' \in V_x$ and $0 \neq d \in \D$. 
+    Then $B_x(u_g, v) = (-1)^{|d|(|B| + |u_g'|} \vphi_0(d) B_x(u_g', v) = 0$, and hence $B_x(u_g', v) = 0$. 
+    We conclude that $B_x'(u_g', v) = 0$, and, since $v\in V_x$ was taken arbitrarily, $u_g' = 0$. 
+    It follows that $u = 0$, concluding the proof.
+\end{proof}
+
+It is clear that $B$ is nondegenerate if, and only if, $B_x$ is nondegenerate for every $x \in G^\#/T$. 
+In this case, if $\U_x$ and $\U_y$ are paired by $B$, then they are actually dual to each other and, hence, $\kappa(x) = \kappa(y)$. 
+If $x = y$, we say that $\U_x$ is a \emph{self-dual component} and, if $x\neq y$, we say that $\U_x$ and $\U_y$ is a \emph{pair of different dual components}. 
+
+% For the next result, we recall Definition ?? $\bar B$.
+
+\begin{lemma}
+    Let $\delta \in \FF$. 
+    Then $\overline{B_x} = \delta B_x$ if, and only if, 
+    \[
+        B_x' (v, u) = (-1)^{|\xi(x)| |\xi(y)|} \eta(t) \delta B_x' (u, v)
+    \] for all $u, v \in V_x$.
+\end{lemma}
+
+\begin{proof}
+    Let $u,v \in \V_x$. 
+    By definition of $\overline{B_x}$, we have:
+    \begin{alignat*}{3}
+        \overline{B_x} (u, v) &= \sign{u}{v} \vphi_0\inv( B_x(v, u) )
+        &&= \sign{u}{v} \vphi_0\inv( B_x'(v, u)X_t )\\
+        &= \sign{u}{v} B_x'(v, u) \vphi_0\inv(X_t)
+        &&= \sign{u}{v} B_x'(v, u) \eta(t)\inv X_t.
+    \end{alignat*}
+    Hence, $\overline{B_x} (u, v) = \delta {B_x} (u, v)$ if, and only if,
+    $
+        \sign{u}{v} B_x'(v, u) \eta(t)\inv X_t = \delta B_x'(u, v) X_t
+    $,
+    and the result follows.
+\end{proof}
+
+From now on, we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
 Also, we will assume there is $\delta \in \pmone$ such that $\overline{B} = \delta B$ (see Theorem \ref{thm:vphi-involution-iff-delta-pm-1}). 
 
-For convenience, we will fix a representative $g\in G^\#$ for every coset $gT \in G^\#/T$, an ordered pair $(g', g'') \in (G^\#)^2$ for all $g', g'' \in G^\#$ such that $g_0 g' g'' \in T$ and a nonzero element $X_t \in \D_t$ for all $t\in T$. 
-In the case $\D$ is odd, we will choose the coset representatives to be even elements. 
+
+\begin{defi}
+    Let $x \in G^\#$ and let $y \coloneqq g_0\inv x\inv$. 
+    We define the number $\mu_x \in \pmone$ by
+    \begin{enumerate}[(i)]
+        \item 
+    \end{enumerate}
+\end{defi}
+
+
+
+
+
+We will now focus our attention on the self-dual components. 
+
+
+
+
+For convenience, we will fix a (set-theoretical) section of the natural projection map $G^\# \to G^\#/T$, \ie, a map $\xi\from G^\#/T \to G^\#$ such that $\xi(x) \in x$, for all $x\in G^\#/T$. 
+If $\D$ is odd, then we choose $\xi$ to take even values, \ie, $\xi(x) \in G$, for all $x\in G^\#/T$. 
 We will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk:M(D)=M(FF)-tensor-D}). 
 
 % For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
 
 \begin{lemma}\label{lemma:self-dual-components}
-    Let $\U_{gT}$ be a self-dual isotypic component of $\U$, and set $t \coloneqq g_0g^2$ and $k \coloneqq \kappa(gT)$. 
+    Let $\U_{x}$ be a self-dual isotypic component of $\U$, and set $t \coloneqq g_0\xi(x)^2$ and $k \coloneqq \kappa(x)$. 
     % set 
     % $t \coloneq g_0g^2$ and 
     % $k \coloneqq \kappa(gT)$. 
     The number 
-    \begin{equation}
-        \mu_{gT} \coloneqq (-1)^{|g|} \eta(t) \delta
+    \begin{equation}\label{eq:mu_x}
+        \mu_{x} \coloneqq (-1)^{|\xi(x)|} \eta(t) \delta
     \end{equation}
     % $\mu_{gT} = (-1)^{|g|} \eta(g_0 g^2) \delta \in \pmone$
-    does not depend on the choice of the representative $g$ for the coset $gT$. 
+    does not depend on the choice of the section $\xi\from G^\#/T \to G^\#$. 
     % Further, there is a $\D$-basis on $\U_{gT}$ consisting only of homogeneous elements of degree $g$ such that  that the restriction of $B$ to $\U_{gT}$ is represented by
     % \begin{enumerate}[(i)]
     %     \item $I_k \tensor X_{g_0g^2}$ if 
     % \end{enumerate}
-    If $\mu_{gT} = +1$, then there is a graded $\D$-basis on $\U_{gT}$ such that the restriction of $B$ to $\U_{gT}$ is represented by $I_k \tensor X_t$. 
-    If $\mu_{gT} = -1$, then $k$ is even and there is a graded $\D$-basis on $\U_{gT}$ such that the restriction of $B$ to $\U_{gT}$ is represented by $J_k \coloneqq 
+    If $\mu_{x} = +1$, then there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the restriction of $B$ to $\U_{x}$ is represented by $I_k \tensor X_t$. 
+    If $\mu_{x} = -1$, then $k$ is even and there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the restriction of $B$ to $\U_{x}$ is represented by $J_k \coloneqq 
     \begin{pmatrix}
         0 & I_{k/2}\\
         -I_{k/2} & 0
     \end{pmatrix} \tensor X_t$. 
-    In both cases, we can take all elements of the basis to have degree $g$.
 \end{lemma}
 
 \begin{proof}
@@ -1017,7 +1094,7 @@ We will be also using the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see 
 \end{proof}
 
 \begin{remark}
-    Even though $\mu_{gT}$ does not depend on the choice of the representative $g \in G^\#$, unless $T$ is a elementary $2$-group, the element $t = g_0g^2$ does depend on it.
+    Even though $\mu_{x}$ does not depend on $\xi$, unless $T$ is a elementary $2$-group, the element $t = g_0\xi(x)^2$ does depend on it.
 \end{remark}
 
 To handle the case of a pair of dual components, we will separate in the cases $\D\odd = 0$ and $\D\odd \neq 0$. 
@@ -1025,21 +1102,21 @@ In the first, it makes sense to talk about parity of the isotypic components and
 In the later, we follow Convention \ref{conv:pick-even-basis}.  
 
 \begin{lemma}
-    Let $\U_{gT}$ and $\U_{g'T}$ be a pair of dual isotypic components. 
-    If $\D$ is even, then there are graded $\D$-bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
+    Let $\U_{x}$ and $\U_{y}$ be a pair of dual isotypic components, and set $t \coloneqq g_0 \xi(x) \xi(y)$ and $k \coloneqq \kappa(x) = \kappa(y)$. 
+    If $\D$ is even, then there are $\D$-bases on $\U_{x}$ and $\U_{y}$ consisting only of elements with degrees $\xi(x)$ and $\xi(y)$, respectively, such that the matrix representing the restriction of $B$ to $\U_{x} \oplus \U_{y}$ is 
     \[\begin{pmatrix}
         0 & I_k\\
-        \sign{g}{g'} \delta I_k & 0
-    \end{pmatrix} \tensor X_t,\]
-    where $t$ can be any element in $T$. 
-    If $\D$ is odd, then there are 
-    even 
-    graded $\D$-bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
-    \[\begin{pmatrix}
-        0 & I\\
-        \delta I & 0
-    \end{pmatrix} \tensor X_t,\] where $t\in g_0 T^+$ can be taken arbitrarily. 
-    In both cases, we can take all elements of the basis of $\U_{gT}$ to have degree $g$ and all the elements of the basis of $\U_{g'T}$ to have degree $g'$.
+        \sign{\xi(x)}{\xi(y)} \delta I_k & 0
+    \end{pmatrix} \tensor X_t.\]
+    % where $t$ can be any element in $T$. 
+    % If $\D$ is odd, then there are 
+    % even 
+    % graded $\D$-bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
+    % \[\begin{pmatrix}
+    %     0 & I\\
+    %     \delta I & 0
+    % \end{pmatrix} \tensor X_t,\] where $t\in g_0 T^+$ can be taken arbitrarily. 
+    % In both cases, we can take all elements of the basis of $\U_{gT}$ to have degree $g$ and all the elements of the basis of $\U_{g'T}$ to have degree $g'$.
 \end{lemma}
 
 \begin{proof}
@@ -1070,17 +1147,24 @@ The considerations above and Lemma \ref{lemma:self-dual-components} motivate the
         \item $\kappa(gT) = \kappa(g_0\inv g\inv T)$ for all $g\in G^\#$; \label{item:kappa-duality}
         \item For any $g\in G^\#$, if $g_0 g^2 \in T$ and $\kappa (gT)$ is odd, then $(-1)^{|g|} \eta (g_0 g^2) \delta = +1$. \label{item:kappa-parity}
     \end{enumerate}
-    The set of all $(\D, \vphi_0)$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$. 
+    The set of all $(\D, \vphi_0)$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
 \end{defi}
 
-As we have seen, to every pair $(\U, B)$, we can assign a triple $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$. 
+As we have seen, to every pair $(\U, B)$, we can assign a triple $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$.
+% , where $g_0 = \deg B$, $\overline{B} = \delta B$ and $\kappa$ determines de isomorphism class of $\U$ as a graded $\D$-module. 
 The converse is also true. 
 To show that, we will fix a (set-theoretical) order $\leq$ on the $G^\#/T$. 
 Let $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$. 
 For every $x \in \supp \kappa$, define $\U_{\xi(x)} \coloneqq \FF^{\kappa(x)}$, declare all its elements to have degree $\xi(x)$, let $\mc B_x \coloneqq \{ e_1^x, \ldots, e_{\kappa(x)}^x\}$ be its canonical basis, and set $\U_x \coloneqq \U_{\xi(x)} \tensor \D$. 
-Finally, consider $y \coloneqq g_0\inv x\inv$ and $t_x \coloneqq g_0 \xi(x) \xi(y)$. 
+We will define a $\vphi_0$-sesquilinear map $B$ on $\U \coloneqq \bigoplus_{x \in \supp \kappa} \U_x$ in the following way:
+\begin{itemize}
+    \item 
+\end{itemize}
+Finally, consider $y \coloneqq g_0\inv x\inv$ and $t \coloneqq g_0 \xi(x) \xi(y)$. 
 
-
+Let us first consider the case $x = y$. 
+Then we define $\mu_x$ as in Equation \eqref{eq:mu_x}. 
+If 
 
 \begin{thm}
     Let $(\D, \vphi_0)$ be a finite dimensional graded-division superalgebra with superinvolution with $\D_e\even = \FF$. 
