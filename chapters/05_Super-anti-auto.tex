@@ -1058,7 +1058,7 @@ Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk
     where we have used Equation \eqref{eq:superpolarization} twice. 
     
     For the ``moreover'' part, it follows from Lemmas \ref{lemma:B_x-nondeg} and \ref{lemma:B_x-delta} that $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, $\tilde B_x$ is nondegenerate and $B_x (u,v) = \mu_x B_x(v, u)$, for all $u,v \in V_x = \U_{\xi(x)}$. 
-    Then the result follows from the well-known classification of (skew-)symmetric bilinear forms over an algebraically closed field and the fact that an $\FF$-basis for $\U_{\xi(x)}$ is a $\D$-basis for $\U_x$.
+    Then the result follows from the well-known classification of (skew-)symmetric bilinear forms over an algebraically closed field with characteristic different than $2$ and the fact that an $\FF$-basis for $\U_{\xi(x)}$ is a $\D$-basis for $\U_x$.
 \end{proof}
 
 \begin{remark}
@@ -1069,44 +1069,33 @@ To handle the case of a pair of dual components, we will separate in the cases $
 In the first, it makes sense to talk about parity of the isotypic components and, depending on $|g_0|$, we can have a pair of components with different parity. 
 In the later, we follow Convention \ref{conv:pick-even-basis}.  
 
-\begin{prop}
+\begin{prop}\label{prop:pair-of-dual-components}
     Let $\delta \in \pmone$. 
-    Suppose $x \neq g_0\inv x\inv$, let $\delta \in \pmone$ and  set $t \coloneqq g_0\xi(x)\xi(g_0\inv x\inv)$. 
-
-    Let $\U_{x}$ and $\U_{y}$ be a pair of dual isotypic components, and set $t \coloneqq g_0 \xi(x) \xi(y)$ and $k \coloneqq \kappa(x) = \kappa(y)$. 
-    If $\D$ is even, then there are $\D$-bases on $\U_{x}$ and $\U_{y}$ consisting only of elements with degrees $\xi(x)$ and $\xi(y)$, respectively, such that the matrix representing the restriction of $B$ to $\U_{x} \oplus \U_{y}$ is 
-    \[\begin{pmatrix}
-        0 & I_k\\
-        \sign{\xi(x)}{\xi(y)} \delta I_k & 0
-    \end{pmatrix} \tensor X_t.\]
-    % where $t$ can be any element in $T$. 
-    % If $\D$ is odd, then there are 
-    % even 
-    % graded $\D$-bases on $\U_{gT}$ and $\U_{g'T}$ such that the matrix representing the restriction of $B$ to $\U_{gT} \oplus \U_{g'T}$ is 
-    % \[\begin{pmatrix}
-    %     0 & I\\
-    %     \delta I & 0
-    % \end{pmatrix} \tensor X_t,\] where $t\in g_0 T^+$ can be taken arbitrarily. 
-    % In both cases, we can take all elements of the basis of $\U_{gT}$ to have degree $g$ and all the elements of the basis of $\U_{g'T}$ to have degree $g'$.
+    Suppose $g_0 x y = T$ for $x\neq y$ and set $t \coloneqq g_0\xi(x)\xi(y) \in T$. 
+    Then the restriction $B_x$ of $B$ to $\U_x \oplus \U_y$ is nondegenerate and satisfies $\overline{B_x} = \delta B_x$ if, and only if, there is a $\D$-basis of $\U_x$ with all elements having degree $\xi(x)$ and a $\D$-basis of $\U_y$ with all elements having degree $\xi(y)$ such that the matrix representing $B_x$ is
+    \[
+        \begin{pmatrix}
+            0 & I_{\kappa(x)}\\
+            \sign{\xi(x)}{\xi(y)} \eta(t) \delta I_{\kappa(x)} & 0
+        \end{pmatrix} \tensor X_t. 
+    \]
 \end{prop}
 
 \begin{proof}
-    Let $\{ u_1, \ldots , u_k \}$ for $\U_g$ be a graded $\D$-basis for $\U_{gT}$. 
-    Consider its dual basis in $\U_{g'T}$, \ie, the basis $\{ v_1, \ldots , v_k \}$ defined by $B(u_i, v_j) = \delta_{ij}$. 
-    
-    Since $\overline B(u_i, v_i) = \delta B(u_i, v_i)$, we have, by definition of $\overline{B}$, that
-    \begin{align*}
-        \sign{u_i}{v_i} \vphi_0\inv ( B(v_i, u_i) ) = \delta B(u_i, v_i),
-    \end{align*}
-    so
-    \begin{align*}
-        B(v_i, u_i) = \sign{u_i}{v_i} \vphi_0 ( B(u_i, v_i) ) = \sign{u_i}{v_i} B(u_i, v_i) = \sign{u_i}{v_i} \delta.
-    \end{align*}
-    If $\D$ is even, then $|u_i| = |gT|$ and $|v_j| = |g' T|$, for all $i,j \in \{1, \ldots, k\}$, proving the first statement. 
-    If $\D$ is odd, we can follow Convention \ref{conv:pick-even-basis} to pick the elements $u_1, \ldots , u_k$ to be even, and, therefore, we have the second statement. 
-    % and then, following Convention \ref{conv:pick-even-form}, we have the second statement.
-    If we want to choose the degrees of the elements as in the statement, it suffices to choose $\{u_1, \ldots, u_k\}$ as a $\FF$-basis of $\U_g$.
+    Assume that $B_x$ is nondegenerate. 
+    Then by Lemma \ref{lemma:B_x-nondeg}, the bilinear form $\tilde B_x$ on $V_x = \U_{\xi(x)} \oplus \U_{\xi(y)}$ is nondegenerate, and hence, the map $\U_{\xi(x)} \to \U_{\xi(y)}$ given by $u \mapsto \tilde B_x (u, \cdot)$  is an isomorphism of vector spaces. 
+    In this case, we can fix a basis $\{u_1, \ldots, u_{\kappa(x)} \}$ for $\U_{\xi(x)}$ and consider its dual basis $\{v_1, \ldots, v_{\kappa(x)} \}$ for $\U_{\xi(y)}$, \ie, $\tilde B_x (u_i, v_j) = \delta_{ij}$. 
+    If we also assume $\overline{B_x} = \delta B_x$, then by Lemma \ref{lemma:B_x-delta}, we have $\tilde B_x (v_i, u_j) = \sign{\xi(x)}{\xi(y)} \eta(t) \delta \delta_{ij}$. 
+    This proves the only if part. 
+    The converse follows the same lines. 
 \end{proof}
+
+\begin{defi}\label{def:parameter-of-(U,B)}
+    Let $\U$ be a graded $\D$-module of finite rank and $B$ be a homogeneous nondegenerate $\vphi_0$-sesquilinear form such that $\overline{B_x} = \delta B_x$ for some $\delta \in \pmone$. 
+    We say that $(g_0. \delta, \kappa)$ is the \emph{parameter assigned to $(\U, B)$}, where $g_0 = \deg B \in G^\#$ and $\kappa(x) = \dim_\D U_x$ for all $x \in G^\#/T$. 
+\end{defi}
+
+By the considerations above, the triple $(g_0. \delta, \kappa)$ satifies the following: 
 
 \begin{defi}
     Let $g_0 \in G^\#$, $\delta \in \pmone$ and $\kappa\from G^\#/T \to \ZZ_{\geq 0}$. 
@@ -1119,26 +1108,17 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     The set of all $(\D, \vphi_0)$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
 \end{defi}
 
-As we have seen, to every pair $(\U, B)$, we can assign a triple $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$.
-% , where $g_0 = \deg B$, $\overline{B} = \delta B$ and $\kappa$ determines de isomorphism class of $\U$ as a graded $\D$-module. 
-The converse is also true. 
-To show that, we will fix a (set-theoretical) order $\leq$ on the $G^\#/T$. 
-Let $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$. 
-For every $x \in \supp \kappa$, define $\U_{\xi(x)} \coloneqq \FF^{\kappa(x)}$, declare all its elements to have degree $\xi(x)$, let $\mc B_x \coloneqq \{ e_1^x, \ldots, e_{\kappa(x)}^x\}$ be its canonical basis, and set $\U_x \coloneqq \U_{\xi(x)} \tensor \D$. 
-We will define a $\vphi_0$-sesquilinear map $B$ on $\U \coloneqq \bigoplus_{x \in \supp \kappa} \U_x$ in the following way:
-\begin{itemize}
-    \item 
-\end{itemize}
-Finally, consider $y \coloneqq g_0\inv x\inv$ and $t \coloneqq g_0 \xi(x) \xi(y)$. 
+Given a triple $(g_0. \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$, we can construct a pair $(\U, B)$ assigned to it. 
+To see that, fix a total order $\leq$ on the set $G^\#/T$.
+We define $\U_{\xi(x)} \coloneqq \FF^{\kappa(x)}$, fix its canonical basis on it, and define $\U_x \coloneqq \U_{\xi(x)} \tensor \D$, for all $x\in G^\#/T$. 
+For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we define $B_x$ on $\U_x + \U_y$ according to the matrices in Proposition \ref{prop:self-dual-components}, if $x=y$, or in Proposition \ref{prop:pair-of-dual-components}, if $x\neq y$. 
 
-Let us first consider the case $x = y$. 
-Then we define $\mu_x$ as in Equation \eqref{eq:mu_x}. 
-If 
 
 \begin{thm}
-    Let $(\D, \vphi_0)$ be a finite dimensional graded-division superalgebra with superinvolution with $\D_e\even = \FF$. 
+    Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$. 
+    Let $\D$ be a finite dimensional graded-division superalgebra and let $\vphi_0$ be a degree preserving superinvolution on $\D$. 
     % The map assigning a triple $(g_0, \delta, \kappa) \in \mathsf{X} (\D, \vphi_0)$ for ever
-    The isomorphism classes of pairs $(\U, B)$, where are $\U$ is a graded $\D$-module of finite rank and $B$ is a nondegenerate $\vphi_0$-sesquilinear map, are in bijection with $\mathsf{X} (\D, \vphi_0)$ via the assignment of parameters.
+    The assignment of parameters to a pair $(\U, B)$ as in Definition \ref{def:parameter-of-(U,B)} gives a bijection between the isomorphism classes of these pairs and the set $\mathsf{X} (\D, \vphi_0)$.
     % Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathsf{X} (\D, \vphi_0)$.
 \end{thm}
 
@@ -1155,12 +1135,10 @@ If
     for all $u, v \in \U$. 
     Since $\psi$ is surjective, it follows that $\overline{B'} = \delta B'$. 
     
-    Conversely, suppose that $(\U, B)$ and $(\U, B')$ correspond to the same triple $(g_0, \delta, \kappa)$. 
-    Let $g\in G^\#$
-    Then, for every $g \in G^\#$, $\dim_\D \U_{gT} = \dim_\D \U'_{gT}$, and $\U_{gT}$ is self-dual if, and only if, $\U'_{gT}$ also is (since it happens if, and only if, $g_0 g^2 \in T$).
-    
-    and, in this case, we can use Lemma \ref{lemma:self-dual-components} to find graded $\D$-bases $\mc B = \{u_1, \ldots, u_k\}$ and $\mc B' = \{v_1, \ldots, v_k\}$ on $\U_{gT}$ and $\U'_{gT}$, respectively, such that the restrictions of $B$ and $B'$ to $\U_{gT}$ and $\U'_{gT}$ have the same representing matrix and all elements $u_1, \ldots, u_k, v_1, \ldots, v_k$ have degree $g$. 
-    It follows that the $\D$-linear map $\psi_{gT} \from \U_{gT} \to \U'_{gT}$ defined by $\psi_{gT} (u_i) = v_i$ is invertible, degree preserving and $B'$.
+    Conversely, suppose that $(\U, B)$ and $(\U, B')$ are assigned to the same triple $(g_0, \delta, \kappa)$. 
+    To show that $(\U, B)$ and $(\U, B')$ are isomorphic, it suffices to find homogeneous $\D$-bases $\{u_1, \ldots, u_k\}$ of $\U$ and $\{u_1', \ldots, u_k'\}$ of $\U'$ such that $\deg u_i = \deg u_i'$, $1 \leq i \leq k$, and $B$ and $B'$ are represented by the same matrix. 
+    Indeed, in this case the $\D$-linear map $\psi\from \U \to \U'$ defined by $\psi(u_i) = u_i'$, $1 \leq i \leq k$, is degree preserving and $B(u_i, u_j) = B(u_i', u_j')$, $1 \leq i,j \leq k$, implies $B(u, v) = B( \psi(u), \psi(v) )$ for all $u, v\in \U$. 
+    The existence of such bases follows from $\dim_\D (\U_x) = \dim_\D (\U_x') = \kappa(x)$, for all $x \in G^\#/T$, and Propositions \ref{prop:self-dual-components} and \ref{prop:pair-of-dual-components}. 
 \end{proof}
 
 
