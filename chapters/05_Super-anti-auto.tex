@@ -971,7 +971,7 @@ We will denote the restriction of $B$ to $\V_x$ by $B_x$ and define the bilinear
 for all $u,v \in V_x$. 
 It is clear that $B$ is nondegenerate if, and only if, $B_x$ is nondegenerate for every $x \in G^\#/T$. 
 If this is the case, $\U_x$ and $\U_y$ are dual to each other and, hence, $\kappa(x) = \kappa(y)$. 
-If $x = y$, we say that $\U_x$ is a \emph{self-dual component} and, if $x\neq y$, we say that $\U_x$ and $\U_y$ are a \emph{pair of dual components}. 
+If $x = y$ or, equivalently, $g_0 x^2 = T$, we say that $\U_x$ is a \emph{self-dual component}, otherwise we say that $\U_x$ and $\U_y$ are a \emph{pair of dual components}. 
 
 \begin{lemma}\label{lemma:B_x-nondeg}
     The $\vphi_0$-sesquilinear form $B_x$ is nondegenerate if, and only if, the bilinear form $\tilde{B}_x$ is nondegenerate.
@@ -979,16 +979,16 @@ If $x = y$, we say that $\U_x$ is a \emph{self-dual component} and, if $x\neq y$
 
 \begin{proof}
     Assume $B_x$ is nondegenerate and let $u \in V_x$ be such that $\tilde{B}_x(u,v) = 0$ for all $v \in V_x$. 
-    Then $B_x(u, v) = X_{t} \tilde{B}_x(u,v) = 0$ for all $v \in V_x$ and, hence, $B_x(u, vd) = B_x(u, v)d = 0$ for all $v \in \V_x$. 
+    Then $B_x(u, v) = X_{t} \tilde{B}_x(u,v) = 0$ for all $v \in V_x$ and, hence, $B_x(u, vd) = B_x(u, v)d = 0$ for all $d \in \D$. 
     It follows that $B_x(u,v) = 0$ for all $v\in \V_x = V_x \D$ and, therefore, $u = 0$.
     
     Now assume $\tilde{B}_x$ is nondegenerate and let $u \in \V_x$ be such that $B_x (u,v) = 0$ for all $v \in \V_x$.
     Let $v\in V_x$ be homogeneous and write $u = \sum_{g\in G^\#} u_g$ where $u_g \in \U_g$. 
-    Then $B_x(\sum_{g\in G^\#} u_g, v) = \sum_{g\in G^\#} B_x(u_g, v) = 0$ and, since the summands have pairwise distinct degrees, $B_x(u_g, v) = 0$ for all $g\in G^\#$. 
-    Also, since $g \xi(gT)\inv \in T$, we have that $u_g = \tilde u_g d$ for some homogeneous elements $\tilde u_g \in V_x$ and $0 \neq d \in \D$. 
+    Then $0 = B_x(\sum_{g\in G^\#} u_g, v) = \sum_{g\in G^\#} B_x(u_g, v)$ and, since the summands have pairwise distinct degrees, $B_x(u_g, v) = 0$ for all $g\in G^\#$. 
+    Also, since $\xi(gT)\inv g \in T$, we have that $u_g = \tilde u_g d$ for some homogeneous elements $\tilde u_g \in V_x$ and $0 \neq d \in \D$. 
     Then $0 = B_x(u_g, v) = (-1)^{|d|(|B| + |\tilde u_g|)} \vphi_0(d) B_x(\tilde u_g, v)$, and hence $B_x(\tilde u_g, v) = 0$. 
-    We conclude that $\tilde{B}_x(\tilde u_g, v) = 0$, for all $v\in V_x$, which implies $\tilde u_g = 0$. 
-    It follows that $u = 0$, concluding the proof.
+    It follows that $\tilde{B}_x(\tilde u_g, v) = 0$, for all $v\in V_x$, which implies $\tilde u_g = 0$. 
+    Therefore, $u = 0$, concluding the proof.
 \end{proof}
 
 We are interested in the case when the superadjunction with respect to $B$ is involutive. 
@@ -1011,8 +1011,9 @@ So, from now on, we will assume that $\eta$ takes values in $\pmone$.
         \overline{B_x} (u, v) &= \sign{u}{v} \vphi_0\inv( B_x(v, u) )
         &&= \sign{u}{v} \vphi_0\inv( X_t \tilde{B}_x(v, u) )\\
         &= \sign{u}{v} \tilde{B}_x(v, u) \vphi_0\inv(X_t)
-        &&= \sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t.
+        &&= \sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t,
     \end{alignat*}
+    where we have used the fact that $\overline{B_x} (v, u) \in \FF$.
     Hence, $\overline{B_x} (u, v) = \delta {B_x} (u, v)$ if, and only if,
     $\sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t = \delta X_t \tilde{B}_x(u, v)$, and the result follows.
 \end{proof}
@@ -1022,10 +1023,11 @@ Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk
 % For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
 
 \begin{prop}\label{prop:self-dual-components}
-    Suppose $x = g_0\inv x\inv$, let $\delta \in \pmone$ and  set $t \coloneqq g_0\xi(x)^2$. 
-    Then the number 
+    Let $\delta \in \pmone$. 
+    Suppose $g_0 x^2 = T$,  and  set $t \coloneqq g_0\xi(x)^2 \in T$. 
+    Then 
     \begin{equation}\label{eq:mu_x}
-        \mu_{x} \coloneqq (-1)^{|\xi(x)|} \eta(t) \delta
+        \mu_{x} \coloneqq (-1)^{|\xi(x)|} \eta(t) \delta \in \pmone
     \end{equation}
     % $\mu_{gT} = (-1)^{|g|} \eta(g_0 g^2) \delta \in \pmone$
     does not depend on the choice of the section $\xi\from G^\#/T \to G^\#$. 
@@ -1033,13 +1035,13 @@ Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk
     % \begin{enumerate}[(i)]
     %     \item $I_k \tensor X_{g_0g^2}$ if 
     % \end{enumerate}
-    Moreover, $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the matrix representing $B_x$ is:
+    Moreover, the restriction $B_x$ of $B$ to $\U_x$ is nondegenerate and satisfyies $\overline{B_x} = \delta B_x$ if, and only if, there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the matrix representing $B_x$ is given by
     \begin{enumerate}[(i)]
         \item $I_{\kappa(x)} \tensor X_t$ if $\mu_x = +1$;
-        \item $J_{\kappa(x)} \tensor X_t$ if $\mu_{x} = -1$, where $J_{\kappa(x)} \coloneqq \begin{pmatrix}
+        \item $J_{\kappa(x)} \tensor X_t$ if $\mu_{x} = -1$, where $\kappa (x)$ is even and $J_{\kappa(x)} \coloneqq \begin{pmatrix}
         0 & I_{\kappa(x)/2}\\
         -I_{\kappa(x)/2} & 0
-    \end{pmatrix}$ (in this case, $\kappa(x)$ must be even).
+    \end{pmatrix}$.
     \end{enumerate}
 \end{prop}
 
@@ -1055,19 +1057,20 @@ Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk
     \end{align*}
     where we have used Equation \eqref{eq:superpolarization} twice. 
     
-    For the ``moreover'' part, it follows from Lemmas \ref{lemma:B_x-nondeg} and \ref{lemma:B_x-delta} that $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, $\tilde B_x$ is nondegenerate and $B_x (u,v) = \mu_x B_x(v, u)$, for all $u,v \in \U_{\xi(x)}$. 
-    Then the result follows from a well-known fact from linear algebra over algebraically closed fields and that an $\FF$-basis for $\U_{\xi(x)}$ is a $\D$-basis for $\U_x$.
+    For the ``moreover'' part, it follows from Lemmas \ref{lemma:B_x-nondeg} and \ref{lemma:B_x-delta} that $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, $\tilde B_x$ is nondegenerate and $B_x (u,v) = \mu_x B_x(v, u)$, for all $u,v \in V_x = \U_{\xi(x)}$. 
+    Then the result follows from the well-known classification of (skew-)symmetric bilinear forms over an algebraically closed field and the fact that an $\FF$-basis for $\U_{\xi(x)}$ is a $\D$-basis for $\U_x$.
 \end{proof}
 
 \begin{remark}
-    Even though $\mu_{x}$ does not depend on $\xi$, unless $T$ is a elementary $2$-group, the element $t = g_0\xi(x)^2$ does depend on it.
+    Even though $\mu_{x}$ does not depend on $\xi$, the element $t = g_0\xi(x)^2$ may depend on $\xi$.
 \end{remark}
 
 To handle the case of a pair of dual components, we will separate in the cases $\D\odd = 0$ and $\D\odd \neq 0$. 
 In the first, it makes sense to talk about parity of the isotypic components and, depending on $|g_0|$, we can have a pair of components with different parity. 
 In the later, we follow Convention \ref{conv:pick-even-basis}.  
 
-\begin{lemma}
+\begin{prop}
+    Let $\delta \in \pmone$. 
     Suppose $x \neq g_0\inv x\inv$, let $\delta \in \pmone$ and  set $t \coloneqq g_0\xi(x)\xi(g_0\inv x\inv)$. 
 
     Let $\U_{x}$ and $\U_{y}$ be a pair of dual isotypic components, and set $t \coloneqq g_0 \xi(x) \xi(y)$ and $k \coloneqq \kappa(x) = \kappa(y)$. 
@@ -1085,7 +1088,7 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     %     \delta I & 0
     % \end{pmatrix} \tensor X_t,\] where $t\in g_0 T^+$ can be taken arbitrarily. 
     % In both cases, we can take all elements of the basis of $\U_{gT}$ to have degree $g$ and all the elements of the basis of $\U_{g'T}$ to have degree $g'$.
-\end{lemma}
+\end{prop}
 
 \begin{proof}
     Let $\{ u_1, \ldots , u_k \}$ for $\U_g$ be a graded $\D$-basis for $\U_{gT}$. 
@@ -1105,15 +1108,13 @@ In the later, we follow Convention \ref{conv:pick-even-basis}.
     If we want to choose the degrees of the elements as in the statement, it suffices to choose $\{u_1, \ldots, u_k\}$ as a $\FF$-basis of $\U_g$.
 \end{proof}
 
-The considerations above and Lemma \ref{lemma:self-dual-components} motivate the following:
-
 \begin{defi}
-    Consider $g_0 \in G^\#$, $\delta \in \pmone$ and a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$. 
+    Let $g_0 \in G^\#$, $\delta \in \pmone$ and $\kappa\from G^\#/T \to \ZZ_{\geq 0}$. 
     We say that the triple $(g_0, \delta, \kappa)$ is \emph{$\vphi_0$-admissible} if:
     \begin{enumerate}[(i)]
         \item $\kappa$ has finite support; \label{item:kappa-finite-support}
-        \item $\kappa(x) = \kappa(g_0\inv x)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
-        \item For any $g\in G^\#$, if $g_0 g^2 \in T$ and $\kappa (gT)$ is odd, then $(-1)^{|g|} \eta (g_0 g^2) \delta = +1$. \label{item:kappa-parity}
+        \item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
+        \item For any $x\in G^\#/T$, if $g_0 x^2 = T$ and $\mu_x = -1$, then $\kappa (x)$ is even (see Propositon \ref{prop:self-dual-components}). \label{item:kappa-parity}
     \end{enumerate}
     The set of all $(\D, \vphi_0)$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
 \end{defi}
