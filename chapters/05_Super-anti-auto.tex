@@ -509,24 +509,66 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ have th
 \end{proof}
 
 We can interpret Theorem \ref{thm:iso-abstract-vphi} in terms of group actions. 
-To do that we will assume that $\D$ is fixed
-A priori, the isomorphism class of $(R, \vphi)$ depend on $(\D, \vphi_0, \U, B)$
+For that, let us first assume that $\D$ is a fixed graded-division superalgebra. 
+We will define 3 left group actions on the class of pairs $(\U, B)$, where $\U \neq 0$ is a graded $\D$-supermodule and $B$ is a nondegenerate homogeneous $\vphi_0$-sesquilinear form, for some $\vphi_0$ super-anti-automorphism on $\D$. 
+Recall that, since $\U \neq 0$ and $B$ is nondegenerate, $\vphi_0$ is determined by $B$ (see ??).
 
+Let $\D^\times_{\mathrm{gr}} \coloneqq \{ 0\neq d \in \D \mid d \text{ is homogeneous }\}$. 
+Clearly, $\D^\times_{\mathrm{gr}}$ is a group with the multiplication on $\D$. 
+Given $d\in \D^\times_{\mathrm{gr}}$, we define 
+\begin{equation}\label{eq:Dx_gr-action}
+    d\cdot (\U, B) \coloneqq (\U, dB).
+\end{equation}
+Note that $dB$ is $\vphi_0 \circ \mathrm{sInt}_d$-sesquilinear.
 
-In Section ??, we described graded-simple associative superalgebras with super-anti-automorphism with the data $(\D, \vphi_0, \U, B)$ and Theorem ?? tell us when two such superalgebras with super-anti-automorphism are isomorphic. 
-We can interpret this result with the language of group actions. 
-To do that, though, we will fix the graded-division superalgebra $\D$. 
-Note that if $\psi_0\from \D \to \D'$ is an isomorphism, then we can use it to transfer a quadruple $(\D', \vphi_0', \U', B')$ to $(\D, \vphi_, \U, B)$ by defining $\vphi_0 \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$, $\U = \U^{\psi_0}$ and $B \coloneqq \vphi_0\inv B'$. 
-Also, recall that since $B$ is nondegenerate, it determines $\vphi_0$. 
-Hence, once we fixed $\D$, only the data $(U, B)$ matters.
+Let $A \coloneqq \Aut (\D)$, the group of automorphisms of $\D$ as a graded superalgebra. 
+Given $\psi_0 \in A$, we define
+\begin{equation}\label{Aut(D)-action}
+    \psi_0 \cdot (\U, B) \coloneqq (\U^{\psi_0\inv}, \psi_0 \circ B).
+\end{equation}
+Note that $\psi_0 \circ B$ is $(\psi_0 \circ \vphi_0 \circ \psi_0\inv)$-sesquilinear.
 
-Theorem tell us we can change this data in 3 ways. 
-Given a homogeneous $0 \neq d\in D$, we can consider $( \vphi_0\circ \mathrm{sInt}_{d\inv}, \U, dB)$. 
-In other words, this gives an action of the group $\D_{\mathrm{gr}}^\times$.
+Finally, consider the group $G^\#$. 
+Given $g \in G^\#$, we define
+\begin{equation}\label{eq:G-action}
+    g \cdot (\U, B) \coloneqq (\U^{[g]}, B^{[g]}).
+\end{equation}
+Note that $B^{[g]}$ is $\vphi_0$-sesquilinear.
 
-If $\psi_1\from \U \to \U$ is an automorphism, then we can consider $ $
+\begin{lemma}\label{lemma:action-on-(U,B)}
+    The 3 actions defined above give rise to a $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action, where $A$ acts on $\D^\times_{\mathrm{gr}}$ by evaluation. 
+\end{lemma}
 
-Theorem \ref{thm:vphi-iff-vphi0-and-B} tell us that graded-simple associative superalgebras with super-anti-automorphism can be recored, up to isomorphims, 
+\begin{proof}
+    Let $d\in \D^\times_{\mathrm{gr}}$, $\psi_0 \in A$, $g \in G^\#$ and $u, v \in \U$. 
+    First note that the action of $d$ does not change $\U$, hence commutes in the first entry with the other actions. 
+    But 
+    \begin{align*}
+        (\psi_0 \circ dB)(u,v) &= \psi_0 \big( (d B(u,v) \big) = \psi_0 (d) \psi_0 \big( B(u,v) \big) = \big( \psi_0(d) (\psi_0 \circ B) \big) (u,v),
+    \end{align*}
+    and, hence, the $\D^\times_{\mathrm{gr}}$-action combined with the $A$-action gives us a $\D^\times_{\mathrm{gr}} \rtimes A$-action. 
+    The $G^\#$-action commutes with the $\D^\times_{\mathrm{gr}}$-action since 
+    \begin{align*}
+        (dB)^{[g]} (u, v) = \sign{g}{u} dB(u,v) = d B^{[g]}(u,v).
+    \end{align*}
+    Finally, the $G^\#$-action also commutes with the $A$-action since $(\U^{\psi_0\inv})^{[g]} = (\U^{[g]})^{\psi_0\inv}$ and 
+    \begin{align*}
+        \psi_0 \big(B^{[g]} (u,v) \big) 
+        &= \psi_0 \big( \sign{g}{u} B(u,v) \big)
+        &= \sign{g}{u} (\psi_0 \circ B) (u,v) = (\psi_0 \circ B)^{[g]} (u,v).
+    \end{align*}
+\end{proof}
+
+% These 3 actions can be combined into a $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action, where $A$ acts on $\D^\times_{\mathrm{gr}}$ by evaluation. 
+% To see that, let $d\in \D^\times_{\mathrm{gr}}$, $\psi_0 \in A$ and $g \in G^\#$. 
+% The action of $d$ does not change $\U$, hence commutes in the first entry with the other actions. 
+% On the other hand, $(\psi_0 \circ dB)(u,v) = \psi_0 \big( (d B(u,v) ) \big) = \psi_0 (d) \psi_0 (B(u,v)) = (\psi_0(d) \circ \psi_0(B) ) (u,v)$, for all $u,v \in \U$.
+
+\begin{cor}
+    Under the assumptions of Theorem \ref{thm:iso-abstract-vphi}, if $\D \not \iso \D'$, then $(R, \vphi) \not \iso (R', \vphi')$. 
+    Otherwise, fix an isomorphism $\psi_0\from \D \to \D'$. 
+    Then $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\U, B)$ and $((\U')^{\psi_0}, \psi_0\inv \circ B')$ lie in the same orbit of the $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action. \qed
+\end{cor}
 
 % ----- 
 
