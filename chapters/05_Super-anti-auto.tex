@@ -1212,8 +1212,24 @@ this data reduces (up to isomorphism) to $T$, $\beta$, $p$, $\eta$, $g_0$, $\del
 We will now classify the graded superalgebras with superinvolution in terms of this parameters.
 
 To do that, we will follow Corollary \ref{cor:iso-with-actions} and the group actions defined by Equations \eqref{eq:Dx_gr-action}, \eqref{eq:Aut(D)-action} and \eqref{eq:G-action}. 
-First note that if $\Gamma(T, \beta, p, \eta, g_0, \delta, \kappa) \iso \Gamma(T', \beta', p', \eta', g_0', \delta', \kappa')$, then $T = T'$, $\beta = \beta'$ and $p = p'$, \ie, $\D \iso \D'$. 
-Hence, let us consider these parameters fixed and focus on quadruples $(\eta, g_0, \delta, \kappa)$, where $(g_0, \delta, \kappa)$ is $\eta$-admissible.
+If $\Gamma(T, \beta, p, \eta, g_0, \delta, \kappa) \iso \Gamma(T', \beta', p', \eta', g_0', \delta', \kappa')$, then $T = T'$, $\beta = \beta'$ and $p = p'$, \ie, $\D \iso \D'$. 
+Hence, let us consider these parameters fixed and focus on quadruples $(\eta, g_0, \delta, \kappa)$, where $(g_0, \delta, \kappa)$ is $\eta$-admissible. 
+
+First, in our case, the $A$-action is trivial. 
+To see that,
+fix $\eta$ and suppose $(g_0, \delta, \kappa)$ is assigned to $(\U, B)$. 
+Note that $\psi_0 \in A$ must be a scalar operator on each component $\D_t$ of $\D$, hence $\psi_0$ commutes with $\vphi_0$. 
+It follows that $\psi_o\inv \circ B$ is $\vphi_0$-sesquilinear, so we can use Theorem ?? to check if $(\U, B)$ is isomorphic to $\psi_0\cdot (\U, B) = (\U^{\psi_0\inv}, \psi \circ B)$. 
+The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ have the same $\kappa$, since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$. 
+Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. 
+Finally, 
+\begin{align*}
+    \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi \circ \psi_0)\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+    &= \sign{u}{v} (\psi_0 \circ \vphi\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
+    &= \psi_0 \bigg( \sign{u}{v} \vphi\inv \big( B(v,u) \big) \bigg) \\
+    &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+\end{align*}
+for all $u, v \in \U$.
 
 
 
