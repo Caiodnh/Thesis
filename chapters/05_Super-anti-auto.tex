@@ -564,7 +564,7 @@ Note that $B^{[g]}$ is $\vphi_0$-sesquilinear.
 % The action of $d$ does not change $\U$, hence commutes in the first entry with the other actions. 
 % On the other hand, $(\psi_0 \circ dB)(u,v) = \psi_0 \big( (d B(u,v) ) \big) = \psi_0 (d) \psi_0 (B(u,v)) = (\psi_0(d) \circ \psi_0(B) ) (u,v)$, for all $u,v \in \U$.
 
-\begin{cor}
+\begin{cor}\label{cor:iso-with-actions}
     Under the assumptions of Theorem \ref{thm:iso-abstract-vphi}, if $\D \not \iso \D'$, then $(R, \vphi) \not \iso (R', \vphi')$. 
     Otherwise, fix an isomorphism $\psi_0\from \D \to \D'$. 
     Then $(R, \vphi) \iso (R', \vphi')$ if, and only if, $((\U')^{\psi_0}, \psi_0\inv \circ B')$ is isomorphic to a pair in the $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-orbit of $(\U, B)$. 
@@ -1159,7 +1159,7 @@ By the considerations above, the triple $(g_0, \delta, \kappa)$ satifies the fol
 
 \begin{defi}
     Let $g_0 \in G^\#$, $\delta \in \pmone$ and $\kappa\from G^\#/T \to \ZZ_{\geq 0}$. 
-    We say that the triple $(g_0, \delta, \kappa)$ is \emph{$\vphi_0$-admissible} if:
+    We say that the triple $(g_0, \delta, \kappa)$ is \emph{$\vphi_0$-admissible} or \emph{$\eta$-admissible}if:
     \begin{enumerate}[(i)]
         \item $\kappa$ has finite support; \label{item:kappa-finite-support}
         \item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
@@ -1204,5 +1204,19 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
 
 
 \subsection{Parametrization of $(R, \vphi)$}
+
+From Theorem \ref{thm:vphi-iff-vphi0-and-B}, we know that a graded-simple superalgebra is described by $\D$, $\vphi_0$, $\U$ and $B$. 
+With the parametrizations we presented in this section,
+in the case $\vphi$ is a superinvolution, $\D$ is finite dimensional and $\FF$ is algebraically closed,
+this data reduces (up to isomorphism) to $T$, $\beta$, $p$, $\eta$, $g_0$, $\delta$ and $\kappa$. 
+We will now classify the graded superalgebras with superinvolution in terms of this parameters.
+
+To do that, we will follow Corollary \ref{cor:iso-with-actions} and the group actions defined by Equations \eqref{eq:Dx_gr-action}, \eqref{eq:Aut(D)-action} and \eqref{eq:G-action}. 
+First note that if $\Gamma(T, \beta, p, \eta, g_0, \delta, \kappa) \iso \Gamma(T', \beta', p', \eta', g_0', \delta', \kappa')$, then $T = T'$, $\beta = \beta'$ and $p = p'$, \ie, $\D \iso \D'$. 
+Hence, let us consider these parameters fixed and focus on quadruples $(\eta, g_0, \delta, \kappa)$, where $(g_0, \delta, \kappa)$ is $\eta$-admissible.
+
+
+
+We are now in position to give a classification up to isomorphism 
 
 Section \ref{sec:iso-vphi-abstract}, Lemma \ref{lemma:action-on-(U,B)}, Equations \eqref{eq:Dx_gr-action}, \eqref{eq:Aut(D)-action} and \eqref{eq:G-action}.
