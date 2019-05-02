@@ -396,7 +396,7 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     This is possible since, by the ``moreover'' part, we can substitute an odd form $B$ by $dB$, for some $d\in \D\odd$.
 \end{remark}
 
-\section{Isomorphism of graded superalgebras with\\ super-anti-automorphism}\label{sec:iso-vphi-abstract}
+\section{Isomorphism of graded-simple superalgebras with\\ super-anti-automorphism}\label{sec:iso-vphi-abstract}
 
 In this section, we are going to see when two graded-simple superalgebras with super-anti-automorphism are isomorphic. 
 % For this, we will need two more definitions. 
@@ -836,6 +836,8 @@ In this case, we have that $\D\even_e = \FF 1$, so we are under the hypothesis o
     Therefore $\delta \in \{ \pm 1 \}$, so $\overline B = \pm B$, concluding the proof. 
 \end{proof}
 
+
+
 % it is clear that $B(u,vd) = B(u,v)d$. By Equation \eqref{eq:sesquilinear-before-B}, the map $B: \U \times \U \to \D$ is a \emph{$\vphi_0$-sesquilinear form}, \ie,
 % \[
 %     B(ud, v) = (-1)^ {(|B| + |u|)|d|}
@@ -907,7 +909,7 @@ In this case, we have that $\D\even_e = \FF 1$, so we are under the hypothesis o
 
 
 
-\section{Parametrization of superalgebras with superinvolution}
+\section{Classification of graded-simple superalgbras with superinvolution}
 
 In this section we will introduce parameters that describe the finite dimensional associative superalgebras with superinvolution $(R, \vphi)$ where $R$ is graded simple and, then, give a classification result involving these parameters. 
 Throughout this section, we will assume that $\FF$ is an algebraically closed field with $\Char \FF \neq 2$.
@@ -1234,7 +1236,15 @@ for all $u, v \in \U$.
 The action defined by Lemma \ref{lemma:action-on-(U,B)} can, hence, be considered only a $\D^\times_{\mathrm{gr}} \times G^\#$-action. 
 We will do another simplification now. 
 Since $\FF^\times \subseteq \D^\times_{\mathrm{gr}}$ acts trivially, then we have an action by $\D^\times_{\mathrm{gr}} / \FF^\times \iso T$. 
-Hence we get only a $T \times G^\#$-action.
+Hence we get only a $T \times G^\#$-action. 
+
+This action is given by:
+\begin{align}
+    t \cdot (\eta, g_0, \delta, \kappa) &= (\eta \tilde \beta (t, \cdot), t g_0, (-1)^{|t|} \eta(t)\delta, \kappa)
+    \intertext{and}
+    g \cdot (\eta, g_0, \delta, \kappa) &= (\eta, g_0 g^{-2}, (-1)^{|g|} \delta, g\cdot \kappa),
+\end{align}
+where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$.
 
 We are now in position to give a classification up to isomorphism 
 
