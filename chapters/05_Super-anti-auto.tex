@@ -391,10 +391,10 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     The form $B'$ is nondegenerate, so we can choose $G^\#$-homogeneous $u,v\in \U$ with $B'(u,v)\neq 0$. Then $B'(u,v)$ is invertible, hence $\vphi_0' (c) = (\operatorname{sInt}_d \circ\, \vphi_0) (c)$, concluding the proof.
 \end{proof}
 
-\begin{convention}\label{conv:pick-even-form}
-    Under the conditions of Theorem \ref{thm:vphi-iff-vphi0-and-B}, if $\D$ is an odd graded division superalgebra (\ie, $\D\odd \neq 0$), then we will choose the form $B$ to be even. 
+\begin{remark}\label{conv:pick-even-form}
+    Under the conditions of Theorem \ref{thm:vphi-iff-vphi0-and-B}, if $\D$ is an odd graded division superalgebra (\ie, $\D\odd \neq 0$), then we can choose the form $B$ to be even. 
     This is possible since, by the ``moreover'' part, we can substitute an odd form $B$ by $dB$, for some $d\in \D\odd$.
-\end{convention}
+\end{remark}
 
 \section{Isomorphism of graded superalgebras with\\ super-anti-automorphism}\label{sec:iso-vphi-abstract}
 
@@ -567,7 +567,8 @@ Note that $B^{[g]}$ is $\vphi_0$-sesquilinear.
 \begin{cor}
     Under the assumptions of Theorem \ref{thm:iso-abstract-vphi}, if $\D \not \iso \D'$, then $(R, \vphi) \not \iso (R', \vphi')$. 
     Otherwise, fix an isomorphism $\psi_0\from \D \to \D'$. 
-    Then $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\U, B)$ and $((\U')^{\psi_0}, \psi_0\inv \circ B')$ lie in the same orbit of the $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action. \qed
+    Then $(R, \vphi) \iso (R', \vphi')$ if, and only if, $((\U')^{\psi_0}, \psi_0\inv \circ B')$ is isomorphic to a pair in the $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-orbit of $(\U, B)$. 
+    % and lie in the same orbit of the $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action. \qed
 \end{cor}
 
 % ----- 
@@ -1202,6 +1203,6 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
 \end{proof}
 
 
-\subsection{Classification up to isomorphism}
+\subsection{Parametrization of $(R, \vphi)$}
 
 Section \ref{sec:iso-vphi-abstract}, Lemma \ref{lemma:action-on-(U,B)}, Equations \eqref{eq:Dx_gr-action}, \eqref{eq:Aut(D)-action} and \eqref{eq:G-action}.
