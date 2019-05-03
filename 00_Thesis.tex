@@ -3,6 +3,10 @@
 % \makeatother
 \documentclass[12pt]{pdfathesis}
 \usepackage{my-stuff/basic-preamble}
+
+\usepackage[style=alphabetic]{biblatex}
+\addbibresource{my-stuff/bibliography.bib}
+
 % \usepackage{subfiles}
 % \def\biblio{\bibliographystyle{amsalpha}\bibliography{../02_bibliography}}
 %
@@ -27,8 +31,11 @@
 \include{chapters/07_ACD-PQ}
 \include{chapters/08_recycle-bin}
 %
-\bibliographystyle{amsalpha}
-\bibliography{my-stuff/bibliography}  % `mybibliography.bib' has the bibliography database
+
+\printbibliography
+
+% \bibliographystyle{amsalpha}
+% \bibliography{my-stuff/bibliography}  
 %%
 %%%%%%%%%%
 % \appendix%
