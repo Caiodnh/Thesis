@@ -410,8 +410,9 @@ This motivates the following:
     Given a homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$ and $g\in G^\#$, we define the $\vphi_0$-sesquilinear form  $B^{[g]}$ on $\U^{[g]}$ by $B^{[g]}(u,v) \coloneqq \sign{u}{g} B(u,v)$, for all $u,v \in \U$. 
 \end{defi}
 
-Note that $\deg B^{[g]} = g^{-2} \deg B$. 
-In particular, $|B^{[g]}| = |B|$.
+\begin{remark}\label{rmk:deg-B^[g]}
+    Note that $\deg B^{[g]} = g^{-2} \deg B$ and, in particular, $|B^{[g]}| = |B|$.
+\end{remark}
 
 \begin{lemma}\label{lemma:B^[b]-does-the-job}
     % Let $\U$ be a graded $\D$-module, $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a $\vphi_0$-sesquilinear form on $\U$. 
@@ -979,14 +980,38 @@ With this we can translate our task to the level of abelian groups.
 Instead of considering the graded superalgebra with super-anti-automorphism $(\D, \vphi_0)$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}. 
 Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$.
 
+The following definitions give us a more compact way to express Equation \eqref{eq:superpolarization}. 
+Also, Definition \ref{def:coboundary} will play a broader role in Section \ref{sec:div-grads-on-sinv-simple}. 
 
+\begin{defi}\label{def:coboundary}
+    Let $H$ and $K$ be groups and let $f\from H \to K$ be any map. 
+    We define $\mathrm{d} f\from H\times H \to K$ to be map given by $\mathrm{d} f\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$. 
+    We say that $\mathrm{d} f$ is a \emph{$2$-coboundary}.
+\end{defi}
 
-\begin{remark}
-    Proposition \ref{prop:odd-cant-have-order-2} also gives us another proof for the fact that the associative superalgebra $Q(n)$ does not admit a superinvolution (Corollary \ref{cor:Q-no-spuerinv-center}). 
-    Recall that $Q(n) \iso \End_\D (\U)$ (Proposition ??), where $\D= \FF\ZZ_2$ with its natural $\ZZ_2$-grading and $\U$ is a right $\D$-module of finite rank. 
-    If there were a superinvolution on $Q(n)$, by Theorem \ref{thm:vphi-involution-iff-delta-pm-1} we would have a superinvolution on $\D$, which is impossible since the only odd element of $T = \ZZ_2$ has order $2$. 
-\end{remark}
+\begin{defi}
+    Given a finite dimensional graded-division superalgebra associated to $(T, \beta, p)$, we define the bicharacter $\tilde\beta\from T\times T \to \FF^\times$ by $\tilde\beta (a,b) = (-1)^{p(a) p(b)} \beta(a, b)$, for all $a, b \in T$.
+\end{defi}
 
+Hence Equation \eqref{eq:superpolarization} becomes $\tilde\beta = \mathrm{d}\eta$. 
+Note that $\tilde\beta$ is skew-symmetric, \ie, $\tilde\beta(b, a) = \tilde\beta\inv(a, b)$, but $\tilde\beta (t,t) = (-1)^{|t|}$, for all $t\in T$, so $\tilde\beta$ is not, in general, alternating. 
+
+We state and proof the following for further reference.
+
+\begin{lemma}
+    $\rad \tilde\beta = (\rad \beta)\cap T^+$
+\end{lemma}
+
+\begin{proof}
+    Let $t\in T^+$. 
+    In this case $\tilde\beta (t, \cdot) = \beta (t, \cdot)$, so
+    $\tilde\beta (t, T) = 0$ if, and only if, $\beta (t, T) = 0$. 
+    Hence $(\rad \tilde\beta)\cap T^+ = (\rad \beta)\cap T^+$. 
+    
+    Now let $t \in T^-$. 
+    In this case $\tilde \beta (t,t) = (-1)^{|t|} = -1$, so $t \not\in \rad \tilde\beta$. 
+    Therefore $\rad \tilde\beta = (\rad \tilde\beta)\cap T^+$, concluding the proof.
+\end{proof}
 
 \subsection{Parametrization of $(\U, B)$}
 
@@ -1160,13 +1185,13 @@ By the considerations above, the triple $(\kappa, g_0, \delta)$ satifies the fol
 
 \begin{defi}
     Let $\kappa\from G^\#/T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$ and $\delta \in \pmone$. 
-    We say that the triple $(\kappa, g_0, \delta)$ is \emph{$\vphi_0$-admissible} or \emph{$\eta$-admissible}if:
+    We say that the triple $(\kappa, g_0, \delta)$ is \emph{$\vphi_0$-admissible} or \emph{$\eta$-admissible} if:
     \begin{enumerate}[(i)]
         \item $\kappa$ has finite support; \label{item:kappa-finite-support}
         \item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
         \item For any $x\in G^\#/T$, if $g_0 x^2 = T$ and $\mu_x \coloneqq (-1)^{|g|}\eta(g_0g^2)\delta -1$ for $g\in x$ (see Propositon \ref{prop:self-dual-components}), then $\kappa (x)$ is even. \label{item:kappa-parity}
     \end{enumerate}
-    The set of all $(\D, \vphi_0)$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
+    The set of all $\vphi_0$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
 \end{defi}
 
 Given a triple $(\kappa, g_0, \delta) \in \mathsf{X} (\D, \vphi_0)$, we can construct a pair $(\U, B)$ such that $(\kappa, g_0, \delta)$ are assigned to it. 
@@ -1213,8 +1238,14 @@ We will now classify finite dimensional graded-simple superalgebras with superin
 We will use Corollary \ref{cor:iso-with-actions} and express the group actions defined by Equations \eqref{eq:Dx_gr-action}, \eqref{eq:Aut(D)-action} and \eqref{eq:G-action} in terms of the above parameters. 
 Let $R \coloneqq \End_\D (\U)$ and $R' \coloneqq \End_{\D'} (\U')$, with superinvolutions $\vphi$ and $\vphi'$, respectively, defined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$. 
 Consider the corresponding parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', g_0', \delta', \kappa')$. 
-If $(R, \vphi) \iso (r', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\beta = \beta'$ and $p = p'$. 
+If $(R, \vphi) \iso (R', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\beta = \beta'$ and $p = p'$. 
 For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D \iso \D'$. 
+
+\begin{defi}
+    We define $\mathsf{X} (\D)$ to be the set of all quadruples $(\eta, \kappa, g_0, \delta)$ where $\eta\from T \to \FF^\times$ is such that $\mathrm{d}\eta = \tilde \beta$ and $(\kappa, g_0, \delta)$ is an $\eta$-admissible triple. 
+    Note that $\mathsf{X} (\D)$ can be identified with the set $\bigsqcup_{\vphi_0} \mathsf {X} (\D, \vphi_0)$. 
+\end{defi}
+
 By Corollary \ref{cor:iso-with-actions}, $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\eta', g_0', \delta', \kappa')$ is in the $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$-orbit of $(\eta, \kappa, g_0, \delta)$, where the action of $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$ is determined by its action on the isomorphism classes of $(\U, B)$ (see Lemma \ref{lemma:action-on-(U,B)}). 
 Let us compute this action explicitly. 
 
@@ -1241,7 +1272,7 @@ Finally,
 \end{align*}
 for all $u, v \in \U$.
 
-Let us now consider the action by $\D^\times_{\mathrm{gr}}$. 
+Now, let us consider the $\D^\times_{\mathrm{gr}}$-action. 
 Let $t\in T$ and $0\neq X_t \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $X_t \cdot (\U, B) = (\U, X_t B)$ (Equation \eqref{eq:Dx_gr-action}). 
 To compute $\eta'$, recall that $dB$ is $(\mathrm{sInt}_d \circ \vphi_0)$-sesquilinear. 
 Let $s\in T$ and $X_s \in \D_s$. 
@@ -1264,19 +1295,31 @@ Note that we only need to know $t$ to compute $(\eta', \kappa', g_0', \delta')$,
 
 Finally, we consider the $G^\#$-action. 
 Let $g\in G$ and let $(\eta'', \kappa'', g_0'', \delta'')$ be the parameters corresponding to $g \cdot (\U, B) = (\U^{[g]}, B^{[g]})$ (Equation \eqref{eq:G-action}). 
-Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of $\U^{[g]}$, $\kappa'' = g\cdot \kappa$ where $(g\cdot \kappa) (x) = \kappa(g\inv x)$ for all $x\in G^\#/T$ (computed before).
+Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of $\U^{[g]}$, $\kappa'' = g\cdot \kappa$ where $(g\cdot \kappa) (x) = \kappa(g\inv x)$ for all $x\in G^\#/T$ {\tt (computed before)}. 
+As noted in Remark \ref{rmk:deg-B^[g]}, $g_0'' = \deg B^{[g]} = g_0 g^{-2}$. 
+Also, for all $u, v\ in \U$,
+\begin{align*}
+    \overline{B^{[g]}}(u,v) &= \sign{u^{[g]}}{v^{[g]}} \vphi_0\inv \big( B^{[g]} (v, u) \big) = (-1)^{(|g| + |u|) (|g| + |v|)} \vphi_0\inv \big( \sign{g}{v} B(v, u) \big) \\
+    &= (-1)^{|g| + |g||u| + |g||v| + |u||v|} \sign{g}{v} \vphi_0\inv \big(B(v, u) \big) = (-1)^{|g| + |g||u|} \overline B(u,v) \\
+    &= (-1)^{|g|} \sign{g}{u} \delta B(u,v) = (-1)^{|g|} \delta B^{[g]}(u,v),
+\end{align*}
+where $u^{[g]}$ and $v^{[g]}$ are the elements $u$ and $v$, respectively, but interpreted as elements of $\U^{[g]}$. 
+We conclude that $\delta'' = (-1)^{|g|} \delta$. 
 
+\begin{defi}
+    Action on $\mathsf{X}(\D)$.    
+\end{defi}
 
 % \begin{equation}
 %     t \cdot (\eta, \kappa, g_0, \delta) = (\eta \tilde \beta (t, \cdot), t g_0, (-1)^{|t|} \eta(t)\delta, \kappa).
 % \end{equation}
 
 
-Finally, the $G^\#$-action is given by
-\begin{equation}
-    g \cdot (\eta, \kappa, g_0, \delta) = (\eta, g_0 g^{-2}, (-1)^{|g|} \delta, g\cdot \kappa),
-\end{equation}
-where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$.
+% Finally, the $G^\#$-action is given by
+% \begin{equation}
+%     g \cdot (\eta, \kappa, g_0, \delta) = (\eta, g_0 g^{-2}, (-1)^{|g|} \delta, g\cdot \kappa),
+% \end{equation}
+% where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$.
 
 We summarize this discussion in the following:
 
