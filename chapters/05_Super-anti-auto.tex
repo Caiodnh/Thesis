@@ -286,17 +286,17 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
 
 % Clearly, the $\vphi_0$-sesquilinear form $B$ is \emph{nondegenerate} in the sense that the map $\U \to \U\Star$ given by $u \mapsto B(u, \cdot)$ is an isomorphism of right $\D$-modules. 
 
-\begin{thm}\label{thm:vphi-iff-vphi0-and-B}
-    Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero right graded module of finite rank over $\D$. 
-    If $\vphi$ is degree-preserving super-anti-automorphism on $R \coloneqq \End_\D(\U)$, then there is a pair $(\vphi_0, B)$, where $\vphi_0$ is a degree-preserving super-anti-automorphism on $\D$ and $B\from \U \times \U \to \D$ is a nondegenerate $\vphi_0$-sesquilinear form, such that
-    %
-    \begin{equation}\label{eq:superadjunction}
-        \forall r\in R\even \cup R\odd,\,\forall u, v \in \U\even \cup \U\odd,  \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
-    \end{equation}
-    %
-    Conversely, given a pair $(\vphi_0, B)$ as above, there is a unique degree-preserving super-anti-automorphism $\vphi$ on $R$ satisfying Equation \eqref{eq:superadjunction}. 
-    Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $\vphi_0' = \mathrm{sInt}_d \circ \vphi_0$ and $B'(u, v) = dB (u, v)$ for all $u, v \in \U$.
-\end{thm}
+% \begin{thm}\label{thm:vphi-iff-vphi0-and-B}
+%     Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero right graded module of finite rank over $\D$. 
+%     If $\vphi$ is degree-preserving super-anti-automorphism on $R \coloneqq \End_\D(\U)$, then there is a pair $(\vphi_0, B)$, where $\vphi_0$ is a degree-preserving super-anti-automorphism on $\D$ and $B\from \U \times \U \to \D$ is a nondegenerate $\vphi_0$-sesquilinear form, such that
+%     %
+%     \begin{equation}\label{eq:superadjunction}
+%         \forall r\in R\even \cup R\odd,\,\forall u, v \in \U\even \cup \U\odd,  \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
+%     \end{equation}
+%     %
+%     Conversely, given a pair $(\vphi_0, B)$ as above, there is a unique degree-preserving super-anti-automorphism $\vphi$ on $R$ satisfying Equation \eqref{eq:superadjunction}. 
+%     Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $\vphi_0' = \mathrm{sInt}_d \circ \vphi_0$ and $B'(u, v) = dB (u, v)$ for all $u, v \in \U$.
+% \end{thm}
 
 \begin{thm}\label{thm:vphi-iff-vphi0-and-B}
     Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero right graded module of finite rank over $\D$. 
@@ -1307,7 +1307,13 @@ where $u^{[g]}$ and $v^{[g]}$ are the elements $u$ and $v$, respectively, but in
 We conclude that $\delta'' = (-1)^{|g|} \delta$. 
 
 \begin{defi}
-    Action on $\mathsf{X}(\D)$.    
+    We define a $T\times G^\#$-action on $\mathsf{X}(\D)$ by 
+    \begin{align}
+        t \cdot (\eta, \kappa, g_0, \delta) &\coloneqq (\eta \tilde \beta (t, \cdot), \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)
+        \intertext{and}
+        g \cdot (\eta, \kappa, g_0, \delta) &\coloneqq (\eta, g\cdot \kappa, g_0 g^{-2}, (-1)^{|g|} \delta),
+    \end{align}
+    for all $t\in T$, $g\in G^\#$ and $(\eta, \kappa, g_0, \delta) \in \mathsf{X}(\D)$.
 \end{defi}
 
 % \begin{equation}
