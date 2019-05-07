@@ -1220,7 +1220,7 @@ Let us compute this action explicitly.
 
 Hence, let us consider these parameters fixed and focus on quadruples $(\eta, \kappa, g_0, \delta)$, where $(\kappa, g_0, \delta)$ is $\eta$-admissible. 
 
-First, in our case of algebraically closed $\FF$, the $A$-action is trivial. 
+First, in our case of algebraically closed $\FF$, the $A$-action (defined by Equation \eqref{eq:Aut(D)-action}) is trivial. 
 To see that,
 fix $\eta$ and suppose $(\kappa, g_0, \delta)$ is assigned to $(\U, B)$. 
 Note that $\psi_0 \in A$ must be a scalar operator on each component $\D_t$ of $\D$, hence $\psi_0$ commutes with $\vphi_0$. 
@@ -1241,15 +1241,36 @@ Finally,
 \end{align*}
 for all $u, v \in \U$.
 
-Hence, we consider only the action by $\D^\times_{\mathrm{gr}} \times G^\#$. 
+Let us now consider the action by $\D^\times_{\mathrm{gr}}$. 
+Let $t\in T$ and $0\neq X_t \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $X_t \cdot (\U, B) = (\U, X_t B)$ (Equation \eqref{eq:Dx_gr-action}). 
+To compute $\eta'$, recall that $dB$ is $(\mathrm{sInt}_d \circ \vphi_0)$-sesquilinear. 
+Let $s\in T$ and $X_s \in \D_s$. 
+Then
+\begin{align*}
+    (\mathrm{sInt}_{X_t} \circ \vphi_0) (X_s) &= \mathrm{sInt}_{X_t} ( \eta(s) X_s ) = \sign{t}{s} \eta(s) X_t X_s X_t\inv\\
+    &= \sign{t}{s} \eta(s) \beta(t,s) X_s X_t X_t\inv = \tilde{\beta} (t,s) \eta(s) X_s
+\end{align*}
+and, hence, $\eta' (s) = \tilde{\beta} (t,s) \eta(s)$ for all $s\in T$. 
+Since the action by $X_t$ does not change $\U$, $\kappa' = \kappa$. 
+Clearly $g_0' = \deg dB = t g_0$. 
+It remains to compute $\delta'$. 
+Using Lemma \ref{lemma:bar-dB}, we have 
+\begin{align*}
+    \overline{X_t B} &= (-1)^{t} \vphi_0(X_t) \overline{B} = (-1)^{t} \eta(t) X_t \delta B  \\
+    &= (-1)^{t} \eta(t) X_t \delta X_t\inv X_t B = (-1)^{t} \eta(t) \delta (X_t B),
+\end{align*}
+so $\delta' = (-1)^{t} \eta(t) \delta$. 
+Note that we only need to know $t$ to compute $(\eta', \kappa', g_0', \delta')$, so we can consider a $T$-action instead of a $\D^\times_\mathrm{gr}$-action
 
-{\tt Explain:}
-Again, since $\FF$ is algebraically closed, $\FF^\times \subseteq \D^\times_{\mathrm{gr}}$ acts trivially, so we actually have an action by $\D^\times_{\mathrm{gr}} / \FF^\times \iso T$. 
-This action is given by
-\begin{equation}
-    t \cdot (\eta, \kappa, g_0, \delta) = (\eta \tilde \beta (t, \cdot), t g_0, (-1)^{|t|} \eta(t)\delta, \kappa).
-\end{equation}
-Indeed,
+Finally, we consider the $G^\#$-action. 
+Let $g\in G$ and let $(\eta'', \kappa'', g_0'', \delta'')$ be the parameters corresponding to $g \cdot (\U, B) = (\U^{[g]}, B^{[g]})$ (Equation \eqref{eq:G-action}). 
+Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of $\U^{[g]}$, $\kappa'' = g\cdot \kappa$ where $(g\cdot \kappa) (x) = \kappa(g\inv x)$ for all $x\in G^\#/T$ (computed before).
+
+
+% \begin{equation}
+%     t \cdot (\eta, \kappa, g_0, \delta) = (\eta \tilde \beta (t, \cdot), t g_0, (-1)^{|t|} \eta(t)\delta, \kappa).
+% \end{equation}
+
 
 Finally, the $G^\#$-action is given by
 \begin{equation}
