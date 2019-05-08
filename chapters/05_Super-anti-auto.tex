@@ -985,27 +985,39 @@ Also, Definition \ref{def:coboundary} will play a broader role in Section \ref{s
 
 \begin{defi}\label{def:coboundary}
     Let $H$ and $K$ be groups and let $f\from H \to K$ be any map. 
-    We define $\mathrm{d} f\from H\times H \to K$ to be map given by $\mathrm{d} f\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$. 
-    We say that $\mathrm{d} f$ is a \emph{$2$-coboundary}.
+    We define $\mathrm{d} f\from H\times H \to K$ to be the map given by $\mathrm{d} f\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$. 
+    The maps $H\times H \to K$ of this for are called \emph{$2$-coboundaries}.
 \end{defi}
 
-\begin{defi}
+\begin{defi}\label{def:tilde-beta}
     Given a finite dimensional graded-division superalgebra associated to $(T, \beta, p)$, we define the bicharacter $\tilde\beta\from T\times T \to \FF^\times$ by $\tilde\beta (a,b) = (-1)^{p(a) p(b)} \beta(a, b)$, for all $a, b \in T$.
 \end{defi}
 
-Hence Equation \eqref{eq:superpolarization} becomes $\tilde\beta = \mathrm{d}\eta$. 
+Hence, Equation \eqref{eq:superpolarization} becomes $\tilde\beta = \mathrm{d}\eta$. 
 Note that $\tilde\beta$ is skew-symmetric, \ie, $\tilde\beta(b, a) = \tilde\beta\inv(a, b)$, but $\tilde\beta (t,t) = (-1)^{|t|}$, for all $t\in T$, so $\tilde\beta$ is not, in general, alternating. 
 
-We state and proof the following for further reference.
+We will now see how to translate the concepts of center and supercenter...
+
+The radicals of of $\beta$ and $\tilde\beta$ are the support of the center and supercenter of $\D$, respectively. 
+
+\begin{defi}
+    center and supercenter
+\end{defi}
+
+\begin{prop}
+    center and supercenter are graded
+\end{prop}
+
+We state and prove the following for further reference.
 
 \begin{lemma}
-    $\rad \tilde\beta = (\rad \beta)\cap T^+$
+    $\rad \tilde\beta = (\rad \beta)\cap T^+$.
 \end{lemma}
 
 \begin{proof}
     Let $t\in T^+$. 
     In this case $\tilde\beta (t, \cdot) = \beta (t, \cdot)$, so
-    $\tilde\beta (t, T) = 0$ if, and only if, $\beta (t, T) = 0$. 
+    $\tilde\beta (t, T) = 1$ if, and only if, $\beta (t, T) = 1$. 
     Hence $(\rad \tilde\beta)\cap T^+ = (\rad \beta)\cap T^+$. 
     
     Now let $t \in T^-$. 
@@ -1178,7 +1190,7 @@ In the next two propositions we consider a component paired to itself and two co
 
 \begin{defi}\label{def:parameter-of-(U,B)}
     Let $\U$ be a graded $\D$-module of finite rank and $B$ be a homogeneous nondegenerate $\vphi_0$-sesquilinear form such that $\overline{B_x} = \delta B_x$ for some $\delta \in \pmone$. 
-    We say that $(\kappa, g_0, \delta)$ are the \emph{parameters assigned to $(\U, B)$}, where $g_0 = \deg B \in G^\#$ and $\kappa(x) = \dim_\D \U_x$ for all $x \in G^\#/T$. 
+    We say that the triple $(\kappa, g_0, \delta)$ is the \emph{inertia of $(\U, B)$}, where $g_0 = \deg B \in G^\#$ and $\kappa(x) = \dim_\D \U_x$ for all $x \in G^\#/T$. 
 \end{defi}
 
 By the considerations above, the triple $(\kappa, g_0, \delta)$ satifies the following: 
@@ -1194,7 +1206,7 @@ By the considerations above, the triple $(\kappa, g_0, \delta)$ satifies the fol
     The set of all $\vphi_0$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
 \end{defi}
 
-Given a triple $(\kappa, g_0, \delta) \in \mathsf{X} (\D, \vphi_0)$, we can construct a pair $(\U, B)$ such that $(\kappa, g_0, \delta)$ are assigned to it. 
+Given a triple $(\kappa, g_0, \delta) \in \mathsf{X} (\D, \vphi_0)$, we can construct a pair $(\U, B)$ such that $(\kappa, g_0, \delta)$ is it inertia. 
 To see that, fix a total order $\leq$ on the set $G^\#/T$.
 We define $U_x \coloneqq \FF^{\kappa(x)}$, and $\U = \sum_{g \in G^\#} \U_g$ where $\U_x \coloneqq U_x \tensor \D$, for all $x\in G^\#/T$. 
 For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ the $\vphi_0$-sesquilinear on $\U_x + \U_y$ represented, relative to the standard basis of $U_x+U_y$, by to the matrices in Proposition \ref{prop:self-dual-components}, if $x=y$, or in Proposition \ref{prop:pair-of-dual-components}, if $x\neq y$. 
@@ -1203,7 +1215,7 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
     Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$. 
     Let $\D$ be a finite dimensional graded-division superalgebra and let $\vphi_0$ be a degree preserving superinvolution on $\D$. 
     % The map assigning a triple $(\kappa, g_0, \delta) \in \mathsf{X} (\D, \vphi_0)$ for ever
-    The assignment of parameters to a pair $(\U, B)$ as in Definition \ref{def:parameter-of-(U,B)} gives a bijection between the isomorphism classes of these pairs and the set $\mathsf{X} (\D, \vphi_0)$.
+    The assignment of inertia to a pair $(\U, B)$ as in Definition \ref{def:parameter-of-(U,B)} gives a bijection between the isomorphism classes of these pairs and the set $\mathsf{X} (\D, \vphi_0)$.
     % Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathsf{X} (\D, \vphi_0)$.
 \end{thm}
 
@@ -1221,7 +1233,7 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
     for all $u, v \in \U$. 
     Since $\psi$ is bijective, it follows that $\overline{B'} = \delta B'$. 
     
-    Conversely, suppose that $(\U, B)$ and $(\U, B')$ have the same parameters $(\kappa, g_0, \delta)$. 
+    Conversely, suppose that $(\U, B)$ and $(\U, B')$ have the same inertia $(\kappa, g_0, \delta)$. 
     To show that $(\U, B)$ and $(\U, B')$ are isomorphic, it suffices to find homogeneous $\D$-bases $\{u_1, \ldots, u_k\}$ of $\U$ and $\{u_1', \ldots, u_k'\}$ of $\U'$ such that $\deg u_i = \deg u_i'$, $1 \leq i \leq k$, and $B$ and $B'$ are represented by the same matrix. 
     Indeed, in this case the $\D$-linear map $\psi\from \U \to \U'$ defined by $\psi(u_i) = u_i'$, $1 \leq i \leq k$, is degree preserving, and $B(u_i, u_j) = B(u_i', u_j')$, $1 \leq i,j \leq k$, implies $B(u, v) = B( \psi(u), \psi(v) )$ for all $u, v\in \U$. 
     The existence of such bases follows from $\dim_\D (\U_x) = \dim_\D (\U_x') = \kappa(x)$, for all $x \in G^\#/T$, and Propositions \ref{prop:self-dual-components} and \ref{prop:pair-of-dual-components}. 
@@ -1239,17 +1251,15 @@ We will use Corollary \ref{cor:iso-with-actions} and express the group actions d
 Let $R \coloneqq \End_\D (\U)$ and $R' \coloneqq \End_{\D'} (\U')$, with superinvolutions $\vphi$ and $\vphi'$, respectively, defined by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$. 
 Consider the corresponding parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', g_0', \delta', \kappa')$. 
 If $(R, \vphi) \iso (R', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\beta = \beta'$ and $p = p'$. 
-For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D \iso \D'$. 
+For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D = \D'$. 
 
 \begin{defi}
-    We define $\mathsf{X} (\D)$ to be the set of all quadruples $(\eta, \kappa, g_0, \delta)$ where $\eta\from T \to \FF^\times$ is such that $\mathrm{d}\eta = \tilde \beta$ and $(\kappa, g_0, \delta)$ is an $\eta$-admissible triple. 
+    We define $\mathsf{X} (\D)$ to be the set of all quadruples $(\eta, \kappa, g_0, \delta)$ where $\eta\from T \to \FF^\times$ is such that $\mathrm{d}\eta = \tilde \beta$ (see Definitions \ref{def:coboundary} and \ref{def:tilde-beta}) and $(\kappa, g_0, \delta)$ is an $\eta$-admissible triple (see Definition \ref{def:parameter-of-(U,B)}). 
     Note that $\mathsf{X} (\D)$ can be identified with the set $\bigsqcup_{\vphi_0} \mathsf {X} (\D, \vphi_0)$. 
 \end{defi}
 
-By Corollary \ref{cor:iso-with-actions}, $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\eta', g_0', \delta', \kappa')$ is in the $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$-orbit of $(\eta, \kappa, g_0, \delta)$, where the action of $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$ is determined by its action on the isomorphism classes of $(\U, B)$ (see Lemma \ref{lemma:action-on-(U,B)}). 
+By Corollary \ref{cor:iso-with-actions}, $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\eta', g_0', \delta', \kappa')$ is in the orbit of $(\eta, \kappa, g_0, \delta)$ under the action of $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$ determined by its action on the isomorphism classes of $(\U, B)$ (see Lemma \ref{lemma:action-on-(U,B)}). 
 Let us compute this action explicitly. 
-
-Hence, let us consider these parameters fixed and focus on quadruples $(\eta, \kappa, g_0, \delta)$, where $(\kappa, g_0, \delta)$ is $\eta$-admissible. 
 
 First, in our case of algebraically closed $\FF$, the $A$-action (defined by Equation \eqref{eq:Aut(D)-action}) is trivial. 
 To see that,
@@ -1270,46 +1280,46 @@ Finally,
     &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
 \end{align*}
-for all $u, v \in \U$.
+for all $u, v \in \U\even \cup \U\odd$.
 
 Now, let us consider the $\D^\times_{\mathrm{gr}}$-action. 
-Let $t\in T$ and $0\neq X_t \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $X_t \cdot (\U, B) = (\U, X_t B)$ (Equation \eqref{eq:Dx_gr-action}). 
+Let $t\in T$ and $0\neq d \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $d \cdot (\U, B) = (\U, d B)$ (see Equation \eqref{eq:Dx_gr-action}). 
 To compute $\eta'$, recall that $dB$ is $(\mathrm{sInt}_d \circ \vphi_0)$-sesquilinear. 
-Let $s\in T$ and $X_s \in \D_s$. 
+Let $s\in T$ and $c \in \D_s$. 
 Then
 \begin{align*}
-    (\mathrm{sInt}_{X_t} \circ \vphi_0) (X_s) &= \mathrm{sInt}_{X_t} ( \eta(s) X_s ) = \sign{t}{s} \eta(s) X_t X_s X_t\inv\\
-    &= \sign{t}{s} \eta(s) \beta(t,s) X_s X_t X_t\inv = \tilde{\beta} (t,s) \eta(s) X_s
+    (\mathrm{sInt}_{d} \circ \vphi_0) (c) &= \mathrm{sInt}_{d} ( \eta(s) c ) = \sign{t}{s} \eta(s) d c d\inv\\
+    &= \sign{t}{s} \eta(s) \beta(t,s) c d d\inv = \tilde{\beta} (t,s) \eta(s) c
 \end{align*}
 and, hence, $\eta' (s) = \tilde{\beta} (t,s) \eta(s)$ for all $s\in T$. 
-Since the action by $X_t$ does not change $\U$, $\kappa' = \kappa$. 
-Clearly $g_0' = \deg dB = t g_0$. 
+Since the action by $d$ does not change $\U$, we have $\kappa' = \kappa$. 
+Clearly $g_0' = \deg (dB) = t g_0$. 
 It remains to compute $\delta'$. 
 Using Lemma \ref{lemma:bar-dB}, we have 
 \begin{align*}
-    \overline{X_t B} &= (-1)^{t} \vphi_0(X_t) \overline{B} = (-1)^{t} \eta(t) X_t \delta B  \\
-    &= (-1)^{t} \eta(t) X_t \delta X_t\inv X_t B = (-1)^{t} \eta(t) \delta (X_t B),
+    \overline{d B} &= (-1)^{|t|} \vphi_0(d) \overline{B} = (-1)^{|t|} \eta(t) d \delta B = (-1)^{|t|} \eta(t) \delta (d B),
 \end{align*}
 so $\delta' = (-1)^{t} \eta(t) \delta$. 
-Note that we only need to know $t$ to compute $(\eta', \kappa', g_0', \delta')$, so we can consider a $T$-action instead of a $\D^\times_\mathrm{gr}$-action
+Note that $(\eta', \kappa', g_0', \delta')$ depends only on $t$, so the $\D^\times_\mathrm{gr}$-action on $\mathsf{X}(\D)$ factors through the action of $T \iso \D^\times_\mathrm{gr}/\FF^\times$.
 
 Finally, we consider the $G^\#$-action. 
-Let $g\in G$ and let $(\eta'', \kappa'', g_0'', \delta'')$ be the parameters corresponding to $g \cdot (\U, B) = (\U^{[g]}, B^{[g]})$ (Equation \eqref{eq:G-action}). 
+Let $g\in G$ and let $(\eta'', \kappa'', g_0'', \delta'')$ be the parameters corresponding to $g \cdot (\U, B) = (\U^{[g]}, B^{[g]})$ (see Equation \eqref{eq:G-action}). 
 Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of $\U^{[g]}$, $\kappa'' = g\cdot \kappa$ where $(g\cdot \kappa) (x) = \kappa(g\inv x)$ for all $x\in G^\#/T$ {\tt (computed before)}. 
 As noted in Remark \ref{rmk:deg-B^[g]}, $g_0'' = \deg B^{[g]} = g_0 g^{-2}$. 
-Also, for all $u, v\ in \U$,
+Also, for all $u, v\ \in \U\even \cup \U\odd$, and writing $u^{[g]}$ and $v^{[g]}$ for the same elements but considered as elements of $\U^{[g]}$, we compute: 
 \begin{align*}
-    \overline{B^{[g]}}(u,v) &= \sign{u^{[g]}}{v^{[g]}} \vphi_0\inv \big( B^{[g]} (v, u) \big) = (-1)^{(|g| + |u|) (|g| + |v|)} \vphi_0\inv \big( \sign{g}{v} B(v, u) \big) \\
+    \overline{B^{[g]}}(u^{[g]},v^{[g]}) &= \sign{u^{[g]}}{v^{[g]}} \vphi_0\inv \big( B^{[g]} (v^{[g]}, u^{[g]}) \big) = (-1)^{(|g| + |u|) (|g| + |v|)} \vphi_0\inv \big( \sign{g}{v} B(v, u) \big) \\
     &= (-1)^{|g| + |g||u| + |g||v| + |u||v|} \sign{g}{v} \vphi_0\inv \big(B(v, u) \big) = (-1)^{|g| + |g||u|} \overline B(u,v) \\
-    &= (-1)^{|g|} \sign{g}{u} \delta B(u,v) = (-1)^{|g|} \delta B^{[g]}(u,v),
+    &= (-1)^{|g|} \sign{g}{u} \delta B(u,v) = (-1)^{|g|} \delta B^{[g]}(u^{[g]},v^{[g]}),
 \end{align*}
-where $u^{[g]}$ and $v^{[g]}$ are the elements $u$ and $v$, respectively, but interpreted as elements of $\U^{[g]}$. 
 We conclude that $\delta'' = (-1)^{|g|} \delta$. 
 
+We summarize this discussion in the following:
+
 \begin{defi}
-    We define a $T\times G^\#$-action on $\mathsf{X}(\D)$ by 
+    The group $T\times G^\#$ acts on $\mathsf{X}(\D)$ by 
     \begin{align}
-        t \cdot (\eta, \kappa, g_0, \delta) &\coloneqq (\eta \tilde \beta (t, \cdot), \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)
+        t \cdot (\eta, \kappa, g_0, \delta) &\coloneqq (\tilde\beta (t, \cdot) \eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)
         \intertext{and}
         g \cdot (\eta, \kappa, g_0, \delta) &\coloneqq (\eta, g\cdot \kappa, g_0 g^{-2}, (-1)^{|g|} \delta),
     \end{align}
@@ -1327,7 +1337,7 @@ We conclude that $\delta'' = (-1)^{|g|} \delta$.
 % \end{equation}
 % where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$.
 
-We summarize this discussion in the following:
+Thus Corollary \ref{cor:iso-with-actions} can be restated as follows:
 
 \begin{thm}\label{thm:iso-(R,vphi)-with-parameters}
     Iso with parameters
