@@ -1193,20 +1193,21 @@ In the next two propositions we consider a component paired to itself and two co
     We say that the triple $(\kappa, g_0, \delta)$ is the \emph{inertia of $(\U, B)$}, where $g_0 = \deg B \in G^\#$ and $\kappa(x) = \dim_\D \U_x$ for all $x \in G^\#/T$. 
 \end{defi}
 
-By the considerations above, the triple $(\kappa, g_0, \delta)$ satifies the following: 
+By the considerations above, the quadruple $(\eta, \kappa, g_0, \delta)$ satifies the following: 
 
 \begin{defi}
-    Let $\kappa\from G^\#/T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$ and $\delta \in \pmone$. 
-    We say that the triple $(\kappa, g_0, \delta)$ is \emph{$\vphi_0$-admissible} or \emph{$\eta$-admissible} if:
+    Let $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$,
+    $\kappa\from G^\#/T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$ and $\delta \in \pmone$. 
+    We say that the quadruple $(\eta, \kappa, g_0, \delta)$ is \emph{$\D$-admissible} if:
     \begin{enumerate}[(i)]
         \item $\kappa$ has finite support; \label{item:kappa-finite-support}
         \item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
         \item For any $x\in G^\#/T$, if $g_0 x^2 = T$ and $\mu_x \coloneqq (-1)^{|g|}\eta(g_0g^2)\delta -1$ for $g\in x$ (see Propositon \ref{prop:self-dual-components}), then $\kappa (x)$ is even. \label{item:kappa-parity}
     \end{enumerate}
-    The set of all $\vphi_0$-admissible triples will be denoted by $\mathsf{X}(\D, \vphi_0)$.
+    The set of all $\D$-admissible quadruples will be denoted by $\mathsf{X}(\D)$.
 \end{defi}
 
-Given a triple $(\kappa, g_0, \delta) \in \mathsf{X} (\D, \vphi_0)$, we can construct a pair $(\U, B)$ such that $(\kappa, g_0, \delta)$ is it inertia. 
+Given a triple $(\eta, \kappa, g_0, \delta) \in \mathsf{X} (\D)$, we can construct a pair $(\U, B)$ such that $(\eta, \kappa, g_0, \delta)$ is it inertia. 
 To see that, fix a total order $\leq$ on the set $G^\#/T$.
 We define $U_x \coloneqq \FF^{\kappa(x)}$, and $\U = \sum_{g \in G^\#} \U_g$ where $\U_x \coloneqq U_x \tensor \D$, for all $x\in G^\#/T$. 
 For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ the $\vphi_0$-sesquilinear on $\U_x + \U_y$ represented, relative to the standard basis of $U_x+U_y$, by to the matrices in Proposition \ref{prop:self-dual-components}, if $x=y$, or in Proposition \ref{prop:pair-of-dual-components}, if $x\neq y$. 
@@ -1340,7 +1341,9 @@ We summarize this discussion in the following:
 Thus Corollary \ref{cor:iso-with-actions} can be restated as follows:
 
 \begin{thm}\label{thm:iso-(R,vphi)-with-parameters}
-    Iso with parameters
+    Let $\D$ be a finite dimensional graded-divison superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, with parameters $(T, \beta, p)$. 
+    Let $\vphi_0$ and $\vphi_0'$ be degree preserving superinvolutions on $\D$ and let $(\U, B)$ and $(\U', B')$ be graded right $\D$-supermodules of finite rank with nondegenerate $\delta$-hermitian
+    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_\D(\U')$
 \end{thm}
 
 We will now proceed to give simplifications of this result by fixing $\eta$.
