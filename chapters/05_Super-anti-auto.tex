@@ -99,15 +99,17 @@ the $R$-linear map
 $\vphi_1$ to construct a super-anti-automorphism $\vphi_0$ on $\D$ and a nondegenerate $\vphi_0$-sesquilinear form $B$ on $\U$. 
 
 \begin{defi}\label{def:sesquilinear-form}
-    Let $\vphi_0: \D \to \D$ be a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism. We say that a map $B\colon \U \times \U \to \D$ is a \emph{$\vphi_0$-sesquilinear form on $\U$} if it is $\FF$-bilinear, $G^\#$-homogeneous if considered as a linear map $\U\tensor \U \to \D$ and, for all $u,v \in \U$ and $d\in \D$, satisfies
+    We say that a map $B\colon \U \times \U \to \D$ is a \emph{sesquilinear form on $\U$} if it is $\FF$-bilinear, $G^\#$-homogeneous if considered as a linear map $\U\tensor \U \to \D$, and there is $\vphi_0\from \D \to \D$ a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism such that, for all $u,v \in \U$ and $d\in \D$,
     %
     \begin{enumerate}[(i)]
         \item $B(u,vd) = B(u,v)d$; \label{enum:linear-on-the-second}
         \item $B(ud, v) = (-1)^ {(|B| + |u|)|d|}\vphi_0(d) B(u, v)$. \label{enum:vphi0-linear-on-the-first}
     \end{enumerate}
-    
+    When the super-anti-automorphism $\vphi_0$ is fixed, we say that $B$ is a \emph{$\vphi_0$-sesquilinear form}. 
     The \emph{(left) radical} of $B$ is the set $\rad B \coloneqq \{u\in \U \mid B(u, v) = 0 \text{ for all } v\in \U\}$. We say that the form $B$ is \emph{nondegenerate} if $\rad B = 0$.
 \end{defi}
+
+
 
 \begin{remark}\label{rmk:B-determines-vphi_0}
     Note that if $B$ is nondegenerate and $\U \neq 0$, then $\vphi_0$ is actually determined by $B$.
@@ -243,6 +245,15 @@ Using Lemma \ref{lemma:change-of-side-properties} and Equation \eqref{eq:R-actio
 \end{equation*}
 %\ie, we have that $\vphi$ is the \emph{superadjunction} with respect to $B$.
 We have proved one direction of Theorem \ref{thm:vphi-iff-vphi0-and-B}, below. 
+
+% \begin{lemma}\label{lemma:superadjoint}
+%     Let $B$ be a nondegenerate $\vphi_0$-sesquilinear form on a graded right $\D$-module $\U$ and set $R \coloneqq \End_\D (\U)$. 
+%     For each homogeneous $\D$-linear map $r\in \End_\D(\U)$, there is a unique homogeneous $\D$-linear map $\vphi(r) \in \End_\D(\U)$ such that
+%     \begin{equation}\label{eq:superadjunction}
+%         \forall r\in R\even \cup R\odd,\,\forall u, v \in \U\even \cup \U\odd,  \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
+%     \end{equation}
+%     Further, extending $\vphi$ by linearity to all elements in $End_\D(\U)$, we have a super-anti-automorphism $\vphi\from \End_\D(\U) \to \End_\D(\U)$.
+% \end{lemma}
 
 % \begin{prop}
 %     Let $\vphi_0\from \D \to \D$ be a super-anti-automorphism and let $B\from \U\times \U \to \D$ be a nonzero $\vphi_0$-sesquilinear form. 
@@ -390,6 +401,14 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     \]
     The form $B'$ is nondegenerate, so we can choose $G^\#$-homogeneous $u,v\in \U$ with $B'(u,v)\neq 0$. Then $B'(u,v)$ is invertible, hence $\vphi_0' (c) = (\operatorname{sInt}_d \circ\, \vphi_0) (c)$, concluding the proof.
 \end{proof}
+
+The "conversely" part of Theorem \ref{thm:vphi-iff-vphi0-and-B} motivates the following:
+
+\begin{defi}\label{def:superadjunction}
+    Let $\D$ be a graded-division superalgebra, $\U$ a graded right $\D$-module of finite rank and $B$ a nondegenerate sesquilinear form on $\U$. 
+    The unique super-anti-automorphism $\vphi$ on $\End_\D(\U)$ defined by Equation \eqref{eq:superadjunction} is called the \emph{superadjunction with respect to $B$} and, for every $r\in \End_\D(\U)$, the $\D$-linear map $\vphi(r)$ is called the \emph{superadjoint of $r$}.
+    % Under the conditions of Lemma \ref{lemma:superadjoint}, the $\D$-linear map $\vphi(r)$ is called the \emph{superadjoint of $r$}, for every $r\in R$, and the super-anti-automorphism $\vphi \from R \to R$ is called the \emph{superadjunction with respect to $B$}.
+\end{defi}
 
 \begin{remark}\label{conv:pick-even-form}
     Under the conditions of Theorem \ref{thm:vphi-iff-vphi0-and-B}, if $\D$ is an odd graded division superalgebra (\ie, $\D\odd \neq 0$), then we can choose the form $B$ to be even. 
