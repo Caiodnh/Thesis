@@ -105,13 +105,26 @@ $\vphi_1$ to construct a nondegenerate sesquilinear form $B$ on $\U$.
         \item $B(u,vd) = B(u,v)d$; \label{enum:linear-on-the-second}
         \item $B(ud, v) = (-1)^ {(|B| + |u|)|d|}\vphi_0(d) B(u, v)$. \label{enum:vphi0-linear-on-the-first}
     \end{enumerate}
-    When the super-anti-automorphism $\vphi_0$ is fixed, we say that $B$ is a \emph{$\vphi_0$-sesquilinear form}. 
+    The super-anti-automorphism $\vphi_0$ can be specified by stating that $B$ is \emph{sesquilinear with respect to $\vphi_0$} or that $B$ is \emph{$\vphi_0$-sesquilinear}. 
     The \emph{(left) radical} of $B$ is the set $\rad B \coloneqq \{u\in \U \mid B(u, v) = 0 \text{ for all } v\in \U\}$. We say that the form $B$ is \emph{nondegenerate} if $\rad B = 0$.
 \end{defi}
 
-\begin{remark}\label{rmk:B-determines-vphi_0}
-    Note that if $B$ is nondegenerate and $\U \neq 0$, then $\vphi_0$ is actually determined by $B$.
-\end{remark}
+% \begin{remark}\label{rmk:B-determines-vphi_0}
+%     Note that if $B$ is nondegenerate and $\U \neq 0$, then $\vphi_0$ is actually determined by $B$.
+% \end{remark}
+
+\begin{lemma}\label{lemma:B-determines-vphi_0}
+    Let $B \neq 0$ be a sesquilinear form on $\U$. 
+    Then there is a unique super-anti-automorphism $\vphi_0$ on $\D$ such that $B$ is sesquilinear with respect to $\vphi_0$.
+\end{lemma}
+
+\begin{proof}
+    Since $B\neq 0$, there are homogeneous elements $u, v\in \U$ such that $B(u,v) \neq 0$ and, hence, an invertible element of $\D$. 
+    Suppose $B$ is sesquilinear with respect to super-anti-automorphisms $\vphi_0$ and $\vphi_0'$ on $\D$.
+    Then, for all $d\in \D$,
+    \[ B(ud,v) = \sign{B}{d} \vphi_0(d) B(u,v) = \sign{B}{d} \vphi_0'(d) B(u,v) \]
+    and, therefore, $\vphi_0(d) = \vphi_0'(d)$.
+\end{proof}
 
 Suppose for now that a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism $\vphi_0: \D \to \D$ is given. 
 We can use it to define a right $\D$-action on $\U\Star$ by interpreting it as an isomorphism from $\D$ to $\D\sop$ and putting 
@@ -124,8 +137,8 @@ for all $f \in \U\Star$ and $d\in \D$.
 Using this action, we have $\End_\D (\U\Star) = \End_{\D\sop} (\U\Star)$. We also have the following:
 
 \begin{prop}\label{prop:sesquilinear-form-iff-D-linear-map}
-    Fix a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism $\vphi_0\from \D \to \D$. 
-    The $\vphi_0$-sesquilinear forms $B:\U\times\U \to \D$ are in a one-to-one correspondence with the homogeneous $\D$-linear maps $\theta\from \U \to \U\Star$ via $B \mapsto \theta$ where $\theta(u) \coloneqq B(u, \cdot)$, for all $u \in \U$ or, inversely, $\theta \mapsto B$ where $B(u,v) \coloneqq \theta(u)(v)$, for all $u, v\in \U$. 
+    Let $\vphi_0\from \D \to \D$ be a a degree-preserving su\-per\--an\-ti\--auto\-mor\-phism and consider the right $\D$-supermodule structure on $\U\Star$ given by Equation \eqref{eq:right-D-action}. 
+    Then the $\vphi_0$-sesquilinear forms $B:\U\times\U \to \D$ are in a one-to-one correspondence with the homogeneous $\D$-linear maps $\theta\from \U \to \U\Star$ via $B \mapsto \theta$ where $\theta(u) \coloneqq B(u, \cdot)$, for all $u \in \U$ or, inversely, $\theta \mapsto B$ where $B(u,v) \coloneqq \theta(u)(v)$, for all $u, v\in \U$. 
     Moreover, $B$ is nondegenerate if, and only if, $\theta$ is an isomorphism.
 \end{prop}
 
@@ -143,6 +156,7 @@ Using this action, we have $\End_\D (\U\Star) = \End_{\D\sop} (\U\Star)$. We als
     
     The ``moreover'' part follows from the fact that $\rad B = \ker \theta$, so the nondegeneracy of $B$ is equivalent to $\theta$ being injective. But $\U$ and $\U\Star$ have the same (finite) rank over $\D$, so by Proposition {\tt ??}, $\theta$ is injective if, and only if, it is bijective.
 \end{proof}
+
 
 % \begin{lemma}\label{lemma:sesquilinear-form-iff-D-linear-map}
 %     Consider $\U\Star$ as a left $\D$-supermodule by using $\vphi_0$ as above. Then there is a bijection between the $\D$-linear maps $\theta\from \U \to \U\Star$ and the $\vphi_0$-sesquilinear forms $B:\U\times\U \to \D$ via $\theta \mapsto B$ where $B(u,v) \coloneqq \theta(u)(v)$. Moreover, $\theta$ is an isomorphism if, and only if, $B$ is nondegenerate.
@@ -400,7 +414,7 @@ If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\o
     The form $B'$ is nondegenerate, so we can choose $G^\#$-homogeneous $u,v\in \U$ with $B'(u,v)\neq 0$. Then $B'(u,v)$ is invertible, hence $\vphi_0' (c) = (\operatorname{sInt}_d \circ\, \vphi_0) (c)$, concluding the proof.
 \end{proof}
 
-The "conversely" part of Theorem \ref{thm:vphi-iff-vphi0-and-B} motivates the following:
+The ``conversely'' part of Theorem \ref{thm:vphi-iff-vphi0-and-B} motivates the following:
 
 \begin{defi}\label{def:superadjunction}
     Let $\D$ be a graded-division superalgebra, $\U$ a graded right $\D$-module of finite rank and $B$ a nondegenerate sesquilinear form on $\U$. 
@@ -529,7 +543,7 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ have th
 We can interpret Theorem \ref{thm:iso-abstract-vphi} in terms of group actions. 
 For that, let us first assume that $\D$ is a fixed graded-division superalgebra. 
 We will define three (left) group actions on the class of pairs $(\U, B)$, where $\U \neq 0$ is a graded $\D$-supermodule and $B$ is a nondegenerate homogeneous $\vphi_0$-sesquilinear form, for some super-anti-automorphism $\vphi_0$ on $\D$. 
-Recall that, since $\U \neq 0$ and $B$ is nondegenerate, $\vphi_0$ is determined by $B$ (see Remark \ref{rmk:B-determines-vphi_0}).
+Recall that, since $\U \neq 0$ and $B$ is nondegenerate, $\vphi_0$ is determined by $B$ (see Lemma \ref{lemma:B-determines-vphi_0}).
 
 Let $\D^\times_{\mathrm{gr}} \coloneqq \big( \cup_{g \in G^\#} \D_g \big)\backslash \{ 0 \}$, the group of nonzero homogeneous elements of $\D$. 
 Given $d\in \D^\times_{\mathrm{gr}}$, we define 
@@ -1260,6 +1274,22 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
 
 \subsection{Parametrization of $(R, \vphi)$}
 
+We start with a definition to have a consise description of the graded superalgebras with superinvolution we are working on:
+
+
+\begin{defi}
+    Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, $\U$ be a graded right $\D$-module of finite rank and $B$ be a nondegenerate homogeneous sesquilinear form on $\U$ such that $\overline{B} = \pm B$. 
+    We define $\mathcal{M} (\D, \U, B)$ to be the (finite dimensional) graded superalgebra with superinvolution $(\End_\D, \vphi)$, where $\vphi$ is the superadjunction with respect to $B$. 
+    We will refer to $(\D, \U, B)$ as the \emph{defining triple} of $\mathcal{M} (\D, \U, B)$. 
+    If $\D$ is associated to $(T, \beta, p)$ (see Definition ??) and $(\U, B)$ has inertia $(\eta, \kappa, g_0, \delta)$ (see Definition ??), then we say that $(T, \beta, p, \eta, \kappa, g_0, \delta)$ are the parameters of $(\D, \U, B)$. 
+\end{defi}
+
+\begin{defi}\label{def:defining-object}
+    Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, $\U$ be a graded right $\D$-module of finite rank and $B$ be a nondegenerate homogeneous sesquilinear form on $\U$ such that $\overline{B} = \pm B$. 
+    We say that $(\D, \U, B)$ is the \emph{defining object} of the finite dimensional graded-simple superalgebra with superinvolution $(R, \vphi)$, where $R \coloneqq \End_\D (\U)$ and $\vphi$ is the superadjunction with respect to $B$. 
+    If $\D$ is associated to $(T, \beta, p)$ (see Definition ??) and $(\U, B)$ has inertia $(\eta, \kappa, g_0, \delta)$ (see Definition ??), then we say that $(T, \beta, p, \eta, \kappa, g_0, \delta)$ is the \emph{parametrization} of $(\D, \U, B)$. 
+\end{defi}
+
 Recall from Theorems \ref{thm:vphi-iff-vphi0-and-B} and \ref{thm:vphi-involution-iff-delta-pm-1} that a finite dimensional graded-simple superalgebra with superinvolution $(R, \vphi)$ is described by $\D$, $\vphi_0$, $\U$ and $B$. 
 With the parametrizations of $(\D, \vphi_0)$ and $(\U, B)$ presented above,
 this data reduces (up to isomorphism) to $T$, $\beta$, $p$, $\eta$, $\kappa$, $g_0$ and $\delta$. 
@@ -1326,7 +1356,8 @@ Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of
 As noted in Remark \ref{rmk:deg-B^[g]}, $g_0'' = \deg B^{[g]} = g_0 g^{-2}$. 
 Also, for all $u, v\ \in \U\even \cup \U\odd$, and writing $u^{[g]}$ and $v^{[g]}$ for the same elements but considered as elements of $\U^{[g]}$, we compute: 
 \begin{align*}
-    \overline{B^{[g]}}(u^{[g]},v^{[g]}) &= \sign{u^{[g]}}{v^{[g]}} \vphi_0\inv \big( B^{[g]} (v^{[g]}, u^{[g]}) \big) = (-1)^{(|g| + |u|) (|g| + |v|)} \vphi_0\inv \big( \sign{g}{v} B(v, u) \big) \\
+    \overline{B^{[g]}}(u^{[g]},v^{[g]}) &= \sign{u^{[g]}}{v^{[g]}} \vphi_0\inv \big( B^{[g]} (v^{[g]}, u^{[g]}) \big) \\
+    &= (-1)^{(|g| + |u|) (|g| + |v|)} \vphi_0\inv \big( \sign{g}{v} B(v, u) \big) \\
     &= (-1)^{|g| + |g||u| + |g||v| + |u||v|} \sign{g}{v} \vphi_0\inv \big(B(v, u) \big) = (-1)^{|g| + |g||u|} \overline B(u,v) \\
     &= (-1)^{|g|} \sign{g}{u} \delta B(u,v) = (-1)^{|g|} \delta B^{[g]}(u^{[g]},v^{[g]}),
 \end{align*}
@@ -1334,7 +1365,7 @@ We conclude that $\delta'' = (-1)^{|g|} \delta$.
 
 We summarize this discussion in the following:
 
-\begin{defi}
+\begin{defi}\label{def:TxG-action}
     The group $T\times G^\#$ acts on $\mathsf{X}(\D)$ by 
     \begin{align}
         t \cdot (\eta, \kappa, g_0, \delta) &\coloneqq (\tilde\beta (t, \cdot) \eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)
@@ -1353,14 +1384,13 @@ We summarize this discussion in the following:
 % \begin{equation}
 %     g \cdot (\eta, \kappa, g_0, \delta) = (\eta, g_0 g^{-2}, (-1)^{|g|} \delta, g\cdot \kappa),
 % \end{equation}
-% where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$.
+% where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$
 
 Thus Corollary \ref{cor:iso-with-actions} can be restated as follows:
 
 \begin{thm}\label{thm:iso-(R,vphi)-with-parameters}
-    Let $\D$ be a finite dimensional graded-divison superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, with parameters $(T, \beta, p)$. 
-    Let $\vphi_0$ and $\vphi_0'$ be degree preserving superinvolutions on $\D$ and let $(\U, B)$ and $(\U', B')$ be graded right $\D$-supermodules of finite rank with nondegenerate $\delta$-hermitian
-    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_\D(\U')$
+    Let $(R, \vphi)$ and $(R', \vphi')$ be finite dimensional graded-simple superalgebras with superinvolution with defining objects $(\D, \U, B)$ and $(\D', \U', B')$, respectively, and let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', \kappa', g_0', \delta')$ be their corresponding parametrizations. 
+    Then $(R, \vphi) \iso (R', \vphi')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ given on Definition \ref{def:TxG-action}.
 \end{thm}
 
 We will now proceed to give simplifications of this result by fixing $\eta$.
