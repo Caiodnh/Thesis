@@ -1291,11 +1291,34 @@ If $(R, \vphi) \iso (R', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\be
 For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D = \D'$.
 
 \begin{lemma}
-    
+    Let $\psi_0\from \D \to \D'$ be a degree preserving isomorphism. 
+    Then $(\U',B')$ and $((\U')^{\psi_0}, \psi_0\inv \circ B')$ have the same inertia $(\eta', \kappa', g_0', \delta') \in \mathsf{X}(\D) = \mathsf{X}(\D')$.
 \end{lemma}
+
+\begin{proof}
+    First, they have the same $\eta$...
+    
+    The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ have the same $\kappa$, since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$. 
+Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. 
+Finally, 
+% \begin{align*}
+%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi \circ \psi_0)\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+%     &= \sign{u}{v} (\psi_0 \circ \vphi\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
+%     &= \psi_0 \bigg( \sign{u}{v} \vphi\inv \big( B(v,u) \big) \bigg) \\
+%     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+% \end{align*}
+\begin{align*}
+    \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+    &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
+    &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+\end{align*}
+for all $u, v \in \U\even \cup \U\odd$.
+\end{proof}
 
 By Corollary \ref{cor:iso-with-actions}, $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\eta', g_0', \delta', \kappa')$ is in the orbit of $(\eta, \kappa, g_0, \delta)$ under the action of $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$ determined by its action on the isomorphism classes of $(\U, B)$ (see Lemma \ref{lemma:action-on-(U,B)}). 
 Let us compute this action explicitly. 
+
+As a consequence of Lemma ??, the $A$-action on $\mathsf{X}(T, \beta, p)$ is trivial.
 
 First, in our case of algebraically closed $\FF$, the $A$-action (defined by Equation \eqref{eq:Aut(D)-action}) is trivial. 
 To see that,
@@ -1318,7 +1341,7 @@ Finally,
 \end{align*}
 for all $u, v \in \U\even \cup \U\odd$.
 
-Now, let us consider the $\D^\times_{\mathrm{gr}}$-action. 
+Let us now consider the $\D^\times_{\mathrm{gr}}$-action. 
 Let $t\in T$ and $0\neq d \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $d \cdot (\U, B) = (\U, d B)$ (see Equation \eqref{eq:Dx_gr-action}). 
 To compute $\eta'$, recall that $dB$ is $(\mathrm{sInt}_d \circ \vphi_0)$-sesquilinear. 
 Let $s\in T$ and $c \in \D_s$. 
@@ -1374,11 +1397,11 @@ We summarize this discussion in the following:
 % \end{equation}
 % where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$
 
-Thus Corollary \ref{cor:iso-with-actions} can be restated as follows:
+In view of the above consideration, Corollary \ref{cor:iso-with-actions} can be restated as follows:
 
 \begin{thm}\label{thm:iso-(R,vphi)-with-parameters}
-    Let $(R, \vphi)$ and $(R', \vphi')$ be finite dimensional graded-simple superalgebras with superinvolution with defining objects $(\D, \U, B)$ and $(\D', \U', B')$, respectively, and let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', \kappa', g_0', \delta')$ be their corresponding parametrizations. 
-    Then $(R, \vphi) \iso (R', \vphi')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ given on Definition \ref{def:TxG-action}.
+    Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)}, and let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', \kappa', g_0', \delta')$ be their parameters. 
+    Then $E(\D, \U, B) \iso E(\D', \U', B')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ given in Definition \ref{def:TxG-action}.
 \end{thm}
 
-We will now proceed to give simplifications of this result by fixing $\eta$.
+We will now proceed to simplify this result by fixing $\eta$.
