@@ -448,20 +448,21 @@ This motivates the following:
 \begin{lemma}\label{lemma:B^[b]-does-the-job}
     % Let $\U$ be a graded $\D$-module, $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a $\vphi_0$-sesquilinear form on $\U$. 
     For every $g\in G^\#$, $B^{[g]}$ is a homogeneous $\vphi_0$-sesquilinear form on $\U^{[g]}$. 
-    Further, if $B$ is nondegenerate and the pair $(\vphi_0, B)$ determines the super-anti-automorphism $\vphi$ on $R \coloneqq \End_\D(\U) = \End_\D(\U^{[g]})$, then $B^{[g]}$ is nondegenerate and $(\vphi_0, B^{[g]})$ also determines $\vphi$.
+    % Further, if $B$ is nondegenerate and the pair $(\vphi_0, B)$ determines the super-anti-automorphism $\vphi$ on $R \coloneqq \End_\D(\U) = \End_\D(\U^{[g]})$, then $B^{[g]}$ is nondegenerate and $(\vphi_0, B^{[g]})$ also determines $\vphi$.
+    Further, if $B$ is nondegenerate, then so is $B^{[g]}$ and the superadjunction with respect to both is the same super-anti-automorphism $\vphi$ on $\End_\D(\U) = \End_\D(\U^{[g]})$.
 \end{lemma}
 
 \begin{proof}
-    Let $u, v \in \U$. 
+    Let $u, v \in \U\even \cup \U\odd$. 
     To avoid confusion, we will denote $u$ and $v$ by $u^{[g]}$ and $v^{[g]}$, respectively, when regarded as elements of $\U^{[g]}$. 
-    For all $d\in D$, we have:
+    For all $d\in D\even \cup \D\odd$, we have:
     \begin{align*}
         B^{[g]}(u^{[g]}, v^{[g]}d) &= \sign{g}{u} B(u, vd) = \sign{g}{u} B(u, v)d =  B^{[g]}(u^{[g]}, v^{[g]})d
         \intertext{and}
         B^{[g]}(u^{[g]}d, v^{[g]}) &= \sign{g}{ud} B(ud, v) = (-1)^{|g|( |u| + |d| )} (-1)^{|d|( |B| + |u| )} \vphi_0(d) B(u, v)\\
         &= (-1)^{|d| ( |B| + |u| + |g| )} \vphi_0(d) \sign{g}{u} B(u, v) \\ 
         &= (-1)^{|d| ( |B| + |u^{[g]}| )} \vphi_0(d) B^{[g]}(u^{[g]}, v^{[g]})d .
-        \intertext{Also, for all $r\in R$, we have:}
+        \intertext{Also, for all $r\in R\even \cup R\odd$, we have:}
         B^{[g]}(ru^{[g]}, v^{[g]}) &= \sign{g}{ru} B(ru, v) = (-1)^{|g|( |r| + |u| )} (-1)^{|r||u|} B(u, \vphi(r) v)\\
         &= (-1)^{|r| ( |g| + |u|)} \sign{u}{g} B(u, \vphi(r) v)\\ 
         &= \sign{r}{u^{[g]}} B^{[g]}(u, \vphi(r) v).
@@ -471,9 +472,44 @@ This motivates the following:
 Recall the concept of a module induced by a homomorphism of algebras (Definition \ref{def:twist}).
 
 \begin{lemma}\label{lemma:twist-on-(U,B)}
-    Let $(\D, \vphi_0)$ and $(\D', \vphi_0')$ be graded-division superalgebras with super-anti-automorphisms and let $\psi_0 \from (\D, \vphi_0) \to (\D', \vphi_0')$ be an isomorphism. 
-    If $\U'$ is a $\D'$-supermodule and $B'$ is a homogeneous $\vphi_0'$-sesquilinear form on it, then $\psi_0\inv \circ B'$ is a homogeneous $\vphi_0$-sesquilinear form on $(\U')^{\psi_0}$. \qed
+    Let $\D$ and $\D'$ be graded-division superalgebras and let $\psi_0 \from \D \to \D'$ be an isomorphism. 
+    If $\U'$ is a $\D'$-supermodule and $B'$ is a homogeneous $\vphi_0'$-sesquilinear form on it, then $\psi_0\inv \circ B'$ is a homogeneous $(\psi_0\inv \circ \vphi_0' \circ \psi_0)$-sesquilinear form on $(\U')^{\psi_0}$ of the same degree of $B'$. 
+    Further, if $B'$ is nondegenerate, then so is $\psi_0\inv \circ B'$ and the superadjunction with respect to both is the same super-anti-automorphism $\vphi'$ on $\End_\D((\U')^{\psi_0}) = \End_{\D'}(\U')$.
 \end{lemma}
+
+\begin{remark}
+    Note that $\End_\D ( (\U')^{\vphi_0})$ is, by definition of $(\U')^{\vphi_0}$, equal to $\End_{\D'} ( \U')$.
+\end{remark}
+
+\begin{proof}
+    First, it is clear that $\psi_0\inv \circ B' = \deg B$ and, hence, $|\psi_0\inv \circ B'| = |B'|$. 
+    
+    To simplify notation, let us put $B'' \coloneqq \psi_0\inv \circ B'$ and $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$. 
+    Let $u,v \in (\U')\even \cup (\U')\odd$. 
+    To avoid confusion, we will denote $u$ and $v$ by $u^{\psi_0}$ and $v^{\psi_0}$, respectively, when regarded as elements of $(\U')^{\psi_0}$. 
+    For all $d\in D\even \cup \D\odd$, we have:
+    \begin{align*}
+        B''(u^{\psi_0}, v^{\psi_0}d) &= \psi_0\inv \big( B'( u, v \, \psi_0(d)) \big)
+        = \psi_0\inv \big( B' ( u, v ) \psi_0(d) \big)\\ 
+        &=  \psi_0\inv \big( B'(u, v) \big) d
+        = B''(u^{\psi_0}, v^{\psi_0}) \,d
+    % \end{align*}
+    \intertext{and}
+    % and
+    % \begin{align*}
+        B'' (u^{\psi_0}d, v^{\psi_0}) &= \psi_0\inv \big( B' ( u \, \psi_0(d), v ) \big)\\
+        &= \psi_0\inv \Big( (-1)^{(|B'| + |u|) |d|} \vphi_0' \big( \psi_0(d) \big) B' ( u, v) \Big) \\
+        &= (-1)^{(|B'| + |u|) |d|} \psi_0\inv \big( \vphi_0' \big( \psi_0 (d) \big) \big) \psi_0\inv \big( B'(u, v) \big)\\
+        &= (-1)^{(|B''| + |u|) |d|} \vphi_0''(d) B''(u^{\psi_0}, v^{\psi_0}).
+        % \end{align*}
+        \intertext{Also, for all $r\in R\even \cup R\odd$, we have:}
+        % Also, for all $r\in R\even \cup R\odd$, we have:
+        % \begin{align*}
+        B''(ru^{\psi_0}, v^{\psi_0}) &= \psi_0\inv \big( B' ( ru, v ) \big) \\
+        &= \psi_0\inv \big( \sign{r}{u} B' ( u, \vphi'( r ) v ) \big) \\
+        &= \sign{r}{u} B'' ( u, \vphi'( r ) v ).
+    \end{align*}
+\end{proof}
 
 \begin{defi}\label{def:iso-(U,B)}
     Let $\U$ and $\U'$ be graded right $\D$-supermodules, and let $B$ and $B'$ be homogeneous sesquilinear forms on $\U$ and $\U'$, respectively. 
