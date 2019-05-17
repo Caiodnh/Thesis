@@ -1313,7 +1313,7 @@ In the case our superalgebra has a division grading, this information is capture
     Indeed, it is easy to check that $(-1)^{p(a) p(b)} =  \eta(ab) \eta(a)\inv \eta(b)\inv$.
 \end{ex}
 
-\begin{ex}\label{ex:FZ4-revisited}
+\begin{ex}%\label{ex:FZ4-revisited}
     By Example \ref{ex:FZ2xFZ2sop-iso-FZ4}, we have a $\ZZ_4$-grading on $Q(1)\times Q(1)\sop$, which is clearly a division grading. 
     The exchange superinvolution preserves degree and is determined by $\eta (\bar 0) = 1$, $\eta (\bar 1) = 1$, $\eta (\bar 2) = -1$ and $\eta (\bar 3) = -1$.
 \end{ex}
@@ -1344,7 +1344,7 @@ In the case our superalgebra has a division grading, this information is capture
     If there were a superinvolution on $Q(n)$, by Theorem \ref{thm:vphi-involution-iff-delta-pm-1} we would have a superinvolution on $\D$, which is impossible since the only odd element of $T = \ZZ_2$ has order $2$. 
 \end{remark}
 
-\begin{lemma}\label{lemma:beta-nondeg-elem-2-grp}
+\begin{lemma}%\label{lemma:beta-nondeg-elem-2-grp}
     If $\beta$ takes values in $\{ \pm 1 \}$ and is nondegenerate, then $T$ is an elementary $2$-group.
 \end{lemma}
 
@@ -1356,7 +1356,7 @@ In the case our superalgebra has a division grading, this information is capture
 
 Combining Proposition \ref{prop:odd-cant-have-order-2} and Lemma \ref{lemma:beta-nondeg-elem-2-grp}, we get:
 
-\begin{cor}\label{cor:no-odd-M-vphi}
+\begin{cor}%\label{cor:no-odd-M-vphi}
     If $\D$ is simple as an algebra and admits a superinvolution, then $\D = \D\even$. \qed
 \end{cor}
 
@@ -1371,7 +1371,7 @@ To this end, we will use the concept of group extension.
     Let $H, K$ be groups. 
     A \emph{group extension of $H$ by $K$} is a group $E$ together with homomorphisms $\iota\from K \to E$ and $\pi\from E \to H$ such that 
     %
-    \begin{equation}\label{eq:short-exact-sequence}
+    \begin{equation}%\label{eq:short-exact-sequence}
         0 \rightarrow K \xrightarrow{\iota} E \xrightarrow{\pi} H \rightarrow 0
     \end{equation}
     %
@@ -1400,7 +1400,7 @@ To this end, we will use the concept of group extension.
 	An equivalence from an extension to itself will be refered as a \emph{self-equivalence}.
 \end{defi}
 
-\begin{ex}\label{ex:main-extension}
+\begin{ex}%\label{ex:main-extension}
     Consider $E \coloneqq \big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big)$ as a subgroup of $\{ \pm 1, \pm i \} \times T$, and let $\iota\from \pmone \to E$ and $\pi\from E \to T$ be the homomorphisms given by $\iota(\delta) = (\delta, e)$ and $\pi (\delta, t) = t$ for all $\delta \in \pmone$ and $t\in T$. 
     Then $\pmone \xrightarrow{\iota} E \xrightarrow{\pi} T$ is an extension of $T$ by $\pmone$.
 \end{ex}
@@ -1442,7 +1442,7 @@ Note that the usual product on $K\times H$ is recovered as the particular case w
 % Note that the maps $\iota$ and $\pi$ are independent of the cocycle $\sigma$.
 
 
-\begin{prop}\label{prop:all-ext-are-cocycle}
+\begin{prop}%\label{prop:all-ext-are-cocycle}
     Every abelian group extension $K \xrightarrow{\iota} E \xrightarrow{\pi} H$ is equivalent to the abelian group extension corresponding to $K\times_\sigma H$ for some normalized symmetric cocycle $\sigma\from H \to K$.
 \end{prop}
 
@@ -1481,7 +1481,7 @@ The following is a well known result, but we include a proof here for completene
 %     For our needs, though, only the map $\pi$ will be needed.
 % \end{remark}
 
-\begin{prop}\label{prop:coboundary}
+\begin{prop}%\label{prop:coboundary}
     Let $\sigma, \sigma' \from H\times H \to K$ be normalized symmetric $2$-cocycles. 
     A map $\alpha\from K \times_{\sigma} H \to K \times_{\sigma'} H$ is an equivalence between the correponding group extensions %determined by $\sigma$ and $\sigma'$ 
     if, and only if, there is a map $f\from H \to K$ such that $\alpha(k,h) = (f(h) k, h)$, for all $k\in K$ and $h\in H$, and $\sigma' \sigma\inv = \mathrm{d} f$.
@@ -1525,7 +1525,7 @@ The following is a well known result, but we include a proof here for completene
     Comparing both, we conclude that $\alpha$ is an homomorphism if, and only if, $\mathrm{d}f = \sigma' \sigma\inv$.
 \end{proof}
 
-\begin{cor}\label{cor:self-equivalences-are-homomorphisms}
+\begin{cor}%\label{cor:self-equivalences-are-homomorphisms}
     The set of self-equivalences of an abelian group extension $K \xrightarrow{\iota} E \xrightarrow{\pi} H$ is in bijection with the set of homomorphisms from $H$ to $K$.
 \end{cor}
 
@@ -1535,7 +1535,7 @@ The following is a well known result, but we include a proof here for completene
 \end{proof}
 
 We note that the Equation \eqref{eq:superpolarization} can be rewritten as $\tilde\beta = \mathrm{d}\eta$, where $\tilde\beta\from T\times T \to \FF^\times$ is the bicharacter given by
-\begin{equation}\label{eq:def-beta-tilde}
+\begin{equation}%\label{eq:def-beta-tilde}
     \forall a,b\in T,\quad \tilde\beta(a,b) \coloneqq (-1)^{p(a)p(b)}\beta(a,b).
 \end{equation}
 This gives us a connection between super-anti-automorphisms and equivalences of group extensions. 
@@ -1556,7 +1556,7 @@ Instead, we will need super-anti-automorphisms that correspond to quadratic form
     % notion of \emph{quadratic map} is usually discussed with additive notation In the presence of the bicharacter condition, the condition $\mu(t\inv) = \mu(t)$ is equivalent to $\mu(t^n) = \mu(t)^{n^2}$ for all $t\in T$, which justifies the nomenclature.
 \end{remark}
 
-\begin{ex}\label{ex:quadratic-form-polarization-parity}
+\begin{ex}%\label{ex:quadratic-form-polarization-parity}
     Let $\mu_0\from T \to \FF^\times$ be given by $\mu_0(t) = 1$ for all $t\in T^+$ and $\mu_0(t) = i$ for all $t\in T^-$. 
     It is clear that $\mu_0(t\inv) = \mu_0(t)$. 
     Also, we have that $\mu_0(ab) \mu_0(a)\inv \mu_0(b)\inv = (-1)^{p(a)p(b)}$, which is a bicharacter. 

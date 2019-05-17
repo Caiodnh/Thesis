@@ -541,38 +541,39 @@ Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ have th
 \end{thm}
 
 \begin{proof}
-    Given an isomorphism of graded superalgebras $\psi\from R \to R'$, define $\vphi'' \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
-    Then $\psi$ is an isomorphism $(R, \vphi) \to (R', \vphi')$ if, and only if, $\vphi = \vphi''$. 
+    Given an isomorphism of graded superalgebras $\psi\from R \to R'$, define $\tilde \vphi \coloneqq \psi\inv \circ \vphi' \circ \psi$. 
+    Then $\psi$ is an isomorphism $(R, \vphi) \to (R', \vphi')$ if, and only if, $\vphi = \tilde\vphi$. 
 
     Since $\psi$ is an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude that there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to (\U')^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
     
-    Consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B''\from \U^{[g]} \times \U^{[g]} \to \D$ defined by \[ B''(u, v) \coloneqq \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1(v) \big) \Big)\] for all $u, v \in \U^{[g]}$. 
-    We claim that $B''$ is $\vphi_0''$-sesquilinear. 
-    Indeed,
+    As in the proof of Lemma \ref{lemma:twist-on-(U,B)}, consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B'' \coloneqq \psi_0\inv \circ B'$. 
+    Then define $\widetilde B \from \U^{[g]} \times \U^{[g]} \to \D$ by \[ \widetilde B(u, v) \coloneqq B'' \big( \psi_1(u), \psi_1(v) \big) \Big)\] for all $u, v \in \U^{[g]}$. 
+    We claim that $\widetilde B$ is $\vphi_0''$-sesquilinear. 
+    Indeed, by Lemma \ref{lemma:twist-on-(U,B)}, we have
     \begin{align*}
-        B''(u, vd) &= \psi_0\inv \Big( B'\big( \psi_1(u), \psi_1(vd) \big) \Big) 
-        = \psi_0\inv \Big( B'\big( \psi_1(u), \psi_1(v) \big) \psi_0(d) \Big) = B''(u, v)d
+        \widetilde B(u, vd) &= B'' \big( \psi_1(u), \psi_1(vd) \big) \Big) 
+        = B''\big( \psi_1(u), \psi_1(v)d \big) \\ 
+        &= B''\big( \psi_1(u), \psi_1(v) \big)d = \widetilde B(u, v)d
         \intertext{and}
-        B''(ud, v) &= \psi_0\inv \Big( B' \big( \psi_1(ud), \psi_1(v) \big) \Big) = \psi_0\inv \Big( B' \big( \psi_1(u) \psi_0(d), \psi_1(v) \big) \Big)\\
-        &= \psi_0\inv \Big( (-1)^{(|B'| + |u|) |d|} \vphi_0' \big( \psi_0(d) \big) B' \big( \psi_1(u), \psi_1(v) \big) \Big) \\
-        &= (-1)^{(|B''| + |u|) |d|} \psi_0\inv \Big( \vphi_0' \big( \psi_0 (d) \big) \Big) B''(u, v)\\
-        &= (-1)^{(|B''| + |u|) |d|} \vphi_0''(d) B''(u, v).
-        \intertext{Also, $\vphi''$ is the superadjunction with respect to $B''$:}
+        \widetilde B(ud, v) &= B'' \big( \psi_1(ud), \psi_1(v) \big) = B'' \big( \psi_1(u) d, \psi_1(v) \big)\\
+        &= (-1)^{(|B''| + |u|) |d|} \vphi_0'' (d) B'' \big( \psi_1(u), \psi_1(v) \big) \\
+        &= (-1)^{(|\widetilde B| + |u|) |d|}  \vphi_0'' (d) \widetilde B(u, v).
         % \end{align*}
-        % Also, $\vphi''$ is the superadjunction with respect to $B''$:
+        \intertext{Also, $\tilde\vphi$ is the superadjunction with respect to $\widetilde B$:}
+        % Also, $\tilde\vphi$ is the superadjunction with respect to $B''$:
         % \begin{align*}
-        B''(ru, v) &= \psi_0\inv \Big( B' \big( \psi_1(ru), \psi_1(v) \big) \Big) 
-        = \psi_0\inv \Big( B' \big( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) \big) \Big) \\
-        &= \psi_0\inv \Big( B' \big( \psi(r) \psi_1(u), \psi_1(v) \big) \Big) \\
-        &= \psi_0\inv \Big( \sign{\psi(r)}{\psi_1(u)} B' \big( \psi_1(u), \vphi'( \psi(r) ) \psi_1(v) \big) \Big) \\
-        % &= \sign{r}{u} \psi_0 \inv \Big( B' \big( \psi_1(u), (\vphi'\circ \psi)(r)\psi_1(v) \big) \Big)\\
-        % &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), (\psi\circ \vphi'')(r) \psi_1(v) \big) \Big)\\
-        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), \psi (\vphi''(r)) \psi_1(v) \big) \Big)\\
-        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), (\psi_1 \circ \vphi''(r) \circ \psi_1\inv) \psi_1(v) \big) \Big)\\
-        &= \sign{r}{u} \psi_0\inv \Big( B' \big( \psi_1(u), \psi_1 (\vphi''(r) v) \big) \Big)\\
-        &= \sign{r}{u} B'' \big( u, \vphi''(r) v\big).
+        \widetilde B(ru, v) &= B'' \big( \psi_1(ru), \psi_1(v) \big) 
+        = B'' \big( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) \big)\\
+        &= B'' \big( \psi(r) \psi_1(u), \psi_1(v) \big) \\
+        &= \sign{\psi(r)}{\psi_1(u)} B'' \big( \psi_1(u), \vphi'( \psi(r) ) \psi_1(v) \big) \\
+        % &= \sign{r}{u} \psi_0 \inv \Big( B' \big( \psi_1(u), (\vphi'\circ \psi)(r)\psi_1(v) \big)\\
+        % &= \sign{r}{u} B'' \big( \psi_1(u), (\psi\circ \tilde\vphi)(r) \psi_1(v) \big)\\
+        &= \sign{r}{u} B'' \big( \psi_1(u), \psi (\tilde\vphi(r)) \psi_1(v) \big)\\
+        &= \sign{r}{u} B'' \big( \psi_1(u), (\psi_1 \circ \tilde\vphi(r) \circ \psi_1\inv) \psi_1(v) \big)\\
+        &= \sign{r}{u} B'' \big( \psi_1(u), \psi_1 (\tilde\vphi(r) v) \big)\\
+        &= \sign{r}{u} \widetilde B \big( u, \tilde\vphi(r) v\big).
     \end{align*}
-    Hence, applying Theorem \ref{thm:vphi-iff-vphi0-and-B} for $\U^{[g]}$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \vphi''$ if, and only if, there is a homogeneous $0 \neq d \in \D$ such that $B'' = dB^{[g]}$. 
+    Hence, applying Theorem \ref{thm:vphi-iff-vphi0-and-B} for $\U^{[g]}$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \tilde\vphi$ if, and only if, there is a homogeneous $0 \neq d \in \D$ such that $\widetilde B = dB^{[g]}$. 
     The result follows. 
 \end{proof}
 
@@ -589,11 +590,11 @@ Given $d\in \D^\times_{\mathrm{gr}}$, we define
 Note that $dB$ is $(\mathrm{sInt}_d \circ \vphi_0)$-sesquilinear by Theorem \ref{thm:vphi-iff-vphi0-and-B}.
 
 Let $A \coloneqq \Aut (\D)$, the group of automorphisms of $\D$ as a graded superalgebra. 
-Given $\psi_0 \in A$, we define
+Given $\tau \in A$, we define
 \begin{equation}\label{eq:Aut(D)-action}
-    \psi_0 \cdot (\U, B) \coloneqq (\U^{\psi_0\inv}, \psi_0 \circ B).
+    \tau \cdot (\U, B) \coloneqq (\U^{\tau\inv}, \tau \circ B).
 \end{equation}
-Note that $\psi_0 \circ B$ is $(\psi_0 \circ \vphi_0 \circ \psi_0\inv)$-sesquilinear by Lemma \ref{lemma:twist-on-(U,B)}.
+Note that $\tau \circ B$ is $(\tau \circ \vphi_0 \circ \tau\inv)$-sesquilinear by Lemma \ref{lemma:twist-on-(U,B)}. (Note that we have changed the place of the ``inverse sign'' to get a left action.)
 
 Finally, consider the group $G^\#$. 
 Given $g \in G^\#$, we define
@@ -607,22 +608,22 @@ Note that $B^{[g]}$ is $\vphi_0$-sesquilinear by Lemma \ref{lemma:B^[b]-does-the
 \end{lemma}
 
 \begin{proof}
-    Let $d\in \D^\times_{\mathrm{gr}}$, $\psi_0 \in A$, $g \in G^\#$ and $u, v \in \U$. 
+    Let $d\in \D^\times_{\mathrm{gr}}$, $\tau \in A$, $g \in G^\#$ and $u, v \in \U$. 
     First note that the action of $d$ does not change $\U$, so we only have to consider its effect on $B$. 
     Since 
     \begin{align*}
-        (\psi_0 \circ dB)(u,v) &= \psi_0 \big( (d B(u,v) \big) = \psi_0 (d) \psi_0 \big( B(u,v) \big) = \big( \psi_0(d) (\psi_0 \circ B) \big) (u,v),
+        (tau \circ dB)(u,v) &= \tau \big( (d B(u,v) \big) = \tau (d) \tau \big( B(u,v) \big) = \big( \tau(d) (\tau \circ B) \big) (u,v),
     \end{align*}
     the $\D^\times_{\mathrm{gr}}$-action combined with the $A$-action gives us a $(\D^\times_{\mathrm{gr}} \rtimes A)$-action. 
     The $G^\#$-action commutes with the $\D^\times_{\mathrm{gr}}$-action since 
     \begin{align*}
         (dB)^{[g]} (u, v) = \sign{g}{u} dB(u,v) = d B^{[g]}(u,v).
     \end{align*}
-    Finally, the $G^\#$-action also commutes with the $A$-action since $(\U^{\psi_0\inv})^{[g]} = (\U^{[g]})^{\psi_0\inv}$ and 
+    Finally, the $G^\#$-action also commutes with the $A$-action since $(\U^{\tau\inv})^{[g]} = (\U^{[g]})^{\tau\inv}$ and 
     \begin{align*}
-        \psi_0 \big(B^{[g]} (u,v) \big) 
-        &= \psi_0 \big( \sign{g}{u} B(u,v) \big)
-        &= \sign{g}{u} (\psi_0 \circ B) (u,v) = (\psi_0 \circ B)^{[g]} (u,v).
+        \tau \big(B^{[g]} (u,v) \big) 
+        &= \tau \big( \sign{g}{u} B(u,v) \big)
+        &= \sign{g}{u} (\tau \circ B) (u,v) = (\tau \circ B)^{[g]} (u,v).
     \end{align*}
 \end{proof}
 
@@ -1320,62 +1321,64 @@ We start with a definition to have a concise description of the graded superalge
 
 By Theorems \ref{thm:vphi-iff-vphi0-and-B} and \ref{thm:vphi-involution-iff-delta-pm-1}, any finite dimensional graded-simple superalgebra with superinvolution $(R, \vphi)$ is isomorphic to $E(\D, \U, B)$ for some triple $(\D, \U, B)$. 
 We will now classify these graded superalgebras with superinvolution in terms of the parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$.  
-Let $R \coloneqq \End_\D (\U)$ and $R' \coloneqq \End_{\D'} (\U')$, with superinvolutions $\vphi$ and $\vphi'$, respectively, which are superadjunctions with respect to nondegenerate sesquilinear forms $B$ and $B'$. 
-Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)} and let $(R, \vphi) = E(\D, \U, B)$ and $(R', \vphi') = E(\D', \U', B')$.
+% Let $R \coloneqq \End_\D (\U)$ and $R' \coloneqq \End_{\D'} (\U')$, with superinvolutions $\vphi$ and $\vphi'$, respectively, which are superadjunctions with respect to nondegenerate sesquilinear forms $B$ and $B'$. 
+Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)} and let $(R, \vphi) \coloneqq E(\D, \U, B)$ and $(R', \vphi') \coloneqq E(\D', \U', B')$.
 Consider the corresponding parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', g_0', \delta', \kappa')$. 
 If $(R, \vphi) \iso (R', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\beta = \beta'$ and $p = p'$. 
-For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D = \D'$.
+% For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D = \D'$.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:twist-same-inertia}
     Let $\psi_0\from \D \to \D'$ be a degree preserving isomorphism. 
-    Then $(\U',B')$ and $((\U')^{\psi_0}, \psi_0\inv \circ B')$ have the same inertia $(\eta', \kappa', g_0', \delta') \in \mathsf{X}(\D) = \mathsf{X}(\D')$.
+    Then $(\U',B')$ and $((\U')^{\psi_0}, \psi_0\inv \circ B')$ have the same inertia $(\eta', \kappa', g_0', \delta') \in \mathsf{X}(T, \beta, p)$.
 \end{lemma}
 
 \begin{proof}
-    First, they have the same $\eta$...
-    
-    The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ have the same $\kappa$, since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$. 
-Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. 
-Finally, 
-% \begin{align*}
-%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi \circ \psi_0)\inv \big( (\psi_0 \circ B)(v, u) \big) \\
-%     &= \sign{u}{v} (\psi_0 \circ \vphi\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
-%     &= \psi_0 \bigg( \sign{u}{v} \vphi\inv \big( B(v,u) \big) \bigg) \\
-%     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
-% \end{align*}
-\begin{align*}
-    \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
-    &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
-    &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
-\end{align*}
-for all $u, v \in \U\even \cup \U\odd$.
+    By Lemma \ref{lemma:twist-on-(U,B)}, $\psi_0\inv \circ B'$ is $(\psi_0\inv \circ \vphi_0' \circ \psi_0)$-sesquilinear. 
+    Let $X_t \in \D_t$. 
+    Then $\psi_0 (X_t)\in \D_t'$ and, hence, $\psi_0' \big(\psi_0 (X_t) \big) = \eta' (t) \psi_0 (X_t)$. 
+    It follows that $(\psi_0\inv \circ \vphi_0' \circ \psi_0) (X_t) = \eta'(t) X_t$, therefore the superinvolution $(\psi_0\inv \circ \vphi_0' \circ \psi_0)$ also corresponds to the map $\eta'\from T \to \FF^\times$. 
+
+    Since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$, The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ correspond to the same $\kappa$. 
+    Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. Finally, using that $\psi_0\inv \circ \vphi_0 \circ \psi_0$ and $\vphi_0$ are involutive, we have that
+    \begin{align*}
+        \overline{(\psi_0\inv \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi_0 \circ \psi_0) \big( (\psi_0\inv \circ B)(v, u) \big) \\
+        % &= \sign{u}{v} (\psi_0 \circ \vphi_0\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
+        &= \psi_0\inv \bigg( \sign{u}{v} \vphi_0 \big( B(v,u) \big) \bigg) \\
+        &= \psi_0\inv \big( \overline B (u,v) \big) = \psi_0\inv \big( \delta B (u,v) \big) = \delta (\psi_0\inv \circ B) (u,v),
+    \end{align*}
+    % \begin{align*}
+    %     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+    %     &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
+    %     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+    % \end{align*}
+    for all $u, v \in \U\even \cup \U\odd$.
 \end{proof}
 
 By Corollary \ref{cor:iso-with-actions}, $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\eta', g_0', \delta', \kappa')$ is in the orbit of $(\eta, \kappa, g_0, \delta)$ under the action of $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$ determined by its action on the isomorphism classes of $(\U, B)$ (see Lemma \ref{lemma:action-on-(U,B)}). 
 Let us compute this action explicitly. 
 
-As a consequence of Lemma ??, the $A$-action on $\mathsf{X}(T, \beta, p)$ is trivial.
+First, applying Lemma \ref{lemma:twist-same-inertia} for the case $\D' = \D$, we have that the $A$-action on $\mathsf{X}(T, \beta, p)$ is trivial.
 
-First, in our case of algebraically closed $\FF$, the $A$-action (defined by Equation \eqref{eq:Aut(D)-action}) is trivial. 
-To see that,
-fix $\eta$ and suppose $(\kappa, g_0, \delta)$ is assigned to $(\U, B)$. 
-Note that $\psi_0 \in A$ must be a scalar operator on each component $\D_t$ of $\D$, hence $\psi_0$ commutes with $\vphi_0$. 
-It follows that $\psi_0\inv \circ B$ is $\vphi_0$-sesquilinear, so we can use Theorem \ref{thm:iso-(U,B)} to show that $(\U, B)$ is isomorphic to $\psi_0\cdot (\U, B) = (\U^{\psi_0\inv}, \psi \circ B)$. 
-The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ have the same $\kappa$, since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$. 
-Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. 
-Finally, 
+% First, in our case of algebraically closed $\FF$, the $A$-action (defined by Equation \eqref{eq:Aut(D)-action}) is trivial. 
+% To see that,
+% fix $\eta$ and suppose $(\kappa, g_0, \delta)$ is assigned to $(\U, B)$. 
+% Note that $\psi_0 \in A$ must be a scalar operator on each component $\D_t$ of $\D$, hence $\psi_0$ commutes with $\vphi_0$. 
+% It follows that $\psi_0\inv \circ B$ is $\vphi_0$-sesquilinear, so we can use Theorem \ref{thm:iso-(U,B)} to show that $(\U, B)$ is isomorphic to $\psi_0\cdot (\U, B) = (\U^{\psi_0\inv}, \psi \circ B)$. 
+% The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ have the same $\kappa$, since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$. 
+% Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. 
+% Finally, 
+% % \begin{align*}
+% %     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi \circ \psi_0)\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+% %     &= \sign{u}{v} (\psi_0 \circ \vphi\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
+% %     &= \psi_0 \bigg( \sign{u}{v} \vphi\inv \big( B(v,u) \big) \bigg) \\
+% %     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+% % \end{align*}
 % \begin{align*}
-%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi \circ \psi_0)\inv \big( (\psi_0 \circ B)(v, u) \big) \\
-%     &= \sign{u}{v} (\psi_0 \circ \vphi\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
-%     &= \psi_0 \bigg( \sign{u}{v} \vphi\inv \big( B(v,u) \big) \bigg) \\
+%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+%     &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
 %     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
 % \end{align*}
-\begin{align*}
-    \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
-    &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
-    &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
-\end{align*}
-for all $u, v \in \U\even \cup \U\odd$.
+% for all $u, v \in \U\even \cup \U\odd$.
 
 Let us now consider the $\D^\times_{\mathrm{gr}}$-action. 
 Let $t\in T$ and $0\neq d \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $d \cdot (\U, B) = (\U, d B)$ (see Equation \eqref{eq:Dx_gr-action}). 
@@ -1410,7 +1413,7 @@ Also, for all $u, v\ \in \U\even \cup \U\odd$, and writing $u^{[g]}$ and $v^{[g]
 \end{align*}
 We conclude that $\delta'' = (-1)^{|g|} \delta$. 
 
-We summarize this discussion in the following:
+% We summarize this discussion in the following:
 
 \begin{defi}\label{def:TxG-action}
     The group $T\times G^\#$ acts on $\mathsf{X}(\D)$ by 
@@ -1433,11 +1436,11 @@ We summarize this discussion in the following:
 % \end{equation}
 % where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$
 
-In view of the above consideration, Corollary \ref{cor:iso-with-actions} can be restated as follows:
+In view of these considerations, Corollary \ref{cor:iso-with-actions} can be restated as follows:
 
 \begin{thm}\label{thm:iso-(R,vphi)-with-parameters}
     Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)}, and let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', \kappa', g_0', \delta')$ be their parameters. 
-    Then $E(\D, \U, B) \iso E(\D', \U', B')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ given in Definition \ref{def:TxG-action}.
+    Then $E(\D, \U, B) \iso E(\D', \U', B')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ given in Definition \ref{def:TxG-action}. \qed
 \end{thm}
 
 We will now proceed to simplify this result by fixing $\eta$.
