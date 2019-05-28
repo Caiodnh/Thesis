@@ -1443,4 +1443,21 @@ In view of these considerations, Corollary \ref{cor:iso-with-actions} can be res
     Then $E(\D, \U, B) \iso E(\D', \U', B')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ given in Definition \ref{def:TxG-action}. \qed
 \end{thm}
 
-We will now proceed to simplify this result by fixing $\eta$.
+% From now on, let us consider the triple $(T, \beta, p)$ fixed. 
+We will now proceed to simplify this result by fixing $\eta$. 
+Define $\mathsf{X}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)\}$. 
+Since the $T\times G^\#$-action can change the $\eta$ it does not restrict to the set $\mathsf{X}(T, \beta, p, \eta)$, but we can consider the action by the stabilizer of $\mathsf{X}(T, \beta, p, \eta)$, \ie, the action of the group $\mathcal{G} \coloneqq \rad \tilde\beta \times G^\#$
+
+We define an equivalence relation $\sim$ on set of all maps $\eta \from T \to \FF^\times$ such that $\mathrm{d} \eta = \tilde \beta$ by declaring  $\eta \sim \eta'$ if there is $t\in T$ such that $\eta' = \tilde\beta (t, \cdot) \eta$. 
+
+Let $\eta \from T \to \FF^\times$ be such that $\mathrm{d} \eta = \tilde \beta$. 
+We define the set $\mathsf{X}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)\}$. 
+Define $\mathcal{G} \coloneqq \rad \tilde\beta \times G^\#$. 
+Clearly, the action in Definition \ref{def:TxG-action} restricts to a $\mathcal{G}$-action on $\mathsf{X}(T, \beta, p, \eta)$.
+
+\begin{defi}
+    Let $\eta, \eta' \from T \to \FF^\times$ be such that $\mathrm{d} \eta = \mathrm{d} \eta' = \tilde \beta$. 
+    We say that $\eta \sim \eta'$ if there is $t\in T$ such that $\eta' = \tilde\beta (t, \cdot) \eta$.
+\end{defi}
+
+Note that if 
