@@ -39,6 +39,10 @@ The following concept allows us to transform (graded) modules over different (gr
     In the case $\psi\from R \to R$ is an automorphism, we say that $U^{\psi}$ is the \emph{twist of $\U$ by $\psi$}.
 \end{defi}
 
+\begin{remark}
+    Note that $\End_\D ( (\U')^{\vphi_0})$ is, by definition of $(\U')^{\vphi_0}$, equal to $\End_{\D'} ( \U')$.
+\end{remark}
+
 \begin{thm}\label{thm:iso-abstract}
     Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
     Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$ such that $g \in G$, $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras, $\psi_1\from U^{[g]} \to (U')^{\psi_0}$ is an isomorphism of graded modules and 
@@ -49,19 +53,16 @@ The following concept allows us to transform (graded) modules over different (gr
     Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
 \end{thm}
 
-\subsection{Graded-division algebras}
-
-
-Recall that a graded division superalgebra is the same as a graded division algebra if we consider the $G^\#$-grading. 
-In particular, the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a pair $(T, \beta)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group and $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter {\tt (see ??)}. 
-Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$. 
-% Sometimes we may want to dis
+\subsection{Graded-division algebras}\label{ssec:grd-div-alg}
 
 Let $\D$ be a finite-dimensional $G$-graded division algebra. It is easy to see that $T= \supp \D$ is a finite subgroup of $G$. 
 Also, since we are over an algebraically closed field, each homogeneous component $\D_t$, for $t\in T$, is one-dimensional. We can choose a generator $X_t$ for each $\D_t$. It follows that, for every $u,v\in T$, there is a unique nonzero scalar $\beta (u,v)$ such that $X_u X_v = \beta (u,v) X_v X_u$. Clearly, $\beta (u,v)$ does not depend on the choice of $X_u$ and $X_v$.
-The map $\beta: T\times T \rightarrow \FF^{\times}$ is a \emph{bicharacter}, \ie, both maps $\beta(t,\cdot)$ and $\beta(\cdot,t)$ are characters for every $t \in T$. It is also \emph{alternating} in the sense that $\beta (t,t) = 1$ for all $t\in T$. We define the \emph{radical} of $\beta$ as the set $\rad \beta = \{ t\in T \mid \beta(t, T) = 1 \}$. In the case we are interested in, where $\D$ is simple as an algebra, the bicharacter $\beta$ is \emph{nondegenerate}, \ie, $\rad \beta = \{e\} $. The isomorphism classes of $G$-graded division algebras that are finite-dimensional and simple as algebras are in one-to-one correspondence with the pairs $(T,\beta)$ where $T$ is a finite subgroup of $G$ and $\beta$ is an alternating nondegenerate bicharacter on $T$ (see e.g. \cite[Section 2.2]{livromicha} for a proof).
+The map $\beta: T\times T \rightarrow \FF^{\times}$ is a \emph{bicharacter}, \ie, both maps $\beta(t,\cdot)$ and $\beta(\cdot,t)$ are characters for every $t \in T$. It is also \emph{alternating} in the sense that $\beta (t,t) = 1$ for all $t\in T$. We define the \emph{radical} of $\beta$ as the set $\rad \beta = \{ t\in T \mid \beta(t, T) = 1 \}$. 
+If $\D$ is simple as an algebra, the bicharacter $\beta$ is \emph{nondegenerate}, \ie, $\rad \beta = \{e\} $. 
+The isomorphism classes of $G$-graded division algebras that are finite-dimensional and simple as algebras are in one-to-one correspondence with the pairs $(T,\beta)$ where $T$ is a finite subgroup of $G$ and $\beta$ is an nondegenerate alternating bicharacter on $T$ (see \cite{BK10} or \cite[Section 2.2]{livromicha} for a proof). 
+More generally, there is a one-to-one correspondence between the isomorphism classes of finite dimensional graded division algebras and the pairs $(T,\beta)$ where $\beta$ is an alternating bicharacter, not necessarily nondegenerate (see \cite{EK_d4}).
 
-Using that the bicharacter $\beta$ is nondegenerate, we can decompose the group $T$ as $A\times B$, where the restrictions of $\beta$ to each of the subgroups $A$ and $B$ is trivial, and hence $A$ and $B$ are in duality by $\beta$. We can choose the elements $X_t\in \D_t$ in a convenient way (see \cite[Remark 2.16]{livromicha} and 
+In the case the bicharacter $\beta$ is nondegenerate, we can decompose the group $T$ as $A\times B$, where the restrictions of $\beta$ to each of the subgroups $A$ and $B$ is trivial, and hence $A$ and $B$ are in duality by $\beta$. We can choose the elements $X_t\in \D_t$ in a convenient way (see \cite[Remark 2.16]{livromicha} and 
 \cite[Remark 18]{EK15}) such that $X_{ab}=X_aX_b$ for all $a\in A$ and $b\in B$. Using this choice, we can define an action of $\D$ on the vector space underlying the group algebra $\FF B$, by declaring $X_a\cdot e_{b'} = \beta(a, b') e_{b'}$ and $X_b\cdot e_{b'} = e_{bb'}$. 
 This action allows us to identify $\D$ with $\End{(\FF B)}$. Using the basis $\{e_{b}\mid b\in B\}$ in $\FF B$, we can see it as a matrix algebra, where
 %
@@ -144,11 +145,22 @@ We restate \cite[Theorem 2.27]{livromicha} (see also \cite[Theorem 2.6]{BK10}) u
 \section{Graded-simple associative superalgebras}
 % ----
 
+\subsection{Graded division superalgebras}\label{ssec:grd-div-salg}
+
+
+
+Recall that a graded division superalgebra is the same as a graded division algebra if we consider the $G^\#$-grading. 
+In particular, the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a pair $(T, \beta)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group and $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter (see Subsection \ref{ssec:grd-div-alg}). 
+Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$. 
+% Sometimes we may want to dis
+
+
 \section{Gradings on $M(m,n)$}\label{sec:Mmn}
 % ==================================================
 
 \section{Gradings on matrix algebras}
 \label{sec:gradings-on-matrix-algebras}
+
 
 
 % --------------------------------------------------

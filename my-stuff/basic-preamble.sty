@@ -52,6 +52,10 @@
 %\specialcomment{smalltt}
 %{\begingroup\ttfamily\footnotesize\color{Grey}}{\endgroup}
 
+% References
+% \RequirePackage{hyperref}
+\RequirePackage{cleveref}
+
 
 
 %%%       Theorem Styles       %%%
@@ -59,6 +63,18 @@
 
 %Equations also numbered by section
 \numberwithin{equation}{chapter}
+
+\crefname{thm}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{cor}{Corollary}{Corollaries}
+\crefname{ex}{Example}{Examples}
+\crefname{defi}{Definition}{Definitions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{notation}{Notation}{Notations}
+\crefname{convention}{Convention}{Conventions}
+\crefname{claim}{Claim}{Claims}
+
 
 \theoremstyle{plain} % Thms, props, cors and lemmas
 \newtheorem{thm}{Theorem}[chapter]

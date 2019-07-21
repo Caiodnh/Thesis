@@ -3,6 +3,12 @@
 % \makeatother
 \documentclass[12pt]{pdfathesis}
 \usepackage{my-stuff/basic-preamble}
+% \usepackage[notref]{showkeys}
+\usepackage{showlabels}
+
+\usepackage{silence}
+\WarningFilter[pdftoc]{hyperref}{Token not allowed in a PDF string}
+\WarningFilter[frontpage]{pdfathesis}{Underfull \hbox badness (badness 10000) in paragraph at lines 10--10}
 
 % \DeclareUnicodeCharacter{0301}{*************************************}
 
@@ -18,7 +24,9 @@
 \begin{document}
 %
 %
+\ActivateWarningFilters[frontpage]
 \include{pdfathesis-stuff/prefactory}
+\ActivateWarningFilters[frontpage]
 %
 \begin{prefatory}
 \end{prefatory}
