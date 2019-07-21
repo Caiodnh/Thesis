@@ -2,11 +2,11 @@
 \chapter{``Recycle Bin''}
 
 \begin{remark}
-    Proposition 
-    %\ref{prop:odd-cant-have-order-2}
-    also gives us another proof for the fact that the associative superalgebra $Q(n)$ does not admit a superinvolution (Corollary \ref{cor:Q-no-spuerinv-center}). 
-    Recall that $Q(n) \iso \End_\D (\U)$ (Proposition ??), where $\D= \FF\ZZ_2$ with its natural $\ZZ_2$-grading and $\U$ is a right $\D$-module of finite rank. 
-    If there were a superinvolution on $Q(n)$, by Theorem \ref{thm:vphi-involution-iff-delta-pm-1} we would have a superinvolution on $\D$, which is impossible since the only odd element of $T = \ZZ_2$ has order $2$. 
+	Proposition
+	%\ref{prop:odd-cant-have-order-2}
+	also gives us another proof for the fact that the associative superalgebra $Q(n)$ does not admit a superinvolution (Corollary \ref{cor:Q-no-spuerinv-center}).
+	Recall that $Q(n) \iso \End_\D (\U)$ (Proposition ??), where $\D= \FF\ZZ_2$ with its natural $\ZZ_2$-grading and $\U$ is a right $\D$-module of finite rank.
+	If there were a superinvolution on $Q(n)$, by Theorem \ref{thm:vphi-involution-iff-delta-pm-1} we would have a superinvolution on $\D$, which is impossible since the only odd element of $T = \ZZ_2$ has order $2$.
 \end{remark}
 
 \section{Old chapter on $\vphi$-gradings}
@@ -18,27 +18,27 @@ The problem here is that not all gradings on the associative superalgebra restri
 %But the restriction actually work if we have a graded superalgebra with superinvolution, \ie, if the the super involtion is homegeneous of degree $e$.
 
 \begin{defi}
-    Let $R$ be a superalgebra and let $\vphi: R\to R$ be any map. We call the pair $(R, \vphi)$ a \emph{superalgebra with distinguished map}. If $\vphi$ is a super-anti-automorphism or a superinvolution, we will call it a \emph{superalgebra with super-anti-automorphism} or \emph{superalgebra with superinvolution}, respectively.
+	Let $R$ be a superalgebra and let $\vphi: R\to R$ be any map. We call the pair $(R, \vphi)$ a \emph{superalgebra with distinguished map}. If $\vphi$ is a super-anti-automorphism or a superinvolution, we will call it a \emph{superalgebra with super-anti-automorphism} or \emph{superalgebra with superinvolution}, respectively.
 \end{defi}
 
 \begin{defi}
-    Let $(R, \vphi)$ and $(S, \psi)$ be superalgebras with distinguished map. A \emph{homomorphism} them is a superalgebra homomorphism $f: R\to S$ such that $f\circ \vphi = \psi \circ f$. In particular, the \emph{automorphism group} of $(R, \vphi)$, denoted by $\Aut(R, \vphi)$, consists of all automorphisms of $R$ commuting with $\vphi$.
+	Let $(R, \vphi)$ and $(S, \psi)$ be superalgebras with distinguished map. A \emph{homomorphism} them is a superalgebra homomorphism $f: R\to S$ such that $f\circ \vphi = \psi \circ f$. In particular, the \emph{automorphism group} of $(R, \vphi)$, denoted by $\Aut(R, \vphi)$, consists of all automorphisms of $R$ commuting with $\vphi$.
 \end{defi}
 
-We will be more interested in the case $\vphi$ is super-anti-automorphism (or, more specifically, a superinvolution), but the general case is useful to avoid redundancy in the results and to connect regular gradings to $\vphi$-gradings (see Propositions \texttt{?? [bijections between gradings]  and ?? [example of it]}). Note that if the distinguished maps are taken to be the identity, the concepts above reduce to superalgebra and superalgebra homomorphism. 
+We will be more interested in the case $\vphi$ is super-anti-automorphism (or, more specifically, a superinvolution), but the general case is useful to avoid redundancy in the results and to connect regular gradings to $\vphi$-gradings (see Propositions \texttt{?? [bijections between gradings]  and ?? [example of it]}). Note that if the distinguished maps are taken to be the identity, the concepts above reduce to superalgebra and superalgebra homomorphism.
 
 \begin{defi}
-    Let $(R, \vphi)$ be an associative superalgebra with distinguished map. A \emph{$\vphi$-grading} on it is a $G$-grading $\Gamma$ ($G$ is fixed) such that $\vphi$ is homogeneous of degree $e$. In this case, we say that $(R, \vphi)$ equipped with $\Gamma$ is a \emph{graded superalgebra with distinguished map}.
+	Let $(R, \vphi)$ be an associative superalgebra with distinguished map. A \emph{$\vphi$-grading} on it is a $G$-grading $\Gamma$ ($G$ is fixed) such that $\vphi$ is homogeneous of degree $e$. In this case, we say that $(R, \vphi)$ equipped with $\Gamma$ is a \emph{graded superalgebra with distinguished map}.
 \end{defi}
 
 Again, the concept of $\vphi$-grading reduces to regular gradings when $\vphi = \id$. In the case $\vphi$ is a super-anti-automorphism, the sub-Lie-superalgebra $\Skew (R, \vphi) = \{ r\in R \mid \vphi(r) = -r \}$ is a graded subsuperspace of $R$. This follows from the lemma below:
 
 \begin{lemma}
-    Let $V$ be a $G$-graded vector space and let $f: V \to V$ be a homogeneous map of degree $e$. Then the eigenspaces of $f$ are graded subspaces.
+	Let $V$ be a $G$-graded vector space and let $f: V \to V$ be a homogeneous map of degree $e$. Then the eigenspaces of $f$ are graded subspaces.
 \end{lemma}
 
 \begin{proof}
-    Let $v\in V$ be an eigenvector with eigenvalue $\lambda \in \FF$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$. On the one hand, $f(v) = \lambda v = \sum_{g\in G} \lambda v$. On the other hand, $f(v) = \sum_{g\in G} f(v_g)$. Since the decomposition on homogeneous elements is unique, we have that $f(v_g) = \lambda v_g$ for all $g\in G$, completing the proof.
+	Let $v\in V$ be an eigenvector with eigenvalue $\lambda \in \FF$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$. On the one hand, $f(v) = \lambda v = \sum_{g\in G} \lambda v$. On the other hand, $f(v) = \sum_{g\in G} f(v_g)$. Since the decomposition on homogeneous elements is unique, we have that $f(v_g) = \lambda v_g$ for all $g\in G$, completing the proof.
 \end{proof}
 
 \section{$\vphi$-gradings and $\widehat G$-actions}
@@ -46,48 +46,45 @@ Again, the concept of $\vphi$-grading reduces to regular gradings when $\vphi = 
 It is important to know how to translate this notion to the language of $\widehat G$-actions.
 
 \begin{prop}
-    Let $(R, \vphi)$ be a superalgebra with distinguished map and consider the usual correspondence between gradings on $R$ and $\dual G$-actions. Then gradings on $(R, \vphi)$ correspond to $\dual G$-actions by automorphisms of $(R, \vphi)$.
+	Let $(R, \vphi)$ be a superalgebra with distinguished map and consider the usual correspondence between gradings on $R$ and $\dual G$-actions. Then gradings on $(R, \vphi)$ correspond to $\dual G$-actions by automorphisms of $(R, \vphi)$.
 \end{prop}
 
 \begin{proof}
-    Let $\Gamma$ be a grading on $R$. The map $\vphi$ is homogeneous of degree $e$ if, and only if, $\vphi$ being $\widehat G$-equivariant (Proposition \ref{prop:homogeneous-deg-e-widehatG}), which means $\chi\cdot \vphi (r) = \vphi (\chi\cdot r)$ for all $\chi \in \widehat G$ and all $r \in R$. But this is equivalent to say that $\eta_\Gamma(\chi)$ commutes with $\vphi$ for every $\chi \in \dual G$ or, in other words, that $\eta_\Gamma(\chi) \in \Aut (R, \vphi)$. 
+	Let $\Gamma$ be a grading on $R$. The map $\vphi$ is homogeneous of degree $e$ if, and only if, $\vphi$ being $\widehat G$-equivariant (Proposition \ref{prop:homogeneous-deg-e-widehatG}), which means $\chi\cdot \vphi (r) = \vphi (\chi\cdot r)$ for all $\chi \in \widehat G$ and all $r \in R$. But this is equivalent to say that $\eta_\Gamma(\chi)$ commutes with $\vphi$ for every $\chi \in \dual G$ or, in other words, that $\eta_\Gamma(\chi) \in \Aut (R, \vphi)$.
 \end{proof}
 
 \begin{prop}\label{prop:homogeneous-deg-e-widehatG}
-    Let $V$ and $W$ be graded vector spaces. A linear map $f: V \to W$ is homogeneous of degree $e$ if, and only if, $f$ is a $\widehat G$-equivariant map.
+	Let $V$ and $W$ be graded vector spaces. A linear map $f: V \to W$ is homogeneous of degree $e$ if, and only if, $f$ is a $\widehat G$-equivariant map.
 \end{prop}
-
 
 \section{Temporary section for references}
 
 Duals of graded supermodules are introduced for the proof of isomorphism theorem of Type I gradings on $A$.
 
 \begin{convention}\label{conv:maps-left-right}
-    Whenever it is necessary, we will distinguish maps written on the left (called simply as \emph{maps on the left}) from maps written on the  right (\emph{maps on the right}) as different concepts.
-    
-    If $\U$ is a left (right) $\mc R$-supermodule, we use the convention of writing the $\mc R$-linear maps on the right (left).
+	Whenever it is necessary, we will distinguish maps written on the left (called simply as \emph{maps on the left}) from maps written on the  right (\emph{maps on the right}) as different concepts.
+
+	If $\U$ is a left (right) $\mc R$-supermodule, we use the convention of writing the $\mc R$-linear maps on the right (left).
 \end{convention}
-
-
 
 The following is the converse of the Graded Density Theorem.
 
 \begin{prop}\label{prop:converse-density-thm}
-    Let $\D$ be a graded division superalgebra and let $\U$ be a finite dimensional graded right $\D$-supermodule. Consider $\mc R := \End_\D (\U)$. Then $\U$ is simple as a left $\mc R$-supermodule and $\D \iso \End_{\mc R} (\U)$ via the $\D$-action.
-    (we will use this isomorphism to identify $\D$ with $\End_{\mc R} (\U)$). 
+	Let $\D$ be a graded division superalgebra and let $\U$ be a finite dimensional graded right $\D$-supermodule. Consider $\mc R := \End_\D (\U)$. Then $\U$ is simple as a left $\mc R$-supermodule and $\D \iso \End_{\mc R} (\U)$ via the $\D$-action.
+	(we will use this isomorphism to identify $\D$ with $\End_{\mc R} (\U)$).
 \end{prop}
 
 \begin{proof}
-Let $u \in \U$ be a nonzero vector and complete it to a basis $\{u\} \cup \{ u_\lambda\}_{\lambda \in \Lambda}$, where $\Lambda$ is an indexing set.
+	Let $u \in \U$ be a nonzero vector and complete it to a basis $\{u\} \cup \{ u_\lambda\}_{\lambda \in \Lambda}$, where $\Lambda$ is an indexing set.
 
-Let $v\in \U$ be any element. We can then define $r\in \End_\D (\U)$ by $r(u) = v$ and $f(u_\lambda) = 0$ for all $\lambda \in \Lambda$. Since $u \neq 0$ was arbitrary, this shows $\U$ is a simple $\mc R$-module. 
+	Let $v\in \U$ be any element. We can then define $r\in \End_\D (\U)$ by $r(u) = v$ and $f(u_\lambda) = 0$ for all $\lambda \in \Lambda$. Since $u \neq 0$ was arbitrary, this shows $\U$ is a simple $\mc R$-module.
 
-The statement that the $\mc R$ action is $\D$-linear is, clearly, the same of the $\D$-action being $\mc R$-linear: $r(vd) = (rv)d$ for all $r\in \mc R$ and $d \in \D$. So the $\D$-action give us, indeed, a map $\D \to \End_{\mc R} (\U)$.
-Since $\D$ is graded simple and its action is nonzero ($v\cdot 1 = v$ for all $v \in V$), this map is injective.
+	The statement that the $\mc R$ action is $\D$-linear is, clearly, the same of the $\D$-action being $\mc R$-linear: $r(vd) = (rv)d$ for all $r\in \mc R$ and $d \in \D$. So the $\D$-action give us, indeed, a map $\D \to \End_{\mc R} (\U)$.
+	Since $\D$ is graded simple and its action is nonzero ($v\cdot 1 = v$ for all $v \in V$), this map is injective.
 
-To show it is surjective, consider $r$ as defined above, but with $v = u$. Let $f\in \End_{\mc R} (U)$. Since $\U$ is a simple $\mc R$-supermodule, $f$ is determined by its value on $u$.
-We have that $uf = u d + \sum_{\lambda \in \Lambda} u_\lambda d_\lambda$ for $d, d_\lambda \in \D$ (where all but finitely many $d_\lambda = 0$). 
-Them $ uf = (ru)f = r(uf) = r(ud + \sum_{\lambda \in \Lambda} u_\lambda d_\lambda )  = ud$. Hence $f = d$, concluding the proof.
+	To show it is surjective, consider $r$ as defined above, but with $v = u$. Let $f\in \End_{\mc R} (U)$. Since $\U$ is a simple $\mc R$-supermodule, $f$ is determined by its value on $u$.
+	We have that $uf = u d + \sum_{\lambda \in \Lambda} u_\lambda d_\lambda$ for $d, d_\lambda \in \D$ (where all but finitely many $d_\lambda = 0$).
+	Them $ uf = (ru)f = r(uf) = r(ud + \sum_{\lambda \in \Lambda} u_\lambda d_\lambda )  = ud$. Hence $f = d$, concluding the proof.
 \end{proof}
 
 % % ---------------------------------------------------
@@ -141,82 +138,81 @@ Them $ uf = (ru)f = r(uf) = r(ud + \sum_{\lambda \in \Lambda} u_\lambda d_\lambd
 %
 % \end{document}
 
-
 \section{Old version of $\mc O$}
 
-Note that $\widetilde T$ is not, in general, isomorphic to the direct sum $\{ \pm 1 \} \times T$. 
+Note that $\widetilde T$ is not, in general, isomorphic to the direct sum $\{ \pm 1 \} \times T$.
 But it can be seen as subgroup of.
 
-We will now show an example of a division grading on $M(1,1)$ with a super-anti-isomorphism preserving degrees. 
+We will now show an example of a division grading on $M(1,1)$ with a super-anti-isomorphism preserving degrees.
 This will allow us to construct a grading on $M(1,1) \times M(1,1)\sop$ with the exchange superinvolution.
 % Example \ref{ex:FZ2xFZ2sop-iso-FZ4} shows us the situation is different on $Q(n)\times Q(n)\sop$. 
 % We will now give two constructions of an odd division grading on $M(2,2)\times M(2,2)\sop$.
 
 \begin{defi}
-    Let $R = M(m,n)$. 
-    The \emph{$Q$-super-anti-automorphism} on $R$ is the map 
-    %We define 
-    $\psi\from R \to R$ given by
-    \[
-        \psi \begin{pmatrix}
-        a & b\\
-        c & d
-        \end{pmatrix} =
-        %
-        \begin{pmatrix}
-        a\transp             & \sqrt{-1}\, c\transp\\
-        \sqrt{-1}\, b\transp & d\transp
-        \end{pmatrix}.
-    \]
-    If $m = n$, $\psi$ clearly restricts to a super-anti-automorphism on $Q(n) \subseteq M(n,n)$.
+	Let $R = M(m,n)$.
+	The \emph{$Q$-super-anti-automorphism} on $R$ is the map
+	%We define 
+	$\psi\from R \to R$ given by
+	\[
+		\psi \begin{pmatrix}
+			a & b \\
+			c & d
+		\end{pmatrix} =
+		%
+		\begin{pmatrix}
+			a\transp             & \sqrt{-1}\, c\transp \\
+			\sqrt{-1}\, b\transp & d\transp
+		\end{pmatrix}.
+	\]
+	If $m = n$, $\psi$ clearly restricts to a super-anti-automorphism on $Q(n) \subseteq M(n,n)$.
 \end{defi}
 
 \begin{remark}
-    As superalgebras with super-anti-automorphism, $M(n,n)$ with the $Q$-super-anti-automorphism is isomorphic to $M(n,n)$ with the supertransposition.
+	As superalgebras with super-anti-automorphism, $M(n,n)$ with the $Q$-super-anti-automorphism is isomorphic to $M(n,n)$ with the supertransposition.
 \end{remark}
 
 \begin{ex}\label{ex:supertransp-graded-new}
-    Consider on $M(1,1)$ the $\ZZ_2$-grading given by declaring 
-    $\begin{pmatrix}
-       1 & 0 \\
-       0 & 1
-     \end{pmatrix}$ and
-     $\begin{pmatrix}
-       0 & 1 \\
-       1 & 0
-     \end{pmatrix}$ to have degree $\overline 0$ and
-     $\begin{pmatrix}
-       -1 & 0 \\
-       0 & 1
-     \end{pmatrix}$ and
-     $\begin{pmatrix}
-       0 & -1 \\
-       1 & 0
-     \end{pmatrix}$ to have degree $\overline 1$. In other words, as a $\ZZ_2^\#$-grading on $M_2(\FF)$ we have\\
-     %
-     \begin{center}
-     \begin{tabular}{ l c r }
-     $\deg \begin{pmatrix}
-      \phantom{-}1 & 0\phantom{..} \\
-      \phantom{-}0 & 1\phantom{..}
-     \end{pmatrix} = (\bar 0, \bar 0)$, && $\deg \begin{pmatrix}
-      \phantom{.}0 & \phantom{-}1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix} = (\bar 0, \bar 1)$,\\
-     $\deg \begin{pmatrix}
-      -1 & 0\phantom{..} \\
-       \phantom{-}0 & 1\phantom{..}
-     \end{pmatrix} = (\bar 1, \bar 0)$ &
-     and
-     & $\deg \begin{pmatrix}
-      \phantom{.}0 & -1\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix} = (\bar 1, \bar 1)$,
-     \end{tabular}
-     \end{center}
-     %
-     which is clearly a division grading.
-     The $Q$-super-anti-automorphism is a super-anti-automorphism on it.
+	Consider on $M(1,1)$ the $\ZZ_2$-grading given by declaring
+	$\begin{pmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{pmatrix}$ and
+	$\begin{pmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{pmatrix}$ to have degree $\overline 0$ and
+	$\begin{pmatrix}
+			-1 & 0 \\
+			0  & 1
+		\end{pmatrix}$ and
+	$\begin{pmatrix}
+			0 & -1 \\
+			1 & 0
+		\end{pmatrix}$ to have degree $\overline 1$. In other words, as a $\ZZ_2^\#$-grading on $M_2(\FF)$ we have\\
+	%
+	\begin{center}
+		\begin{tabular}{ l c r }
+			$\deg \begin{pmatrix}
+					\phantom{-}1 & 0\phantom{..} \\
+					\phantom{-}0 & 1\phantom{..}
+				\end{pmatrix} = (\bar 0, \bar 0)$, &                                                       & $\deg \begin{pmatrix}
+					\phantom{.}0 & \phantom{-}1\phantom{.} \\
+					\phantom{.}1 & \phantom{-}0\phantom{.}
+				\end{pmatrix} = (\bar 0, \bar 1)$, \\
+			$\deg \begin{pmatrix}
+					-1           & 0\phantom{..} \\
+					\phantom{-}0 & 1\phantom{..}
+				\end{pmatrix} = (\bar 1, \bar 0)$  &
+			and
+			                                                      & $\deg \begin{pmatrix}
+					\phantom{.}0 & -1\phantom{.}           \\
+					\phantom{.}1 & \phantom{-}0\phantom{.}
+				\end{pmatrix} = (\bar 1, \bar 1)$,
+		\end{tabular}
+	\end{center}
+	%
+	which is clearly a division grading.
+	The $Q$-super-anti-automorphism is a super-anti-automorphism on it.
 \end{ex}
 
 % Consider $R = M(1,1)\times M(1,1)$ with the superinvolution $\vphi\from R \to R$ given by $\vphi(x, y) = (\psi\inv (y), \psi (x))$. 
@@ -224,9 +220,7 @@ This will allow us to construct a grading on $M(1,1) \times M(1,1)\sop$ with the
 % The grading on the example above entails a grading on $M(1,1)\times M(1,1)$, which is not division since not every component has dimension $1$. 
 % But we can refine this grading while keeping $\phi$ homogeneous of degree $e$. 
 
-
 % Corollary \ref{cor:no-odd-M-vphi} tells us we cannot have odd gradings on We will now investigate what are the possible odd division gradings on the superinvolution-simple superalgebras. 
-
 
 % Among the series of superinvolution-simple superalgebras, we cannot have odd gradings on the ones of type $M$. 
 % On the ones of type $Q\times Q\sop$, Example \ref{ex:FZ2xFZ2sop-iso-FZ4} give us an example of a $\ZZ_4$-graded superalgebra.
@@ -260,108 +254,104 @@ This will allow us to construct a grading on $M(1,1) \times M(1,1)\sop$ with the
 %     if $\D$ is odd, then every super-anti-automorphism has order $4$.
 % \end{prop}
 
-
-
 \begin{thm}
-    Every odd division $\vphi$-grading on $R = M(m,n)\times M(m,n)\sop$ is of the form $\mc O \tensor \D$ where $\D$ is even.
+	Every odd division $\vphi$-grading on $R = M(m,n)\times M(m,n)\sop$ is of the form $\mc O \tensor \D$ where $\D$ is even.
 \end{thm}
 
 \begin{proof}
-    Since $Z(R)$ is $\FF \times \FF$
+	Since $Z(R)$ is $\FF \times \FF$
 \end{proof}
-
-
 
 We will now focus on the case $\D$ is odd, i.e., $\D\odd \neq 0$.
 
 \begin{ex}\label{ex:supertransp-graded}
-    Consider on $M(1,1)$ the $\ZZ_2$-grading given by declaring $\begin{pmatrix}
-       1 & 0 \\
-       0 & 1
-     \end{pmatrix}$ and
-     $\begin{pmatrix}
-       0 & i \\
-       1 & 0
-     \end{pmatrix}$ to have degree $\overline 0$ and
-     $\begin{pmatrix}
-       -1 & 0 \\
-       0 & 1
-     \end{pmatrix}$ and
-     $\begin{pmatrix}
-       0 & -i \\
-       1 & 0
-     \end{pmatrix}$ to have degree $\overline 1$. In other words, as a $\ZZ_2^\#$-grading on $M_2(\FF)$ we have\\
-     %
-     \begin{center}
-     \begin{tabular}{ l c r }
-     $\deg \begin{pmatrix}
-      \phantom{-}1 & 0\phantom{..} \\
-      \phantom{-}0 & 1\phantom{..}
-     \end{pmatrix} = (\bar 0, \bar 0)$, && $\deg \begin{pmatrix}
-      \phantom{.}0 & \phantom{-}i\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix} = (\bar 0, \bar 1)$,\\
-     $\deg \begin{pmatrix}
-      -1 & 0\phantom{..} \\
-       \phantom{-}0 & 1\phantom{..}
-     \end{pmatrix} = (\bar 1, \bar 0)$ &
-     and
-     & $\deg \begin{pmatrix}
-      \phantom{.}0 & -i\phantom{.} \\
-      \phantom{.}1 & \phantom{-}0\phantom{.}
-     \end{pmatrix} = (\bar 1, \bar 1)$,
-     \end{tabular}
-     \end{center}
-     %
-     which is clearly a division grading. The supertranspose is a super-anti-automorphism on it.
+	Consider on $M(1,1)$ the $\ZZ_2$-grading given by declaring $\begin{pmatrix}
+			1 & 0 \\
+			0 & 1
+		\end{pmatrix}$ and
+	$\begin{pmatrix}
+			0 & i \\
+			1 & 0
+		\end{pmatrix}$ to have degree $\overline 0$ and
+	$\begin{pmatrix}
+			-1 & 0 \\
+			0  & 1
+		\end{pmatrix}$ and
+	$\begin{pmatrix}
+			0 & -i \\
+			1 & 0
+		\end{pmatrix}$ to have degree $\overline 1$. In other words, as a $\ZZ_2^\#$-grading on $M_2(\FF)$ we have\\
+	%
+	\begin{center}
+		\begin{tabular}{ l c r }
+			$\deg \begin{pmatrix}
+					\phantom{-}1 & 0\phantom{..} \\
+					\phantom{-}0 & 1\phantom{..}
+				\end{pmatrix} = (\bar 0, \bar 0)$, &                                                       & $\deg \begin{pmatrix}
+					\phantom{.}0 & \phantom{-}i\phantom{.} \\
+					\phantom{.}1 & \phantom{-}0\phantom{.}
+				\end{pmatrix} = (\bar 0, \bar 1)$, \\
+			$\deg \begin{pmatrix}
+					-1           & 0\phantom{..} \\
+					\phantom{-}0 & 1\phantom{..}
+				\end{pmatrix} = (\bar 1, \bar 0)$  &
+			and
+			                                                      & $\deg \begin{pmatrix}
+					\phantom{.}0 & -i\phantom{.}           \\
+					\phantom{.}1 & \phantom{-}0\phantom{.}
+				\end{pmatrix} = (\bar 1, \bar 1)$,
+		\end{tabular}
+	\end{center}
+	%
+	which is clearly a division grading. The supertranspose is a super-anti-automorphism on it.
 \end{ex}
 
 \begin{ex}\label{ex:FZZ_4-with-superinvoltion}
-    Let $T= \langle \omega \rangle$ where $\omega$ has order $4$, $\beta$ be trivial and $| \cdot |: T \to \ZZ_2$ be the only nontrivial homomorphism. In other words, $\D = \FF T$ with $\D\even = \FF 1 \oplus F \omega^2$ and $\D\odd = \FF \omega \oplus \omega^3$. We define a superivolution by $\eta (1) = 1$, $\eta (\omega) = 1$, $\eta (\omega^2) = -1$ and $\eta(\omega^3) = -1$. %We will denote this superinvolution by 
-    
-    One could verify by hand that $\eta$ satisfies Equation \eqref{eq:superpolarization}, but it also follows from the following argument. 
-    In both $\D$ and $\D\sop$, $\omega$ is an element with order $4$ and both are superalgebras with dimension $4$. 
-    Hence, both homomorphisms $\theta: \frac{\FF[x]}{\langle x^4 - 1 \rangle} \to \D$ and $\theta': \frac{\FF[x]}{\langle x^4 - 1 \rangle} \to \D\sop$ sending $x$ to $\omega$ are isomorphisms (note that $\theta(x^2) = \omega^2$ and $\theta'(x^2) = (\omega\sop)^2 = - \omega^2$, so they are different maps!). 
-    The map $\theta'\circ \theta\inv: \D \to \D\sop$ corresponds to a super-anti-automorphism with the $\eta$ above.
+	Let $T= \langle \omega \rangle$ where $\omega$ has order $4$, $\beta$ be trivial and $| \cdot |: T \to \ZZ_2$ be the only nontrivial homomorphism. In other words, $\D = \FF T$ with $\D\even = \FF 1 \oplus F \omega^2$ and $\D\odd = \FF \omega \oplus \omega^3$. We define a superivolution by $\eta (1) = 1$, $\eta (\omega) = 1$, $\eta (\omega^2) = -1$ and $\eta(\omega^3) = -1$. %We will denote this superinvolution by 
+
+	One could verify by hand that $\eta$ satisfies Equation \eqref{eq:superpolarization}, but it also follows from the following argument.
+	In both $\D$ and $\D\sop$, $\omega$ is an element with order $4$ and both are superalgebras with dimension $4$.
+	Hence, both homomorphisms $\theta: \frac{\FF[x]}{\langle x^4 - 1 \rangle} \to \D$ and $\theta': \frac{\FF[x]}{\langle x^4 - 1 \rangle} \to \D\sop$ sending $x$ to $\omega$ are isomorphisms (note that $\theta(x^2) = \omega^2$ and $\theta'(x^2) = (\omega\sop)^2 = - \omega^2$, so they are different maps!).
+	The map $\theta'\circ \theta\inv: \D \to \D\sop$ corresponds to a super-anti-automorphism with the $\eta$ above.
 \end{ex}
 
 Example \ref{ex:FZZ_4-with-superinvoltion} is our first example of odd graded division superalgebra with superinvolution. We can use it to transform any even graded division superalgebra into an odd one by ``extending scalars''.
 
 \begin{lemma}
-    Let $(R, \vphi)$ and $(S, \psi)$ be graded superalgebras with superinvolution, with grading groups $G$ and $H$, respectively. Then $(R\tensor S, \vphi\tensor \psi)$ is a $G\times H$-graded superalgebra with superinvolution.\qed
+	Let $(R, \vphi)$ and $(S, \psi)$ be graded superalgebras with superinvolution, with grading groups $G$ and $H$, respectively. Then $(R\tensor S, \vphi\tensor \psi)$ is a $G\times H$-graded superalgebra with superinvolution.\qed
 \end{lemma}
 
 \begin{lemma}
-    Let $\D$ and $\mc E$ be graded division superalgebras, with grading groups $G$ and $H$, respectively. If $\D$ is even, then $\D \tensor \mc E$ is a $G\times H$-graded division superalgebra.
+	Let $\D$ and $\mc E$ be graded division superalgebras, with grading groups $G$ and $H$, respectively. If $\D$ is even, then $\D \tensor \mc E$ is a $G\times H$-graded division superalgebra.
 \end{lemma}
 
 \begin{proof}
-    It is straightforward that the tensor product of graded division algebras is a graded division algebra, hence the result follows from considering $\D$ as a $G$-graded algebra and $\mc E$ as a $H\times \ZZ_2$-graded algebra.
+	It is straightforward that the tensor product of graded division algebras is a graded division algebra, hence the result follows from considering $\D$ as a $G$-graded algebra and $\mc E$ as a $H\times \ZZ_2$-graded algebra.
 \end{proof}
 
 WE REMIND THE AUTHOR TO EXPLAIN THE DIFFERENT TYPES OF TENSOR PRODUCT IN THE GENERALITIES.
 
-Using the two Lemmas above and Example \ref{ex:FZZ_4-with-superinvoltion}, we have an infinitely many examples of odd graded division superalgebras. Nevertheless, their centers include a $4$-dimensional superalgebra, so none of them is a Type II odd graded division algebra. 
+Using the two Lemmas above and Example \ref{ex:FZZ_4-with-superinvoltion}, we have an infinitely many examples of odd graded division superalgebras. Nevertheless, their centers include a $4$-dimensional superalgebra, so none of them is a Type II odd graded division algebra.
 \begin{ex}
-    Consider $M_2(\FF)$ with the division grading
+	Consider $M_2(\FF)$ with the division grading
 \end{ex}
 
 Neither Example \ref{ex:supertransp-graded} or Example \ref{ex:FZZ_4-with-superinvoltion} appear as graded division superalgebras of a Type II grading on $M(n,n)$. But both can be used to construct such superalgebras. We will now show two constructions, one based on Example \ref{ex:supertransp-graded} and other on Example \ref{ex:FZZ_4-with-superinvoltion}.
 
 % Example \ref{ex:FZZ_4-with-superinvoltion} suggests that to have a graded division superalgebra we need to ``increase'' the canonical $\ZZ_2$-grading to a $\ZZ_4$-grading. We have seen two constructions that do that on Section \ref{sec:loop-and-induced-algebras}.% We will start with
 
-Neither Example \ref{ex:supertransp-graded} or Example \ref{ex:FZZ_4-with-superinvoltion} are examples of odd Type II gradings. Nevertheless, we will now present two constructions of such gradings, one based on Example \ref{ex:supertransp-graded} and other based on Example \ref{ex:FZZ_4-with-superinvoltion}. 
+Neither Example \ref{ex:supertransp-graded} or Example \ref{ex:FZZ_4-with-superinvoltion} are examples of odd Type II gradings. Nevertheless, we will now present two constructions of such gradings, one based on Example \ref{ex:supertransp-graded} and other based on Example \ref{ex:FZZ_4-with-superinvoltion}.
 
 \begin{prop}\label{prop:involution-on-cartesian-product}
-    Let $R$ be a $G$-graded superalgebra and $\psi: R \to R$ be a super-anti-automorphism (homogeneous of degree $e$). Then $\vphi: R\times R \to R\times R$ geiven by $\vphi(x, y) = (\vphi\inv (y), \vphi (x))$ is a superinvoltion on the $G$-graded superalgebra $R\times R$. \qed
+	Let $R$ be a $G$-graded superalgebra and $\psi: R \to R$ be a super-anti-automorphism (homogeneous of degree $e$). Then $\vphi: R\times R \to R\times R$ geiven by $\vphi(x, y) = (\vphi\inv (y), \vphi (x))$ is a superinvoltion on the $G$-graded superalgebra $R\times R$. \qed
 \end{prop}
 
 Using Proposition \ref{prop:involution-on-cartesian-product} with $R$ being the graded superalgebra of Example \ref{ex:supertransp-graded}, we get a graded superalgebra with involution which is not a graded division superalgebra. To make its grading a division grading, we need to refine it. We could do it explicitly, but to not repeat ourselves we will follow another approach.
 
 \begin{ex}
-    Let $(R, \psi)$ be the graded superalgebra with su\-per-an\-ti-auto\-mor\-phism of Example \ref{ex:supertransp-graded}. Interpreting its canonical $\ZZ_2$-grading as a $\frac{\ZZ_4}{\langle \bar 2 \rangle}$-grading, its induced algebra $\D = \operatorname{Ind} x$ is a graded division superalgebra. Indeed, $\D = \chi_1 \tensor R \oplus \chi_i \tensor R$ where $\chi_z: \ZZ_4 \to \FF^\times$ denotes the character that sends $\bar 1$ to $z$. Its grading is $\ldots$ .
-    
-    Now let $\vphi'$ be the homogeneous of degree $e$ map on induced from $\psi$ and $\theta$ be the automorphism given by the action of $\chi_i$. We define $\vphi := \theta \vphi'$. One can readly check that it a superinvolution on $\D$.
+	Let $(R, \psi)$ be the graded superalgebra with su\-per-an\-ti-auto\-mor\-phism of Example \ref{ex:supertransp-graded}. Interpreting its canonical $\ZZ_2$-grading as a $\frac{\ZZ_4}{\langle \bar 2 \rangle}$-grading, its induced algebra $\D = \operatorname{Ind} x$ is a graded division superalgebra. Indeed, $\D = \chi_1 \tensor R \oplus \chi_i \tensor R$ where $\chi_z: \ZZ_4 \to \FF^\times$ denotes the character that sends $\bar 1$ to $z$. Its grading is $\ldots$ .
+
+	Now let $\vphi'$ be the homogeneous of degree $e$ map on induced from $\psi$ and $\theta$ be the automorphism given by the action of $\chi_i$. We define $\vphi := \theta \vphi'$. One can readly check that it a superinvolution on $\D$.
 \end{ex}
 
 We will now construct a different model of the same superalgebra. This new construction, though, can be done over any field, even if it does not have a square root of $-1$.
@@ -369,25 +359,21 @@ We will now construct a different model of the same superalgebra. This new const
 %As we saw in Section \ref{ainda-nao-existe}, in an algebraically closed field of characteristic $0$, the induced algebra is always isomorphic to a corresponding loop algebra.
 
 \begin{prop}
-    Let $(S, \psi)$ be the superalgebra with superinvolution of Example \ref{ex:FZZ_4-with-superinvoltion} and let $M_2(\FF)$ be the matrix algebra endowed with the $\ZZ_2 \times \ZZ_2$-division grading given by:...
-    
-    and let $\theta$ be the transposition on it.
+	Let $(S, \psi)$ be the superalgebra with superinvolution of Example \ref{ex:FZZ_4-with-superinvoltion} and let $M_2(\FF)$ be the matrix algebra endowed with the $\ZZ_2 \times \ZZ_2$-division grading given by:...
+
+	and let $\theta$ be the transposition on it.
 \end{prop}
-
-
-
 
 \section{Lost and found}
 
 We will investigate one last question...
 
 \begin{cor}
-    Under the conditions of Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, assume further that $\D$ is not an even 
+	Under the conditions of Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, assume further that $\D$ is not an even
 \end{cor}
 
-We have that $\overline B = \delta B $ where $\delta \in \{\pm 1\}$. 
+We have that $\overline B = \delta B $ where $\delta \in \{\pm 1\}$.
 Changing $B$ for $B' \coloneqq dB$, by Lemma \ref{lemma:bar-dB}, we get $\overline{B'} = (-1)^{|d|} \vphi_0\inv (d) \overline B = (-1)^{|d|} \vphi_0\inv (d) \delta B = (-1)^{|d|} \vphi_0\inv (d) \delta d\inv d B = (-1)^{|d|} \vphi_0\inv (d) \delta d\inv \overline B = (-1)^{|d|} \vphi_0\inv (d) d\inv \delta \overline B$.
-So we want to make the scalar \\ $(-1)^{|d|} \vphi_0\inv (d) d\inv$ be $-1$. 
-Note that $(-1)^{|d|} \vphi_0\inv (d) d\inv = -1$ iff $\vphi_0\inv (d) = - (-1)^{|d|} d$. 
-We cannot find such delta iff $ (-1)^{|d|} \vphi_0 = \id$ (see 1st Prop in next section), which implies $\D$ supercommutative. But not odd graded division superalgebra can be supercommutative (since it implies $x^2 = -x^2$ for odd $x$, hence we cannot have invertible odd elements). So the only problem is when $\D$ is even and commutative. 
-    
+So we want to make the scalar \\ $(-1)^{|d|} \vphi_0\inv (d) d\inv$ be $-1$.
+Note that $(-1)^{|d|} \vphi_0\inv (d) d\inv = -1$ iff $\vphi_0\inv (d) = - (-1)^{|d|} d$.
+We cannot find such delta iff $ (-1)^{|d|} \vphi_0 = \id$ (see 1st Prop in next section), which implies $\D$ supercommutative. But not odd graded division superalgebra can be supercommutative (since it implies $x^2 = -x^2$ for odd $x$, hence we cannot have invertible odd elements). So the only problem is when $\D$ is even and commutative.

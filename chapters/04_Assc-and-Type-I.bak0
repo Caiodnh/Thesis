@@ -1,23 +1,25 @@
 \chapter{Review of gradings on $M(m,n)$ and Type I gradings on $A$}\label{chap:A-type-I}
 
-In this Chapter, we will review the basic results about gradings on the associative setting.
-First we will review the results on graded-simple associative algebras, following \cite{BK10}, and then its consequences for graded-simple associative superalgebras, following \cite{paper-MAP} and Helen's thesis.
+In this Chapter, we will review the basic results about gradings on the associative setting. 
+First we will review the results on graded-simple associative algebras, following \cite{BK10}, and then its consequences for graded-simple associative superalgebras, following \cite{paper-MAP} and Helen's thesis. 
 
 We will present a second description of the odd gradings on matrix superalgebras.
 
-Following these results, it is natural to consider our first family of Lie superalgebras, the type $A$.
+Following these results, it is natural to consider our first family of Lie superalgebras, the type $A$. 
 But we will only take care, here, of the gradings that follow easily from the associative case.
+
 
 \section{Graded-simple associative algebras}
 % ----
 
+
 In this section we will recall the classification of gradings on matrix algebras \cite{BSZ01, BZ02, BK10}. We will follow the exposition of \cite[Chapter 2]{livromicha} but use slightly different notation, which will be extended to superalgebras in Section~??%\ref{sec:Mmn}.
 
-The following is the graded version of a classical result (see e.g. \cite[Theorem 2.6]{livromicha}).
+The following is the graded version of a classical result (see e.g. \cite[Theorem 2.6]{livromicha}). 
 We recall that a \emph{graded division algebra} is a graded unital associative algebra such that every nonzero homogeneous element is invertible.
 
 \begin{thm}\label{thm:End-over-D}
-	Let $G$ be a group and let $R$ be a $G$-graded associative algebra that has no nontrivial graded ideals and satisfies the descending chain condition on
+	Let $G$ be a group and let $R$ be a $G$-graded associative algebra that has no nontrivial graded ideals and satisfies the descending chain condition on 
 	graded left ideals.
 	Then there is a $G$-graded division algebra $\D$ and a graded (right) $\D$-module $\mc{U}$ such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
 \end{thm}
@@ -25,43 +27,43 @@ We recall that a \emph{graded division algebra} is a graded unital associative a
 The following result (\cite[Theorem 2.10]{livromicha}) tells us when two such graded algebras are isomorphic.
 
 \begin{defi}\label{def:inner-automorphism}
-	Let $d\in \D$ be a nonzero $G$-homogeneous element.
-	We define the \emph{inner automorphism} $\operatorname{Int}_d\from \D \to \D$ by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$.
+    Let $d\in \D$ be a nonzero $G$-homogeneous element. 
+    We define the \emph{inner automorphism} $\operatorname{Int}_d\from \D \to \D$ by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$.
 \end{defi}
 
 The following concept allows us to transform (graded) modules over different (graded) algebras and, also, to construct new modules from a given one:
 
 \begin{defi}\label{def:twist}
-	Let $\psi\from R \to R'$ be a homomorphism of (graded) algebras and let $U$ be a (graded) $R' $-module.
-	The \emph{module induced by $\psi$} is the (graded) $R$-module $U^{\psi}$ whose underlying (graded) vector space is the same of $U$, but with action defined by $r \cdot u \coloneqq \psi(r)u$, for all $r\in R$ and $u\in U$.
-	In the case $\psi\from R \to R$ is an automorphism, we say that $U^{\psi}$ is the \emph{twist of $\U$ by $\psi$}.
+    Let $\psi\from R \to R'$ be a homomorphism of (graded) algebras and let $U$ be a (graded) $R' $-module. 
+    The \emph{module induced by $\psi$} is the (graded) $R$-module $U^{\psi}$ whose underlying (graded) vector space is the same of $U$, but with action defined by $r \cdot u \coloneqq \psi(r)u$, for all $r\in R$ and $u\in U$. 
+    In the case $\psi\from R \to R$ is an automorphism, we say that $U^{\psi}$ is the \emph{twist of $\U$ by $\psi$}.
 \end{defi}
 
 \begin{remark}
-	Note that $\End_\D ( (\U')^{\vphi_0})$ is, by definition of $(\U')^{\vphi_0}$, equal to $\End_{\D'} ( \U')$.
+    Note that $\End_\D ( (\U')^{\vphi_0})$ is, by definition of $(\U')^{\vphi_0}$, equal to $\End_{\D'} ( \U')$.
 \end{remark}
 
 \begin{thm}\label{thm:iso-abstract}
-	Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively.
-	Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$ such that $g \in G$, $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras, $\psi_1\from U^{[g]} \to (U')^{\psi_0}$ is an isomorphism of graded modules and
-	\begin{equation}\label{eq:def-iso-algebras}
-		\forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
-	\end{equation}
-	Conversely, given a triple $(g, \psi_0, \psi_1)$ as above, Equation \eqref{eq:def-iso-algebras} defines an isomorphism of graded algebras $\psi\from R \to R'$.
-	Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
+    Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively. 
+    Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$ such that $g \in G$, $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras, $\psi_1\from U^{[g]} \to (U')^{\psi_0}$ is an isomorphism of graded modules and 
+    \begin{equation}\label{eq:def-iso-algebras}
+            \forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+    \end{equation}
+    Conversely, given a triple $(g, \psi_0, \psi_1)$ as above, Equation \eqref{eq:def-iso-algebras} defines an isomorphism of graded algebras $\psi\from R \to R'$. 
+    Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
 \end{thm}
 
 \subsection{Graded-division algebras}\label{ssec:grd-div-alg}
 
-Let $\D$ be a finite-dimensional $G$-graded division algebra. It is easy to see that $T= \supp \D$ is a finite subgroup of $G$.
+Let $\D$ be a finite-dimensional $G$-graded division algebra. It is easy to see that $T= \supp \D$ is a finite subgroup of $G$. 
 Also, since we are over an algebraically closed field, each homogeneous component $\D_t$, for $t\in T$, is one-dimensional. We can choose a generator $X_t$ for each $\D_t$. It follows that, for every $u,v\in T$, there is a unique nonzero scalar $\beta (u,v)$ such that $X_u X_v = \beta (u,v) X_v X_u$. Clearly, $\beta (u,v)$ does not depend on the choice of $X_u$ and $X_v$.
-The map $\beta: T\times T \rightarrow \FF^{\times}$ is a \emph{bicharacter}, \ie, both maps $\beta(t,\cdot)$ and $\beta(\cdot,t)$ are characters for every $t \in T$. It is also \emph{alternating} in the sense that $\beta (t,t) = 1$ for all $t\in T$. We define the \emph{radical} of $\beta$ as the set $\rad \beta = \{ t\in T \mid \beta(t, T) = 1 \}$.
-If $\D$ is simple as an algebra, the bicharacter $\beta$ is \emph{nondegenerate}, \ie, $\rad \beta = \{e\} $.
-The isomorphism classes of $G$-graded division algebras that are finite-dimensional and simple as algebras are in one-to-one correspondence with the pairs $(T,\beta)$ where $T$ is a finite subgroup of $G$ and $\beta$ is an nondegenerate alternating bicharacter on $T$ (see \cite{BK10} or \cite[Section 2.2]{livromicha} for a proof).
+The map $\beta: T\times T \rightarrow \FF^{\times}$ is a \emph{bicharacter}, \ie, both maps $\beta(t,\cdot)$ and $\beta(\cdot,t)$ are characters for every $t \in T$. It is also \emph{alternating} in the sense that $\beta (t,t) = 1$ for all $t\in T$. We define the \emph{radical} of $\beta$ as the set $\rad \beta = \{ t\in T \mid \beta(t, T) = 1 \}$. 
+If $\D$ is simple as an algebra, the bicharacter $\beta$ is \emph{nondegenerate}, \ie, $\rad \beta = \{e\} $. 
+The isomorphism classes of $G$-graded division algebras that are finite-dimensional and simple as algebras are in one-to-one correspondence with the pairs $(T,\beta)$ where $T$ is a finite subgroup of $G$ and $\beta$ is an nondegenerate alternating bicharacter on $T$ (see \cite{BK10} or \cite[Section 2.2]{livromicha} for a proof). 
 More generally, there is a one-to-one correspondence between the isomorphism classes of finite dimensional graded division algebras and the pairs $(T,\beta)$ where $\beta$ is an alternating bicharacter, not necessarily nondegenerate (see \cite{EK_d4}).
 
-In the case the bicharacter $\beta$ is nondegenerate, we can decompose the group $T$ as $A\times B$, where the restrictions of $\beta$ to each of the subgroups $A$ and $B$ is trivial, and hence $A$ and $B$ are in duality by $\beta$. We can choose the elements $X_t\in \D_t$ in a convenient way (see \cite[Remark 2.16]{livromicha} and
-\cite[Remark 18]{EK15}) such that $X_{ab}=X_aX_b$ for all $a\in A$ and $b\in B$. Using this choice, we can define an action of $\D$ on the vector space underlying the group algebra $\FF B$, by declaring $X_a\cdot e_{b'} = \beta(a, b') e_{b'}$ and $X_b\cdot e_{b'} = e_{bb'}$.
+In the case the bicharacter $\beta$ is nondegenerate, we can decompose the group $T$ as $A\times B$, where the restrictions of $\beta$ to each of the subgroups $A$ and $B$ is trivial, and hence $A$ and $B$ are in duality by $\beta$. We can choose the elements $X_t\in \D_t$ in a convenient way (see \cite[Remark 2.16]{livromicha} and 
+\cite[Remark 18]{EK15}) such that $X_{ab}=X_aX_b$ for all $a\in A$ and $b\in B$. Using this choice, we can define an action of $\D$ on the vector space underlying the group algebra $\FF B$, by declaring $X_a\cdot e_{b'} = \beta(a, b') e_{b'}$ and $X_b\cdot e_{b'} = e_{bb'}$. 
 This action allows us to identify $\D$ with $\End{(\FF B)}$. Using the basis $\{e_{b}\mid b\in B\}$ in $\FF B$, we can see it as a matrix algebra, where
 %
 \[X_{ab}= \sum_{b'\in B} \beta(a, bb') E_{bb', b'}\]
@@ -84,26 +86,29 @@ and $E_{b'', b'}$ with $b'$, $b'' \in B$, is a matrix unit, namely, the matrix o
 % 	In this case, we will use it to fix an identification between the graded algebras $\D$ and $\D\op$.
 % \end{remark}
 
+
 \subsection{Graded $\D$-modules}
-Moreover, it is easy to see that $\D^{[g]}\iso \D^{[g']}$ if, and only if,  $g \equiv g' \,(\operatorname{mod}\, T)$.
-Given a graded $\D$-module $\mc U$ and $g\in G^\#$, let $\U_{gT} = \bigoplus_{h \in gT} \U_{h}$.
-It is the sum of all submodules isomorphic to $\D^{[g]}$, so we call $\U_{gT}$ the \emph{isotypic} component of $\mc U$ corresponding to the coset $gT$.
-Clearly, $\U$ is the direct sum of its isotypic components.
-If $\U$ has finite rank over $\D$, we can define the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by letting $\kappa (gT) \coloneqq \dim_\D (\U_{gT})$, the rank of the free $\D$-module $\U_{gT}$.
-Two graded $\D$-supermodules of finite rank are isomorphic if, and only if, they yield the same $\kappa$.
+Moreover, it is easy to see that $\D^{[g]}\iso \D^{[g']}$ if, and only if,  $g \equiv g' \,(\operatorname{mod}\, T)$. 
+Given a graded $\D$-module $\mc U$ and $g\in G^\#$, let $\U_{gT} = \bigoplus_{h \in gT} \U_{h}$. 
+It is the sum of all submodules isomorphic to $\D^{[g]}$, so we call $\U_{gT}$ the \emph{isotypic} component of $\mc U$ corresponding to the coset $gT$. 
+Clearly, $\U$ is the direct sum of its isotypic components. 
+If $\U$ has finite rank over $\D$, we can define the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by letting $\kappa (gT) \coloneqq \dim_\D (\U_{gT})$, the rank of the free $\D$-module $\U_{gT}$. 
+Two graded $\D$-supermodules of finite rank are isomorphic if, and only if, they yield the same $\kappa$. 
 Note that $\kappa$ has a finite support.
 
-Conversely, given a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules by choosing a tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in gT$ is equal to $\kappa (gT)$ for every $g\in G$.
-Then we put $\U \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_k]}$.
+Conversely, given a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules by choosing a tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in gT$ is equal to $\kappa (gT)$ for every $g\in G$. 
+Then we put $\U \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_k]}$. 
 Note that $k = |\kappa| \coloneqq \sum_{x\in G^\#/T} \kappa(x)$.
 
 \begin{remark}
-	Both parameters $\kappa$ and $\gamma$ have been used in previous works.
-	Sometimes both are present, as in \cite{livromicha}, sometimes only $\kappa$, as in \cite{paper-adrian} and \cite{felipe-misha}, sometimes only $\gamma$, as in \cite{paper-Qn} and \cite{paper-MAP}.
-	In this work we decided to use only $\kappa$ since it makes notation more succinct.
+    Both parameters $\kappa$ and $\gamma$ have been used in previous works. 
+    Sometimes both are present, as in \cite{livromicha}, sometimes only $\kappa$, as in \cite{paper-adrian} and \cite{felipe-misha}, sometimes only $\gamma$, as in \cite{paper-Qn} and \cite{paper-MAP}. 
+    In this work we decided to use only $\kappa$ since it makes notation more succinct.
 \end{remark}
 
+
 \subsection{Parametrization}
+
 
 %\subsubsection{Graded modules over $\D$}
 
@@ -112,8 +117,10 @@ Let $\mc V$ be such a module of finite rank $k$, fix a homogeneous basis $\mc B 
 
 \subsection{Classification on $M_n(\FF)$}
 
-We apply this result to the algebra $R=M_n(\FF)$ equipped with a grading by an \emph{abelian} group $G$. We will now introduce the parameters that determine
+
+We apply this result to the algebra $R=M_n(\FF)$ equipped with a grading by an \emph{abelian} group $G$. We will now introduce the parameters that determine 
 $\mc D$ and $\mc V$, and give an explicit isomorphism $\End_{\D} (\mc{V})\simeq M_n(\FF)$ (see Definition \ref{def:explicit-grd-assoc}). It should be mentioned that a classification of $G$-gradings on $M_n(\FF)$ is known for non-abelian $G$ but it is less explicit and involves cohomological data (see \cite[Corollary 2.22]{livromicha} and \cite[Theorem 1.3]{GS}); here we restrict ourselves to the abelian case.
+
 
 Using $\mc B$ to represent the linear maps by matrices in $M_k(\D) = M_k(\FF)\tensor \D$, we now construct an explicit matrix model for $\End_{\D}(\mc V)$.
 
@@ -140,16 +147,21 @@ We restate \cite[Theorem 2.27]{livromicha} (see also \cite[Theorem 2.6]{BK10}) u
 
 \subsection{Graded division superalgebras}\label{ssec:grd-div-salg}
 
-Recall that a graded division superalgebra is the same as a graded division algebra if we consider the $G^\#$-grading.
-In particular, the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a pair $(T, \beta)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group and $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter (see Subsection \ref{ssec:grd-div-alg}).
-Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$.
+
+
+Recall that a graded division superalgebra is the same as a graded division algebra if we consider the $G^\#$-grading. 
+In particular, the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a pair $(T, \beta)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group and $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter (see Subsection \ref{ssec:grd-div-alg}). 
+Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$. 
 % Sometimes we may want to dis
+
 
 \section{Gradings on $M(m,n)$}\label{sec:Mmn}
 % ==================================================
 
 \section{Gradings on matrix algebras}
 \label{sec:gradings-on-matrix-algebras}
+
+
 
 % --------------------------------------------------
 \subsection{The associative superalgebra $M(m,n)$}\label{M(m,n)}
@@ -159,9 +171,9 @@ The algebra of endomorphisms of $U$ has an induced $\Zmod2$-grading, so it can b
 %
 \begin{equation}\label{eq:End_U}
 	\End(U) = \left(\begin{matrix}
-			\End(U\even)       & \Hom(U\odd,U\even) \\
-			\Hom(U\even,U\odd) & \End(U\odd)        \\
-		\end{matrix}
+	\End(U\even)       &  \Hom(U\odd,U\even)\\
+	\Hom(U\even,U\odd) &  \End(U\odd)\\
+	\end{matrix}
 	\right).
 \end{equation}
 %
@@ -171,9 +183,9 @@ We may also regard $U$ as a $\ZZ$-graded vector space, putting $U^0=U\even$ and 
 %
 \[(\End\, U)\even =(\End\, U)^0 =
 	\left(\begin{matrix}
-			\End(U\even) & 0           \\
-			0            & \End(U\odd) \\
-		\end{matrix}
+	\End(U\even)       &  0\\
+	0                  &  \End(U\odd)\\
+	\end{matrix}
 	\right)
 \]
 %
@@ -181,14 +193,14 @@ and $(\End\, U)\odd = (\End\, U)^{-1}\oplus (\End\, U)^1$ where
 %
 \[(\End U)^{1}=
 	\left(\begin{matrix}
-			0                  & 0 \\
-			\Hom(U\even,U\odd) & 0 \\
-		\end{matrix}
+	0                  &  0\\
+	\Hom(U\even,U\odd) &  0\\
+	\end{matrix}
 	\right) \,\text{ and }\, (\End U)^{-1}=
 	\left(\begin{matrix}
-			0 & \Hom(U\odd,U\even) \\
-			0 & 0                  \\
-		\end{matrix}
+	0                  &  \Hom(U\odd,U\even)\\
+	0				   &  0                 \\
+	\end{matrix}
 	\right).
 \]
 %
@@ -198,38 +210,39 @@ This grading will be called the \emph{canonical $\ZZ$-grading} on $M(m,n)$.% and
 \subsection{Automorphisms of $M(m,n)$}
 % --------------------------------------------------
 
-It is known that the automorphisms of the superalgebra $\End(U)$ are conjugations by invertible homogeneous operators.
+It is known that the automorphisms of the superalgebra $\End(U)$ are conjugations by invertible homogeneous operators. 
 % (This follows, for example, from Proposition \ref{prop:inner-automorphism}.)
 The invertible even operators are of the form $\left( \begin{matrix}
-			a & 0 \\
-			0 & d \\
-		\end{matrix}\right)$ where $a\in \GL(m)$ and $d\in \GL(n)$. The corresponding inner automorphisms of $M(m,n)$ will be called \emph{even automorphisms}.
+a&0\\
+0&d\\
+\end{matrix}\right)$ where $a\in \GL(m)$ and $d\in \GL(n)$. The corresponding inner automorphisms of $M(m,n)$ will be called \emph{even automorphisms}. 
 They form a normal subgroup of $\Aut(M(m,n))$, which we denote by $\mc E$.
 
-The inner automorphisms given by odd operators will be called \emph{odd automorphisms}.
+The inner automorphisms given by odd operators will be called \emph{odd automorphisms}. 
 Note that an invertible odd operator must be of the form $\left( \begin{matrix}
-			0 & b \\
-			c & 0 \\
-		\end{matrix}\right)$ where both $b$ and $c$ are invertible, and this forces $m=n$.
-In this case, the set of odd automorphisms is a coset of $\mc E$, namely, $\pi \mc E$,
+0&b\\
+c&0\\
+\end{matrix}\right)$ where both $b$ and $c$ are invertible, and this forces $m=n$. 
+In this case, the set of odd automorphisms is a coset of $\mc E$, namely, $\pi \mc E$, 
 where $\pi$ is the conjugation by the matrix $\left( \begin{matrix}
-			0_n & I_n \\
-			I_n & 0_n \\
-		\end{matrix}\right)$. This automorphism is called the \emph{parity transpose} and is usually denoted by superscript:
+0_n & I_n\\
+I_n & 0_n\\
+\end{matrix}\right)$. This automorphism is called the \emph{parity transpose} and is usually denoted by superscript: 
 \begin{equation*} %\label{eq:pi}
-	\left( \begin{matrix}
-			a & b \\
-			c & d \\
-		\end{matrix}\right)^\pi = \left( \begin{matrix}
-			d & c \\
-			b & a \\
-		\end{matrix}\right).
-\end{equation*}
+\left( \begin{matrix}
+a&b\\
+c&d\\
+\end{matrix}\right)^\pi = \left( \begin{matrix}
+d&c\\
+b&a\\
+\end{matrix}\right).
+\end{equation*} 
 Thus, $\Aut (M(m,n)) = \mc E$ if $m\neq n$, and $\Aut (M(n,n)) = \mc E \rtimes \langle \pi \rangle$.
 
 \begin{remark}\label{rmk:Aut-ZZ-superalgebra}
 	It is worth noting that $\mc E$ is the automorphism group of the $\ZZ$-superalgebra structure of $M(m,n)$, regardless of the values $m$ and $n$. Indeed, the elements of this group are conjugations by homogeneous matrices with respect to the canonical $\ZZ$-grading, but all the matrices of degree $-1$ or $1$ are degenerate.
 \end{remark}
+
 
 % --------------------------------------------------
 \subsection{Gradings on matrix superalgebras}\label{ssec:grds-on-superalgebras}
@@ -243,7 +256,7 @@ We are now going to generalize the results of Section \ref{sec:gradings-on-matri
 
 A $G$-graded superalgebra $\mathcal D$ is called a \emph{graded division superalgebra} if every nonzero homogeneous element in $\D\even \cup \D\odd$ is invertible --- in other words, $\D$ is a $G^\#$-graded division algebra.
 
-We separate the gradings on $\M(m,n)$ in two classes depending on the superalgebra structure on $\D$: if $\D\odd = 0$, we say that we have an \emph{even grading} and, if $\D\odd \ne 0$, we have an \emph{odd grading}.
+We separate the gradings on $\M(m,n)$ in two classes depending on the superalgebra structure on $\D$: if $\D\odd = 0$, we say that we have an \emph{even grading} and, if $\D\odd \ne 0$, we have an \emph{odd grading}. 
 
 To see the difference between even and odd gradings, consider the $G^\#$-graded algebra $E=\End_\D (\mc U)$, where $\D$ is a $G^{\#}$-graded division algebra and $\mc U$ is a graded module over $\D$. Define
 \[
@@ -265,7 +278,7 @@ Clearly, it is impossible for an even grading to be isomorphic to an odd grading
 
 \begin{thm}\label{thm:even-assc-iso}
 	Every even $G$-grading on the superalgebra $M(m,n)$ is isomorphic to some $\Gamma(T,\beta, \gamma_0, \gamma_1)$ as in Definition \ref{def:even-grd-on-Mmn}.
-	Two even gradings, $\Gamma = \Gamma(T,\beta, \gamma_0, \gamma_1)$ and $\Gamma' = \Gamma(T',\beta', \gamma_0', \gamma_1')$,
+	Two even gradings, $\Gamma = \Gamma(T,\beta, \gamma_0, \gamma_1)$ and $\Gamma' = \Gamma(T',\beta', \gamma_0', \gamma_1')$, 
 	are isomorphic if, and only if, $T=T'$, $\beta=\beta'$, and there is $g\in G$ such that
 	\begin{enumerate}[(i)]
 		\item for $m\neq n$: $g \Xi(\gamma_0)=\Xi(\gamma_0')$ and $g \Xi(\gamma_1)=\Xi(\gamma_1')$;
@@ -287,13 +300,13 @@ We now turn to the classification of odd gradings. Recall that here we choose th
 
 \begin{thm}\label{thm:first-odd-iso}
 	Every odd $G$-grading on the superalgebra $M(m,n)$ is isomorphic to some $\Gamma(T,\beta, \gamma)$ as in Definition \ref{def:odd-grd-on-Mmn-1}.
-	Two odd gradings, $\Gamma = \Gamma(T,\beta, \gamma)$ and $\Gamma' = \Gamma(T',\beta', \gamma')$,
+	Two odd gradings, $\Gamma = \Gamma(T,\beta, \gamma)$ and $\Gamma' = \Gamma(T',\beta', \gamma')$,  
 	are isomorphic if, and only if, $T=T'$, $\beta=\beta'$, and there is $g\in G$ such that $g \Xi(\gamma)=\Xi(\gamma')$.
 \end{thm}
 
 \begin{proof}
-	We have already proved the first assertion. For the second assertion,
-	we again consider $\Gamma$ and $\Gamma'$ as $G^\#$-gradings and use Theorem \ref{thm:classification-matrix}: they are isomorphic if, and only if, $T=T'$, $\beta=\beta'$ and there is $(g,s)\in G^\#$ such that $(g,s)\Xi(\gamma)=\Xi(\gamma')$.
+	We have already proved the first assertion. For the second assertion, 
+	we again consider $\Gamma$ and $\Gamma'$ as $G^\#$-gradings and use Theorem \ref{thm:classification-matrix}: they are isomorphic if, and only if, $T=T'$, $\beta=\beta'$ and there is $(g,s)\in G^\#$ such that $(g,s)\Xi(\gamma)=\Xi(\gamma')$. 
 	Since $T$ contains an element $t_1$ with $p(t_1) = \barr 1$, we may assume $s=\barr 0$.
 \end{proof}
 
@@ -303,43 +316,43 @@ In Subsection \ref{subsec:odd-gradings}, we will show that odd gradings can exis
 
 {\tt Separation of $\U$ in even and odd modules in the even case and the even\\ bases in the odd case should be here.}
 
-We will now discuss how to classify graded $\D$-supermodules of finite rank up to isomorphism.
-Recall that $G$-graded supermodules can be seen as $G^\#$-graded modules over the $G^\#$-graded algebra $\D$.
-We will follow \cite[Section 2.1]{livromicha}, but use different notation.
+We will now discuss how to classify graded $\D$-supermodules of finite rank up to isomorphism. 
+Recall that $G$-graded supermodules can be seen as $G^\#$-graded modules over the $G^\#$-graded algebra $\D$. 
+We will follow \cite[Section 2.1]{livromicha}, but use different notation. 
 Unlike from vector spaces over a field, graded $\D$-modules cannot be classified by a single natural number.
 
 \subsection{Classification in terms of $G^\#$}\label{U-in-terms-of-GxZZ2}
 
 First, any graded $\D$-module has a basis consisting of homogeneous elements and, hence, is the direct sum of simple submodules of the form $\D^{[g]}$, $g \in G^\#$.
 % note that the simple modules are isomorphic to $\D^{[g]}$, for some $g\in G^\#$, and that $\supp \D^{[g]} = gT$.
-Moreover, it is easy to see that $\D^{[g]}\iso \D^{[g']}$ if, and only if,  $g \equiv g' \,(\operatorname{mod}\, T)$.
-Given a graded $\D$-module $\mc U$ and $g\in G^\#$, let $\U_{gT} = \bigoplus_{h \in gT} \U_{h}$.
-It is the sum of all submodules isomorphic to $\D^{[g]}$, so we call $\U_{gT}$ the \emph{isotypic} component of $\mc U$ corresponding to the coset $gT$.
-Clearly, $\U$ is the direct sum of its isotypic components.
-If $\U$ has finite rank over $\D$, we can define the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by letting $\kappa (gT) \coloneqq \dim_\D (\U_{gT})$, the rank of the free $\D$-module $\U_{gT}$.
-Two graded $\D$-supermodules of finite rank are isomorphic if, and only if, they yield the same $\kappa$.
+Moreover, it is easy to see that $\D^{[g]}\iso \D^{[g']}$ if, and only if,  $g \equiv g' \,(\operatorname{mod}\, T)$. 
+Given a graded $\D$-module $\mc U$ and $g\in G^\#$, let $\U_{gT} = \bigoplus_{h \in gT} \U_{h}$. 
+It is the sum of all submodules isomorphic to $\D^{[g]}$, so we call $\U_{gT}$ the \emph{isotypic} component of $\mc U$ corresponding to the coset $gT$. 
+Clearly, $\U$ is the direct sum of its isotypic components. 
+If $\U$ has finite rank over $\D$, we can define the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by letting $\kappa (gT) \coloneqq \dim_\D (\U_{gT})$, the rank of the free $\D$-module $\U_{gT}$. 
+Two graded $\D$-supermodules of finite rank are isomorphic if, and only if, they yield the same $\kappa$. 
 Note that $\kappa$ has a finite support.
 
-Conversely, given a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules by choosing a tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in gT$ is equal to $\kappa (gT)$ for every $g\in G$.
-Then we put $\U \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_k]}$.
+Conversely, given a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules by choosing a tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in gT$ is equal to $\kappa (gT)$ for every $g\in G$. 
+Then we put $\U \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_k]}$. 
 Note that $k = |\kappa| \coloneqq \sum_{x\in G^\#/T} \kappa(x)$.
 
 \begin{remark}
-	Both parameters $\kappa$ and $\gamma$ have been used in previous works.
-	Sometimes both are present, as in \cite{livromicha}, sometimes only $\kappa$, as in \cite{paper-adrian} and \cite{felipe-misha}, sometimes only $\gamma$, as in \cite{paper-Qn} and \cite{paper-MAP}.
-	In this work we decided to use only $\kappa$ since it makes notation more succinct.
+    Both parameters $\kappa$ and $\gamma$ have been used in previous works. 
+    Sometimes both are present, as in \cite{livromicha}, sometimes only $\kappa$, as in \cite{paper-adrian} and \cite{felipe-misha}, sometimes only $\gamma$, as in \cite{paper-Qn} and \cite{paper-MAP}. 
+    In this work we decided to use only $\kappa$ since it makes notation more succinct.
 \end{remark}
 
 \subsection{Classification in terms of $G$}
 
-We separate in two cases: $\D\odd = 0$ (even case) and $\D\odd \neq 0$ (odd case).
+We separate in two cases: $\D\odd = 0$ (even case) and $\D\odd \neq 0$ (odd case). 
 
-In the even case, we have $T = T^+ \subseteq G$.
-In particular, we can assign a parity to each isotypic component, since all elements of a coset $x \in G^\#/T$ have the same parity.
+In the even case, we have $T = T^+ \subseteq G$. 
+In particular, we can assign a parity to each isotypic component, since all elements of a coset $x \in G^\#/T$ have the same parity. 
 Hence, instead of $\kappa\from G^\#/T \to \ZZ_{\geq 0}$, we can use two maps, $\kappa_{\bar 0}, \kappa_{\bar 1}\from G/T \to \ZZ_{\geq 0}$, defined by $\kappa_i ( gT ) = \kappa ( (g,i)T )$, for all $g\in G$ and $i \in \ZZ_2$.
 
-For the odd case, we first note that we can always choose a even representative for a coset $x \in G^\#/T$.
-Hence the mapping $g T^+ \mapsto (g, \bar 0) T$ is an isomorphism of $G$-sets $G/T^+ \to G^\#/T$.
+For the odd case, we first note that we can always choose a even representative for a coset $x \in G^\#/T$. 
+Hence the mapping $g T^+ \mapsto (g, \bar 0) T$ is an isomorphism of $G$-sets $G/T^+ \to G^\#/T$. 
 In view of this isomorphism, the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is completely determined by a map $G/T^+ \to \ZZ_{\geq 0}$, which we will also denote by $\kappa$.
 
 % --------------------------------------------------
@@ -353,27 +366,27 @@ The converse is also true. Actually, we can prove a stronger assertion: if we wr
 Recall that a \emph{Morita context} is a sextuple $\mathcal{C} = (R, S, M, N, \vphi, \psi )$ where $R$ and $S$ are unital associative algebras, $M$ is an $(R,S)$-bimodule, $N$ is a $(S,R)$-bimodule and $\vphi: M\tensor_{S} N\rightarrow R$ and $\psi: N\tensor_{R} M\rightarrow S$ are bilinear maps satisfying the necessary and sufficient conditions for
 \begin{equation*}
 	C = \left(\begin{matrix}\label{eq:morita-algebra}
-			R & M \\
-			N & S \\
-		\end{matrix}
+		R   &  M\\
+		N   &  S\\
+	\end{matrix}
 	\right)
 \end{equation*}
 to be an associative algebra.%, \ie,
 %\[\vphi(m_1\tensor n_1)\cdot m_2 = m_1\cdot \psi(n_1\tensor m_2) \text{ and }\psi(n_1\tensor m_1)\cdot n_2 = n_1\cdot \vphi(m_1\tensor n_2)\]
 %\noindent for all $m_1,m_2\in M$ and $n_1,n_2\in N$.
 
-We can associate a Morita context to a superspace $U = U\even \oplus U\odd$ by taking $R = \End(U\even)$, $S = \End(U\odd)$, $M = \Hom(U\odd, U\even)$,
+We can associate a Morita context to a superspace $U = U\even \oplus U\odd$ by taking $R = \End(U\even)$, $S = \End(U\odd)$, $M = \Hom(U\odd, U\even)$, 
 $N = \Hom (U\even, U\odd)$, with $\vphi$ and $\psi$ given by composition of operators.
 
-Given an algebra $C$ as above and the idempotent
+Given an algebra $C$ as above and the idempotent 
 $
-	\epsilon = \left(\begin{matrix}
-			1 & 0 \\
-			0 & 0 \\
-		\end{matrix}
-	\right)
-$,
-we can recover all the data of the Morita context (up to isomorphism): $R \iso \epsilon C \epsilon$, $S \iso (1 - \epsilon) C (1 - \epsilon)$, $M \iso \epsilon C (1-\epsilon)$, $N \iso (1-\epsilon) C \epsilon$ and $\phi$ and $\psi$ are given by multiplication in $C$. In other words, the concept of Morita context is equivalent to the concept of \emph{Morita algebra}, which is a pair $(C,\epsilon)$ where $C$ is a unital associative algebra and $\epsilon\in C$ is an idempotent.
+\epsilon = \left(\begin{matrix}
+1  &  0\\
+0   &  0\\
+\end{matrix}
+\right)
+$, 
+we can recover all the data of the Morita context (up to isomorphism): $R \iso \epsilon C \epsilon$, $S \iso (1 - \epsilon) C (1 - \epsilon)$, $M \iso \epsilon C (1-\epsilon)$, $N \iso (1-\epsilon) C \epsilon$ and $\phi$ and $\psi$ are given by multiplication in $C$. In other words, the concept of Morita context is equivalent to the concept of \emph{Morita algebra}, which is a pair $(C,\epsilon)$ where $C$ is a unital associative algebra and $\epsilon\in C$ is an idempotent. 
 %%%A \emph{homomorphism} of Morita algebras $(C_1,\epsilon_1)\rightarrow(C_2,\epsilon_2)$ is a homomorphism of algebras $C_1\rightarrow C_2$ that sends $\epsilon_1 \mapsto \epsilon_2$.
 %For example, we may consider $\M(m,n)$ as a Morita algebra by fixing the idempotent 
 %$
@@ -392,44 +405,44 @@ we can recover all the data of the Morita context (up to isomorphism): $R \iso \
 Clearly, a Morita context is graded if, and only if, the corresponding Morita algebra is graded.
 
 \begin{remark}\label{remarkk}
-	For every graded Morita algebra $(C,\epsilon)$, we can define a $\ZZ$-grading by taking $C^{-1} = \epsilon C (1-\epsilon )$, $C^0 = \epsilon C \epsilon \oplus (1-\epsilon)C(1-\epsilon)$ and $C^1=(1-\epsilon)C\epsilon$. In the case of $M(m,n)$, this is precisely the canonical $\ZZ$-grading.
+For every graded Morita algebra $(C,\epsilon)$, we can define a $\ZZ$-grading by taking $C^{-1} = \epsilon C (1-\epsilon )$, $C^0 = \epsilon C \epsilon \oplus (1-\epsilon)C(1-\epsilon)$ and $C^1=(1-\epsilon)C\epsilon$. In the case of $M(m,n)$, this is precisely the canonical $\ZZ$-grading.
 \end{remark}
 
 \begin{prop}\label{prop:3-equiv-even-morita-action}
-	Let $\Gamma$ be a $G$-grading on the superalgebra $M(m,n)$. The following are equivalent:
-	%
-	\begin{enumerate}[(i)]
-		\item $\Gamma$ is compatible with the canonical $\ZZ$-grading;
-		\item $\Gamma$ is even;
-		\item $M(m,n)$ equipped with $\Gamma$ is a graded Morita algebra.
-		      \vspace{1mm}
+		Let $\Gamma$ be a $G$-grading on the superalgebra $M(m,n)$. The following are equivalent:
+		%
+		\begin{enumerate}[(i)]
+			\item $\Gamma$ is compatible with the canonical $\ZZ$-grading;
+			\item $\Gamma$ is even;
+			\item $M(m,n)$ equipped with $\Gamma$ is a graded Morita algebra.
+			\vspace{1mm}
 
-		      % Escape indentation
-		      \par\vbox{\parbox[t]{\linewidth}{Further, if we assume $\Char\FF=0$, the above statements are also equivalent to:}}
-		      \vspace{1mm}
+			% Escape indentation
+		\par\vbox{\parbox[t]{\linewidth}{Further, if we assume $\Char\FF=0$, the above statements are also equivalent to:}}
+		\vspace{1mm}
 
-		\item $\Gamma$ corresponds to a $\widehat G$-action by even automorphisms.
-	\end{enumerate}
+	 		\item $\Gamma$ corresponds to a $\widehat G$-action by even automorphisms.
+		\end{enumerate}
 \end{prop}
 
 \begin{proof}
-	~\\ \vspace{-2.5mm}
+		 ~\\ \vspace{-2.5mm}
 
-	\textit{(i) $\Rightarrow$ (ii):}
-	See the beginning of this subsection.
-	\vspace{2mm}
+		\textit{(i) $\Rightarrow$ (ii):}
+		See the beginning of this subsection.
+		\vspace{2mm}
 
-	\textit{(ii) $\Rightarrow$ (iii):}
-	Regard $\Gamma$ as a $G^\#$-grading. By Theorem \ref{thm:End-over-D}, there is a graded division algebra $\D$ and a graded right $\D$-module $\mc U$ such that $\End_{\mc D} (\mc U) \simeq M(m,n)$. Take an isomorphism of graded algebras $\phi: \End_{\mc D} (\mc U) \rightarrow M(m,n)$. Since $\Gamma$ is even, $\mc U\even$ and $\mc U\odd$ are graded $\mc D$-submodules. Take $\epsilon' \in \End_{\mc D} (\mc U)$ to be the projection onto $\mc U\even$ associated to the decomposition $\mc U= \mc U\even \oplus \mc U\odd$. Clearly, $\epsilon'$ is a central idempotent of $\End_{\mc D} (\mc U)\even$, hence $\phi(\epsilon')$ is a central idempotent of $M(m,n)\even$, so either $\phi(\epsilon')=\epsilon$ or $\phi(\epsilon')=1-\epsilon$. Either way, $\phi^{-1}(\epsilon)$ is homogeneous, hence so is $\epsilon$.
-	\vspace{2mm}
+		\textit{(ii) $\Rightarrow$ (iii):}
+		Regard $\Gamma$ as a $G^\#$-grading. By Theorem \ref{thm:End-over-D}, there is a graded division algebra $\D$ and a graded right $\D$-module $\mc U$ such that $\End_{\mc D} (\mc U) \simeq M(m,n)$. Take an isomorphism of graded algebras $\phi: \End_{\mc D} (\mc U) \rightarrow M(m,n)$. Since $\Gamma$ is even, $\mc U\even$ and $\mc U\odd$ are graded $\mc D$-submodules. Take $\epsilon' \in \End_{\mc D} (\mc U)$ to be the projection onto $\mc U\even$ associated to the decomposition $\mc U= \mc U\even \oplus \mc U\odd$. Clearly, $\epsilon'$ is a central idempotent of $\End_{\mc D} (\mc U)\even$, hence $\phi(\epsilon')$ is a central idempotent of $M(m,n)\even$, so either $\phi(\epsilon')=\epsilon$ or $\phi(\epsilon')=1-\epsilon$. Either way, $\phi^{-1}(\epsilon)$ is homogeneous, hence so is $\epsilon$.
+		\vspace{2mm}
 
-	\textit{(iii) $\Rightarrow$ (i):}
-	Follows from Remark \ref{remarkk}.
-	\vspace{2mm}
+		\textit{(iii) $\Rightarrow$ (i):}
+		Follows from Remark \ref{remarkk}.
+		\vspace{2mm}
 
-	\textit{(i) $\Leftrightarrow$ (iv):}
-	This follows from the fact that the group of even automorphisms is precisely the group of automorphisms of the $\ZZ$-superalgebra structure on $M(m,n)$ (see Remark \ref{rmk:Aut-ZZ-superalgebra}).
-	%
+		\textit{(i) $\Leftrightarrow$ (iv):}
+		This follows from the fact that the group of even automorphisms is precisely the group of automorphisms of the $\ZZ$-superalgebra structure on $M(m,n)$ (see Remark \ref{rmk:Aut-ZZ-superalgebra}).
+%
 \end{proof}
 
 \begin{cor}\label{cor:m=n}
@@ -439,7 +452,7 @@ Clearly, a Morita context is graded if, and only if, the corresponding Morita al
 The assumption on the characteristic in the above corollary can be dropped, as we will show in Subsection \ref{subsec:odd-gradings}.%aquii3
 
 We now know that the gradings on the $\ZZ$-superalgebra $M(m,n)$ are precisely the even gradings, but since the automorphism group is different
-from the $\ZZ_2$-superalgebra case, the classification of gradings up to isomorphism is also different.
+from the $\ZZ_2$-superalgebra case, the classification of gradings up to isomorphism is also different. 
 The proof of the next result is similar to the proof of Theorem \ref{thm:even-assc-iso}.
 
 \begin{thm}
@@ -479,8 +492,8 @@ The proof of the next result is similar to the proof of Theorem \ref{thm:even-as
 % --------------------------------------------------
 \subsection{Odd gradings}\label{subsec:odd-gradings}
 % --------------------------------------------------
-Let $\Gamma$ be an odd $G$-grading on $M(m,n)$. We saw in Subsection \ref{ssec:grds-on-superalgebras} that, as a $G^\#$-graded algebra, $M(m,n)$ is isomorphic to $E\iso \End(\tilde U)\tensor \D$ where the first factor has the trivial $\ZZ_2$-grading and $\D=\D\even\oplus \D\odd$, with $\D\odd\neq 0$, is a $G^\#$-graded division algebra that is simple as an algebra. Let $T\subseteq G^\#$ be the support of $\D$ and $\beta: T\times T \rightarrow \FF^\times$ be the associated bicharacter.
-We write $T^+ = \{t\in T \mid p(t)=\barr 0\} = T \cap G$ and $T^- = \{t\in T \mid p(t)=\barr 1\}$,
+Let $\Gamma$ be an odd $G$-grading on $M(m,n)$. We saw in Subsection \ref{ssec:grds-on-superalgebras} that, as a $G^\#$-graded algebra, $M(m,n)$ is isomorphic to $E\iso \End(\tilde U)\tensor \D$ where the first factor has the trivial $\ZZ_2$-grading and $\D=\D\even\oplus \D\odd$, with $\D\odd\neq 0$, is a $G^\#$-graded division algebra that is simple as an algebra. Let $T\subseteq G^\#$ be the support of $\D$ and $\beta: T\times T \rightarrow \FF^\times$ be the associated bicharacter. 
+We write $T^+ = \{t\in T \mid p(t)=\barr 0\} = T \cap G$ and $T^- = \{t\in T \mid p(t)=\barr 1\}$, 
 and denote the restriction of $\beta$ to $T^+\times T^+$ by $\beta^+$.
 
 Note that there are no odd gradings if $\Char \FF =2$. Indeed, in this case, there is no nondegenerate bicharacter on $T$ because the characteristic of the field divides $|T|=2|T^+|$. From now on, we suppose $\Char \FF \neq 2$.
@@ -489,11 +502,11 @@ Since $\beta$ is nondegenerate, we have an isomorphism $T\rightarrow \widehat T$
 
 In particular, we have $(T^+)^\perp = \langle t_0 \rangle$ where $t_0$ is an element of order 2. It follows that $\beta(t_0, t) = 1$ if $t\in T^+$ and $\beta(t_0, t) = -1$ if $t\in T^-$. For this reason, we call $t_0$ the \emph{parity element} of the odd grading $\Gamma$. Note that $\rad \beta^+ = T^+\cap (T^+)^\perp = \langle t_0 \rangle$.
 
-Fix an element $0\neq d_0\in \D$  of degree $t_0$. By the definition of $\beta$, $d_0$ commutes with all elements of $\D\even$ and anticommutes with all elements of $\D\odd$. Since $d_0^2\in \D_e = \FF$, and $\FF$ is algebraically closed, we may rescale $d_0$ so that $d_0^2=1$. Then $\epsilon := \frac{1}{2}(1+d_0)$ is a central idempotent of $\D\even$. Take a homogeneous element $0\neq d_1\in\D\odd$. Then $d_1\epsilon d_1\inv = \frac{1}{2}(1-d_0)=1-\epsilon$, which is another central idempotent of $\D\even$ and must have the same rank as $\epsilon$.
-Hence, $\D\even\iso \epsilon\D\even\oplus (1-\epsilon)\D\even$ (direct sum of ideals) and, consequently, $E\even \iso \End(\tilde U)\tensor \D\even = \End(\tilde U)\tensor \epsilon\D\even \oplus \End(\tilde U)\tensor (1-\epsilon)\D\even$, where the two summands have the same dimension. Therefore, odd gradings exist only if $m=n$.
-Also note that we have
+Fix an element $0\neq d_0\in \D$  of degree $t_0$. By the definition of $\beta$, $d_0$ commutes with all elements of $\D\even$ and anticommutes with all elements of $\D\odd$. Since $d_0^2\in \D_e = \FF$, and $\FF$ is algebraically closed, we may rescale $d_0$ so that $d_0^2=1$. Then $\epsilon := \frac{1}{2}(1+d_0)$ is a central idempotent of $\D\even$. Take a homogeneous element $0\neq d_1\in\D\odd$. Then $d_1\epsilon d_1\inv = \frac{1}{2}(1-d_0)=1-\epsilon$, which is another central idempotent of $\D\even$ and must have the same rank as $\epsilon$. 
+Hence, $\D\even\iso \epsilon\D\even\oplus (1-\epsilon)\D\even$ (direct sum of ideals) and, consequently, $E\even \iso \End(\tilde U)\tensor \D\even = \End(\tilde U)\tensor \epsilon\D\even \oplus \End(\tilde U)\tensor (1-\epsilon)\D\even$, where the two summands have the same dimension. Therefore, odd gradings exist only if $m=n$. 
+Also note that we have 
 \begin{equation}\label{eq:D1eps}
-	\D\odd \epsilon = (1-\epsilon) \D\odd.
+\D\odd \epsilon = (1-\epsilon) \D\odd.
 \end{equation}
 
 We are now going construct an even grading by coarsening a given odd grading. The reverse of this construction will be used in Subsection \ref{ssec:second-odd}.
@@ -506,7 +519,7 @@ Let $H$ be a group and suppose we have an even grading $\Gamma'$ on $M(n,n)$ tha
 
 % Thm: this is the finest even coarsening
 \begin{thm}
-	Let $\Gamma = \Gamma(T, \beta, \gamma)$ be an odd grading on $M(n,n)$ with parity element $t_0$. Then its finest even coarsening is isomorphic to $\barr \Gamma = \Gamma(\barr T, \barr \beta, \barr \gamma, \barr u\barr \gamma)$, where $\barr T= \frac{T^+}{\langle t_0 \rangle}$, $\barr\beta$ is the nondegenerate bicharacter on $\barr T$ induced by $\beta^+$, $\barr\gamma$ is the tuple whose entries are the images of the entries of $\gamma$ under $\theta$, and $u \in G$ is
+	Let $\Gamma = \Gamma(T, \beta, \gamma)$ be an odd grading on $M(n,n)$ with parity element $t_0$. Then its finest even coarsening is isomorphic to $\barr \Gamma = \Gamma(\barr T, \barr \beta, \barr \gamma, \barr u\barr \gamma)$, where $\barr T= \frac{T^+}{\langle t_0 \rangle}$, $\barr\beta$ is the nondegenerate bicharacter on $\barr T$ induced by $\beta^+$, $\barr\gamma$ is the tuple whose entries are the images of the entries of $\gamma$ under $\theta$, and $u \in G$ is 
 	any element such that $(u, \barr 1) \in T^-$.
 \end{thm}
 
@@ -521,7 +534,7 @@ Let $H$ be a group and suppose we have an even grading $\Gamma'$ on $M(n,n)$ tha
 	\end{claim}
 
 	% Proof of Claim 1
-	To see this, consider a nontrivial graded submodule $V\subseteq \D\epsilon$ and take a homogeneous element $0\neq v\in V$. Then we can write $v=d\epsilon$ where $d$ is a $\barr G$-homogeneous element of $\D$, so $d = d' + \lambda d' d_0$ where $d'$ is a $G$-homogeneous element and $\lambda\in \FF$. Hence, $v = d'\epsilon + \lambda d'd_0\epsilon = (1+\lambda)d'\epsilon$, where we have used $d_0\epsilon=\epsilon$. Clearly, $(1+\lambda)d'\neq 0$, so it has an inverse in $\D$. We conclude that $\epsilon\in V$, hence $V=\D\epsilon$.\qedclaim
+	To see this, consider a nontrivial graded submodule $V\subseteq \D\epsilon$ and take a homogeneous element $0\neq v\in V$. Then we can write $v=d\epsilon$ where $d$ is a $\barr G$-homogeneous element of $\D$, so $d = d' + \lambda d' d_0$ where $d'$ is a $G$-homogeneous element and $\lambda\in \FF$. Hence, $v = d'\epsilon + \lambda d'd_0\epsilon = (1+\lambda)d'\epsilon$, where we have used $d_0\epsilon=\epsilon$. Clearly, $(1+\lambda)d'\neq 0$, so it has an inverse in $\D$. We conclude that $\epsilon\in V$, hence $V=\D\epsilon$.\qedclaim 
 
 	Let $\barr \D := \epsilon \D \epsilon \iso \End_{\D}(\D\epsilon)$, where we are using the convention of writing endomorphisms of a left module on the right. By Claim 1 and the graded analog of Schur's Lemma (see \eg \cite[Lemma 2.4]{livromicha}), $\barr \D$ is a $\barr G$-graded division algebra.
 
@@ -531,7 +544,7 @@ Let $H$ be a group and suppose we have an even grading $\Gamma'$ on $M(n,n)$ tha
 	\end{claim}
 
 	% Proof of Claim 2
-	We have $\barr \D = \epsilon \D\even \epsilon + \epsilon \D\odd \epsilon$ and $\epsilon \D\odd \epsilon = 0$ by Equation \eqref{eq:D1eps}, so $\supp \barr \D \subseteq \barr T$. On the other hand, for every $0\neq d\in \D\even$ with $G$-degree $t\in T^+$, we have that $\epsilon d\epsilon = d\epsilon = \frac{1}{2}(d+dd_0)\neq 0$, since the component of degree $t$ is different from zero. Hence $\supp \barr \D = \barr T$. Since $\epsilon$ is central in $\D\even$, we obtain $\barr\beta (\barr t,\barr s) = \beta (s, t) = \beta^+ (s, t)$ for all $t, s\in T^+$.\qedclaim
+	We have $\barr \D = \epsilon \D\even \epsilon + \epsilon \D\odd \epsilon$ and $\epsilon \D\odd \epsilon = 0$ by Equation \eqref{eq:D1eps}, so $\supp \barr \D \subseteq \barr T$. On the other hand, for every $0\neq d\in \D\even$ with $G$-degree $t\in T^+$, we have that $\epsilon d\epsilon = d\epsilon = \frac{1}{2}(d+dd_0)\neq 0$, since the component of degree $t$ is different from zero. Hence $\supp \barr \D = \barr T$. Since $\epsilon$ is central in $\D\even$, we obtain $\barr\beta (\barr t,\barr s) = \beta (s, t) = \beta^+ (s, t)$ for all $t, s\in T^+$.\qedclaim 
 
 	% a basis for D\epsilon
 	We now consider $\D\epsilon$ as a graded right $\barr \D$-module. Then we have the decomposition $\D\epsilon = \epsilon \D\epsilon \oplus (1-\epsilon) \D\epsilon$. The set $\{\epsilon\}$ is clearly a basis of $\epsilon \D\epsilon$. To find a basis for $(1-\epsilon)\D\epsilon$, fix any $G$-homogeneous $0\neq d_1\in \D\odd$  with $\deg d_1 = t_1\in T^-$. Then we have $(1-\epsilon)\D\epsilon = (1-\epsilon)\D\even \epsilon + (1-\epsilon)\D\odd \epsilon = (1-\epsilon)\D\odd \epsilon = \D\odd \epsilon$ by Equation \eqref{eq:D1eps}. Since $d_1$ is invertible, $\{d_1\epsilon\}$ is a basis for $(1-\epsilon) \D\epsilon$. We conclude that $\{\epsilon, d_1\epsilon\}$ is a basis for $\D\epsilon$.
@@ -540,10 +553,10 @@ Let $H$ be a group and suppose we have an even grading $\Gamma'$ on $M(n,n)$ tha
 	Using the graded analog of the Density Theorem (see e.g. \cite[Theorem 2.5]{livromicha}), we have $\D\iso \End_{\barr \D}(\D\epsilon)\iso \End(\FF\epsilon\oplus \FF d_1\epsilon)\tensor \barr\D$. Hence,
 	%
 	\[
-		\begin{split}
-			\End_\D(\mc U)&\iso\End (\tilde U) \tensor \D \iso \End (\tilde U) \tensor \End(\FF\epsilon \oplus \FF d_1\epsilon) \tensor \barr\D \\
-			&\iso \End(\tilde U\tensor \epsilon \oplus \tilde U\tensor d_1\epsilon) \tensor \barr\D
-		\end{split}
+	\begin{split}
+	\End_\D(\mc U)&\iso\End (\tilde U) \tensor \D \iso \End (\tilde U) \tensor \End(\FF\epsilon \oplus \FF d_1\epsilon) \tensor \barr\D \\
+	&\iso \End(\tilde U\tensor \epsilon \oplus \tilde U\tensor d_1\epsilon) \tensor \barr\D
+	\end{split}
 	\]
 	%
 	as $\barr G$-graded algebras. The result follows.
@@ -558,8 +571,8 @@ In the next section, we will show how to recover $\Gamma$ from $\barr\Gamma$ and
 Note that $T^{[2]}\subseteq T^+$, but $T^{[2]}$ can be larger than $(T^+)^{[2]}$ since it also includes the squares of elements of $T^-$. Also, the subgroup $\barr S = \{\barr t \in \barr T \mid t \in T^{[2]}\}$ of $\barr T$ can be larger than $\barr T^{[2]}$, but we will show that, surprisingly, it does not depend on $T^-$.
 
 \begin{lemma}\label{lemma:square-subgroup}
-	Let $\theta: T^+\rightarrow \barr T=\frac{T^+}{\langle t_0 \rangle}$ be the natural homomorphism.
-	Consider the subgroups $\barr S = \theta(T^{[2]})$ and $\barr R=\theta(T^+_{[2]})$ of $\barr T$.
+	Let $\theta: T^+\rightarrow \barr T=\frac{T^+}{\langle t_0 \rangle}$ be the natural homomorphism. 
+	Consider the subgroups $\barr S = \theta(T^{[2]})$ and $\barr R=\theta(T^+_{[2]})$ of $\barr T$. 
 	Then $\barr S$ is the orthogonal complement of $\barr R$ with respect to the nondegenerate bicharacter $\barr\beta$.
 \end{lemma}
 
@@ -590,81 +603,81 @@ From Lemma \ref{lemma:square-subgroup}, we have a necessary condition for the ex
 
 \begin{proof}
 	Let $\chi\in \widehat {T^+}$ be such that $\chi(t_0) = -1$. Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. Note that $\chi (a) = \pm 1$ and hence, changing $a$ to $a t_0$ if necessary, we may assume $\chi (a) = 1$.
-
-	\bigskip
+	
+	\bigskip 
 
 	\textit{(i) Existence of $t_1$}:
-
-	\medskip
+	
+	\medskip 
 
 	As before, let $\barr R = \frac{T^+_{[2]}}{\langle t_0 \rangle}$. Then $\barr a \in \barr R^\perp$. Indeed, if $b\in T^+_{[2]}$, then $\barr\beta(\barr a,\barr b) = \chi^2 (\barr b) = \chi (b^2) = \chi (e) =1$. By our assumption, we conclude that $\barr a\in \barr G^{[2]}$. We are going to prove that, actually, $a\in G^{[2]}$. Pick $u\in G$ such that $\barr u^2 = \barr a$. Then, either $a=u^2$ or $a=u^2t_0$. If $t_0 = c^2$ for some $c\in G$, then replacing $u$ by $uc$ if necessary, we can make $u^2 = a$. Otherwise, $t_0$ has no square root in $T^+$, which implies that $\barr R=\barr T_{[2]}$. Hence $\barr R^\perp = (\barr T_{[2]})^\perp = \barr T^{[2]} = \theta ((T^+)^{[2]})$. Thus, in this case, we can assume $u\in T^+$. Then $\chi(u^2) = \chi^2(u) = \barr \beta (\barr a, \barr u) = \barr \beta (\barr u^2, \barr u) =1$, hence $u^2 = a$. Finally, we set $t_1=(u,\barr 1) \in G^\#$.
 
-	\bigskip
+	\bigskip 
 
 	\textit{(ii) Existence of $\beta$}:
-
-	\medskip
+	
+	\medskip 
 
 	We wish to extend $\beta^+$ to $T=T^+ \cup t_1\, T^+$ by setting $\beta(t_1, t) = \chi (t)$ for all $t\in T^+$. It is clear that there is at most one alternating bicharacter on $T$ with this property that extends $\beta^+$. To show that it exists and is nondegenerate, we will first introduce an auxiliary group $\widetilde T$ and a bicharacter $\tilde\beta$.
 
 	Let $\widetilde T$ be the direct product of $T^+$ and the infinite cyclic group generated by a new symbol $\tau$. We define $\tilde\beta:\widetilde T\times \widetilde T \rightarrow \FF^\times$ by $ \tilde\beta(s\tau^i,t\tau^j) = \beta^+(s,t)\, \chi (s)^{-j}\, \chi (t)^i$, where $s,t\in T^+$. It is clear that $\tilde\beta$ is an alternating bicharacter.
 
 	\begin{claim*}
-		$\langle a\tau^{-2} \rangle = \rad \tilde \beta\,$.
+	$\langle a\tau^{-2} \rangle = \rad \tilde \beta\,$.
 	\end{claim*}
 
 	Let $t\in T^+$ and $\ell\in \ZZ$. Then
 	\[
-		\tilde \beta (a\tau^{-2},t\tau^\ell) =
-		\beta^+(a, t)\,\, \chi(t)^{-2} \, \chi(a)^{-\ell} =
-		\barr\beta(\barr a, \barr t)\,\, \chi(t)^{-2} = \chi(t)^2 \, \chi(t)^{-2} = 1,
-	\]
-	hence, $\langle a\tau^{-2} \rangle \subseteq \rad \tilde \beta$.
+	\tilde \beta (a\tau^{-2},t\tau^\ell) =
+	\beta^+(a, t)\,\, \chi(t)^{-2} \, \chi(a)^{-\ell} = 
+	\barr\beta(\barr a, \barr t)\,\, \chi(t)^{-2} = \chi(t)^2 \, \chi(t)^{-2} = 1,
+    \]
+    hence, $\langle a\tau^{-2} \rangle \subseteq \rad \tilde \beta$.
 
-	Conversely, if $s\tau^k \in \rad \tilde\beta$, then, $1 = \tilde \beta (s\tau^k, t_0) = \beta^+(s,t_0)\, \chi(t_0)^k = (-1)^k$, hence $k$ is even. From the previous paragraph, we know that $a\tau^{-2} \in \rad \tilde\beta$, hence $a^\frac{k}{2} \tau^{-k} \in \rad \tilde\beta$ and $s a^\frac{k}{2} = (s \tau^k) (a^\frac{k}{2} \tau^{-k}) \in \rad \tilde\beta$. Since $s a^\frac{k}{2} \in T^+$, we get $s a^\frac{k}{2} \in \rad \beta^+ = \{ e, t_0 \}$. But, if $sa^\frac{k}{2} = t_0$, we have $1 = \tilde\beta (sa^\frac{k}{2}, \tau) = \tilde\beta (t_0, \tau) = \chi(t_0)\inv = -1$, a contradiction. It follows that $sa^\frac{k}{2} = e$ and, hence, $s\tau^k = a^{-\frac{k}{2}}\tau^k = (a\tau^{-2})^{\frac{k}{2}}$, concluding the proof of the claim.
-	\qedclaim
+    Conversely, if $s\tau^k \in \rad \tilde\beta$, then, $1 = \tilde \beta (s\tau^k, t_0) = \beta^+(s,t_0)\, \chi(t_0)^k = (-1)^k$, hence $k$ is even. From the previous paragraph, we know that $a\tau^{-2} \in \rad \tilde\beta$, hence $a^\frac{k}{2} \tau^{-k} \in \rad \tilde\beta$ and $s a^\frac{k}{2} = (s \tau^k) (a^\frac{k}{2} \tau^{-k}) \in \rad \tilde\beta$. Since $s a^\frac{k}{2} \in T^+$, we get $s a^\frac{k}{2} \in \rad \beta^+ = \{ e, t_0 \}$. But, if $sa^\frac{k}{2} = t_0$, we have $1 = \tilde\beta (sa^\frac{k}{2}, \tau) = \tilde\beta (t_0, \tau) = \chi(t_0)\inv = -1$, a contradiction. It follows that $sa^\frac{k}{2} = e$ and, hence, $s\tau^k = a^{-\frac{k}{2}}\tau^k = (a\tau^{-2})^{\frac{k}{2}}$, concluding the proof of the claim.
+    \qedclaim 
 
-	We have a homomorphism $\vphi:\widetilde T\rightarrow T$ that is the identity on $T^+$ and sends $\tau$ to $t_1$. Clearly, $\ker \vphi = \langle a\tau^{-2} \rangle$. By the above claim, $\tilde\beta$ induces a nondegenerate alternating bicharacter on $\frac{\widetilde T}{\langle a\tau^{-2} \rangle}$, which can be transferred via $\vphi$ to a nondegenerate alternating bicharacter on $T$ that extends $\beta^+$.
-	%
+    We have a homomorphism $\vphi:\widetilde T\rightarrow T$ that is the identity on $T^+$ and sends $\tau$ to $t_1$. Clearly, $\ker \vphi = \langle a\tau^{-2} \rangle$. By the above claim, $\tilde\beta$ induces a nondegenerate alternating bicharacter on $\frac{\widetilde T}{\langle a\tau^{-2} \rangle}$, which can be transferred via $\vphi$ to a nondegenerate alternating bicharacter on $T$ that extends $\beta^+$.
+%
 \end{proof}
 
-Now fix $\chi\in \widehat {T^+}$ with $\chi(t_0)=-1$ and let $a$ be the unique element of $T^+$ such that $\chi(a)=1$ and $\chi^2(\barr t) = \barr\beta (\barr a, \barr t)$ for all $t\in T^+$. Suppose that the condition of Proposition \ref{prop:square-subgroup-converse} is satisfied.
-Then part (i) of the proof shows that there exists $u\in G$ such that $u^2=a$. Moreover, part (ii) shows that there exists an extension of $\beta^+$ to
+Now fix $\chi\in \widehat {T^+}$ with $\chi(t_0)=-1$ and let $a$ be the unique element of $T^+$ such that $\chi(a)=1$ and $\chi^2(\barr t) = \barr\beta (\barr a, \barr t)$ for all $t\in T^+$. Suppose that the condition of Proposition \ref{prop:square-subgroup-converse} is satisfied. 
+Then part (i) of the proof shows that there exists $u\in G$ such that $u^2=a$. Moreover, part (ii) shows that there exists an extension of $\beta^+$ to 
 a nondegenerate alternating bicharacter $\beta$ on $T=T^+\cup t_1T^+$, where $t_1=(u,\bar 1)$, such that $\beta(t_1,t)=\chi(t)$ for all $t\in T^+$.
 Clearly, such an extension is unique. We will denote it by $\beta_u$ and its domain by $T_u$.
 
 \begin{prop}\label{prop:roots-of-a}
-	For every $T\subseteq G^\#$ such that $T\subsetneq G$ and $T\cap G=T^+$ and for every extension of $\beta^+$ to a nondegenerate alternating bicharacter $\beta$
-	on $T$, there exists $u\in G$ such that $u^2=a$, $T=T_u$ and $\beta=\beta_u$.
-	Moreover, $\beta_u=\beta_{\tilde{u}}$ if, and only if,
-	$u^{-1} \tilde{u} \in \langle t_0 \rangle$.
+For every $T\subseteq G^\#$ such that $T\subsetneq G$ and $T\cap G=T^+$ and for every extension of $\beta^+$ to a nondegenerate alternating bicharacter $\beta$
+on $T$, there exists $u\in G$ such that $u^2=a$, $T=T_u$ and $\beta=\beta_u$.
+Moreover, $\beta_u=\beta_{\tilde{u}}$ if, and only if, 
+$u^{-1} \tilde{u} \in \langle t_0 \rangle$.
 \end{prop}
 
 \begin{proof}
 
-	We have $T=T^+ \cup T^-$ where $T^-\subseteq G\times \{\barr 1\}$ is a coset of $T^+$.
-	We can extend $\chi$ to a character of $T$, which we still denote by $\chi$, and, since $\beta$ is nondegenerate,
-	there is $t_1\in T$ such that $\beta(t_1, t) = \chi(t)$ for all $t\in T$. We have $t_1\in T^-$ since $\beta(t_1,t_0)=\chi(t_0)=-1$, so $t_1=(u,\bar 1)$,
-	for some $u\in G$, and hence $T=T_u$. We claim that $t_1^2 = a = (a, \bar 0)$ and, hence, $u^2 = a$. Indeed, $\chi(t_1^2) = \beta(t_1,t_1^2)=1$ and, for every $t\in T^+$,
-	\[
-		\chi^2(\barr t) = \chi(t)^2 = \beta (t_1, t)^2 = \beta (t_1^2, t) = \barr\beta (\,\overline {(t_1^2)},\, \barr t)\,,
-	\]
-	so $t_1^2$ satisfies the definition of the element $a$. This completes the proof of the first assertion.
+We have $T=T^+ \cup T^-$ where $T^-\subseteq G\times \{\barr 1\}$ is a coset of $T^+$.
+We can extend $\chi$ to a character of $T$, which we still denote by $\chi$, and, since $\beta$ is nondegenerate, 
+there is $t_1\in T$ such that $\beta(t_1, t) = \chi(t)$ for all $t\in T$. We have $t_1\in T^-$ since $\beta(t_1,t_0)=\chi(t_0)=-1$, so $t_1=(u,\bar 1)$, 
+for some $u\in G$, and hence $T=T_u$. We claim that $t_1^2 = a = (a, \bar 0)$ and, hence, $u^2 = a$. Indeed, $\chi(t_1^2) = \beta(t_1,t_1^2)=1$ and, for every $t\in T^+$,
+\[
+ 	\chi^2(\barr t) = \chi(t)^2 = \beta (t_1, t)^2 = \beta (t_1^2, t) = \barr\beta (\,\overline {(t_1^2)},\, \barr t)\,,
+\]
+so $t_1^2$ satisfies the definition of the element $a$. This completes the proof of the first assertion.
 
-	Now suppose $\beta_u=\beta_{\tilde{u}}$, so in particular $t_1\,T^+=\tilde{t}_1\,T^+$ where $t_1 = (u, \barr 1)$ and $\tilde{t}_1 = (\tilde u, \barr 1)$.
-	Then there is $r\in T^+$ such that $\tilde{t}_1 = t_1\,r$. Also, for every $t\in T^+$,
-	\[
-		\chi(t) = \beta_{\tilde{u}}(\tilde{t}_1,t) = \beta_u (t_1\,r, t)
+Now suppose $\beta_u=\beta_{\tilde{u}}$, so in particular $t_1\,T^+=\tilde{t}_1\,T^+$ where $t_1 = (u, \barr 1)$ and $\tilde{t}_1 = (\tilde u, \barr 1)$.
+Then there is $r\in T^+$ such that $\tilde{t}_1 = t_1\,r$. Also, for every $t\in T^+$,
+\[
+\chi(t) = \beta_{\tilde{u}}(\tilde{t}_1,t) = \beta_u (t_1\,r, t)
 		= \beta_u(t_1, t)\,\beta_u(r,t) = \chi(t) \beta^+(r, t)
-	\]
-	and, hence, $\beta^+(r, t)=1$ for all $t\in T^+$. This means that $r = u\inv \tilde{u} \in \langle t_0 \rangle$.
+\]
+and, hence, $\beta^+(r, t)=1$ for all $t\in T^+$. This means that $r = u\inv \tilde{u} \in \langle t_0 \rangle$.
 
-	Conversely, if $\tilde u = u r$ for some $r\in \langle t_0 \rangle$, then $t_1\, T^+ = \tilde t_1\, T^+$. Also, for all $t\in T^+$,
-	\[
-		\beta_u(t_1, t) = \chi(t) = \beta_{\tilde{u}}(\tilde{t}_1, t) = \beta_{\tilde{u}}(t_1r, t) =
-		\beta_{\tilde{u}}(t_1, t)\, \beta^+(r, t) = \beta_{\tilde{u}}(t_1, t).
-	\]
-	It follows that $\beta_u=\beta_{\tilde{u}}$.
+Conversely, if $\tilde u = u r$ for some $r\in \langle t_0 \rangle$, then $t_1\, T^+ = \tilde t_1\, T^+$. Also, for all $t\in T^+$,
+\[
+\beta_u(t_1, t) = \chi(t) = \beta_{\tilde{u}}(\tilde{t}_1, t) = \beta_{\tilde{u}}(t_1r, t) = 
+\beta_{\tilde{u}}(t_1, t)\, \beta^+(r, t) = \beta_{\tilde{u}}(t_1, t).
+\]
+It follows that $\beta_u=\beta_{\tilde{u}}$.
 \end{proof}
 
 Note that, keeping the character $\chi \in \widehat {T^+}$ with $\chi(t_0) = -1$ fixed, we have a surjective map from the square roots of $a$ to all possible pairs $(T,\beta)$. If we had started with a different character above, we would have obtained a different surjective map. Hence, for parametrization purposes, $\chi$ (and, hence, $a$) will be fixed.
@@ -679,51 +692,51 @@ Theorem \ref{thm:first-odd-iso} together with Proposition \ref{prop:roots-of-a} 
 
 \begin{thm}\label{thm:2nd-odd-iso}
 	Every odd $G$-grading on the superalgebra $M(n,n)$ is isomorphic to some $\Gamma (t_0, \barr T, \barr \beta, u, \gamma)$ as in Definition \ref{def:odd-grd-on-Mmn-2}.
-	Two odd gradings, $\Gamma (t_0, \barr T, \barr \beta, u, \gamma)$ and $\Gamma (t_0', \barr T', \barr \beta', u', \gamma')$,
-	are isomorphic if, and only if, $t_0=t_0'$, $\barr T = \barr T'$, $\barr\beta = \barr\beta'$, $u^{-1} u' \in \langle t_0 \rangle$,
+	Two odd gradings, $\Gamma (t_0, \barr T, \barr \beta, u, \gamma)$ and $\Gamma (t_0', \barr T', \barr \beta', u', \gamma')$, 
+	are isomorphic if, and only if, $t_0=t_0'$, $\barr T = \barr T'$, $\barr\beta = \barr\beta'$, $u^{-1} u' \in \langle t_0 \rangle$, 
 	and there is $g\in G$ such that $g\, \Xi(\gamma) = \Xi(\gamma')$.\qed
 \end{thm}
 
 \subsection{Fine gradings up to equivalence}
 
-We start by investigating the gradings on the superalgebra $M(m,n)$ that are fine among even gradings.
-By Proposition \ref{prop:3-equiv-even-morita-action}, this is the same as fine gradings on $M(m,n)$ as a $\ZZ$-superalgebra, and,
+We start by investigating the gradings on the superalgebra $M(m,n)$ that are fine among even gradings. 
+By Proposition \ref{prop:3-equiv-even-morita-action}, this is the same as fine gradings on $M(m,n)$ as a $\ZZ$-superalgebra, and, 
 by the discussion in Subsection \ref{subsec:odd-gradings}, the same as fine gradings if $m\neq n$ or $\Char \FF = 2$.
 
 We will use the following notation. Let $H$ be a finite abelian group whose order is not divisible by $\Char \FF$. Set $T_H = H\times \widehat H$
-and define $\beta_H: T_H\times T_H \to \FF^\times$ by
+and define $\beta_H: T_H\times T_H \to \FF^\times$ by 
 \[
-	\beta_H((h_1, \chi_1), (h_2, \chi_2)) = \chi_1(h_2)\, \chi_2 (h_1)\inv.
-\]
-Then $\beta_H$ is a nondegenerate alternating bicharacter on $T_H$.
+\beta_H((h_1, \chi_1), (h_2, \chi_2)) = \chi_1(h_2)\, \chi_2 (h_1)\inv.
+\] 
+Then $\beta_H$ is a nondegenerate alternating bicharacter on $T_H$. 
 
 \begin{defi}\label{def:even-fine-grd-on-Mmn}
 	Let $\ell \mid \operatorname{gcd}(m,n)$ be a natural number such that $\Char \FF\nmid\ell$ and put $k_0 := \frac{m}{\ell}$ and $k_1 := \frac{n}{\ell}$.
-	Let $\Theta_\ell$ be a set of representatives of the isomorphism classes of abelian groups of order $\ell$.
-	For every $H$ in $\Theta_\ell$, we define $\Gamma(H, k_0, k_1)$ to be the even $T_H\times \ZZ^{k_0 + k_1}$-grading
+	Let $\Theta_\ell$ be a set of representatives of the isomorphism classes of abelian groups of order $\ell$. 
+	For every $H$ in $\Theta_\ell$, we define $\Gamma(H, k_0, k_1)$ to be the even $T_H\times \ZZ^{k_0 + k_1}$-grading 
 	$\Gamma(T_H, \beta_H, \gamma_0, \gamma_1)$ on $M(m,n)$,
-	where $\gamma_0 = (e_1, \ldots, e_{k_0})$,
-	$\gamma_1 = (e_{k_0 + 1}, \dots, e_{k_0 + k_1}))$
-	and $\{e_1, \ldots, e_{k_0+k_1}\}$ is the standard basis of
-	$\ZZ^{k_0 + k_1}$.
+    where $\gamma_0 = (e_1, \ldots, e_{k_0})$,
+    $\gamma_1 = (e_{k_0 + 1}, \dots, e_{k_0 + k_1}))$ 
+    and $\{e_1, \ldots, e_{k_0+k_1}\}$ is the standard basis of 
+    $\ZZ^{k_0 + k_1}$.
 	If $m$ and $n$ are clear from the context, we will simply write $\Gamma(H)$.
 \end{defi}
 
-Let $G_H$ be the subgroup of $T_H\times \ZZ^{k_0 + k_1}$ generated by the support of $\Gamma(H,k_0,k_1)$, i.e.,
+Let $G_H$ be the subgroup of $T_H\times \ZZ^{k_0 + k_1}$ generated by the support of $\Gamma(H,k_0,k_1)$, i.e., 
 $G_H = T_H\times \ZZ^{k_0 + k_1}_0$, where $\ZZ^k_0 := \{ (x_1, \ldots, x_k) \in \ZZ^k \mid x_1 + \cdots + x_k = 0\}$. The following result is a generalization (and an easy consequence) of the classification of fine abelian group gradings on matrix algebras, going back to \cite{HPP}. These gradings turn out to be fine in the class of all group gradings, but their universal group coincides with the universal abelian group only in special cases (for example, when $k_0 = 1$ and $k_1 = 0$, by \cite[Proposition 4.5]{CRS10}) --- see \cite[\S 2.3]{livromicha}.
 
 \begin{thm}\label{thm:class-fine-even}
 	The fine gradings on $M(m,n)$ as a $\ZZ$-superalgebra are precisely the even fine gradings.
-	Every such grading is equivalent to a unique $\Gamma(H)$ as in Definition \ref{def:even-fine-grd-on-Mmn}.
+	Every such grading is equivalent to a unique $\Gamma(H)$ as in Definition \ref{def:even-fine-grd-on-Mmn}. 
 	Moreover, every grading $\Gamma(H)$ is fine, and $G_H$ is its universal abelian group.
 \end{thm}
 
 \begin{proof}
-	By \cite[Proposition 2.35]{livromicha}, if we consider $\Gamma(H)$ as a grading on the algebra $M_{n+m}(\FF)$, it is a fine grading and
+	By \cite[Proposition 2.35]{livromicha}, if we consider $\Gamma(H)$ as a grading on the algebra $M_{n+m}(\FF)$, it is a fine grading and 
 	$G_H$ is its universal abelian group. It follows that the same is true of $\Gamma(H)$ as a grading on the superalgebra $M(m,n)$.
 
-	Let $\Gamma = \Gamma(T, \beta, \gamma_0, \gamma_1)$ be any even $G$-grading on $M(m,n)$. We can write $T = A\times B$ where the restrictions of $\beta$ to
-	the subgroups $A$ and $B$ are trivial and, hence, there is an isomorphism $\alpha: T_A \to T$ such that $\beta_A=\beta\circ(\alpha\times\alpha)$. We can extend $\alpha$ to a homomorphism $G_A \to G$ (also denoted by $\alpha$) by sending the elements $e_1, \ldots, e_{k_0}$ to the entries of $\gamma_0$ and the elements $e_{k_0+1}, \ldots, e_{k_0+k_1}$ to the entries of $\gamma_1$. It follows that ${}^\alpha \Gamma(A) \iso \Gamma$. Since all $\Gamma(H)$ are fine and pairwise nonequivalent (because their universal groups are pairwise nonisomorphic), we can apply Lemma \ref{lemma:universal-grp}, concluding that every fine grading
+	Let $\Gamma = \Gamma(T, \beta, \gamma_0, \gamma_1)$ be any even $G$-grading on $M(m,n)$. We can write $T = A\times B$ where the restrictions of $\beta$ to 
+	the subgroups $A$ and $B$ are trivial and, hence, there is an isomorphism $\alpha: T_A \to T$ such that $\beta_A=\beta\circ(\alpha\times\alpha)$. We can extend $\alpha$ to a homomorphism $G_A \to G$ (also denoted by $\alpha$) by sending the elements $e_1, \ldots, e_{k_0}$ to the entries of $\gamma_0$ and the elements $e_{k_0+1}, \ldots, e_{k_0+k_1}$ to the entries of $\gamma_1$. It follows that ${}^\alpha \Gamma(A) \iso \Gamma$. Since all $\Gamma(H)$ are fine and pairwise nonequivalent (because their universal groups are pairwise nonisomorphic), we can apply Lemma \ref{lemma:universal-grp}, concluding that every fine grading 
 	on $M(m,n)$ as a $\ZZ$-superalgebra is equivalent to a unique $\Gamma(H)$.
 \end{proof}
 
@@ -736,32 +749,32 @@ We now consider odd fine gradings on $M(n,n)$, so $\Char\FF\ne 2$. We first defi
 	where $\{e_1, \ldots, e_k\}$ is the standard basis of $\ZZ^k$.
 	Then we choose an element $t_0 \in T$ of order $2$ and define a group homomorphism $p: T_H\times\ZZ^k \to \ZZ_2$ by
 	\[
-		p(t, x_1, \ldots, x_k) =
-		\begin{cases*}
-			\bar 0 & if $\beta(t_0, t) = 1$,\\
-			\bar 1 & if $\beta(t_0, t) = -1$.
-		\end{cases*}
+	p(t, x_1, \ldots, x_k) =
+	\begin{cases*}
+		\bar 0 & if $\beta(t_0, t) = 1$,\\
+		\bar 1 & if $\beta(t_0, t) = -1$.
+	\end{cases*}
 	\]
-	This defines a superalgebra structure on $M_{2n}(\FF)$. By construction, $\Gamma$ is odd as a grading on this superalgebra $(M_{2n}(\FF),p)$,
-	and this forces the superalgebra to be isomorphic to $M(n,n)$. We denote by $\Gamma(H, t_0, k)$ the grading $\Gamma$ considered as a grading on $M(n,n)$.
+	This defines a superalgebra structure on $M_{2n}(\FF)$. By construction, $\Gamma$ is odd as a grading on this superalgebra $(M_{2n}(\FF),p)$, 
+	and this forces the superalgebra to be isomorphic to $M(n,n)$. We denote by $\Gamma(H, t_0, k)$ the grading $\Gamma$ considered as a grading on $M(n,n)$. 
 	If $n$ is clear from the context, we will simply write $\Gamma(H, t_0)$.
 \end{defi}
 
 Note that the parameter $t_0$ of $\Gamma(H, t_0, k)$ does not affect the grading on the algebra $M_{2n}(\FF)$, but, as we will see in Proposition \ref{prop:equiv-with-same-H}, different choices of $t_0$ can yield nonequivalent gradings on the superalgebra $M(n,n)$.
 
 \begin{prop}\label{prop:all-fine-odd}
-	Each grading $\Gamma(H, t_0)$ on $M(n,n)$ is fine, and its universal abelian group is $G_H = T_H\times \ZZ^k_0$.
-	Every odd fine grading on $M(n,n)$ is equivalent to at least one $\Gamma(H, t_0)$.
+	Each grading $\Gamma(H, t_0)$ on $M(n,n)$ is fine, and its universal abelian group is $G_H = T_H\times \ZZ^k_0$. 
+	Every odd fine grading on $M(n,n)$ is equivalent to at least one $\Gamma(H, t_0)$. 
 \end{prop}
 
 \begin{proof}
-	As in the proof of Theorem \ref{thm:class-fine-even}, the first assertion follows from \cite[Proposition 2.35]{livromicha}.
-
-	Let $\Gamma(T,\beta, \gamma)$ be an odd $G$-grading on $M(n,n)$ and let $t_0$ be its parity element.
+	As in the proof of Theorem \ref{thm:class-fine-even}, the first assertion follows from \cite[Proposition 2.35]{livromicha}. 
+	
+	Let $\Gamma(T,\beta, \gamma)$ be an odd $G$-grading on $M(n,n)$ and let $t_0$ be its parity element. 
 	Then we can find subgroups $A$ and $B$ such that $T=A\times B$ and there exists an isomorphism $\alpha: T_A \to T$ such that $\beta_A=\beta\circ(\alpha\times\alpha)$. We define $t_0' := \alpha\inv(t_0)$ and extend $\alpha$ to a homomorphism $G_A \to G$ (also denoted by $\alpha$)
 	by sending the elements $e_1, \ldots, e_k$ to the entries of $\gamma$. Then ${}^\alpha \Gamma(A, t_0') \iso \Gamma$.
-
-	Selecting a representative from each equivalence class of gradings of the form $\Gamma(H, t_0)$, we can apply Lemma \ref{lemma:universal-grp},
+	
+	Selecting a representative from each equivalence class of gradings of the form $\Gamma(H, t_0)$, we can apply Lemma \ref{lemma:universal-grp}, 
 	which proves the second assertion.
 \end{proof}
 
@@ -772,12 +785,12 @@ It remains to determine which of the gradings $\Gamma(H, t_0)$ are equivalent to
 \end{prop}
 
 \begin{proof}
-	We will denote by $p: G_H \to \ZZ_2$ the parity homomorphism associated to the grading $\Gamma$ and by
+	We will denote by $p: G_H \to \ZZ_2$ the parity homomorphism associated to the grading $\Gamma$ and by 
 	$p': G_H\to \ZZ_2$ the one associated to $\Gamma'$.
 
-	If $\Gamma$ is equivalent to $\Gamma'$, there is an isomorphism $\vphi: (M_{2n}(\FF),p) \to (M_{2n}(\FF),p')$ of superalgebras that is a
-	self-equivalence of the grading on $M_{2n}(\FF)$. Hence, we have the corresponding group automorphism $\alpha: G_H \to G_H$ in the Weyl group of the grading,
-	and the following diagram commutes:
+	If $\Gamma$ is equivalent to $\Gamma'$, there is an isomorphism $\vphi: (M_{2n}(\FF),p) \to (M_{2n}(\FF),p')$ of superalgebras that is a 
+	self-equivalence of the grading on $M_{2n}(\FF)$. Hence, we have the corresponding group automorphism $\alpha: G_H \to G_H$ in the Weyl group of the grading, 
+	and the following diagram commutes: 
 	%
 	\begin{equation*}\label{diag:parity}
 		\begin{tikzcd}
@@ -790,8 +803,8 @@ It remains to determine which of the gradings $\Gamma(H, t_0)$ are equivalent to
 	The automorphism $\alpha$ must send the torsion subgroup of $G_H$ to itself, so we can consider the restriction $\alpha\restriction_{T_H}$.
 	By \cite[Corrolary 2.45]{livromicha}, this restriction is in $\Aut(T_H, \beta_H)$.
 
-	For the converse, we use the same \cite[Corrolary 2.45]{livromicha} to extend $\alpha$ to an automorphism $G_H\to G_H$ in the Weyl group.
-	Hence, there is an automorphism $\vphi$ of the algebra $M_{2n}(\FF)$ that permutes the components of the grading according to $\alpha$.
+	For the converse, we use the same \cite[Corrolary 2.45]{livromicha} to extend $\alpha$ to an automorphism $G_H\to G_H$ in the Weyl group. 
+	Hence, there is an automorphism $\vphi$ of the algebra $M_{2n}(\FF)$ that permutes the components of the grading according to $\alpha$. 
 	The condition $\alpha(t_0) = \alpha(t_0')$ is equivalent to Diagram \eqref{diag:parity} being commutative, which shows that $\vphi: (M_{2n}(\FF),p) \to (M_{2n}(\FF),p')$ is an isomorphism of superalgebras.
 \end{proof}
 
@@ -816,18 +829,18 @@ Throughout this section it will be assumed that $\Char \FF = 0$.
 % --------------------------------------------------
 
 % Def: gl(m|n)
-Let $U = U\even \oplus U\odd$ be a finite dimensional superspace. Recall that the parity of a nonzero $\ZZ_2$-homogeneous element $v$ of a superspace is denoted by $|v|$. The \emph{general linear Lie superalgebra}, denoted by $\gl\, (U)$, is the superspace $\End(U)$ with product given by the \emph{supercommutator}:
-\[
-	[a,b] = ab - (-1)^{\abs{a}\abs{b}}ba.
+Let $U = U\even \oplus U\odd$ be a finite dimensional superspace. Recall that the parity of a nonzero $\ZZ_2$-homogeneous element $v$ of a superspace is denoted by $|v|$. The \emph{general linear Lie superalgebra}, denoted by $\gl\, (U)$, is the superspace $\End(U)$ with product given by the \emph{supercommutator}: 
+\[ 
+[a,b] = ab - (-1)^{\abs{a}\abs{b}}ba.
 \]
 If $U\even=\FF^m$ and $U\odd=\FF^n$, then $\gl (U)$ is also denoted by $\gl(m|n)$.
 
 % Def: sl(m|n)
 The \emph{special linear Lie superalgebra}, denoted by $\Sl (U)$, is the derived algebra of $\gl(U)$. As in the Lie algebra case, we describe it as an algebra of ``traceless'' operators. The analog of trace in the ``super'' setting is the so called \emph{supertrace}:%
 \[ \str \left(\begin{matrix}
-			a & b \\
-			c & d \\
-		\end{matrix}\right) = \tr a - \tr d,
+	a  &  b\\
+	c  &  d\\
+	\end{matrix}\right) = \tr a - \tr d,
 \]
 and we have $\Sl (U) = \{ T\in \gl (U) \mid \Str T = 0\}$.
 Again, if $U\even=\FF^m$ and $U\odd=\FF^n$ then $\Sl (U)$ is also denoted by $\Sl(m|n)$.
@@ -843,6 +856,7 @@ For $m$,$n\geq 0$ (not both zero), the simple Lie superalgebra $A(m,n)$ is $\Sl(
 	If a grading on $\Sl(m|n)$ or $\mathfrak{psl}(n|n)$ is obtained in this way, we will call it a \emph{Type I} grading and, otherwise, a \emph{Type II} grading.
 \end{defi}
 
+
 % ---------------------------------------------------
 \subsection{Automorphisms of $A(m,n)$}\label{ssec:auto-Amn}
 % ---------------------------------------------------
@@ -852,11 +866,11 @@ We define the \emph{supertranspose} of a matrix in $\End(U)$ by
 %
 \begin{equation*} %\label{eq:supertranspose}
 	\left( \begin{matrix}
-		a & b \\
-		c & d \\
-	\end{matrix}\right)^{s\top} = \left( \begin{matrix}
-			a\transp & -c\transp \\
-			b\transp & d\transp  \\
+		a&b\\
+		c&d\\
+		\end{matrix}\right)^{s\top} = \left( \begin{matrix}
+		a\transp & -c\transp\\
+		b\transp & d\transp\\
 		\end{matrix}\right).
 \end{equation*}
 %
@@ -869,8 +883,8 @@ Hence, the map $\tau:\Sl(m+1,n+1)\rightarrow \Sl(m+1,n+1)$ given by $\tau(X) = -
 
 By \cite[Theorem 1]{serganova}, the group of automorphisms of $A(m,n)$ is generated by $\tau$ and the automorphisms of $\End(U)$, which are restricted to traceless operators and, if necessary, taken modulo the center. In other words, if $m\neq n$, $\Aut(A(m,n))$ is generated by $\mc E \cup \{\tau\}$ and, if $m=n$, by $\mc E \cup \{\pi\,,\,\tau\}$. In both cases, $\mc E$ is a normal subgroup of $\Aut(A(m,n))$. Note that $\pi^2 = \id$, $\tau^2=\upsilon$ (the parity automorphism) and $\pi \tau = \upsilon \tau \pi$. Hence $\frac{\Aut(A)}{\mc E}$ is isomorphic to $\ZZ_{2}$ if $m\neq n$ and $\ZZ_2\times\ZZ_2$ if $m=n$.
 
-Note that a $G$-grading on $A(m,n)$ is of Type I if, and only if, it corresponds to a $\widehat{G}$-action on $A(m,n)$ by automorphisms that belong to
-the subgroup $\mc E$ if $m\ne n$ and to $\mc E\rtimes\langle\pi\rangle$ if $m=n$. If $\widehat{G}$ acts by automorphisms that belong to $\mc E$ then the
+Note that a $G$-grading on $A(m,n)$ is of Type I if, and only if, it corresponds to a $\widehat{G}$-action on $A(m,n)$ by automorphisms that belong to 
+the subgroup $\mc E$ if $m\ne n$ and to $\mc E\rtimes\langle\pi\rangle$ if $m=n$. If $\widehat{G}$ acts by automorphisms that belong to $\mc E$ then the 
 Type I grading is said to be \emph{even} and, otherwise, \emph{odd}.
 
 % ---------------------------------------------------

@@ -1,8 +1,10 @@
 \chapter{$G$-Gradings on Universal Algebras and $\widehat G$-actions}
 
+ 
+
 \section{$\Omega$-Algebras}
 
-A \emph{general} or \emph{universal algebra} is a space with an arbitrary collection (possibly empty) of operations, wich may have different ``arities'' (see Definition \ref{def:universal-algebra} bellow).
+A \emph{general} or \emph{universal algebra} is a space with an arbitrary collection (possibly empty) of operations, wich may have different ``arities'' (see Definition \ref{def:universal-algebra} bellow). 
 This is a very general concept (see, \eg, ?? and ??), which includes all classical objects in algebra (groups, rings, etc.), but here we will be interested in the linear case: the objects will be vector spaces and the operations will be assumed multilinear (following ??, book by Razmylov).
 %Our approach to universal algebras differs from the one in most books on the subject (see, \eg, ?? and ??) in the sense we will be working on the (monoidal) category of vector spaces instead of the (monoidal) category of sets. 
 % This is the approach on ?? (Razmylov: book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??.
@@ -10,51 +12,51 @@ This will give us a framework to deal with algebras, superalgebras, superalgebra
 Our main app
 
 \begin{notation}
-	For a vector space $A$ and a nonnegative integer $n$, we will denote the $n^{th}$-tensor power of $A$ by $A^{\tensor n}$, \ie,
-	$A^{\tensor n} \coloneqq \underbrace{A\otimes\cdots\otimes A}_{n \text{ times}}$.
-	In the case $n = 0$, we will follow the convention that $A^{\tensor 0} \coloneqq \FF$.
+    For a vector space $A$ and a nonnegative integer $n$, we will denote the $n^{th}$-tensor power of $A$ by $A^{\tensor n}$, \ie,
+    $A^{\tensor n} \coloneqq \underbrace{A\otimes\cdots\otimes A}_{n \text{ times}}$. 
+    In the case $n = 0$, we will follow the convention that $A^{\tensor 0} \coloneqq \FF$.
 \end{notation}
 
 \begin{defi}\label{def:universal-algebra}
-	A \emph{signature} $\Omega$ is a set together with a family $\{ \Omega_n \}_{n \geq 0}$ of pairwise disjoint subsets such that $\Omega = \bigcup_{n \geq 0} \Omega_n$.
-	An \emph{$n$-ary operation} on a vector space $A$ is a linear map from $A^{\tensor n}$ to $A$.
-	An \emph{$\Omega$-algebra} or a \emph{(general) algebra with signature $\Omega$} is a vector space $A$ together with a operation $\omega^A$ for each $\omega \in \Omega$, such that $\omega^A$ is $n$-ary if $\omega \in \Omega_n$.
+    A \emph{signature} $\Omega$ is a set together with a family $\{ \Omega_n \}_{n \geq 0}$ of pairwise disjoint subsets such that $\Omega = \bigcup_{n \geq 0} \Omega_n$. 
+    An \emph{$n$-ary operation} on a vector space $A$ is a linear map from $A^{\tensor n}$ to $A$. 
+    An \emph{$\Omega$-algebra} or a \emph{(general) algebra with signature $\Omega$} is a vector space $A$ together with a operation $\omega^A$ for each $\omega \in \Omega$, such that $\omega^A$ is $n$-ary if $\omega \in \Omega_n$.
 \end{defi}
 
 We note that $0$-ary operations can be interpreted as constants in the $\Omega$-algebra $A$, since a linear map $\omega^A\from \FF \to A$ is determined by $\omega^A(1)$.
 
 \begin{defi}
-	Let $A$ and $B$ be $\Omega$-algebras.
-	A \emph{homomorphism} $\psi\from A \to B$ is a linear map such that for every $\omega \in \Omega_n$ we have
-	\[
-		\psi( \omega^A (a_1 \tensor \cdots \tensor a_n) ) = \omega^B ( \psi(a_1) \tensor \cdots \tensor \psi(a_n) ),
-	\]
-	for all $a_1, \ldots, a_n \in A$.
-	As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to itself and the group of automorphisms is denoted by $\Aut(A)$.
+    Let $A$ and $B$ be $\Omega$-algebras. 
+    A \emph{homomorphism} $\psi\from A \to B$ is a linear map such that for every $\omega \in \Omega_n$ we have
+    \[
+        \psi( \omega^A (a_1 \tensor \cdots \tensor a_n) ) = \omega^B ( \psi(a_1) \tensor \cdots \tensor \psi(a_n) ),
+    \]
+    for all $a_1, \ldots, a_n \in A$. 
+    As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to itself and the group of automorphisms is denoted by $\Aut(A)$.
 \end{defi}
 
 When dealing with a fixed $\Omega$-algebra $A$, we will usually identify the signature $\Omega$ with the set of all operations on $A$.
 
 \begin{ex}\label{ex:omega-vec-space}
-	A vector space is a $\Omega$-algebra with $\Omega = \emptyset$.
+    A vector space is a $\Omega$-algebra with $\Omega = \emptyset$.
 \end{ex}
 
 \begin{ex}\label{ex:omega-algebra}
-	An algebra in the usual sense, with product $*$, is an $\Omega$-algebra with $\Omega = \Omega_2 = \{ * \}$.
+    An algebra in the usual sense, with product $*$, is an $\Omega$-algebra with $\Omega = \Omega_2 = \{ * \}$. 
 \end{ex}
 
 \begin{ex}
-	An algebra $A$ with unity $\mathds{1} \in A$ is a  $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_0 = \{ \omega_0 \}$, where $\omega_0\from \FF \to A$ is defined by $\omega_0 (1) = \mathds 1$.
+    An algebra $A$ with unity $\mathds{1} \in A$ is a  $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_0 = \{ \omega_0 \}$, where $\omega_0\from \FF \to A$ is defined by $\omega_0 (1) = \mathds 1$.
 \end{ex}
 
 \begin{ex}\label{ex:omega-alg-SA}
-	A superalgebra $A = A\even \oplus A\odd$ is a $\Omega$-algebra where $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$ where $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively.
-	More precisely, we have that an algebra $A$ with such signature is a superalgebra if, and only if,
-	\begin{enumerate}[(i)]
-		\item $\pi_{\bar 0}^{} + \pi_{\bar 1}^{} = \id$; \label{item:sum-projections}
-		\item $\pi_{\bar 0}^2 = \pi_{\bar 0}^{}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}^{}$;
-		\item For every $a,b \in A$ and $i, j\in \ZZ_2$, we have that $\pi_{i+j}^{}( \pi_i^{} (x)*\pi_j^{} (y) ) = \pi_i^{} (x)*\pi_j^{} (y)$.
-	\end{enumerate}
+    A superalgebra $A = A\even \oplus A\odd$ is a $\Omega$-algebra where $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$ where $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively. 
+    More precisely, we have that an algebra $A$ with such signature is a superalgebra if, and only if,
+    \begin{enumerate}[(i)]
+        \item $\pi_{\bar 0}^{} + \pi_{\bar 1}^{} = \id$; \label{item:sum-projections}
+        \item $\pi_{\bar 0}^2 = \pi_{\bar 0}^{}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}^{}$;
+        \item For every $a,b \in A$ and $i, j\in \ZZ_2$, we have that $\pi_{i+j}^{}( \pi_i^{} (x)*\pi_j^{} (y) ) = \pi_i^{} (x)*\pi_j^{} (y)$.
+    \end{enumerate}
 \end{ex}
 
 % \begin{ex}\label{ex:omega-graded-algebra}
@@ -63,21 +65,21 @@ When dealing with a fixed $\Omega$-algebra $A$, we will usually identify the sig
 % \end{ex}
 
 \begin{ex}
-	A superalgebra with super-anti-automorphism $(A, \vphi)$ a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$.
-	In a similar fashion, algebras with anti-automorphism can be viewed as $\Omega$-algebras.
+    A superalgebra with super-anti-automorphism $(A, \vphi)$ a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$. 
+    In a similar fashion, algebras with anti-automorphism can be viewed as $\Omega$-algebras.
 \end{ex}
 
 It is straightforward to check that, in each of the examples above, the usual notion of homomorphism coincides with the notion of homomorphism as $\Omega$-algebras.
 
 \begin{remark}
-	Example \ref{ex:omega-alg-SA} could be generalized to encompass all $G$-graded algebras for a fixed group $G$.
-	Such generalization has been used in the study of graded identities (see ??), but we omitted from our work to avoid confusion with Definition \ref{def:grds-on-Omega-algebras}.
+    Example \ref{ex:omega-alg-SA} could be generalized to encompass all $G$-graded algebras for a fixed group $G$. 
+    Such generalization has been used in the study of graded identities (see ??), but we omitted from our work to avoid confusion with Definition \ref{def:grds-on-Omega-algebras}.
 \end{remark}
 
 Finally, we can define gradings on $\Omega$-algebras:
 
 \begin{defi}\label{def:grds-on-Omega-algebras}
-	A $G$-grading on a $\Omega$-algebra $A$ is a $G$-grading on its vector space underlying such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
+    A $G$-grading on a $\Omega$-algebra $A$ is a $G$-grading on its vector space underlying such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
 \end{defi}
 
 It is easy to verify that this notion of grading corresponds to the usual notion of gradings on algebras, superalgebras, superalgebras with superinvolution, etc.
@@ -93,35 +95,37 @@ It is easy to verify that this notion of grading corresponds to the usual notion
 
 \section{$G$-gradings on  and $\widehat G$-actions}
 
-In this section we will review the correspondence between $G$-gradings and $\widehat G$-actions, which has been used extensively in the study of gradings.
-It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal is to set it up in the context of general algebras.
+In this section we will review the correspondence between $G$-gradings and $\widehat G$-actions, which has been used extensively in the study of gradings. 
+It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal is to set it up in the context of general algebras. 
 % The main purpose of this approach is to transfer gradings between general algebras with different signatures (Theorem ??).% This will allow us to handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
 
-The main advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (Theorem ??).
-This will be used in Chapter ?? to transfer gradings between Lie superalgebras and associative superalgebras with superinvolutions.
+The main advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (Theorem ??). 
+This will be used in Chapter ?? to transfer gradings between Lie superalgebras and associative superalgebras with superinvolutions. 
 The same sort of transfer has been used in other works (see \cite{livromicha} and Paper with Adrian ??), but without having the result stated formally.
 
 % If $\FF$ is algebraically closed of characteristic $0$ and $G$ is finitely generated abelian group, there is a well known correspondence between $G$-gradings and algebraic (rational) $\widehat G$-actions on vector spaces. 
 
 \begin{thm}\label{thm:g-hat-correspondence}
-	Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be finitely generated abelian group.
-	Then there is a bijective correspondence between $G$-gradings and $\widehat G$-actions on a vector space $V$ such that
-	\begin{enumerate}[(i)]
-		\item Given a grading $\Gamma: \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$;
-		\item Given an action, corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$.\qed
-	\end{enumerate}
+    Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be finitely generated abelian group. 
+    Then there is a bijective correspondence between $G$-gradings and $\widehat G$-actions on a vector space $V$ such that
+    \begin{enumerate}[(i)]
+        \item Given a grading $\Gamma: \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$;
+        \item Given an action, corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$.\qed
+    \end{enumerate}
 \end{thm}
 
 \begin{notation}
-	Given a grading $\Gamma$ on $V$, we will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+    Given a grading $\Gamma$ on $V$, we will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
 \end{notation}
 
 \begin{remark}
-	The correspondence of Theorem \ref{thm:g-hat-correspondence} can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
+    The correspondence of Theorem \ref{thm:g-hat-correspondence} can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
 \end{remark}
 
-We will now see how this correspondence carries over to algebras.
+We will now see how this correspondence carries over to algebras. 
 To avoid repetition, from now on we will always assume $\FF$ is algebraically closed and $\Char \FF = 0$.
+
+
 
 % We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
 
@@ -155,25 +159,26 @@ To avoid repetition, from now on we will always assume $\FF$ is algebraically cl
 % \end{proof}
 
 \begin{prop}
-	Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space.
-	Then $\Gamma$ is a grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
+    Let $A$ be a $\Omega$-algebra and $\Gamma$ be a grading on its underlying vector space. 
+    Then $\Gamma$ is a grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
 \end{prop}
 
 \begin{proof}
-	First, assume $\Gamma$ is a grading on the $\Omega$-algebra $A$.
-	Let $\chi \in \widehat G$ and let $\psi \coloneqq \eta_\Gamma(\chi)$.
-	We already know that $\psi$ is bijective, it only remains to prove it is a homomorphisms.
-	Let $\omega \in \Omega_n$ and let $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$, respectively.
-
-	Then $a_1\tensor \cdots \tensor a_n \in A^{\tensor n}$ has degree $g_1 \cdots g_n$. Hence
-	\begin{align*}
-		\psi(\omega^A(a_1\tensor \cdots \tensor a_n)) & = \chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n)      \\
-		                                              & =\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n) \\
-		                                              & = \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)         \\
-		                                              & = \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n)),
-	\end{align*}
-	so $\psi$ is a homomorphism.
+    First, assume $\Gamma$ is a grading on the $\Omega$-algebra $A$.
+    Let $\chi \in \widehat G$ and let $\psi \coloneqq \eta_\Gamma(\chi)$. 
+    We already know that $\psi$ is bijective, it only remains to prove it is a homomorphisms. 
+    Let $\omega \in \Omega_n$ and let $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$, respectively.
+    
+    Then $a_1\tensor \cdots \tensor a_n \in A^{\tensor n}$ has degree $g_1 \cdots g_n$. Hence
+    \begin{align*}
+        \psi(\omega^A(a_1\tensor \cdots \tensor a_n)) &= \chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n)\\
+        &=\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n)\\
+        &= \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)\\
+        &= \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n)),
+    \end{align*}
+    so $\psi$ is a homomorphism.
 \end{proof}
+
 
 % \begin{remark}
 %     Axioms of graded algebra?

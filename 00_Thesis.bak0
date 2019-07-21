@@ -1,0 +1,57 @@
+% \makeatletter
+% \def\input@path{{../}}
+% \makeatother
+\documentclass[12pt]{pdfathesis}
+\usepackage{my-stuff/basic-preamble}
+% \usepackage[notref]{showkeys}
+\usepackage{showlabels}
+
+\usepackage{silence}
+\WarningFilter[pdftoc]{hyperref}{Token not allowed in a PDF string}
+\WarningFilter[frontpage]{pdfathesis}{Underfull \hbox badness (badness 10000) in paragraph at lines 10--10}
+
+% \DeclareUnicodeCharacter{0301}{*************************************}
+
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{my-stuff/bibliography.bib}
+
+% \usepackage{subfiles}
+% \def\biblio{\bibliographystyle{amsalpha}\bibliography{../02_bibliography}}
+%
+\input{pdfathesis-stuff/preamble}
+%
+% \includeonly{chapters/05_Super-anti-auto}
+\begin{document}
+%
+%
+\ActivateWarningFilters[frontpage]
+\include{pdfathesis-stuff/prefactory}
+\ActivateWarningFilters[frontpage]
+%
+\begin{prefatory}
+\end{prefatory}
+%
+%
+\include{chapters/01_Introduction}
+\include{chapters/02_generalities}
+%\include{chapters/03_G-hat-and-universal-algebras}
+\include{chapters/04_Assc-and-Type-I}
+\include{chapters/05_Super-anti-auto}
+\include{chapters/06_Sinv-simple}
+\include{chapters/07_ACD-PQ}
+\include{chapters/08_recycle-bin}
+%
+
+\printbibliography
+
+% \bibliographystyle{amsalpha}
+% \bibliography{my-stuff/bibliography}  
+%%
+%%%%%%%%%%
+% \appendix%
+% \chapter{Title of appendix A}
+% %%
+% %%%%%%%%%%
+% \chapter{Title of appendix B}
+% %%
+\end{document}

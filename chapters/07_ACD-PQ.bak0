@@ -1,0 +1,68 @@
+\chapter{Gradings on the Lie Superalgebras of Types $A$, $B$, $C$, $D$, $P$ and $Q$}
+
+In this chapter we finally complete the task of classifying the group gradings on the Lie superalgebras of types $A$, $C$ and $D$. 
+The techniques we have developed so far also allow us to recover the gradings on the Lie superalgebras of Type $B$ (achieved in ??), $P$ (??) and $Q$ (??).
+
+Our strategy here is to use the tools from Section \ref{sec:g-hat-action} to transfer the problem to a convenient associative superalgebra with superinvolution, and hence use the results from Chapter \ref{chap:super-inv}. 
+The choice of this associative superalgebra is obvious for the Lie superalgebras of types $B$, $C$, $D$ and $P$. 
+For types $A$ and $Q$, the choice is not so clear and it is useful mainly for the gradings of ``Type II'', the ones that do are not restrictions of the associative superalgebras $A$ and $Q$ are naturally related via the definitions given in Section \ref{sec:defi-classical-SA}. 
+Hence we still need the results of Chapter \ref{chap:A-type-I} to have a complete classification.
+
+\section{Gradings on the Orthosympletic and Peripletic Lie Superalgebras}
+%\section{Gradings on the Peripletic Lie Superalgebras, revisited}
+\section{Gradings on the Lie Superalgebras of type $A$ and $Q$}
+\subsection{A new model for superalgebras of type $A$}
+
+% As we have seem (Section {\tt ??}), all gradings on $M(m+1, n+1)$ restrict to gradings on $A(m, n)$, given us the Type I gradings. Our strategy to obtain the Type II gradings is to embed $\gl(m+1 | n+1)$ in a different associative superalgebra, such that these gradings are restrictions of gradings on the associative superalgebra.
+
+Our goal here is to construct a different model of $\gl(m+1 | n+1)$. More precisely, we want to embed $\gl(m+1 | n+1)$ in an associative superalgebra $\mc R$ such that every Type II grading on $A(m,n)$ is induced from some grading on $\mc R$.
+
+Let $R = M(m+1, n+1)$ and let $\psi: R\to R$ be any super-anti-automorphism. Then consider the superalgebra $\mc R = R\times R$. The map $\vphi: \mc R \to \mc R$ given by $\vphi(x,y) = (\psi\inv(y), \psi(x))$ is a superinvolution on $\mc R$. Then the Lie superalgebra $\Skew (\mc R, \vphi) = \{(r, -\psi(r) | r\in R\}$ is isomorphic to $R^{(-)} = \gl(m+1, n+1)$ by the projection on the first component $\mc R = R\times R \to R$.
+
+\begin{remark}
+    For any superalgebra $R$, we could consider the superalgebra $\mc R = R \times R\sop$ and the superinvolution $\vphi: \mc R \to \mc R$ defined by $\vphi(x, y) = (y, x)$. The construction above reduces to this one if we identify $R\sop$ with $R$ via the super-anti-automorphism $\psi$.
+\end{remark}
+
+We can choose any super-anti-isomorphism for $\psi$. One choice would be the supertransposition, but we are going to use a different one that will simplify some computations later. Let $\psi: R \to R$ be the map given by:
+\[
+    \psi\left(
+    \begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}\right) = 
+    \begin{pmatrix}
+        a\transp & i c\transp\\
+        i b\transp & d\transp
+    \end{pmatrix},
+\]
+where $i$ is a square root of $-1$.
+
+\begin{remark}
+    If we take the basis $\{f_1, \ldots, f_k\}$ on $U^*$ given by $f_j = e_j $ if $|j| = \overline 0$ and $f_j = ie_j$ if $|j| = \overline 1$, then the matrix $\psi (M)$ represents the superadjoint of the operator represented by $M$. Also, $(R, \psi)$ is isomorphic to $R$ with the supertransposition.
+\end{remark}
+
+\begin{prop}
+    Gradings on $A(m,n)$ are in bijection with $\vphi$-gradings on $\mc R$.
+\end{prop}
+
+\begin{proof}
+    {\tt needed}
+\end{proof}
+
+As we see, not only the Type II gradings on $A(m,n)$ can be recovered this way, but also the Type I gradings. But we will continue to use our previous model to describe the Type I gradings. This is because Type I gradings do not come from $\vphi$-gradings on $\mc R$ making it simple as a graded algebra (Proposition \ref{prop:typeII-iff-RxR-simple}, below), so we cannot use Theorem {\tt ??}. The situation is the opposite for Type II gradings.
+
+\begin{prop}\label{prop:typeII-iff-RxR-simple}
+    A $\vphi$-grading on $\mc R$ makes it simple as a graded algebra if, and only if, it restricts to a Type II grading.
+\end{prop}
+
+\begin{proof}
+    Note that $\mc R$ has only two nontrivial ideals, $I = R\times 0$ and $J = 0\times R$.
+    
+    Let $\Gamma$ be a grading on $\mc R$ and suppose $I$ is a graded ideal. Then $I$ is a graded superalgebra and, hence, $\epsilon_1 := (1,0)$ is homogeneous of degree $e$. Since $(1,1)$ is also homogeneous of degree $e$, so it is $\epsilon_2:= (0,1)$. Then $J = \epsilon_2 \mc R$ is also a graded ideal. By symmetry, we get that $(\mc R, \Gamma)$ is not graded simple if, and only if, $\epsilon_1$ is homogeneous (of degree $e$).
+    
+    Note that if $\epsilon_1$ is homogeneous of degree $e$, then the projection $\mc R = R\times R \to I$ is homogeneous of degree $e$ and its restriction to $\Skew(\mc R, \vphi)$ is an isomorphism, which implies that the grading on $\gl(m +1, n+1)$ can be obtained by a restriction of a grading on the associative superalgebra $I = R\times 0$.
+    
+    On the other hand, given a Type I grading on $A(m,n)$, it comes from a grading on $R$. If we consider the grading on $\mc R = R\times R$ by taking the direct sum of graded algebras {\tt (Definition ??)}, then $\mc R$ is not a simple graded algebra.
+\end{proof}
+
+\section{Gradings on the Lie superalgebras of type $Q$, revisited}
