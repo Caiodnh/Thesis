@@ -1,7 +1,3 @@
-% \makeatletter
-% \def\input@path{{../}}
-% \makeatother
-\documentclass[12pt]{pdfathesis}
 \usepackage{my-stuff/basic-preamble}
 % \usepackage[notref]{showkeys}
 \usepackage{showlabels}
@@ -12,7 +8,7 @@
 
 % \DeclareUnicodeCharacter{0301}{*************************************}
 
-\usepackage[backend=biber,style=alphabetic]{biblatex}
+\usepackage[backend=biber,style=alphabetic,maxalphanames=5]{biblatex}
 \addbibresource{my-stuff/bibliography.bib}
 
 % \usepackage{subfiles}
@@ -20,7 +16,7 @@
 %
 \input{pdfathesis-stuff/preamble}
 %
-% \includeonly{chapters/05_Super-anti-auto}
+\includeonly{chapters/tmp/08_recycle-bin}
 \begin{document}
 %
 %
@@ -35,11 +31,12 @@
 \include{chapters/01_Introduction}
 \include{chapters/02_generalities}
 %\include{chapters/03_G-hat-and-universal-algebras}
-\include{chapters/04_Assc-and-Type-I}
+\include{chapters/tmp/04_Assc-and-Type-I}
+\include{chapters/04_Graded-Simple_Ass_SAs}
 \include{chapters/05_Super-anti-auto}
 \include{chapters/06_Sinv-simple}
 \include{chapters/07_ACD-PQ}
-\include{chapters/08_recycle-bin}
+\include{chapters/tmp/08_recycle-bin}
 %
 
 \printbibliography

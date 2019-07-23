@@ -12,7 +12,7 @@
 
 % \DeclareUnicodeCharacter{0301}{*************************************}
 
-\usepackage[backend=biber,style=alphabetic]{biblatex}
+\usepackage[backend=biber,style=alphabetic,maxalphanames=5]{biblatex}
 \addbibresource{my-stuff/bibliography.bib}
 
 % \usepackage{subfiles}
@@ -32,14 +32,14 @@
 \end{prefatory}
 %
 %
-\include{chapters/01_Introduction}
-\include{chapters/02_generalities}
+\include{chapters/00_intro}
+\include{chapters/01_general}
 %\include{chapters/03_G-hat-and-universal-algebras}
-\include{chapters/04_Assc-and-Type-I}
-\include{chapters/05_Super-anti-auto}
-\include{chapters/06_Sinv-simple}
-\include{chapters/07_ACD-PQ}
-\include{chapters/08_recycle-bin}
+\include{chapters/tmp/04_Assc-and-Type-I}
+\include{chapters/02_grd-simp}
+\include{chapters/03_sinv-on-grd-simp}
+\include{chapters/04_grd-on-sinv-simp}
+\include{chapters/05_Lie-salg}
 %
 
 \printbibliography

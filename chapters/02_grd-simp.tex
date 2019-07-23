@@ -1,0 +1,227 @@
+\chapter*{Graded-Simple Associative Superalgebras}\label{chap:grd-simple-assc}
+
+\begin{itemize}
+    \item Intro.
+    \item Fix group $G$.
+\end{itemize}
+
+In this Chapter, we will review the basic results about gradings on the associative setting.
+First we will review the results on graded-simple associative algebras, following \cite{BK10}, and then its consequences for graded-simple associative superalgebras, following \cite{paper-MAP} and Helen's thesis. 
+
+Some of the results can be presented in greater generality, for any field $\FF$ and any group $G$. 
+For others we will use the conditions we are focus on, when $\FF$ is algebraically closed and $G$ is an abelian group.
+
+We will present a second description of the odd gradings on matrix superalgebras $M(m,n)$. 
+We will present a description of gradings on the associative superalgebra $Q(n)$ and compare it with the description we already had before in \cite{paper-Qn}.
+
+\section{Graded-simple associative algebras}
+
+In this section we will recall the classification of gradings on matrix algebras \cite{BSZ01, BZ02, BK10}. 
+We will follow the exposition of \cite[Chapter 2]{livromicha} but use slightly different notation, which will be extended to superalgebras in Section~??%\ref{sec:Mmn}.
+
+Our main interest is in finite dimensional graded algebras. 
+It is straightforward to see they satisfy the following condition:
+
+\begin{defi}
+    We say that a graded algebra $R$ satisfies the \emph{descending chain condition} (or \emph{\dcc}) on graded left ideals if, for every every countably infinite sequence $\{I_k\}_{k\in \NN}$ of graded ideals such that \[k \leq \ell \implies I_k \supseteq I_\ell,\] there is a $n\in \NN$ such that \[n \leq \ell \implies I_n = I_\ell.\]
+\end{defi}
+
+As we will see in \cref{thm:End-over-D}, a graded-simple algebra satisfying the \dcc on left graded ideals can be described, up to isomorphism, by a graded-division algebra $\D$ and a graded right $\D$-module of finite rank.
+
+\begin{defi}
+    A \emph{graded-division algebra} is a unital graded algebra $\D$ such that every nonzero homogeneous element has an inverse.
+\end{defi}
+
+For what follows, let us fix a graded-division algebra $\D$.
+It is worth noting that $T \coloneqq \supp \D \subseteq G$ is a subgroup of $G$. 
+
+\subsection{Graded $\D$-modules}\label{sec:grd-D-modules}
+
+\begin{itemize}
+    \item Let $\U$ be a graded right ideal over $\D$ of finite rank. 
+    \item isotypic components
+    \item graded basis
+    \item $\FF$-forms
+    \item function $\kappa\from T \to \ZZ_{\geq 0}$ of finite support.
+    \item Finally, note that $\End_\D (\U)$ is a graded subalgebra of $\End^{\mathrm{gr}}_\FF (\U)$, where we consider the elementary grading on the latter (see Definition ??).
+    \item Other way: $\End_\D (\U) = \End_\FF (U) \tensor \D$.
+\end{itemize}
+
+We will now recall the classification of the graded right $\D$-modules of finite rank. 
+
+Let $\U = \bigoplus_{g\in G} \U_g$ be graded right $\D$-module of finite rank. 
+Unless $\D = \D_e$, a homogeneous component $0\neq \U_g$ is not a $\D$-submodule, since if $0\neq u \in \U_g$ and $0\neq d \in \D_t$, then $0\neq ud \in \U_{gt}$. 
+This leads us to the following:
+
+\begin{defi}
+    The \emph{isotypic component} with degrees $gT$ is the subspace $\U_{gT} \subseteq \U$ given by:
+    \[
+        \U_{gT} \coloneqq \bigoplus_{t\in T} \U_gt.
+    \]
+\end{defi}
+
+Clearly, $\U_{gT}$ is a $\D$-submodule of $\U$, for every $gT \in G/T$.
+
+\begin{remark}
+    The terminology is consistent. 
+    Recall that an isotypic component, in module theory, is defined as the sum of all isomorphic simple submodules. 
+    Since $\D$ is a graded-division algebra, the right modules ${}^{[g]}\D$ are simple $\D$-modules. 
+    We claim these are all simple $\D$-modules. Indeed, if $\U$ is any graded right $\D$-module and $0\neq u \in \U_g$, then the map ${}^{[g]}\D \to u\D$ given by $d \mapsto ud$ is an isomorphism. 
+    We can have, however, that ${}^{[g]}\D\iso {}^{[g']}\D$. 
+    Of course, since $\supp {}^{[g]}\D = gT$ and $\supp {}^{[g']}\D = g'T$, a necessary condition for this to happen is that $g'g\inv \in T$. 
+    On the other hand, if $g'g\inv \in T$, then we can take $0\neq c \in \D_{g'g}$ and, then, the map ${}^{[g]}\D \to {}^{[g']}\D$ given by $d \mapsto cd$ is an isomorphism of modules.
+\end{remark}
+
+\begin{defi}
+    Graded basis.
+\end{defi}
+
+\begin{itemize}
+    \item Every $\D$-module has a graded basis.
+    \item To see that, we prove that each isotypic component has a graded basis, and the result follows by direct sum.
+    \item We fix a homogeneous component $\U_g$ and take a $\FF$-basis for it.
+    \item Then some magic: $\U_{gT} = \U_g\D = \U_g \tensor \D$.
+\end{itemize}
+
+Graded modules over a graded division algebra $\mc D$ behave similarly to vector spaces. The usual proof that every vector space has a basis, with obvious modifications, shows that every graded $\mc D$-module has a \emph{homogeneous basis}, \ie, a basis formed by homogeneous elements.
+Let $\mc V$ be such a module of finite rank $k$, fix a homogeneous basis $\mc B = \{v_1, \ldots, v_k\}$ and let $g_i := \operatorname{deg} v_i$. We then have $\mc{V}\iso \ \D^{[g_1]}\oplus\cdots\oplus\D^{[g_k]}$, so, the graded $\mc D$-module $\mc V$ is determined by the $k$-tuple $\gamma = (g_1,\ldots, g_k)$. The tuple $\gamma$ is not unique. To capture the precise information that determines the isomorphism class of $\mc V$, we use the concept of \emph{multiset}, \ie, a set together with a map from it to the set of positive integers. If $\gamma = (g_1,\ldots, g_k)$ and $T=\supp \D$, we denote by $\Xi(\gamma)$ the multiset whose underlying set is $\{g_1 T,\ldots, g_k T\} \subseteq G/T$ and the multiplicity of $g_i T$, for $1\leq i\leq k$, is the number of entries of $\gamma$ that are congruent to $g_i$ modulo $T$.
+
+\subsection{Finite dimensional graded division algebras over an algebraically closed field}
+
+\begin{itemize}
+    \item $\D_e$ is a finite dimensional division algebra, hence it is $\FF$.
+    \item The $X_t$ and their commutation relation, $\beta$.
+    \item This describes $\D$ up to iso, cite papers.
+    \item definition of center
+    \item the center is graded
+    \item Introduce rad beta
+    \item D simple as algebra iff beta is non degenerate
+\end{itemize}
+
+\section{Classification result}
+
+\begin{itemize}
+    \item The main theorem
+    \item Lemma of unique simple module up to iso and shift?
+    \item Isomorphism group
+    \begin{itemize}
+        \item Right functions on the ``right'' for superalgebras.
+    \end{itemize}
+    \item correspondence of centers of $R$ and $\D$
+    \item Algebraically closed field, finite dimensional:
+    \begin{itemize}
+        \item Parametrization
+        \item Classification of simple superalgebras
+    \end{itemize}
+\end{itemize}
+
+
+\begin{thm}\label{thm:End-over-D}
+	Let $G$ be a group and let $R$ be a $G$-graded associative algebra that has no nontrivial graded ideals and satisfies the descending chain condition on
+	graded left ideals.
+	Then there is a $G$-graded division algebra $\D$ and a graded (right) $\D$-module $\mc{U}$ such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
+\end{thm}
+
+The following result (\cite[Theorem 2.10]{livromicha}) tells us when two such graded algebras are isomorphic.
+
+\begin{defi}\label{def:inner-automorphism}
+	Let $d\in \D$ be a nonzero $G$-homogeneous element.
+	We define the \emph{inner automorphism} $\operatorname{Int}_d\from \D \to \D$ by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$.
+\end{defi}
+
+The following concept allows us to transform (graded) modules over different (graded) algebras and, also, to construct new modules from a given one:
+
+\begin{defi}\label{def:twist}
+	Let $\psi\from R \to R'$ be a homomorphism of (graded) algebras and let $U$ be a (graded) $R' $-module.
+	The \emph{module induced by $\psi$} is the (graded) $R$-module $U^{\psi}$ whose underlying (graded) vector space is the same of $U$, but with action defined by $r \cdot u \coloneqq \psi(r)u$, for all $r\in R$ and $u\in U$.
+	In the case $\psi\from R \to R$ is an automorphism, we say that $U^{\psi}$ is the \emph{twist of $\U$ by $\psi$}.
+\end{defi}
+
+\begin{remark}
+	Note that $\End_\D ( (\U')^{\vphi_0})$ is, by definition of $(\U')^{\vphi_0}$, equal to $\End_{\D'} ( \U')$.
+\end{remark}
+
+\begin{thm}\label{thm:iso-abstract}
+	Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded module of finite rank over $\D$ and $\D'$, respectively.
+	Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$ such that $g \in G$, $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras, $\psi_1\from U^{[g]} \to (U')^{\psi_0}$ is an isomorphism of graded modules and
+	\begin{equation}\label{eq:def-iso-algebras}
+		\forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+	\end{equation}
+	Conversely, given a triple $(g, \psi_0, \psi_1)$ as above, Equation \eqref{eq:def-iso-algebras} defines an isomorphism of graded algebras $\psi\from R \to R'$.
+	Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$.
+\end{thm}
+
+
+\section{Gradings on matrices}
+
+\begin{itemize}
+    \item Using the correspondence between centers, we have a classification
+    \item Standard realization for $\D$
+\end{itemize}
+
+\section{Graded-simple superalgebras}
+
+\begin{itemize}
+    \item Introduce $G^\#$ on the generalities
+    \item Even and Odd gradings
+    \item $T^+$ and $T^-$
+    \item Classification result
+    \item the supercenter, no correspondence
+    \item $\tilde\beta$
+    \item $\rad \tilde\beta = (\rad \beta)\cap T^+$
+    \item I don't know: simple as superalgebra if and only if $\tilde \beta$ nondegenerate.
+\end{itemize}
+
+\section{Parametrization of odd gradings on $M(m,n)$ only in terms of $G$}
+
+\section{Gradings on $Q(n)$}
+
+\begin{itemize}
+    \item We have two parametrizations, one here and one in \cite{paper-Qn}.
+    \item The one here is as follows:
+    \begin{itemize}
+        \item Every grading is odd, since it contains $Q(1)$ in the center, and hence in the center of $\D$.
+        \item Hence we describe it by $(T, \beta, \kappa)$, where $T\subseteq G^\#$ but $T\subsetneq G$. 
+        \item Also, $\rad \beta$ is generated by an odd element of order $2$, say $t_0$.
+        \item $t_0$ is the parity element according to $\tilde\beta$.
+    \end{itemize}
+    \item The old parametrization consisted of a grading on the even part and an element of order $2$ (in $G$) to shift it to the odd part.
+    \item The old parametrization is only in terms of $G$.
+    \item the connection must be, top down:
+    \begin{itemize}
+        \item The grading on the even part is $(T^+, \beta^+, \kappa)$.
+        \item Note that $\beta^+$ is nondegenerate on $T^+$.
+        \item If $t_0 = (h, \bar 1)$, then the shift on the odd part is by $h$, which clearly has order $2$.
+    \end{itemize}
+    \item the connection must be, bottom up:
+    \begin{itemize}
+        \item Define $t_0$ as $(h, \bar 1)$
+        \item Define $T$ as $T^+ \cup t_0 T^+$
+        \item Extend $\beta^+$ to $\beta$ by defining $t_0$ to be in the radical
+    \end{itemize}
+    \item we can see it not only on the level of parameters but also on the level of $\End_\D (\U)$:
+    \item top down:
+    \begin{itemize}
+        \item Note that $\End_\D (\U) = \End_{\D\even} (\U\even) \oplus d_0 \End_{\D\even} (\U\even)$, where $d_0 \in Z(\D) \cap \D\odd$. 
+        Why is that?
+        \item Well, I guess it starts we getting an even basis for $\U$ and its corresponding $\FF$-form $\widetilde U$. 
+        \item Then $\End_\D (\U) \equiv \End_\FF (\tilde U) \tensor \D$, hence the even part is $\End_\FF (\tilde U) \tensor \D\even$. 
+        \item Since $\D\odd = d_0 \D\even$, we get that the odd part is $\End_\FF (\tilde U) \tensor \D\odd = d_0 \End_\FF (\tilde U) \tensor \D\even$
+        \item The apparent problem here is that the choice of the shift on the odd part doesn't matter.
+        \item Modulo $T^+$ they are clearly the same, but we don't need $T^+$ in the parametrization
+        \item Oh, it should be the definition of the product in the down model! $(d_0 r) r' = r (d_0 r')$ and its version for only odd elements. So $d_0 \in Z(R)$.
+        % \item Also, we could see that $\U\even = \tilde U \tensor \D\even$ and $\U\odd = \tilde U \tensor \D\odd$.
+    \end{itemize}
+    \item bottom up:
+    \begin{itemize}
+        \item The grading is determined be $\D\even$ and $\U\even$
+        \item Let $R\even = \End_{\D\even} (\U\even)$ 
+        \item define $t_0 = (h, \bar 1)$ and introduce a symbol $d_0$ of degree $t_0$, such that $d_0^2 = 1$ and it commutes with every element. This defines $R$.
+        \item one should check the parameters for $R$. What is the new $\D$?
+        \item By uniqueness of $\D$ up to iso, we may be able to use the top down part to prove it is what is asked. But we then have to show an isomorphism. Luckily, this is obvious by the definition of the product. 
+        \item Wait, we have to define $\D$ as $\D\even \oplus d_0\D\odd$, and check it is a graded-division algebra (obvious).
+    \end{itemize}
+\end{itemize}
+
+The parametrization we got can also be used for a classification of gradings on the associative superalgebra $Q(n)$. 
+By Proposition about center, 

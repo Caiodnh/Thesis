@@ -1,6 +1,123 @@
 
 \chapter{``Recycle Bin''}
 
+
+\subsection{Type I gradings on $A(m,n)$}
+
+In this work, we only classify the gradings on $A(m,n)$ that are induced from the associative algebra $M(m+1, n+1)$.
+
+\begin{defi}\label{def:grd-on-Amn-I}
+	If $\Gamma(T, \beta, \gamma_0,\gamma_1)$ is an even grading on $M(m+1,n+1)$ (see Definition \ref{def:even-grd-on-Mmn}), we denote by $\Gamma_A (T, \beta, \gamma_0,\gamma_1)$ the induced grading on $A(m,n)$. Analogously, if $\Gamma(T, \beta, \gamma)$, or alternatively $\Gamma(t_0, \barr T, \barr\beta, u, \gamma)$, is an odd grading on $M (n+1,n+1)$ (see Definitions \ref{def:odd-grd-on-Mmn-1} and \ref{def:odd-grd-on-Mmn-2}), we denote by $\Gamma_A (T, \beta, \gamma)$, respectively $\Gamma_A (t_0, \barr T, \barr\beta, u, \gamma)$, the induced grading on $A(n,n)$. (Recall that odd gradings can occur only if $m=n$.)
+\end{defi}
+
+\begin{thm}\label{thm:even-Lie-iso}
+	If a $G$-grading of Type I on the Lie superalgebra $A(m,n)$ is even, then it is isomorphic to some $\Gamma_A(T,\beta, \gamma_0, \gamma_1)$ as in Definition \ref{def:grd-on-Amn-I}.
+	Two such gradings, $\Gamma=\Gamma_A(T,\beta, \gamma_0, \gamma_1)$ and $\Gamma'=\Gamma_A (T',\beta', \gamma_0', \gamma_1')$, are isomorphic if, and only if, $T=T'$ and there are $\delta\in \{\pm 1\}$ and $g\in G$ such that $\beta^\delta=\beta'$ and
+	\begin{enumerate}[(i)]
+		\item for $m\neq n$: $g \Xi (\gamma_0^\delta) =\Xi(\gamma_0')$ and $g \Xi (\gamma_1^\delta) =\Xi(\gamma_1')$;
+
+		\item for $m = n$: either $g \Xi(\gamma_0^\delta)=\Xi(\gamma_0')$ and $g \Xi(\gamma_1^\delta)=\Xi(\gamma_1')$ or $g\Xi(\gamma_0^\delta)=\Xi(\gamma_1')$ and $g \Xi(\gamma_1^\delta)=\Xi(\gamma_0')$.
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+	Let $M = M(m+1, n+1)$. Since any automorphism of $M$ induces an automorphism of $A(m,n)$, the first assertion follows from Theorem \ref{thm:even-assc-iso} and the definition of Type I grading.
+
+	We know from Subsection \ref{ssec:auto-Amn} that every automorphism of $A(m, n)$ arises from an automorphism of $M$ or the negative of a super-anti-automorphism of $M$. Moreover, this automorphism or super-anti-automorphism is uniquely determined and, hence, any Type I grading on $A(m,n)$ is induced by a unique grading on $M$. It follows that $\Gamma$ and $\Gamma'$ are isomorphic if, and only if, there exists either $(a)$ an automorphism or $(b)$ a super-anti-automorphism of $M$ sending $\Gamma (T,\beta, \gamma_0, \gamma_1)$ to $\Gamma (T',\beta', \gamma_0', \gamma_1')$.
+
+	From Theorem \ref{thm:even-assc-iso}, we know that case $(a)$ holds if, and only if, the above conditions are satisfied with $\delta = 1$.
+
+	From Lemma \ref{lemma:iso-inv}, there is an automorphism of $A(m,n)$ coming from a super-anti-automorphism of $M$ that sends $\Gamma (T,\beta, \gamma_0, \gamma_1)$ to $\Gamma (T,\beta\inv, \gamma_0\inv, \gamma_1\inv)$. It follows that case $(b)$ holds if, and only if, the above conditions are satisfied with $\delta = -1$.
+\end{proof}
+
+\begin{thm}\label{thm:first-odd-Lie-iso}
+	If a $G$-grading of Type I on the Lie superalgebra $A(n,n)$ is odd, then it is isomorphic to some $\Gamma_A(T,\beta,\gamma)$ as in Definition \ref{def:grd-on-Amn-I}.
+	Two such gradings, $\Gamma_A (T,\beta, \gamma)$ and $\Gamma_A (T',\beta', \gamma')$, are isomorphic if, and only if, $T=T'$, and there are $\delta \in \{\pm 1\}$ and $g\in G$ such that $\beta^\delta=\beta'$ and $g \Xi(\gamma^\delta)=\Xi(\gamma')$.
+\end{thm}
+
+\begin{proof}
+	The same as for Theorem \ref{thm:even-Lie-iso}, but referring to Theorem \ref{thm:first-odd-iso} instead of Theorem \ref{thm:even-assc-iso}.
+\end{proof}
+
+The parameters $T$, $\beta$ and $\gamma$ in Theorem \ref{thm:first-odd-Lie-iso} are associated to the group $G^\#$, not $G$. Below we use parameters associated to $G$, as we did in Subsection \ref{ssec:second-odd}.
+
+\begin{cor}\label{cor:2nd-odd-Lie-iso}
+	If a $G$-grading of Type I on the Lie superalgebra $A(n,n)$ is odd, then it is isomorphic to some $\Gamma_A (t_0, \barr T, \barr\beta, u, \gamma)$.
+	Two such gradings, $\Gamma_A (t_0, \barr T, \barr \beta, u, \gamma)$ and $\Gamma_A (t_0', \barr T', \barr \beta', u', \gamma')$, are isomorphic if, and only if, $t_0=t_0'$, $\barr T = \barr T'$, and there are $\delta \in \{\pm 1\}$ and $g\in G$ such that $\barr\beta^\delta = \barr\beta'$, $u^\delta \equiv u' \,\, (\operatorname{mod}\,\, \langle t_0 \rangle)$ and $g\, \Xi(\gamma^\delta) = \Xi(\gamma')$.
+\end{cor}
+
+\begin{proof}
+	Follows from Theorems \ref{thm:first-odd-Lie-iso} and \ref{thm:2nd-odd-iso}.
+\end{proof}
+
+
+\section{Gradings on $A(m,n)$}\label{sec:Amn}
+% ==================================================
+
+Throughout this section it will be assumed that $\Char \FF = 0$.
+
+% --------------------------------------------------
+\subsection{The Lie superalgebra $A(m,n)$}\label{ssec:def-A}
+% --------------------------------------------------
+
+% Def: gl(m|n)
+Let $U = U\even \oplus U\odd$ be a finite dimensional superspace. Recall that the parity of a nonzero $\ZZ_2$-homogeneous element $v$ of a superspace is denoted by $|v|$. The \emph{general linear Lie superalgebra}, denoted by $\gl\, (U)$, is the superspace $\End(U)$ with product given by the \emph{supercommutator}:
+\[
+	[a,b] = ab - (-1)^{\abs{a}\abs{b}}ba.
+\]
+If $U\even=\FF^m$ and $U\odd=\FF^n$, then $\gl (U)$ is also denoted by $\gl(m|n)$.
+
+% Def: sl(m|n)
+The \emph{special linear Lie superalgebra}, denoted by $\Sl (U)$, is the derived algebra of $\gl(U)$. As in the Lie algebra case, we describe it as an algebra of ``traceless'' operators. The analog of trace in the ``super'' setting is the so called \emph{supertrace}:%
+\[ \str \left(\begin{matrix}
+			a & b \\
+			c & d \\
+		\end{matrix}\right) = \tr a - \tr d,
+\]
+and we have $\Sl (U) = \{ T\in \gl (U) \mid \Str T = 0\}$.
+Again, if $U\even=\FF^m$ and $U\odd=\FF^n$ then $\Sl (U)$ is also denoted by $\Sl(m|n)$.
+
+% Simplicty of sl(m|n)
+If one of the parameters $m$ or $n$ is zero, we get a Lie algebra, so we assume this is not the case. If $m\neq n$ then $\Sl(m|n)$ is a simple Lie superalgebra. If $m=n$, the identity map $I_{2n}\in \Sl(n|n)$ is a central element and hence $\Sl(n|n)$ is not simple, but the quotient $\mathfrak{psl}(n|n) := \Sl(n|n)/ \FF I_{2n}$ is simple if $n>1$.
+
+% Def: A(m,n)
+For $m$,$n\geq 0$ (not both zero), the simple Lie superalgebra $A(m,n)$ is $\Sl(m+1|n+1)$ if $m\neq n$, and $\mathfrak{psl}(n+1|n+1)$ if $m=n$.
+
+\begin{defi}\label{def:Type-I}
+	If $\Gamma$ is a $G$-grading on $M(m,n)$, then, since $G$ is abelian,  it is also a grading on $\gl(m|n)$ and, hence, restricts to its derived superalgebra $\Sl(m|n)$. If $m=n$, then the grading on $\Sl(m|n)$ induces a grading on $\mathfrak{psl}(n|n)$.
+	If a grading on $\Sl(m|n)$ or $\mathfrak{psl}(n|n)$ is obtained in this way, we will call it a \emph{Type I} grading and, otherwise, a \emph{Type II} grading.
+\end{defi}
+
+% ---------------------------------------------------
+\subsection{Automorphisms of $A(m,n)$}\label{ssec:auto-Amn}
+% ---------------------------------------------------
+As in the Lie algebra case, the group of automorphisms of the Lie superalgebra $A(m,n)$ is bigger than the group of automorphisms of the associative superalgebra $\End(U)$.
+
+We define the \emph{supertranspose} of a matrix in $\End(U)$ by
+%
+\begin{equation*} %\label{eq:supertranspose}
+	\left( \begin{matrix}
+		a & b \\
+		c & d \\
+	\end{matrix}\right)^{s\top} = \left( \begin{matrix}
+			a\transp & -c\transp \\
+			b\transp & d\transp  \\
+		\end{matrix}\right).
+\end{equation*}
+%
+
+The supertranspose map $\End(U) \to \End(U)$ is an example of a \emph{super-anti-automorphism}, \ie, it is $\FF$-linear and
+\[
+	(XY)^{s\top} = (-1)^{|X||Y|} Y^{s\top} X^{s\top}.
+\]
+Hence, the map $\tau:\Sl(m+1,n+1)\rightarrow \Sl(m+1,n+1)$ given by $\tau(X) = - X^{s\top}$ is an automorphism.
+
+By \cite[Theorem 1]{serganova}, the group of automorphisms of $A(m,n)$ is generated by $\tau$ and the automorphisms of $\End(U)$, which are restricted to traceless operators and, if necessary, taken modulo the center. In other words, if $m\neq n$, $\Aut(A(m,n))$ is generated by $\mc E \cup \{\tau\}$ and, if $m=n$, by $\mc E \cup \{\pi\,,\,\tau\}$. In both cases, $\mc E$ is a normal subgroup of $\Aut(A(m,n))$. Note that $\pi^2 = \id$, $\tau^2=\upsilon$ (the parity automorphism) and $\pi \tau = \upsilon \tau \pi$. Hence $\frac{\Aut(A)}{\mc E}$ is isomorphic to $\ZZ_{2}$ if $m\neq n$ and $\ZZ_2\times\ZZ_2$ if $m=n$.
+
+Note that a $G$-grading on $A(m,n)$ is of Type I if, and only if, it corresponds to a $\widehat{G}$-action on $A(m,n)$ by automorphisms that belong to
+the subgroup $\mc E$ if $m\ne n$ and to $\mc E\rtimes\langle\pi\rangle$ if $m=n$. If $\widehat{G}$ acts by automorphisms that belong to $\mc E$ then the
+Type I grading is said to be \emph{even} and, otherwise, \emph{odd}.
+
 \begin{remark}
 	Proposition
 	%\ref{prop:odd-cant-have-order-2}
