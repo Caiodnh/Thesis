@@ -56,6 +56,12 @@ A important remark is that, by definition, the even component $L\even$ is a Lie 
 % granding on superalgebra
 By a \emph{$G$-grading on a superalgebra $A = A\even\oplus A\odd$} we mean a $G$-grading $\Gamma : A= \bigoplus_{g \in G} A_g$ that is also compatible with its canonical $\Zmod2$-grading, \ie, $A_g=\left(A_g\cap A\even\right)\oplus\left(A_g\cap A\odd\right)$ for every $g\in G$.
 
+\begin{remark}\label{rmk:G-sharp}
+    Note that a $G$-grading on a superalgebra is the same of a $G^\#$-grading on an algebra.
+\end{remark}
+
+To avoid confusion, we may refer to the degree with respect the canonical $\ZZ_2$-grading by \emph{parity}. 
+
 In particular, a $G$-grading on a Lie superalgebra $L=L\even\oplus L\odd$ can be restricted to its even and odd parts, in the sense that $L\even = \bigoplus_{g\in G} L_g\cap L\even$ and $L\odd = \bigoplus_{g\in G} L_g\cap L\odd$. This makes a $L\even$ a graded Lie algebra and makes $L\odd$ a graded module:
 
 \begin{defi}
@@ -221,7 +227,7 @@ The Lie superalgebra $Q(n)$ is simple for $n\geq 3$.
 The \emph{periplectic Lie superalgebra} $\mathfrak{p}(U)$ is defined as $\mathfrak{p}(U)\even \oplus \mathfrak{p}(U)\odd$ where \[\begin{aligned}
 		\mathfrak{p}(U)^{i} = \{T\in \gl(U)^i\mid&\,\, B(T(x),y) = - (-1)^{i\alpha}B(x,T(y))\\ &\text{for all}\,\,\alpha\in\Zmod2,\,\, x\in U^{\alpha} \AND y\in U\}\end{aligned}\] for all $i\in\Zmod2$. The superalgebra $\mathfrak{p}(U)$ is not simple, but its derived superalgebra is.
 
-The Lie superalgebra $P(n)$ is defined to be $[\mathfrak{p}(U),\mathfrak{p}(U)]$ in the case \\ $\dim (U\even) =$ $\Dim (U\odd) = n+1$.
+The Lie superalgebra $P(n)$ is defined to be $[\mathfrak{p}(U),\mathfrak{p}(U)]$ in the case \\ $\dim (U\even) =$ $\dim (U\odd) = n+1$.
 
 The isomorphism class of $P(n)$ does not depend on the choice of the bilinear form $B$. %Since $U\even$ and $U\odd$ are in duality by $B$, we see that, as vector space with bilinear form, $U$ is isomorphic to $V = V\even\oplus V\odd$ where $V\even=U\even$ and $V\odd=(U\even)^*$ and the bilinear form $B':V\times V\rightarrow \FF$ is given by
 $U\odd$ can be identified with $(U\even)^*$ and with this identification we can write $U=V\oplus V^*$, $\operatorname{dim} V = n+1$, and $B$ is given by

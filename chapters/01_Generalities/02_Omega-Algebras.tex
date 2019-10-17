@@ -1,0 +1,92 @@
+
+\section{\texorpdfstring{$\Omega$}{Omega}-algebras}
+
+A \emph{general} or \emph{universal algebra} is a set with an arbitrary collection (possibly empty) of operations, which may have different ``arities'' (see Definition \ref{def:universal-algebra} below).
+This is a very general concept (see, \eg, ?? and ??), which includes all classical objects in algebra (groups, rings, etc.), but here we will be interested in the linear case: the objects will be vector spaces over a field $\FF$ and the operations will be assumed multilinear (following ??, book by Razmylov).
+%Our approach to universal algebras differs from the one in most books on the subject (see, \eg, ?? and ??) in the sense we will be working on the (monoidal) category of vector spaces instead of the (monoidal) category of sets. 
+% This is the approach on ?? (Razmylov: book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??.
+This will give us a framework to deal with algebras, superalgebras, superalgebras with superinvolution, etc., in a uniform manner.
+
+\begin{notation}
+	For a vector space $A$ and a nonnegative integer $n$, we will denote the $n^{th}$-tensor power of $A$ by $A^{\tensor n}$, \ie,
+	$A^{\tensor n} \coloneqq \underbrace{A\otimes\cdots\otimes A}_{n \text{ times}}$.
+	In the case $n = 0$, we will follow the convention that $A^{\tensor 0} \coloneqq \FF$.
+\end{notation}
+
+\begin{defi}\label{def:universal-algebra}
+	A \emph{signature} $\Omega$ is a set together with a family $\{ \Omega_n \}_{n \geq 0}$ of pairwise disjoint subsets such that $\Omega = \bigcup_{n \geq 0} \Omega_n$.
+	An \emph{$n$-ary operation} on a vector space $A$ is a multilinear map $A^n \to A$ or, equivalently, a linear map $A^{\tensor n} \to A$.
+	An \emph{$\Omega$-algebra} or a \emph{(general) algebra with signature $\Omega$} is a vector space $A$ together with operations $\omega^A$, one for each $\omega \in \Omega$, such that $\omega^A$ is $n$-ary if $\omega \in \Omega_n$.
+\end{defi}
+
+We note that $0$-ary operations can be interpreted as constants in the $\Omega$-algebra $A$, since a linear map $\omega^A\from \FF \to A$ is determined by $\omega^A(1)$.
+
+\begin{defi}
+	Let $A$ and $B$ be $\Omega$-algebras.
+	A \emph{homomorphism} $\psi\from A \to B$ is a linear map such that for every $\omega \in \Omega_n$ we have
+	\[
+		\psi( \omega^A (a_1 \tensor \cdots \tensor a_n) ) = \omega^B ( \psi(a_1) \tensor \cdots \tensor \psi(a_n) ),
+	\]
+	for all $a_1, \ldots, a_n \in A$.
+	As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to itself, and the group of automorphisms is denoted by $\Aut(A)$.
+\end{defi}
+
+When dealing with a fixed $\Omega$-algebra $A$, we will usually identify the signature $\Omega$ with the corresponding set of operations on $A$.
+
+\begin{ex}\label{ex:omega-vec-space}
+	A vector space is an $\Omega$-algebra with $\Omega = \emptyset$.
+\end{ex}
+
+\begin{ex}\label{ex:omega-algebra}
+	An algebra in the usual sense, with product $*$, is an $\Omega$-algebra with $\Omega = \Omega_2 = \{ * \}$.
+\end{ex}
+
+\begin{ex}
+	An algebra $A$ with unity $\mathds{1} \in A$ is an  $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_2 = \{ * \}$, $\Omega_0 = \{ \omega_0 \}$, and $\omega_0\from \FF \to A$ is defined by $\omega_0 (1) = \mathds 1$.
+\end{ex}
+
+\begin{ex}\label{ex:omega-alg-SA}
+	A superalgebra $A = A\even \oplus A\odd$ is an $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, where $\Omega_2 = \{ * \}$, $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$, and $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively.
+	More precisely, an algebra $A$ with such signature is a superalgebra if, and only if,
+	\begin{enumerate}[(i)]
+		\item $\pi_{\bar 0}^{} + \pi_{\bar 1}^{} = \id$; \label{item:sum-projections}
+		\item $\pi_{\bar 0}^{}\pi_{\bar 1}^{} = \pi_{\bar 1}^{}\pi_{\bar 0}^{} = 0$
+		      %\item $\pi_{\bar 0}^2 = \pi_{\bar 0}^{}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}^{}$;
+		\item For every $x,y \in A$ and $i, j\in \ZZ_2$, we have that $\pi_{i+j}^{}( \pi_i^{} (x)*\pi_j^{} (y) ) = \pi_i^{} (x)*\pi_j^{} (y)$.
+	\end{enumerate}
+\end{ex}
+
+% \begin{ex}\label{ex:omega-graded-algebra}
+%     A $G$-graded algebra $A = \bigoplus_{g\in G}$, with operation $*$, is a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_g \mid g\in G\}$, where $\pi_g\from A \to A$ is the projection in the component $A_g$. 
+%     As a particular case, superalgebras can be viewed as $\Omega$-algebras.
+% \end{ex}
+
+\begin{ex}
+	A superalgebra with super-anti-automorphism $(A, \vphi)$ an $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$.
+	In a similar fashion, algebras with anti-automorphism can be viewed as $\Omega$-algebras.
+\end{ex}
+
+It is straightforward to check that, in each of the examples above, the usual notion of homomorphism coincides with the notion of homomorphism as $\Omega$-algebras.
+
+\begin{remark}
+	Example \ref{ex:omega-alg-SA} could be generalized to encompass all $G$-graded algebras for a fixed group $G$.
+	Such generalization has been used in the study of graded identities (see ??), but we will not follow this approach.
+\end{remark}
+
+Finally, we can define gradings on $\Omega$-algebras:
+
+\begin{defi}\label{def:grds-on-Omega-algebras}
+	A \emph{$G$-grading} on an $\Omega$-algebra $A$ is a $G$-grading on its underlying vector space such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
+\end{defi}
+
+It is easy to verify that this notion of grading coincides with to the usual notion for algebras, superalgebras, superalgebras with superinvolution, etc.
+
+% It should be noted that among these examples, only in Examples \ref{ex:omega-vec-space} and \ref{ex:omega-algebra} the correspondence is bijective. 
+% In the other cases, the original structures correspond to proper subclasses of the $\Omega$-algebras described, which can be axiomitized. 
+% We will present axioms for Example \ref{ex:omega-graded-algebra}, since gradings are not usually describe in terms of the projection maps, we will
+
+% \begin{itemize}
+%     \item[\done] paragraph-remark stating only exs 1 and 2 are ``precisely'', the other are proper inclusions.
+%     \item discuss, in a remark, the axioms of graded algebras, noting that one of them is not first-order if the group is not finite.
+% \end{itemize}
+

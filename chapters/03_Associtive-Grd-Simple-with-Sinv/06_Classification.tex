@@ -1,0 +1,662 @@
+
+\section{Classification of graded-simple superalgebras\texorpdfstring{\\}{} with superinvolution}
+
+In this section we introduce parameters that describe the graded finite dimensional and associative superalgebras with superinvolution $(R, \vphi)$ where $R$ is graded simple.
+Then, we give a classification result in terms of these parameters.
+Throughout this section, we will assume that $\FF$ is an algebraically closed field with $\Char \FF \neq 2$.
+
+Recall from \cref{thm:End-over-D,thm:vphi-iff-vphi0-and-B,thm:vphi-involution-iff-delta-pm-1}
+% Theorems \ref{thm:End-over-D}, \ref{thm:vphi-iff-vphi0-and-B} and \ref{thm:vphi-involution-iff-delta-pm-1}
+that, under above assumptions, we have that $R \iso \End_\D (\U)$ and that $\vphi$ is determined by a superinvolution $\vphi_0$ on $\D$ and a nondegenerate homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$.
+
+\subsection{Parametrization of \texorpdfstring{$(\D, \vphi_0)$}{(D, phi0)}}\label{ssec:param-D-vphi}
+
+Recall, from \cref{sec:grd-simple-salg}, that the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a triple $(T, \beta, p)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group, $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter and $p\from T \to \ZZ_2$ is a group homomorphism.
+% Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$. 
+% Sometimes we may want to discuss graded division superalgebras without reference to the groups $G$ or $G^\#$, so it is convenient to say 
+
+Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
+
+\begin{prop}\label{prop:superpolarization}
+	Let $\vphi_0\from \D \to \D$ be the invertible degree-preserving map determined by a map $\eta\from T \to \FF^\times$ as follows: $\vphi_0(X_t) = \eta(t) X_t$ for all $t\in T$ and $X_t\in \D_t$.
+	Then $\vphi_0$ is a super-anti-automorphism if, and only if,
+	%
+	\begin{equation}\label{eq:superpolarization}
+		\forall a,b\in T, \quad (-1)^{p(a) p(b)} \beta(a,b) =  \eta(ab) \eta(a)\inv \eta(b)\inv.
+	\end{equation}
+	%
+	Moreover, $\D$ admits a super-anti-automorphism if, and only if, $\beta$ only takes values $\pm 1$.
+\end{prop}
+
+\begin{proof}
+	For all $a,b \in T$, let $X_a \in \D_a$ and $X_b\in \D_b$. Then:
+	%
+	\begin{alignat*}{2}
+		     &  & \vphi_0(X_a X_b)             & = (-1)^{p(a) p(b)} \vphi_0(X_b) \vphi_0(X_a)          \\
+		\iff &  & \,\, \eta(ab)X_a X_b         & = (-1)^{p(a) p(b)} \eta(a) \eta(b) X_b X_a            \\
+		\iff &  & \, \eta(ab)X_a X_b           & = (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a) X_a X_b \\
+		\iff &  & \eta(ab)                     & = (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a)
+		\\
+		\iff &  & (-1)^{p(a) p(b)} \beta(b, a) & =  \eta(ab) \eta(a)\inv \eta(b)\inv.
+	\end{alignat*}
+	The right-hand side of this last equation does not change if $a$ and $b$ are switched, hence $\beta(b,a) = \beta(a,b)$.
+
+	Since $\beta$ is alternating, $\beta(b, a) = \beta (a, b)\inv$, therefore $\beta(a,b)^2 = 1$, which proves one direction of the ``moreover'' part.
+	%from where we conclude that $\beta(a,b) = \pm 1$. 
+	The converse follows from the fact that the isomorphism class of $\D\sop$ is determined by $(T, \beta\inv)$, so if $\beta$ takes only values in $\{ \pm 1 \}$, there must be an isomorphism from $\D$ to $\D\sop$, which can be seen as a super-anti-isomorphism on $\D$.
+\end{proof}
+
+\begin{cor}\label{cor:odd-cant-have-order-2}
+	If $\D$ admits a superinvolution, %$\vphi_0$ is a superinvolution. 
+	% $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$. 
+	then every odd element in $T$ must have order at least $4$.
+\end{cor}
+
+\begin{proof}
+	The bicharacter $\beta$ is alternating, so if we put $a = b = t$ in Equation \eqref{eq:superpolarization}, we get
+	%
+	\begin{equation}\label{eq:eta-t-square}
+		\forall t\in T, \quad 1 = \eta(t)^2 = (-1)^{p(t)} \eta(t^2).
+	\end{equation}
+	%
+	% Also, since $\vphi_0^2 = \id$, $\eta(t)^2 = 1$ for all $t\in T$.
+
+	Now let $t\in T^-$.
+	Every odd power of $t$ is also an odd element, so $t$ cannot have an odd order.
+	By Equation \eqref{eq:eta-t-square}, $\eta (t^2) = - \eta(t)^2 = -1$, hence $t^2 \neq e$.
+\end{proof}
+
+With this we can translate the problem of classifying $(\D, \vphi_0)$ to the level of abelian groups.
+Instead of the graded superalgebra $\D$ with super-anti-automorphism $\vphi_0$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}.
+Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$.
+
+The following definitions give us a more compact way to express Equation \eqref{eq:superpolarization}.
+Also, Definition \ref{def:coboundary} will be used in Section \ref{sec:div-grads-on-sinv-simple}.
+
+\begin{defi}\label{def:coboundary}
+	Let $H$ and $K$ be groups and let $f\from H \to K$ be any map.
+	We define $\mathrm{d} f\from H\times H \to K$ to be the map given by $\mathrm{d} f\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$.
+	The maps $H\times H \to K$ of this for are called \emph{$2$-coboundaries}.
+\end{defi}
+
+\begin{defi}\label{def:tilde-beta}
+	Given a finite dimensional graded-division superalgebra associated to $(T, \beta, p)$, we define the bicharacter $\tilde\beta\from T\times T \to \FF^\times$ by $\tilde\beta (a,b) = (-1)^{p(a) p(b)} \beta(a, b)$, for all $a, b \in T$.
+\end{defi}
+
+Hence, Equation \eqref{eq:superpolarization} becomes $\tilde\beta = \mathrm{d}\eta$.
+Note that $\tilde\beta$ is skew-symmetric, \ie, $\tilde\beta(b, a) = \tilde\beta\inv(a, b)$, but $\tilde\beta (t,t) = (-1)^{|t|}$, for all $t\in T$, so $\tilde\beta$ is not, in general, alternating.
+
+We will now discuss the connection between $\rad \beta$ and $\rad \tilde\beta$.
+These subgroups of $T$ correspond to the support of the center and the supercenter of $\D$, respectively.
+
+\begin{defi}
+	Let $R$ be a superalgebra.
+	The \emph{center} of $R$ is the set
+	\[
+		Z(R) = \{c\in R \mid cr = rc \text{ for all } r\in R \},
+	\]
+	\ie, the center of $R$ seen as an algebra, and the \emph{supercenter} of $R$ is the set $sZ(R) \coloneqq sZ(R)\even \oplus sZ(R)\odd$, where
+	\begin{align*}
+		sZ(R)^\alpha = \{c\in R^\alpha \mid cr = (-1)^{\alpha |r|} rc \text{ for all } r\in R\even\cup R\odd \},\quad \alpha \in \ZZ_2.
+	\end{align*}
+\end{defi}
+
+% The following is a well known result, but we will prove it here for completeness. .
+
+% \begin{lemma}\label{lemma:center-is-graded}
+%     Let $H$ be an abelian group and let $R$ be a $H$-graded algebra.
+%     Then the center $Z(R)$ is a $H$-graded subspace of $R$. 
+% \end{lemma}
+
+% \begin{proof}
+%     Let $c \in Z(R)$ and write $c = \sum_{h\in H} c_h$, where $c_h \in R_h$ for all $h \in H$.
+%     For every homogeneous $r \in R$, we have that
+%     %
+%     \begin{align*}
+%         \big(\sum_{h\in H} c_h\big)r = r \big(\sum_{h\in H} c_h\big).
+%     \end{align*}
+%     %
+%     Comparing the components of degree $hh' = h'h$, where $h' = \deg r$, we conclude that $rc_h = c_h r$ for all $h \in H$. 
+%     By linearity, $r c_h = c_h r$ for all $r\in R$, hence $c_h \in Z(R)$.
+% \end{proof}
+
+% Note that, for $H = \ZZ_2$, Lemma \ref{lemma:center-is-graded} implies that center of a superalgebra is a subsuperspace and, for $H = G^\#$, we have that the center of a $G$-graded superalgebra is a $G$-graded subsuperspace. 
+% The proof of next result is analogous.
+
+\begin{lemma}%\label{lemma:center-is-graded}
+	Let $G$ be an abelian group and let $R$ be a $G$-graded superalgebra.
+	Then the center $Z(R)$ and the supercenter $sZ(R)$ are $G$-graded subsuperalgebras of $R$.
+\end{lemma}
+
+\begin{proof}
+	We consider $R$ as a $G^\#$-graded algebra.
+	Let $c \in Z(R)$ and write $c = \sum_{g \in G^\#} c_g$, where $c_g \in R_g$ for all $g \in G^\#$.
+	For every homogeneous $r \in R$, we have that
+	%
+	\begin{align*}
+		\big(\sum_{g\in G^\#} c_g\big)r = r \big(\sum_{g\in G^\#} c_g\big).
+	\end{align*}
+	%
+	Comparing the components of degree $gh = hg$, where $h = \deg r$, we conclude that $rc_g = c_g r$ for all $g \in G^\#$.
+	By linearity, $r c_g = c_g r$ for all $r\in R$, hence $c_g \in Z(R)$.
+
+	The same argument works to show that $sZ(R)\even$ is graded and, with straightforward modifications, to show that $sZ(R)\odd$ is graded.
+\end{proof}
+
+Note that, for trivial $G$, Lemma \ref{lemma:center-is-graded} implies that the center of a superalgebra is a subsuperalgebra.
+
+% Clearly, for a finite dimensional division superalgebra $\D$, the radicals of of $\beta$ and $\tilde\beta$ are the support of the center and supercenter of $\D$, respectively. 
+
+% We state and prove the following for further reference.
+
+\begin{lemma}%\label{lemma:rad-tilde-beta}
+	$\rad \tilde\beta = (\rad \beta)\cap T^+$.
+\end{lemma}
+
+\begin{proof}
+	Let $t\in T^+$.
+	In this case $\tilde\beta (t, \cdot) = \beta (t, \cdot)$, so
+	$\tilde\beta (t, T) = 1$ if, and only if, $\beta (t, T) = 1$.
+	Hence $(\rad \tilde\beta)\cap T^+ = (\rad \beta)\cap T^+$.
+
+	Now let $t \in T^-$.
+	In this case $\tilde \beta (t,t) = (-1)^{|t|} = -1$, so $t \not\in \rad \tilde\beta$.
+	Therefore $\rad \tilde\beta = (\rad \tilde\beta)\cap T^+$, concluding the proof.
+\end{proof}
+
+\subsection{Parametrization of \texorpdfstring{$(\U, B)$}{(U, B)}}
+
+% Let $R \coloneqq \End_\D (\U)$ and let $\vphi$ be a superinvolution on R. 
+% From Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, $\vphi$ is determined by a pair $(\vphi_0, B)$, where $\vphi_0$ is a superinvolution on $\D$ and $B\from \U \times \U \to \D$ is a homogeneous $\vphi_0$-sesquilinear form on $\U$ such that $\overline B = \delta B$ with $\delta \in \{ \pm 1 \}$. 
+
+Let $(\D, \vphi_0)$ be a fixed graded-division superalgebra with super-anti-automorphism associated to $(T, \beta, p, \eta)$.
+
+% In Section ??, we saw that the isomorphism class of $(\D, \vphi_0)$ can be described by $(T, \beta, p, \eta)$. 
+Recall that a $G$-graded supermodule $\U$ can be regarded as a $G^\#$-graded module
+% written as a direct sum of its isotypic components % $\U_{gT} = \bigoplus_{h \in gT} \U_h$
+and that its isomorphism class is determined by the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support (see \cref{ssec:D-modules}).
+Explicitly, $\kappa (gT) = \dim_\D \U_{gT}$, where $\U_{gT}$ is the isotypic component associated to the coset $gT$.
+
+% defined by $\kappa (gT) = \dim_\D \U_{gT}$, where $\U_{gT}$ is the isotypic component associated to the coset $gT$ (Subsection \ref{U-in-terms-of-GxZZ2}).
+
+% described by a map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ with finite support. 
+We will now consider a
+% nondegenerate 
+homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$, $\deg B = g_0 \in G^\#$.
+% Its presence gives us further restrictions on $\kappa$. 
+Since $B$ has degree $g_0$ and takes values in $\D$, if $B(\U_{g}, \U_{h}) \neq 0$ for some $g, h \in G^\#$, then $g_0 g h \in T$.
+In terms of isotypic components, this means that, given $\U_{g T}$, there is at most one isotypic component $\U_{hT}$ such that $B(\U_{gT}, \U_{hT}) \neq 0$, namely, $\U_{g_0\inv g\inv T}$.
+% we can only have $B(\U_{g T}, \U_{g' T}) \neq 0$ if $\bar {g'} = \bar g_0\inv \bar g\inv \in G^\#/T$. 
+We say that the components $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ are \emph{paired by $B$}.
+% Since $B$ is nondegenerate, we have that $\U_{g T}$ and $\U_{g_0\inv g\inv T}$ are in duality via $B$ and, in particular, $\kappa(g T) = \kappa(g_0\inv g \inv T)$. 
+
+% Note that $\U_{g T} = \U_{g_0\inv g\inv T}$ if, and only if, $g_0 g^2 \in T$. 
+% In this case, we say that $\U_{gT}$ is a \emph{self-dual component}. 
+% Otherwise, we say that $\U_{gT}$ and $\U_{g_0\inv g\inv T}$ form a \emph{pair of dual components}. 
+
+% From now on, we will assume that $\vphi_0$ is a superinvolution, \ie, that $\eta$ takes values in $\pmone$. 
+
+We will now reduce the study of $B$ to the study of $\FF$-bilinear forms.
+Fix a set-theoretic section $\xi\from G^\#/T \to G^\#$ of the natural homomorphism $ G^\# \to G^\#/T$, \ie, $\xi (x) \in x$ for all $x \in G^\#/T$, and fix a nonzero element $X_t \in \D_t$ for all $t\in T$.
+Note that $\U_{\xi(x)} \tensor \D \iso \U_x$ via the map $u \tensor d \mapsto ud$ and, hence, an $\FF$-basis of $\U_{\xi(x)}$ is a graded $\D$-basis for $\U_x$.
+In view of Convention \ref{conv:pick-even-basis}, if $\D$ is odd we choose $\xi$ to take values in $G = G\times \{ \bar 0 \}$.
+
+For a given $x \in G^\#/T$, set $y \coloneqq g_0\inv x\inv \in G^\#/T$ and $t \coloneqq g_0 \xi(x) \xi(y) \in T$.
+Also, set $\V_x \coloneqq \U_x + \U_y$ (so $\V_x = \U_x$ if $x=y$ and $\V_x = \U_x \oplus \U_y$ if $x \neq y$) and $V_x \coloneqq \U_{\xi(x)} + \U_{\xi(y)}$ (so $\V_x \iso V_x \tensor \D$).
+We will denote the restriction of $B$ to $\V_x$ by $B_x$ and define the bilinear map $\tilde{B}_x\from V_x \times V_x \to \FF$ by
+\begin{equation}\label{eq:B_x-tilde}
+	\tilde{B}_x (u,v) \coloneqq X_{t}\inv B_x (u,v),
+\end{equation}
+for all $u,v \in V_x$.
+It is clear that $B$ is nondegenerate if, and only if, $B_x$ is nondegenerate for every $x \in G^\#/T$.
+If this is the case, $\U_x$ and $\U_y$ are dual to each other and, hence, $\kappa(x) = \kappa(y)$.
+% If $x = y$ or, equivalently, $g_0 x^2 = T$, we say that $\U_x$ is a \emph{self-dual component}, otherwise we say that $\U_x$ and $\U_y$ are a \emph{pair of dual components}. 
+
+\begin{lemma}\label{lemma:B_x-nondeg}
+	The $\vphi_0$-sesquilinear form $B_x$ is nondegenerate if, and only if, the bilinear form $\tilde{B}_x$ is nondegenerate.
+\end{lemma}
+
+\begin{proof}
+	Assume $B_x$ is nondegenerate and let $u \in V_x$ be such that $\tilde{B}_x(u,v) = 0$ for all $v \in V_x$.
+	Then $B_x(u, v) = X_{t} \tilde{B}_x(u,v) = 0$ for all $v \in V_x$ and, hence, $B_x(u, vd) = B_x(u, v)d = 0$ for all $d \in \D$.
+	It follows that $B_x(u,v) = 0$ for all $v\in \V_x = V_x \D$ and, therefore, $u = 0$.
+
+	Now assume $\tilde{B}_x$ is nondegenerate and let $u \in \V_x$ be such that $B_x (u,v) = 0$ for all $v \in \V_x$.
+	Let $v\in V_x$ be homogeneous and write $u = \sum_{g\in G^\#} u_g$ where $u_g \in \U_g$.
+	Then $0 = B_x(\sum_{g\in G^\#} u_g, v) = \sum_{g\in G^\#} B_x(u_g, v)$ and, since the summands have pairwise distinct degrees, $B_x(u_g, v) = 0$ for all $g\in G^\#$.
+	Also, since $\xi(gT)\inv g \in T$, we have that $u_g = \tilde u_g d$ for some homogeneous elements $\tilde u_g \in V_x$ and $0 \neq d \in \D$.
+	Then $0 = B_x(u_g, v) = (-1)^{|d|(|B| + |\tilde u_g|)} \vphi_0(d) B_x(\tilde u_g, v)$, and hence $B_x(\tilde u_g, v) = 0$.
+	It follows that $\tilde{B}_x(\tilde u_g, v) = 0$, for all $v\in V_x$, which implies $\tilde u_g = 0$.
+	Therefore, $u = 0$, concluding the proof.
+\end{proof}
+
+We are interested in the case when the superadjunction with respect to $B$ is involutive.
+By Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, this happens if, and only if, $\vphi_0$ is involutive and $\overline B = \delta B$ for some $\delta \in \pmone$.
+So, from now on, we will assume that $\eta$ takes values in $\pmone$.
+
+\begin{lemma}\label{lemma:B_x-delta}
+	Let $\delta \in \pmone$.
+	Then $\overline{B_x} = \delta B_x$ if, and only if,
+	\[
+		\tilde{B}_x (v, u) = (-1)^{|u| |v|} \eta(t) \delta \tilde{B}_x (u, v)
+	\]
+	for all $u, v \in V_x$, where $t \coloneqq g_0 \xi(x) \xi(g_0\inv x\inv)$.
+\end{lemma}
+
+\begin{proof}
+	Let $u,v \in \V_x$.
+	By definition of $\overline{B_x}$, we have:
+	\begin{alignat*}{3}
+		\overline{B_x} (u, v) & = \sign{u}{v} \vphi_0\inv( B_x(v, u) )
+		                      &                                                  & = \sign{u}{v} \vphi_0\inv( X_t \tilde{B}_x(v, u) ) \\
+		                      & = \sign{u}{v} \tilde{B}_x(v, u) \vphi_0\inv(X_t)
+		                      &                                                  & = \sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t,
+	\end{alignat*}
+	where we have used the fact that $\tilde B_x (v, u) \in \FF$.
+	Hence, $\overline{B_x} (u, v) = \delta {B_x} (u, v)$ if, and only if,
+	$\sign{u}{v} \tilde{B}_x(v, u) \eta(t)\inv X_t = \delta X_t \tilde{B}_x(u, v)$, and the result follows.
+\end{proof}
+
+Recall the identification $M_k (\D) = \M_k(\FF) \tensor \D$ (see Remark \ref{rmk:M(D)=M(FF)-tensor-D}).
+In the next two propositions we consider a component paired to itself and two components paired to one another.
+
+% For convenience, we will also fix elements $0 \neq X_t \in \D_t$ for all $t\in T$.
+
+\begin{prop}\label{prop:self-dual-components}
+	Let $\delta \in \pmone$.
+	Suppose $g_0 x^2 = T$,  and  set $t \coloneqq g_0\xi(x)^2 \in T$.
+	Then
+	\begin{equation}\label{eq:mu_x}
+		\mu_{x} \coloneqq (-1)^{|\xi(x)|} \eta(t) \delta \in \pmone
+	\end{equation}
+	% $\mu_{gT} = (-1)^{|g|} \eta(g_0 g^2) \delta \in \pmone$
+	does not depend on the choice of the section $\xi\from G^\#/T \to G^\#$.
+	% Further, there is a $\D$-basis on $\U_{gT}$ consisting only of homogeneous elements of degree $g$ such that  that the restriction of $B$ to $\U_{gT}$ is represented by
+	% \begin{enumerate}[(i)]
+	%     \item $I_k \tensor X_{g_0g^2}$ if 
+	% \end{enumerate}
+	Moreover, the restriction $B_x$ of $B$ to $\U_x$ is nondegenerate and satisfies $\overline{B_x} = \delta B_x$ if, and only if, there is a $\D$-basis of $\U_{x}$ consisting only of elements of degree $\xi(x)$ such that the matrix representing $B_x$ is given by
+	\begin{enumerate}[(i)]
+		\item $I_{\kappa(x)} \tensor X_t$ if $\mu_x = +1$;
+		\item $J_{\kappa(x)} \tensor X_t$ if $\mu_{x} = -1$, where $\kappa (x)$ is even and $J_{\kappa(x)} \coloneqq \begin{pmatrix}
+				      0                & I_{\kappa(x)/2} \\
+				      -I_{\kappa(x)/2} & 0
+			      \end{pmatrix}$.
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+	Let $g \coloneqq \xi(x)$. If $\xi' \from G^\#/T \to G^\#$ is another section, then there is $s \in T$ such that $\xi' (x) = g s$.
+	Hence:
+	\begin{align*}
+		(-1)^{|\xi' (x)|} \eta(g_0 \xi' (x)^2) & = (-1)^{|gs|} \eta(g_0 g^2 s^2)                                                       \\
+		                                       & = (-1)^{|g| + |s|} \sign{g_0 g^2}{s^2} \beta(g_0 g^2, s^2)\eta(g_0 g^2) \eta(s^2)     \\
+		                                       & = (-1)^{|g| + |s|} (-1)^{2 |g_0 g^2| |s|} \beta(g_0 g^2, s)^2 \eta(g_0 g^2) \eta(s^2) \\
+		                                       & = (-1)^{|g| + |s|} \eta(g_0 g^2) \eta(s^2)                                            \\
+		                                       & = (-1)^{|g| + |s|} \eta(g_0 g^2) (-1)^{|s|} \eta (s)^2 = (-1)^{|g|} \eta(g_0 g^2),
+	\end{align*}
+	where we have used Equation \eqref{eq:superpolarization} twice.
+
+	For the ``moreover'' part, it follows from Lemmas \ref{lemma:B_x-nondeg} and \ref{lemma:B_x-delta} that $B_x$ is nondegenerate and $\overline{B_x} = \delta B_x$ if, and only if, $\tilde B_x$ is nondegenerate and $B_x (u,v) = \mu_x B_x(v, u)$, for all $u,v \in V_x = \U_{\xi(x)}$.
+	Then the result follows from the well-known classification of (skew-)symmetric bilinear forms over an algebraically closed field of characteristic different from $2$ and the fact that an $\FF$-basis for $\U_{\xi(x)}$ is a $\D$-basis for $\U_x$.
+\end{proof}
+
+\begin{remark}
+	Even though $\mu_{x}$ does not depend on $\xi$, the element $t = g_0\xi(x)^2$ may depend on $\xi$.
+\end{remark}
+
+\begin{prop}\label{prop:pair-of-dual-components}
+	Let $\delta \in \pmone$.
+	Suppose $g_0 x y = T$ for $x\neq y$ and set $t \coloneqq g_0\xi(x)\xi(y) \in T$.
+	Then the restriction $B_x$ of $B$ to $\U_x \oplus \U_y$ is nondegenerate and satisfies $\overline{B_x} = \delta B_x$ if, and only if, there is a $\D$-basis of $\U_x$ with all elements having degree $\xi(x)$ and a $\D$-basis of $\U_y$ with all elements having degree $\xi(y)$ such that the matrix representing $B_x$ is
+	\[
+		\begin{pmatrix}
+			0                                                  & I_{\kappa(x)} \\
+			\sign{\xi(x)}{\xi(y)} \eta(t) \delta I_{\kappa(x)} & 0
+		\end{pmatrix} \tensor X_t.
+	\]
+\end{prop}
+
+\begin{proof}
+	Assume that $B_x$ is nondegenerate.
+	Then by Lemma \ref{lemma:B_x-nondeg}, the bilinear form $\tilde B_x$ on $V_x = \U_{\xi(x)} \oplus \U_{\xi(y)}^*$ is nondegenerate, and hence, the map $\U_{\xi(x)} \to \U_{\xi(y)}$ given by $u \mapsto \tilde B_x (u, \cdot)$  is an isomorphism of vector spaces.
+	Hence, we can fix a basis $\{u_1, \ldots, u_{\kappa(x)} \}$ for $\U_{\xi(x)}$ and take its dual basis $\{v_1, \ldots, v_{\kappa(x)} \}$ for $\U_{\xi(y)}$, \ie, $\tilde B_x (u_i, v_j) = \delta_{ij}$.
+	If we also assume $\overline{B_x} = \delta B_x$, then by Lemma \ref{lemma:B_x-delta}, we have $\tilde B_x (v_i, u_j) = \sign{\xi(x)}{\xi(y)} \eta(t) \delta \delta_{ij}$.
+	This proves the only if part.
+	The converse is clear.
+\end{proof}
+
+\begin{defi}\label{def:parameter-of-(U,B)}
+	Let $\U\neq 0$ be a graded $\D$-module of finite rank and $B$ be a nondegenerate homogeneous sesquilinear form with respect a superinvolution $\vphi_0$ on $\D$ and such that $\overline{B} = \delta B$ for some $\delta \in \pmone$.
+	We say that the quadruple $(\eta, \kappa, g_0, \delta)$ is the \emph{inertia of $(\U, B)$}, where $\eta$ defines $\vphi_0$ by $\vphi_0(X_t) = \eta(t)X_t$ (see Subsection \ref{ssec:param-D-vphi}), $g_0 = \deg B \in G^\#$ and $\kappa(x) = \dim_\D \U_x$ for all $x \in G^\#/T$.
+\end{defi}
+
+By the results above, the quadruple $(\eta, \kappa, g_0, \delta)$ satifies the following:
+
+\begin{defi}\label{defi:X(D)}
+	Given $\eta\from T \to \pmone$,
+	$\kappa\from G^\#/T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$ and $\delta \in \pmone$, we say that the quadruple $(\eta, \kappa, g_0, \delta)$ is \emph{admissible} if:
+	\begin{enumerate}[(i)]
+		\item $\mathrm{d}\eta = \tilde\beta$ (see Definitions \ref{def:coboundary} and \ref{def:tilde-beta}); \label{item:eta-is-eta}
+		\item $\kappa$ has finite support; \label{item:kappa-finite-support}
+		\item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
+		\item for any $x\in G^\#/T$, if $g_0 x^2 = T$ and $\mu_x = -1$, then $\kappa (x)$ is even (where \\$\mu_x\coloneqq (-1)^{|g|}\eta(g_0g^2)\delta$ for $g\in x$, see Proposition \ref{prop:self-dual-components}). \label{item:kappa-parity}
+	\end{enumerate}
+	The set of all admissible quadruples will be denoted by $\mathsf{X}(\D)$ or $\mathsf{X}(T, \beta, p)$.
+\end{defi}
+
+Given a quadruple $(\eta, \kappa, g_0, \delta) \in \mathsf{X} (\D)$, we can construct a pair $(\U, B)$ such that $(\eta, \kappa, g_0, \delta)$ is its inertia.
+To see that, fix a total order $\leq$ on the set $G^\#/T$.
+We define $U_x \coloneqq \FF^{\kappa(x)}$, and $\U = \sum_{g \in G^\#} \U_g$ where $\U_x \coloneqq U_x \tensor \D$, for all $x\in G^\#/T$.
+For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ the $\vphi_0$-sesquilinear on $\U_x + \U_y$ represented, relative to the standard basis of $U_x+U_y$, by to the matrices in Proposition \ref{prop:self-dual-components}, if $x=y$, or in Proposition \ref{prop:pair-of-dual-components}, if $x\neq y$.
+
+\begin{thm}\label{thm:iso-(U,B)}
+	Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$.
+	Let $\D$ be a finite dimensional graded-division superalgebra and let $\vphi_0$ be a degree preserving superinvolution on $\D$.
+	% The map assigning a triple $(\kappa, g_0, \delta) \in \mathsf{X} (\D, \vphi_0)$ for ever
+	The assignment of inertia to a pair $(\U, B)$ as in Definition \ref{def:parameter-of-(U,B)} gives a bijection between the isomorphism classes of these pairs and the set $\mathsf{X} (\D)$.
+	% Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathsf{X} (\D, \vphi_0)$.
+\end{thm}
+
+\begin{proof}
+	Suppose there is an isomorphism $\psi\from (\U, B) \to (\U', B')$.
+	Since, in particular, $\psi$ is an isomorphism of graded $\D$-modules, both $\U$ and $\U'$ correspond to the same map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$.
+	Also, from the fact that $B'(\psi(u), \psi(v)) = B(u, v)$ for all $u, v\in \U$, it is clear that $\deg B' = \deg B$.
+	Moreover, if $\overline{B} = \delta B$, then
+	\begin{align*}
+		\overline{B'} \big(\psi(u), \psi(v) \big) & = \sign{\psi(u)}{\psi(v)} \vphi_0\inv \Big( B'\big( \psi(v) , \psi(u) \big) \Big) \\
+		                                          & = \sign{u}{v} \vphi_0\inv \big( B(v, u) \big)
+		= \overline{B} (u, v)                                                                                                         \\
+		                                          & = \delta B(u, v) = \delta B' \big( \psi(u), \psi(v) \big),
+	\end{align*}
+	for all $u, v \in \U$.
+	Since $\psi$ is bijective, it follows that $\overline{B'} = \delta B'$.
+
+	Conversely, suppose that $(\U, B)$ and $(\U, B')$ have the same inertia $(\kappa, g_0, \delta)$.
+	To show that $(\U, B)$ and $(\U, B')$ are isomorphic, it suffices to find homogeneous $\D$-bases $\{u_1, \ldots, u_k\}$ of $\U$ and $\{u_1', \ldots, u_k'\}$ of $\U'$ such that $\deg u_i = \deg u_i'$, $1 \leq i \leq k$, and $B$ and $B'$ are represented by the same matrix.
+	Indeed, in this case the $\D$-linear map $\psi\from \U \to \U'$ defined by $\psi(u_i) = u_i'$, $1 \leq i \leq k$, is degree preserving, and $B(u_i, u_j) = B(u_i', u_j')$, $1 \leq i,j \leq k$, implies $B(u, v) = B( \psi(u), \psi(v) )$ for all $u, v\in \U$.
+	The existence of such bases follows from $\dim_\D (\U_x) = \dim_\D (\U_x') = \kappa(x)$, for all $x \in G^\#/T$, and Propositions \ref{prop:self-dual-components} and \ref{prop:pair-of-dual-components}.
+\end{proof}
+
+\subsection{Parametrization of \texorpdfstring{$(R, \vphi)$}{(R, phi)}}
+
+We start with a definition to have a concise description of the graded superalgebras with superinvolution we are working on:
+
+\begin{defi}\label{def:E(D,U,B)}
+	Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, let $\U\neq 0$ be a graded right $\D$-module of finite rank and  let $B$ be a nondegenerate homogeneous sesquilinear form on $\U$ such that $\overline{B} = \pm B$.
+	We define $E(\D, \U, B)$ to be the (finite dimensional) graded superalgebra with superinvolution $(\End_\D(\U), \vphi)$, where $\vphi$ is the superadjunction with respect to $B$.
+	If $\D$ is associated to $(T, \beta, p)$ (see \cref{ssec:grd-div-alg}) and $(\U, B)$ has inertia $(\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)$ (see Definitions \ref{def:parameter-of-(U,B)} and \ref{defi:X(D)}), then we say that $(T, \beta, p, \eta, \kappa, g_0, \delta)$ are the parameters of the triple $(\D, \U, B)$.
+\end{defi}
+
+By \cref{thm:End-over-D,thm:vphi-iff-vphi0-and-B,thm:vphi-involution-iff-delta-pm-1}, any finite dimensional graded-simple superalgebra with superinvolution $(R, \vphi)$ is isomorphic to $E(\D, \U, B)$ for some triple $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}.
+We will now classify these graded superalgebras with superinvolution in terms of the parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$.
+% Let $R \coloneqq \End_\D (\U)$ and $R' \coloneqq \End_{\D'} (\U')$, with superinvolutions $\vphi$ and $\vphi'$, respectively, which are superadjunctions with respect to nondegenerate sesquilinear forms $B$ and $B'$. 
+Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)} and let $(R, \vphi) \coloneqq E(\D, \U, B)$ and $(R', \vphi') \coloneqq E(\D', \U', B')$.
+Consider the corresponding parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', g_0', \delta', \kappa')$.
+If $(R, \vphi) \iso (R', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\beta = \beta'$ and $p = p'$.
+% For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D = \D'$.
+
+\begin{lemma}\label{lemma:twist-same-inertia}
+	Let $\psi_0\from \D \to \D'$ be a degree preserving isomorphism.
+	Then $(\U',B')$ and $((\U')^{\psi_0}, \psi_0\inv \circ B')$ have the same inertia $(\eta', \kappa', g_0', \delta') \in \mathsf{X}(T, \beta, p)$.
+\end{lemma}
+
+\begin{proof}
+	By Lemma \ref{lemma:twist-on-(U,B)}, $\psi_0\inv \circ B'$ is $(\psi_0\inv \circ \vphi_0' \circ \psi_0)$-sesquilinear.
+	Let $X_t \in \D_t$.
+	Then $\psi_0 (X_t)\in \D_t'$ and, hence, $\psi_0' \big(\psi_0 (X_t) \big) = \eta' (t) \psi_0 (X_t)$.
+	It follows that $(\psi_0\inv \circ \vphi_0' \circ \psi_0) (X_t) = \eta'(t) X_t$, therefore the superinvolution $(\psi_0\inv \circ \vphi_0' \circ \psi_0)$ also corresponds to the map $\eta'\from T \to \FF^\times$.
+
+	Since $\dim_{\D'} \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$, the graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ correspond to the same $\kappa$.
+	Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. Finally, using that $\psi_0\inv \circ \vphi_0 \circ \psi_0$ and $\vphi_0$ are involutive, we have that
+	\begin{align*}
+		\overline{(\psi_0\inv \circ B)} (u,v) & = \sign{u}{v} (\psi_0\inv \circ \vphi_0 \circ \psi_0) \big( (\psi_0\inv \circ B)(v, u) \big)                            \\
+		% &= \sign{u}{v} (\psi_0 \circ \vphi_0\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
+		                                      & = \psi_0\inv \bigg( \sign{u}{v} \vphi_0 \big( B(v,u) \big) \bigg)                                                       \\
+		                                      & = \psi_0\inv \big( \overline B (u,v) \big) = \psi_0\inv \big( \delta B (u,v) \big) = \delta (\psi_0\inv \circ B) (u,v),
+	\end{align*}
+	% \begin{align*}
+	%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+	%     &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
+	%     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+	% \end{align*}
+	for all $u, v \in \U\even \cup \U\odd$.
+\end{proof}
+
+By Corollary \ref{cor:iso-with-actions}, $(R, \vphi) \iso (R', \vphi')$ if, and only if, $(\eta', g_0', \delta', \kappa')$ is in the orbit of $(\eta, \kappa, g_0, \delta)$ under the action of the group $(\D^\times_{\mathrm{gr}} \rtimes A ) \times G^\#$ on $\mathsf{X}(T, \beta, p)$ determined by its action on the isomorphism classes of $(\U, B)$ (see Lemma \ref{lemma:action-on-(U,B)}).
+Let us compute this action explicitly.
+
+First, applying \cref{lemma:twist-same-inertia} in the case $\D' = \D$, we have that the $A$-action on $\mathsf{X}(T, \beta, p)$ is trivial.
+
+% First, in our case of algebraically closed $\FF$, the $A$-action (defined by Equation \eqref{eq:Aut(D)-action}) is trivial. 
+% To see that,
+% fix $\eta$ and suppose $(\kappa, g_0, \delta)$ is assigned to $(\U, B)$. 
+% Note that $\psi_0 \in A$ must be a scalar operator on each component $\D_t$ of $\D$, hence $\psi_0$ commutes with $\vphi_0$. 
+% It follows that $\psi_0\inv \circ B$ is $\vphi_0$-sesquilinear, so we can use Theorem \ref{thm:iso-(U,B)} to show that $(\U, B)$ is isomorphic to $\psi_0\cdot (\U, B) = (\U^{\psi_0\inv}, \psi \circ B)$. 
+% The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ have the same $\kappa$, since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$. 
+% Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. 
+% Finally, 
+% % \begin{align*}
+% %     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi \circ \psi_0)\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+% %     &= \sign{u}{v} (\psi_0 \circ \vphi\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
+% %     &= \psi_0 \bigg( \sign{u}{v} \vphi\inv \big( B(v,u) \big) \bigg) \\
+% %     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+% % \end{align*}
+% \begin{align*}
+%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
+%     &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
+%     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
+% \end{align*}
+% for all $u, v \in \U\even \cup \U\odd$.
+
+Let us now consider the $\D^\times_{\mathrm{gr}}$-action.
+Let $t\in T$ and $0\neq d \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $d \cdot (\U, B) = (\U, d B)$ (see Equation \eqref{eq:Dx_gr-action}).
+To compute $\eta'$, recall that $dB$ is $(\mathrm{sInt}_d \circ \vphi_0)$-sesquilinear.
+Let $s\in T$ and $c \in \D_s$.
+Then
+\begin{align*}
+	(\mathrm{sInt}_{d} \circ \vphi_0) (c) & = \mathrm{sInt}_{d} ( \eta(s) c ) = \sign{t}{s} \eta(s) d c d\inv          \\
+	                                      & = \sign{t}{s} \eta(s) \beta(t,s) c d d\inv = \tilde{\beta} (t,s) \eta(s) c
+\end{align*}
+and, hence, $\eta' (s) = \tilde{\beta} (t,s) \eta(s)$ for all $s\in T$.
+Since the action by $d$ does not change $\U$, we have $\kappa' = \kappa$.
+Clearly $g_0' = \deg (dB) = t g_0$.
+It remains to compute $\delta'$.
+Using Lemma \ref{lemma:bar-dB}, we have
+\begin{align*}
+	\overline{d B} & = (-1)^{|t|} \vphi_0(d) \overline{B} = (-1)^{|t|} \eta(t) d \delta B = (-1)^{|t|} \eta(t) \delta (d B),
+\end{align*}
+so $\delta' = (-1)^{t} \eta(t) \delta$.
+Note that $(\eta', \kappa', g_0', \delta')$ depends only on $t$, so the $\D^\times_\mathrm{gr}$-action on $\mathsf{X}(T, \beta, p)$ factors through the action of $T \iso \D^\times_\mathrm{gr}/\FF^\times$.
+
+Finally, we consider the $G^\#$-action.
+Let $g\in G$ and let $(\eta'', \kappa'', g_0'', \delta'')$ be the parameters corresponding to $g \cdot (\U, B) = (\U^{[g]}, B^{[g]})$ (see Equation \eqref{eq:G-action}).
+Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of $\U^{[g]}$, $\kappa'' = g\cdot \kappa$ where $(g\cdot \kappa) (x) = \kappa(g\inv x)$ for all $x\in G^\#/T$ {\tt (computed before)}.
+As noted in Remark \ref{rmk:deg-B^[g]}, $g_0'' = \deg B^{[g]} = g_0 g^{-2}$.
+Also, for all $u, v\ \in \U\even \cup \U\odd$, and writing $u^{[g]}$ and $v^{[g]}$ for $u$ and $v$ when they are considered as elements of $\U^{[g]}$, we compute:
+\begin{align*}
+	\overline{B^{[g]}}(u^{[g]},v^{[g]}) & = \sign{u^{[g]}}{v^{[g]}} \vphi_0\inv \big( B^{[g]} (v^{[g]}, u^{[g]}) \big)                                              \\
+	                                    & = (-1)^{(|g| + |u|) (|g| + |v|)} \vphi_0\inv \big( \sign{g}{v} B(v, u) \big)                                              \\
+	                                    & = (-1)^{|g| + |g||u| + |g||v| + |u||v|} \sign{g}{v} \vphi_0\inv \big(B(v, u) \big) = (-1)^{|g| + |g||u|} \overline B(u,v) \\
+	                                    & = (-1)^{|g|} \sign{g}{u} \delta B(u,v) = (-1)^{|g|} \delta B^{[g]}(u^{[g]},v^{[g]}),
+\end{align*}
+We conclude that $\delta'' = (-1)^{|g|} \delta$.
+
+% We summarize this discussion in the following:
+
+\begin{defi}\label{def:TxG-action}
+	The group $T\times G^\#$ acts on $\mathsf{X}(T, \beta, p)$ by
+	\begin{align}
+		t \cdot (\eta, \kappa, g_0, \delta) & \coloneqq (\tilde\beta (t, \cdot) \eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)
+		\intertext{and}
+		g \cdot (\eta, \kappa, g_0, \delta) & \coloneqq (\eta, g\cdot \kappa, g_0 g^{-2}, (-1)^{|g|} \delta),
+	\end{align}
+	for all $t\in T$, $g\in G^\#$ and $(\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)$.
+\end{defi}
+
+% \begin{equation}
+%     t \cdot (\eta, \kappa, g_0, \delta) = (\eta \tilde \beta (t, \cdot), t g_0, (-1)^{|t|} \eta(t)\delta, \kappa).
+% \end{equation}
+
+% Finally, the $G^\#$-action is given by
+% \begin{equation}
+%     g \cdot (\eta, \kappa, g_0, \delta) = (\eta, g_0 g^{-2}, (-1)^{|g|} \delta, g\cdot \kappa),
+% \end{equation}
+% where $(g \cdot \kappa)(x) \coloneqq \kappa (g\inv x)$ for all $x \in G^\#/T$
+
+In view of these considerations, Corollary \ref{cor:iso-with-actions} can be restated as follows:
+
+\begin{thm}\label{thm:iso-(R,vphi)-with-parameters}
+	Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)}, and let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', \kappa', g_0', \delta')$ be their parameters.
+	Then $E(\D, \U, B) \iso E(\D', \U', B')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ given in Definition \ref{def:TxG-action}. \qed
+\end{thm}
+
+% From now on, let us consider the triple $(T, \beta, p)$ fixed. 
+We will now proceed to simplify our parameter set and the group acting on it.
+To this end, consider the following equivalence relation among all possible $\eta$.
+
+\begin{defi}\label{def:equiv-eta}
+	Let $\eta, \eta'\from T \to \pmone$ such that $\mathrm{d}\eta = \mathrm{d}\eta' = \tilde\beta$.
+	We say that $\eta$ and $\eta'$ are \emph{equivalent}, and write $\eta \sim \eta'$, if there is $t \in T$ such that $\eta' = \tilde\beta(t, \cdot) \eta$.
+	% The equivalence class of $\eta$ will be denoted by $[\eta]$.
+\end{defi}
+
+We partition the set $\mathsf{X}(T, \beta, p)$ according to the equivalence class of $\eta$ and refer to $\{ (\eta', \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p) \mid \eta' \sim \eta \}$ as the $\eta$-block of the partition.
+Note that if $(\eta, \kappa, g_0, \delta), (\eta', \kappa', g_0', \delta') \in \mathsf{X}(T, \beta, p)$ are in the same $T\times G^\#$-orbit, then, clearly, $\eta' \sim \eta$.
+In other words, the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ restricts to each $\eta$-block of the partition.
+
+We wish to fix $\eta$.
+Given $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$,
+we define
+\[
+	\mathsf{X}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)\}.
+\]
+
+% On the other hand, the $T\times G^\#$-action does not, in general, restrict to the subset of the quadruples whose first entry is actually equal to $\eta$.
+
+% But ins $T\times G^\#$-action on this subset is related to the following one:
+
+% Nevertheless, we can understand the action on this subset by an action 
+
+% Clearly, if $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ are in the same $T\times G^\#$-orbit, then $\eta \iso \eta'$. 
+% We want to describe all
+% Our goal is, once $\eta$ is fixed, to describe the $T\times G^\#$-orbits of quadruples $(\eta', \kappa', g_0', \delta')$ such that $\eta' \sim \eta$.
+
+% \begin{defi}
+%     Let $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$. 
+%     Given $\kappa\from G^\#/T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$ and $\delta \in \pmone$, we say that the triple $(\kappa, g_0, \delta)$ is \emph{$\eta$-admissible} if
+%     $(\eta, \kappa, g_0, \delta)$ is admissible, \ie, $(\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)$. 
+%     We denote the set of all $\eta$-admissible triples by $\mathsf{X}(T, \beta, p, \eta)$. 
+%     In other words, $\mathsf{X}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)\}$. 
+% \end{defi}
+
+It is clear from Definition \ref{def:TxG-action} that the action by $(t,g)\in T\times G^\#$ does not change $\eta$ if, and only if, $t\in \rad \tilde\beta$.
+Thus, the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ induces an action of the subgroup $(\rad \tilde\beta) \times G^\#$ on $\mathsf{X}(T, \beta, p, \eta)$ given by
+\begin{align}
+	t \cdot (\kappa, g_0, \delta) & \coloneqq (\kappa, t g_0, (-1)^{|t|} \eta(t)\delta)
+	\quad \text{and}                                                                          \\
+	%\intertext{and}
+	g \cdot (\kappa, g_0, \delta) & \coloneqq (g\cdot \kappa, g_0 g^{-2}, (-1)^{|g|} \delta),
+\end{align}
+for all $t\in \rad \tilde\beta$, $g\in G^\#$ and $(\kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p, \eta)$.
+
+Now we wish to fix $\delta = 1$.
+Note that in every orbit we have a triple with $\delta = 1$ since the action by $(e, \bar1) \in G^\# = G \times \ZZ_2$ changes the sign of $\delta$.
+We define
+\[
+	\mathsf{X}(T, \beta, p, \eta)^+ \coloneqq \{ (\kappa, g_0) \mid (\kappa, g_0, 1) \in \mathsf{X}(T, \beta, p, \eta)\}.
+\]
+
+% We proceed in a similar fashion as above. 
+By the definition of the $(\rad \tilde\beta) \times G^\#$-action on $\mathsf{X}(T, \beta, p, \eta)$, we see that the action of $(t,g)$ does not change $\delta$ if, and only if, $
+	(-1)^{|t|}\eta(t) = (-1)^{|g|}.
+$
+Note that $\eta\restriction_{\rad \tilde\beta}$ is a group homomorphism, since $\mathrm{d}\eta = \tilde\beta = 1$ on $\rad \tilde\beta$.
+Hence \[
+	\mathcal G \coloneqq \{ (t,g) \in (\rad \tilde\beta) \times G^\# \mid (-1)^{|t|}\eta(t) = (-1)^{|g|} \}
+\]
+is a subgroup of $(\rad \tilde\beta) \times G^\#$.
+Thus, the $(\rad \tilde\beta) \times G^\#$-action on $\mathsf{X}(T, \beta, p, \eta)$ induces an $\mc G$-action on $\mathsf{X}(T, \beta, p, \eta)^+$ given by
+\begin{align}
+	t \cdot (\kappa, g_0) & \coloneqq (\kappa, t g_0)
+	\quad \text{and}                                               \\
+	% \intertext{and}
+	g \cdot (\kappa, g_0) & \coloneqq (g\cdot \kappa, g_0 g^{-2}),
+\end{align}
+for all $(t, g)\in \mc G$ and $(\kappa, g_0) \in \mathsf{X}(T, \beta, p, \eta)^+$.
+
+\begin{prop}
+	Fix $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$.
+	We have that the map $\iota\from \mathsf{X}(T,\beta,p,\eta)^+ \to \mathsf{X}(T,\beta,p)$ given by $\iota(\kappa, g_0) \coloneqq (\eta,\kappa, g_0, 1)$ induces a bijection between the $\mc G$-orbits in $\mathsf{X}(T,\beta,p,\eta)^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathsf{X}(T,\beta,p)$.
+\end{prop}
+
+\begin{proof}
+	If $(\kappa, g_0), (\kappa', g_0') \in \mathsf{X}(T, \beta, p, \eta)^+$ are in the same $\mc G$-orbit, let $(t, g) \in G \subseteq T\times G^\#$ such that $(t, g) \cdot (\kappa, g_0) = (\kappa', g_0')$.
+	Then $(t, g) \cdot \iota(\kappa, g_0) = (t, g) \cdot (\eta,\kappa, g_0, \delta) =  (\eta,\kappa' , g_0' , \delta) = \iota(\kappa' , g_0')$, \ie, $\iota(\kappa, g_0)$ and $\iota(\kappa', g_0')$ are in the same $T\times G^\#$-orbit.
+	So $\iota$ induces a function between the $\mc G$-orbits in $\mathsf{X}(T,\beta,p,\eta)^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathsf{X}(T,\beta,p)$.
+	%
+	\begin{itemize}
+		\item \textit{Injectivity:}
+
+		      % To check injectivity, 
+		      Consider $(\kappa, g_0), (\kappa', g_0') \in \mathsf{X}(T, \beta, p, \eta)^+$ such that $\iota(\kappa, g_0)$ and $\iota(\kappa', g_0')$ are in the same $T\times G^\#$-orbit.
+		      Then there is $(t, g) \in T\times G^\#$ such that $(t, g) \cdot \iota(\kappa, g_0) = \iota(\kappa' , g_0')$, \ie, $(t, g) \cdot (\eta,\kappa, g_0, \delta) =  (\eta,\kappa' , g_0' , \delta)$.
+		      By \cref{def:TxG-action}, it follows that $\eta = \tilde\beta(t, \cdot)\eta$ and $(-1)^{|t|}\eta(t) = (-1)^{|g|}$, so $(g, t) \in \mc G$.
+		      Also, $(t, g) \cdot (\kappa, g_0) = (\kappa', g_0')$, so $(\kappa, g_0)$ and $(\kappa', g_0')$ are in the same $\mc G$-orbit.
+		      %
+		\item \textit{Surjectivity:}
+
+		      % To check surjectivity, 
+		      Let $(\eta', \kappa, g_0, \delta)$ bi in the $\eta$-block of $\mathsf{X}(T, \beta, p)$.
+		      Then there is $t\in T$ such that $\eta = \tilde\beta(t, \cdot) \eta'$, so $t\cdot (\eta', \kappa, g_0, \delta) = (\eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$.
+
+		      If $(-1)^{|t|} \eta(t)\delta = 1$, this means that $\iota(\kappa, t g_0)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$.
+
+		      If $(-1)^{|t|} \eta(t)\delta = -1$, then let $g = (e, \bar1) \in G^\#= G\times \ZZ_2$.
+		      We then have that $g\cdot (\eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta) = (\eta, g\cdot \kappa, g^{-2} t g_0, -1)$, so $\iota(g\cdot \kappa, g^{-2} t g_0)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$, concluding the proof.
+	\end{itemize}
+\end{proof}
+
+% \begin{prop}
+%     Fix $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$. 
+%     Let $(\eta', 
+%     \kappa', g_0', \delta'), (\eta'', 
+%     \kappa'', g_0'', \delta'') \in \mathsf{X}(T, \beta, p)$ such that $\eta'$ and $\eta''$ are equivalent to $\eta$, and let $t', t'' \in T$ be such that $\eta' = \beta(t', \cdot) \eta$ and $\eta'' = \beta(t'', \cdot) \eta$. 
+%     Then $(\eta', 
+%     \kappa', g_0', \delta')$ and $(\eta'', 
+%     \kappa'', g_0'', \delta'')$ are in the same $T\times G^\#$-orbit if, and only if, $(\kappa', t'g_0', (-1)^{|t'|}\eta'(t')\delta')$ and $(\kappa'', t''g_0'', (-1)^{|t''|}\eta''(t'')\delta'')$ are in the same $\rad \tilde\beta \times G^\#$-orbit.
+% \end{prop}
+
+Therefore, the classification up to isomorphism of $G$-graded superalgebras with superinvolution that are finite dimensional and graded-simple over an algebraically closed field $\FF$, $\Char \FF \neq 2$, reduces to the classification of finite subgroups $T\subseteq G^\#$, alternating bicharacters $\beta\from T\times T \to \pmone$, equivalence classes of $\eta$ (see \cref{def:equiv-eta}) and $\mathcal G$-orbits in $\mathsf{X}(T,\beta, p, \eta)^+$.
+This gives a useful simplification when we have few equivalence classes of $\eta$, as it will be the case in the next Chapter, where we will study gradings on superinvolution-simple associative superalgebras.
+
+% Since the $T\times G^\#$-action %of Definition \ref{def:TxG-action} 
+% can change $\eta$, we have to restrict our group to do that. 
+% Clearly, the $T\times G^\#$-action induces an $T$-action on the set $\{ \eta \from T \to \FF^\times \mid \mathrm{d} \eta = \tilde \beta \}$, and the stabilizer of this action in any point $\eta$ is $\rad \tilde\beta = (\rad \beta) \cap T^+$ (see Lemma \ref{lemma:rad-tilde-beta}). 
+% This motivates the following:
+
+% \begin{defi}
+%     We will denote the group $\rad \tilde\beta \times G^\#$ by $\mathcal{G}$. 
+% \end{defi}
+
+% It is clear that the $T\times G^\#$-action on $\mathsf{X}(T, \beta, p)$ induces a $\mathcal G$-action on $\mathsf{X} (T, \beta, p, \eta)$. 
+
+% Define $\mathsf{X}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)\}$. 
+% Since the $T\times G^\#$-action can change the $\eta$ it does not restrict to the set $\mathsf{X}(T, \beta, p, \eta)$. 
+% More explicitly, the 
+
+% , but we can consider the action by the stabilizer of $\mathsf{X}(T, \beta, p, \eta)$, \ie, the action of the group $\mathcal{G} \coloneqq \rad \tilde\beta \times G^\#$
+
+% We define an equivalence relation $\sim$ on set of all maps $\eta \from T \to \FF^\times$ such that $\mathrm{d} \eta = \tilde \beta$ by declaring  $\eta \sim \eta'$ if there is $t\in T$ such that $\eta' = \tilde\beta (t, \cdot) \eta$. 
+
+% Let $\eta \from T \to \FF^\times$ be such that $\mathrm{d} \eta = \tilde \beta$. 
+% We define the set $\mathsf{X}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathsf{X}(T, \beta, p)\}$. 
+% Define $\mathcal{G} \coloneqq \rad \tilde\beta \times G^\#$. 
+% Clearly, the action in Definition \ref{def:TxG-action} restricts to a $\mathcal{G}$-action on $\mathsf{X}(T, \beta, p, \eta)$.
+
+% \begin{defi}
+%     Let $\eta, \eta' \from T \to \FF^\times$ be such that $\mathrm{d} \eta = \mathrm{d} \eta' = \tilde \beta$. 
+%     We say that $\eta \sim \eta'$ if there is $t\in T$ such that $\eta' = \tilde\beta (t, \cdot) \eta$.
+% \end{defi}
+
+% Note that if 

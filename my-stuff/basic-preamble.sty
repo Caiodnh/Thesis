@@ -15,6 +15,7 @@
 % \RequirePackage[utf8]{inputenc}
 % \RequirePackage[english]{babel}
 \RequirePackage{enumerate}
+% \RequirePackage[shortlabels]{enumitem}
 % \RequirePackage[T1]{fontenc}
 
 % Grey comments with "\tmp"
@@ -52,9 +53,34 @@
 %\specialcomment{smalltt}
 %{\begingroup\ttfamily\footnotesize\color{Grey}}{\endgroup}
 
-% References
-% \RequirePackage{hyperref}
-\RequirePackage[capitalise]{cleveref}
+% * References (they must be called in this order)
+\RequirePackage[hypertexnames=false]{hyperref}
+\RequirePackage[capitalise,noabbrev]{cleveref}
+% ** The next two commands are to remove a strange warning from using autonum
+\expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}
+\let\globcount\newcount
+\RequirePackage{autonum}
+
+% ** for some reason, subsections don't work with cref out of the box
+\crefname{subsection}{Subsection}{Subsections}  
+\Crefname{subsection}{Subsection}{Subsections}
+
+% I was using
+% \mathtoolsset{showonlyrefs}
+% before using autonum, but it is incompatible with cleverref
+% On the other hand, autonum breaks all starred environments because they are "useless".
+% This causes many errors since it is incompatible with old files.
+% Below is a attempt to correct it:
+
+\makeatletter
+\newcommand{\restore@Environment}[1]{%
+  \AtBeginDocument{%
+    \csletcs{#1*}{#1}%
+    \csletcs{end#1*}{end#1}%
+  }%
+}
+\forcsvlist\restore@Environment{alignat,equation,gather,multline,flalign,align}
+\makeatother
 
 
 
@@ -65,54 +91,80 @@
 \numberwithin{equation}{chapter}
 
 \crefname{thm}{Theorem}{Theorems}
+\crefname{theorem}{Theorem}{Theorems}
+
 \crefname{lemma}{Lemma}{Lemmas}
+
 \crefname{prop}{Proposition}{Propositions}
+\crefname{proposition}{Proposition}{Propositions}
+
 \crefname{cor}{Corollary}{Corollaries}
+\crefname{corollary}{Corollary}{Corollaries}
+
 \crefname{ex}{Example}{Examples}
+\crefname{example}{Example}{Examples}
+
 \crefname{defi}{Definition}{Definitions}
+\crefname{definition}{Definition}{Definitions}
+
+\crefname{rmk}{Remark}{Remarks}
 \crefname{remark}{Remark}{Remarks}
+
 \crefname{notation}{Notation}{Notations}
+
 \crefname{convention}{Convention}{Conventions}
+
 \crefname{claim}{Claim}{Claims}
 
 
 \theoremstyle{plain} % Thms, props, cors and lemmas
+
 \newtheorem{thm}{Theorem}[chapter]
+\newtheorem{theorem}[thm]{Theorem}
+
 \newtheorem{lemma}[thm]{Lemma}
+
 \newtheorem{prop}[thm]{Proposition}
+\newtheorem{proposition}[thm]{Proposition}
+
 \newtheorem{cor}[thm]{Corollary}
+\newtheorem{corollary}[thm]{Corollary}
+
 \newtheorem*{thm*}{Theorem}
+\newtheorem*{theorem*}{Theorem}
 
 \theoremstyle{definition}
 
 \newtheorem{ex}[thm]{Example}
+\newtheorem{example}[thm]{Example}
+
 \newtheorem{defi}[thm]{Definition}
+\newtheorem{definition}[thm]{Definition}
 
 \theoremstyle{remark}
 
-\newtheorem{notation}[thm]{Notation}
+\newtheorem{rmk}[thm]{Remark}
 \newtheorem{remark}[thm]{Remark}
+
+\newtheorem{notation}[thm]{Notation}
 \newtheorem{convention}[thm]{Convention}
 \newtheorem{claim}{Claim}
 \newtheorem*{claim*}{Claim}
-
-\newcommand{\dual}{\widehat}
 
 \newcommand{\qedclaim}{\vspace{3mm}}
 
 \newcommand{\newclaims}{\setcounter{claim}{0}}
 
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%        New Commands        %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+% Character group
+\newcommand{\dual}{\widehat}
+
 % Descending chain condition
-\newcommand{\dcc}{d.c.c.}
+\newcommand{\dcc}{d.c.c.~}
 
 % Colon for maps
 \newcommand{\from}{\colon}
@@ -129,7 +181,6 @@
 
 % General Math
 \newcommand{\abs}[1]{\mathopen|#1\mathclose|}
-\newcommand{\Dim}{\operatorname{dim}}
 \newcommand{\ann}{\operatorname{ann}}
 \newcommand{\rad}{\operatorname{rad}}
 \newcommand{\iso}{\simeq}
@@ -161,10 +212,11 @@
 % Bold matrices
 \newcommand{\M}{M}
 
-% Calligraphy letters
+% Calligraphic letters
 \newcommand{\mc}[1]{\mathcal #1}
 \newcommand{\U}{\mathcal U}
 \newcommand{\V}{\mathcal V}
+\newcommand{\B}{\mathcal B}
 
 % Quotients of Z
 \newcommand{\Zmod}[1]{\ensuremath{\mathbb{Z}_{#1}}}
@@ -262,8 +314,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\mathtoolsset{showonlyrefs}
 
 %% TO-DO Lists %%
 

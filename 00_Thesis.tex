@@ -1,57 +1,42 @@
-% \makeatletter
-% \def\input@path{{../}}
-% \makeatother
 \documentclass[12pt]{pdfathesis}
 \usepackage{my-stuff/basic-preamble}
-% \usepackage[notref]{showkeys}
 \usepackage{showlabels}
 
-\usepackage{silence}
-\WarningFilter[pdftoc]{hyperref}{Token not allowed in a PDF string}
-\WarningFilter[frontpage]{pdfathesis}{Underfull \hbox badness (badness 10000) in paragraph at lines 10--10}
-
-% \DeclareUnicodeCharacter{0301}{*************************************}
-
-\usepackage[backend=biber,style=alphabetic,maxalphanames=5]{biblatex}
-\addbibresource{my-stuff/bibliography.bib}
-
-% \usepackage{subfiles}
-% \def\biblio{\bibliographystyle{amsalpha}\bibliography{../02_bibliography}}
-%
+% ** JC's preamble:
 \input{pdfathesis-stuff/preamble}
-%
-% \includeonly{chapters/05_Super-anti-auto}
+
+% ** IncludeOnly
+% \includeonly{chapters/02_Associative-Grd-Simple/00_intro_and_main}
+
+% ------------------
+% * BEGIN DOCUMENT *
+% ------------------
+
 \begin{document}
-%
-%
-\ActivateWarningFilters[frontpage]
-\include{pdfathesis-stuff/prefactory}
-\ActivateWarningFilters[frontpage]
-%
+
+% ** JC's stuff after \begin{document}:
+
+% \include{pdfathesis-stuff/prefactory}
 \begin{prefatory}
+    \hbadness=10000
+    \frontpage
+    \tableofcontents
 \end{prefatory}
-%
-%
-\include{chapters/00_intro}
-\include{chapters/01_general}
-%\include{chapters/03_G-hat-and-universal-algebras}
-\include{chapters/tmp/04_Assc-and-Type-I}
-\include{chapters/02_grd-simp}
-\include{chapters/03_sinv-on-grd-simp}
-\include{chapters/04_grd-on-sinv-simp}
-\include{chapters/05_Lie-salg}
-%
 
-\printbibliography
+% ** Chapters:
 
-% \bibliographystyle{amsalpha}
-% \bibliography{my-stuff/bibliography}  
-%%
-%%%%%%%%%%
-% \appendix%
-% \chapter{Title of appendix A}
-% %%
-% %%%%%%%%%%
-% \chapter{Title of appendix B}
-% %%
+\include{chapters/00_Introduction/00_intro_and_main}
+\include{chapters/01_Generalities/00_intro_and_main}
+\include{chapters/02_Associative-Grd-Simple/00_intro_and_main}
+% \include{chapters/tmp/04_Assc-and-Type-I}
+\include{chapters/03_Associtive-Grd-Simple-with-Sinv/00_intro_and_main}
+\include{chapters/04_Gradings-on-Sinv-Simple/00_intro_and_main}
+\include{chapters/05_Gradings-on-Lie-Superalgebras/00_intro_and_main}
+% \include{chapters/tmp/08_recycle-bin}
+
+% ** Bibliography:
+
+\bibliographystyle{amsalpha}
+\bibliography{my-stuff/bibliography}
+
 \end{document}

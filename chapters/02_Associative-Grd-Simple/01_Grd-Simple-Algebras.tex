@@ -1,0 +1,693 @@
+
+\section{Graded-simple associative algebras}\label{sec:gradings-on-matrix-algebras}
+
+In this section we will recall the classification of gradings on matrix algebras \cite{BSZ01, BZ02, BK10}. 
+We will follow the exposition of \cite[Chapter 2]{livromicha} but use slightly different notation, which will be extended to superalgebras in \cref{sec:grd-simple-salg}.
+
+Our main interest is in finite dimensional graded algebras. 
+It is clear that they satisfy the following condition:
+
+\begin{defi}
+    We say that a graded algebra $R$ satisfies the \emph{descending chain condition} (or \emph{\dcc}) on graded left ideals if, for every sequence $\{I_k\}_{k\in \NN}$ of graded left ideals such that \[k \leq \ell \implies I_k \supseteq I_\ell,\] there is $n\in \NN$ such that \[n \leq \ell \implies I_n = I_\ell.\]
+\end{defi}
+
+As we will see in \cref{thm:End-over-D}, a graded-simple algebra satisfying this condition can be described, up to isomorphism, by a graded-division algebra $\D$ and a graded right $\D$-module of finite rank. 
+This is the graded analog of the classical result of Wedderburn.
+
+\subsection{Graded-division algebras and their modules}\label{ssec:D-modules}
+
+It is easy to see that if a $G$-graded algebra $R$ has the unit element $1$, then $1 \in R_e$. 
+Also, if an element $r\in R_g$ is invertible, then $r\inv \in R_{g\inv}$.
+
+\begin{defi}
+    A \emph{graded-division algebra} is a unital graded algebra $\D$ such that every nonzero homogeneous element has an inverse. 
+    In this case, we may also refer to the $G$-grading on the algebra $\D$ as a \emph{division grading}.
+\end{defi}
+
+\begin{ex}\label{ex:group-algebra}
+    The group algebra $\FF G$ can be regarded as a graded algebra if we declare $\FF g$ to be the homogeneous component of degree $g$, for all $g\in G$. 
+    It is a graded-division algebra since $(\lambda g)\inv = \frac1\lambda g\inv$, for all $0 \neq \lambda \in \FF$.
+\end{ex}
+
+\begin{ex}\label{ex:Pauli-2x2}
+    Another example of a graded-division algebra is the matrix algebra $M_2(\FF)$, $\Char \FF \neq 2$, equipped with the $\ZZ_2 \times \ZZ_2$-grading, sometimes called \emph{Pauli grading}, defined by
+\begin{align*}
+	\deg \begin{pmatrix}
+		\phantom{.}1 & \phantom{-}0\phantom{.} \\
+		\phantom{.}0 & \phantom{-}1\phantom{.}
+	\end{pmatrix} = (\bar 0, \bar 0),\quad & \deg \begin{pmatrix}
+		\phantom{.}0 & \phantom{-}1\phantom{.} \\
+		\phantom{.}1 & \phantom{-}0\phantom{.}
+	\end{pmatrix} = (\bar 0, \bar 1), \\
+	\deg \begin{pmatrix}
+		\phantom{.}1 & \phantom{-}0\phantom{.} \\
+		\phantom{.}0 & -1\phantom{.}
+	\end{pmatrix} = (\bar 1, \bar 0),\quad &
+	\deg \begin{pmatrix}
+		\phantom{.}0 & -1\phantom{.}           \\
+		\phantom{.}1 & \phantom{-}0\phantom{.}
+	\end{pmatrix} = (\bar 1, \bar 1).
+\end{align*}
+\end{ex}
+
+\begin{ex}\label{ex:Pauli-ell-x-ell}
+    \Cref{ex:Pauli-2x2} can be generalized to define a $\ZZ_\ell \times \ZZ_\ell$-grading on $M_\ell(\FF)$,  given that there exists a primitive $\ell^{\text{th}}$-root of unity $\xi \in \FF$. 
+    Let
+    \[
+        A \coloneqq \begin{pmatrix}
+		1 & 0 & 0 & \cdots &0\\
+		0 & \xi& 0 & \cdots &0\\
+		0 & 0 & \xi^2 &\cdots &0\\
+		\vdots & \vdots & \vdots & \ddots  & \vdots\\
+		%0 & 0 & 0 & \cdots & \xi^{\ell-2}& 0\\
+		0 & 0 & 0 & \cdots & \xi^{\ell-1}\\
+	\end{pmatrix}
+        %
+        \quad \text{and} \quad
+        %
+        B \coloneqq \begin{pmatrix}
+		0 & 0 & 0 & \cdots & 0 & 1\\
+		1 & 0& 0 & \cdots & 0 & 0\\
+		0 & 1 & 0 &\cdots & 0 & 0\\
+		\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+		%0 & 0 & 0 & \cdots & 0 & 0\\
+		0 & 0 & 0 & \cdots & 1 & 0\\
+	\end{pmatrix}.
+    \] 
+    Note that $AB = \xi BA$ and $A^\ell = B^\ell = 1$. 
+    One can check that setting $\deg A = (\bar 1, \bar 0)$ and $\deg B = (\bar 0, \bar 1)$ defines a grading making $M_\ell (\FF)$ a graded-division algebra.
+\end{ex}
+
+For what follows, let us fix a graded-division algebra $\D$.
+Observe that $T \coloneqq \supp \D \subseteq G$ is a subgroup of $G$. 
+Also, it is clear that $\D_e$ is a division algebra in the usual sense. 
+
+Graded $\D$-modules will play an important role in this work. 
+We will now recall their classification up to isomorphism. 
+
+Consider a graded right $\D$-module $\U = \bigoplus_{g\in G} \U_g$. 
+Note that a homogeneous component $0\neq \U_g$ is a $\D_e$-module but, unless $\D = \D_e$, it is not a $\D$-submodule.
+% , since if $0\neq u \in \U_g$ and $0\neq d \in \D_t$, then $0\neq ud \in \U_{gt}$. 
+It is easy to see that the $\D$-span of $\U_g$ is $\U_{gT} \coloneqq \bigoplus_{t\in T} \U_{gt}$. 
+% This leads us to the following:
+
+\begin{defi}
+    Given a left coset $x\in G/T$, the \emph{isotypic component} $\U_x$ of a graded right $\D$-module $\U = \bigoplus_{g\in G} \U_g$ is the $\D$-submodule given by:
+    \[
+        \U_{x} \coloneqq \bigoplus_{g\in x} \U_{g}.
+    \]
+    Clearly, $\U = \bigoplus_{x\in G/T} \U_x$.
+\end{defi}
+
+% Clearly, $\U_{gT}$ is a $\D$-submodule of $\U$, for every $gT \in G/T$.
+
+\begin{remark}
+    The use of the terminology ``isotypic component'' here is consistent with its common use. 
+    Recall that, in representation theory, an isotypic component is defined as the sum of all simple submodules of a given isomorphism type. 
+    Since $\D$ is a graded-division algebra, the right modules ${}^{[g]}\D$ are simple $\D$-modules. 
+    It is easy to see that all simple $\D$-modules are of this form.
+    Indeed, if $\V$ is any graded right $\D$-module and $0\neq v \in \V_g$, then the map ${}^{[g]}\D \to v\D$ given by $d \mapsto vd$ is an isomorphism. 
+    It is also easy to see when ${}^{[g]}\D$ and ${}^{[g']}\D$ are isomorphic. 
+    Of course, since $\supp {}^{[g]}\D = gT$ and $\supp {}^{[g']}\D = g'T$, a necessary condition for this to happen is $g'g\inv \in T$. 
+    Conversely, if $g'g\inv \in T$, then we can pick $0\neq c \in \D_{g'g}$ and define an isomorphism ${}^{[g]}\D \to {}^{[g']}\D$ by $d \mapsto cd$.
+\end{remark}
+
+\begin{lemma}\label{lemma:iso-D-modules}
+    Two graded right $\D$-modules $\U$ and $\V$ are isomorphic if, and only if, the isotypic component $\U_x$ is isomorphic to $\V_x$ for all $x \in G/T$. 
+\end{lemma}
+
+\begin{proof}
+    If $\psi\from \U \to \V$ is a homomorphism of graded right $\D$-modules, then it is clear that $\psi (\U_x) \subseteq \V_x$, for all $x \in G/T$, and that $\psi$ is determined by the maps $\psi\restriction_{\U_x} \from \U_x \to \V_x$, $x \in G/T$. 
+    Moreover, $\psi$ is an isomorphism if, and only if, each $\psi\restriction_x$ is an isomorphism.
+\end{proof}
+
+\Cref{lemma:iso-D-modules} reduces the problem of classifying graded $\D$-modules up to isomorphism to classifying their isotypic components. 
+We will now reduce the latter to (ungraded) modules over the division algebra $\D_e$. 
+Note that $\D$ can be regarded as a left $\D_e$-module.
+
+\begin{defi}\label{def:D_e-form}
+    Let $\U$ be a graded $\D$-module. 
+    A \emph{$\D_e$-form} of $\U$ is a graded $\D_e$-submodule $\tilde \U \subsetneq \U$ such that the map $\tilde \U \tensor_{\D_e} \D \to \U$ given by $u\tensor d \mapsto ud$ is an isomorphism of graded right $\D$-modules. 
+    If this is the case, we will use this map to identify $\tilde \U \tensor_{\D_e} \D$ with $\U$. 
+\end{defi}
+
+\begin{prop}\label{prop:U_g-is-D_e-form}
+    Let $\U$ be a graded right $\D$-module and let $g\in G$. 
+    The homogeneous component $\U_g$ is a $\D_e$-form for the isotypic component $\U_{gT}$.
+\end{prop}
+
+\begin{proof}
+    Since the $\D$-span of $\U_g$ is $\U_{gT}$, the map $\psi\from \U_g \tensor_{\D_e} \D \to \U$ given by $\psi (u\tensor d) = ud$ is surjective. 
+    To see that $\psi$ is injective, pick $0 \neq X_t \in \D_t$ for every $t\in T$. 
+    Let $u \in \U_g \tensor_{\D_e} \D$. 
+    It is easy to see that $\{ X_t\}_{t\in T}$ is a $\D_e$-basis for $\D$, so we can write $u = \sum_{t\in T} u^t \tensor X_t$, with $u^t \in \U_g$ for all $t\in T$ and $u^t = 0$ for all but finitely many $t\in T$. 
+    We then have that $\psi (u) = \sum_{t\in T} u^t X_t$ and
+    hence, if $\psi (u) = 0$, we have $u^t X_t = 0$, for every $t \in T$. 
+    Since $X_t$ is invertible, we conclude that $u^t = 0$ for every $t\in T$ and, therefore, $u = 0$.
+\end{proof}
+
+\begin{cor}\label{cor:iso-isotypic-components}
+    Let $\U$ and $\V$ be graded right $\D$-modules and fix $g\in G$. 
+    Then $\U_{gT}$ is isomorphic to $\V_{gT}$ if, and only if, $\U_g$ and $\V_g$ are isomorphic as $\D_e$-modules. \qed
+\end{cor}
+
+% \begin{proof}
+%     Let $\vphi\from \U_g \to \V_g$ be an isomorphism of $\D_e$-modules. 
+%     Clearly we can extend it to an isomorphism $\tilde\vphi \from \U_g\tensor_{\D_e} \D \to \V_g\tensor_{\D_e} \D$ by $ $
+% \end{proof}
+
+By \cref{prop:U_g-is-D_e-form}, a $\D_e$-basis for $\U_g$ is a $\D$-basis for $\U_{gT}$. 
+Since $\D_e$ is a division algebra, we conclude that every isotypic component has a $\D$-basis consisting of elements of the same degree. 
+Since $\U$ is the direct sum of its isotypic components, we conclude that $\U$ has a graded basis:
+
+\begin{defi}
+    Let $\U$ be a graded right $\D$-module. 
+    A $\D$-basis $\mc B$ of $\U$ is said to be a \emph{graded basis of $\U$} if all the elements in $\mc B$ are homogeneous (of various degrees).
+\end{defi}
+
+\begin{remark}
+    Alternatively, the existence of a graded basis can be proved with the same arguments as in the ungraded setting (using Zorn's Lemma).
+\end{remark}
+
+\begin{prop}\label{prop:dim-U_x}
+    Let $\U$ be a graded right $\D$-module. 
+    Let $\mc B$ be a graded basis and set $\B_x \coloneqq B \cap B_x$ for any $x\in G/T$. 
+    Then the sets $B_x$ form a partition of $\B$ and the cardinality $|B_x|$ is independent of the choice of $\B$ and equal to $\dim_{\D_e} \U_g$ for any $g\in x$. 
+\end{prop}
+
+\begin{proof}
+    Let $\B$ be any graded basis of $\U$ and set $\B_x \coloneqq \B \cap \U_x$ for all $x\in G/T$. 
+    Since every element in $\B$ is homogeneous, $\B = \bigcup_{x \in G/T} \B_x$, and, hence, $\B_x$ is a graded basis for $\U_x$, for all $x\in G/T$.
+    
+    We claim that each $\B_x$ has cardinality $\dim_{\D_e} \U_g$, where $g$ is an arbitrary representative of the coset $x$. 
+    Indeed, let $\B_x = \{ u_\lambda\}_{\lambda \in \Lambda_x}$
+    For every $\lambda \in \Lambda_x$, choose $d_\lambda \in \D$ to be a nonzero element of degree $(\deg u_\lambda)\inv g \in T$. 
+    Then, clearly $\B_x' = \{u_\lambda d_\lambda \}_{\lambda \in \Lambda_x}$ is also a graded basis of $\U_{gT}$, of the same cardinality as $\B_x$, but with all elements having degree $g$. 
+    It is easy to see that $\B_x'$ is a $\D_e$-basis of $\U_g$ and, therefore, it has cardinality $\dim_{\D_e} \U_g$. 
+\end{proof}
+
+\begin{defi}
+    We define the \emph{rank} or \emph{$\D$-dimension} of a graded right module $\U$ to be the cardinality of one (and hence any) graded basis of $\U$, and denote it by $\dim_\D (\U)$.
+\end{defi}
+
+We will now restrict ourselves to graded right $\D$-modules of finite rank.
+% and study their endomorphism algebras. 
+
+It is clear that a graded right $\D$-module $\U$ has finite rank if, and only if, all isotypic components have finite rank and only finitely many of them are nonzero. 
+In view of \cref{lemma:iso-D-modules,cor:iso-isotypic-components,prop:dim-U_x}, this means that an isomorphism class of such modules is determined by the map $\kappa \from G/T \to \ZZ_{\geq 0}$ defined by $\kappa(x) \coloneqq \dim_\D (\U_x)$, which has finite support. 
+In other words, $\kappa$ is a finite \emph{multiset} in $G/T$, where $\kappa(x)$ is viewed as the multiplicity of the point $x$. 
+As it is usually dine for multisets, we define $|\kappa| \coloneqq \sum_{x \in G/T} \kappa(x)$. 
+Clearly $|\kappa| = \dim_\D (\U)$.
+
+Given an arbitrary map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules. 
+To do so, we set $k = |\kappa|$ and choose a $k$-tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T$.
+Then we put $\U \coloneqq {}^{[g_1]}\D \oplus \cdots \oplus {}^{[g_k]}\D$.
+
+\begin{remark}
+	Both parameters, the multiset and the the tuple, have been used in previous works. 
+	Sometimes both are present, as in \cite{livromicha} (where the tuple is defined so that all elements belong to different left cosets and the multiplicities are recorded as recorded as a separate tuple) and \cite{paper-Qn,paper-MAP}; sometimes only the tuple, as in \cite{BK10}; sometimes only the multiset, as in \cite{paper-adrian,felipe-misha}.
+	Here we follow the notation of the latter.
+\end{remark}
+
+% \begin{notation}
+    Let $\U$ and $\V$ be graded right $\D$-modules. We will denote by $\Hom_\D(\U,\V)$ the vector space of all homomorphisms from $\U$ to $\V$ as $\D$-modules, not as graded $\D$-modules. 
+    In other words, the elements of $\Hom_\D (\U, \V)$ do not necessarily preserve degrees. 
+    As usual, we also denote $\Hom_\D (\U,\U)$ by  $\End_\D(\U)$. 
+% \end{notation}
+
+Of course, $\Hom_\D(\U,\V) \subseteq \Hom_\FF (\U, \V)$. 
+If $\dim_\D (\U) < \infty$, we can say more: 
+
+\begin{prop}\label{prop:Hom_D-is-graded}
+    Let $\U$ and $\V$ be graded right $\D$-modules and suppose $\dim_\D \U < \infty$. 
+    Then $\Hom_\D(\U,\V)$ is a graded subspace of $\Hom_\FF^{gr} (\U, \V)$ (see \cref{defi:elementary-grd-abstract}).
+\end{prop}
+
+\begin{proof}
+    Let $\B = \{ u_1, \ldots, u_k \}$ be graded basis for $\U$ and $\mc C = \{v_i\}_{i\in I}$ be graded basis for $\V$, set $g_j \coloneqq \deg u_j$ and $h_i \coloneqq \deg v_i$, for $1\leq j \leq k$ and $i\in I$. 
+    
+    Since $\B$ is, in particular, a basis for $\D$ as a free $\D$-module, a $\D$-linear map $f\from \U \to \U$ can be defined by its values on the elements of $\B$. 
+    Given $1\leq i \leq k$, $\lambda\in \Lambda$, $t\in T$ and $0\neq d \in \D_t$, define $f_{i, j, d}\from \U \to \V$ be the $\D$-linear map defined by $f(u_j) = \delta_{ir} v_i d$, for every $r \in \{1, \ldots, k \}$. 
+    It is easy to see that $f_{i, j, d}\from \U \to \V$ is a homogeneous element in $\Hom_\FF^{gr} (\U, \V)$ and that
+    \[\label{eq:grd-M_k(D)-nonabelian}
+        \deg f_{i,j,d} = h_i t g_j\inv.
+    \] 
+    Since $\B$ is finite, it is clear that every map in $\Hom_\D (\U, \V)$ is a finite sum of maps of the form $f_{i, j, d}$, concluding the proof. 
+\end{proof}
+
+Under the conditions of \cref{prop:Hom_D-is-graded}, we will always considered $\Hom_\D (\U, \V)$ as a graded vector space with the grading induced by $\Hom_\FF^{gr} (\U, \V)$. 
+Note that, in the case $\U = \V$, this makes $\End_\D (\U)$ a graded algebra and $\U$ a graded left $\End_\D (\U)$-module. 
+% Therefore, $\U$ is $(\End_\D (\U), \D)$-bimodule.
+
+% It is clear that the grading on $\End_\D (\U) = \Hom_\D(\U, \U)$ (defined in \cref{ssec:D-modules}, by means of \cref{prop:Hom_D-is-graded}) makes it a graded algebra
+% We will follow the convention of writing $\D$-linear maps on the left and $R$-linear maps on the right. 
+
+As usual, if both $\U$ and $\V$ have finite rank over $\D$, we can represent the elements of $\Hom_\D(\U, \V)$ as matrices with entries in $\D$. 
+More precisely, given graded bases $\B = \{ u_1, \ldots, u_k \}$ and $\mc C = \{v_1, \ldots, v_k\}$ for $\U$ and $\V$, respectively, we have an isomorphism of vector spaces $\Hom_\D(\U, \V) \to M_{k\times \ell}(\D)$ given by $f\mapsto (d_{ij})$, where $f(u_j) = \sum_i \delta_{ij} v_i d_{ij}$. 
+Under this isomorphism, the map $f_{i, j, d}$ defined in the proof of \cref{prop:Hom_D-is-graded}, corresponds to the matrix $E_{ij}(d) \in M_{k\times \ell}(\D)$, \ie, the matrix which has $d$ in the position $(i,j)$ and $0$ elsewhere. 
+
+\begin{remark}\label{rmk:M_k(F)-tensor-D}
+    Note that we can identify $M_{k\times \ell}(\D) = M_{k\times \ell}(\FF) \tensor_\FF \D$, with $E_{ij}(d)$ corresponding to $E_{ij}\tensor \D$. 
+    In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_{k\times \ell}(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_{k\times \ell}(\FF)$ has a elementary grading (see \cref{defi:elementary-grd-matrix}).
+\end{remark}
+
+% As usual, if both $\U$ and $\V$ have finite rank over $\D$, we can represent the elements of $\Hom_\D(\U, \V)$ as matrices with entries in $\D$. 
+% More precisely, given graded bases $\B = \{ u_1, \ldots, u_k \}$ and $\mc C = \{v_1, \ldots, v_k\}$ for $\U$ and $\V$, respectively, 
+
+% Under the usual isomorphism $\End_\D(\U) \to M_k(\D)$ defined by the basis $\B$ (\ie, $f\mapsto (d_{ij})$ where $f(u_j) = \sum_i u_{ij}d_{ij}$), the map $f_{i,j,d}$ goes to the matrix $E_{ij} (d)$, \ie, the matrix which has $d$ in the position $(i,j)$ and $0$ elsewhere. 
+
+\subsection{Graded Wedderburn theory}\label{ssec:Grd-Wedderburn-Theory}
+
+Let $\U$ be a nonzero graded right $\D$-module of finite rank. 
+In this subsection we will study the endomorphism algebra $\End_\D (\U)$. 
+The main reason for this, below. 
+Special cases of this resul appeared in several works, \eg, \cite{BSZ01,MR2046303,BZ02}. 
+Here we follow \cite[Theorem 2.6]{livromicha}:
+% , the converse of which is an easy exercise.
+
+\begin{thm}\label{thm:End-over-D}
+    %   Let $G$ be a group and let $R$ be a $G$-graded associative algebra. 
+    % 	Then $R$ is graded-simple and satisfies the \dcc on graded left ideals if, and only if,	there is a $G$-graded division algebra $\D$ and a graded right $\D$-module $\mc{U}$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
+	%
+	Let $G$ be a group and let $R$ be a $G$-graded graded-simple associative algebra satisfying the \dcc on graded left ideals. 
+	Then a $G$-graded division algebra $\D$ and a graded right $\D$-module $\mc{U}$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
+\end{thm}
+
+% with $\dim_\D (\U) = k < \infty$ and let $\B = \{u_1, \ldots, u_k\}$ be a graded basis for it, and let $g_i = \deg u_i$. 
+% Since $\B$ is, in particular, a $\D$-basis of a free $\D$-module, a $\D$-linear map $f\from \U \to \U$ can be defined by its values on the elements of $\B$. 
+% Hence, if we choose $u_i, u_j \in \B$ and $0\neq d \in \D_t$ for some $t\in T$, then we have a $\D$-linear map $f_{i, j, d}\from \U \to \U$ defined by $f(u_\ell) = \delta_{j\ell} u_i d$. 
+% As an element of the algebra $\End^{\text{gr}}_\FF (\U)$, equipped with the elementary grading induced by $\U$ (see \cref{defi:elementary-grd-abstract}), it is clear that 
+% \[\label{eq:grd-M_k(D)-nonabelian}
+%     \deg f_{i,j,d} = g_i t g_j\inv.
+% \] 
+% It is also clear that every element of $\End_\D(\U)$ is a finite sum of maps of the form $f_{i,j,d}$, and, hence, we conclude that $\End_\D (\U)$ is a graded subalgebra of $\End_\FF^{\text{gr}} (\U)$. 
+% From now on, we will consider $\End_\D (\U)$ as a graded algebra with the grading inherited from $\End_\FF^{\text{gr}} (\U)$. 
+% Under the usual isomorphism $\End_\D(\U) \to M_k(\D)$ defined by the basis $\B$ (\ie, $f\mapsto (d_{ij})$ where $f(u_j) = \sum_i u_{ij}d_{ij}$), the map $f_{i,j,d}$ goes to the matrix $E_{ij} (d)$, \ie, the matrix which has $d$ in the position $(i,j)$ and $0$ elsewhere. 
+
+% \begin{remark}
+%     Note that we can identify $M_k(\D) = M_k(\FF) \tensor_\FF \D$ with $E_{ij}(d)$ corresponding to $E_{ij}\tensor \D$. 
+%     In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_k(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_k(\FF)$ is given the elementary grading defined by the $k$-tuple $(g_1, \ldots, g_k)$ (see \cref{defi:elementary-grd-matrix}).
+% \end{remark}
+
+The next question is when two graded algebras $\End_\D (\U)$ and $\End_{\D'} (\U')$ are isomorphic. 
+We will need the following two definitions:
+
+\begin{defi}\label{def:inner-automorphism}
+	Let $d\in \D$ be a nonzero homogeneous element.
+	We define the \emph{inner automorphism} $\operatorname{Int}_d\from \D \to \D$ by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$.
+\end{defi}
+
+\begin{defi}\label{def:twist}
+	Let $\psi_0\from \D' \to \D$ be a homomorphism of graded algebras and let $\U$ be a graded right $\D$-module.
+	The \emph{module induced by $\psi$} is the graded right $\D'$-module $\U^{\psi_0}$ which is the same as $\U$ as a vector space, but with $\D'$-action defined by $u\cdot d \coloneqq u\,\psi_0 (d)$, for all $u\in \U$ and $d\in \D'$.
+	In the case $\psi_0\from \D \to \D$ is an automorphism, $\U^{\psi_0}$ is again a graded right $\D$-module, called the \emph{twist of $\U$ by $\psi_0$}.
+\end{defi}
+
+\begin{remark}\label{rmk:twist-does-not-change-set}
+	Note that a map $f\from \U^{\psi_0} \to \U^{\psi_0}$ is $\D'$-linear if, and only if, it is $\D$-linear as a map from $\U\to \U$. 
+	In other words, $\End_{\D'} (\U^{\psi_0})$ is the same set as $\End_\D (\U)$. 
+	Nevertheless, the matrix representation of $f$ can be different in each case. 
+	To be more precise, note that a subset $\B \subseteq \U$ is a graded $\D'$-basis of $\U^{\psi_0}$ if, and only if it is a graded $\D$-basis of $\U$. 
+	Such basis gives rise to isomorphisms $M_k(\D') \iso \End_{\D'} (\U^{\psi_0})$ and $M_k(\D) \iso \End_{\D} (\U)$, and it is easy to see that the matrix representing $f$ in $M_k(\D')$ is equal to the the matrix representing $f$ in $M_k(\D)$ but with $\psi_0$ applied to every entry.
+\end{remark}
+
+The next result is \cite[Theorem 2.10]{livromicha} with a slightly different notation:
+
+\begin{thm}\label{thm:iso-abstract}
+	Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded-division algebras, and $\U$ and $\U'$ are nonzero right graded modules of finite rank over $\D$ and $\D'$, respectively.
+	Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$, where $g \in G$, $\psi_0\from {}^{[g\inv]}\D^{[g]} \to \D'$ is an isomorphism of graded algebras, $\psi_1\from \U^{[g]} \to (\U')^{\psi_0}$ is an isomorphism of graded right $\D$-modules, such that
+	\begin{equation}\label{eq:def-iso-algebras}
+		\forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+	\end{equation}
+	Conversely, given a triple $(g, \psi_0, \psi_1)$ as above, Equation \eqref{eq:def-iso-algebras} defines an isomorphism of graded algebras $\psi\from R \to R'$.
+	Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$. \qed
+\end{thm}
+% \begin{defi}
+%     Let $\alpha\from \D \to \D'$ be any map. 
+%     Given $A\in \M_k(\D)$, we define $\alpha(A) \in M_k(\D')$ to be the matrix given by applying $\alpha$ in each entry of $A$.
+% \end{defi}
+
+For the remaining of this subsection, fix a graded-division algebra $\D$ and a nonzero graded right $\D$-module of finite rank $\U$, and set $R \coloneqq \End_{\D} (\U)$. 
+
+First, we  we state here a well-known result about ungraded algebras, for future reference:
+
+\begin{prop}\label{prop:R-simple-iff-D-simple}
+	The algebra $R = \End_\D (\U)$ is simple if, and only if, the algebra $\D$ is simple. \qed
+\end{prop}
+
+% \begin{remark}\label{rmk:converse-density-thm}
+%     If $\U \neq 0$ and using that it has a graded basis, it is easy to see that the $\D$-action on $\U$ gives rise to an isomorphism of graded algebras $\D \to \End_R(\U)$. 
+% \end{remark}
+
+The following result is \cite[Exercise 3 on page 60]{livromicha}.
+
+% \begin{prop}
+%     The $\D$-action on $\U$ gives rise to an isomorphism of graded algebras between $\D$ and $\End_R (\U)$. \qed
+% \end{prop}
+
+\begin{lemma}\label{lemma:converse-density-thm}
+    The representation map $\rho\from \D \to \End_R (\U)$ corresponding to the $\D$-action on $\U$
+    % given by $u \rho(d) = ud$, for all $d\in \D$ and $u \in \U$, 
+    is an isomorphism of graded algebras.
+\end{lemma}
+
+\begin{proof}
+    It is easy to see that $\rho$ is a homomorphism of graded algebras. 
+    Since $\D$ is graded-simple and $\rho(1) = \id_{\U} \neq 0$, $\rho$ is injective.
+
+    Let $\{u_1, \ldots, u_k \}$ be a graded basis of $\U$. 
+    Given $u\in \U$, define $r\in R = \End_\D (\U)$ to be the $\D$-linear map such that $r u_1 = r(u_1) = u$ and $r u_i = r(u_i) = 0$ for $1< i \leq k$. 
+    Let $f\in \End_R (\U)$ and write $u_1 f = \sum_i u_i d_i$ for $d_1, \ldots, d_k\in \D$. 
+    Then
+    \[
+        u f = (r u_1) f = r (u_1 f) = r\big( \sum_i u_i d_i \big) = u d_1.
+    \]
+    Therefore $f = \rho(d_1)$, proving that $\rho$ is surjective.
+\end{proof}
+ 
+Finally, we will assume $G$ is abelian. 
+Recall that, in this case, the center of a graded algebra is a graded subalgebra (\cref{lemma:center-is-graded}). 
+% Also, note that if $d\in Z(\D)$, then the map $\rho(d)$ is not only $R$-linear, but also $\D$-linear. 
+
+\begin{prop}\label{prop:R-and-D-have-the-same-center}
+    Suppose $G$ is abelian. 
+    Then the map $\iota\from Z(\D) \to Z(R)$ given by $\iota (d)(u) \coloneqq ud$ is an isomorphism of graded algebras.
+\end{prop}
+
+\begin{proof}
+    First of all, $\iota$ is well-defined. 
+    Indeed, $\iota(d)\from \U \to \U$ is $\D$-linear for all $d\in Z(\D)$, \ie, $\iota(d) \in R = \End_\D(\U)$. 
+    Now, if $r\in R$ and $u \in \U$, then $r (\iota(d)(u)) = r(ud) = r(u) d = \iota(d) (r(u))$. 
+    Hence $\iota(d) \in Z(R)$. 
+    Clearly, $\deg \iota(d) = \deg d$. 
+    
+    To show that $\iota$ is an isomorphism, we identify $\D$ with $\End_R (\U)$ via $\rho$ as in \cref{lemma:converse-density-thm}. 
+    Computations analogous to the ones above show that the map $\iota'\from Z(R) \to Z(\D)$ given by $\iota'(r)(u) \coloneqq r(u)$ is well-defined, and it is straightforward that $\iota'$ is the inverse of $\iota$. 
+\end{proof}
+
+% Recall the canonical map $Z(\D) \to Z(R)$ given by $c \mapsto r_c$.
+
+
+% We will now show that we can identify $Z(\D)$ with $Z(R)$.
+% For every $c\in Z(\D)$, consider $r_c\from \U \to \U$ given by $r_c(u) = uc$.
+% Clearly, $r_c$ is $\D$-linear, so $r_c \in R$.
+% Actually, we have $r_c\in Z(R)$.
+% Indeed, for all $r\in R = \End_\D(\U)$ and all $u\in \U$, we have $r (r_c(u)) = r(uc) = r(u) c = r_c(r(u))$.
+
+% \begin{prop}
+% 	Let $R = \End_\D(\U)$. 
+% 	The map $Z(\D) \to Z(R)$ given by $c \mapsto r_c$ is an isomorphism of $G$-graded algebras.
+% \end{prop}
+
+% \begin{proof}
+% 	Given $r\in Z(R)$, we can define $c_r\in \End_R (\U) =\D$ by $uc_r = r(u)$ for all $u\in \U$.
+% 	Computations analogous to the ones above show that $c\in Z(\D)$ (\cref{lemma:converse-density-thm}), and it is clear that the map $r\mapsto c_r$ is the inverse of the map $c \mapsto r_c$.
+% 	The definition of grading on $R = \End_\D (\U)$ implies that these maps are isomorphisms of $G$-graded algebras.
+% \end{proof}
+
+\subsection{Finite dimensional graded-division algebras over an algebraically closed field}\label{ssec:grd-div-alg}
+
+The classification of graded-division algebras over $\FF$ involves the classification of usual division algebras and certain cohomology sets of $G$ (see \cite{Guido}), which is unattainable in general. 
+Fortunately, for our purposes, we only need this classification in a very special case. 
+For gradings on (super)involution-simple associative (super)algebras or simple Lie (super)algebras, we may assume that $G$ is abelian (see \cref{prop:grd-simple-vphi-abelian,prop:simple-Lie-G-abelian}). 
+Also, we will restrict ourselves to finite dimensional algebras over an algebraically closed field. 
+Hence, for the remainder of this subsection, we will assume that $G$ is abelian and that $\FF$ is algebraically closed.
+
+Let $\D$ be a finite dimensional graded-division algebra and let $T \coloneqq \supp \D$. 
+We then have that $T$ is a finite subgroup of $G$.
+For every $t\in T$, let us fix $0 \neq X_t\in D_t$. 
+Then it is easy to see that $\D_t = \D_e X_t$. 
+Since $\D_e$ is a finite dimensional division algebra and $\FF$ is algebraically closed, $\D_e = \FF$. 
+It follows that $\dim_\FF \D_t = 1$ for all $t\in T$.
+
+\begin{defi}\label{def:bicharacter}
+    A map $b\from T\times T \to \FF^\times$ is said to be a \emph{bicharacter} if, for every $t\in T$, both maps $b(t, \cdot)\from T \to \FF^\times$ and $b(\cdot, t)\from T \to \FF^\times$ are characters. 
+    We say that a bicharacter $b$ is 
+    \begin{itemize}
+        \item \emph{skew-symmetric} if $b(t,s) = b(s,t)\inv$ for all $t,s\in T$;
+        \item \emph{alternating} if $b(t,t) = 1$ for all $t\in T$.
+    \end{itemize}
+    Clearly, every alternating bicharacter is skew-symmetric. 
+    The \emph{radical} of a skew-symmetric bicharacter is the subgroup of $T$ defined by
+    \[
+        \rad b \coloneqq \{ t \in T \mid b(t, T) =1 \}.
+    \]
+    If $\rad b = \{e\}$, we say that $b$ is \emph{nondegenerate}.
+\end{defi}
+
+\begin{defi}
+    Let $T$ and $T'$ be abelian groups. 
+    A map $b\from T \times T' \to \FF^\times$ is said to be a bicharacter if the maps $b(t', \cdot)\from T \to \FF^\times$ and $b(\cdot, t)\from T' \to \FF^\times$ are characters, for all $t\in T$ and $t' \in T'$. 
+    In the case $T= T'$, we say that a bicharacter $b$ is
+    \begin{itemize}
+        \item \emph{skew-symmetric} if $b(t,s) = b(s,t)\inv$ for all $t,s\in T$;
+        \item \emph{alternating} if $b(t,t) = 1$ for all $t\in T$.
+    \end{itemize}
+    Clearly, every alternating bicharacter is skew-symmetric. 
+    The \emph{radical} of a skew-symmetric bicharacter is the subgroup of $T$ defined by
+    \[
+        \rad b \coloneqq \{ t \in T \mid b(t, T) =1 \}.
+    \]
+    If $\rad b = \{e\}$, we say that $b$ is \emph{nondegenerate}.
+\end{defi}
+
+Since $T$ is abelian and every homogeneous component is one-dimensional, for any $t, s \in T$, there exists a nonzero scalar $\beta(t,s)$ such that 
+\[\label{eq:beta}
+    X_t X_s = \beta(t, s) X_s X_t.
+\]
+Note that $\beta(t,s)$ does not depend on the choice of $X_t$ and $X_s$. 
+It is easy to see that the map $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter and that $\rad \beta$ is the support of $Z(\D)$. 
+The following is a consequence of a well-known result in group cohomology (see \cite[Section 2.2]{EK_d4}), but we give a different proof here for completeness (see \cite[Section 4]{BZ18}). 
+
+\begin{prop}\label{prop:T-beta-determines-iso}
+    The pair $(T, \beta)$ determines the isomorphism class of the graded-division algebra $\D$.
+\end{prop}
+
+\begin{proof}
+    Write $T = \langle t_1 \rangle \times \cdots \times \langle t_k \rangle$ and let $n_i$ denote the order of $t_i$, for all $1\leq i \leq k$. 
+    Since $\FF$ is algebraically closed, scaling $X_{t_i}$ if necessary, we can assume  $X_{t_i}^{n_i} = 1$. 
+    
+    Let $\mc F$ be the free associative algebra generated by the symbols $Y_{t_1}, \ldots, Y_{t_k}$. 
+    We can make $\mc F$ a $T$-graded algebra by assigning $\deg Y_{t_i} \coloneqq t_i$. 
+    % Why?
+    Let $\mathfrak{D}$ denote the quotient of $\mc F$ by the ideal generated by 
+    \[\label{eq:relations-D}
+        Y_{t_i}^{n_i} - 1 \text{ and }Y_{t_i}Y_{t_j} - \beta(t_i, t_j) Y_{t_j}Y_{t_i},
+    \] 
+    for all $1\leq i,j \leq k$. 
+    Since the relators are homogeneous, $\mathfrak{D}$ is also a $T$-graded algebra. 
+    Note that $\mathfrak{D}$ depends only on $T$, $\beta$ and the choice of the elements $t_1, \ldots, t_k \in T$.  
+    Also, it is clear from the relators that $\mathfrak{D}$ is spanned by the elements of the form $Y_{t_1}^{m_1}Y_{t_2}^{m_2} \cdots Y_{t_k}^{m_k}$, where $0\leq m_i \leq n_i - 1$. 
+    In particular $\dim \mathfrak{D} \leq |T| = \dim \D$.
+    
+    Clearly, there is a unique surjective algebra homomorphism $\psi\from \mathfrak{D} \to \D$ such that $\psi(Y_{t_i}) = X_{t_i}$, which is degree preserving. 
+    We then must have that $\dim \mathfrak{D} \geq \dim \D$, so $\dim \mathfrak{D} = \dim \D$ and, therefore, $\psi$ is an isomorphism of $T$-graded algebras. 
+    %
+    % It follows that $\dim \mathfrak{D} = \dim \D$. 
+    % From this fact we have that the elements of the form $Y_{t_1}^{m_1}Y_{t_2}^{m_2} \cdots Y_{t_k}^{m_k}$ form a basis of $\mathfrak{D}$, and is easy to see that declaring $\deg Y_{t_1}^{m_1}Y_{t_2}^{m_2}\cdots Y_{t_k}^{m_k} \coloneqq t_1^{m_1}t_2^{m_2}\cdots t_k^{m_k}$ defines a grading on $\mathfrak{D}$. 
+    % It also follows that $\psi$ is a bijection, and with the grading we just defined, it is isomorphism of graded algebras. 
+\end{proof}
+
+There remains the question of existence of a graded-division algebra $\D$ for a given $(T,\beta)$. %, a graded-division algebra $\D$ with support $T$ such that \cref{eq:beta} holds. 
+
+This, again, follows from cohomology. 
+Here we will give an explicit construction with matrices in the case of nondegenerate $\beta$, following \cite[Remark 18]{EK15} (see also \cite[Remark 2.16]{livromicha}).
+
+\begin{lemma}\label{lemma:colour-tensor-product}
+    Let $T$ be a finite abelian group and let $\beta\from T\times T \to \FF^\times$ be an alternating bicharacter. 
+    Suppose that $T = A\times B$ for subgroups $A, B \subseteq T$ and that there are graded-division algebras $\mc A$ and $\mc B$ associated to $(A, \beta\restriction_{A\times A})$ and $(B, \beta\restriction_{B\times B})$, respectively. 
+    Then there is a graded-division algebra associated to $(T, \beta)$. 
+    Further, if $\beta(A,B) = 1$, then this graded-division algebra is isomorphic to $\mc A \tensor \mc B$ (with its usual product).
+\end{lemma}
+
+\begin{proof}
+    Choose elements $0 \neq X_a \in \mc A_a$ and $0 \neq X_b \in \mc B_b$, for all $a\in A$ and $b\in B$. 
+    On the graded vector space $\mc A \tensor \mc B$, define a product by \[(X_a \tensor X_b) (X_{a'} \tensor X_{b'}) \coloneqq \beta(b, a') (X_{a} X_{a'}) \tensor (X_{b}X_{b'}),\] for all $a,a' \in A$ and $b, b' \in B$ (this construction is called \emph{colour tensor product} in \cite[page 88]{MR1192546}, and is a special case of the concept of \emph{twisted tensor product} in \cite{twisted-tensor}). 
+    Clearly, this makes $\mc A \tensor \mc B$ a graded algebra, and it is associative since:
+    \begin{align}
+        \big( (X_{a} \tensor X_{b}) (X_{a'} \tensor X_{b'}) \big) (X_{a''} \tensor & X_{b''}) 
+        = \beta(b, a') \big( (X_{a} X_{a'}) \tensor (X_{b}X_{b'}) \big) (X_{a''} \tensor X_{b''})\\
+        &= \beta(b, a') \beta(bb', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
+        &= \beta(b, a') \beta(b, a'') \beta(b', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
+        &= \beta(b, a'a'') \beta(b', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
+        &= \beta(b', a'') (X_a \tensor X_b) \big( (X_{a'} X_{a''}) \tensor (X_{b'} X_{b''}) \big) \\
+        &= (X_a \tensor X_b) \big( (X_{a'} \tensor X_{b'}) \tensor (X_{a''} X_{b''}) \big),
+    \end{align}
+    for all $a,a', a'' \in A$ and $b, b', b'' \in B$. 
+    It is straightforward to see that it is a graded-division algebra, and that it is associated to $(T, \beta)$. 
+\end{proof}
+
+\begin{prop}
+    For every pair $(T, \beta)$, there is a graded-division algebra associated to it. 
+\end{prop}
+
+\begin{proof}
+    We write $T = \langle t_1 \rangle \times \cdots \times \langle t_k \rangle$ and proceed by induction on $k$. 
+    If $k = 1$, then $\beta$ must be trivial: $\beta(t_1^i,t_1^j) = \beta(t_1, t_1)^{ij} = 1$, for all $i, j \in \ZZ$. 
+    Hence, the group algebra $\FF T$ is a graded-division algebra associated to $(T, \beta)$. 
+    The induction step follows from the case $k=1$ and \cref{lemma:colour-tensor-product}.
+\end{proof}
+
+If we suppose that $\beta$ is nondegenerate, than we can construct a graded-division algebra associated to $(T,\beta)$ using matrices. 
+For that, we follow \cite[Remark 18]{EK15} (see also \cite[Remark 2.16]{livromicha}).
+
+First of all, we can decompose the group $T$ as $A\times B$, where the restrictions of $\beta$ to each of the subgroups $A$ and $B$ are trivial (see \cite[page 36]{livromicha}) and, hence, $A$ and $B$ are in duality by $\beta$, \ie, the map $A \to \widehat B$ given by $a \mapsto \beta(a, \cdot)$ is an isomorphism of groups (note that, in particular, $|T|$ is a perfect square). 
+
+Let $V$ be the vector space with basis $\{e_b\}_{b\in B}$ (\ie, $V$ is the vector space underlying the group algebra $\FF B$). 
+For each $a\in A$, define $X_a\in \End(V)$ by
+\[
+    \forall b' \in B, \quad X_a (e_{b'}) \coloneqq \beta(a, b')e_{b'},
+\]
+and, for each $b\in B$, define $X_b\in \End(V)$ by
+\[
+    \forall b' \in B, \quad X_b (e_{b'}) \coloneqq e_{bb'}.
+\]
+Finally, we define $X_{ab} \coloneqq X_a X_b$, for all $a\in A$ and $b\in B$. 
+
+Clearly, the operators $X_a$ and $X_b$ (and, hence, $X_{ab})$ are invertible, for all $a\in A$ and $b\in B$. 
+It is easy to see that $X_a X_{a'} = X_{aa'}$ and $X_{b} X_{b'} = X_{bb'}$, for all $a, a' \in A$ and $b, b'\in B$. 
+Also, $X_a ( X_b(e_{b'}) ) = \beta(a, bb') e_{bb'} = \beta(a, b) \beta(a,b') e_{bb'}$ and $X_b ( X_a(e_{b'}) ) = \beta(a, b') e_{bb'}$, so $X_a X_b = \beta(a,b) X_b X_a$. 
+It follows that, for all $t,s \in T$, $X_t X_s = \beta(t,s) X_s X_t$.
+
+We also see that the operators $X_{ab}$, for $a\in A$ and $b\in B$, are linearly independent. 
+Indeed, let consider scalars $\lambda_{ab} \in \FF$ such that $\sum_{a,b} \lambda_{ab} X_{ab} = 0$. 
+Then for each $b' \in B$, we have that
+\[
+    \sum_{a,b} \lambda_{ab} X_{ab} (e_{b'}) = \lambda_{ab} \beta(a, b) \beta(a,b') e_{bb'} = 0.
+\]
+Since $\{ e_{bb'} \}$ is linearly independent, we have
+\[
+    \sum_a \lambda_{ab} \beta(a, b) \beta(a,b') = 0,
+\]
+for all $b,b' \in B$. 
+It follows that
+\[
+    \sum_a \lambda_{ab} \beta(a, b) \beta(a, \cdot) = 0,
+\]
+for all $b\in B$. 
+Since $\beta$ is nondegenerate, the maps $\beta(a, \cdot) \in \widehat B$ are all distinct characters in, and since distinct characters are linearly independent, we have
+$
+    \lambda_{ab} \beta(a, b) = 0,
+$
+for all $a\in A$ and $b\in B$. 
+Therefore, $\lambda_{ab} = 0$, as desired. 
+
+By dimension count, we conclude that $\{X_t\}_{t\in T}$ span the whole $\End(V)$, and declaring $\deg X_t = t$ makes it a graded-division algebra. 
+It is easy to see that it is associated to the pair $(T, \beta)$. 
+
+\begin{defi}\label{def:standard-realization}
+	We will refer to these matrix models of $\mc D$ as its \emph{standard realizations}.
+\end{defi}
+
+Note that \cref{ex:Pauli-ell-x-ell} is a standard realization for $(T, \beta)$ where $T = \ZZ_\ell \times \ZZ_\ell$ and $\beta ((i, j), (i', j')) = \xi^{ij' - i'j}$, for all $i, i', j, j' \in \ZZ_\ell$.
+
+\begin{cor}\label{cor:D-simple-iff-beta-nondeg}
+    The graded-division algebra $\D$ is simple as an (ungraded) algebra if, and only if, $\beta$ is nondegenerate. 
+\end{cor}
+
+\begin{proof}
+    If $\beta$ is nondegenerate, then the construction of a standard realization above shows that $(T, \beta)$ has a model with a simple algebra and, hence, $\D$ must be simple by \cref{prop:T-beta-determines-iso}. 
+    
+    Conversely, if $\D$ is simple as an algebra, then, since $\FF$ is algebraically closed, $\D$ must be central (\ie, $Z(\D) = \FF$), so $\rad \beta = \{e\}$.
+\end{proof}
+
+We finish with a well-known result for future reference.
+
+\begin{lemma}\label{lemma:Aut(D)-widehat-T}
+    An $\FF$-linear map $\psi_0\from \D \to \D$ is an automorphism of the graded algebra $\D$ if, and only if, there is $\chi \in \widehat T$ such that $\psi_0( X_t ) = \chi(t) X_t$ for all $t\in T$. 
+\end{lemma}
+
+\begin{proof}
+    Any invertible degree-preserving linear map $\psi\from \D \to \D$ is determined by a map $\chi\from T \to \FF^\times$ such that $\psi(X_t) = \chi(t) X_t$, for all $t\in T$. 
+    It is easy to see that $\psi$ is an automorphism if, and only if, $\chi$ is a group homomorphism, \ie, $\chi \in \widehat T$. 
+\end{proof}
+
+% \begin{remark}
+%     Recall the $\widehat T$-action defined by the $T$-grading on $\D$ (see \cref{sec:g-hat-action}) and let $\rho\from \widehat T \to \Aut (\D)$ be its corresponding representation map. 
+%     Then \cref{lemma:Aut(D)-widehat-T} implies that that $\rho$ is an isomorphism of groups.
+% \end{remark}
+
+\subsection{Finite dimensional graded-simple algebras over an algebraically closed field}\label{ssec:param-End_D-U}
+
+We continue assuming that $\FF$ is algebraically closed and that $G$ is abelian.
+
+If $R$ is a graded-simple algebra then, by \cref{thm:End-over-D}, $R \iso \End_\D (\U)$, where $\D$ is a graded-division algebra and $\U$ is graded right $\D$-module of finite rank, say, $k$. 
+Since $\End_\D (\U) \iso M_k(\D)$, we have that $R$ is finite dimensional if, and only if, $\D$ is finite dimensional if, and only if, $\D$ is associated to a pair $(T,\beta)$ as in the previous subsection.
+
+\begin{defi}\label{def:E(D,U)}
+    Let $\D$ be a finite dimensional graded-division algebra over an algebraically closed field $\FF$ and let $\U$ be a graded right $\D$-module of finite rank. 
+	If $\D$ is associated to $(T, \beta)$ and $\U$ is associated to $\kappa\from G/T \to \ZZ_{\geq 0}$ (see Subsection \ref{ssec:D-modules}), we say that $(T, \beta, \kappa)$ are the \emph{parameters} of the pair $(\D, \U)$.
+\end{defi}
+
+It is easy to see that, since $G$ is abelian, $\U^{[g]}$ is associated to $g \cdot \kappa$, where the $G$-action on functions $G/T \to \ZZ_{\geq 0}$ is defined as usual: $(g\cdot \kappa) (x) \coloneqq \kappa(g\inv x)$ for all $x\in G/T$.
+
+If $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras and $\U'$ is a graded right $\D'$-module associated to $\kappa'$, it is clear that $\dim_{\D'} \U_x' = \dim_\D (\U_x')^{\psi_0}$, for all $x \in G/T$, and, hence, the graded $\D$-module $(\U')^{\psi_0}$ is also associated to $\kappa'$. 
+
+Thus, \cref{thm:iso-abstract} becomes the following:
+
+\begin{thm}\label{thm:iso-End_D-U-with-parameters}
+	Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)}, and let $(T, \beta, \kappa)$ and $(T', \beta', \kappa')$ be their parameters. 
+	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T = T'$, $\beta = \beta'$, and $\kappa'$ belongs to the $G$-orbit of $\kappa$. \qed
+% 	and there is $g\in G$ such that $\kappa' = g \cdot \kappa$. 
+\end{thm}
+
+It should be noted that, combining \cref{prop:R-simple-iff-D-simple,cor:D-simple-iff-beta-nondeg}, we have that $\End_\D (\U)$ is simple as an (ungraded) algebra if, and only if, $\beta$ is nondegenerate. 
+If this is the case, \cref{thm:iso-End_D-U-with-parameters} gives us the classification of abelian group gradings on matrix algebras up to isomorphism:
+
+\begin{defi}\label{def:Gamma-T-beta-kappa}
+    Let $n > 0$ be a natural number. 
+    Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$ and also consider the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma = (g_1, \ldots, g_{k})$ of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T$. 
+    We define $\Gamma (T, \beta, \kappa)$ to be the grading on $M_n(\FF)$ given by identifying $M_n(\FF)$ with the graded algebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
+    \[
+        \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
+    \] 
+    for all $1\leq i, j \leq k$, $t\in T$ and $0 \neq d \in \D_t$.
+\end{defi}
+
+Note that we are abusing notation in \cref{def:Gamma-T-beta-kappa}. 
+The grading $\Gamma (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$. 
+Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$. 
+
+\begin{cor}[{\cite[Theorem 2.27]{livromicha}, \cite[Theorem 2.6]{BK10}}]
+    Every $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma (T, \beta, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Two such gradings $\Gamma (T, \beta, \kappa)$ and $\Gamma (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and $\kappa'$ belongs to the $G$-orbit of $\kappa$. \qed
+\end{cor}
+
+As an application of \cref{thm:End-over-D,thm:iso-End_D-U-with-parameters}, we can obtain a classification of finite dimensional simple superalgebras over an algebraically closed field. 
+For a classification over an arbitrary field, we refer the reader to \cite{racine}. 
+
+\begin{thm}\label{thm:fd-simple-SA}
+    Let $R$ be a finite dimensional simple superalgebra over an algebraically closed field $\FF$. 
+    Then $R \iso M(m,n)$ or $R \iso Q(n)$, for some $m,n \in \ZZ_{\geq 0}$. 
+    Moreover,
+    \begin{enumerate}[(i)]
+        \item $M(m,n) \not\iso Q(n')$;
+        \item $M(m,n) \iso M(m', n')$ if, and only if, either $m=m'$ and $n=n'$, or $m=n'$ and $n=m'$;
+        \item $Q(n) \iso Q(n')$ if, and only if, $n = n'$,
+    \end{enumerate}
+    for all $m, m', n, n' \in \ZZ_{\geq 0}$. 
+\end{thm}
+
+\begin{proof}
+    We have that $R$ is simple as a $\ZZ_2$-graded algebra, so, by \cref{thm:End-over-D}, $R \iso \End_\D (\U)$. 
+    Let $(T, \beta, \kappa)$ be the parameters of $(\D, \U)$. 
+    Since $T\subseteq \ZZ_2$, we either have $T = \{ \bar 0\}$ or $T = \ZZ_2$. 
+    
+    If $T = \{\bar 0\}$, then $\D = \FF$ and $R \iso \End_\FF (\U)$. 
+    The isomorphism class of $\U$ is determined by the map $\kappa\from \ZZ_2/\{\bar 0\} = \ZZ_2 \to \ZZ_{\geq 0}$ defined by $\kappa(i) = \dim_\FF (\U^i)$ for all $i\in \ZZ_2$. 
+    In other words, the isomorphism class of $\U$ is determined by by the numbers $m \coloneqq \kappa(\bar 0)$ and $n \coloneqq \kappa(\bar 1)$. 
+    By choosing graded bases for $\U\even$ and $\U\odd$, we get $R \iso M(m,n)$. 
+    By \cref{thm:iso-End_D-U-with-parameters}, we conclude that $M(m,n) \iso M(m',n')$ if, and only if, either $m=m'$ and $n=n'$ (for $g = \bar 0$), or $m=n'$ and $n=m'$ (for $g = \bar 1)$. 
+    
+    If $T = \ZZ_2$, we first note that the only alternating bicharacter $\beta\from \ZZ_2\times \ZZ_2 \to \FF^\times$ is the trivial one. 
+    Indeed, $\beta(\bar1, \bar1) = 1$ since $\beta$ is alternating, and $\beta(t, \bar 0) = \beta (\bar 0, t) = 1$ for all $t\in \ZZ_2$ since $\beta(t, \cdot) $ and $\beta (\cdot, t) $ are characters. 
+    Hence, $\D \iso \FF\ZZ_2 \iso Q(1)$ and $R \iso \End_{Q(1)}(\U)$. 
+    The isomorphism class of $\U$ is determined by a map $\kappa\from \ZZ_2/\ZZ_2 \to \ZZ_{\geq 0}$, \ie, by single number $n \coloneqq \kappa(\ZZ_2) = \dim_{Q(1)} (\U)$. 
+    By \cref{thm:iso-End_D-U-with-parameters}, again because we have only one element in $\ZZ_2/\ZZ_2$, the number $n$ also determines the isomorphism class of $\End_{Q(1)}(\U)$. 
+    
+    To conclude the proof, we will show that $\End_{Q(1)}(\U) \iso Q(n)$.  
+    By \cref{prop:U_g-is-D_e-form}, we can take a graded-basis $\B$ for $\U$ with all elements having degree $\bar 0$.
+    We, then, can write $\End_{Q(1)}(\U) \iso M_n(Q(1)) \iso \M_n(\FF) \tensor Q(1)$, where the grading on $\M_n(\FF) \tensor Q(1)$ is described in \cref{rmk:M_k(F)-tensor-D}. 
+    By our choice of $\B$, the even matrices are the with entries in $Q(1)\even$ and the odd matrices are the ones with entries in $Q(1)\odd$. 
+    Finally, using the Kronecker product, $M_n(\FF) \tensor Q(1) \iso Q(1)\tensor M_n(\FF) \iso Q(n)$. 
+\end{proof}

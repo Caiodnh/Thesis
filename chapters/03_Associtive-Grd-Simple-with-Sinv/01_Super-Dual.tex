@@ -1,0 +1,74 @@
+\section{The superdual}\label{ssec:superdual}
+
+Let $\D$ be a graded-division superalgebra. 
+We start with the definition of superdual of a finite dimensional right $G$-graded $\D$-supermodule, which is the same as of the dual of a $G^\#$-module (see \cite[Definition 2.56]{livromicha}). 
+
+\begin{defi}\label{def:superdual-supermodule}
+    Let $\U$ be a nonzero graded right $\D$-supermodule of finite rank. 
+    The \emph{superdual of $\U$} by is defined to be $\U\Star \coloneqq \Hom_\D (\U,\D)$, with its usual grading (see \cref{prop:Hom_D-is-graded}). 
+    We give $\U\Star$ the structure of a \emph{left} graded $\D$-module: if $d \in \D$ and $f \in \U \Star$, then we define $(df)(u) = d\, f(u)$ for all $u\in \mc U$. 
+\end{defi}
+
+While the ``super'' part in the name seems unimportant in \cref{def:superdual-supermodule}, it does make a difference in the definition of the superdual of a map:
+
+\begin{defi}\label{defi:superdual-map}
+    Let $\U$ and $\V$ be graded right $\D$-modules of finite rank. 
+    Given a homogeneous $\D$-linear
+    $L:\U \rightarrow \V$, we define the \emph{superdual of $L$} to be the $\FF$-linear map $L\Star\from \V\Star \rightarrow \U\Star$ defined by
+    \[
+        L\Star (f) = (-1)^{|L||f|} f \circ L,
+    \] 
+    for every homogeneous $f\in \V\Star$. 
+    It is easy to see that $L\Star$ is (left) $\D$-linear. 
+    We extend the definition of superdual to every map in $\Hom_\D (\U, \V)$ by linearity.
+\end{defi}
+
+Our main focus, so far, was in right supermodules over a graded-division superalgebra (see \cref{ssec:D-modules,ssec:supermodules-over-D}). 
+Hence, it is convenient to see the superdual of a supermodule as right supermodule over a convenient graded-division superalgebra:
+
+\begin{defi}\label{def:superopposite}
+    Let $R$ be a $G$-graded superalgebra. 
+    We the define the \emph{superopposite $G$-graded superalgebra $R\sop$} to be the same graded superspace of $R$ but with a new product given by $r * s \coloneqq \sign{r}{s} sr$, for every homogeneous elements $r,s \in R$.
+\end{defi}
+
+Note that \cref{def:superopposite} depends on the assumption that $G$ is abelian. 
+
+\begin{remark}\label{rmk:sop-super-anti-iso}
+    If $\vphi:R \to S$ is a super-anti-isomorphism between the $G$-graded superalgebras $R$ and $S$, then the map $\vphi$ can be viewed as an isomorphism $R\to S\sop$ or $R\sop \to S$.
+\end{remark}
+
+It is easy to see that $\D\sop$ is also a graded-division superalgebra. 
+For every graded right $\U$ as in \cref{def:superdual-supermodule}, the left $\D$-module $\U\Star$ can be considered as a right $\D\sop$-module by means of the action defined by $f\cdot d := (-1)^{|d||f|} df$, for every homogeneous elements $d\in \D$ and $f\in \U\Star$. 
+Also, for every $L\from \U \to \V$ as \cref{defi:superdual-map}, $L\Star$ is a (right) $\D\sop$-linear map. 
+
+The next result is straightforward, but it is the main reason why we are interested in the superdual, and we state as a proposition for future reference:
+
+\begin{prop}\label{prop:dual-super-anti-iso}
+    Let $\U$ be a nonzero graded right $\D$-supermodule of finite rank. 
+    The map $\End_\D (\U) \rightarrow \End_{\D\sop} (\U\Star)$ defined by $L \mapsto L\Star$ is a degree-preserving super-anti-isomorphism. \qed 
+\end{prop}
+
+\begin{defi}
+    Let $\B = \{u_1, \ldots, u_k\}$ is a graded basis, we can consider its \emph{superdual basis} $\mc B\Star = \{u_1\Star, \ldots, u_k\Star\}$ in $\U\Star$, where $u_i\Star : \U \rightarrow \D$ is defined by $u_i\Star (u_j) = (-1)^{|u_i||u_j|} \delta_{ij}$. 
+    Clearly, $\deg u_i\Star = (\deg u_i)\inv$ and $B\Star$ is, indeed, a $\D\sop$-basis for $\U\Star$.
+\end{defi}
+
+\begin{remark}
+	In the case $\D=\FF$, if we denote by $[L]$ the matrix of $L$ with respect to the homogeneous bases $\mc B$ of $\U$ and $\mc C$ of $\V$, then the supertranspose $[L]\sT$ is the matrix corresponding to $L\Star$ with respect to the superdual bases $\mc C\Star$ and $\mc B\Star$.
+\end{remark}
+
+Since $G$ is abelian, $G^\#/T$ is a group and, hence, the map $G^\#/T \to G^\#/T$ given by $x \mapsto x\inv$ is well-defined. 
+From the construction of the superdual basis, it is easy to see that $\dim_\D \U_x = \dim_{\D\sop} \U\Star_{x\inv}$, for all $x \in G^\#/T$. 
+Hence, if $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is the map associated to $\U$ as a $G^\#$-graded right $\D$-module (see \cref{ssec:D-modules}), then $\kappa\Star \from G^\#/T \to \ZZ_{\geq 0}$ defined by $\kappa\Star (x) = \kappa (x\inv)$ is the map associated to $\U\Star$ as a $G^\#$-graded right $\D\sop$-module.
+
+It is straightforward to translate this to the maps associated to the $G$-graded supermodule, as in \cref{ssec:supermodules-over-D}. 
+If $\D$ is even and $\kappa_\bz, \kappa_\bo$ are the maps associated to $\U$, then $\kappa_\bz\Star, \kappa_\bo\Star$ are the maps associated to $\U\Star$. 
+If $\D$ is and $\kappa$ is the map associated to $\U$, then $\kappa\Star$ is the map associated to $\U\Star$.
+
+Finally, let us assume that $\FF$ is algebraically closed and $\D$ is finite dimensional. 
+Then, if $(T, \beta, p)$ is the triple associated to $\D$, then it is clear that $\supp \D\sop = T$ and that the parity map for $\D\sop$ is also $p$. 
+Also, if $s,t \in T$, $0 \neq X_s \in \D_s$ and $0 \neq X_t \in \D_t$, following the notation in \cref{def:superopposite}, we have:
+\[
+    X_s * X_t = \sign{s}{t} X_tX_s = \sign{s}{t} \beta(t, s) X_sX_t = \beta(t, s) X_t*X_s = \beta(s, t)\inv X_t*X_s.
+\]
+We conclude that $(T,\beta\inv, p)$ is the triple associated to $\D\sop$.

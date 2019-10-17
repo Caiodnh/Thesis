@@ -1,17 +1,6 @@
-\chapter{Gradings on the Lie Superalgebras of Types $A$, $B$, $C$, $D$, $P$ and $Q$}
 
-In this chapter we finally complete the task of classifying the group gradings on the Lie superalgebras of types $A$, $C$ and $D$.
-The techniques we have developed so far also allow us to recover the gradings on the Lie superalgebras of Type $B$ (achieved in ??), $P$ (??) and $Q$ (??).
-
-Our strategy here is to use the tools from Section \ref{sec:g-hat-action} to transfer the problem to a convenient associative superalgebra with superinvolution, and hence use the results from Chapter \ref{chap:super-inv}.
-The choice of this associative superalgebra is obvious for the Lie superalgebras of types $B$, $C$, $D$ and $P$.
-For types $A$ and $Q$, the choice is not so clear and it is useful mainly for the gradings of ``Type II'', the ones that do are not restrictions of the associative superalgebras $A$ and $Q$ are naturally related via the definitions given in Section \ref{sec:defi-classical-SA}.
-Hence we still need the results of Chapter \ref{chap:A-type-I} to have a complete classification.
-
-\section{Gradings on the Orthosympletic and Peripletic Lie Superalgebras}
-%\section{Gradings on the Peripletic Lie Superalgebras, revisited}
-\section{Gradings on the Lie Superalgebras of type $A$ and $Q$}
-\subsection{A new model for superalgebras of type $A$}
+\section{Gradings on the Lie Superalgebras of type \texorpdfstring{$A$ and $Q$}{A and Q}}
+\subsection{A new model for superalgebras of type \texorpdfstring{$A$}{A}}
 
 % As we have seem (Section {\tt ??}), all gradings on $M(m+1, n+1)$ restrict to gradings on $A(m, n)$, given us the Type I gradings. Our strategy to obtain the Type II gradings is to embed $\gl(m+1 | n+1)$ in a different associative superalgebra, such that these gradings are restrictions of gradings on the associative superalgebra.
 
@@ -65,4 +54,24 @@ As we see, not only the Type II gradings on $A(m,n)$ can be recovered this way, 
 	On the other hand, given a Type I grading on $A(m,n)$, it comes from a grading on $R$. If we consider the grading on $\mc R = R\times R$ by taking the direct sum of graded algebras {\tt (Definition ??)}, then $\mc R$ is not a simple graded algebra.
 \end{proof}
 
-\section{Gradings on the Lie superalgebras of type $Q$, revisited}
+\subsection{What is needed from superduals}
+
+We summarize these considerations in the following result:
+
+\begin{lemma}\label{lemma:iso-inv}
+	If $\Gamma = \Gamma(T,\beta,\gamma)$ and $\Gamma' = \Gamma(T,\beta\inv,\gamma\inv)$ are $G$-gradings (considered as $G^\#$-gradings) on the associative superalgebra $M(m,n)$, then, as gradings on the Lie superalgebra $M(m,n)^{(-)}$, $\Gamma$ and $\Gamma'$ are isomorphic via an automorphism of $M(m,n)^{(-)}$ that is the negative of a super-anti-automorphism of 	$M(m,n)$.
+\end{lemma}
+
+\begin{proof}
+	Let $\D$ be a graded division superalgebra associated to $(T,\beta)$ and let $\U$ be the graded right $\D$-module associated to $\gamma$. The grading $\Gamma$ is obtained by an identification $\psi: M(m, n) \xrightarrow{\sim} \End_\D (\U)$. By Lemma \ref{lemma:Dsop} and Remark \ref{rmk:gamma-inv}, $\Gamma'$ is obtained by an identification $\psi': M(m, n) \xrightarrow{\sim} \End_{\D\sop} (\U\Star)$. Hence we have the diagram:
+
+	\begin{center}
+		\begin{tikzcd}
+			& \End_\D (\U) \arrow[to=3-2, "-\vphi"]\\
+			M(m, n) \arrow[ur, "\psi"] \arrow[dr, "\psi'"]\\
+			& \End_{\D\sop} (\U\Star)
+		\end{tikzcd}
+	\end{center}
+
+	Thus, the composition $(\psi')\inv \, (-\vphi) \, \psi$ is an automorphism of the Lie superalgebra $M(m,n)^{(-)}$ sending $\Gamma$ to $\Gamma'$.
+\end{proof}

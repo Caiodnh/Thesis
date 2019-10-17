@@ -1,0 +1,112 @@
+
+\section{\texorpdfstring{$G$}{G}-gradings on and \texorpdfstring{$\widehat{G}$}{G-hat}-actions}\label{sec:g-hat-action}
+
+In this section we will review the correspondence between $G$-gradings and $\widehat G$-actions, which has been used extensively in the study of gradings.
+It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal in this section is to set it up in the context of general algebras.
+% The main purpose of this approach is to transfer gradings between general algebras with different signatures (Theorem ??).% This will allow us to handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
+
+The main advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (Theorem ??).
+This will be used in Chapter ?? to transfer gradings between Lie superalgebras and associative superalgebras with superinvolutions.
+The same sort of transfer has been used in other works (see \cite{livromicha} and Paper with Adrian ??), but without having the result stated formally.
+
+% If $\FF$ is algebraically closed of characteristic $0$ and $G$ is finitely generated abelian group, there is a well known correspondence between $G$-gradings and algebraic (rational) $\widehat G$-actions on vector spaces. 
+
+The following is well known:
+
+\begin{thm}\label{thm:g-hat-correspondence}
+	Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be a finitely generated abelian group.
+	Then there is a bijective correspondence between $G$-gradings and algebraic $\widehat G$-actions on a vector space $V$, definied as follows:
+	\begin{enumerate}[(i)]
+		\item Given a grading $\Gamma: V = \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$ and extended to all $V$ by linearity;
+		\item Given an algebraic action of $\widehat G$ on $V$, the corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$. \label{item:action-to-grading} \qed
+	\end{enumerate}
+\end{thm}
+
+\begin{notation}
+	Given a grading $\Gamma$ on $V$, we will denote the corresponding representation of the algebraic group $\widehat G$ on $V$ by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+\end{notation}
+
+\begin{remark}\label{rmk:G-hat-preserves-degree}
+    It must be noted that the maps $\eta_\Gamma(\chi)\from V \to V$ are degree preserving with respect to $\Gamma$ or any refinement of $\Gamma$, since every nonzero homogeneous element of $V$ is an eigenvector. 
+\end{remark}
+
+% \begin{remark}
+	The correspondence of Theorem \ref{thm:g-hat-correspondence} can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
+% \end{remark}
+
+We will now see how this correspondence applies to $\Omega$-algebras:
+
+% We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
+
+% \begin{defi}
+%     A $G$-grading on a $\Omega$-algebra $A$ is a $G$-grading on its vector space underlying such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
+% \end{defi}
+
+% It is straight forward to verify that this notion of grading corresponds to the usual notion of gradings on algebras, superalgebras, algebras with antiautomorphisms and superalgebras with super-anti-automorphisms.
+
+% We will now proceed to generalize the correspondence between $G$-gradings and $\widehat G$-actions (see ?? and ??) to $\Omega$-algebras. 
+% We start focusing on graded vector spaces.
+
+% \begin{defi}
+%     Let $V$ be a vector space. 
+%     Given a $G$-grading $\Gamma\from V= \bigoplus_{g\in G} V_g$ on $V$, we define a $\widehat G$-action in the following way: for $\chi \in \widehat G$ and $a_g \in V_g$, $\chi \cdot v_g = \chi(g)v_g$, and we extend the it by linearity. 
+%     We will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
+% \end{defi}
+
+% It is easy to see that this really defines an action. 
+
+% For this action to capture more information about the grading, we need some assumptions on the field $\FF$. 
+
+% \begin{lemma}
+%     Let $V$ be a $G$-graded vector space. 
+%     A element $v\in V$ is homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g)v$ for all $\chi \in \widehat G$.
+% \end{lemma}
+
+% \begin{proof}
+%     The ``only if'' direction is the definition of the action. 
+%     For the other direction, let $v\in V$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$.
+% \end{proof}
+
+\begin{prop}\label{prop:g-hat-Aut-A}
+	Assume $\FF$ is algebraically closed and $\Char \FF = 0$.
+	Let $A$ be a $\Omega$-algebra and $\Gamma$ be a $G$-grading on its underlying vector space.
+	Then $\Gamma$ is a $G$-grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
+\end{prop}
+
+\begin{proof}
+	First, assume $\Gamma$ is a grading on the $\Omega$-algebra $A$.
+	Let $\chi \in \widehat G$ and let $\psi \coloneqq \eta_\Gamma(\chi)$.
+	We already know that $\psi$ is bijective, it only remains to prove it is a homomorphism.
+	Let $\omega \in \Omega_n$ and let $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$, respectively.
+
+	Then $a_1\tensor \cdots \tensor a_n \in A^{\tensor n}$ has degree $g_1 \cdots g_n$. Hence
+	\begin{align*}
+		\psi(\omega^A(a_1\tensor \cdots \tensor a_n)) & = \chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n)      \\
+		                                              & =\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n) \\
+		                                              & = \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)         \\
+		                                              & = \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n)),
+	\end{align*}
+	so $\psi$ is a homomorphism.
+
+	Conversely, let, again, $\omega \in \Omega_n$ and $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$.
+	Since $\psi$ is an automorphism, we have:
+	\begin{align*}
+		\psi(\omega^A(a_1\tensor \cdots \tensor a_n)) & = \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n))               \\
+		                                              & = \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)         \\
+		                                              & =\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n) \\
+		                                              & =\chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n),
+	\end{align*}
+	hence, by item \eqref{item:action-to-grading} in Theorem \ref{thm:g-hat-correspondence}, $\omega^A(a_1\tensor \cdots \tensor a_n)$ is homogeneous of degree $g_1 \cdots g_n$, \ie, $\omega^A$ preserves degrees.
+\end{proof}
+
+\begin{remark}
+    Note that, under the conditions of \cref{prop:g-hat-Aut-A}, all elements of $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$ are automorphisms of 
+\end{remark}
+
+Now let $A$ be an $\Omega$-algebra and $B$ be an $\Omega'$-algebra.
+If there is a group homomorphism $\theta\from \Aut(A) \to \Aut(B)$, then, as consequence of Proposition \ref{prop:g-hat-Aut-A}, we can use it to transfer $G$-gradings on $A$ to $G$-gradings on $B$, even if $\Omega \neq \Omega'$.
+Explicitly, for a $G$-grading $\Gamma$ on $A$, we consider the group homomorphism $\eta_\Gamma\from \widehat G \to \Aut (A)$ and then take the composition $\theta \circ \eta_\Gamma\from \widehat G \to \Aut(B)$, which in turn corresponds to a $G$-grading on $B$.
+We will denote the grading on $B$ by $\theta(\Gamma)$.
+
+% --------------------------------------------------
+

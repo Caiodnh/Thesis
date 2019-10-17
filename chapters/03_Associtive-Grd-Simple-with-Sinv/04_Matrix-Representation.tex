@@ -1,0 +1,171 @@
+\section{Matrix representation of a su\-per\--anti\--auto\-mor\-phism}
+
+In this section, we are going to express the super-anti-automorphism (not necessarily involutive) $\vphi$ in terms of matrices with entries in $\D$.
+One could do that by following Equation \eqref{eq:vphi-r-Star-is-a-superconjugation}, but we will take a different path.
+
+As before, we suppose $\D$ is a graded division superalgebra, $\U$ is a nonzero right graded module of finite rank over $\D$, $R = \End_\D (\U)$ and $\vphi$ is a degree-preserving super-anti-automorphism on $R$.
+Also, let $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a nondegenerate $\vphi_0$-sesquilinear form on $\U$ determinig $\vphi$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B}.
+
+\begin{defi}\label{def:matrix-representing-B}
+	Given a homogeneous $\D$-basis $\{e_1, \ldots, e_k\}$ of $\U$, the \emph{matrix representing the form B} is defined to be $\Phi = (\Phi_{ij}) \in M_k(\D)$, where $\Phi_{ij} = B(e_i, e_j)$.
+\end{defi}
+
+From now on, let $\mc B = \{e_1, \ldots, e_k\}$ be a fixed homogeneous $\D$-basis of $\U$, following Convention \ref{conv:pick-even-basis} (\ie, if $\D$ is odd, we take $\mc B$ with only even elements).
+We will use $\mc B$ to identify $R = \End_\D (\U)$ with $M_k (\D)$.
+Also, we will denote $|e_i|$ simply by $|i|$ for all $i \in \{1, \ldots, k\}$.
+
+% We will assume that the even elements precede the odd ones. 
+
+% We will also follow Convention \ref{conv:pick-even-basis}, \ie, if $\D$ is odd, we will choose the $\D$-basis $\mc B$ to be one having only even elements.
+
+% \begin{convention}\label{conv:pick-even-basis}
+% 	If $\D$ is odd (\ie, $\D\odd \neq 0$), we will choose the $\D$-basis $\mc B$ to be one having only even elements.
+% 	This is possible because, given any homogeneous $\D$-basis, we can multiply its odd elements by a nonzero homogeneous odd element in $\D$.
+% \end{convention}
+
+\begin{remark}\label{rmk:M(D)=M(FF)-tensor-D}
+	It is well know that we a natural isomorphism between $M_k(\D)$ and $M_k(\FF)\tensor \D$, where we use the usual tensor product of algebras.
+	For superalgebras, though, we usually use a different product on the space $M_k(\FF)\tensor \D$, given by \[(r_1 \tensor s_1) (r_2 \tensor s_2) = \sign{r_2}{s_1} (r_1 r_2) \tensor (s_1 s_2).\]
+	If we are following Convention \ref{conv:pick-even-basis}, either $M_k(\FF)$ or $\D$ have trivial canonical $\ZZ_2$-grading, hence both tensor products coincide.
+\end{remark}
+
+\begin{defi}
+	Let $X = (x_{ij})$ be a matrix in $M_k (\D)$.
+	We define $\vphi_0 (X)$ to be the matrix obtained by applying $\vphi_0$ in each entry, \ie, $\vphi_0 (X) \coloneqq (\vphi_0(x_{ij}))$.
+	We also extend the definition \emph{supertranspose} {(\tt see ??)} to matrices over $\D$ by putting $X\stransp \coloneqq \big((-1)^{(|i| + |j|) |i|} x_{ji} \big)$.
+	Note that, with our choice of $\mc B$ in the case of odd $\D$, we have that $X\stransp = X\transp$, the ordinary transpose.
+\end{defi}
+
+\begin{prop}\label{prop:matrix-vphi}
+	Let $\Phi$ be the matrix representing $B$.
+	For every $r\in  R\even \cup R\odd$, let $X \in M_k(\D)$ be the matrix representing $r$ and let $Y \in M_k(\D)$ be the matrix representing $\vphi(r)$.
+	Then, following Conventions \ref{conv:pick-even-form} and \ref{conv:pick-even-basis}, we have that
+	%
+	\begin{align}
+		Y & = \Phi\inv\, \vphi_0( X\stransp )\, \Phi. \addtocounter{equation}{1}\tag{\theequation}\label{eq:matrix-vphi-D-even}
+		\intertext{and, if $\D$ is odd, we have}
+		Y & = \sign{B}{r}\,\Phi\inv\, \vphi_0( X\stransp )\, \Phi.\addtocounter{equation}{1}\tag{\theequation}\label{eq:matrix-vphi-D-odd}
+	\end{align}
+\end{prop}
+
+\begin{proof}
+	First of all, note that Equation \eqref{eq:superadjunction} is equivalent to the following:
+	%
+	\begin{alignat*}{2}
+		\forall e_i, e_j \in \mc B, &  & B(re_i, e_j)                                              & = \sign{r}{i} B(e_i, \vphi(r) e_j),
+		\intertext{which, by the definitions of $X$, $Y$ and $\Phi$, becomes}
+		\forall e_i, e_j \in \mc B, &  & \quad B\bigg(\sum_{\ell=1}^k e_\ell x_{\ell i}, e_j\bigg) & = \sign{r}{i} B\bigg(e_i, \sum_{\ell=1}^k e_\ell y_{\ell j}\bigg) \addtocounter{equation}{1}\tag{\theequation}\label{eq:superadjunction-matrix}.
+	\end{alignat*}
+	%
+
+	Fix arbitrary $p,q \in \{1, \ldots, k\}$ and suppose that the $(p,q)$-entry of $X$ is a nonzero $G^\#$-homogeneous element of $\D$ and $x_{ij} = 0$ elsewhere, \ie, $X$ represents the map $r \in \End_\D(\U)$ defined by $r e_i = \delta_{iq} e_p x_{pq}$.
+	By the $\FF$-linearity of Equation \eqref{eq:matrix-vphi-D-even} %and \eqref{eq:matrix-vphi-D-odd}
+	, it suffices to consider such $X$.
+	Note that $|r| = |e_p| + |x_{pq}| - |e_q| = |p| + |q| + |x_{pq}|$.
+	Then, on the one hand,
+	%
+	\begin{align*}
+		B\bigg(\sum_{\ell=1}^k e_\ell x_{\ell i}, e_j\bigg) = B (e_p x_{pi}, e_j) & = (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) B(e_p, e_j)
+		\\&= (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj},
+		%\end{align*}
+		%
+		\intertext{which is only nonzero if $i = q$. On the other hand,}
+		%
+		%\begin{align*}
+		\sign{r}{i} B\bigg(e_i, \sum_{\ell=1}^k e_\ell y_{\ell j}\bigg)
+		                                                                          & = \sign{r}{i} \sum_{\ell=1}^k B(e_i, e_\ell) y_{\ell j}                                                                                           \\
+		                                                                          & = (-1)^{ (|p| + |q| + |x_{pq}|) |i| } \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}.
+		%\end{align*}
+		%
+		\intertext{Therefore, Equation \eqref{eq:superadjunction-matrix} is equivalent to, for all $i,j \in \{1, \ldots, k\}$,}
+		%
+		%\begin{align*}
+		(-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj} %&= \sign{r}{i} \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}\\
+		                                                                          & = (-1)^{ (|p| + |q| + |x_{pq}|) |i| } \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}. \addtocounter{equation}{1}\tag{\theequation}\label{eq:expression}
+	\end{align*}
+	%
+
+	If $\D$ is even, then $|x_{pi}| = \bar 0$ and this equation reduces to
+	\[              \vphi_0(x_{pi}) \Phi_{pj} = (-1)^{ (|p| + |q|) |i| } \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}
+	\]
+	or, equivalently,
+	\[
+		\sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j} = (-1)^{ (|p| + |q|) |i| } \vphi_0(x_{pi}) \Phi_{pj}.
+	\]
+	The left-hand side is the $(i,j)$-entry of $\Phi\, Y$.
+	The right-hand side is only nonzero if $i = q$, so it can be rewritten as
+	$(-1)^{ (|p| + |i|) |i| } \vphi_0(x_{pi}) \Phi_{pj}$.
+	Recalling our choice of $X$, this is equal to $\sum_{\ell =1}^k (-1)^{ (|\ell| + |i|) |i| } \vphi_0(x_{\ell i}) \Phi_{\ell j}$, since $x_{\ell i}$ is only nonzero if $\ell = p$.
+	Hence the right-hand side is the $(i,j)$-entry of $\vphi_0 (X\stransp) \Phi$, and Equation \eqref{eq:matrix-vphi-D-even} follows.
+
+	If $\D$ is odd, by our choice of basis, Equation \eqref{eq:expression} reduces to
+	\[
+		(-1)^{|B| |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj} =  \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j},
+	\]
+	which, by the same reasoning as above, implies $(-1)^{|B||r|} \vphi_0(X\stransp) \Phi = \Phi Y$.
+	But we are following Convention \ref{conv:pick-even-form}, hence $|B| = \bar 0$ and, therefore, we have the desired result.
+\end{proof}
+
+% \begin{proof}
+%     First of all, note that Equation \ref{eq:superadjunction} is equivalent to, for all $e_i, e_j \in \mc B$,
+%     %
+%     \[
+%         B(re_i, e_j) = \sign{r}{i} B(e_i, \vphi(r) e_j).
+%     \]
+%     By the definitions of $X$, $Y$ and $\Phi$, we have that
+%     %
+%     \begin{align*}
+%         B\bigg(\sum_{\ell=1}^k e_\ell x_{\ell i}, e_j\bigg) &= \sum_{\ell=1}^k (-1)^{( |B| + |\ell|) |x_{\ell i}|} \vphi_0( x_{\ell i} ) B (e_\ell x_{\ell i}, e_j)\\ &= \sum_{\ell=1}^k (-1)^{( |B| + |\ell|) |x_{\ell i}|} \vphi_0( x_{\ell i} ) \Phi_{\ell j}
+%         \intertext{and}
+%         \sign{r}{i} B\bigg(e_i, \sum_{\ell=1}^k e_\ell y_{\ell j}\bigg) 
+%         &= \sign{r}{i} \sum_{\ell=1}^k B(e_i, e_\ell) y_{\ell j}\\
+%         &= \sign{r}{i} \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}. 
+%     \end{align*}
+%     %
+
+%     Let $p,q \in \{1, \ldots, k\}$, and suppose $X$ is such that $x_{pq}$ is a nonzero $G^\#$-homogeneous element of $\D$ and $x_{ij} = 0$ elsewhere, \ie, $X$ represents the map $r \in \End_\D(\U)$ defined by $r e_i = \delta_{iq} e_p x_{pq}$. 
+%     By the $\FF$-linearity of Equations \eqref{eq:matrix-vphi-D-even} and \eqref{eq:matrix-vphi-D-odd}, it suffices to consider such $X$. 
+%     Note that $|r| = |e_q| + |x_{pq}| - |e_p| = |p| + |q| + |x_{pq}|$. 
+%     Then
+%     %
+%     \begin{align*}
+%         B\bigg(\sum_{\ell=1}^k e_\ell x_{\ell i}, e_j\bigg) = B (e_p x_{pi}, e_j) &= (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) B(e_p, e_j)
+%         \\&= (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj},
+%     \end{align*}
+%     %
+%     which is only nonzero if $i = q$. 
+%     Combining this with Equation \eqref{eq:superadjunction-matrix}, we get
+%     %
+%     \begin{align*}
+%         (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj} &= \sign{r}{i} \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}\\
+%         &= (-1)^{ (|p| + |q| + |x_{pq}|) |i| } \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}. \addtocounter{equation}{1}\tag{\theequation}\label{eq:expression}
+%     \end{align*}
+%     %
+%     If $\D$ is even, then $|x_{pi}| = 0$ and this expression reduces to
+%     \[              \vphi_0(x_{pi}) \Phi_{pj} = (-1)^{ (|p| + |q|) |i| } \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}
+%     \]
+%     or, reordering it, 
+%     \[
+%         \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j} = (-1)^{ (|p| + |q|) |i| } \vphi_0(x_{pi}) \Phi_{pj}.
+%     \]
+%     The left-hand side is the entry $ij$ of $\Phi\, Y$. 
+%     The right-hand side is only nonzero if $i = q$, so it can be rewritten as 
+%     $(-1)^{ (|p| + |i|) |i| } \vphi_0(x_{pi}) \Phi_{pj}$. 
+%     Also, recalling our choice of $X$, it is equal to $\sum_{\ell =1}^k (-1)^{ (|\ell| + |i|) |i| } \vphi_0(x_{\ell i}) \Phi_{\ell j}$, since $x_{\ell i}$ is only nonzero if $\ell = p$. Hence the right-hand side is the $ij$ entry of $\vphi_0 (X\stransp) \Phi$, and Equation \eqref{eq:matrix-vphi-D-even} follows. 
+
+%     If $\D$ is odd, by our choice of basis, Equation \eqref{eq:expression} reduces to
+%     \[
+%         (-1)^{|B| |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj} =  \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j},
+%     \]
+%     which implies $(-1)^{|B||r|} \phi_0(X\stransp) \Phi = \Phi Y$.
+% \end{proof}
+
+% \begin{remark}
+%     Note that if $\D$ is odd, replacing $B$ by $dB$ with an odd $d$ if necessary, we can guarantee that $B$ is even. 
+%     In this case, Equation \eqref{eq:matrix-vphi-D-odd} reduces to \eqref{eq:matrix-vphi-D-even}.
+% \end{remark}
+
+% \begin{cor}[of the proof]
+%     Let $\vphi_0$ be a super-anti-automorphism on $\D$ and let $B$ be a nonzero $\vphi_0$-sesquilinear form on $\U$. If $\vphi\from R \to R$ be a parity preserving map satisfying Equation \eqref{eq:superadjunction}. 
+%     Then $B$ is nondegenerate if, and only if, $\vphi$ is a super-anti-automorphism.
+% \end{cor}

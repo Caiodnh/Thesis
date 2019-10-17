@@ -1,0 +1,119 @@
+
+\section{Gradings on vector spaces and (bi)modules}\label{sec:graded-bimodules}
+% --------------------------------------------------
+
+% Def: Graded vector space + Def: Shift by g
+Let $G$ be a group. By a \emph{$G$-grading} on a vector space $V$ we mean simply a vector space decomposition $\Gamma:\,V = \bigoplus_{g \in G} V_g$ where the summands are labeled by elements of $G$. If $\Gamma$ is fixed, $V$ is referred to as a {\em $G$-graded vector space}. A subspace $W \subseteq V$ is said to be \emph{graded} if $W = \bigoplus_{g \in G} (W \cap V_g)$. We will refer to $\ZZ_2$-graded vector spaces as \emph{superspaces} and their graded subspaces as \emph{subsuperspaces}.
+
+An element $v$ in a graded vector space $V = \bigoplus_{g \in G} V_g$ is said to be \emph{homogeneous} if $v\in V_g$ for some $g\in G$.
+If $0\ne v\in V_g$, we will say that $g$ is the \emph{degree} of $v$ and write $\deg v = g$.
+In reference to the canonical $\ZZ_2$-grading of a superspace, we will instead speak of the \emph{parity} of $v$ and write $|v| = g$.
+Every time we write $\deg v$ or $|v|$, it should be understood that $v$ is a nonzero homogeneous element.
+
+% Def: Grading on tensor product
+\begin{defi}
+	Given two $G$-graded vector spaces, $V=\bigoplus_{g\in G} V_g$ and $W=\bigoplus_{g\in G} W_g$, we define their tensor product to be the vector space $V\otimes W$
+	together with the $G$-grading given by $(V \otimes W)_g = \bigoplus_{ab=g} V_{a} \otimes W_{b}$.
+\end{defi}
+
+The concept of grading on a vector space is connected to gradings on algebras by means of the following:
+
+% Def: Homogeneous Map
+\begin{defi}
+	If $V=\bigoplus_{g\in G} V_{g}$ and $W=\bigoplus_{g\in G} W_{g}$ are two graded vector spaces and $T: V\rightarrow W$ is a linear map, we say that $T$ is \emph{homogeneous of degree $t$}, for some $t\in G$, if $T(V_g)\subseteq W_{tg}$ for all $g\in G$.
+\end{defi}
+
+% Def: Homogeneous Transformations
+If $S: U\rightarrow V$ and $T: V\rightarrow W$ are homogeneous linear maps of degrees $s$ and $t$, respectively,
+then the composition $T\circ S$ is homogeneous of degree $ts$.
+% Def: Space of Homogeneous Transformations
+We define the {\em space of graded linear transformations} from $V$ to $W$ to be:
+%
+\[ \Hom^{\text{gr}} (V,W) = \bigoplus_{g\in G} \Hom (V,W)_{g}\]
+%
+% Prop: End(V) is a graded algebra
+where $\Hom (V,W)_{g}$ denotes the set of all linear maps from $V$ to $W$ that are homogeneous of degree $g$.
+If we assume $V$ to be finite-dimensional then we have $\Hom(V,W)=\Hom^{\gr}(V,W)$ and, in particular, $\End (V) = \bigoplus_{g\in G} \End (V)_g$ is a graded algebra.
+
+\begin{defi}\label{defi:elementary-grd}
+    Elementary grading, on $\End(V)$ and on $M_n(\FF)$.
+\end{defi}
+
+% Prop: V is a graded module
+We also note that $V$ becomes a graded module over $\End(V)$ in the following sense:
+
+% Def: graded module
+\begin{defi}\label{def:graded-module}
+	Let $A$ be a $G$-graded algebra (associative or Lie) and let $V$ be a left module over $A$ that is also a $G$-graded vector space. 
+	We say that $V$ is a \emph{graded left $A$-module} if $A_g \cdot V_h \subseteq V_{gh}$, for all $g$,$h\in G$. 
+	The concepts of \emph{graded right $A$-module} and \emph{graded bimodule} are defined similarly.
+\end{defi}
+
+% Def: supermodule
+Under the conditions of \cref{def:graded-module}, if $A$ is a superalgebra and $V$ is a superspace, then we call $V$ a \emph{$A$-supermodule}. 
+A \emph{graded $A$-supermodule} is a $G^\#$-graded $A$-module.
+
+% L1 is a graded module over L0
+If we have a $G$-grading on a Lie superalgebra $L=L\even \oplus L\odd$ then, in particular, we have a grading on the Lie algebra $L\even$ and a grading on the space $L\odd$ that makes it a graded $L\even$-module. If we have a $G$-grading on an associative superalgebra $C=C\even \oplus C\odd$, then $C\odd$ becomes a graded bimodule over $C\even$.
+
+If $ \Gamma$ is a $G$-grading on a vector space $V$ and $g\in G$, we denote by $\Gamma^{[g]} $ the grading given by relabeling the component
+$V_h$ as $V_{hg}$, for all $h \in G$. This is called the \emph{(right) shift of the grading $\Gamma$ by $g$}.
+We denote the graded space $(V, \,  \Gamma^{[g]})$ by $V^{[g]}$.
+
+% Lemma: Shifts on (bi)modules
+From now on, we assume that $G$ is abelian.
+If $V$ is a graded module over a graded algebra (or a graded bimodule over a pair of graded algebras), then $V^{[g]}$ is also a graded (bi)module.
+We will make use of the following partial converse (see e.g. \cite[Proposition 3.5]{paper-Qn}):
+
+\begin{lemma}\label{lemma:simplebimodule}
+	Let $A$ and $B$ be $G$-graded algebras and let $V$ be a finite-dimensional (ungraded) simple $A$-module or $(A,B)$-bimodule.  If $\Gamma$ and $\Gamma'$ are  two $G$-gradings that make $V$ a graded (bi)module, then $\Gamma'$ is a  shift of $\Gamma$.\qed
+\end{lemma}
+
+Certain shifts of grading may be applied to graded $\ZZ$- or $\ZZ_2$-superalgebras. In the case of a $\ZZ$-superalgebra $L=L^{-1}\oplus L^{0}\oplus L^{1}$, we have the following:
+
+% Lemma: opposite directions
+\begin{lemma}\label{lemma:opposite-directions}
+	Let $L=L^{-1}\oplus L^0\oplus L^1$ be a $\ZZ$-superalgebra such that $L^1\, L^{-1}\neq 0$. If we shift the grading on $L^1$ by $g\in G$ and the grading on $L^{-1}$ by $g' \in G$, then we have a grading on $L$ if and only if $g' = g^{-1}$. \qed
+\end{lemma}
+
+We will describe this situation as \emph{shift in opposite directions}.
+
+We finish this section with some usual concepts of algebra.
+
+\begin{defi}\label{defi:center}
+	Let $R$ be an algebra.
+	The \emph{center} of $R$ is the set
+	\[
+		Z(R) = \{c\in R \mid cr = rc \text{ for all } r\in R \}.
+	\]
+\end{defi}
+
+\begin{lemma}\label{lemma:center-is-graded}
+	Suppose $G$ be an abelian group and let $R$ be a $G$-graded algebra.
+	Then the center $Z(R)$ is $G$-graded subalgebra of $R$.
+\end{lemma}
+
+\begin{proof}
+	Let $c \in Z(R)$ and write $c = \sum_{g \in G} c_g$, where $c_g \in R_g$ for all $g \in G$.
+	For every homogeneous $r \in R$, we have that
+	%
+	\begin{align*}
+		\big(\sum_{g\in G} c_g\big)r = r \big(\sum_{g\in G} c_g\big).
+	\end{align*}
+	%
+	Comparing the components of degree $gh = hg$, where $h = \deg r$, we conclude that $rc_g = c_g r$ for all $g \in G$.
+	By linearity, $r c_g = c_g r$ for all $r\in R$, hence $c_g \in Z(R)$.
+\end{proof}
+
+Note that for $G=\ZZ_2$, Lemma \ref{lemma:center-is-graded} implies that the center of a superalgebra is a subsuperalgebra. 
+
+
+\begin{defi}\label{defi:supercenter}
+	Let $R$ be a superalgebra.
+	The \emph{supercenter} of $R$ is the subsuperalgebra $sZ(R) = sZ(R)\even \oplus sZ(R)\odd$, where
+	\[
+		sZ(R)^i = \{c\in R^i \mid cr = (-1)^{i|r|} rc \text{ for all } r\in R\even \cup R\odd \}.
+	\]
+\end{defi}
+
+The proof of \cref{lemma:center-is-graded} can be easily adapted to show that, if $G$ is abelian, then the supercenter of a graded superalgebra is a graded subsuperalgebra.

@@ -1,0 +1,219 @@
+\section{Isomorphism of graded-simple superalgebras\texorpdfstring{\\}{} with super-anti-automorphism}\label{sec:iso-vphi-abstract}
+
+In this section, we are going to describe isomorphisms between $G$-graded superalgebras with super-anti-automorphism that are graded-simple and satisfy the d.c.c on graded left ideals.
+As we have seen, such superalgebras are, up to isomorphism, of the form $\End_\D (\U)$ where the super-anti-automorphism is given by the superadjunction with respect to a nondegenerate homogeneous sesquilinear form $B\from \U \times \U \to \D$.
+
+Even though, as superalgebras, $\End_\D( \U )$ is the same as $\End_\D( \U^{[g]} )$ for every $g \in G^\#$, an extra care should be taken when considering super-anti-automorphisms.
+If $g\in G^\#$ is odd, a $\vphi_0$-sesquilinear form $B$ on the $\D$-module $\U$ is not $\vphi_0$-sesquilinear if considered on the $\D$-module $\U^{[g]}$, and Equation \eqref{eq:superadjunction} does not determine the same super-anti-automorphism $\vphi$.
+This motivates the following:
+
+\begin{defi}
+	Let $\U$ be a graded right $\D$-module and $\vphi_0\from \D \to \D$ be a super-anti-automorphism.
+	Given a homogeneous $\vphi_0$-sesquilinear form $B$ on $\U$ and $g\in G^\#$, we define the $\vphi_0$-sesquilinear form  $B^{[g]}$ on $\U^{[g]}$ by $B^{[g]}(u,v) \coloneqq \sign{u}{g} B(u,v)$, for all $u,v \in \U$.
+\end{defi}
+
+\begin{remark}\label{rmk:deg-B^[g]}
+	Note that $\deg B^{[g]} = g^{-2} \deg B$ and, in particular, $|B^{[g]}| = |B|$.
+\end{remark}
+
+\begin{lemma}\label{lemma:B^[b]-does-the-job}
+	% Let $\U$ be a graded $\D$-module, $\vphi_0$ be a super-anti-automorphism on $\D$ and $B$ be a $\vphi_0$-sesquilinear form on $\U$. 
+	For every $g\in G^\#$, $B^{[g]}$ is a homogeneous $\vphi_0$-sesquilinear form on $\U^{[g]}$.
+	% Further, if $B$ is nondegenerate and the pair $(\vphi_0, B)$ determines the super-anti-automorphism $\vphi$ on $R \coloneqq \End_\D(\U) = \End_\D(\U^{[g]})$, then $B^{[g]}$ is nondegenerate and $(\vphi_0, B^{[g]})$ also determines $\vphi$.
+	Further, if $B$ is nondegenerate, then so is $B^{[g]}$ and the superadjunction with respect to both is the same super-anti-automorphism $\vphi$ on $\End_\D(\U) = \End_\D(\U^{[g]})$.
+\end{lemma}
+
+\begin{proof}
+	Let $u, v \in \U\even \cup \U\odd$.
+	To avoid confusion, we will denote $u$ and $v$ by $u^{[g]}$ and $v^{[g]}$, respectively, when regarded as elements of $\U^{[g]}$.
+	For all $d\in D\even \cup \D\odd$, we have:
+	\begin{align*}
+		B^{[g]}(u^{[g]}, v^{[g]}d) & = \sign{g}{u} B(u, vd) = \sign{g}{u} B(u, v)d =  B^{[g]}(u^{[g]}, v^{[g]})d
+		\intertext{and}
+		B^{[g]}(u^{[g]}d, v^{[g]}) & = \sign{g}{ud} B(ud, v) = (-1)^{|g|( |u| + |d| )} (-1)^{|d|( |B| + |u| )} \vphi_0(d) B(u, v) \\
+		                           & = (-1)^{|d| ( |B| + |u| + |g| )} \vphi_0(d) \sign{g}{u} B(u, v)                              \\
+		                           & = (-1)^{|d| ( |B| + |u^{[g]}| )} \vphi_0(d) B^{[g]}(u^{[g]}, v^{[g]})d .
+		\intertext{Also, for all $r\in R\even \cup R\odd$, we have:}
+		B^{[g]}(ru^{[g]}, v^{[g]}) & = \sign{g}{ru} B(ru, v) = (-1)^{|g|( |r| + |u| )} (-1)^{|r||u|} B(u, \vphi(r) v)             \\
+		                           & = (-1)^{|r| ( |g| + |u|)} \sign{u}{g} B(u, \vphi(r) v)                                       \\
+		                           & = \sign{r}{u^{[g]}} B^{[g]}(u^{[g]}, \vphi(r) v^{[g]}).
+	\end{align*}
+\end{proof}
+
+Recall the concept of a module induced by a homomorphism of algebras (Definition \ref{def:twist}).
+
+\begin{lemma}\label{lemma:twist-on-(U,B)}
+	Let $\D$ and $\D'$ be graded-division superalgebras and let $\psi_0 \from \D \to \D'$ be an isomorphism.
+	If $\U'$ is a $\D'$-supermodule and $B'$ is a homogeneous $\vphi_0'$-sesquilinear form on it, then $\psi_0\inv \circ B'$ is a homogeneous $(\psi_0\inv \circ \vphi_0' \circ \psi_0)$-sesquilinear form on the $\D$-supermodule $(\U')^{\psi_0}$ of the same degree as $B'$.
+	Further, if $B'$ is nondegenerate, then so is $\psi_0\inv \circ B'$, and the superadjunction with respect to both is the same super-anti-automorphism $\vphi'$ on $\End_\D((\U')^{\psi_0}) = \End_{\D'}(\U')$.
+\end{lemma}
+
+\begin{proof}
+	To simplify notation, let us put $B'' \coloneqq \psi_0\inv \circ B'$ and $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$.
+	It is clear that $\deg B'' = \deg B$ and, hence, $|B''| = |B'|$.
+	Let $u,v \in (\U')\even \cup (\U')\odd$.
+	To avoid confusion, we will denote $u$ and $v$ by $u^{\psi_0}$ and $v^{\psi_0}$, respectively, when regarded as elements of $(\U')^{\psi_0}$.
+	For all $d\in D\even \cup \D\odd$, we have:
+	\begin{align*}
+		B''(u^{\psi_0}, v^{\psi_0}d)  & = \psi_0\inv \big( B'( u, v \, \psi_0(d)) \big)
+		= \psi_0\inv \big( B' ( u, v ) \psi_0(d) \big)                                                                                                   \\
+		                              & =  \psi_0\inv \big( B'(u, v) \big) d
+		= B''(u^{\psi_0}, v^{\psi_0}) \,d
+		% \end{align*}
+		\intertext{and}
+		% and
+		% \begin{align*}
+		B'' (u^{\psi_0}d, v^{\psi_0}) & = \psi_0\inv \big( B' ( u \, \psi_0(d), v ) \big)                                                                \\
+		                              & = \psi_0\inv \Big( (-1)^{(|B'| + |u|) |\psi_0(d)|} \vphi_0' \big( \psi_0(d) \big) B' ( u, v) \Big)               \\
+		                              & = (-1)^{(|B'| + |u|) |d|} \psi_0\inv \big( \vphi_0' \big( \psi_0 (d) \big) \big) \psi_0\inv \big( B'(u, v) \big) \\
+		                              & = (-1)^{(|B''| + |u|) |d|} \vphi_0''(d) B''(u^{\psi_0}, v^{\psi_0}).
+		% \end{align*}
+		\intertext{Also, for all $r\in R\even \cup R\odd$, we have:}
+		% Also, for all $r\in R\even \cup R\odd$, we have:
+		% \begin{align*}
+		B''(ru^{\psi_0}, v^{\psi_0})  & = \psi_0\inv \big( B' ( ru, v ) \big)                                                                            \\
+		                              & = \psi_0\inv \big( \sign{r}{u} B' ( u, \vphi'( r ) v ) \big)                                                     \\
+		                              & = \sign{r}{u} B'' ( u, \vphi'( r ) v ).
+	\end{align*}
+\end{proof}
+
+\begin{defi}\label{def:iso-(U,B)}
+	Let $\U$ and $\U'$ be graded right $\D$-supermodules, and let $B$ and $B'$ be homogeneous sesquilinear forms on $\U$ and $\U'$, respectively.
+	A \emph{isomorphism from $(\U, B)$ to $(\U', B')$} is an isomorphism of graded modules $\theta\from \U \to \U'$ such that $B'( \theta(u), \theta(v) ) = B(u, v)$, for all $u,v \in \U$.
+\end{defi}
+
+Note that if $(\U, B)$ and $(\U', B')$ are isomorphic, then $B$ and $B'$ have the same degree in $G^\#$ and are sesquilinear with respect to the same $\vphi_0$.
+
+% \begin{remark}
+%     odd iso and $B^{[g]}$
+% \end{remark}
+
+\begin{thm}\label{thm:iso-abstract-vphi}
+	Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded division superalgebras, and $\U$ and $\U'$ are nonzero right graded supermodules of finite rank over $\D$ and $\D'$, respectively.
+	Let $\vphi$ and $\vphi'$ be degree preserving super-anti-automorphisms on $R$ and $R'$ determined, as in Theorem \ref{thm:vphi-iff-vphi0-and-B}, by pairs $(\vphi_0, B)$ and $(\vphi_0', B')$, respectively.
+	If $\psi\from (R, \vphi) \to (R', \vphi')$ is an isomorphism, then there are $g\in G^\#$, a homogeneous element $0\neq d\in \D$, an isomorphism $\psi_0\from \D \to \D'$, and an isomorphism
+	\begin{equation}\label{eq:iso-B-implies-vphi}
+		\psi_1 \from (\U^{[g]}, dB^{[g]}) \to ( (\U')^{\psi_0}, \psi_0\inv \circ B' )
+	\end{equation}
+	such that
+	\begin{equation}\label{eq:iso-super-anti-auto}
+		\forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+	\end{equation}
+	% $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$. 
+	Conversely, for any $g$, $d$, $\psi_0$ and $\psi_1$ as above,
+	% the formula $\psi(r) \coloneqq \psi_1 \circ r \circ \psi_1\inv$ 
+	Equation \eqref{eq:iso-super-anti-auto}
+	defines an isomorphism $\psi \from (R, \vphi) \to (R', \vphi')$.
+\end{thm}
+
+\begin{proof}
+	Given an isomorphism of graded superalgebras $\psi\from R \to R'$, define
+	\[
+		\tilde \vphi \coloneqq \psi\inv \circ \vphi' \circ \psi.
+	\]
+	Then $\psi$ is an isomorphism $(R, \vphi) \to (R', \vphi')$ if, and only if, $\vphi = \tilde\vphi$.
+
+	Since $\psi$ is an isomorphism of $G^\#$-graded algebras, we can apply Theorem \ref{thm:iso-abstract} to conclude that there are $g\in G^\#$, an isomorphism of graded superalgebras $\psi_0\from \D \to \D'$, and an isomorphism of graded modules $\psi_1\from \U^{[g]} \to (\U')^{\psi_0}$ such that $\psi(r) = \psi_1 \circ r \circ \psi_1\inv$, for all $r\in R$.
+
+	As in the proof of Lemma \ref{lemma:twist-on-(U,B)}, consider $\vphi_0'' \coloneqq \psi_0\inv \circ \vphi_0' \circ \psi_0$ and $B'' \coloneqq \psi_0\inv \circ B'$.
+	Then define $\widetilde B \from \U^{[g]} \times \U^{[g]} \to \D$ by
+	\[
+		\widetilde B(u, v) \coloneqq B'' \big( \psi_1(u), \psi_1(v) \big)
+	\]
+	for all $u, v \in \U^{[g]}$.
+	We claim that $\widetilde B$ is $\vphi_0''$-sesquilinear.
+	Indeed, by Lemma \ref{lemma:twist-on-(U,B)}, we have
+	\begin{align*}
+		\widetilde B(u, vd) & = B'' \big( \psi_1(u), \psi_1(vd) \big)
+		= B''\big( \psi_1(u), \psi_1(v)d \big)                                                                                  \\
+		                    & = B''\big( \psi_1(u), \psi_1(v) \big)d = \widetilde B(u, v)d
+		%
+		\intertext{and}
+		%
+		\widetilde B(ud, v) & = B'' \big( \psi_1(ud), \psi_1(v) \big) = B'' \big( \psi_1(u) d, \psi_1(v) \big)                  \\
+		                    & = (-1)^{(|B''| + |\psi_1(u)|) |d|} \vphi_0'' (d) B'' \big( \psi_1(u), \psi_1(v) \big)             \\
+		                    & = (-1)^{(|\widetilde B| + |u|) |d|}  \vphi_0'' (d) \widetilde B(u, v).
+		% \end{align*}
+		\intertext{Also, $\tilde\vphi$ is the superadjunction with respect to $\widetilde B$:}
+		% Also, $\tilde\vphi$ is the superadjunction with respect to $B''$:
+		% \begin{align*}
+		\widetilde B(ru, v) & = B'' \big( \psi_1(ru), \psi_1(v) \big)
+		= B'' \big( (\psi_1 \circ r \circ \psi_1\inv) \psi_1(u), \psi_1(v) \big)                                                \\
+		                    & = B'' \big( \psi(r) \psi_1(u), \psi_1(v) \big)                                                    \\
+		                    & = \sign{\psi(r)}{\psi_1(u)} B'' \big( \psi_1(u), \vphi'( \psi(r) ) \psi_1(v) \big)                \\
+		% &= \sign{r}{u} \psi_0 \inv \Big( B' \big( \psi_1(u), (\vphi'\circ \psi)(r)\psi_1(v) \big)\\
+		% &= \sign{r}{u} B'' \big( \psi_1(u), (\psi\circ \tilde\vphi)(r) \psi_1(v) \big)\\
+		                    & = \sign{r}{u} B'' \big( \psi_1(u), \psi (\tilde\vphi(r)) \psi_1(v) \big)                          \\
+		                    & = \sign{r}{u} B'' \big( \psi_1(u), (\psi_1 \circ \tilde\vphi(r) \circ \psi_1\inv) \psi_1(v) \big) \\
+		                    & = \sign{r}{u} B'' \big( \psi_1(u), \psi_1 (\tilde\vphi(r) v) \big)                                \\
+		                    & = \sign{r}{u} \widetilde B \big( u, \tilde\vphi(r) v\big),
+	\end{align*}
+	where we have used Lemma \ref{lemma:twist-on-(U,B)} in the third line and the definition of $\tilde \vphi$ on the fourth line.
+	Hence, applying \cref{thm:vphi-iff-vphi0-and-B} for $\U^{[g]}$ and Lemma \ref{lemma:B^[b]-does-the-job}, we conclude that $\vphi = \tilde\vphi$ if, and only if, there is a homogeneous $0 \neq d \in \D$ such that $\widetilde B = dB^{[g]}$.
+	The result follows.
+\end{proof}
+
+We can interpret Theorem \ref{thm:iso-abstract-vphi} in terms of group actions.
+For that, fix a fixed graded-division superalgebra $\D$.
+We will define three (left) group actions on the class of pairs $(\U, B)$, where $\U \neq 0$ is a graded $\D$-supermodule and $B$ is a nondegenerate homogeneous sesquilinear form.
+Recall that, by \cref{lemma:B-determines-vphi_0}, $B$ is $\vphi_0$-sesquilinear for a unique super-anti-automorphism $\vphi_0$ of $\D$.
+
+Let $\D^\times_{\mathrm{gr}} \coloneqq \big( \bigcup_{g \in G^\#} \D_g \big)\backslash \{ 0 \}$, the group of nonzero homogeneous elements of $\D$.
+Given $d\in \D^\times_{\mathrm{gr}}$, we define
+\begin{equation}\label{eq:Dx_gr-action}
+	d\cdot (\U, B) \coloneqq (\U, dB).
+\end{equation}
+Note that $dB$ is $(\mathrm{sInt}_d \circ \vphi_0)$-sesquilinear by Theorem \ref{thm:vphi-iff-vphi0-and-B}.
+
+Let $A \coloneqq \Aut (\D)$, the group of automorphisms of $\D$ as a graded superalgebra.
+Given $\tau \in A$, we define
+\begin{equation}\label{eq:Aut(D)-action}
+	\tau \cdot (\U, B) \coloneqq (\U^{\tau\inv}, \tau \circ B).
+\end{equation}
+Note that $\tau \circ B$ is $(\tau \circ \vphi_0 \circ \tau\inv)$-sesquilinear by Lemma \ref{lemma:twist-on-(U,B)}.
+% (Note that we have changed the place of the ``inverse sign'' to get a left action.)
+
+Finally, consider the group $G^\#$.
+Given $g \in G^\#$, we define
+\begin{equation}\label{eq:G-action}
+	g \cdot (\U, B) \coloneqq (\U^{[g]}, B^{[g]}).
+\end{equation}
+Note that $B^{[g]}$ is $\vphi_0$-sesquilinear by Lemma \ref{lemma:B^[b]-does-the-job}.
+
+\begin{lemma}\label{lemma:action-on-(U,B)}
+	The three actions defined above give rise to a $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action, where $A$ acts on $\D^\times_{\mathrm{gr}}$ by evaluation.
+\end{lemma}
+
+\begin{proof}
+	Let $d\in \D^\times_{\mathrm{gr}}$, $\tau \in A$, $g \in G^\#$ and $u, v \in \U$.
+	First note that the action of $d$ does not change $\U$, so we only have to consider its effect on $B$.
+	Since
+	\begin{align*}
+		(\tau \circ dB)(u,v) & = \tau \big( d B(u,v) \big) = \tau (d) \tau \big( B(u,v) \big) = \big( \tau(d) (\tau \circ B) \big) (u,v),
+	\end{align*}
+	the $\D^\times_{\mathrm{gr}}$-action combined with the $A$-action gives us a $(\D^\times_{\mathrm{gr}} \rtimes A)$-action.
+	The $G^\#$-action commutes with the $\D^\times_{\mathrm{gr}}$-action since
+	\begin{align*}
+		(dB)^{[g]} (u, v) = \sign{g}{u} dB(u,v) = d B^{[g]}(u,v).
+	\end{align*}
+	Finally, the $G^\#$-action also commutes with the $A$-action since $(\U^{\tau\inv})^{[g]} = (\U^{[g]})^{\tau\inv}$ and
+	\begin{align*}
+		(\tau \circ B^{[g]}) (u,v)
+		 & = \tau \big( \sign{g}{u} B(u,v) \big)
+		 & = \sign{g}{u} (\tau \circ B) (u,v) = (\tau \circ B)^{[g]} (u,v).
+	\end{align*}
+\end{proof}
+
+% These 3 actions can be combined into a $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action, where $A$ acts on $\D^\times_{\mathrm{gr}}$ by evaluation. 
+% To see that, let $d\in \D^\times_{\mathrm{gr}}$, $\psi_0 \in A$ and $g \in G^\#$. 
+% The action of $d$ does not change $\U$, hence commutes in the first entry with the other actions. 
+% On the other hand, $(\psi_0 \circ dB)(u,v) = \psi_0 \big( (d B(u,v) ) \big) = \psi_0 (d) \psi_0 (B(u,v)) = (\psi_0(d) \circ \psi_0(B) ) (u,v)$, for all $u,v \in \U$.
+
+\begin{cor}\label{cor:iso-with-actions}
+	Under the assumptions of Theorem \ref{thm:iso-abstract-vphi}, if $\D \not \iso \D'$, then $(R, \vphi) \not \iso (R', \vphi')$.
+	Otherwise, fix an isomorphism $\psi_0\from \D \to \D'$.
+	Then $(R, \vphi) \iso (R', \vphi')$ if, and only if, $\big( (\U')^{\psi_0}, \psi_0\inv \circ B' \big)$ is isomorphic to an object in the $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-orbit of $(\U, B)$.
+	% and lie in the same orbit of the $(\D^\times_{\mathrm{gr}} \rtimes A) \times G^\#$-action. \qed
+\end{cor}
+
+% ----- 

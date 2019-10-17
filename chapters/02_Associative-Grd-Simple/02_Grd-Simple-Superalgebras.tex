@@ -1,0 +1,481 @@
+\section{Graded-simple associative superalgebras}\label{sec:grd-simple-salg}
+
+We will now specialize the results of last section to graded-simple superalgebras. 
+See also \cite{BS}. 
+
+Recall that a $G$-graded superalgebra $R$ can be seen as a $G^\# \coloneqq G\times \ZZ_2$-graded algebra (see \cref{rmk:G-sharp}) by defining $R_{(g,i)} = R_g \cap R^i$, for all $g\in G$ and $i \in \ZZ_2$. 
+We identify $G$ with $G \times \{ \bar 0 \} \subseteq G^\#$. 
+Clearly, $R$ is graded-simple as a $G$-graded superalgebra if, and only if, it is graded-simple as a $G^\#$-graded algebra. 
+This allows us to easily transfer the results of previous section to gradings on superalgebras, but at the cost of working in the group $G^\#$ instead of $G$. 
+
+\begin{remark}
+	If the canonical $\ZZ_2$-grading is a coarsening of the $G$-grading by means of a homomorphism $p\colon G\rightarrow \ZZ_2$ (referred to as the \emph{parity homomorphism}), then we could work with the pair $(G, p)$ instead of the group $G^\#$. 
+	Note that, in this case we would have another isomorphic copy of $G$ in $G^\#$, namely, the image of the embedding $g\mapsto (g, p (g))$, which contains the support of the $G^\#$-grading. 
+    % 	In this case, we do not need $G^\#$ and can work with the original $G$-grading.
+\end{remark}
+
+\subsection{Graded-division superalgebras and their supermodules}\label{ssec:supermodules-over-D}
+
+\begin{defi}
+    A $G$-graded superalgebra $\D$ is said to be a graded-division superalgebra if every nonzero element which is homogeneous with respect to both the $G$-grading and the canonical $\ZZ_2$-grading is invertible. 
+    In this case, we may also refer to the $G$-grading on the (ungraded) superalgebra $\D$ as a \emph{division grading}.
+\end{defi}
+
+In other words, graded-division superalgebras with respect the $G$-grading are precisely graded-division algebras with respect the $G^\#$-grading. 
+Recall that $T \coloneqq \supp \D$ is a subgroup of $G^\#$, so we can see $\D$ as a $T$-graded algebra and the canonical $\ZZ_2$-grading is the coarsening by the group homomorphism $p\from T \subseteq G^\# \to \ZZ_2$ given by $p (g, i) = i$ for all $(g,i)\in G^\#$. 
+We will denote the kernel of $p$ by $T^+$, \ie, $T^+ \coloneqq T\cap (G\times \{ \bar 0 \}) = \supp \D\even$. 
+Similarly, we define $T^- \coloneqq T\cap (G\times \{ \bar 1 \}) =  \supp \D\odd$. 
+
+\begin{notation}
+    For graded-division superalgebras we will use subscripts to refer to the $T$-grading, \ie, $\D_t$ refers to the homogeneous component $\D_g^i$ where $t = (g, i) \in T \subseteq G^\#$. 
+\end{notation}
+
+\begin{ex}\label{ex:Q(1)-as-grd-div-SA}
+    Let $\langle u \rangle$ be a cyclic group of order $2$ and let $G = \langle h \rangle$ where $h$ has order at most $2$.  
+    The group algebra $\D \coloneqq \FF\langle u \rangle$, with canonical $\ZZ_2$-grading given by $\D\even \coloneqq \FF 1$ and $\D\odd = \FF u$, becomes a $G$-graded graded-division superalgebra if we declare the $G$-degree of $u$ to be $h$. 
+    In this case $G^\# = \langle h \rangle \times \ZZ_2$ and $T = \langle (h, \bar 1) \rangle \iso \ZZ_2$ 
+    (compare with \cref{ex:group-algebra}). 
+    Note that $\D \iso Q(1)$ as a superalgebra.
+\end{ex}
+
+\begin{ex}\label{ex:Pauli-2x2-super}
+    \Cref{ex:Pauli-2x2} can be seem as a $\ZZ_2$-grading division grading on $M(1,1)$, $\Char \FF \neq 2$. 
+    In this case, $G^\# = \ZZ_2 \times \ZZ_2$.
+\end{ex}
+
+Let $\U = \U\even \oplus \U\odd$ be a graded right $\D$-supermodule of finite rank. 
+The isomorphism class of the graded right $\D$-supermodule $\U$ is, as in \cref{ssec:D-modules}, determined by the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ given by $\kappa (x) = \dim_\D \U_x$ for all $x\in G^\#/T$. 
+We also have a description only in terms of the group $G$, but for that we separate the graded-division superalgebras in two classes:
+
+\begin{defi}\label{defi:even-odd-D}
+    % Let $\D$ be a graded-division superalgebra. 
+    If $\D = \D\even$ (\ie, $\D\odd = 0$) we say that $\D$ is an \emph{even} graded-division superalgebra, and if $\D \neq \D\even$ (\ie, $\D\odd \neq 0$) we say that $\D$ is an \emph{odd} graded-division superalgebra. 
+\end{defi}
+
+\begin{remark}
+    Clearly, the even graded-division superalgebras are precisely the as graded-division algebras, but this nomenclature will be extended in \cref{defi:even-odd-R}.
+\end{remark}
+
+% In other words, $\D$ is even if $T = T^+$ (\ie,  $T^- =0$) and odd if $T \neq T^+$ (\ie, $T^- \neq 0$). 
+
+Assume that $\D$ is an even graded-division superalgebra. 
+Then both $\U\even$ and $\U\odd$ are graded $\D$-submodules, hence we can describe their isomorphism classes, respectively, by maps $\kappa_\bz, \kappa_\bo\from G/T \to \ZZ_{\geq 0}$ given by $\kappa_i (x) = \dim \U^i_x$ for all $i\in \ZZ_2$ and $x\in G/T$. 
+Note that, in this case, $G^\#/T = G^\#/T^+$ is the disjoint union of $G/T$ and $(e, \bar 1) \cdot G/T$ and, clearly, $\kappa ((g,i)T) = \kappa_i (gT)$, for all $i\in \ZZ_2$ and $g\in G$. 
+
+Now assume that $\D$ is odd. 
+In this case, unless $\U = 0$, the graded subspaces $\U\even$ and $\U\odd$ are not $\D$-submodules. 
+But we can follow a different approach.
+
+\begin{defi}
+    A graded basis of a graded supermodule $\U$ is said to be an \emph{even basis} if it consists only of even elements.
+\end{defi}
+
+Let $\B = \{u_\lambda\}_{\lambda \in \Lambda}$ be any basis for $\U$, and let $0 \neq d_1\in \D\odd$. 
+For every $\lambda \in \Lambda$, if $u_\lambda$ is an odd element, let us replace it by $u_\lambda d_1$. 
+The resulting set is, clearly, a even basis of $\U$.
+
+\begin{convention}\label{conv:pick-even-basis}
+    If $\D$ is an odd graded-division superalgebra, we will always choose the graded basis $\B$ to be an even basis.
+\end{convention}
+
+It follows that the canonical $\ZZ_2$-grading on $\U$ is determined only by $\D$. 
+To see that, take any even basis of $\U$ and let $\tilde \U$ be its $\D_e$-span. 
+Clearly, $\tilde \U \subseteq \U\even$ and it is a  $\D_e$-form of $\U$, \ie, we can identify $\U = \tilde\U \tensor_{\D_e} \D$ and, hence, $\U\even = \U \tensor_{\D_e} \U\even$ and  $\U\odd = \U \tensor_{\D_e} \U\odd$. 
+
+This can also be seen from the point of view from the map $\kappa$. 
+Note that, every coset $x \in G^\#/T$ has an even representative. 
+This entails that the map $\iota\from G/T^+ \to G^\#/T$ given by $\iota ( gT^+) = (g, \bar 0) T$ is an isomorphism of left $G$-sets, so we can work with $\kappa \circ \iota$, which we will, by abuse of notation, also denote by $\kappa$.
+
+\subsection{Graded Wedderburn theory for superalgebras}\label{ssec:wedderburn-super}
+
+Let $R$ be a $G$-graded superalgebra. 
+Note that the graded (left) superideals of $R$ are precisely the graded (left) ideals of $R$ as an $G^\#$-graded superalgebra. 
+Hence, \cref{thm:End-over-D,thm:iso-abstract} translate to graded superalgebras by simply attaching the ``super'' prefix wherever it is needed. 
+
+% \begin{thm}\label{thm:super-End-over-D}
+% 	Let $G$ be a group and let $R = R\even \oplus R\odd$ be a $G$-graded associative algebra. 
+% 	Then $R$ is graded-simple and satisfies the \dcc on graded left superideals if, and only if,	there is a graded-division superalgebra $\D=\D\even \oplus \D\odd$ and a graded right $\D$-supermodule $\U = \U\even \oplus \U\odd$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
+% \end{thm}
+
+% \begin{thm}\label{thm:iso-abstract}
+% 	Let $R \coloneqq \End_\D(\U)$ and $R' \coloneqq \End_{\D'}(\U')$, where $\D$ and $\D'$ are graded-division superalgebras, and $\U$ and $\U'$ are nonzero right graded supermodules of finite rank over $\D$ and $\D'$, respectively.
+% 	Given an isomorphism $\psi\from R \to R'$, there is a triple $(g, \psi_0, \psi_1)$, where $g \in G$, $\psi_0\from {}^{[g\inv]}\D^{[g]} \to \D'$ is an isomorphism of graded superalgebras, $\psi_1\from \U^{[g]} \to (\U')^{\psi_0}$ is an isomorphism of graded right $\D$-supermodules, such that
+% 	\begin{equation}\label{eq:def-iso-algebras}
+% 		\forall r\in R, \quad \psi(r) = \psi_1 \circ r \circ \psi_1\inv.
+% 	\end{equation}
+% 	Conversely, given a triple $(g, \psi_0, \psi_1)$ as above, Equation \eqref{eq:def-iso-algebras} defines an isomorphism of graded superalgebras $\psi\from R \to R'$.
+% 	Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$. \qed
+% \end{thm}
+
+Let $R$ be graded-simple superalgebra satisfying the \dcc on graded left superideals and write, as in \cref{thm:End-over-D}, $R\iso \End_\D (\U)$ where $\D$ is a graded-division superalgebra and $\U$ is a graded right $\D$-supermodule of finite rank. 
+Since the property of being an even or an odd a graded-division superalgebra is invariant under isomorphism, by \cref{thm:iso-abstract}, we can extend \cref{defi:even-odd-D} to $R$:
+
+\begin{defi}\label{defi:even-odd-R}
+    If $\D$ is an even graded-division superalgebra, we say that the grading on $R$ is \emph{even}; if $\D$ is an odd graded-division superalgebra, we say that the grading on $R$ is \emph{odd}. 
+\end{defi}
+
+For the remaining of this subsection, fix a graded-division algebra $\D$ and a nonzero graded right $\D$-module of finite rank $\U$, and set $R \coloneqq \End_{\D} (\U)$. 
+
+By the discussion on \cref{ssec:supermodules-over-D}, if the grading on $R$ is even, all the information related to the canonical $\ZZ_2$-grading on $R$ is encoded on the graded right $\D$-supermodule $\mc U=\mc U\even \oplus \mc U\odd$. 
+More explicitly, 
+\[\label{eq:almost-ZZ-grading}
+    R\even = \End_\D(\U\even) \oplus \End_\D(\U\odd) \AND R\odd = \Hom_\D(\U\even, \U\odd) \oplus \Hom_\D(\U\odd, \U\even).
+\]
+If $G$ is an abelian group, this can also be seen from the fact that, following \cref{rmk:M(D)=M(FF)-tensor-D}, we can identify  $R$ with $M_k(\FF)\tensor \D$, where we have the usual tensor product of graded (super)algebras (\cref{defi:grd-on-tensor-product}) on the latter. So, $R\even = M_k(\FF)\even \tensor \D$ and $R\odd = M_k(\FF)\odd \tensor \D$. 
+
+\begin{remark}\label{rmk:even-ZZ-grading}
+    Note that, if the $G$-grading on $R$ is even, we can refine the $G^\#$-grading to a $G\times \ZZ$-grading by defining $R\inv \coloneqq \Hom_{\D} (\U\odd, \U\even)$, $R^0 \coloneqq R\even = \End_\D(\U\even) \oplus \End_\D(\U\odd)$ and $R^1 \coloneqq \Hom_{\D} (\U\even, \U\odd)$. 
+\end{remark}
+
+If the grading on $R$ is odd, then, again by the discussion on \cref{ssec:supermodules-over-D}, all the information about the canonical $\ZZ_2$-grading is encoded in $\D$. 
+To see it more explicitly, let us follow \cref{conv:pick-even-basis} and recall the maps $f_{i, j, d} \in R = \End_\D (\U)$ defined in the beginning of \cref{ssec:Grd-Wedderburn-Theory}. 
+Those maps generate $R$ and, by \cref{eq:grd-M_k(D)-nonabelian}, their parity depend only on $d \in \D$. 
+
+If $G$ is an abelian group, again, this can also be seen from the identification $R = M_k(\FF)\tensor \D$ on \cref{rmk:M(D)=M(FF)-tensor-D}. 
+The grading on $M_k(\FF)$ is elementary grading defined by a tuple of elements in $G = G \times \{ \bar 0 \}$ and, hence,  $R\even = M_k(\D) \tensor \D\even$ and $R\odd = M_k(\D) \tensor \D\odd$. 
+
+% \begin{remark}
+%     If $\D$ is odd, then the canonical $\ZZ_2$-grading on $R$ \emph{cannot} be refined to a $\ZZ$-grading, because of $T$ (see somewhere in \cite{livromicha}).
+% \end{remark}
+
+Note that we already have a description of even gradings only in terms of the group $G$. 
+For odd gradings, though, we still need to describe $\D$ only in terms of the group $G$, which is a harder task, and we are going to do that only for the case $R$ is a finite dimensional simple superalgebra over a algebraically closed field (see \cref{ssec:T-beta-p,ssec:sec:assc-only-G}).
+ 
+\begin{prop}\label{prop:simple-R-D-super}
+	The superalgebra $R = \End_\D (\U)$ is simple if, and only if, the superalgebra $\D$ is simple.
+\end{prop}
+
+\begin{proof}
+    Pick a graded basis for $\U$ following \cref{conv:pick-even-basis} and use it to identify $R$ with $M_k(\D) = M_k(\FF) \tensor \D$, as in \cref{rmk:M(D)=M(FF)-tensor-D}.
+
+	It is well known that the ideals of $M_k(\D)$ are precisely the sets of the form $M_k(I)$ for $I$ an ideal of $\D$.
+	We will prove an analog of this for superideals.
+
+	If $I$ is a superideal, $M_k(I) = M_k(\FF) \tensor I$ is also a superideal since it is spanned by a set of $\ZZ_2$-homogeneous elements, namely, the elements of the form $E_{ij}\tensor d$ where $1 \leq i,j \leq k$ and $d \in I\even \cup I\odd$.
+	Conversely, if $J = M_k(I)$ is a superideal, then we can write $I = \{ d\in  \D \mid E_{11}\tensor d \in J\}$.
+	For every $d\in I$, write $d = d_{\bar 0} + d_{\bar 1}$, where $d_\alpha \in \D^\alpha$, $\alpha \in \ZZ_2$.
+	Since the $\ZZ_2$-homogeneous components of $E_{11}\tensor d$ are $E_{11}\tensor d_{\bar 0}$ and $E_{11}\tensor d_{\bar 1}$ and they belong to $J$, we have $d_{\bar 0}, d_{\bar 1} \in I$.
+\end{proof}
+
+We also could easily adapt the correspondence between the centers of $\End_\D (\U)$ and $\D$ (\cref{prop:R-and-D-have-the-same-center}) to a correspondence between supercenters. 
+It turns out, though, that the correspondence between centers is more useful even in the case of superalgebras. 
+For example, if $\Char \FF \neq 2$, then $sZ(M(m,n)) = sZ(Q(n)) = \FF$ while $Z(M(m,n)) \neq Z(Q(n))$, so we can use the centers to distinguish the types of superalgebra (see \cref{prop:types-of-SA-via-center}). 
+
+\begin{remark}
+    The correspondence between centers imply that every grading on $Q(n)$ is odd. 
+    Indeed, $Z(Q(n))$
+\end{remark}
+
+% -----------------
+\subsection{Finite dimensional graded-division superalgebras over an algebraically closed field}\label{ssec:T-beta-p}
+
+We will now focus on the case where $G$ is abelian and $\FF$ is algebraically closed. 
+For many of the results in this section we will also assume that $\Char \FF \neq 2$, but this hypothesis is not necessary for the classification results in \cref{ssec:classification-assc-super}.
+
+Let $\D$ be a finite dimensional graded-division superalgebra and consider the pair $(T, \beta)$ associated to it, where $T \subseteq G^\#$ is a finite subgroup of $G^\#$ and $\beta$ is an alternating bicharacter on $T$. 
+As we did in \cref{ssec:supermodules-over-D}, let $p\from T \to \ZZ_2$ be the restriction to $T$ of the projection on the second component of $G^\# = G\times \ZZ_2 \to \ZZ_2$, and set $T^+ = \ker p = T \cap (G \times \{ \bar 0 \})$ and $T^- = T \cap (G \times \{ \bar 1 \})$. 
+We will also denote by $\beta^+$ the restriction of $\beta$ to $T^+ \times T^+$. 
+As done in \cref{ssec:grd-div-alg}, for every $t\in T$ we fix $0 \neq X_t\in D_t$.
+
+It is useful to consider another bicharacter on $T$. 
+We define $\tilde\beta\from T\times T \to \FF^\times$ by
+\[\label{eq:teste}
+    \tilde\beta(t,s) \coloneqq (-1)^{p(t)p(s)}\beta(t,s),
+\]
+for all $t, s\in T$. 
+In other words, we have that
+\[\label{eq:tilde-beta}
+    X_t X_s = (-1)^{p(t)p(s)} \tilde\beta(t,s) X_s X_t
+\]
+(compare with \cref{eq:beta}). 
+Clearly, the support of $sZ(\D)$, the supercenter of $\D$, is $\rad \tilde\beta$. 
+
+The following result is the first step in the reduction of Lie colour algebras to Lie superalgebras, due to M. Scheunert (see \cite{MR529734}). 
+
+\begin{prop}\label{prop:skew-bicharacter-grd-SA}
+    Suppose $\Char \FF \neq 2$. 
+    Let $T$ be an abelian group and $\tilde\beta$ be a skew-symmetric bicharacter on $T$. 
+    Then there is a alternating bicharacter $\beta$ on $T$ and a group homomorphism $p\from T \to \ZZ_2$ such that $\tilde\beta(t,s) = (-1)^{p(t)p(s)}\beta(t,s)$ for all $t,s\in T$.
+\end{prop}
+
+\begin{proof}
+    Since $\tilde\beta$ is skew-symmetric, $\tilde\beta(t,t) = \tilde\beta(t,t)\inv$, so $\tilde\beta(t,t)\in \pmone$. 
+    Define $h\from T \to \pmone$ by $h(t) \coloneqq \tilde\beta(t,t)$, for all $t\in T$. 
+    We have that 
+    \[
+        h(ts) = \tilde\beta(ts,ts) = \tilde\beta(t,t)\tilde\beta(t,s)\tilde\beta(s,t)\tilde\beta(s,s) = h(t)h(s),
+    \] 
+    for all $t,s \in T$, so $h$ is a group homomorphism. 
+    We define $p\from T \to \ZZ_2$ as the unique group homomorphism such that $h(t) = (-1)^{p(t)}$ for all $t\in T$. 
+    
+    Finally, we define $\beta\from T\times T \to \FF^\times$ by $\beta(t,s) \coloneqq (-1)^{p(t)p(s)}\tilde\beta(t,s)$ for all $t,s\in T$. 
+    Clearly, $\beta$ is a bicharacter and $\tilde\beta(t,s) = (-1)^{p(t)p(s)}\beta(t,s)$. 
+    It remains to show that $\beta$ is alternating: 
+    $\beta(t,t) = (-1)^{p(t)p(t)}\tilde\beta(t,t) = (-1)^{p(t)}\tilde\beta(t,t) = h(t) \tilde\beta(t,t) = 1$, for all $t\in T$.
+\end{proof}
+
+\Cref{prop:skew-bicharacter-grd-SA} tells us that a pair $(T, \tilde\beta)$, where $\tilde\beta$ is a skew-symmetric bicharacter on $T$, carries the same information as a triple $(T, \beta, p)$, where $\beta$ is an alternating bicharacter and $p\from T\to \ZZ_2$ is a group homomorphism. 
+Throughout this work we decided to use the triples $(T, \beta, p)$ to parametrize finite dimensional graded-division superalgebras over an algebraically closed field, since we refer to the bicharacter $\beta$ and the homomorphism $p$ frequently and also because this parametrization is valid even in the case $\Char \FF = 2$. 
+We we will say that the graded-division superalgebra $\D$ is \emph{associated} to triple $(T, \beta, p)$ if the graded-division algebra $\D$ is associated to $(T, \beta)$ and $p$ is its parity homomorphism.
+
+\begin{remark}
+    If $\D$ is considered as a $G^\#$-graded algebra, the parameter $p$ is redundant. 
+    Nevertheless, it is convenient to keep it since there are situations where we may want to regard $\D$ as a $T$-graded algebra or as a $G$-graded superalgebra.
+\end{remark}
+
+\begin{lemma}\label{lemma:rad-tilde-beta}
+	Suppose $\Char \FF \neq 2$. 
+	Then $\rad \tilde\beta = (\rad \beta)\cap T^+$ and, therefore, $sZ(\D) = Z(\D)\cap \D\even$.
+\end{lemma}
+
+\begin{proof}
+	Let $t\in T^+$.
+	In this case $\tilde\beta (t, \cdot) = \beta (t, \cdot)$, so
+	$\tilde\beta (t, T) = 1$ if, and only if, $\beta (t, T) = 1$.
+	Hence $(\rad \tilde\beta)\cap T^+ = (\rad \beta)\cap T^+$.
+
+	Now let $t \in T^-$.
+	In this case $\tilde \beta (t,t) = (-1)^{|t|} = -1$, so $t \not\in \rad \tilde\beta$.
+	Therefore $\rad \tilde\beta = (\rad \tilde\beta)\cap T^+$, concluding the proof.
+\end{proof}
+
+Note that if $\Char \FF = 2$, then $\tilde\beta = \beta$. 
+Hence, regardless of the characteristic, we have that if $\beta$ is nondegenerate, then so is $\tilde\beta$. 
+The converse, however, is not true. 
+In view of \cref{lemma:rad-tilde-beta}, if $\Char \FF \neq 2$, the next result characterizes the case where $\tilde\beta$ is nondegenerate but $\beta$ is degenerate. 
+
+\begin{lemma}\label{lemma:beta-deg-beta-tilde-nondeg}
+    Suppose $\beta$ is degenerate. 
+    Then $\beta^+$ is nondegenerate if, and only if, $(\rad \beta) \cap T^+ = \{e\}$. 
+    If this is the case, then $\rad \beta = \langle t_1 \rangle$ for an element $t_1 \in T^-$ of order $2$. 
+\end{lemma}
+
+\begin{proof}
+    By definition of radical, it is clear that $(\rad \beta) \cap T^+ \subseteq \rad \beta^+$, hence if $\beta^+$ is nondegenerate, then $(\rad \beta) \cap T^+ = \{e\}$. 
+    
+    Conversely, suppose $(\rad \beta) \cap T^+ = \{e\}$. 
+    Since $\rad\beta \neq \{e\}$, there is $t_1 \in (\rad \beta) \cap T^-$ and, hence, $T = (\rad\beta) \times T^+$. 
+    We conclude that $\rad \beta = \langle t_1 \rangle$ and that $t_1$ has order $2$. 
+    To show that $\beta^+$ is nondegenerate, let $t_0 \in \rad \beta^+$. 
+    Then $\beta(t_0, T^+) = 1$ and, clearly, $\beta(t_0, \rad \beta) = 1$. 
+    It follows that $t_0 \in \rad \beta$ and, since $t_0 \in T^+$, $t_0 = \{e\}$, concluding the proof. 
+\end{proof}
+
+% \begin{lemma}\label{lemma:beta-deg-beta-tilde-nondeg}
+%     Suppose $\tilde\beta$ is nondegenerate but $\beta$ is degenerate. 
+%     Then:
+%     \begin{enumerate}[(i)]
+%         \item $\rad \beta = \langle t_1 \rangle$, where  $t_1 \in T^-$ is a order two element; \label{item:rad-beta=t_1}
+%         \item $T = (\rad \beta) \times T^+$; \label{item:T+tensor-t_1}
+%         \item the restriction of $\beta$ to $T^+ \times T^+$ is nondegenerate. \label{item:beta+nondeg}
+%     \end{enumerate}
+% \end{lemma}
+
+In \cref{def:standard-realization} we introduced the standard realizations for finite dimensional graded-division algebras that are simple as algebras. 
+We are now going to extend this definition for finite dimensional graded-division superalgebras that are simple as superalgebras, \ie, to include superalgebras of type $Q$. 
+
+If $\D \iso Q(n)$, then we $\D\even \iso M(n)$ is a graded-division algebra that is simple as an algebra. 
+Clearly, $\D\even$ is associated to the pair $(T^+, \beta^+)$, so by \cref{cor:D-simple-iff-beta-nondeg,lemma:beta-deg-beta-tilde-nondeg}, we have that $\rad \beta = \langle t_1 \rangle$ for an element $t_1\in T^-$ of order $2$, hence $t_1 = (h, \bar 1) \in G^\#$ for an element $h \in G$ of order at most $2$. 
+
+Conversely, given a finite subgroup $T^+ \subseteq G$, a nondegenerate alternating bicharacter $\beta^+\from T^+ \times T^+ \to \FF^\times$ and an element $h\in G$ of order at most $2$, let $\D\even$ be a standard realization (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T^+, \beta^+)$, set $t_1 \coloneqq (h, \bar 1)$ and $T \coloneqq \langle t_1 \rangle \times T^+$, and define $\beta\from T \times T \to \FF^\times$ by $\beta(s t_1^i, t t_1^j) \coloneqq \beta^+(s,t)$. 
+It is clear that $\beta$ is an alternating bicharacter and that $\rad \beta = \langle t_1 \rangle$. 
+If we consider $Q(1) = \FF \langle u \rangle$ as in \cref{ex:Q(1)-as-grd-div-SA}, with $h$ the $G$-degree of $u$, then $Q(1)$ is the graded-division superalgebra associated to $(\langle t_1 \rangle, \beta\restriction_{ \langle t_1 \rangle \times \langle t_1 \rangle })$. 
+By \cref{lemma:colour-tensor-product}, $\D \coloneqq Q(1)\tensor \D\even$ is the graded $G^\#$-graded graded-division algebra associated to $(T, \beta)$, and by the Kronecker product, it is easy to see that $\D$ is a superalgebra of $Q$ type. 
+
+\begin{defi}
+    The $G$-graded superalgebra $\D \coloneqq Q(1) \tensor \D\even = \D\even \oplus u\D\odd$, where we declare the $G$-degree of $u$ to be $h$, will be referred to as a \emph{standard realization} of type $Q$ superalgebra with division grading associated to $(T^+, \beta^+, h)$.
+\end{defi}
+
+% \begin{cor}\label{prop:Q-T-beta-t_1}
+%     The graded-division superalgebra $\D$ is of type $Q$ if, and only if, 
+%     $\D$ is odd and $\D\even$ is simple as an algebra. 
+% \end{cor}
+
+% \begin{proof}
+%     If $\D \iso Q(n)$, then
+%     $Q(n)\odd \neq 0$ and $Q(n)\even \iso M_n(\FF)$. 
+    
+%     Conversely, if $\D$ is odd and $\D\even$ is simple, then $T^- \neq \emptyset$ and $\beta^+$ is nondegenerate. 
+%     Hence, $|T^+|$ is a perfect square. 
+%     We then have that $|T| = 2 |T^+|$ is not a perfect square, so $\beta$ must be degenerate. 
+%     By definition of radical, it is clear that $(\rad \beta) \cap T^+ \subseteq \rad \beta^+$, hence $(\rad \beta) \cap T^+ = \{e\}$. 
+%     It follows that $\rad \beta$ is a complement for $T^+$ in $T$, so $\rad \beta = \langle t_1 \rangle$ where $t_1 \in T^-$ is an element of order $2$. 
+%     Since $T = (\rad \beta) \times T^+$,
+%     \cref{lemma:colour-tensor-product} tells us that, as a $G^\#$-graded algebra, $\D \iso \mc A \tensor \mc B$, where $\mc A$ is the graded-division algebra associated to $(\langle t_1 \rangle, \beta\restriction_{\langle t_1 \rangle \times \langle t_1 \rangle} )$ and $\mc B$ is the graded-division algebra associated to $(T^+, \beta^+)$. 
+%     By \cref{ex:Q(1)-as-grd-div-SA}, we have $\mc A \iso Q(1)$ as a superalgebra. 
+%     By \cref{cor:D-simple-iff-beta-nondeg}, $\mc B$ is a $G^\#$-graded matrix algebra, say $M_n(\FF)$. 
+%     Hence, as a superalgebra, $\D \iso \mc A \tensor \B \iso Q(1) \tensor M_n(\FF) \iso Q(n)$, where the second isomorphism is given by the Kronecker product. 
+% \end{proof}
+
+% Under the conditions of \cref{prop:Q-T-beta-t_1}, we can write $t_1 = (h, \bar 1)$, where $h\in G$ is an element of order at most $2$. 
+
+% Conversely, given a finite subgroup $T^+ \subseteq G$, a nondegenerate alternating bicharacter $\beta^+\from T^+ \times T^+ \to \FF^\times$ and an element $h\in G$ of order at most $2$, let $\D\even$ be a standard realization (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T^+, \beta^+)$, set $t_1 \coloneqq (h, \bar 1)$ and $T \coloneqq \langle t_1 \rangle \times T^+$, and define $\beta\from T \times T \to \FF^\times$ by $\beta(s t_1^i, t t_1^j) \coloneqq \beta^+(s,t)$. 
+% It is clear that $\beta$ is an alternating bicharacter and that $\rad \beta = \langle t_1 \rangle$. 
+
+\begin{cor}\label{cor:tilde-beta-nondeg}
+    The graded-division superalgebra $\D$ is simple as a superalgebra if, and only if, $(\rad \beta) \cap T^+ = \{e\}$. 
+    More precisely, if this is the case, then
+    \begin{enumerate}[(i)]
+        \item $\D$ is a superalgebra of type $M$ if, and only if, $\beta$ is nondegenerate;
+        \item $\D$ is a superalgebra of type $Q$ if, and only if, if $\beta$ is degenerate.
+    \end{enumerate}
+\end{cor}
+
+\begin{proof}
+    If $\D$ is simple as a superalgebra, then by \cref{thm:fd-simple-SA}, $\D \iso M(m,n)$ or $\D \iso Q(n)$ as superalgebra. 
+    In both cases, $sZ(\D) = \FF$, so $\tilde\beta$ is nondegenerate.
+
+    Conversely, suppose $\tilde\beta$ is nondegenerate. 
+    If $\beta$ is nondegenerate, then $\D$ is simple as an algebra, by \cref{cor:D-simple-iff-beta-nondeg}.  
+    If $\beta$ is degenerate, then combining  \cref{lemma:beta-deg-beta-tilde-nondeg}\eqref{item:T+tensor-t_1} with \cref{lemma:colour-tensor-product}, we get that, as a $G^\#$-graded algebra, $\D \iso \mc A \tensor \mc B$, where $\mc A$ is the graded-division algebra associated to $(\rad \beta, \beta\restriction_{(\rad \beta)\times (\rad \beta)})$ and $\mc B$ is the graded-division algebra associated to $(T^+, \beta\restriction_{T^+ \times T^+})$. 
+    
+    By \cref{lemma:beta-deg-beta-tilde-nondeg}\eqref{item:rad-beta=t_1}, it is easy to see that $\mc A \iso Q(1)$, where we declare the elements of $Q(1)\odd$ to have degree $t_1$. 
+    By \cref{lemma:beta-deg-beta-tilde-nondeg}\eqref{item:beta+nondeg} and \cref{cor:D-simple-iff-beta-nondeg}, $\mc B$ is a $G^\#$-graded matrix algebra, say $M_n(\FF)$, with $\supp \mc B = T^+$. 
+    Hence, as a superalgebra, $\D \iso \mc A \tensor \B \iso Q(1) \tensor M_n(\FF) \iso Q(n)$, where the second isomorphism is given by the Kronecker product. 
+\end{proof}
+
+Clearly, if $\Char \FF \neq 2$, \cref{cor:tilde-beta-nondeg} implies that $\D$ is simple as a superalgebra if, and only if, $\tilde\beta $ is nondegenerate (compare with \cref{cor:D-simple-iff-beta-nondeg}). 
+
+Recall that, any nonzero $G^\#$-homogeneous element $d\in \D$ gives rise to the inner automorphism $\operatorname{Int}_d\from \D \to \D$ defined by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$ (Definition \ref{def:inner-automorphism}). 
+We will now generalize this to graded superalgebras:
+
+\begin{defi}\label{def:superinner}
+	Let $d\in \D$ be a nonzero $G^\#$-homogeneous element.
+	We define the \emph{superinner automorphism} $\operatorname{sInt}_d\from \D \to \D$ by $\operatorname{sInt}_d (c) \coloneqq \sign{c}{d} dcd\inv$, for all $c\in \D$.
+\end{defi}
+
+% The next result is a generalization of \cite[??]{livromicha}:
+
+\begin{prop}\label{prop:all-central-automorphisms-of-D-are-superinner}  
+    Let $\psi_0\from \D \to \D$ be an automorphism that restricts to the identity on $Z(\D) \cap \D\even$. 
+    Then $\psi_0 = \operatorname{sInt}_{X_t}$ for some $t\in T$. 
+\end{prop}
+
+\begin{proof}
+    By \cref{lemma:Aut(D)-widehat-T}, there is a character $\chi\in \widehat{T}$ such that $\psi_0(X_t) = \chi(t) X_t$, for all $t\in T$. 
+    Since $\psi_0$ is the identity on $sZ(\D)$, we have that $\chi(t) = 1$ for all $t \in \rad \tilde\beta = (\rad\beta) \cap T^+ = \rad \tilde\beta$. 
+    
+    Set $\barr T \coloneqq T/\rad \tilde\beta$ and let $\pi \from T \to \barr T$ denote the quotient homomorphism. 
+    It is clear that $b\from \barr T \times \barr T \to \FF^\times$ given by $b( \pi(s), \pi(t) ) \coloneqq \tilde\beta (s,t)$ is well-defined and that $b$ is a nondegenerate skew-symmetric bicharacter on $\barr T$. 
+    Therefore the map $\barr T \to \widehat{\barr T}$ given by $t \mapsto b(t, \cdot)$ is a group isomorphism.
+    
+    Since $\chi$ is trivial on $\rad \tilde\beta$, there is $\barr \chi \in \widehat{\barr T}$ such that $\chi = \barr \chi \circ \pi$ and, since $b$ is nondegenerate, there is an element $t\in T$ such that $b(\pi(t), \cdot ) = \barr \chi$. 
+    An straightforward computation shows that $\psi_0 = \operatorname{sInt}_{X_t}$.
+\end{proof}
+
+\begin{defi}
+    We say that $t_p \in T$ is a \emph{parity element} if $\tilde\beta(t_p, t) = (-1)^{p(t)}$ for all $t\in T$. 
+\end{defi}
+
+Clearly, $t_p$ is a parity element if, and only if, $\operatorname{sInt}_{X_{t_p}} = \nu$, where $\nu\from \D \to \D$ is the parity automorphism $\nu(X_t) = (-1)^{p(t)} X_t$ for every $t\in T$. 
+%
+For \cref{ex:Q(1)-as-grd-div-SA}, the parity automorphism is given by $\operatorname{sInt}_u$, 
+% where
+% \[
+%     u coloneqq \begin{pmatrix}
+%             0 & 1\\
+%             1 & 0
+%         \end{pmatrix},
+% \]
+hence $\bar 1 = \deg u \in T^-$ is a parity element. 
+For \cref{ex:Pauli-2x2-super}, the parity automorphism is given by $\operatorname{sInt}_d = \operatorname{Int}_d$ where
+\[
+    d \coloneqq \begin{pmatrix}
+            1 & 0\\
+            0 & -1
+        \end{pmatrix},
+\]
+hence $\deg d = (\bar 1, \bar 0) \in T^+$ is a parity element. 
+
+\begin{cor}\label{cor:existence-parity-element}
+    There always exists a parity element $t_p \in T$, and it is unique if, and only if, $\tilde\beta$ is nondegenerate.
+\end{cor}
+
+\begin{proof}
+    Existence follows from \cref{prop:all-central-automorphisms-of-D-are-superinner}, since the inner automorphism is trivial on $sZ(\D) = Z(\D) \cap \D\even$. 
+    Also, given a parity element $t_p \in T$, it is clear from the definition that the set of all parity is the coset $t_p (\rad \tilde\beta)$.
+\end{proof}
+
+% -----------------
+\subsection{Finite dimensional graded-simple superalgebras over an algebraically closed field}\label{ssec:classification-assc-super}
+
+We are now going to specialize the main results of \cref{ssec:param-End_D-U} to the superalgebra case, so we continue assuming that $\FF$ is algebraically closed and that $G$ is abelian. 
+Recall from \cref{ssec:supermodules-over-D} that our classification a graded $\D$-modules of finite rank depend on $\D$ being even or odd.
+
+\begin{defi}\label{def:E(D,U)-super}
+    Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, associated to the triple $(T, \beta, p)$, and let $\U$ be a graded right $\D$-supermodule of finite rank. 
+    We define the \emph{parameters} of the pair $(\D, \U)$ as:
+    \begin{enumerate}[(i)]
+        \item the quintuple $(T, \beta, p, \kappa_\bz, \kappa_\bo)$, if $\D$ is even and $\U$ is associated to the maps $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$;
+        \item the quadruple $(T, \beta, p, \kappa)$, if $\D$ is odd and $\U$ is associated to the map $\kappa\from G/T \to \ZZ_{\geq 0}$.
+    \end{enumerate}
+\end{defi}
+
+Recall that for every map $\kappa\from G/T\to \ZZ_{\geq 0}$ with finite support, we define $|\kappa| \coloneqq \sum_{x \in G/T} \kappa(x)$. 
+We, then, have that \cref{thm:iso-End_D-U-with-parameters} translates the following result in the ``super'' case:
+
+\begin{thm}\label{thm:iso-D-even}
+	Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)-super}, with both $\D$ and $\D'$ even. 
+	Let $(T, \beta, p, \kappa_\bz, \kappa_\bo)$ and $(T', \beta', p', \kappa_\bz', \kappa_\bo')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
+	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $p = p'$ and there is $g\in G$ such that
+	\begin{enumerate}[(i)]
+		\item for $|\kappa_\bz| \neq |\kappa_\bo|$: $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$;
+
+		\item for $|\kappa_\bz| = |\kappa_\bo|$: either $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$ or $g\kappa_{\bar 0}=\kappa_{\bar 1}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 0}'$.
+	\end{enumerate}
+\end{thm}
+
+\begin{thm}\label{thm:iso-D-odd}
+    Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)-super}, with both $\D$ and $\D'$ odd. 
+    Let $(T, \beta, p, \kappa)$ and $(T', \beta', p', \kappa')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
+	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $p = p'$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$. 
+\end{thm}
+
+It should be noted that, combining \cref{prop:simple-R-D-super,prop:tilde-beta-nondeg}, we have that $\End_\D (\U)$ is simple as a superalgebra if, and only if, $\tilde\beta$ is nondegenerate. 
+If this is the case, \cref{thm:iso-D-even,thm:iso-D-odd} give us a classification of abelian group gradings on the finite dimensional simple associative superalgebras $M(m,n)$ and $Q(n)$. 
+If $\beta$ is nondegenerate, we have a classification of gradings on the superalgebras $M(m,n)$ (compare with \cite[??]{paper-MAP} and \cite[??]{Helens_thesis}). 
+If $\beta$ is not nondegenerate but $\tilde\beta$ is, we have classification of gradings on the associative superalgebras $Q(n)$. 
+On \cite{paper-Qn}, a different classification for $Q(n)$ was achieved, and we will compare both of them in \cref{sec:assc-only-G}. 
+
+It is interesting to see when odd or even gradings can occur. 
+For $M(m,n)$, odd gradings are only possible if $m=n$, by dimension count. 
+It was noted that for odd gradings, both the even and the odd parts of $R$ have the same dimension. 
+We have that $\dim M(m,n)\even = m^2 + n^2$ and $\dim M(m,n)\odd = 2mn$. 
+Hence $\dim M(m,n)\even = \dim M(m,n)\odd$ if, and only if, $m=n$. 
+It follows we can only have odd gradings on $M(m,n)$ if $m=n$. 
+In this case, we always have them (see \cite[??]{paper-MAP}).
+
+On the other hand, for $Q(n)$ we only have odd gradings. 
+This can be seen by the correspondence of centers (\cref{prop:R-and-D-have-the-same-center}), we always have an odd element in $Z(Q(n)) \iso Z(\D)$, hence we have a nonzero odd element in $\D$. 
+ 
+\begin{itemize}
+    \item Isomorphism theorems proofs? 
+    \item Theorem about $\widehat G$-action and even and odd gradings?
+\end{itemize}
+
+
+
+% \begin{defi}\label{def:even-grd-on-Mmn}
+% 	Similarly to Definition \ref{def:explicit-grd-assoc}, we will parametrize the even gradings on $M(m,n)$ as $\Gamma(T,\beta, \gamma_0, \gamma_1)$, where the pair $(T,\beta)$ characterizes $\D$ and $\gamma_0$ and $\gamma_1$ are tuples of elements of $G$ corresponding to the degrees of homogeneous bases for $\mc U\even$ and $\mc U\odd$, respectively. Here $\gamma_0$ is a $k_0$-tuple and $\gamma_1$ is a $k_1$-tuple, with $k_0\sqrt{|T|}=m$ and $k_1\sqrt{|T|}=n$.
+% \end{defi}
+
+% \begin{defi}\label{def:odd-grd-on-Mmn-1}
+% 	We parametrize the odd gradings by $\Gamma(T, \beta, \gamma)$ where $T\subseteq G^\#$ but $T\subsetneq G$, the pair $(T,\beta)$ characterizes $\D$, and $\gamma$ is a tuple of elements of $G = G\times \{\bar 0\}$ corresponding to the degrees of a homogeneous basis of $\mc U$ with only even elements.
+% \end{defi}
+
+% Clearly, it is impossible for an even grading to be isomorphic to an odd grading. 
+% The classification of even gradings is the following:
+
+% \begin{thm}\label{thm:even-assc-iso}
+% 	Every even $G$-grading on the superalgebra $M(m,n)$ is isomorphic to some $\Gamma(T,\beta, \kappa_{\bar 0}, \kappa_{\bar 1})$ as in Definition \ref{def:even-grd-on-Mmn}.
+% 	Two even gradings, $\Gamma = \Gamma(T,\beta, \kappa_{{\bar 0}}, \kappa_{\bar 1})$ and $\Gamma' = \Gamma(T',\beta', \kappa_{\bar 0}', \kappa_{\bar 1}')$,
+% 	are isomorphic if, and only if, $T=T'$, $\beta=\beta'$, and there is $g\in G$ such that
+% 	\begin{enumerate}[(i)]
+% 		\item for $m\neq n$: $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$;
+
+% 		\item for $m = n$: either $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$ or $g\kappa_{\bar 0}=\kappa_{\bar 1}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 0}'$.
+% 	\end{enumerate}
+% \end{thm}
+
+
+
