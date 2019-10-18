@@ -1,35 +1,35 @@
 \section{Odd gradings on simple associative superalgebras only in terms of \texorpdfstring{$G$}{G}}\label{sec:assc-only-G}
 
-Here $\FF$ is algebraically closed and $\D$ is finite dimensional
+Here $\FF$ is algebraically closed and $\D$ is finite dimensional.
 
-\subsection{Odd graded-division algebras in terms of $G$}\label{ssec:odd-div-G-only}
+\subsection{Odd graded-simple superalgebras in terms of $G$}\label{ssec:odd-div-G-only}
 
 Let $\D$ be an odd finite dimensional graded-division superalgebra associated to $(T, \beta, p)$. 
 Clearly, $\D\even$ is a graded-division algebra associated to $(T^+, \beta^+)$. 
-Given any $t_1 \in T^-$, then $t_1 = (h, \bar 1)$ for some $h\in G$ such that $h^2\in T^+$ and the map $\chi \from T^+ \to \FF^\times$ given by $\chi(t) \coloneqq \beta(t_1, t)$, for all $t\in T^+$, is a character in $\widehat{T^+}$ such that $\chi^2 = \beta^+ (h^2, \cdot)$.  
-Note that $T^- = t_1 T^+$ and
+Given any $t_1 \in T^-$, then $t_1 = (h, \bar 1)$ for some $h\in G$ such that $h^2\in T^+$ and the map $\chi \from T^+ \to \FF^\times$ given by $\chi(t) \coloneqq \beta(t_1, t)$, for all $t\in T^+$, is a character in $\widehat{T^+}$ such that $\chi^2 = \beta^+ (h^2, \cdot)$. 
+
+\begin{defi}
+    We say that the odd graded-division superalgebra $\D$ is a \emph{associated} to the quadruple $(T^+, \beta^+, h,\chi)$. 
+    If $\U$ is a graded $\D$-supermodule of finite rank associated to the map $\kappa\from G/T^+ \to \FF^\times$, we say that $(T^+, \beta^+, h, \chi, \kappa)$ are $G$-parameters of the pair $(\D, \U)$. 
+\end{defi}
+
+Clearly, a quadruple $(T^+, \beta^+, h,\chi)$ associated to $\D$ has enough information to recover $T$ and $\beta$, since $T^- = (h, \bar 1) T^+$ and
 \[\label{eq:beta-from-h-chi}
     \forall s,t\in T^+,\, \forall i,j \in \ZZ, \quad \beta(s\, t_1^i,t \, t_1^j) = \beta^+(s,t)\, \chi (s)^{-j}\, \chi (t)^i,
 \]
-so it is clear that the pair $(h, \chi)$ gives us enough information to recover $T$ and $\beta$ from $(T^+, \beta^+)$.
+and, therefore, determines the isomorphism class of the graded-division superalgebra $\D$ (see \cref{ssec:T-beta-p}). 
 
 \begin{defi}\label{def:odd-parameters}
-    Let $T^+$ be a finite subgroup of $G$ and let $\beta^+$ be an alternating bicharacter on $T^+$. 
+    Let $T^+$ be any finite subgroup of $G$ and let $\beta^+$ be an alternating bicharacter on $T^+$. 
     A pair $(h,\chi) \in G \times \widehat{T^+}$ is said to be \emph{$(T^+, \beta^+)$-admissible} if 
     $h^2 \in T^+$ and $\chi^2 = \beta^+(h^2, \cdot)$. 
-    We will denote the set of all $(T^+, \beta^+)$-admissible pairs by $\mathsf {Y} (T^+, \beta^+)$.
+    We will denote the set of all $(T^+, \beta^+)$-admissible pairs by $\mathbb {O} (T^+, \beta^+)$. 
 \end{defi}
 
-% \begin{prop}
-%     Let $T^+$ and $\beta^+$ be as in \cref{def:odd-parameters}. 
-%     For each pair $(h, \chi) \in \mathsf {Y} (T^+, \beta^+)$, there is a unique
-    
-% \end{prop}
-
 For each $(T^+, \beta^+)$-admissible pair $(h, \chi)$ we can construct a triple $(T, \beta, p)$ corresponding to a odd graded-division superalgebra. 
-First, we set $t_1 \coloneqq (h, \bar 1)$ and define $T$ to be $T \coloneqq T^+ \cup t_1 T^-$. 
+First, we set $t_1 \coloneqq (h, \bar 1)$ and define $T \coloneqq T^+ \cup t_1 T^-$. 
 Note that $T$ is a subgroup of $G^\#$ since $h^2 \in T^+$. 
-We then take $\beta$ as in \cref{lemma:existence-beta}, below:
+We then take $\beta\from T\times T \to \FF^\times$ as in \cref{lemma:existence-beta}, below:
 
 \begin{lemma}\label{lemma:existence-beta}
     There is a unique alternating bicharacter $\beta$ on $T$ such that $\beta\restriction_{T^+ \times T^+} = \beta^+$ and $\beta(t_1, t) = \chi(t)$, for all $t\in T^+$.
@@ -57,50 +57,41 @@ We then take $\beta$ as in \cref{lemma:existence-beta}, below:
     It is clear that $\beta$ satisfies \cref{eq:beta-from-h-chi}, concluding the proof.
 \end{proof}
 
-\begin{defi}
-    The quadruple $(T^+, \beta^+, h, \chi)$ defines an odd grading as above. 
-\end{defi}
+Together with \cref{lemma:colour-tensor-product}, we have:
+
+\begin{prop}
+    Let $T^+$ and $\beta^+$ be as in \cref{def:odd-parameters} and let $(h, \chi)$ be a $(T^+, \beta^+)$-admissible pair. 
+    Then there exist an odd graded-division superalgebra $\D$ associated to the quadruple $(T^+, \beta^+, h,\chi)$. \qed
+\end{prop}
 
 We now have a parametrization of odd graded-division superalgebras only in terms of $G$. 
-It remains to see when different quadruples determine isomorphic gradings.
+It remains to see when different quadruples determine isomorphic graded-division superalgebras. 
 
 \begin{defi}\label{def:T^+-action}
-    Let $T^+$ and $\beta^+$ be as in \cref{def:odd-parameters}, we define an $T^+$-action on $\mathsf {Y} (T^+, \beta^+)$ by
+    Let $T^+$ and $\beta^+$ be as in \cref{def:odd-parameters}, we define an $T^+$-action on $\mathbb{O} (T^+, \beta^+)$ by
     \[
         t \cdot (h, \chi) = (th, \beta^+(t, \cdot) \chi),
     \]
-    for all $t\in T^+$ and $(h, \chi) \in \mathsf {Y} (T^+, \beta^+)$.
+    for all $t\in T^+$ and $(h, \chi) \in \mathbb{O} (T^+, \beta^+)$.
 \end{defi}
 
-Proof that $t \cdot (h, \chi) \in Y$. 
-It is clear it is an action.
+If $t\in T^+$ and $(h, \chi) \in \mathbb {O} (T^+, \beta^+)$, then $(th)^2 = t^2h^2\in T^+$ and $\beta(th^2, \cdot) = \beta(t, \cdot) \chi$, hence, indeed, $t \cdot (h, \chi) \in \mathbf {O} (T^+, \beta^+)$. 
+It is straightforward that the axioms of action are satisfied. 
 
 \begin{thm}
-    Isomorphism theorem
+    Let $\D$ and $\D'$ be finite dimensional odd graded-division superalgebras, associated to quadruples $(T^+, \beta^+, h, \chi)$ and $(T'^+, \beta'^+, h', \chi')$, respectively. 
+    Then $\D \iso \D'$ if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, and $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$. 
 \end{thm}
 
 \begin{proof}
     we need $hT^+ = h'T^+$, so $h' = t h$; $\chi' = \beta(t, \cdot)\chi $ follows.
 \end{proof}
 
-For completeness, let us state the classification for any division grading. 
-
-\begin{defi}
-    
-\end{defi}
-
 \begin{cor}
     Iso for any division grading.
 \end{cor}
 
-For specific cases (Q and M), this parametrization can be simplified using the following lemma about group actions:
-
-% \begin{lemma}%\label{lemma:lemma-on-actions}
-%     Let $H$ be a group, let $X$ and $Y$ be $H$-sets,  let $\pi\from X \to Y$ be an $H$-equivariant map. 
-%     For every $y \in Y$, the $H$-action on $X$ restricts to a $\operatorname{Stab}_H (y)$-action on $\pi\inv(y)$%. 
-%     % Every $\operatorname{Stab}_H (y)$-orbit in $\pi\inv(y)$ is contained in a $H$-orbit in $X$ 
-%     and, if the $H$-action on $Y$ is transitive, then every $H$-orbit in $X$ contains a unique $\operatorname{Stab}_H (y)$-orbit in $\pi\inv(y)$. 
-% \end{lemma}
+For specific cases, this parametrization can be simplified using the following lemma about group actions: 
 
 \begin{lemma}\label{lemma:lemma-on-actions}
     Let $H$ be a group, let $X$ and $Y$ be $H$-sets, and let $\pi\from X \to Y$ be an $H$-equivariant map. 
@@ -117,24 +108,23 @@ For specific cases (Q and M), this parametrization can be simplified using the f
     Indeed, if for some $g'\in H$ we have $g'\cdot x \in \pi\inv(y)$, then $g'\cdot x = (g'g\inv)\cdot (g\cdot x)$ and, hence, $y = \pi(g'\cdot x) = (g'g\inv)\cdot \pi(g\cdot x) = (g'g\inv) \cdot y$, so $g'g\inv \in \operatorname{Stab}_H (y)$.
 \end{proof}
 
-As an application of this lemma, let us explore the case $\beta^+$ is nondegenerate, as in the classification of division gradings on superalgebras of type $Q$.
+As an application of this lemma, let us simplify the case $\beta^+$ is nondegenerate. 
 
-1. we can choose $h$ and $\chi$ freely, it will always be a grading on $Q$. 
+1. Consider the action of $T^+$ on $\widehat{T^+}$ given by $t\cdot \chi = \beta^+(t,\cdot) \chi$. 
+Since $\beta^+$ is nondegenerate, this action is transitive. 
 
-2. But the action on $\chi$ is transitive. 
+2. Let $\pi\from Y \to \widehat{T^+}$ be the projection on the second entry, which clearly a $\widehat{T^+}$-equivariant map, and fix $\chi = 1 \in \widehat{T^+}$, the trivial character.
 
-3. Then we can fix $\chi = 1$.
+3. For this choice of $\chi$, we have that $\chi^2 = \beta^+(h^2, \cdot)$ if, and only if, $h^2 = e$. 
+Hence $\pi\inv (\chi) = \{ (h, \chi) \mid h^2 =e \}$. 
 
-4. The $h$'s then must have square equal to $e$, and every one of these works with $\chi = 1$ (state as iff).
-
-5. Again since $\beta^+$ is nondeg, we have that $Stab$ is trivial.
+4. Again, since $\beta^+$ is nondegenerate, $Stab_{T^+} (\chi)$ is trivial.
 
 5. Note that, in this case, $\beta$ is clearly degenerate, with $t_1 = (h, \bar 1) \in \rad \beta$. 
 
-6. By results above ($\beta$ deg but $\beta^+$ nondeg, and result about classification), we actually got the classification of odd graded-division superalgebra we had above (see def standart realization)
+6. By \cref{lemma:beta-deg-beta-tilde-nondeg,cor:tilde-beta-nondeg}, these are precisely the graded-division superalgebras of type $Q$, and it is easy to see that this parametrization is the same we had before (see \cref{def:standard-realization-Q}). 
 
-The parametrization above is this one, for good choices of $h$ and $\chi$, that can always be made.
-The iso above is this iso together with the Lemma.
+7. The iso above is this iso together with the Lemma.
 
 
 Ok, now every odd grading, not only $\D$.
