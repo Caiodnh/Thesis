@@ -220,22 +220,22 @@ If $\dim_\D (\U) < \infty$, we can say more:
 
 \begin{prop}\label{prop:Hom_D-is-graded}
     Let $\U$ and $\V$ be graded right $\D$-modules and suppose $\dim_\D \U < \infty$. 
-    Then $\Hom_\D(\U,\V)$ is a graded subspace of $\Hom_\FF^{gr} (\U, \V)$ (see \cref{defi:elementary-grd-abstract}).
+    Then $\Hom_\D(\U,\V) = \Hom_\D^{\mathrm{gr}} (\U, \V)$ is a graded subspace of $\Hom_\FF^{\mathrm{gr}} (\U, \V)$ (see \cref{defi:elementary-grd-abstract}).
 \end{prop}
 
 \begin{proof}
-    Let $\B = \{ u_1, \ldots, u_k \}$ be graded basis for $\U$ and $\mc C = \{v_i\}_{i\in I}$ be graded basis for $\V$, set $g_j \coloneqq \deg u_j$ and $h_i \coloneqq \deg v_i$, for $1\leq j \leq k$ and $i\in I$. 
+    Let $\B = \{ u_1, \ldots, u_l \}$ be graded basis for $\U$ and $\mc C = \{v_i\}_{i\in I}$ be graded basis for $\V$, set $g_j \coloneqq \deg u_j$ and $h_i \coloneqq \deg v_i$, for $1\leq j \leq l$ and $i\in I$. 
     
     Since $\B$ is, in particular, a basis for $\D$ as a free $\D$-module, a $\D$-linear map $f\from \U \to \U$ can be defined by its values on the elements of $\B$. 
-    Given $1\leq i \leq k$, $\lambda\in \Lambda$, $t\in T$ and $0\neq d \in \D_t$, define $f_{i, j, d}\from \U \to \V$ be the $\D$-linear map defined by $f(u_j) = \delta_{ir} v_i d$, for every $r \in \{1, \ldots, k \}$. 
-    It is easy to see that $f_{i, j, d}\from \U \to \V$ is a homogeneous element in $\Hom_\FF^{gr} (\U, \V)$ and that
+    Given $1\leq j \leq l$, $i\in I$, $t\in T$ and $0\neq d \in \D_t$, define $f_{i, j, d}\from \U \to \V$ to be the $\D$-linear map defined by $f_{i, j, d}(u_r) = \delta_{jr} v_i d$, for every $r \in \{1, \ldots, l \}$. 
+    It is easy to see that $f_{i, j, d}\from \U \to \V$ is a homogeneous element in $\Hom_\FF^{\mathrm{gr}} (\U, \V)$ with
     \[\label{eq:grd-M_k(D)-nonabelian}
         \deg f_{i,j,d} = h_i t g_j\inv.
     \] 
     Since $\B$ is finite, it is clear that every map in $\Hom_\D (\U, \V)$ is a finite sum of maps of the form $f_{i, j, d}$, concluding the proof. 
 \end{proof}
 
-Under the conditions of \cref{prop:Hom_D-is-graded}, we will always considered $\Hom_\D (\U, \V)$ as a graded vector space with the grading induced by $\Hom_\FF^{gr} (\U, \V)$. 
+Under the conditions of \cref{prop:Hom_D-is-graded}, we will always consider $\Hom_\D (\U, \V)$ as a graded vector space with the grading restricted from $\Hom_\FF^{\mathrm{gr}} (\U, \V)$. 
 Note that, in the case $\U = \V$, this makes $\End_\D (\U)$ a graded algebra and $\U$ a graded left $\End_\D (\U)$-module. 
 % Therefore, $\U$ is $(\End_\D (\U), \D)$-bimodule.
 
@@ -243,12 +243,12 @@ Note that, in the case $\U = \V$, this makes $\End_\D (\U)$ a graded algebra and
 % We will follow the convention of writing $\D$-linear maps on the left and $R$-linear maps on the right. 
 
 As usual, if both $\U$ and $\V$ have finite rank over $\D$, we can represent the elements of $\Hom_\D(\U, \V)$ as matrices with entries in $\D$. 
-More precisely, given graded bases $\B = \{ u_1, \ldots, u_k \}$ and $\mc C = \{v_1, \ldots, v_k\}$ for $\U$ and $\V$, respectively, we have an isomorphism of vector spaces $\Hom_\D(\U, \V) \to M_{k\times \ell}(\D)$ given by $f\mapsto (d_{ij})$, where $f(u_j) = \sum_i \delta_{ij} v_i d_{ij}$. 
+More precisely, given graded bases $\B = \{ u_1, \ldots, u_l \}$ and $\mc C = \{v_1, \ldots, v_k\}$ for $\U$ and $\V$, respectively, we have an isomorphism of vector spaces $\Hom_\D(\U, \V) \to M_{k\times \ell}(\D)$ given by $f\mapsto (d_{ij})$, where $f(u_j) = \sum_i v_i d_{ij}$. 
 Under this isomorphism, the map $f_{i, j, d}$ defined in the proof of \cref{prop:Hom_D-is-graded}, corresponds to the matrix $E_{ij}(d) \in M_{k\times \ell}(\D)$, \ie, the matrix which has $d$ in the position $(i,j)$ and $0$ elsewhere. 
 
 \begin{remark}\label{rmk:M_k(F)-tensor-D}
-    Note that we can identify $M_{k\times \ell}(\D) = M_{k\times \ell}(\FF) \tensor_\FF \D$, with $E_{ij}(d)$ corresponding to $E_{ij}\tensor \D$. 
-    In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_{k\times \ell}(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_{k\times \ell}(\FF)$ has a elementary grading (see \cref{defi:elementary-grd-matrix}).
+    Note that we can identify $M_{k \times \ell}(\D) = M_{k \times \ell}(\FF) \tensor_\FF \D$,     with $E_{ij}(d)$ corresponding to $E_{ij}\tensor d$. 
+    In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_{k\times \ell}(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_{k\times \ell}(\FF)$ has an elementary grading (see \cref{defi:elementary-grd-matrix}).
 \end{remark}
 
 % As usual, if both $\U$ and $\V$ have finite rank over $\D$, we can represent the elements of $\Hom_\D(\U, \V)$ as matrices with entries in $\D$. 
@@ -260,17 +260,16 @@ Under this isomorphism, the map $f_{i, j, d}$ defined in the proof of \cref{prop
 
 Let $\U$ be a nonzero graded right $\D$-module of finite rank. 
 In this subsection we will study the endomorphism algebra $\End_\D (\U)$. 
-The main reason for this, below. 
-Special cases of this resul appeared in several works, \eg, \cite{BSZ01,MR2046303,BZ02}. 
-Here we follow \cite[Theorem 2.6]{livromicha}:
-% , the converse of which is an easy exercise.
+The main reason for this is Theorem \ref{thm:End-over-D}, below. 
+Special cases of this result appeared in several works, \eg, \cite{BSZ01,MR2046303,BZ02}. 
+Here we follow \cite[Theorem 2.6]{livromicha}, the converse of which also holds (see \cite[page 31]{livromicha}).
 
 \begin{thm}\label{thm:End-over-D}
     %   Let $G$ be a group and let $R$ be a $G$-graded associative algebra. 
     % 	Then $R$ is graded-simple and satisfies the \dcc on graded left ideals if, and only if,	there is a $G$-graded division algebra $\D$ and a graded right $\D$-module $\mc{U}$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
 	%
 	Let $G$ be a group and let $R$ be a $G$-graded graded-simple associative algebra satisfying the \dcc on graded left ideals. 
-	Then a $G$-graded division algebra $\D$ and a graded right $\D$-module $\mc{U}$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
+	Then a $G$-graded division algebra $\D$ and a nonzero graded right $\D$-module $\mc{U}$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
 \end{thm}
 
 % with $\dim_\D (\U) = k < \infty$ and let $\B = \{u_1, \ldots, u_k\}$ be a graded basis for it, and let $g_i = \deg u_i$. 
@@ -299,16 +298,16 @@ We will need the following two definitions:
 
 \begin{defi}\label{def:twist}
 	Let $\psi_0\from \D' \to \D$ be a homomorphism of graded algebras and let $\U$ be a graded right $\D$-module.
-	The \emph{module induced by $\psi$} is the graded right $\D'$-module $\U^{\psi_0}$ which is the same as $\U$ as a vector space, but with $\D'$-action defined by $u\cdot d \coloneqq u\,\psi_0 (d)$, for all $u\in \U$ and $d\in \D'$.
+	The \emph{module induced by $\psi$} is the graded right $\D'$-module $\U^{\psi_0}$ which is $\U$ as a vector space, but with $\D'$-action defined by $u\cdot d \coloneqq u\,\psi_0 (d)$, for all $u\in \U$ and $d\in \D'$.
 	In the case $\psi_0\from \D \to \D$ is an automorphism, $\U^{\psi_0}$ is again a graded right $\D$-module, called the \emph{twist of $\U$ by $\psi_0$}.
 \end{defi}
 
 \begin{remark}\label{rmk:twist-does-not-change-set}
-	Note that a map $f\from \U^{\psi_0} \to \U^{\psi_0}$ is $\D'$-linear if, and only if, it is $\D$-linear as a map from $\U\to \U$. 
+	Note that, if $\psi_0$ is surjective, a map $f\from \U^{\psi_0} \to \U^{\psi_0}$ is $\D'$-linear if, and only if, $f$ is $\D$-linear as a map $\U\to \U$. 
 	In other words, $\End_{\D'} (\U^{\psi_0})$ is the same set as $\End_\D (\U)$. 
 	Nevertheless, the matrix representation of $f$ can be different in each case. 
-	To be more precise, note that a subset $\B \subseteq \U$ is a graded $\D'$-basis of $\U^{\psi_0}$ if, and only if it is a graded $\D$-basis of $\U$. 
-	Such basis gives rise to isomorphisms $M_k(\D') \iso \End_{\D'} (\U^{\psi_0})$ and $M_k(\D) \iso \End_{\D} (\U)$, and it is easy to see that the matrix representing $f$ in $M_k(\D')$ is equal to the the matrix representing $f$ in $M_k(\D)$ but with $\psi_0$ applied to every entry.
+	To be more precise, note that a subset $\B \subseteq \U$ is a graded $\D'$-basis of $\U^{\psi_0}$ if, and only if, it is a graded $\D$-basis of $\U$. 
+	Such a basis gives rise to isomorphisms $M_k(\D') \iso \End_{\D'} (\U^{\psi_0})$ and $M_k(\D) \iso \End_{\D} (\U)$, and it is easy to see that the matrix representing $f$ in $M_k(\D')$ is equal to the result of applying $\psi_0$ to every entry of the matrix representing $f$ in $M_k(\D)$.
 \end{remark}
 
 The next result is \cite[Theorem 2.10]{livromicha} with a slightly different notation:
@@ -329,7 +328,7 @@ The next result is \cite[Theorem 2.10]{livromicha} with a slightly different not
 
 For the remaining of this subsection, fix a graded-division algebra $\D$ and a nonzero graded right $\D$-module of finite rank $\U$, and set $R \coloneqq \End_{\D} (\U)$. 
 
-First, we  we state here a well-known result about ungraded algebras, for future reference:
+First, we state here a well-known result about ungraded algebras, for future reference:
 
 \begin{prop}\label{prop:R-simple-iff-D-simple}
 	The algebra $R = \End_\D (\U)$ is simple if, and only if, the algebra $\D$ is simple. \qed
@@ -346,23 +345,23 @@ The following result is \cite[Exercise 3 on page 60]{livromicha}.
 % \end{prop}
 
 \begin{lemma}\label{lemma:converse-density-thm}
-    The representation map $\rho\from \D \to \End_R (\U)$ corresponding to the $\D$-action on $\U$
+    The representation map $\rho\from \D \to \End_R (\U)$ corresponding to the right $\D$-action on $\U$
     % given by $u \rho(d) = ud$, for all $d\in \D$ and $u \in \U$, 
     is an isomorphism of graded algebras.
 \end{lemma}
 
 \begin{proof}
-    It is easy to see that $\rho$ is a homomorphism of graded algebras. 
+    By the definition of a graded module, $\rho$ is a homomorphism of graded algebras $\D \to \End_{R}^{\mathrm{gr}} (\U)$. 
     Since $\D$ is graded-simple and $\rho(1) = \id_{\U} \neq 0$, $\rho$ is injective.
 
     Let $\{u_1, \ldots, u_k \}$ be a graded basis of $\U$. 
-    Given $u\in \U$, define $r\in R = \End_\D (\U)$ to be the $\D$-linear map such that $r u_1 = r(u_1) = u$ and $r u_i = r(u_i) = 0$ for $1< i \leq k$. 
+    Given $u\in \U$, define $r\in R = \End_\D (\U)$ to be the $\D$-linear map such that $r u_1 = u$ and $r u_i = 0$ for $1< i \leq k$. 
     Let $f\in \End_R (\U)$ and write $u_1 f = \sum_i u_i d_i$ for $d_1, \ldots, d_k\in \D$. 
     Then
     \[
         u f = (r u_1) f = r (u_1 f) = r\big( \sum_i u_i d_i \big) = u d_1.
     \]
-    Therefore $f = \rho(d_1)$, proving that $\rho$ is surjective.
+    Therefore $f = \rho(d_1)$, proving that the image of $\rho$ is the whole $\End_\D (\U)$.
 \end{proof}
  
 Finally, we will assume $G$ is abelian. 
@@ -435,21 +434,21 @@ It follows that $\dim_\FF \D_t = 1$ for all $t\in T$.
     If $\rad b = \{e\}$, we say that $b$ is \emph{nondegenerate}.
 \end{defi}
 
-\begin{defi}
-    Let $T$ and $T'$ be abelian groups. 
-    A map $b\from T \times T' \to \FF^\times$ is said to be a bicharacter if the maps $b(t', \cdot)\from T \to \FF^\times$ and $b(\cdot, t)\from T' \to \FF^\times$ are characters, for all $t\in T$ and $t' \in T'$. 
-    In the case $T= T'$, we say that a bicharacter $b$ is
-    \begin{itemize}
-        \item \emph{skew-symmetric} if $b(t,s) = b(s,t)\inv$ for all $t,s\in T$;
-        \item \emph{alternating} if $b(t,t) = 1$ for all $t\in T$.
-    \end{itemize}
-    Clearly, every alternating bicharacter is skew-symmetric. 
-    The \emph{radical} of a skew-symmetric bicharacter is the subgroup of $T$ defined by
-    \[
-        \rad b \coloneqq \{ t \in T \mid b(t, T) =1 \}.
-    \]
-    If $\rad b = \{e\}$, we say that $b$ is \emph{nondegenerate}.
-\end{defi}
+%\begin{defi}
+ %   Let $T$ and $T'$ be abelian groups. 
+  %  A map $b\from T \times T' \to \FF^\times$ is said to be a bicharacter if the maps $b(t', \cdot)\from T \to \FF^\times$ and $b(\cdot, t)\from T' \to \FF^\times$ are characters, for all $t\in T$ and $t' \in T'$. 
+   % In the case $T= T'$, we say that a bicharacter $b$ is
+    %\begin{itemize}
+     %   \item \emph{skew-symmetric} if $b(t,s) = b(s,t)\inv$ for all $t,s\in T$;
+      %  \item \emph{alternating} if $b(t,t) = 1$ for all $t\in T$.
+    %\end{itemize}
+    %Clearly, every alternating bicharacter is skew-symmetric. 
+    %The \emph{radical} of a skew-symmetric bicharacter is the subgroup of $T$ defined by
+    %\[
+     %   \rad b \coloneqq \{ t \in T \mid b(t, T) =1 \}.
+    %\]
+    %If $\rad b = \{e\}$, we say that $b$ is \emph{nondegenerate}.
+%\end{defi}
 
 Since $T$ is abelian and every homogeneous component is one-dimensional, for any $t, s \in T$, there exists a nonzero scalar $\beta(t,s)$ such that 
 \[\label{eq:beta}
@@ -503,18 +502,18 @@ Here we will give an explicit construction with matrices in the case of nondegen
 \begin{proof}
     Choose elements $0 \neq X_a \in \mc A_a$ and $0 \neq X_b \in \mc B_b$, for all $a\in A$ and $b\in B$. 
     On the graded vector space $\mc A \tensor \mc B$, define a product by \[(X_a \tensor X_b) (X_{a'} \tensor X_{b'}) \coloneqq \beta(b, a') (X_{a} X_{a'}) \tensor (X_{b}X_{b'}),\] for all $a,a' \in A$ and $b, b' \in B$ (this construction is called \emph{colour tensor product} in \cite[page 88]{MR1192546}, and is a special case of the concept of \emph{twisted tensor product} in \cite{twisted-tensor}). 
-    Clearly, this makes $\mc A \tensor \mc B$ a graded algebra, and it is associative since:
-    \begin{align}
-        \big( (X_{a} \tensor X_{b}) (X_{a'} \tensor X_{b'}) \big) (X_{a''} \tensor & X_{b''}) 
-        = \beta(b, a') \big( (X_{a} X_{a'}) \tensor (X_{b}X_{b'}) \big) (X_{a''} \tensor X_{b''})\\
-        &= \beta(b, a') \beta(bb', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
-        &= \beta(b, a') \beta(b, a'') \beta(b', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
-        &= \beta(b, a'a'') \beta(b', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
-        &= \beta(b', a'') (X_a \tensor X_b) \big( (X_{a'} X_{a''}) \tensor (X_{b'} X_{b''}) \big) \\
-        &= (X_a \tensor X_b) \big( (X_{a'} \tensor X_{b'}) \tensor (X_{a''} X_{b''}) \big),
-    \end{align}
-    for all $a,a', a'' \in A$ and $b, b', b'' \in B$. 
-    It is straightforward to see that it is a graded-division algebra, and that it is associated to $(T, \beta)$. 
+    Clearly, this makes $\mc A \tensor \mc B$ a graded algebra, and it is associative (see \cite{MR1192546}) %:
+%    \begin{align}
+  %      \big( (X_{a} \tensor X_{b}) (X_{a'} \tensor X_{b'}) \big) (X_{a''} \tensor & X_{b''}) 
+  %      = \beta(b, a') \big( (X_{a} X_{a'}) \tensor (X_{b}X_{b'}) \big) (X_{a''} \tensor X_{b''})\\
+   %     &= \beta(b, a') \beta(bb', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
+    %    &= \beta(b, a') \beta(b, a'') \beta(b', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
+     %   &= \beta(b, a'a'') \beta(b', a'') (X_{a} X_{a'} X_{a''}) \tensor (X_{b}X_{b'}X_{b''}) \\
+        %&= \beta(b', a'') (X_a \tensor X_b) \big( (X_{a'} X_{a''}) \tensor (X_{b'} X_{b''}) \big) \\
+        %&= (X_a \tensor X_b) \big( (X_{a'} \tensor X_{b'}) \tensor (X_{a''} X_{b''}) \big),
+    %\end{align}
+    %for all $a,a', a'' \in A$ and $b, b', b'' \in B$. 
+    with identity element $1_A \tensor 1_B$. Since the homogeneous elements in $A\tensor B$ are scalar multiples of $X_a \tensor X_b$, $a\in A$, $b\in B$, we see that it is a graded-division algebra, and that it is associated to $(T, \beta)$. 
 \end{proof}
 
 \begin{prop}

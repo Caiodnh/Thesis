@@ -23,7 +23,7 @@ and, therefore, determines the isomorphism class of the graded-division superalg
     Let $T^+$ be any finite subgroup of $G$ and let $\beta^+$ be an alternating bicharacter on $T^+$. 
     A pair $(h,\chi) \in G \times \widehat{T^+}$ is said to be \emph{$(T^+, \beta^+)$-admissible} if 
     $h^2 \in T^+$ and $\chi^2 = \beta^+(h^2, \cdot)$. 
-    We will denote the set of all $(T^+, \beta^+)$-admissible pairs by $\mathbb {O} (T^+, \beta^+)$. 
+    We will denote the set of all $(T^+, \beta^+)$-admissible pairs by $\mathbf {O} (T^+, \beta^+)$. 
 \end{defi}
 
 For each $(T^+, \beta^+)$-admissible pair $(h, \chi)$ we can construct a triple $(T, \beta, p)$ corresponding to a odd graded-division superalgebra. 
@@ -68,14 +68,14 @@ We now have a parametrization of odd graded-division superalgebras only in terms
 It remains to see when different quadruples determine isomorphic graded-division superalgebras. 
 
 \begin{defi}\label{def:T^+-action}
-    Let $T^+$ and $\beta^+$ be as in \cref{def:odd-parameters}, we define an $T^+$-action on $\mathbb{O} (T^+, \beta^+)$ by
+    Let $T^+$ and $\beta^+$ be as in \cref{def:odd-parameters}, we define an $T^+$-action on $\mathbf{O} (T^+, \beta^+)$ by
     \[
         t \cdot (h, \chi) = (th, \beta^+(t, \cdot) \chi),
     \]
-    for all $t\in T^+$ and $(h, \chi) \in \mathbb{O} (T^+, \beta^+)$.
+    for all $t\in T^+$ and $(h, \chi) \in \mathbf{O} (T^+, \beta^+)$.
 \end{defi}
 
-If $t\in T^+$ and $(h, \chi) \in \mathbb {O} (T^+, \beta^+)$, then $(th)^2 = t^2h^2\in T^+$ and $\beta(th^2, \cdot) = \beta(t, \cdot) \chi$, hence, indeed, $t \cdot (h, \chi) \in \mathbf {O} (T^+, \beta^+)$. 
+If $t\in T^+$ and $(h, \chi) \in \mathbf {O} (T^+, \beta^+)$, then $(th)^2 = t^2h^2\in T^+$ and $\beta(th^2, \cdot) = \beta(t, \cdot) \chi$, hence, indeed, $t \cdot (h, \chi) \in \mathbf {O} (T^+, \beta^+)$. 
 It is straightforward that the axioms of action are satisfied. 
 
 \begin{thm}
@@ -84,11 +84,23 @@ It is straightforward that the axioms of action are satisfied.
 \end{thm}
 
 \begin{proof}
-    we need $hT^+ = h'T^+$, so $h' = t h$; $\chi' = \beta(t, \cdot)\chi $ follows.
+    Let $(T, \beta, p)$ and $(T', \beta', p')$ be the triples associated to $\D$ and $\D'$, respectively. 
+    By other theorem, $\D \iso \D'$ if, and only if, $T= T'$ and $\beta = \beta'$. 
+    
+    By definition, $T= T'$ if, and only if, $T^+ = T'^+$ and $(h, \bar 1)T^+ = (h', \bar 1)T^+$. 
+    Note that the latter condition is equivalent to 
+    % Hence $T= T'$ if, and only if, $T^+ = T'^+$ and 
+    $h' = th$ for some $t\in T^+$. 
+    
+    Now suppose $T= T'$ and let $t\in T^+$ be such that $h' = th$. 
+    Clearly, $\beta = \beta'$ if, and only if, 
+    $\beta^+ = \beta'^+$ and $\beta((h', \bar 1), \cdot) = \beta'((h', \bar 1), \cdot)$. 
+    By definition of $\beta'$, the latter condition is equivalent to $\chi' = \beta((h', \bar 1), \cdot)$. 
+    Since $\beta((h', \bar 1), \cdot) = \beta ((th, \bar), \cdot) = \beta^+ (t, \cdot) \beta ((h, \bar 1), \cdot) = \chi$, we have the desired result. 
 \end{proof}
 
 \begin{cor}
-    Iso for any division grading.
+    Iso for any odd grading.
 \end{cor}
 
 For specific cases, this parametrization can be simplified using the following lemma about group actions: 
@@ -108,59 +120,170 @@ For specific cases, this parametrization can be simplified using the following l
     Indeed, if for some $g'\in H$ we have $g'\cdot x \in \pi\inv(y)$, then $g'\cdot x = (g'g\inv)\cdot (g\cdot x)$ and, hence, $y = \pi(g'\cdot x) = (g'g\inv)\cdot \pi(g\cdot x) = (g'g\inv) \cdot y$, so $g'g\inv \in \operatorname{Stab}_H (y)$.
 \end{proof}
 
-As an application of this lemma, let us simplify the case $\beta^+$ is nondegenerate. 
+As an application of this lemma, we will revisit the classification of graded-division superalgebras of type $Q$. 
 
-1. Consider the action of $T^+$ on $\widehat{T^+}$ given by $t\cdot \chi = \beta^+(t,\cdot) \chi$. 
-Since $\beta^+$ is nondegenerate, this action is transitive. 
+fix $(T^+, \beta^+)$ with $\beta^+$ nondegenerate. 
+Consider the action of $T^+$ on $\widehat{T^+}$ given by $t\cdot \chi = \beta^+(t,\cdot) \chi$ and let $\pi\from \mathbf {O} (T^+, \beta^+) \to \widehat{T^+}$ be the projection on the second entry, which clearly a $\widehat{T^+}$-equivariant map. 
 
-2. Let $\pi\from Y \to \widehat{T^+}$ be the projection on the second entry, which clearly a $\widehat{T^+}$-equivariant map, and fix $\chi = 1 \in \widehat{T^+}$, the trivial character.
+Since $\beta^+$ is nondegenerate, the $T^+$-action on $\widehat{T^+}$ is transitive. 
+Indeed, for every $\chi \in \widehat{T^+}$, there is $t \in T^+$ such that $\chi = \beta(t, \cdot)$, so $\chi = t \cdot 1$, where $1\in \widehat{T^+}$ is the trivial character. 
 
-3. For this choice of $\chi$, we have that $\chi^2 = \beta^+(h^2, \cdot)$ if, and only if, $h^2 = e$. 
-Hence $\pi\inv (\chi) = \{ (h, \chi) \mid h^2 =e \}$. 
+The nondegeneracy of $\beta$ also implies that $\operatorname{Stab}_{T^+} (1) = \{e \}$. 
+By \cref{lemma:lemma-on-actions}, it follows that the $T^+$-orbits in $\mathbf {O} (T^+, \beta^+)$ are in bijection with points in $\pi\inv (1)$. 
+By the definition of $\mathbf {O} (T^+, \beta^+)$, $(h, 1) \in G \times \widehat{T^+}$ if, and only if, $h^2 \in T^+$ and $h^2 \in \ker \beta^+$, hence, if, and only if, $h^2 = e$. 
 
-4. Again, since $\beta^+$ is nondegenerate, $Stab_{T^+} (\chi)$ is trivial.
-
-5. Note that, in this case, $\beta$ is clearly degenerate, with $t_1 = (h, \bar 1) \in \rad \beta$. 
-
-6. By \cref{lemma:beta-deg-beta-tilde-nondeg,cor:tilde-beta-nondeg}, these are precisely the graded-division superalgebras of type $Q$, and it is easy to see that this parametrization is the same we had before (see \cref{def:standard-realization-Q}). 
-
-7. The iso above is this iso together with the Lemma.
-
-
-Ok, now every odd grading, not only $\D$.
-What happens to $\kappa$? Well, $\kappa$ is already mod $T^+$, so nothing. 
-It might be curious to see $\U$ as a $\D\even$-supermodule...
-Each $\U_x$ becomes $\U_{gT^+}$ and $\U_{gt_1 T^+}$, and, clearly, both have the same dimension.
-
-% \subsection{\texorpdfstring{$Q(n)$}{Q(n)}}
+Our theorem reduces to ... and $h = h'$. 
+Note that in this case $(h, bar 1) \in \ker \beta$, so in view of \cref{lemma:beta-deg-beta-tilde-nondeg}, $\ker \beta = \langle (h, bar 1) \rangle$ and $\D$ is isomorphic to the standard realization of ... (see \cref{def:standard-realization-Q}).
 
 \subsection{\texorpdfstring{$M(n,n)$}{M(n,n)}}
 
-Note that there are no odd gradings if $\Char \FF =2$. 
-Indeed, in this case, there is no nondegenerate bicharacter on $T$ because the characteristic of the field divides $|T|=2|T^+|$. 
-From now on, we suppose $\Char \FF \neq 2$.
+Let $\D$ be an odd finite dimensional graded-division superalgebra associated to a triple $(T, \beta, p)$. 
+By \cref{prop:char-does-not-divide-T}, below, if $\Char \FF = 2$, then $\D$ cannot be of type $M$. 
+Note that, since $\D$ is odd, $|T| = |T^+| + |T^-| = 2|T^+|$.
 
-We need to see what are the characteristics on the parameters of the general case that ensures $M(n,n)$.
+\begin{prop}\label{prop:char-does-not-divide-T}
+    Suppose $\Char \FF = p > 0$. 
+    If $p \mid |T|$, then $\beta$ is degenerate.
+\end{prop}
 
-Given $(T, \beta, p)$, we have $\rad \beta^+ = \langle t_0 \rangle$, for the parity element $t_0$. 
-Note that it is even! (for $Q$ is easy to see that it is odd, put it there above; also put that all parity elements have the same parity)
+\begin{proof}
+    Let $t\in T$ be an element of order $p$. 
+    For every $s\in T$, we have $1 = \beta(e, s) = \beta(t^p, s) = \beta(t, s)^p$, hence, since $\Char \FF = p$, $\beta(t, s) = 1$, \ie, $t\in \rad \beta$. 
+\end{proof}
+ 
+For the remaining of this subsection, we will assume that $\Char \FF \neq 2$.
 
-How to see it is the radical? 
+Suppose that $\D$ is of type $M$, \ie, that $\beta$ is nondegenerate. 
+Propositions ?? establishes
 
-Old way:
+We will now investigate necessary conditions on the pair $(T^+, \beta^+)$ t
+% We need to see what are the characteristics on the parameters of the general case that ensures $M(n,n)$.
+
+% First, necessary conditions.
+
+\begin{prop}\label{prop:parity-element}
+    There is an element $t_0 \in T^+$ of order $2$ such that $\rad \beta^+ = \langle t_0 \rangle$.
+\end{prop}
+
+\begin{proof}
+    Consider $\chi \in \widehat{T}$ given by $\chi(t) = (-1)^{p(t)}$. 
+    Since $\beta$ is nondegenerate, there is $t_0\in T$ of order $2$ such that $\chi = \beta(t_0, \cdot)$. 
+    Since $\beta(t_0, t_0) = 1 = (-1)^{p(t_0)}$, $t_0$ is even. 
+    Hence $t_0 \in \rad \beta^+$. 
+    
+    If $0 \neq t \in \rad \beta^+$, using again that $\beta$ is nondegenerate, there is $t_1 \in T^-$ such that $\beta(t, t_1) \neq 1$. 
+    Since $t_1^2 \in T^+$, $\beta(t_0, t_1)^2 = \beta(t, t_1^2) = 1$. 
+    It follows that $\beta(t, t_1) = -1$, and since $T^- = t_1 T^+$, $\beta(t, s) = -1$ for all $s\in T^-$. 
+    Hence $\beta(t, s) = (-1)^{p(s)}$ and, therefore, $t = t_0$.
+\end{proof}
+
+\begin{remark}
+    Note that $t_0$ is the parity element (see ??).
+\end{remark}
+
+% \begin{prop}
+%     Let $\Gamma$ be the $T$-grading on $\D\iso M(n,n)$, let $H$ be an abelian group and let $\alpha\from T \to H$ be a group homomorphism. 
+%     The grading ${}^\alpha\Gamma$ (see def) is even grading if, and only if, $t_0 \in \ker \alpha$. 
+% \end{prop}
+
+% \begin{proof}
+%     Fix an element $0\neq d_0\in \D$  of degree $t_0$. 
+%     Since $t_0 \in \rad \beta$, $d_0 \in Z(\D\even)$, and 
+%     since $d_0^2\in \D_e = \FF$, and $\FF$ is algebraically closed, we may rescale $d_0$ so that $d_0^2=1$. 
+%     Then $\epsilon := \frac{1}{2}(1+d_0)$ is a central idempotent of $\D\even$. 
+%     % = M(n,n)\even \iso M(n) \oplus M(n)$. 
+%     Of course, $1-\epsilon$ is another central idempotent of $\D\even$, and $\D\even = \epsilon \D\even \oplus (1-\epsilon)\D\even$ (direct sum of ideals).
+    
+%     Let $0\neq d_1\in\D\odd$ be a $T$-homogeneous element. 
+%     Then $d_1\epsilon d_1\inv = \frac{1}{2}(1-d_0)=1-\epsilon$, which is another central idempotent of $\D\even$ and must have the same rank as $\epsilon$. 
+%     Hence, $\D\even \iso \epsilon\D\even \oplus (1-\epsilon)\D\even$ (direct sum of ideals) and, consequently, $E\even \iso \End(\tilde U)\tensor \D\even = \End(\tilde U)\tensor \epsilon\D\even \oplus \End(\tilde U)\tensor (1-\epsilon)\D\even$, where the two summands have the same dimension. Therefore, odd gradings exist only if $m=n$. 
+% Also note that we have 
+% \begin{equation}\label{eq:D1eps}
+% \D\odd \epsilon = (1-\epsilon) \D\odd.
+% \end{equation}
+% \end{proof}
+
+As we are going to see (example ??), the condition that $|\rad \beta^+| = 2$ is not sufficient for us to find a pair $(h, \chi) \in \mathbf{O}(T^+, \beta^+)$ such that $(T^+, \beta^+, h, \chi)$ is associated to a division grading on $M(n, n)$. 
+In vague terms, this is because $(T^+, \beta^+)$ carries some information restricting which elements can be squares of an element $t_1 \in T^-$. 
+
+\begin{defi}
+	For every abelian group $H$, we define $H^{[2]} \coloneqq \{h^2 \mid h\in H\}$ and $H_{[2]} \coloneqq \{h\in H \mid h^2 = e \}$.
+\end{defi}
+
+Clearly, $T^{[2]} \subseteq T^+$, but we might have that $(T^+)^{[2]} \neq T^{[2]}$. 
+From now on, let $\barr G \coloneqq G/\langle t_0 \rangle$, $\barr T^+ \coloneqq T^+/ \langle t_0 \rangle$ and $\bar\beta^+$ be the bicharacter on $\barr T^+$ induced by $\beta^+$. 
+Note that $\bar\beta^+$ is nondegenerate.
+
+\begin{defi} 
+    For any subgroup $A\subseteq \barr{T^+}$, we define its \emph{orthogonal complement} to be
+    \[
+        A^\perp \coloneqq \{t\in T\mid \bar\beta^+ (t, A) =1\}.
+    \]
+\end{defi}
+
+\begin{lemma}\label{lemma:perp-perp}
+    For every subgroup $A \subseteq \barr T^+$, $|A^\perp| = [\barr T^+ : A]$ and $(A^\perp)^\perp = A$.
+\end{lemma}
+
+\begin{proof}
+    It is easy to see that the map $A^\perp \to \widehat{\left( \frac{\barr T^+}{A}\right)}$ given by $t \mapsto \beta(t, \cdot)$ is an isomorphism of groups. 
+    Also, since $\beta$ is nondegenerate, by \cref{prop:char-does-not-divide-T},  $\Char \FF$ does not divide the order of $\frac{\barr T^+}{A}$. 
+    In this case, it is well-known that $\widehat{\left( \frac{\barr T^+}{A}\right)} \iso \frac{\barr T^+}{A}$, proving the first assertion.
+
+    Since $\bar\beta^+$ is skew-symmetric, it is clear that $A \subseteq (A^\perp)^\perp$. 
+    Using the first assertion, we have that $|A| = |(A^\perp)^\perp|$ and, therefore, $A = (A^\perp)^\perp$.
+\end{proof}
+
+\begin{prop}\label{prop:square-subgroup}
+	Let $\theta\from T^+\rightarrow \barr T=\frac{T^+}{\langle t_0 \rangle}$ be the natural homomorphism. 
+	Consider the subgroups $S \coloneqq \theta(T^{[2]})$ and $R \coloneqq \theta(T^+_{[2]})$ of $\barr T^+$. 
+	Then $R^\perp = S$ and, in particular, $\barr R^\perp \subseteq \barr G^{[2]}$.
+\end{prop}
+
+\begin{proof}
+	Let us first prove that $S^\perp = R$:
+	%
+	\begin{align}
+		S^\perp & = \{ \theta(t) \mid t\in T^+ \AND \barr\beta^+ (\theta (t), \theta (s^2)) = 1 \text{ for all }s\in T\}\\ 
+		& = \{\theta(t) \mid t\in T^+ \AND \beta^+ (t, s^2) = 1 \text{ for all }s\in T\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND \beta (t^2, s) =1 \text{ for all }s\in T\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND t^2=e \} \numberthis\label{4th-line} \\ 
+		&= R,
+	\end{align}
+	%
+	where we are using that $\beta$ is nondegenerate in the fourth line \cref{4th-line}. 
+	By \cref{lemma:perp-perp}, $R^\perp = (S^\perp)^\perp = S$, concluding the proof.
+\end{proof}
+
+\begin{example}
+    $G = T^+ = \ZZ_2 \times \ZZ_4$ and $\beta^+((i, j),(i', j')) = (-1)^{ij' - i'j}$.
+    $\rad \beta^+ = \langle (\bar 0, \bar 2) \rangle$. 
+    $T^+_{[2]} = \langle (\bar 1, \bar 0) , (\bar 0, \bar 2) \rangle$.
+    $R = \langle (\bar 1, \bar 0) \rangle$ and $R \subseteq R^\perp$, so $R \subseteq R^\perp$ be \cref{lemma:perp-perp} and counting. 
+    But $(\bar 1, \bar 0)$ is not a square. 
+\end{example}
+
+We are now in position to restrict the general result ?? to the our specific case. 
+1. First, fix pair, and hence $t_0$. 
+
+2. quadruple is grading of type M iff $\beta$ nondeg iff $\chi(t_0) = -1$. 
+
+2'. Problem: we might not have such pair!
+
+3. We can't construct a preferred $\chi$, as in the case of $Q(n)$, but we still can fix one. 
+Note that it always exists. 
+
+4. As in the case of $Q(n)$, after fixing $\chi$, what happens to $h$? 
+
+5. Define $a$, it is unique. 
+
+6. Proof result about existence. 
+
+7. State general result. 
 
 
-Since $\beta$ is nondegenerate, we have an isomorphism $T\rightarrow \widehat T$ given by $t\mapsto \beta(t,\cdot)$. For a subgroup $A\subseteq T$, we denote by $A^\perp$ its orthogonal complement in $T$ with respect to $\beta$, i.e., $A^\perp = \{t\in T\mid \beta(t, A) =1\}$. In view of the above isomorphism, $|A^\perp| = [T:A]$.
-
-In particular, we have $(T^+)^\perp = \langle t_0 \rangle$ where $t_0$ is an element of order 2. It follows that $\beta(t_0, t) = 1$ if $t\in T^+$ and $\beta(t_0, t) = -1$ if $t\in T^-$. For this reason, we call $t_0$ the \emph{parity element} of the odd grading $\Gamma$. Note that $\rad \beta^+ = T^+\cap (T^+)^\perp = \langle t_0 \rangle$.
-
-New way?
-
-Similar to what was done for $Q$ to prove something about $t_1$... I don't know if it works. 
-Yes it does! 
-An element belongs to $\rad\beta^+$ if, and only if, it is parity. 
-
-Ok, so necessary condition on $(T^+, \beta^+)$: $\rad\beta^+$ has order $2$.
+We need a that $\chi$ on $t_0$ is $-1$. 
+This is enough, but we cannot guarantee the existence of a pair $(h, \chi)$! 
 
 We now look to $(h, \chi)$. 
 Well, for $\beta$ being nondeg, we need $\chi(t_0) = -1$, other wise $\beta(t_1, t_0) = 1$ and $t_0 \in \rad\beta$. 
@@ -175,28 +298,10 @@ But then $\chi^2$, bla bla, and $h^2 = a$.
 So the question reduces to, fixed a $\chi$, does $a$ has a square root? 
 This condition can be formulated in general terms (not depending on $\chi$, as it must be):
 
-\begin{defi}
-	For every abelian group $A$ we put $A^{[2]} = \{a^2 \mid a\in A\}$ and $A_{[2]} = \{a\in A \mid a^2 = e \}$.
-\end{defi}
 
-Note that $T^{[2]}\subseteq T^+$, but $T^{[2]}$ can be larger than $(T^+)^{[2]}$ since it also includes the squares of elements of $T^-$. Also, the subgroup $\barr S = \{\barr t \in \barr T \mid t \in T^{[2]}\}$ of $\barr T$ can be larger than $\barr T^{[2]}$, but we will show that, surprisingly, it does not depend on $T^-$.
 
-\begin{lemma}\label{lemma:square-subgroup}
-	Let $\theta: T^+\rightarrow \barr T=\frac{T^+}{\langle t_0 \rangle}$ be the natural homomorphism. 
-	Consider the subgroups $\barr S = \theta(T^{[2]})$ and $\barr R=\theta(T^+_{[2]})$ of $\barr T$. 
-	Then $\barr S$ is the orthogonal complement of $\barr R$ with respect to the nondegenerate bicharacter $\barr\beta$.
-\end{lemma}
 
-\begin{proof}
-	We claim that $\barr S^\perp = \barr R$. Indeed,
-	%
-	\[
-		\begin{split}
-			\barr S^\perp & = \{ \theta(t) \mid t\in T^+ \AND \barr\beta(\theta (t), \theta (s^2)) =1 \text{ for all }s\in T\}\\ & = \{\theta(t) \mid t\in T^+ \AND \beta (t, s^2) =1 \text{ for all }s\in T\}\\ & = \{ \theta(t) \mid t\in T^+ \AND \beta (t^2, s) =1 \text{ for all }s\in T\}\\ & = \{ \theta(t) \mid t\in T^+ \AND t^2=e \}\\ & = \barr R\,.
-		\end{split}
-	\]
-	Since $\bar{\beta}$ is nondegenerate, it follows that $\barr S = \barr R^\perp$.
-\end{proof}
+
 
 From Lemma \ref{lemma:square-subgroup}, we have a necessary condition for the existence of such $T^-$, namely, for $\barr R \coloneqq \frac{T^+_{[2]}}{\langle t_0 \rangle}$, we need $\barr R' \subseteq \barr G^{[2]}$ (indeed, $\barr S$ is a subgroup of $\overline {G^{[2]}} = \barr G^{[2]}$). 
 
@@ -348,7 +453,8 @@ We are now going construct an even grading by coarsening a given odd grading. Th
 Let $H$ be a group and suppose we have an even grading $\Gamma'$ on $M(n,n)$ that is the coarsening of $\Gamma$ induced by a group homomorphism $\alpha: G\rightarrow H$. Since $\Gamma'$ is even, then the idempotent $\id_{\tilde U}\tensor\epsilon$ must be homogeneous with respect to $\Gamma'$. This means that $\alpha(t_0)=e$, so $\alpha$ factors through $\barr G := G/\langle t_0 \rangle$. This motivates the following definition:
 
 \begin{defi}
-	Let $\Gamma$ be an odd $G$-grading on $M(n,n)$ with parity element $t_0$. The \emph{finest even coarsening of $\Gamma$} is the $\barr G$-grading ${}^\theta \Gamma$, where $\barr G := G/\langle t_0 \rangle$ and $\theta: G \to \barr G$ is the natural homomorphism.
+	Let $\Gamma$ be an odd $G$-grading on $M(n,n)$ with parity element $t_0$. 
+	The \emph{finest even coarsening of $\Gamma$} is the $\barr G$-grading ${}^\theta \Gamma$, where $\barr G := G/\langle t_0 \rangle$ and $\theta: G \to \barr G$ is the natural homomorphism.
 \end{defi}
 
 % Thm: this is the finest even coarsening
