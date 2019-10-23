@@ -251,7 +251,7 @@ Note that $\bar\beta^+$ is nondegenerate.
 		&= R,
 	\end{align}
 	%
-	where we are using that $\beta$ is nondegenerate in the fourth line \cref{4th-line}. 
+	where we are using that $\beta$ is nondegenerate in the fourth line \eqref{4th-line}. 
 	By \cref{lemma:perp-perp}, $R^\perp = (S^\perp)^\perp = S$, concluding the proof.
 \end{proof}
 
@@ -259,11 +259,100 @@ Note that $\bar\beta^+$ is nondegenerate.
     $G = T^+ = \ZZ_2 \times \ZZ_4$ and $\beta^+((i, j),(i', j')) = (-1)^{ij' - i'j}$.
     $\rad \beta^+ = \langle (\bar 0, \bar 2) \rangle$. 
     $T^+_{[2]} = \langle (\bar 1, \bar 0) , (\bar 0, \bar 2) \rangle$.
-    $R = \langle (\bar 1, \bar 0) \rangle$ and $R \subseteq R^\perp$, so $R \subseteq R^\perp$ be \cref{lemma:perp-perp} and counting. 
+    $R = \langle (\bar 1, \bar 0) \rangle$ and $R \subseteq R^\perp$, so $R = R^\perp$ by \cref{lemma:perp-perp} and counting. 
     But $(\bar 1, \bar 0)$ is not a square. 
 \end{example}
 
 We are now in position to restrict the general result ?? to the our specific case. 
+Let $T^+$ be a finite subgroup of $G$ and $\beta^+$ be an alternating bicharacter on $T^+$ such that $\rad \beta^+ = \langle t_0 \rangle$, where $t_0\in T^+$ is an element of order $2$. 
+As before, let $\barr G \coloneqq G/\langle t_0 \rangle$, $\barr T^+ \coloneqq T^+/ \langle t_0 \rangle$ and $\bar\beta^+$ be the bicharacter on $\barr T^+$ induced by $\beta^+$.
+
+\begin{lemma}
+    Let $(h, \chi) \in \mathbf{O}(T^+, \beta^+)$ and let $\D$ be a graded-division superalgebra associated to $(T^+, \beta^+, h, \chi)$. 
+    Then $\D$ is of type $M$ if, and only if, $\chi(t_0) = -1$.
+\end{lemma}
+
+\begin{proof}
+    Easy proof.
+\end{proof}
+
+\begin{defi}
+    We define $\mathbf{O_M}(T^+, \beta^+) \coloneqq \{ (h, \chi) \in \mathbf{O}(T^+, \beta^+) \mid \chi(t_0) = -1 \}$.
+\end{defi}
+
+We note that the $T^+$-action on $\mathbf{O}(T^+, \beta^+)$ restricts to $\mathbf{O_M}(T^+, \beta^+)$ since $t_0\in \rad \beta^+$. 
+
+\begin{cor}
+    Isomorphism classes of $\D$ such that $\D\even$ is associated to $(T^+, \beta^+)$ are in bijection with $T^+$-orbits in $\mathbf{O_M}(T^+, \beta^+)$.
+\end{cor}
+
+Again, we simplify using \cref{lemma:lemma-on-actions}. 
+Consider $Y \coloneqq \{\chi \in \widehat{T^+} \mid \chi (t_0)\}$ with $T^+$-action defined by $t\cdot \chi = \beta^+(t, \cdot) \chi$. 
+Again, this action is well-defined since $t_0 \in \rad \beta^+$. 
+
+\begin{lemma}
+    We have that $Y \neq \emptyset$ and that the $T^+$-action on $Y$ is transitive.
+\end{lemma}
+
+\begin{proof}
+    To see that $Y$ is no empty, note that $\beta^+$ is a nondegenerate bicharacter on $\barr T^+$ and that $|T^+| = 2 |\barr T^+|$. 
+    By \cref{prop:char-does-not-divide-T}, $\Char \FF$ does not divide $|\barr T^+|$ and, since $\Char \FF \neq 2$, $\Char \FF$ does not divide $|T^+|$. 
+    In this case, it is well-known that every character on a subgroup of $|T^+|$ can be extended to a character of $T^+$. 
+    Clearly, $\chi(t_0) = -1$ defines a character on $\langle t_0 \rangle$, therefore $Y \neq \emptyset$. 
+    
+    To see that the action is transitive, let $\chi, \chi' \in Y$. 
+    We have $(\chi' \chi\inv) (t_0) = 1$, hence $(\chi' \chi\inv)$ induces a character on $\barr T^+ = T^+/ \langle t_0 \rangle$. 
+    By nondegeneracy of $\barr \beta^+$, there is $t\in T^+$ such that $(\chi' \chi\inv) = \beta(\bar t, \cdot)$ as a character of $\barr T^+$. 
+    It follows that $(\chi' \chi\inv) = \beta(t, \cdot)$ as a character of $T^+$, so $\chi' = \beta(t, \cdot)\chi$. 
+    We conclude that $\chi' = t \cdot \chi$, as desired. 
+\end{proof}
+
+For a given $\chi \in Y$, we define a element $a_\chi \in T^+$ as follows. 
+Note that $\chi^2(t_0) = 1$, hence $\chi^2$ can be seem as a character on $\barr T^+$. 
+It follows that there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. 
+In particular $\chi^2(a) = 1$, so $\chi (a) = \pm 1$. 
+If $\chi(a) = 1$, we put $a_\chi \coloneqq a$, else we put  $a_\chi \coloneqq at_0$. 
+
+\begin{lemma}
+    A pair $(h, \chi)\in \mathbf{O_M}(T^+, \beta^+)$ if, and only if, $h^2 = a_\chi$.
+\end{lemma}
+
+\begin{proof}
+    xx
+\end{proof}
+
+\begin{prop}
+    Let $R \coloneqq \frac{T^+_{[2]}}{\langle t_0 \rangle}$. 
+    The set $\mathbf{O_M}(T^+, \beta^+)$ is non-empty if, and only if, $R^\perp \subseteq \barr G^{[2]}$.
+\end{prop}
+
+\begin{proof}
+    The only if part follows from lemma above. 
+    
+    For the ``if'' part, let fix $\chi \in Y$. 
+    Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. 
+    Note that $\chi (a) = \pm 1$ and, hence, changing $a$ to $a t_0$ if necessary, we may assume $\chi (a) = 1$.
+
+	As before, let $\barr R = \frac{T^+_{[2]}}{\langle t_0 \rangle}$. Then $\barr a \in \barr R^\perp$. Indeed, if $b\in T^+_{[2]}$, then $\barr\beta(\barr a,\barr b) = \chi^2 (\barr b) = \chi (b^2) = \chi (e) =1$. By our assumption, we conclude that $\barr a\in \barr G^{[2]}$. We are going to prove that, actually, $a\in G^{[2]}$. Pick $u\in G$ such that $\barr u^2 = \barr a$. Then, either $a=u^2$ or $a=u^2t_0$. If $t_0 = c^2$ for some $c\in G$, then replacing $u$ by $uc$ if necessary, we can make $u^2 = a$. Otherwise, $t_0$ has no square root in $T^+$, which implies that $\barr R=\barr T_{[2]}$. Hence $\barr R^\perp = (\barr T_{[2]})^\perp = \barr T^{[2]} = \theta ((T^+)^{[2]})$. Thus, in this case, we can assume $u\in T^+$. Then $\chi(u^2) = \chi^2(u) = \barr \beta (\barr a, \barr u) = \barr \beta (\barr u^2, \barr u) =1$, hence $u^2 = a$. Finally, we set $t_1=(u,\barr 1) \in G^\#$.Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. Note that $\chi (a) = \pm 1$ and hence, changing $a$ to $a t_0$ if necessary, we may assume $\chi (a) = 1$. 
+\end{proof}
+
+
+Recall that in the case $\beta^+$ nondegenerate, in \cref{ssec:odd-div-G-only}, we were able to fix the character to be the trivial one. 
+We can also fix the character $\chi$ such that $\chi(t_0) = -1$ in this case, but there is no canonical choice for it. 
+
+\begin{defi}
+    Given $\chi \in \widehat{T^+}$ such that $\chi(t_0) = -1$, we define $\mathbf{O_M}(T^+, \beta^+, \chi) \coloneqq \{ h\in G \mid (h, \chi)\in \mathbf{O_M}(T^+, \beta^+) \}$.
+\end{defi}
+
+
+Action define the action on $Y$ by $t\cdot \chi = \beta^+(t, \cdot) \chi$. 
+Note that, for all $t\in T^+$, $(\beta^+(t, \cdot) \chi) (t_0) = \beta^+(t, t_0) \chi (t_0) = -1$, hence this action is well-defined. 
+
+
+Apply \cref{lemma:lemma-on-actions} for $\pi\from \mathbf{O}(T^+, \beta^+) \to Y$.
+
+
+
 1. First, fix pair, and hence $t_0$. 
 
 2. quadruple is grading of type M iff $\beta$ nondeg iff $\chi(t_0) = -1$. 
@@ -315,15 +404,7 @@ We will now prove that this condition is also sufficient.
 \end{prop}
 
 \begin{proof}
-	Let $\chi\in \widehat {T^+}$ be such that $\chi(t_0) = -1$. Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. Note that $\chi (a) = \pm 1$ and hence, changing $a$ to $a t_0$ if necessary, we may assume $\chi (a) = 1$.
-	
-	\bigskip 
-
-	\textit{(i) Existence of $t_1$}:
-	
-	\medskip 
-
-	As before, let $\barr R = \frac{T^+_{[2]}}{\langle t_0 \rangle}$. Then $\barr a \in \barr R^\perp$. Indeed, if $b\in T^+_{[2]}$, then $\barr\beta(\barr a,\barr b) = \chi^2 (\barr b) = \chi (b^2) = \chi (e) =1$. By our assumption, we conclude that $\barr a\in \barr G^{[2]}$. We are going to prove that, actually, $a\in G^{[2]}$. Pick $u\in G$ such that $\barr u^2 = \barr a$. Then, either $a=u^2$ or $a=u^2t_0$. If $t_0 = c^2$ for some $c\in G$, then replacing $u$ by $uc$ if necessary, we can make $u^2 = a$. Otherwise, $t_0$ has no square root in $T^+$, which implies that $\barr R=\barr T_{[2]}$. Hence $\barr R^\perp = (\barr T_{[2]})^\perp = \barr T^{[2]} = \theta ((T^+)^{[2]})$. Thus, in this case, we can assume $u\in T^+$. Then $\chi(u^2) = \chi^2(u) = \barr \beta (\barr a, \barr u) = \barr \beta (\barr u^2, \barr u) =1$, hence $u^2 = a$. Finally, we set $t_1=(u,\barr 1) \in G^\#$.
+	Let $\chi\in \widehat {T^+}$ be such that $\chi(t_0) = -1$. 
 
 	\bigskip 
 
