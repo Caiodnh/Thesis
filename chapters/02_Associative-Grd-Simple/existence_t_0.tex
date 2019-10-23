@@ -1,0 +1,114 @@
+\Cref{cor:iso-odd-M-simplified} does not gives us the full picture. 
+It can be the case (see \cref{ex:T+-but-no-T}) that $\mathbf{O_M}(T^+, \beta^+)$ is empty, \ie, there might be no graded-division superalgebra $\D$ of type $M$ such that $\D\even$ is associated to the pair $(T^+, \beta^+)$.
+
+\begin{defi}
+	For every abelian group $H$, we define $H^{[2]} \coloneqq \{h^2 \mid h\in H\}$ and $H_{[2]} \coloneqq \{h\in H \mid h^2 = e \}$.
+\end{defi}
+
+If there is $(T, \beta, p)$, then it is clear that $(T^+)^{[2]} \subseteq T^{[2]} \subseteq T^+$, but we can have $(T^+)^{[2]} \neq T^{[2]}$. 
+
+\begin{defi} 
+    For any subgroup $A\subseteq \barr{T^+}$, we define its \emph{orthogonal complement} to be
+    \[
+        A^\perp \coloneqq \{t\in T\mid \bar\beta^+ (t, A) =1\}.
+    \]
+\end{defi}
+
+\begin{lemma}\label{lemma:perp-perp}
+    For every subgroup $A \subseteq \barr T^+$, $|A^\perp| = [\barr T^+ : A]$ and $(A^\perp)^\perp = A$.
+\end{lemma}
+
+\begin{proof}
+    It is easy to see that the map $A^\perp \to \widehat{\left( \frac{\barr T^+}{A}\right)}$ given by $t \mapsto \beta(t, \cdot)$ is an isomorphism of groups. 
+    Also, since $\beta$ is nondegenerate, by \cref{prop:char-does-not-divide-T},  $\Char \FF$ does not divide the order of $\frac{\barr T^+}{A}$. 
+    In this case, it is well-known that $\widehat{\left( \frac{\barr T^+}{A}\right)} \iso \frac{\barr T^+}{A}$, proving the first assertion.
+
+    Since $\bar\beta^+$ is skew-symmetric, it is clear that $A \subseteq (A^\perp)^\perp$. 
+    Using the first assertion, we have that $|A| = |(A^\perp)^\perp|$ and, therefore, $A = (A^\perp)^\perp$.
+\end{proof}
+
+
+\begin{prop}\label{prop:small-perp}
+    Consider the subgroups of $\barr T^+$ defined by $A \coloneqq \theta(T^+)_{[2]}$ and $B \coloneqq \theta(T^+)^{[2]}$. 
+    Then $A^\perp = B$.
+\end{prop}
+
+\begin{proof}
+    Let us first prove that $B^\perp = A$:
+    %
+	\begin{align}
+		B^\perp & = \{ \theta(t) \mid t\in T^+ \AND \barr\beta^+ (\theta (t), \theta (s^2)) = 1 \text{ for all } s\in T^+ \}\\ 
+		& = \{\theta(t) \mid t\in T^+ \AND \beta^+ (t, s^2) = 1 \text{ for all } s\in T^+\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND \beta^+ (t^2, s) = 1 \text{ for all } s\in T^+\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND \theta(t)^2=e \} \numberthis\label{4th-line-again} \\ 
+		&= A,
+	\end{align}
+	%
+	where we are using that $\beta^+$ is nondegenerate in the fourth line \eqref{4th-line}. 
+	By \cref{lemma:perp-perp}, $A^\perp = (B^\perp)^\perp = B$, concluding the proof.
+\end{proof}
+
+\begin{prop}\label{prop:square-subgroup}
+    Suppose the pair $(T^+, \beta^+)$ extends to a triple $(T, \beta, p)$ with $\beta$ nondegenerate. 
+	Consider the subgroups $S \coloneqq \theta(T^{[2]})$ and $R \coloneqq \theta(T^+_{[2]})$ of $\barr T^+$. 
+	Then $R^\perp = S$ and, in particular, $\barr R^\perp \subseteq \barr G^{[2]}$.
+\end{prop}
+
+\begin{proof}
+	Let us first prove that $S^\perp = R$:
+	%
+	\begin{align}
+		S^\perp & = \{ \theta(t) \mid t\in T^+ \AND \barr\beta^+ (\theta (t), \theta (s^2)) = 1 \text{ for all }s\in T\}\\ 
+		& = \{\theta(t) \mid t\in T^+ \AND \beta^+ (t, s^2) = 1 \text{ for all }s\in T\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND \beta (t^2, s) =1 \text{ for all }s\in T\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND t^2=e \} \numberthis\label{4th-line} \\ 
+		&= R,
+	\end{align}
+	%
+	where we are using that $\beta$ is nondegenerate in the fourth line \eqref{4th-line}. 
+	By \cref{lemma:perp-perp}, $R^\perp = (S^\perp)^\perp = S$, concluding the proof.
+\end{proof}
+
+\begin{example}\label{ex:T+-but-no-T}
+    $G = T^+ = \ZZ_2 \times \ZZ_4$ and $\beta^+((i, j),(i', j')) = (-1)^{ij' - i'j}$.
+    $\rad \beta^+ = \langle (\bar 0, \bar 2) \rangle$. 
+    $T^+_{[2]} = \langle (\bar 1, \bar 0) , (\bar 0, \bar 2) \rangle$.
+    $R = \langle (\bar 1, \bar 0) \rangle$ and $R \subseteq R^\perp$, so $R = R^\perp$ by \cref{lemma:perp-perp} and counting. 
+    But $(\bar 1, \bar 0)$ is not a square. 
+\end{example}
+
+\begin{prop}
+    Let $R \coloneqq \frac{T^+_{[2]}}{\langle t_0 \rangle}$. 
+    The set $\mathbf{O_M}(T^+, \beta^+)$ is non-empty if, and only if, $R^\perp \subseteq \barr G^{[2]}$.
+\end{prop}
+
+\begin{proof}
+    The only if part follows from \cref{prop:square-subgroup,lemma:motivation-O_M}. 
+    
+    For the ``if'' part, let $\chi \in Y$ and $a$ as in \cref{lemma:chi-defines-a}. 
+    We claim that $\barr a \in R^\perp$. 
+	Indeed, if $b \in T^+_{[2]}$, then $\barr\beta^+( \theta(a) , \theta(b) ) = \chi^2 (b) = \chi (b^2) = \chi (e) = 1$. 
+	By our assumption, we conclude that $\theta(a) \in \barr G^{[2]}$. 
+	
+	We claim that, actually, $a\in G^{[2]}$. 
+	Indeed, let $h\in G$ such that $\theta(h)^2 = \theta(a)$. 
+	Then, either $a = h^2$ or $a = h^2t_0$ and, in particular, $h^2 \in T^+$. 
+% 	If $a=h^2$, the claim is established, so let us suppose $a=h^2t_0$. 
+	If $t_0 \in G^{[2]}$, then both $h^2$ and $h^2 t_0$ are in $G^{[2]}$, and the claim is established. 
+	Otherwise, $\theta(T^+_{[2]}) = \theta(T^+)_{[2]}$ and, by \cref{prop:small-perp}, .
+	
+	the restriction of $\theta$ to $G^{[2]}$ is injective. 
+	Clearly, $\theta(a) \in $
+	Hence $a$
+	
+	\cref{prop:small-perp}
+	
+	Hence $R^\perp = (\barr T^+_{[2]})^\perp = \barr T^{[2]} = \theta ((T^+)^{[2]})$. 
+	Thus, in this case, we can assume $h\in T^+$. 
+	Then $\chi(h^2) = \chi^2(h) = \barr \beta (\barr a, \barr u) = \barr \beta (\barr h^2, \barr h) =1$, hence $h^2 = a$. 
+%	
+% 	Finally, we set $t_1=(h,\barr 1) \in G^\#$. 
+% 	Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. 
+\end{proof}
+
+
