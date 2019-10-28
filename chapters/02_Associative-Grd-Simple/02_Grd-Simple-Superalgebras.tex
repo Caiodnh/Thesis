@@ -412,26 +412,118 @@ Recall from \cref{ssec:supermodules-over-D} that our classification a graded $\D
 \end{defi}
 
 Recall that for every map $\kappa\from G/T\to \ZZ_{\geq 0}$ with finite support, we define $|\kappa| \coloneqq \sum_{x \in G/T} \kappa(x)$. 
-We, then, have that \cref{thm:iso-End_D-U-with-parameters} translates the following result in the ``super'' case:
+We, then, have that  \cref{thm:iso-End_D-U-with-parameters} translates the following result in the ``super'' case:
 
 \begin{thm}\label{thm:iso-D-even}
 	Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)-super}, with both $\D$ and $\D'$ even. 
 	Let $(T, \beta, p, \kappa_\bz, \kappa_\bo)$ and $(T', \beta', p', \kappa_\bz', \kappa_\bo')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
-	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $p = p'$ and there is $g\in G$ such that
-	\begin{enumerate}[(i)]
-		\item for $|\kappa_\bz| \neq |\kappa_\bo|$: $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$;
+	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $p = p'$ and there is $g\in G$ such that either $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$ or $g\kappa_{\bar 0}=\kappa_{\bar 1}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 0}'$. \qed
+% 	\begin{enumerate}[(i)]
+% 		\item for $|\kappa_\bz| \neq |\kappa_\bo|$: $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$;
 
-		\item for $|\kappa_\bz| = |\kappa_\bo|$: either $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$ or $g\kappa_{\bar 0}=\kappa_{\bar 1}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 0}'$.
-	\end{enumerate}
+% 		\item for $|\kappa_\bz| = |\kappa_\bo|$: either $g \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 1}'$ or $g\kappa_{\bar 0}=\kappa_{\bar 1}'$ and $g \kappa_{\bar 1}=\kappa_{\bar 0}'$.
+% 	\end{enumerate}
 \end{thm}
 
 \begin{thm}\label{thm:iso-D-odd}
     Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)-super}, with both $\D$ and $\D'$ odd. 
     Let $(T, \beta, p, \kappa)$ and $(T', \beta', p', \kappa')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
-	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $p = p'$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$. 
+	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $p = p'$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$. \qed
 \end{thm}
 
-It should be noted that, combining \cref{prop:simple-R-D-super,prop:tilde-beta-nondeg}, we have that $\End_\D (\U)$ is simple as a superalgebra if, and only if, $\tilde\beta$ is nondegenerate. 
+It should be noted, in the case $\Char \FF \neq 2$, that \cref{prop:simple-R-D-super,cor:tilde-beta-nondeg} together imply that $\End_\D (\U)$ is simple as a superalgebra if, and only if, $\tilde\beta$ is nondegenerate. 
+Nevertheless, even in the case $\Char \FF = 2$, we can use \cref{thm:iso-D-even,thm:iso-D-odd} to get a classification of abelian group gradings on finite dimensional simple superalgebras, which we write as 3 different resuts:
+
+% ------------------------------------
+
+\begin{itemize}
+    \item Need to odd gradings on $M(m,n)$ only if $m = n$, before;
+    \item elementary grading on $M(m,n)$, define somewhere;
+    \item start with $Q$?
+    \item Definitions for $M(m,n)$ even and odd. 
+    \item on odd, recall the convention?
+\end{itemize}
+
+\begin{defi}\label{def:Gamma-T-beta-kappa-even}
+    Let $m, n\in \ZZ_{\geq 0}$ such that $m+n > 0$. 
+    Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and maps $\kappa_\bz, \kappa_bo \from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa_\bz| \sqrt{|T|} = m$ and $|\kappa_\bo| \sqrt{|T|} = n$, consider:
+    \begin{enumerate}[(i)]
+        \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$;
+        \item the elementary grading (see \cref{defi:elementary-grd}) on $M(k_\bz, k_\bo)$ defined by a $k_\bz + k_\bo$-tuple $\gamma = (g_1, \ldots, g_{k_\bz}, \ldots, g_{k_\bz + k_\bo})$ of elements of $G$, $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$, such that, for every $x\in G/T$, the number of entries $g_i$ with $g_i\in x$ and $1\leq i \leq k_\bz$ is equal to $\kappa_\bz (x)$, and  the number of entries $g_i$ with $g_i\in x$ and $k_\bz < i \leq k_\bz + k_\bo$ is equal to $\kappa_\bo (x)$.
+    \end{enumerate}
+    %
+    We define $\Gamma (T, \beta, \kappa_\bz, \kappa_\bo)$ to be the even grading on $M(m,n)$ given by identifying $M(m,n)$ with the graded algebra $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product, \ie,
+    \[
+        \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
+    \] 
+    for all $1\leq i, j \leq k_\bz + k_\bo$, $t\in T$ and $0 \neq d \in \D_t$.
+\end{defi}
+
+Note that we are abusing notation in \cref{def:Gamma-T-beta-kappa}. 
+The grading $\Gamma (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$. 
+Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$. 
+
+\begin{cor}[{\cite[Theorem 2.27]{livromicha}, \cite[Theorem 2.6]{BK10}}]
+    Every $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma (T, \beta, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Two such gradings $\Gamma (T, \beta, \kappa)$ and $\Gamma (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and $\kappa'$ belongs to the $G$-orbit of $\kappa$. \qed
+\end{cor}
+
+% ----------------------------------
+
+\begin{defi}\label{def:Gamma-T-beta-kappa-odd}
+    Let $n > 0$ be a natural number. 
+    Given a finite subgroup $T \subseteq G^\#$, $T\not\subsetneq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider 
+    \begin{enumerate}
+        \item the group homomorphism $p\from T \to \ZZ_2$ given by the projection on the second component of $G^\# = G\times \ZZ_2$;
+        \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$, viewed as a $G$-graded superalgebra;
+        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma = (g_1, \ldots, g_{k})$ of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T^+$. 
+    \end{enumerate}
+    %
+    We define $\Gamma (T, \beta, p, \kappa)$ to be the grading on $M(n,n)$ given by identifying $M(n,n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
+    \[
+        \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
+    \] 
+    for all $1\leq i, j \leq k$, $t\in T$ and $0 \neq d \in \D_t$.
+\end{defi}
+
+Note that we are abusing notation in \cref{def:Gamma-T-beta-kappa}. 
+The grading $\Gamma (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$. 
+Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$. 
+
+\begin{cor}[{\cite[Theorem 2.27]{livromicha}, \cite[Theorem 2.6]{BK10}}]
+    Every $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma (T, \beta, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Two such gradings $\Gamma (T, \beta, \kappa)$ and $\Gamma (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and $\kappa'$ belongs to the $G$-orbit of $\kappa$. \qed
+\end{cor}
+
+% ------------
+
+\begin{defi}\label{def:Gamma-T-beta-kappa-odd}
+    Let $n > 0$ be a natural number. 
+    Given a finite subgroup $T^+ \subseteq G$, a nondegenerate bicharacter $\beta^+ \from T^+ \times T^+ \to \FF^\times$, element $h \in G$ such that $h^2 = e$ and a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T^+|} = n$, consider 
+    \begin{enumerate}
+        \item a standard realization $\D$ (see \cref{def:standard-realization-Q})of a superalgebra of type $Q$ with a division grading associated to $(T^+, \beta^+, h)$; 
+        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma = (g_1, \ldots, g_{k})$ of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T^+$. 
+    \end{enumerate}
+    %
+    We define $\Gamma (T^+, \beta^+, h, \kappa)$ to be the grading on $Q(n)$ given by identifying $Q(n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
+    \[
+        \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
+    \] 
+    for all $1\leq i, j \leq k$, $t\in T$ and $0 \neq d \in \D_t$.
+\end{defi}
+
+Note that we are abusing notation in \cref{def:Gamma-T-beta-kappa}. 
+The grading $\Gamma (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$. 
+Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$. 
+
+\begin{cor}[{\cite[Theorem 2.27]{livromicha}, \cite[Theorem 2.6]{BK10}}]
+    Every $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma (T, \beta, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Two such gradings $\Gamma (T, \beta, \kappa)$ and $\Gamma (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and $\kappa'$ belongs to the $G$-orbit of $\kappa$. \qed
+\end{cor}
+
+% ------------------------
+
+
 If this is the case, \cref{thm:iso-D-even,thm:iso-D-odd} give us a classification of abelian group gradings on the finite dimensional simple associative superalgebras $M(m,n)$ and $Q(n)$. 
 If $\beta$ is nondegenerate, we have a classification of gradings on the superalgebras $M(m,n)$ (compare with \cite[??]{paper-MAP} and \cite[??]{Helens_thesis}). 
 If $\beta$ is not nondegenerate but $\tilde\beta$ is, we have classification of gradings on the associative superalgebras $Q(n)$. 

@@ -14,7 +14,7 @@ If there is $(T, \beta, p)$, then it is clear that $(T^+)^{[2]} \subseteq T^{[2]
     \]
 \end{defi}
 
-\begin{lemma}\label{lemma:perp-perp}
+\begin{lemma}
     For every subgroup $A \subseteq \barr T^+$, $|A^\perp| = [\barr T^+ : A]$ and $(A^\perp)^\perp = A$.
 \end{lemma}
 
@@ -69,13 +69,6 @@ If there is $(T, \beta, p)$, then it is clear that $(T^+)^{[2]} \subseteq T^{[2]
 	By \cref{lemma:perp-perp}, $R^\perp = (S^\perp)^\perp = S$, concluding the proof.
 \end{proof}
 
-\begin{example}\label{ex:T+-but-no-T}
-    $G = T^+ = \ZZ_2 \times \ZZ_4$ and $\beta^+((i, j),(i', j')) = (-1)^{ij' - i'j}$.
-    $\rad \beta^+ = \langle (\bar 0, \bar 2) \rangle$. 
-    $T^+_{[2]} = \langle (\bar 1, \bar 0) , (\bar 0, \bar 2) \rangle$.
-    $R = \langle (\bar 1, \bar 0) \rangle$ and $R \subseteq R^\perp$, so $R = R^\perp$ by \cref{lemma:perp-perp} and counting. 
-    But $(\bar 1, \bar 0)$ is not a square. 
-\end{example}
 
 \begin{prop}
     Let $R \coloneqq \frac{T^+_{[2]}}{\langle t_0 \rangle}$. 

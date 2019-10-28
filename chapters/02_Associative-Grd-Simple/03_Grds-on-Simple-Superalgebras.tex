@@ -6,9 +6,9 @@ Here $\FF$ is algebraically closed and $\D$ is finite dimensional.
 
 Let $\D$ be an odd finite dimensional graded-division superalgebra associated to $(T, \beta, p)$. 
 Clearly, $\D\even$ is a graded-division algebra associated to $(T^+, \beta^+)$. 
-Given any $t_1 \in T^-$, then $t_1 = (h, \bar 1)$ for some $h\in G$ such that $h^2\in T^+$ and the map $\chi \from T^+ \to \FF^\times$ given by $\chi(t) \coloneqq \beta(t_1, t)$, for all $t\in T^+$, is a character in $\widehat{T^+}$ such that $\chi^2 = \beta^+ (h^2, \cdot)$. 
+Given any $t_1 \in T^-$, then $t_1 = (h, \bar 1)$ for some $h\in G$ such that $h^2\in T^+$ and the map $\chi \from T^+ \to \FF^\times$ given by $\chi(t) \coloneqq \beta(t_1, t)$, for all $t\in T^+$, is a character in $\widehat{T^+}$ such that $\chi(h^2) = 1$ and $\chi^2 = \beta^+ (h^2, \cdot)$. 
 
-\begin{defi}
+\begin{defi}\label{def:O(T+-beta+)}
     We say that the odd graded-division superalgebra $\D$ is a \emph{associated} to the quadruple $(T^+, \beta^+, h,\chi)$. 
     If $\U$ is a graded $\D$-supermodule of finite rank associated to the map $\kappa\from G/T^+ \to \FF^\times$, we say that $(T^+, \beta^+, h, \chi, \kappa)$ are $G$-parameters of the pair $(\D, \U)$. 
 \end{defi}
@@ -22,7 +22,7 @@ and, therefore, determines the isomorphism class of the graded-division superalg
 \begin{defi}\label{def:odd-parameters}
     Let $T^+$ be any finite subgroup of $G$ and let $\beta^+$ be an alternating bicharacter on $T^+$. 
     A pair $(h,\chi) \in G \times \widehat{T^+}$ is said to be \emph{$(T^+, \beta^+)$-admissible} if 
-    $h^2 \in T^+$ and $\chi^2 = \beta^+(h^2, \cdot)$. 
+    $h^2 \in T^+$, $\chi(h^2) = 1$ and $\chi^2 = \beta^+(h^2, \cdot)$. 
     We will denote the set of all $(T^+, \beta^+)$-admissible pairs by $\mathbf {O} (T^+, \beta^+)$. 
 \end{defi}
 
@@ -48,10 +48,9 @@ We then take $\beta\from T\times T \to \FF^\times$ as in \cref{lemma:existence-b
     Clearly, $b$ is an alternating bicharacter. 
     We claim that $h^2 \tau^{-2} \in \rad b$. 
     Indeed, for all $t \in T^+$ and $j \in \ZZ$,
-    \begin{align}
-        b(h^2 \tau^{-2},t\tau^j) = \beta^+(h^2,t)\, \chi (h^2)^{-j}\, \chi (t)^{-2} &= \chi (t)^{2}\, \chi (h^2)^{-j}\, \chi (t)^{-2} = \chi (h^2)^{-j} \\
-        &= \chi (h^{-j})^2 = \beta^+(h^2,h^{-j}) = 1.
-    \end{align}
+    \[%begin{align}
+        b(h^2 \tau^{-2},t\tau^j) = \beta^+(h^2,t)\, \chi (h^2)^{-j}\, \chi (t)^{-2} = \chi (t)^{2}\, \chi (h^2)^{-j}\, \chi (t)^{-2} = \chi (h^2)^{-j} = 1.
+    \]%end{align}
     
     It follows that $\ker \phi \subseteq \rad b$ and, hence, $b$ induces an alternating bicharacter $\beta\from T\times T \to \FF$ such that $b = \beta \circ (\phi \times \phi)$. 
     It is clear that $\beta$ satisfies \cref{eq:beta-from-h-chi}, concluding the proof.
@@ -59,7 +58,7 @@ We then take $\beta\from T\times T \to \FF^\times$ as in \cref{lemma:existence-b
 
 Together with \cref{lemma:colour-tensor-product}, we have:
 
-\begin{prop}
+\begin{prop}\label{prop:D-defined-by-quadruple}
     Let $T^+$ and $\beta^+$ be as in \cref{def:odd-parameters} and let $(h, \chi)$ be a $(T^+, \beta^+)$-admissible pair. 
     Then there exist an odd graded-division superalgebra $\D$ associated to the quadruple $(T^+, \beta^+, h,\chi)$. \qed
 \end{prop}
@@ -78,7 +77,7 @@ It remains to see when different quadruples determine isomorphic graded-division
 If $t\in T^+$ and $(h, \chi) \in \mathbf {O} (T^+, \beta^+)$, then $(th)^2 = t^2h^2\in T^+$ and $\beta(th^2, \cdot) = \beta(t, \cdot) \chi$, hence, indeed, $t \cdot (h, \chi) \in \mathbf {O} (T^+, \beta^+)$. 
 It is straightforward that the axioms of action are satisfied. 
 
-\begin{thm}
+\begin{thm}\label{thm:iso-odd-D-only-G}
     Let $\D$ and $\D'$ be finite dimensional odd graded-division superalgebras, associated to quadruples $(T^+, \beta^+, h, \chi)$ and $(T'^+, \beta'^+, h', \chi')$, respectively. 
     Then $\D \iso \D'$ if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, and $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$. 
 \end{thm}
@@ -135,7 +134,7 @@ By the definition of $\mathbf {O} (T^+, \beta^+)$, $(h, 1) \in G \times \widehat
 Our theorem reduces to ... and $h = h'$. 
 Note that in this case $(h, \bar 1) \in \ker \beta$, so in view of \cref{lemma:beta-deg-beta-tilde-nondeg}, $\ker \beta = \langle (h, \bar 1) \rangle$ and $\D$ is isomorphic to the standard realization of ... (see \cref{def:standard-realization-Q}).
 
-\subsection{\texorpdfstring{$M(n,n)$}{M(n,n)}}
+\subsection{Odd graded-division superalgebras of type \texorpdfstring{$M$}{M} in terms of \texorpdfstring{$G$}{M}}
 
 Let $\D$ be an odd finite dimensional graded-division superalgebra associated to a triple $(T, \beta, p)$. 
 By \cref{prop:char-does-not-divide-T}, below, if $\Char \FF = 2$, then $\D$ cannot be of type $M$. 
@@ -177,7 +176,7 @@ We will now investigate necessary conditions on the pair $(T^+, \beta^+)$ for $\
     Hence $\beta(t, s) = (-1)^{p(s)}$ and, therefore, $t = t_0$.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rmk:t_0-is-parity}
     Note that $t_0$ is the parity element (see ??).
 \end{remark}
 
@@ -203,15 +202,98 @@ We will now investigate necessary conditions on the pair $(T^+, \beta^+)$ for $\
 % \end{equation}
 % \end{proof}
 
-In vague terms, this is because $(T^+, \beta^+)$ carries some information restricting which elements can be squares of an element $t_1 \in T^-$. 
+% -- Existence, necessary condition --
 
-We are now in position to restrict the general result ?? to the our specific case. 
-Let $T^+$ be a finite subgroup of $G$ and $\beta^+$ be an alternating bicharacter on $T^+$ such that $\rad \beta^+ = \langle t_0 \rangle$, where $t_0\in T^+$ is an element of order $2$. 
+Not every pair $(T^+, \beta^+)$ with $|\rad \beta^+| = 2$ is restriction of $(T, \beta, p)$ with $\beta$ nondegenerate (see \cref{ex:T+-but-no-T}). 
+In vague terms, this is because $(T^+, \beta^+)$ carries some information restricting which elements can be squares of an element $t_1 \in T^-$ (see \cref{prop:square-subgroup}). 
 
-% As we are going to see (\cref{ex:T+-but-no-T}), the condition that $|\rad \beta^+| = 2$ is not sufficient for us to find a pair $(h, \chi) \in \mathbf{O}(T^+, \beta^+)$ such that $(T^+, \beta^+, h, \chi)$ is associated to a division grading on $M(n, n)$. 
+\begin{defi}\label{defi:perp}
+    Let $H$ be an abelian group and $b$ be a symmetric or skew-symmetric bicharacter on $H$. 
+    For every subgroup $A \subseteq H$, we define the \emph{orthogonal complement to $A$ with respect to $b$} to be the subgroup
+    \[
+        A^\perp \coloneqq \{ h\in H \mid b(h, A) = 1 \}.
+    \]
+\end{defi}
 
-From now on, let $\barr G \coloneqq G/\langle t_0 \rangle$, $\theta\from T^+\rightarrow \barr T=\frac{T^+}{\langle t_0 \rangle}$ be the natural homomorphism, $\barr T^+ \coloneqq \theta(T^+)$ and $\bar\beta^+$ be the bicharacter on $\barr T^+$ induced by $\beta^+$. 
+\begin{lemma}\label{lemma:perp-perp}
+    Let $H$ and $b$ be as in \cref{defi:perp}, and suppose that $H$ is finite and $b$ is nondegenerate. 
+    Then for every subgroup $A \subseteq H$, we have that $|A^\perp| = [H : A]$ and $(A^\perp)^\perp = A$.
+\end{lemma}
+
+\begin{proof}
+    It is easy to see that the map $A^\perp \to \widehat{\left( \frac{H}{A}\right)}$ given by $t \mapsto \beta(t, \cdot)$ is an isomorphism of groups. 
+    Also, since $\beta$ is nondegenerate, by \cref{prop:char-does-not-divide-T},  $\Char \FF$ does not divide $[H : A]$. 
+    In this case, it is well-known that $\widehat{\left( \frac{H}{A}\right)} \iso \frac{H}{A}$, proving the first assertion.
+
+    Since $b$ is symmetric or skew-symmetric, it is clear that $A \subseteq (A^\perp)^\perp$. 
+    Using the first assertion, we have that $|A| = |(A^\perp)^\perp|$ and, therefore, $A = (A^\perp)^\perp$.
+\end{proof}
+
+\begin{defi}
+    Let $A$ be an abelian group and $m \in \ZZ$. 
+    We define $A_{[m]} \coloneqq \{a^m \mid a\in A\}$ and $A_{[m]} \coloneqq \{a\in A \mid a^m = e \}$.
+\end{defi}
+
+Note that $(T^+)^{[2]} \subseteq T^{[2]} \subseteq T^+$, but we can have $(T^+)^{[2]} \neq T^{[2]}$. 
+
+\begin{lemma}\label{lemma:small-perp}
+    Let $H$ and $b$ be as in \cref{defi:perp}, and suppose that $H$ is finite and $b$ is nondegenerate.
+    Then, for every $m\in \ZZ$, $(H_{[m]})^\perp = H^{[m]}$.
+\end{lemma}
+
+\begin{proof}
+    By \cref{lemma:perp-perp}, it suffices to prove that $(H^{[m]})^\perp = H_{[m]}$:
+    %
+	\begin{align}
+		(H^{[m]})^\perp & = \{ h \in H \mid b (h, g^m) = 1 \text{ for all } g\in H \}\\ 
+		& = \{ h \in H \mid b (h^m, g) = 1 \text{ for all } g\in H \}\\ 
+		& = \{ h \in H \mid h^m = e \} \numberthis\label{4th-line-again} \\ 
+		&= H_{[m]},
+	\end{align}
+	%
+	where we are using that $b$ is nondegenerate in the line \eqref{4th-line-again}. 
+\end{proof}
+
+We now set $\barr G \coloneqq G/\langle t_0 \rangle$ and let $\theta\from G\rightarrow \barr G$ be the natural homomorphism. 
+Also set $\barr {T^+} \coloneqq \theta(T^+)$ and let $\bar\beta^+$ be the bicharacter on $\barr T^+$ induced by $\beta^+$. 
 Note that $\bar\beta^+$ is nondegenerate.
+
+The next result is similar to \cref{lemma:small-perp}, but does not follow from it.
+
+\begin{prop}\label{prop:square-subgroup}
+	Consider $\theta(T^{[2]})$ and $\theta(T^+_{[2]})$ as subgroups of $\barr {T^+}$. 
+	We have that $\theta(T^{[2]})$ is the orthogonal complement of $\theta(T^+_{[2]})$ with respect to $\barr{\beta^+}$, \ie, $ \theta(T^+_{[2]})^\perp = \theta(T^{[2]})$. 
+	In particular, $\theta(T^{[2]})^\perp \subseteq \barr G^{[2]}$.
+\end{prop}
+
+\begin{proof}
+	By \cref{lemma:perp-perp}, it suffices to prove that $\theta(T^{[2]})^\perp = \theta(T^+_{[2]})$:
+	%
+	\begin{align}
+		\theta(T^{[2]})^\perp & = \{ \theta(t) \mid t\in T^+ \AND \barr{\beta^+} (\theta (t), \theta (s^2)) = 1 \text{ for all }s\in T\}\\ 
+		& = \{\theta(t) \mid t\in T^+ \AND \beta^+ (t, s^2) = 1 \text{ for all }s\in T\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND \beta (t^2, s) =1 \text{ for all }s\in T\}\\ 
+		& = \{ \theta(t) \mid t\in T^+ \AND t^2=e \} \numberthis\label{4th-line} \\ 
+		&= \theta(T^+_{[2]}),
+	\end{align}
+	%
+	where we are using that $\beta$ is nondegenerate in the line \eqref{4th-line}. 
+\end{proof}
+
+\begin{example}\label{ex:T+-but-no-T}
+    Take $G \coloneqq T^+ \coloneqq \ZZ_2 \times \ZZ_4$ and set $\beta^+((i, j),(i', j')) \coloneqq (-1)^{ij' - i'j}$, for all $i,j, i',j' \in \ZZ$. 
+    It is easy to see that $\rad \beta^+ = \langle (\bar 0, \bar 2) \rangle$. 
+    Clearly,
+    $T^+_{[2]} = \langle (\bar 1, \bar 0) , (\bar 0, \bar 2) \rangle$ and, hence, $\theta(T^+_{[2]}) = \langle \theta(\bar 1, \bar 0) \rangle$. 
+    Since $\theta(T^+_{[2]})$ is cyclic, $\theta(\bar 1, \bar 0) \in \theta(T^+_{[2]})^\perp$. 
+    But $\theta(\bar 1, \bar 0)$ is not a square. 
+\end{example}
+
+% ------------------------------------
+
+We are now in position to restrict the results of the previous section to our specific case. 
+Let $T^+$ be a finite subgroup of $G$ and $\beta^+$ be an alternating bicharacter on $T^+$ such that $\rad \beta^+ = \langle t_0 \rangle$, where $t_0\in T^+$ is an element of order $2$. 
+Also, consider $\barr G$, $\theta$, $\barr {T^+}$ and $\bar{\beta^+}$ as defined before. 
 
 \begin{lemma}\label{lemma:motivation-O_M}
     Let $(h, \chi) \in \mathbf{O}(T^+, \beta^+)$ and let $\D$ be a graded-division superalgebra associated to $(T^+, \beta^+, h, \chi)$. 
@@ -219,22 +301,33 @@ Note that $\bar\beta^+$ is nondegenerate.
 \end{lemma}
 
 \begin{proof}
-    Easy proof.
+    Let $(T, \beta, p)$ be the triple constructed from $(T^+, \beta^+, h, \chi)$ and let $t_1 = (h, \bar 1)$. 
+    
+    If $\beta$ is nondegenerate, then $\chi(t_0) = \beta(t_1, t_0) = -1$ by \cref{rmk:t_0-is-parity}. 
+    
+    Conversely, assume $\chi(t_0) = -1$. 
+    Then $\beta(t_0, T^-) = \beta(t_0, t_1T^+) = \beta (t_0, t_1) = \chi(t_0)\inv = -1$. 
+    We conclude that $(\rad \beta)\cap T^- = \emptyset$ and that $t_0 \not\in \rad\beta$. 
+    Also, it is clear that $(\rad \beta)\cap T^+ \subseteq \rad \beta^+ = \langle t_0 \rangle$, hence $(\rad \beta)\cap T^+ = \{e\}$ and, therefore, $\rad \beta = \{e\}$.
 \end{proof}
 
-\begin{defi}
+\begin{defi}\label{def:O_M}
     We define $\mathbf{O_M}(T^+, \beta^+) \coloneqq \{ (h, \chi) \in \mathbf{O}(T^+, \beta^+) \mid \chi(t_0) = -1 \}$.
 \end{defi}
 
-\begin{cor}
-    Iso without existence
-\end{cor}
+% Combining \cref{thm:iso-odd-D-only-G,lemma:motivation-O_M}, we have:
+
+% \begin{cor}\label{iso-odd-M-no-existence}
+%     Let $\D$ and $\D'$ be finite dimensional odd graded-division superalgebras, associated to quadruples $(T^+, \beta^+, h, \chi)$ and $(T'^+, \beta'^+, h', \chi')$, respectively. 
+%     Then $\D \iso \D'$ if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, and $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$.  \qed
+% \end{cor}
 
 We note that the $T^+$-action on $\mathbf{O}(T^+, \beta^+)$ restricts to $\mathbf{O_M}(T^+, \beta^+)$ since $t_0\in \rad \beta^+$. 
 In view of \cref{lemma:lemma-on-actions}, we can simplify the description of the orbits of this action. 
 
 Set $Y \coloneqq \{\chi \in \widehat{T^+} \mid \chi (t_0)\}$ with $T^+$-action defined by $t\cdot \chi = \beta^+(t, \cdot) \chi$. 
 Again, this action is well-defined since $t_0 \in \rad \beta^+$. 
+We also let $\pi\from \mathbf{O_M}(T^+, \beta^+) \to Y$ be the $T^+$-equivariant map given by $(h, \chi) \mapsto \chi$. 
 
 \begin{lemma}
     We have that $Y \neq \emptyset$ and that the $T^+$-action on $Y$ is transitive.
@@ -253,9 +346,8 @@ Again, this action is well-defined since $t_0 \in \rad \beta^+$.
     We conclude that $\chi' = t \cdot \chi$, as desired. 
 \end{proof}
 
-Consider $\pi$...
-Recall \cref{lemma:lemma-on-actions}. 
-Let us see $\pi\inv (\chi)$. 
+Recall that in the case of $\beta^+$ nondegenerate, in \cref{ssec:odd-div-G-only}, we were able to fix the character to be the trivial one. 
+In the present case, we can also fix the character $\chi \in Y$, but there is no canonical choice for it. 
 
 \begin{lemma}\label{lemma:chi-defines-a}
     Given $\chi \in Y$, there is a unique element $a \in T^+$ such that $\chi^2 = \beta^+(a, \cdot)$ and $\chi(a) = 1$. 
@@ -263,26 +355,71 @@ Let us see $\pi\inv (\chi)$.
 \end{lemma}
 
 \begin{proof}
-    Note that $\chi^2(t_0) = 1$, hence $\chi^2$ can be seem as a character on $\barr T^+$. 
-    It follows that there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. 
-    In particular $\chi^2(a) = 1$, so $\chi (a) = \pm 1$. 
-    If $\chi(a) = 1$, we put $a_\chi \coloneqq a$, else we put  $a_\chi \coloneqq at_0$. 
-
-    The ``further'' part follows from definition of $\mathbf{O_M}(T^+, \beta^+)$. 
+    Since $\chi^2(t_0) = 1$, $\chi^2$ can be seem as a character on $\barr {T^+}$. 
+    It follows that there is a unique element $\barr a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr {T^+}$. 
+    We have that $\theta\inv(\barr a) = \{ a, tt_0 \}$ for some $a\in T^+$. 
+    Since $\chi^2(a) = \chi^2(\barr a) = 1$, $\chi (a) = \pm 1$. 
+    Relabeling if necessary, we can assume $\chi (a) = 1$ and $\chi(at_0) = -1$. 
+    This shows existence and uniqueness.
+    
+    The ``further'' part follows directly from \cref{def:O(T+-beta+),def:O_M}.
 \end{proof}
 
-Recall that in the case $\beta^+$ nondegenerate, in \cref{ssec:odd-div-G-only}, we were able to fix the character to be the trivial one. 
-We can also fix the character $\chi$ such that $\chi(t_0) = -1$ in this case, but there is no canonical choice for it. 
-
 \begin{defi}
-    Given $\chi \in \widehat{T^+}$ such that $\chi(t_0) = -1$, we define $\mathbf{O_M}(T^+, \beta^+, \chi) \coloneqq \{ h\in G \mid (h, \chi)\in \mathbf{O}(T^+, \beta^+) \mid \chi(t_0) = -1 \}$.
+    Given $\chi \in \widehat{T^+}$ such that $\chi(t_0) = -1$, let $a\in T^+$ as in \cref{lemma:chi-defines-a}. 
+    We define $\mathbf{O_M}(T^+, \beta^+, \chi) \coloneqq \{ h\in G \mid h^2 = a \}$.
 \end{defi}
 
+It is clear that $\mathbf{O_M}(T^+, \beta^+, \chi)$ can be identified with $\pi\inv (\chi)$. 
+Hence, by \cref{lemma:lemma-on-actions,iso-odd-M-no-existence}, we have:
+
 \begin{cor}\label{cor:iso-odd-M-simplified}
-    Apply \cref{lemma:lemma-on-actions} for $\pi\from \mathbf{O}(T^+, \beta^+) \to Y$.
+    Iso simplified. \qed
 \end{cor}
 
-\input{chapters/02_Associative-Grd-Simple/existence_t_0}
+% -- Existence, sufficiency --
+
+As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $(T, \beta, p)$ with $\beta$ nondegenerate, \ie, the set $\mathbf{O_M}(T^+, \beta^+)$ might be empty.
+
+\begin{prop}
+    % Let $R \coloneqq \frac{T^+_{[2]}}{\langle t_0 \rangle}$. 
+    The set $\mathbf{O_M}(T^+, \beta^+)$ is non-empty if, and only if, $\theta(T^+_{[2]})^\perp \subseteq \barr G^{[2]}$.
+\end{prop}
+
+\begin{proof}
+    The ``only if'' part follows from \cref{prop:square-subgroup}. 
+    
+    For the ``if'' part, let $\chi \in Y$ and $a$ as in \cref{lemma:chi-defines-a}. 
+    We will prove that $\mathbf{O_M}(T^+, \beta^+) \neq \empty$, \ie, that $a \in \barr G^{[2]}$. 
+    
+    First, we claim that $\barr a \in \theta(T^+_{[2]})^\perp$. 
+	Indeed, if $b \in T^+_{[2]}$, then 
+	\[
+	    \barr\beta^+( \theta(a) , \theta(b) ) = \chi^2 (b) = \chi (b^2) = \chi (e) = 1.
+	\]    
+	By our assumption, we conclude that $\theta(a) \in G^{[2]}$. 
+	Let $h\in G$ such that $\theta(h)^2 = \theta(a)$. 
+	Then, either $a = h^2$ or $a = h^2t_0$. 
+% 	and, in particular, $h^2 \in T^+$. 
+% 	If $a=h^2$, the claim is established, so let us suppose $a=h^2t_0$. 
+
+	If $t_0 \in G^{[2]}$, then both $h^2$ and $h^2 t_0$ are in $G^{[2]}$, and we are done. 
+	Otherwise, we have that $\theta(T^+_{[2]}) = \theta(T^+)_{[2]}$. 
+	Hence, using \cref{lemma:small-perp}, we have $a \in \theta(T^+_{[2]})^\perp = (\theta(T^+)_{[2]})^\perp = \theta(T^+)^{[2]}$, so we can suppose $h\in T^+$. 
+	In this case, 
+	\[
+	    \chi(h^2) = \chi^2(h) = \beta^+ (a, h)
+	     = \barr{\beta^+} (\theta(a), \theta(h)) = \barr{\beta^+} (\theta(h^2), \theta(h)) = 1.
+	\] 
+	By the condition that $\chi(a) = 1$, we conclude that $a = h^2$. 
+\end{proof}
+
+% -------------------
+
+
+
+
+% \input{chapters/02_Associative-Grd-Simple/existence_t_0}
 
 
 
@@ -407,7 +544,7 @@ We can also fix the character $\chi$ such that $\chi(t_0) = -1$ in this case, bu
 
 % \begin{prop}\label{prop:square-subgroup-converse}
 % 	If $\left( \frac{T^+_{[2]} }{\langle t_0 \rangle}\right)^\perp \subseteq \barr G^{[2]}$, then there exists an element $t_1\in G\times \{\barr 1\} \subseteq G^\#$ such that $T= T^+ \cup t_1\, T^+$ is a subgroup of $G^\#$ and  $\beta^+$ extends to a nondegenerate alternating bicharacter $\beta:T\times T\rightarrow \FF^\times$.
-% \end{prop}
+% % \end{prop}
 
 % \begin{proof}
 % 	Let $\chi\in \widehat {T^+}$ be such that $\chi(t_0) = -1$. Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. Note that $\chi (a) = \pm 1$ and hence, changing $a$ to $a t_0$ if necessary, we may assume $\chi (a) = 1$.
