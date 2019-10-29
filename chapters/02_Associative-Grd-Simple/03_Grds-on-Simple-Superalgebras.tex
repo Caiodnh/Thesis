@@ -8,7 +8,7 @@ Let $\D$ be an odd finite dimensional graded-division superalgebra associated to
 Clearly, $\D\even$ is a graded-division algebra associated to $(T^+, \beta^+)$. 
 Given any $t_1 \in T^-$, then $t_1 = (h, \bar 1)$ for some $h\in G$ such that $h^2\in T^+$ and the map $\chi \from T^+ \to \FF^\times$ given by $\chi(t) \coloneqq \beta(t_1, t)$, for all $t\in T^+$, is a character in $\widehat{T^+}$ such that $\chi(h^2) = 1$ and $\chi^2 = \beta^+ (h^2, \cdot)$. 
 
-\begin{defi}\label{def:O(T+-beta+)}
+\begin{defi}\label{def:odd-parameters}
     We say that the odd graded-division superalgebra $\D$ is a \emph{associated} to the quadruple $(T^+, \beta^+, h,\chi)$. 
     If $\U$ is a graded $\D$-supermodule of finite rank associated to the map $\kappa\from G/T^+ \to \FF^\times$, we say that $(T^+, \beta^+, h, \chi, \kappa)$ are $G$-parameters of the pair $(\D, \U)$. 
 \end{defi}
@@ -19,7 +19,7 @@ Clearly, a quadruple $(T^+, \beta^+, h,\chi)$ associated to $\D$ has enough info
 \]
 and, therefore, determines the isomorphism class of the graded-division superalgebra $\D$ (see \cref{ssec:T-beta-p}). 
 
-\begin{defi}\label{def:odd-parameters}
+\begin{defi}\label{def:O(T+-beta+)}
     Let $T^+$ be any finite subgroup of $G$ and let $\beta^+$ be an alternating bicharacter on $T^+$. 
     A pair $(h,\chi) \in G \times \widehat{T^+}$ is said to be \emph{$(T^+, \beta^+)$-admissible} if 
     $h^2 \in T^+$, $\chi(h^2) = 1$ and $\chi^2 = \beta^+(h^2, \cdot)$. 
@@ -98,8 +98,10 @@ It is straightforward that the axioms of action are satisfied.
     Since $\beta((h', \bar 1), \cdot) = \beta ((th, \bar), \cdot) = \beta^+ (t, \cdot) \beta ((h, \bar 1), \cdot) = \chi$, we have the desired result. 
 \end{proof}
 
-\begin{cor}
-    Iso for any odd grading.
+\begin{cor}\label{cor:classification-odd-general}
+    Let $(\D, \U)$ and $(\D', \U')$ be pairs as in \cref{def:odd-parameters}. 
+    Let $(T^+, \beta^+, h,\chi)$ and $(T'^+, \beta'^+, h',\chi')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
+	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$. \qed
 \end{cor}
 
 For specific cases, this parametrization can be simplified using the following lemma about group actions: 
@@ -131,8 +133,8 @@ The nondegeneracy of $\beta$ also implies that $\operatorname{Stab}_{T^+} (1) = 
 By \cref{lemma:lemma-on-actions}, it follows that the $T^+$-orbits in $\mathbf {O} (T^+, \beta^+)$ are in bijection with points in $\pi\inv (1)$. 
 By the definition of $\mathbf {O} (T^+, \beta^+)$, $(h, 1) \in G \times \widehat{T^+}$ if, and only if, $h^2 \in T^+$ and $h^2 \in \ker \beta^+$, hence, if, and only if, $h^2 = e$. 
 
-Our theorem reduces to ... and $h = h'$. 
-Note that in this case $(h, \bar 1) \in \ker \beta$, so in view of \cref{lemma:beta-deg-beta-tilde-nondeg}, $\ker \beta = \langle (h, \bar 1) \rangle$ and $\D$ is isomorphic to the standard realization of ... (see \cref{def:standard-realization-Q}).
+% Our theorem reduces to ... and $h = h'$. 
+Note that in this case $(h, \bar 1) \in \ker \beta$, so in view of \cref{lemma:beta-deg-beta-tilde-nondeg}, $\ker \beta = \langle (h, \bar 1) \rangle$ and $\D$ is isomorphic to the standard realization of (see \cref{def:standard-realization-Q}).
 
 \subsection{Odd graded-division superalgebras of type \texorpdfstring{$M$}{M} in terms of \texorpdfstring{$G$}{M}}
 

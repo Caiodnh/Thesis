@@ -635,7 +635,11 @@ If this is the case, \cref{thm:iso-End_D-U-with-parameters} gives us the classif
 
 \begin{defi}\label{def:Gamma-T-beta-kappa}
     Let $n > 0$ be a natural number. 
-    Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$ and also consider the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma = (g_1, \ldots, g_{k})$ of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T$. 
+    Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider
+    \begin{enumerate}[(i)]
+        \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$;
+        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma = (g_1, \ldots, g_{k})$ of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T$. 
+    \end{enumerate}
     We define $\Gamma (T, \beta, \kappa)$ to be the grading on $M_n(\FF)$ given by identifying $M_n(\FF)$ with the graded algebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
     \[
         \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
@@ -647,9 +651,9 @@ Note that we are abusing notation in \cref{def:Gamma-T-beta-kappa}.
 The grading $\Gamma (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$. 
 Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$. 
 
-\begin{cor}[{\cite[Theorem 2.27]{livromicha}, \cite[Theorem 2.6]{BK10}}]
+\begin{cor}[{\cite[Theorem 2.6]{BK10},\cite[Theorem 2.27]{livromicha}}]
     Every $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma (T, \beta, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
-    Two such gradings $\Gamma (T, \beta, \kappa)$ and $\Gamma (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and $\kappa'$ belongs to the $G$-orbit of $\kappa$. \qed
+    Two such gradings $\Gamma (T, \beta, \kappa)$ and $\Gamma (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and there is $g\in G$ such that  $g \cdot \kappa = \kappa'$. \qed
 \end{cor}
 
 As an application of \cref{thm:End-over-D,thm:iso-End_D-U-with-parameters}, we can obtain a classification of finite dimensional simple superalgebras over an algebraically closed field. 
