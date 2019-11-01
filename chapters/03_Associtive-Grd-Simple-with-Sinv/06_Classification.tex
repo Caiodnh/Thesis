@@ -11,20 +11,37 @@ that, under above assumptions, we have that $R \iso \End_\D (\U)$ and that $\vph
 
 \subsection{Parametrization of \texorpdfstring{$(\D, \vphi_0)$}{(D, phi0)}}\label{ssec:param-D-vphi}
 
-Recall, from \cref{sec:grd-simple-salg}, that the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a triple $(T, \beta, p)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group, $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter and $p\from T \to \ZZ_2$ is a group homomorphism.
-% Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$. 
-% Sometimes we may want to discuss graded division superalgebras without reference to the groups $G$ or $G^\#$, so it is convenient to say 
+Recall, from \cref{ssec:T-beta-p}, that the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a triple $(T, \beta, p)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group, $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter and $p\from T \to \ZZ_2$ is a group homomorphism. 
+Also recall that we define the skew-symmetric bicharacter $\tilde\beta \from T\times T \to \FF^\times$ by $\tilde\beta (a,b) = (-1)^{p(a) p(b)} \beta(a, b)$, for all $a, b \in T$ (see \cref{eq:tilde-beta-def}). 
 
-Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
+Next definition allows a compact statement of \cref{eq:superpolarization}, and will be also used in \cref{sec:model-O}.
+
+% gives  us a more compact way to express Equation \eqref{eq:superpolarization}.  
+
+\begin{defi}\label{def:coboundary}
+	Let $H$ and $K$ be groups and let $f\from H \to K$ be any map.
+	We define $\mathrm{d} f\from H\times H \to K$ to be the map given by $\mathrm{d} f\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$.
+	The maps $H\times H \to K$ of this form are called \emph{$2$-coboundaries}.
+\end{defi}
+
+Note that $f\from H \to K$ is a group homomorphism if, and only if, $\mathrm{d} f\, (a,b) = e$ for all $a,b \in H$. 
+
+Recall that, since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
 
 \begin{prop}\label{prop:superpolarization}
 	Let $\vphi_0\from \D \to \D$ be the invertible degree-preserving map determined by a map $\eta\from T \to \FF^\times$ as follows: $\vphi_0(X_t) = \eta(t) X_t$ for all $t\in T$ and $X_t\in \D_t$.
-	Then $\vphi_0$ is a super-anti-automorphism if, and only if,
+	Then $\vphi_0$ is a super-anti-automorphism if, and only if, 
 	%
 	\begin{equation}\label{eq:superpolarization}
-		\forall a,b\in T, \quad (-1)^{p(a) p(b)} \beta(a,b) =  \eta(ab) \eta(a)\inv \eta(b)\inv.
+		\forall a,b\in T, \quad \eta(ab) = \tilde\beta(a,b) \eta(a) \eta(b)
 	\end{equation}
 	%
+	%
+% 	\begin{equation}\label{eq:superpolarization}
+% 		\forall a,b\in T, \quad (-1)^{p(a) p(b)} \beta(a,b) =  \eta(ab) \eta(a)\inv \eta(b)\inv,
+% 	\end{equation}
+	%
+	\ie, $\tilde\beta = \mathrm{d}\eta$. 
 	Moreover, $\D$ admits a super-anti-automorphism if, and only if, $\beta$ only takes values $\pm 1$.
 \end{prop}
 
@@ -37,9 +54,11 @@ Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-pre
 		\iff &  & \, \eta(ab)X_a X_b           & = (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a) X_a X_b \\
 		\iff &  & \eta(ab)                     & = (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a)
 		\\
-		\iff &  & (-1)^{p(a) p(b)} \beta(b, a) & =  \eta(ab) \eta(a)\inv \eta(b)\inv.
+		\iff &  & \eta(ab)                     & = \eta(a) \eta(b) \tilde\beta(b,a)\\
+		\iff &  & \eta(ab) \eta(a)\inv \eta(b)\inv & = \tilde\beta(b,a). 
 	\end{alignat*}
-	The right-hand side of this last equation does not change if $a$ and $b$ are switched, hence $\beta(b,a) = \beta(a,b)$.
+	The left-hand side of this last equation does not change if $a$ and $b$ are switched, hence $\tilde\beta(b,a) = \tilde\beta(a,b)$. 
+	This proves the first assertion. 
 
 	Since $\beta$ is alternating, $\beta(b, a) = \beta (a, b)\inv$, therefore $\beta(a,b)^2 = 1$, which proves one direction of the ``moreover'' part.
 	%from where we conclude that $\beta(a,b) = \pm 1$. 
@@ -70,99 +89,7 @@ With this we can translate the problem of classifying $(\D, \vphi_0)$ to the lev
 Instead of the graded superalgebra $\D$ with super-anti-automorphism $\vphi_0$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}.
 Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$.
 
-The following definitions give us a more compact way to express Equation \eqref{eq:superpolarization}.
-Also, Definition \ref{def:coboundary} will be used in Section \ref{sec:div-grads-on-sinv-simple}.
-
-\begin{defi}\label{def:coboundary}
-	Let $H$ and $K$ be groups and let $f\from H \to K$ be any map.
-	We define $\mathrm{d} f\from H\times H \to K$ to be the map given by $\mathrm{d} f\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$.
-	The maps $H\times H \to K$ of this for are called \emph{$2$-coboundaries}.
-\end{defi}
-
-\begin{defi}\label{def:tilde-beta}
-	Given a finite dimensional graded-division superalgebra associated to $(T, \beta, p)$, we define the bicharacter $\tilde\beta\from T\times T \to \FF^\times$ by $\tilde\beta (a,b) = (-1)^{p(a) p(b)} \beta(a, b)$, for all $a, b \in T$.
-\end{defi}
-
-Hence, Equation \eqref{eq:superpolarization} becomes $\tilde\beta = \mathrm{d}\eta$.
-Note that $\tilde\beta$ is skew-symmetric, \ie, $\tilde\beta(b, a) = \tilde\beta\inv(a, b)$, but $\tilde\beta (t,t) = (-1)^{|t|}$, for all $t\in T$, so $\tilde\beta$ is not, in general, alternating.
-
-We will now discuss the connection between $\rad \beta$ and $\rad \tilde\beta$.
-These subgroups of $T$ correspond to the support of the center and the supercenter of $\D$, respectively.
-
-\begin{defi}
-	Let $R$ be a superalgebra.
-	The \emph{center} of $R$ is the set
-	\[
-		Z(R) = \{c\in R \mid cr = rc \text{ for all } r\in R \},
-	\]
-	\ie, the center of $R$ seen as an algebra, and the \emph{supercenter} of $R$ is the set $sZ(R) \coloneqq sZ(R)\even \oplus sZ(R)\odd$, where
-	\begin{align*}
-		sZ(R)^\alpha = \{c\in R^\alpha \mid cr = (-1)^{\alpha |r|} rc \text{ for all } r\in R\even\cup R\odd \},\quad \alpha \in \ZZ_2.
-	\end{align*}
-\end{defi}
-
-% The following is a well known result, but we will prove it here for completeness. .
-
-% \begin{lemma}\label{lemma:center-is-graded}
-%     Let $H$ be an abelian group and let $R$ be a $H$-graded algebra.
-%     Then the center $Z(R)$ is a $H$-graded subspace of $R$. 
-% \end{lemma}
-
-% \begin{proof}
-%     Let $c \in Z(R)$ and write $c = \sum_{h\in H} c_h$, where $c_h \in R_h$ for all $h \in H$.
-%     For every homogeneous $r \in R$, we have that
-%     %
-%     \begin{align*}
-%         \big(\sum_{h\in H} c_h\big)r = r \big(\sum_{h\in H} c_h\big).
-%     \end{align*}
-%     %
-%     Comparing the components of degree $hh' = h'h$, where $h' = \deg r$, we conclude that $rc_h = c_h r$ for all $h \in H$. 
-%     By linearity, $r c_h = c_h r$ for all $r\in R$, hence $c_h \in Z(R)$.
-% \end{proof}
-
-% Note that, for $H = \ZZ_2$, Lemma \ref{lemma:center-is-graded} implies that center of a superalgebra is a subsuperspace and, for $H = G^\#$, we have that the center of a $G$-graded superalgebra is a $G$-graded subsuperspace. 
-% The proof of next result is analogous.
-
-\begin{lemma}%\label{lemma:center-is-graded}
-	Let $G$ be an abelian group and let $R$ be a $G$-graded superalgebra.
-	Then the center $Z(R)$ and the supercenter $sZ(R)$ are $G$-graded subsuperalgebras of $R$.
-\end{lemma}
-
-\begin{proof}
-	We consider $R$ as a $G^\#$-graded algebra.
-	Let $c \in Z(R)$ and write $c = \sum_{g \in G^\#} c_g$, where $c_g \in R_g$ for all $g \in G^\#$.
-	For every homogeneous $r \in R$, we have that
-	%
-	\begin{align*}
-		\big(\sum_{g\in G^\#} c_g\big)r = r \big(\sum_{g\in G^\#} c_g\big).
-	\end{align*}
-	%
-	Comparing the components of degree $gh = hg$, where $h = \deg r$, we conclude that $rc_g = c_g r$ for all $g \in G^\#$.
-	By linearity, $r c_g = c_g r$ for all $r\in R$, hence $c_g \in Z(R)$.
-
-	The same argument works to show that $sZ(R)\even$ is graded and, with straightforward modifications, to show that $sZ(R)\odd$ is graded.
-\end{proof}
-
-Note that, for trivial $G$, Lemma \ref{lemma:center-is-graded} implies that the center of a superalgebra is a subsuperalgebra.
-
-% Clearly, for a finite dimensional division superalgebra $\D$, the radicals of of $\beta$ and $\tilde\beta$ are the support of the center and supercenter of $\D$, respectively. 
-
-% We state and prove the following for further reference.
-
-\begin{lemma}%\label{lemma:rad-tilde-beta}
-	$\rad \tilde\beta = (\rad \beta)\cap T^+$.
-\end{lemma}
-
-\begin{proof}
-	Let $t\in T^+$.
-	In this case $\tilde\beta (t, \cdot) = \beta (t, \cdot)$, so
-	$\tilde\beta (t, T) = 1$ if, and only if, $\beta (t, T) = 1$.
-	Hence $(\rad \tilde\beta)\cap T^+ = (\rad \beta)\cap T^+$.
-
-	Now let $t \in T^-$.
-	In this case $\tilde \beta (t,t) = (-1)^{|t|} = -1$, so $t \not\in \rad \tilde\beta$.
-	Therefore $\rad \tilde\beta = (\rad \tilde\beta)\cap T^+$, concluding the proof.
-\end{proof}
+Hence, Equation \eqref{eq:superpolarization} becomes $\tilde\beta = \mathrm{d}\eta$. 
 
 \subsection{Parametrization of \texorpdfstring{$(\U, B)$}{(U, B)}}
 
@@ -628,7 +555,9 @@ for all $(t, g)\in \mc G$ and $(\kappa, g_0) \in \mathbf{I}(T, \beta, p, \eta)^+
 % \end{prop}
 
 Therefore, the classification up to isomorphism of $G$-graded superalgebras with superinvolution that are finite dimensional and graded-simple over an algebraically closed field $\FF$, $\Char \FF \neq 2$, reduces to the classification of finite subgroups $T\subseteq G^\#$, alternating bicharacters $\beta\from T\times T \to \pmone$, equivalence classes of $\eta$ (see \cref{def:equiv-eta}) and $\mathcal G$-orbits in $\mathbf{I}(T,\beta, p, \eta)^+$.
-This gives a useful simplification when we have few equivalence classes of $\eta$, as it will be the case in the next Chapter, where we will study gradings on superinvolution-simple associative superalgebras.
+This gives a useful simplification when we have few equivalence classes of $\eta$, as it will be the case in the next Chapter, where we will study gradings on superinvolution-simple associative superalgebras. 
+
+
 
 % Since the $T\times G^\#$-action %of Definition \ref{def:TxG-action} 
 % can change $\eta$, we have to restrict our group to do that. 

@@ -116,4 +116,61 @@ Note that for $G=\ZZ_2$, Lemma \ref{lemma:center-is-graded} implies that the cen
 	\]
 \end{defi}
 
-The proof of \cref{lemma:center-is-graded} can be easily adapted to show that, if $G$ is abelian, then the supercenter of a graded superalgebra is a graded subsuperalgebra.
+The proof of \cref{lemma:center-is-graded} can be easily adapted to show that, if $G$ is abelian, then the supercenter of a graded superalgebra is a graded subsuperalgebra. 
+
+
+\begin{defi}
+	Let $R$ be a superalgebra.
+	The \emph{center} of $R$ is the set
+	\[
+		Z(R) = \{c\in R \mid cr = rc \text{ for all } r\in R \},
+	\]
+	\ie, the center of $R$ seen as an algebra, and the \emph{supercenter} of $R$ is the set $sZ(R) \coloneqq sZ(R)\even \oplus sZ(R)\odd$, where
+	\begin{align*}
+		sZ(R)^\alpha = \{c\in R^\alpha \mid cr = (-1)^{\alpha |r|} rc \text{ for all } r\in R\even\cup R\odd \},\quad \alpha \in \ZZ_2.
+	\end{align*}
+\end{defi}
+
+% The following is a well known result, but we will prove it here for completeness. .
+
+% \begin{lemma}\label{lemma:center-is-graded}
+%     Let $H$ be an abelian group and let $R$ be a $H$-graded algebra.
+%     Then the center $Z(R)$ is a $H$-graded subspace of $R$. 
+% \end{lemma}
+
+% \begin{proof}
+%     Let $c \in Z(R)$ and write $c = \sum_{h\in H} c_h$, where $c_h \in R_h$ for all $h \in H$.
+%     For every homogeneous $r \in R$, we have that
+%     %
+%     \begin{align*}
+%         \big(\sum_{h\in H} c_h\big)r = r \big(\sum_{h\in H} c_h\big).
+%     \end{align*}
+%     %
+%     Comparing the components of degree $hh' = h'h$, where $h' = \deg r$, we conclude that $rc_h = c_h r$ for all $h \in H$. 
+%     By linearity, $r c_h = c_h r$ for all $r\in R$, hence $c_h \in Z(R)$.
+% \end{proof}
+
+% Note that, for $H = \ZZ_2$, Lemma \ref{lemma:center-is-graded} implies that center of a superalgebra is a subsuperspace and, for $H = G^\#$, we have that the center of a $G$-graded superalgebra is a $G$-graded subsuperspace. 
+% The proof of next result is analogous.
+
+\begin{lemma}%\label{lemma:center-is-graded}
+	Let $G$ be an abelian group and let $R$ be a $G$-graded superalgebra.
+	Then the center $Z(R)$ and the supercenter $sZ(R)$ are $G$-graded subsuperalgebras of $R$.
+\end{lemma}
+
+\begin{proof}
+	We consider $R$ as a $G^\#$-graded algebra.
+	Let $c \in Z(R)$ and write $c = \sum_{g \in G^\#} c_g$, where $c_g \in R_g$ for all $g \in G^\#$.
+	For every homogeneous $r \in R$, we have that
+	%
+	\begin{align*}
+		\big(\sum_{g\in G^\#} c_g\big)r = r \big(\sum_{g\in G^\#} c_g\big).
+	\end{align*}
+	%
+	Comparing the components of degree $gh = hg$, where $h = \deg r$, we conclude that $rc_g = c_g r$ for all $g \in G^\#$.
+	By linearity, $r c_g = c_g r$ for all $r\in R$, hence $c_g \in Z(R)$.
+
+	The same argument works to show that $sZ(R)\even$ is graded and, with straightforward modifications, to show that $sZ(R)\odd$ is graded.
+\end{proof}
+
+Note that, for trivial $G$, Lemma \ref{lemma:center-is-graded} implies that the center of a superalgebra is a subsuperalgebra. 
