@@ -1,5 +1,5 @@
 
-\section{Classification of graded-simple superalgebras\texorpdfstring{\\}{} with superinvolution}
+\section{Classification of graded-simple superalgebras\texorpdfstring{\\}{} with superinvolution}\label{sec:classification-grd-simple-with-sinv}
 
 In this section we introduce parameters that describe the graded finite dimensional and associative superalgebras with superinvolution $(R, \vphi)$ where $R$ is graded simple.
 Then, we give a classification result in terms of these parameters.
@@ -54,22 +54,31 @@ Recall that, since each component $\D_t$ of $\D$ is one-dimensional, an invertib
 		\iff &  & \, \eta(ab)X_a X_b           & = (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a) X_a X_b \\
 		\iff &  & \eta(ab)                     & = (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a)
 		\\
-		\iff &  & \eta(ab)                     & = \eta(a) \eta(b) \tilde\beta(b,a)\\
+		\iff &  & \eta(ab)                     & = \tilde\beta(b,a) \eta(a) \eta(b)
+		\\
 		\iff &  & \eta(ab) \eta(a)\inv \eta(b)\inv & = \tilde\beta(b,a). 
 	\end{alignat*}
 	The left-hand side of this last equation does not change if $a$ and $b$ are switched, hence $\tilde\beta(b,a) = \tilde\beta(a,b)$. 
 	This proves the first assertion. 
 
-	Since $\beta$ is alternating, $\beta(b, a) = \beta (a, b)\inv$, therefore $\beta(a,b)^2 = 1$, which proves one direction of the ``moreover'' part.
+	Also, since $\tilde\beta$ is skew-symmetric, $\tilde\beta(b, a) = \tilde\beta (a, b)\inv$ and, hence, $\tilde\beta(a,b)^2 = 1$. 
+	Therefore $\tilde\beta$, and hence $\beta$, takes values $\pm 1$, proving one direction of the ``moreover'' part.
 	%from where we conclude that $\beta(a,b) = \pm 1$. 
 	The converse follows from the fact that the isomorphism class of $\D\sop$ is determined by $(T, \beta\inv)$, so if $\beta$ takes only values in $\{ \pm 1 \}$, there must be an isomorphism from $\D$ to $\D\sop$, which can be seen as a super-anti-isomorphism on $\D$.
 \end{proof}
 
-\begin{cor}\label{cor:odd-cant-have-order-2}
+With this we can translate the problem of classifying $(\D, \vphi_0)$ to the level of abelian groups.
+Instead of the graded superalgebra $\D$ with super-anti-automorphism $\vphi_0$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}.
+Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$. 
+
+\Cref{prop:superpolarization} gives a strong restriction if $\D$ simple as a superalgebra. 
+This case will be considered with more details in \cref{ssec:simple-sa-but-with-vphi}.
+
+\begin{lemma}\label{lemma:odd-cant-have-order-2}
 	If $\D$ admits a superinvolution, %$\vphi_0$ is a superinvolution. 
 	% $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$. 
 	then every odd element in $T$ must have order at least $4$.
-\end{cor}
+\end{lemma}
 
 \begin{proof}
 	The bicharacter $\beta$ is alternating, so if we put $a = b = t$ in Equation \eqref{eq:superpolarization}, we get
@@ -85,11 +94,16 @@ Recall that, since each component $\D_t$ of $\D$ is one-dimensional, an invertib
 	By Equation \eqref{eq:eta-t-square}, $\eta (t^2) = - \eta(t)^2 = -1$, hence $t^2 \neq e$.
 \end{proof}
 
-With this we can translate the problem of classifying $(\D, \vphi_0)$ to the level of abelian groups.
-Instead of the graded superalgebra $\D$ with super-anti-automorphism $\vphi_0$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}.
-Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$.
+\begin{cor}\label{cor:sinv-implies-type-M}
+    If $\D$ is simple as a superalgebra and admits a superinvolution, then $\D$ is even and of type $M$.
+\end{cor}
 
-Hence, Equation \eqref{eq:superpolarization} becomes $\tilde\beta = \mathrm{d}\eta$. 
+\begin{proof}
+    In this case, since $\tilde\beta$ is nondegenerate, the map $T \to \widehat T$ given by $t \mapsto \tilde\beta(t, \cdot)$ is a group isomorphism. 
+    Since $\tilde\beta$ only takes values $\pm 1$, it follows that $T$ is an elementary $2$-group. 
+    By \cref{lemma:odd-cant-have-order-2}, we conclude that $T = T^+$, \ie, $\D$ is even. 
+    But graded-division algebras of type $Q$ are always odd, so we must have that $\D$ is of type $M$. 
+\end{proof}
 
 \subsection{Parametrization of \texorpdfstring{$(\U, B)$}{(U, B)}}
 
