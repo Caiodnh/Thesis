@@ -46,7 +46,8 @@ Recall that, since each component $\D_t$ of $\D$ is one-dimensional, an invertib
 \end{prop}
 
 \begin{proof}
-	For all $a,b \in T$, let $X_a \in \D_a$ and $X_b\in \D_b$. Then:
+	For all $a,b \in T$, let $X_a \in \D_a$ and $X_b\in \D_b$. 
+	Then:
 	%
 	\begin{alignat*}{2}
 		     &  & \vphi_0(X_a X_b)             & = (-1)^{p(a) p(b)} \vphi_0(X_b) \vphi_0(X_a)          \\
@@ -324,7 +325,7 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
 We start with a definition to have a concise description of the graded superalgebras with superinvolution we are working on:
 
 \begin{defi}\label{def:E(D,U,B)}
-	Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, let $\U\neq 0$ be a graded right $\D$-module of finite rank and  let $B$ be a nondegenerate homogeneous sesquilinear form on $\U$ such that $\overline{B} = \pm B$.
+	Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, let $\U\neq 0$ be a graded right $\D$-module of finite rank and let $B$ be a nondegenerate homogeneous sesquilinear form on $\U$ such that $\overline{B} = \pm B$.
 	We define $E(\D, \U, B)$ to be the (finite dimensional) graded superalgebra with superinvolution $(\End_\D(\U), \vphi)$, where $\vphi$ is the superadjunction with respect to $B$.
 	If $\D$ is associated to $(T, \beta, p)$ (see \cref{ssec:grd-div-alg}) and $(\U, B)$ has inertia $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$ (see Definitions \ref{def:parameter-of-(U,B)} and \ref{defi:X(D)}), then we say that $(T, \beta, p, \eta, \kappa, g_0, \delta)$ are the parameters of the triple $(\D, \U, B)$.
 \end{defi}
@@ -332,7 +333,7 @@ We start with a definition to have a concise description of the graded superalge
 By \cref{thm:End-over-D,thm:vphi-iff-vphi0-and-B,thm:vphi-involution-iff-delta-pm-1}, any finite dimensional graded-simple superalgebra with superinvolution $(R, \vphi)$ is isomorphic to $E(\D, \U, B)$ for some triple $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}.
 We will now classify these graded superalgebras with superinvolution in terms of the parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$.
 % Let $R \coloneqq \End_\D (\U)$ and $R' \coloneqq \End_{\D'} (\U')$, with superinvolutions $\vphi$ and $\vphi'$, respectively, which are superadjunctions with respect to nondegenerate sesquilinear forms $B$ and $B'$. 
-Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)} and let $(R, \vphi) \coloneqq E(\D, \U, B)$ and $(R', \vphi') \coloneqq E(\D', \U', B')$.
+Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)}, and let $(R, \vphi) \coloneqq E(\D, \U, B)$ and $(R', \vphi') \coloneqq E(\D', \U', B')$.
 Consider the corresponding parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', g_0', \delta', \kappa')$.
 If $(R, \vphi) \iso (R', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\beta = \beta'$ and $p = p'$.
 % For each triple $(T, \beta, p)$, we fix a graded-division superalgebra $\D$ with these parameters, so we may suppose $\D = \D'$.

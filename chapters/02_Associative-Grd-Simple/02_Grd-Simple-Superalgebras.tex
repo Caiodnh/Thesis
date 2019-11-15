@@ -1,8 +1,10 @@
 \section{Graded-simple associative superalgebras}\label{sec:grd-simple-salg}
 
-We will now specialize the results of last section to graded-simple superalgebras. 
-See also \cite{BS}. 
+We will now adapt the results of the previous section to graded-simple superalgebras. 
+For any abelian group $G$, we obtain a classification of $G$-graded graded-simple superalgebra over an algebraically closed field of any characteristic, following the approach used in \cite{paper-MAP} fom $M(m,n)$. 
+A different (and more complicated) approach was used in \cite{BS} to obtain a description of $G$-gradings (with some restrictions on characteristic), but the isomorphism problem was not solved there. 
 
+Let $G$ be a group. 
 Recall that a $G$-graded superalgebra $R$ can be seen as a $G^\# \coloneqq G\times \ZZ_2$-graded algebra (see \cref{rmk:G-sharp}) by defining $R_{(g,i)} = R_g \cap R^i$, for all $g\in G$ and $i \in \ZZ_2$. 
 We identify $G$ with $G \times \{ \bar 0 \} \subseteq G^\#$. 
 Clearly, $R$ is graded-simple as a $G$-graded superalgebra if, and only if, it is graded-simple as a $G^\#$-graded algebra. 
@@ -17,11 +19,11 @@ This allows us to easily transfer the results of previous section to gradings on
 \subsection{Graded-division superalgebras and their supermodules}\label{ssec:supermodules-over-D}
 
 \begin{defi}
-    A $G$-graded superalgebra $\D$ is said to be a graded-division superalgebra if every nonzero element which is homogeneous with respect to both the $G$-grading and the canonical $\ZZ_2$-grading is invertible. 
-    In this case, we may also refer to the $G$-grading on the (ungraded) superalgebra $\D$ as a \emph{division grading}.
+    A $G$-graded superalgebra $\D$ is said to be a \emph{graded-division superalgebra} if every nonzero element which is homogeneous with respect to both the $G$-grading and the canonical $\ZZ_2$-grading is invertible. 
+    In this case, we may also refer to the $G$-grading on the superalgebra $\D$ as a \emph{division grading}.
 \end{defi}
 
-In other words, graded-division superalgebras with respect the $G$-grading are precisely graded-division algebras with respect the $G^\#$-grading. 
+In other words, the graded-division superalgebras with respect the $G$-grading are precisely the graded-division algebras with respect the $G^\#$-grading. 
 Recall that $T \coloneqq \supp \D$ is a subgroup of $G^\#$, so we can see $\D$ as a $T$-graded algebra and the canonical $\ZZ_2$-grading is the coarsening by the group homomorphism $p\from T \subseteq G^\# \to \ZZ_2$ given by $p (g, i) = i$ for all $(g,i)\in G^\#$. 
 We will denote the kernel of $p$ by $T^+$, \ie, $T^+ \coloneqq T\cap (G\times \{ \bar 0 \}) = \supp \D\even$. 
 Similarly, we define $T^- \coloneqq T\cap (G\times \{ \bar 1 \}) =  \supp \D\odd$. 

@@ -176,14 +176,15 @@ Instead, we will need super-anti-automorphisms that correspond to quadratic form
 
 \begin{defi}
 	Let $\mu\from T \to \FF^\times$ be a map.
-	We say that $\mu$ is a \emph{(multiplicative) quadratic form} on $T$ if $\mu(t\inv) = \mu (t)$ for all $t\in T$ and the map $\mathrm{d}\mu\from T\times T \to \FF^\times$ defined by
-	$(a,b) \mapsto \mu(ab) \mu(a)\inv \mu(b)\inv$
+	We say that $\mu$ is a \emph{(multiplicative) quadratic map} if $\mu(t\inv) = \mu (t)$ for all $t\in T$ and the map $\mathrm{d}\mu\from T\times T \to \FF^\times$ 
+% 	defined by	$(a,b) \mapsto \mu(ab) \mu(a)\inv \mu(b)\inv$
+    (see \cref{def:coboundary})
 	is a bicharacter, which is referred to as the \emph{polarization} of $\mu$.
 \end{defi}
 
 \begin{remark}
 	In the literature, the additive notation is usually used in the context of quadratic forms.
-	In general, for a given commutative ring $\mathbb K$ and $\mathbb K$-modules $A$ and $B$, a \emph{quadratic map} $q\from A \to B$ is a map satisfying that $q(kx) = k^2 x$, for all $k\in \mathbb K$ and $x \in A$, and that the map $A \times A \to B$ defined by $(x,y) \mapsto q(x+y) - q(x) - q(y)$ is bilinear.
+	In general, for a given commutative ring $\mathbb K$ and $\mathbb K$-modules $A$ and $B$, a quadratic map $q\from A \to B$ is a map satisfying that $q(kx) = k^2 x$, for all $k\in \mathbb K$ and $x \in A$, and that the map $A \times A \to B$ defined by $(x,y) \mapsto q(x+y) - q(x) - q(y)$ is bilinear.
 	In the case of abelian groups (\ie, $\mathbb K = \ZZ$), the first condition is equivalent to $q(-x) = q(x)$, justifying our nomenclature.
 	% notion of \emph{quadratic map} is usually discussed with additive notation In the presence of the bicharacter condition, the condition $\mu(t\inv) = \mu(t)$ is equivalent to $\mu(t^n) = \mu(t)^{n^2}$ for all $t\in T$, which justifies the nomenclature.
 \end{remark}

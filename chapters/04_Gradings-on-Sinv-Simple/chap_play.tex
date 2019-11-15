@@ -1,41 +1,34 @@
 \chapter{Scrap Version --- Gradings on Superinvolution-simple Associative Superalgebras}
 
-In this chapter we first see what are the graded-superinvolution-simple superalgebras and then apply it to classify the superinvolution-simple superalgebra and the gradings on them.
+In this chapter we first see what are the graded-superinvolution-simple superalgebras and then apply it to classify the superinvolution-simple superalgebra and the gradings on them. 
+
+Let $G$ be an abelian group. 
 
 \section{Graded-superinvolution-simple superalgebras}
 
-Here we follow \cite{racine}, but with obvious generalization.
+In \cite{racine}, finite dimensional superinvolution-simple superalgebras are classified over any field $\FF$ with $\Char \FF \neq 2$. 
+In this section we adapt some of the results there to classify the finite dimensional graded-superinvolution-simple superalgebras in the case $\FF$ is algebraically closed. 
+Nevertheless, $\FF$ con be any field for the results for some of the results below. 
 
-% In this section we will discuss some general results about superalgebras with superinvolution with no nontrivial ideals that are invariant under the superinvolution. 
-% Until Corollary ??, we present some concepts and results from \cite{racine}. %, and gradings other than the canonical one are not considered. 
-
-% \begin{defi}
-%     Let $(R, \vphi)$ be a superalgebra with superinvolution. 
-%     A subset $I \subseteq R$ is said to be \emph{$\vphi$-invariant} if $\vphi(I) \subseteq I$. 
-%     We say that $(R, \vphi)$ is a \emph{superinvolution-simple superalgebra} if the only $\vphi$-invariant superideals of $R$ are the trivial ones.
-% \end{defi}
-
-The next definition and lemma give us a class of examples of graded-superinvolution-simple superalgebras that are not simple as graded superalgebras.
-In fact, Proposition \ref{prop:only-SxSsop-is-simple} will tell us these are the only examples.
-% Among all these, Example ?? is of special interest for us will be discussed with details.
+% The next definition and lemma give us a class of examples of graded-superinvolution-simple superalgebras that are not simple as graded superalgebras.
+% In fact, Proposition \ref{prop:only-SxSsop-is-simple} will tell us that these are the only examples. 
 
 \begin{defi}\label{def:SxSsop}
-	Let $S$ be a graded superalgebra and consider the graded superalgebra $S \times S\sop$.
-	We define the \emph{exchange superinvolution} on $S \times S\sop$ to be the map $\vphi\from S \times S\sop \to S \times S\sop$ given by $\varphi (s_1, \bar s_2) = (s_2, \bar s_1)$. Recall that $\bar s$ denotes the element $s \in S$ seen as an element of $S\sop$.
+	Let $S$ be a $G$-graded superalgebra and consider the $G$-graded superalgebra $S \times S\sop$ with the homogeneous component of degree $g\in G$ being $S_g \times S\sop_g$. 
+	We define the \emph{exchange superinvolution} on $S \times S\sop$ to be the map $\vphi\from S \times S\sop \to S \times S\sop$ given by $\varphi (s_1, \bar s_2) = (s_2, \bar s_1)$ (recall from \cref{ssec:superdual} that $\bar s$ denotes the element $s \in S$ seen as an element of $S\sop$). 
 \end{defi}
 
-It should be noted that, if $S$ admits a super-anti-isomorphism $\psi\from S \to S$, then $S\times S\sop$ with the exchange superinvolution is isomorphic to $S\times S$ with the superinvolution given by $(s_1, s_2) \mapsto (\psi\inv (s_2), \psi (s_1))$.
-
+We will now give two examples where $G$ is trivial, but that will play a major role in \cref{sec:the-nonsimple-case}.
 
 \begin{ex}\label{ex:FxF-iso-FZ2}
-	The simplest possible example is to take $S = \FF$, with trivial $\ZZ_2$-grading.
+	The simplest possible example is to take $S = \FF$, with superalgebra structure. 
 	If $\Char \FF \neq 2$, then $S\times S\sop = \FF [\zeta]$ where $\zeta = (1, -1)$ and the exchange superinvolution is given by $\vphi(1) = 1$ and $\vphi(\zeta) = -\zeta$.
-	Note that $\FF [\zeta] \iso \FF\ZZ_2$ with the trivial $\ZZ_2$-grading, \ie, we consider all elements of $\FF\ZZ_2$ to be even.
+	Note that $\FF [\zeta] \iso \FF\ZZ_2$ with the trivial superalgebra structure. 
 \end{ex}
 
 \begin{ex}\label{ex:FZ2xFZ2sop-iso-FZ4}
 	Consider $S = Q(1)$, so $S\even = \FF 1$ and $S\odd = \FF u$ where $u^2 =1$.
-	Note that $S$ is isomorphic to $\FF\ZZ_2$, but this time with its natural $\ZZ_2$-grading.
+	Note that $S$ is isomorphic to $\FF\ZZ_2$, but this time with the superalgebra structure given by its natural $\ZZ_2$-grading. 
 	% we are the group algebra $S = \FF \langle u \rangle$, where $u$ has order $2$, as a superalgebra by declaring  (in other words, $S \iso Q(1)$).
 	% We claim that $S\times S\sop$ is isomorphic to $\FF\langle \omega \rangle$, where $\omega$ has order $4$.
 	If $\Char \FF \neq 2$, we claim that $R \coloneqq S\times S\sop$ is isomorphic to $F\ZZ_4$.
@@ -44,128 +37,191 @@ It should be noted that, if $S$ admits a super-anti-isomorphism $\psi\from S \to
 	Also, the exchange superinvolution on $R$ is given by $\vphi(1) = 1$, $\vphi(\omega) = \omega$, $\vphi(\omega^2) = -\omega^2$ and $\vphi(\omega^3) = -\omega^3$.
 \end{ex}
 
-\begin{lemma}\label{lemma:ideals-in-SxSsop}
-	Let $S$ be a graded superalgebra and let $\vphi$ be the exchange superinvolution on $R \coloneqq S \times S\sop$. 
-	The $\vphi$-invariant graded superideals of $(R, \vphi)$ are precisely the subsets of the form $I \times I\sop$ where $I$ is a superideal of $S$. 
+When those graded superalgebras with superinvolution are graded-superinvolution-simple and, in this case, when they are isomorphic.
+
+\begin{lemma}\label{lemma:SxSsop-simple}
+	Let $S$ be a graded superalgebra and consider the exchange superinvolution on $S \times S\sop$. 
+	Then $S \times S\sop$ is graded-superinvolution-simple if, and only if, $S$ is graded-simple. 
 \end{lemma}
 
 \begin{proof}
-	Let $I$ be a graded superideal of $S$ and consider $J \coloneqq I \times I\sop$.
-	Clearly, $J$ is a $\vphi$-invariant graded subsuperspace of $S \times S\sop$.
-	Suppose $i_1, i_2 \in I\even \cup I\odd$ and let $r = (s_1, \bar s_2) \in R\even \cup R\odd$.
-	Then $r\, (i_1, \bar i_2) = (s_1 i_1, \sign{s_2}{i_2}\, \overline{i_2 s_2}) \in J$ and $(i_1, \bar i_2)\, r = (i_1 s_1, \sign{s_2}{i_2}\, \overline{s_2 i_2}) \in J$, so $J$ is, indeed, a superideal.
-
-	Now let $J$ be any graded $\vphi$-invariant superideal of $S\times S\sop$ and let $I \coloneqq (1,0)\, J$, which we can regard as a subspace $S \iso S \times \{ 0 \}$.
-	First, note that $I$ is a graded superideal of $S$. 
-	Since $J$ is a $\vphi$-invariant graded superideal and $I \subseteq J$, we have that $I + \vphi(I) = I \times I\sop \subseteq J$.
-	If $(j_1, \bar j_2) \in J$, then, on the one hand, $j_1 \in I$, and, on the other hand, $\vphi(j_1, \bar j_2) = (j_2, \bar j_1) \in J$, so $j_2 \in I$.
-	Therefore $(j_1, \bar j_2)\in I \times I\sop$, concluding the proof.
+    Suppose $S \times S\sop$ is graded-superinvolution-simple and let $I \subseteq S$ be a graded ideal. 
+    We have that $I \times I\sop$ is a superinvolution-invariant graded superideal in $S \times S\sop$, and hence either $I \times I\sop = 0$ or $I \times I\sop = S \times S\sop$. 
+    In the first case $I = 0$ and in the second $I = S$, hence $S$ is graded-simple. 
+    
+    Conversely, suppose $S$ is graded-simple. 
+    It is clear that $S\sop$ is also graded-simple and, hence, by a standard argument, the graded superideals of $S \times S\sop$ are $0$, $\{ 0 \} \times S\sop$, $S \times \{ 0 \}$ and $S\times S\sop$. 
+    Among those, only $0$ and $S\times S\sop$ are superinvolution-invariant, concluding the proof. 
 \end{proof}
 
-\begin{cor}\label{cor:SxSsop-simple-iff-S-simple}
-    Under the conditions of \cref{lemma:ideals-in-SxSsop}, $S\times S\sop$ is graded-superinvolution-simple if, and only if, $S$ is graded-simple. \qed
-\end{cor}
+% \begin{lemma}\label{lemma:ideals-in-SxSsop}
+% 	Let $S$ be a graded unital superalgebra and let $\vphi$ be the exchange superinvolution on $R \coloneqq S \times S\sop$. 
+% 	The $\vphi$-invariant graded superideals of $(R, \vphi)$ are precisely the subsets of the form $I \times I\sop$ where $I$ is a superideal of $S$. 
+% \end{lemma}
 
-\begin{cor}\label{cor:iso-SxSsop}
+% \begin{proof}
+% 	Let $I$ be a graded superideal of $S$ and consider $J \coloneqq I \times I\sop$.
+% 	Clearly, $J$ is a $\vphi$-invariant graded subsuperspace of $S \times S\sop$.
+% 	Suppose $x, y \in I\even \cup I\odd$ and let $r = (s_1, \bar s_2) \in R\even \cup R\odd$.
+% 	Then $r\, (x, \bar y) = (s_1 x, \sign{s_2}{y}\, \overline{y s_2}) \in J$ and $(x, \bar y)\, r = (x s_1, \sign{s_2}{y}\, \overline{s_2 y}) \in J$, so $J$ is, indeed, a superideal.
+
+% 	Now let $J$ be any graded $\vphi$-invariant superideal of $S\times S\sop$ and let $I \coloneqq (1,0)\, J$, which we can regard as a subspace $S \iso S \times \{ 0 \}$.
+% 	First, note that $I$ is a graded superideal of $S$. 
+% 	Since $J$ is a $\vphi$-invariant graded superideal and $I \subseteq J$, we have that $I + \vphi(I) = I \times I\sop \subseteq J$.
+% 	If $(x, \bar y) \in J$, then, on the one hand, $x \in I$, and, on the other hand, $\vphi(x, \bar y) = (y, \bar x) \in J$, so $y \in I$.
+% 	Therefore $(x, \bar y)\in I \times I\sop$, concluding the proof.
+% \end{proof}
+
+% \begin{cor}\label{cor:SxSsop-simple-iff-S-simple}
+%     Under the conditions of \cref{lemma:ideals-in-SxSsop}, $S\times S\sop$ is graded-superinvolution-simple if, and only if, $S$ is graded-simple. \qed
+% \end{cor}
+
+\begin{lemma}\label{cor:iso-SxSsop}
     Let $S_1$ and $S_2$ be graded-simple superalgebras. 
     Then $S_1\times S_1\sop \iso S_2\times S_2\sop$ as graded superalgebras with superinvolution if, and only if, $S_1 \iso S_2$ or $S_1 \iso S_2\sop$ as graded superalgebras.
-\end{cor}
+\end{lemma}
 
 \begin{proof}
     Let $\psi\from S_1\times S_1\sop \to S_2\times S_2\sop$ be an isomorphism of graded superalgebras with superinvolution. 
-    By \cref{lemma:ideals-in-SxSsop}, $\psi(S_1\times \{ 0 \}) = S_1\times \{ 0 \}$ or $\psi(S_2\times \{ 0 \}) = \{ 0 \} \times S_2\sop$. 
+    Since, the only nonzero proper grade superideals of $S_i \times S_i\sop$ are $\{ 0 \} \times S_i\sop$ and $S_i\times S_i\sop$, $i = 1,2$, we have that $\psi(S_1\times \{ 0 \}) = S_1\times \{ 0 \}$ or $\psi(S_2\times \{ 0 \}) = \{ 0 \} \times S_2\sop$.  
     
-    Conversely, we can define an isomorphism the obvious way.
+    For the converse, we can suppose $S_1 \iso S_2$ by relabeling $S_2$ with $S_2\sop$ if necessary.
+    If $\zeta \from S_1 \to S_2$ is an isomorphism of graded superalgebras, it is clear that $\psi\from S_1\times S_1\sop \to S_2\times S_2\sop$ given by $\psi (s, \overline{s'}) \coloneqq (\zeta(s), \overline{\zeta(s')})$, for all $s,s' \in S_1$, is an isomorphism of graded superalgebras with superinvolution.
 \end{proof}
 
 \begin{prop}\label{prop:only-SxSsop-is-simple}
-	Let $(R, \vphi)$ be a graded-superinvolution-simple superalgebra. 
-	Then either $R$ is a graded-simple superalgebra or $(R, \vphi)$ is isomorphic to $S\times S\sop$ with the exchange superinvolution, for some graded-simple superalgebra $S$.
+	Let $(R, \vphi)$ be a 
+	graded superalgebra with superinvolution. 
+	Then $(R, \vphi)$ is 
+	graded-superinvolution-simple if, and only if, either $R$ is a graded-simple or $(R, \vphi)$ is isomorphic to $S\times S\sop$ with the exchange superinvolution, for some graded-simple superalgebra $S$.
 \end{prop}
 
 \begin{proof}
-	Suppose $R$ is not simple and let $0 \neq I \subsetneq R$ be a graded superideal.
-	Note that $\vphi(I)$ is also a graded-superideal, hence $I \cap \vphi(I)$ and $I + \vphi (I)$ are $\vphi$-invariant graded superideals. 
+	Suppose $(R, \vphi)$ is 
+	graded-superinvolution-simple but $R$ is not graded-simple. 
+	Let $0 \neq I \subsetneq R$ be a graded superideal.
+	Note that $\vphi(I)$ is also a graded superideal, hence $I \cap \vphi(I)$ and $I + \vphi (I)$ are $\vphi$-invariant graded superideals. 
 	Since $I \cap \vphi(I) \subseteq I \neq R$, we have $I \cap \vphi(I) = 0$, so we can write $I + \vphi (I) = I \oplus \vphi (I)$. 
 	Since $0 \neq I \subseteq I \oplus \vphi (I)$, we conclude that $R = I \oplus \vphi (I)$.
 	Clearly, this implies that $(R, \vphi)$ is isomorphic to $I \times I\sop$ with exchange superinvolution. 
-	By \cref{cor:SxSsop-simple-iff-S-simple}, $I$ must be simple as a graded superalgebra, concluding the proof. 
+	By \cref{lemma:SxSsop-simple}, $I$ must be simple as a graded superalgebra. 
+	
+	The converse is obvious if $R$ is graded-simple, and follows from \cref{lemma:SxSsop-simple} in the other case.
 \end{proof}
-% -----
+ 
+Sometimes we have a more convenient model for $S\sop$ then $S\sop$ instead of $S\sop$ itself. 
+More precisely, suppose $\psi\from S \to S'$ is super-anti-isomorphism of graded superalgebras. 
+In this case, it is clear that $S\times S\sop$ with the exchange superinvolution is isomorphic to $S\times S'$ endowed with the superinvolution given by $(s_1, s_2) \mapsto (\psi\inv (s_2), \psi (s_1))$. 
 
-Clearly, the ``or'' in \cref{prop:only-SxSsop-is-simple} is disjoint since $S\times S\sop$ is not graded-simple.
+\begin{defi}\label{defi:superdual-exchange}
+    Let $\D$ be a graded-division superalgebra, let $\U$ be a graded right $\D$-supermodule of finite rank and set $S \coloneqq \End_\D (\U)$. 
+    Recall that $\U\Star \coloneqq \Hom_\D(\U, \D)$ (\cref{def:superdual-supermodule}) is a graded right $\D\sop$-module, and that the map $\psi\from \End_\D (\U) \to \End_{\D\sop} (\U\Star)$ given by $\psi(L) = L\Star$ (\cref{defi:superdual-map}) is a super-anti-isomorphism (\cref{prop:dual-super-anti-iso}). 
+    Hence $S\times S\sop$ with exchange superinvolution is isomorphic to $\End_\D (\U) \times \End_{\D\sop} (\U\Star)$ with superivolution $\vphi$ given by $\vphi(L_1, L_2) = (\psi\inv(L_2), \psi(L_1))$. 
+\end{defi}
 
-We now parametrize and classify, in the case $R$ is finite dimensional and $\FF$ algebraically closed, $\Char \FF \neq 2$. 
 
+\begin{cor}\label{cor:SxSsop-with-dcc}
+    Let $(R, \vphi)$ be a graded-superalgebra with superinvolution and suppose $R$ satisfies the \dcc{} on graded left superideals. 
+    Then $(R, \vphi)$ is graded-superinvolution-simple if, and only if, $R$ is graded-simple or $(R, \vphi)$ is isomorphic to a graded-superalgebra with superinvolution as in \cref{ex:superdual-exchange}. 
+\end{cor}
+
+\begin{proof}
+    If $R$ is graded-simple, there is nothing to prove. 
+    Suppose $R$ is not graded-simple. 
+    If $(R, \vphi)$ is graded-superinvolution-simple, then $R \iso S\times S\sop$ for some graded-simple superalgebra $S$. 
+    It is clear that $S$ also satisfies the \dcc{} on graded left superideals, so by \cref{thm:End-over-D}, $S \iso \End_\D (\U)$, and hence, $(R, \vphi)$
+    is isomorphic to a graded-superalgebra with superinvolution as in \cref{ex:superdual-exchange}. 
+    The converse follows from \cref{lemma:ideals-in-SxSsop} and the fact $\End_\D (\U)$ is unital. 
+\end{proof}
+
+Let us now assume $\FF$ is algebraically closed and $\Char \FF \neq 2$. 
+We are in a position to classify up to isomorphism the finite dimensional graded-superinvolution-simple  superalgebras over $\FF$. 
+We have two disjoint classes of those: the ones that are graded-simple and the ones as in \cref{ex:superdual-exchange}. 
+The former ones were classified in Theorem \ref{thm:iso-(R,vphi)-with-parameters}. 
+
+\begin{defi}
+    Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, and let $\U\neq 0$ be a graded right $\D$-module of finite rank. 
+	We define $E\times E\sop(\D, \U)$ to be the (finite dimensional) graded superalgebra $\End_\D(\U) \times \End_{\D\sop}(\U\Star)$ endowed with the superinvolution given by $(L_1, )$ where $\psi(L) = L\Star$.
+	
+	with superinvolution defined in \cref{ex:superdual-exchange}.
+	If $\D$ is associated to $(T, \beta, p)$ (see \cref{ssec:grd-div-alg}) and $\U$ is associated to $\kappa\from $ $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$ (see Definitions \ref{def:parameter-of-(U,B)} and \ref{defi:X(D)}), then we say that $(T, \beta, p, \eta, \kappa, g_0, \delta)$ are the parameters of the triple $(\D, \U, B)$.
+\end{defi}
+
+\begin{cor}
+    Let $\D$
+\end{cor}
+
+\begin{defi}
+    Under the conditions of \cref{ex:superdual-exchange}, suppose $\D$ is finite dimensional. 
+    Let $(T, \beta, \kappa)$ be the parameters of the pair $(\D, \U)$ seen as $G^\#$-graded (Definition \ref{def:E(D,U)}) and let $p\from T \to \ZZ_2$ be the parity map, as usual. 
+    We will say that $(T, \beta, p, \kappa)$ are t
+\end{defi}
+
+The classification of the later is an easy consequence of 
+\cref{cor:iso-SxSsop} and the description of parameters of $\D\sop$ and $\U\Star$ in 
+
+
+\begin{cor}\label{cor:iso-graded-simple-double}
+    Let $(R, \vphi)$ be a finite dimensional graded-superinvolution-simple superalgebra. 
+    Then $R$ is not graded-simple if, and only if, there exists a finite dimensional graded-division superalgebra 
+    
+\end{cor}
+
+
+
+    Let $\D$ be a finite dimensional graded-division algebra over an algebraically closed field $\FF$ and let $\U$ be a graded right $\D$-module of finite rank. 
+	If $\D$ is associated to $(T, \beta)$ and $\U$ is associated to $\kappa\from G/T \to \ZZ_{\geq 0}$ (see Subsection \ref{ssec:D-modules}), we say that $(T, \beta, \kappa)$ are the \emph{parameters} of the pair $(\D, \U)$.
+
+\begin{prop}
+    Let $(\D, \U)$ be as in Definition \ref{def:E(D,U)}, 
+\end{prop}
+
+
+Let $S$ be a finite dimensional graded-simple superalgebra. 
+By \cref{thm:End-over-D}, we have $S \iso \End_\D (\U)$ as $G^\#$-graded algebras, \ie, as $G$-graded superalgebras. 
+
+
+
+
+
+It should be noted that, if $S$ admits a super-anti-isomorphism $\psi\from S \to S$, then $S\times S\sop$ with the exchange superinvolution is isomorphic to $S\times S$ with the superinvolution given by $(s_1, s_2) \mapsto (\psi\inv (s_2), \psi (s_1))$.
+
+\begin{defi}\label{def:E(D,U)-exchange}
+     
+	If $\D$ is associated to $(T, \beta)$ and $\U$ is associated to $\kappa\from G/T \to \ZZ_{\geq 0}$ (see Subsection \ref{ssec:D-modules}), we say that $(T, \beta, \kappa)$ are the \emph{parameters} of the pair $(\D, \U)$.
+\end{defi}
+
+Let $S$ be a graded-simple superalgebra.  
 If $R$ is graded-simple, the job was done in \cref{sec:classification-grd-simple-with-sinv}.
+
+
 
 If $R \iso S\times S\sop$, it is actually easier. 
 We parametrize by $S$, which was done in \cref{ssec:classification-assc-super}. 
 But the iso thm is different from there: follows from \cref{cor:iso-SxSsop},  \cref{ssec:superdual} and unlabeled remark above. 
 
-% -----
+As a corollary, we classify the finite dimensional superinvolution simple-superalgebras. 
 
+\begin{lemma}
+    If $R$ simple as superalgebra, admits superinvolution and $\Char \FF\neq 2$, then it is of type $M$.
+\end{lemma}
 
-% \begin{defi}
-% 	Let $R$ be an associative (super)algebra.
-% 	The \emph{center} of $R$ is the set
-% 	\[
-% 		Z(R) = \{c\in R \mid cr = rc \text{ for all } r\in R \}.
-% 	\]
-% \end{defi}
+\begin{proof}
+    Follows from \cref{prop:R-simple-iff-D-simple,cor:sinv-implies-type-M}, in the case $G$ is trivial. 
+\end{proof}
 
-% \begin{remark}
-% 	For a superalgebra, there is also the notion of \emph{supercenter} (\ie, the linear span of the set of homogeneous elements $c \in R$ such that $rc = \sign{r}{c} cr$ for every homogeneous element $r \in R$), but this is not what we are considering here.
-% \end{remark}
+\begin{cor}
+    xx
+\end{cor}
 
-% % The following is true for any graded associative algebra (hence for superalgebras and graded superalgebras), so we state and prove in this generality. (see ??)
-
-% % It is important to note that we are considering here the notion of center as we would do for algebras. 
-% % In the superalgebra case one could consider the supercentre
-
-% \begin{lemma}%\label{lemma:center-is-graded}
-% 	Let $G$ be an abelian group and let $R$ be a $G$-graded associative algebra.
-% 	Then the center $Z(R)$ is a $G$-graded subspace of $R$.
-% \end{lemma}
-
-% \begin{proof}
-% 	Let $c \in Z(R)$ and write $c = \sum_{g\in G} c_g$, where $c_g \in R_g$ for all $g \in G$.
-% 	For every homogeneous $r \in R$, we have that
-% 	%
-% 	\begin{align*}
-% 		\big(\sum_{g\in G} c_g\big)r = r \big(\sum_{g\in G} c_g\big).
-% 	\end{align*}
-% 	%
-% 	Comparing the components of degree $gh = hg$, where $h = \deg r$, we conclude that $rc_g = c_g r$ for all $g \in G$.
-% 	By linearity, $r c_g = c_g r$ for all $r\in R$, hence $c_g \in Z(R)$.
-% \end{proof}
-
-% Applying this lemma to an associative superalgebra $R$, with $G^\#$ playing the role of $G$, we see that $Z(R)$ is a $G$-graded subsuperspace of $R$.
-
-% % \begin{proof}
-% %     Let $c \in Z(S)$ and write $c = c_{\bar 0} + c_{\bar 1}$, where $c_i \in S^i$, $i \in \ZZ_2$.
-% %     For every $s \in S\even \cup S\odd$, we have that
-% %     %
-% %     \begin{align*}
-% %         (c_{\bar 0} + c_{\bar 1})s = s (c_{\bar 0} + c_{\bar 1}),
-% %     \intertext{hence,}
-% %         c_{\bar 0}s + c_{\bar 1}s = s c_{\bar 0} + s c_{\bar 1}.
-% %     \end{align*}
-% %     %
-% %     Since $s$ has parity, we must have $sc_i = c_is$, $i \in \ZZ_2$. 
-% %     But then it follows, by linearity, $sc_i = c_is$ for all $s\in S$, concluding the proof.
-% % \end{proof}
-
-% \subsection{Superinvolution-simple superalagebras equi}
-
-As a corollary, we classify the superinvolution simple-superalgebras. 
-
-We now apply those results to classify 
+\begin{proof}
+    
+\end{proof}
 
 \begin{itemize}
     \item Translate, proposition for $G$ trivial.
     \item Case of simple as superalgebra, apply result on odd with order $4$.
-    \item As a pararaph, for clarity, hence it is $\End_\FF (U)$, and by result, comes from for $\langle \, , \, \rangle$ on $U$.
+    \item As a paragraph, for clarity, hence it is $\End_\FF (U)$, and by result, comes from for $\langle \, , \, \rangle$ on $U$.
     \item Proposition, as corollary of Chapter 3.
 \end{itemize}
 
@@ -268,8 +324,9 @@ Indeed, for all $r\in R = \End_\D(\U)$ and all $u\in \U$, we have $r (r_c(u)) = 
 
 \begin{proof}
 	Pick a homogeneous $\D$-basis for $\U$ following Convention \ref{conv:pick-even-basis} and use it to identify $R$ with $M_k(\D) = M_k(\FF) \tensor \D$.
-	By Proposition \ref{prop:matrix-vphi}, there is an invertible matrix $\Phi \in M_k(\D)$ such that, for every $X \in M_k(\D)$,
-	$\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi$.
+	By \cref{conv:pick-even-form}, we may assume that $B$ is even and then,
+	by Proposition \ref{prop:matrix-vphi}, for every $X \in M_k(\D)$, we have
+	$\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi$, where $\Phi \in M_k(\D)$ is the matrix representing $B$. 
 
 	It is well known that the ideals of $M_k(\D)$ are precisely the sets of the form $M_k(I)$ for $I$ an ideal of $\D$.
 	We will prove an analog of this, first, for superideals and, then, for $\vphi$-invariant superideals.

@@ -423,32 +423,17 @@ It follows that $\dim_\FF \D_t = 1$ for all $t\in T$.
     A map $b\from T\times T \to \FF^\times$ is said to be a \emph{bicharacter} if, for every $t\in T$, both maps $b(t, \cdot)\from T \to \FF^\times$ and $b(\cdot, t)\from T \to \FF^\times$ are characters. 
     We say that a bicharacter $b$ is 
     \begin{itemize}
+        \item \emph{symmetric} if $b(t,s) = b(s,t)$ for all $t,s\in T$;
         \item \emph{skew-symmetric} if $b(t,s) = b(s,t)\inv$ for all $t,s\in T$;
         \item \emph{alternating} if $b(t,t) = 1$ for all $t\in T$.
     \end{itemize}
     Clearly, every alternating bicharacter is skew-symmetric. 
-    The \emph{radical} of a skew-symmetric bicharacter is the subgroup of $T$ defined by
+    The \emph{radical} of a (skew-)symmetric bicharacter is the subgroup of $T$ defined by
     \[
         \rad b \coloneqq \{ t \in T \mid b(t, T) =1 \}.
     \]
     If $\rad b = \{e\}$, we say that $b$ is \emph{nondegenerate}.
 \end{defi}
-
-%\begin{defi}
- %   Let $T$ and $T'$ be abelian groups. 
-  %  A map $b\from T \times T' \to \FF^\times$ is said to be a bicharacter if the maps $b(t', \cdot)\from T \to \FF^\times$ and $b(\cdot, t)\from T' \to \FF^\times$ are characters, for all $t\in T$ and $t' \in T'$. 
-   % In the case $T= T'$, we say that a bicharacter $b$ is
-    %\begin{itemize}
-     %   \item \emph{skew-symmetric} if $b(t,s) = b(s,t)\inv$ for all $t,s\in T$;
-      %  \item \emph{alternating} if $b(t,t) = 1$ for all $t\in T$.
-    %\end{itemize}
-    %Clearly, every alternating bicharacter is skew-symmetric. 
-    %The \emph{radical} of a skew-symmetric bicharacter is the subgroup of $T$ defined by
-    %\[
-     %   \rad b \coloneqq \{ t \in T \mid b(t, T) =1 \}.
-    %\]
-    %If $\rad b = \{e\}$, we say that $b$ is \emph{nondegenerate}.
-%\end{defi}
 
 Since $T$ is abelian and every homogeneous component is one-dimensional, for any $t, s \in T$, there exists a nonzero scalar $\beta(t,s)$ such that 
 \[\label{eq:beta}
@@ -487,10 +472,9 @@ The following is a consequence of a well-known result in group cohomology (see \
     % It also follows that $\psi$ is a bijection, and with the grading we just defined, it is isomorphism of graded algebras. 
 \end{proof}
 
-There remains the question of existence of a graded-division algebra $\D$ for a given $(T,\beta)$. %, a graded-division algebra $\D$ with support $T$ such that \cref{eq:beta} holds. 
-
+There remains the question of existence of a graded-division algebra $\D$ for a given $(T,\beta)$. 
 This, again, follows from cohomology. 
-Here we will give an explicit construction with matrices in the case of nondegenerate $\beta$, following \cite[Remark 18]{EK15} (see also \cite[Remark 2.16]{livromicha}).
+We give another proof for completeness. 
 
 \begin{lemma}\label{lemma:colour-tensor-product}
     Let $T$ be a finite abelian group and let $\beta\from T\times T \to \FF^\times$ be an alternating bicharacter. 
@@ -543,36 +527,40 @@ and, for each $b\in B$, define $X_b\in \End(V)$ by
 \]
 Finally, we define $X_{ab} \coloneqq X_a X_b$, for all $a\in A$ and $b\in B$. 
 
-Clearly, the operators $X_a$ and $X_b$ (and, hence, $X_{ab})$ are invertible, for all $a\in A$ and $b\in B$. 
-It is easy to see that $X_a X_{a'} = X_{aa'}$ and $X_{b} X_{b'} = X_{bb'}$, for all $a, a' \in A$ and $b, b'\in B$. 
-Also, $X_a ( X_b(e_{b'}) ) = \beta(a, bb') e_{bb'} = \beta(a, b) \beta(a,b') e_{bb'}$ and $X_b ( X_a(e_{b'}) ) = \beta(a, b') e_{bb'}$, so $X_a X_b = \beta(a,b) X_b X_a$. 
-It follows that, for all $t,s \in T$, $X_t X_s = \beta(t,s) X_s X_t$.
+\begin{prop}
+    The operators $X_t$, $t\in T$ form a basis of the algebra $\End(V)$ and define a division grading associated to $(T, \beta)$. 
+\end{prop}
 
-We also see that the operators $X_{ab}$, for $a\in A$ and $b\in B$, are linearly independent. 
-Indeed, let consider scalars $\lambda_{ab} \in \FF$ such that $\sum_{a,b} \lambda_{ab} X_{ab} = 0$. 
-Then for each $b' \in B$, we have that
-\[
-    \sum_{a,b} \lambda_{ab} X_{ab} (e_{b'}) = \lambda_{ab} \beta(a, b) \beta(a,b') e_{bb'} = 0.
-\]
-Since $\{ e_{bb'} \}$ is linearly independent, we have
-\[
-    \sum_a \lambda_{ab} \beta(a, b) \beta(a,b') = 0,
-\]
-for all $b,b' \in B$. 
-It follows that
-\[
-    \sum_a \lambda_{ab} \beta(a, b) \beta(a, \cdot) = 0,
-\]
-for all $b\in B$. 
-Since $\beta$ is nondegenerate, the maps $\beta(a, \cdot) \in \widehat B$ are all distinct characters in, and since distinct characters are linearly independent, we have
-$
-    \lambda_{ab} \beta(a, b) = 0,
-$
-for all $a\in A$ and $b\in B$. 
-Therefore, $\lambda_{ab} = 0$, as desired. 
+\begin{proof}
+    Clearly, the operators $X_a$ and $X_b$ (and, hence, $X_{ab})$ are invertible, for all $a\in A$ and $b\in B$. 
+    It is easy to see that $X_a X_{a'} = X_{aa'}$ and $X_{b} X_{b'} = X_{bb'}$, for all $a, a' \in A$ and $b, b'\in B$. 
+    Also, $X_a ( X_b(e_{b'}) ) = \beta(a, bb') e_{bb'} = \beta(a, b) \beta(a,b') e_{bb'}$ and $X_b ( X_a(e_{b'}) ) = \beta(a, b') e_{bb'}$, so $X_a X_b = \beta(a,b) X_b X_a$. 
+    It follows that, for all $t,s \in T$, $X_t X_s = \beta(t,s) X_s X_t$.
 
-By dimension count, we conclude that $\{X_t\}_{t\in T}$ span the whole $\End(V)$, and declaring $\deg X_t = t$ makes it a graded-division algebra. 
-It is easy to see that it is associated to the pair $(T, \beta)$. 
+    It remains to show that the operators $X_t$, $t\in T$, form a basis of $\End(V)$. 
+    Since $|T| = |A||B| = |B|^2$ and $\dim V = |B|$, it suffices to prove linear independence. 
+    Supposes $\sum_{a,b} \lambda_{ab} X_{ab} = 0$, for some $\lambda_{ab} \in \FF$. 
+    Then for each $b' \in B$, we have that
+    \[
+        \sum_{a,b} \lambda_{ab} X_{ab} (e_{b'}) = \lambda_{ab} \beta(a, b) \beta(a,b') e_{bb'} = 0.
+    \]
+    Since $\{ e_{bb'} \}$ is linearly independent, we have
+    \[
+        \sum_a \lambda_{ab} \beta(a, b) \beta(a,b') = 0,
+    \]
+    for all $b,b' \in B$. 
+    It follows that
+    \[
+        \sum_a \lambda_{ab} \beta(a, b) \beta(a, \cdot) = 0,
+    \]
+    for all $b\in B$. 
+    Since $\beta$ is nondegenerate, the maps $\beta(a, \cdot) \in \widehat B$ are all distinct characters in, and since distinct characters are linearly independent, we have
+    $
+        \lambda_{ab} \beta(a, b) = 0,
+    $
+    for all $a\in A$ and $b\in B$. 
+    Therefore, $\lambda_{ab} = 0$, as desired. 
+\end{proof}
 
 \begin{defi}\label{def:standard-realization}
 	We will refer to these matrix models of $\mc D$ as its \emph{standard realizations}.
@@ -666,31 +654,33 @@ For a classification over an arbitrary field, we refer the reader to \cite{racin
     \begin{enumerate}[(i)]
         \item $M(m,n) \not\iso Q(n')$;
         \item $M(m,n) \iso M(m', n')$ if, and only if, either $m=m'$ and $n=n'$, or $m=n'$ and $n=m'$;
-        \item $Q(n) \iso Q(n')$ if, and only if, $n = n'$,
+        \item $Q(n) \iso Q(n')$ if, and only if, $n = n'$.
     \end{enumerate}
-    for all $m, m', n, n' \in \ZZ_{\geq 0}$. 
 \end{thm}
 
 \begin{proof}
-    We have that $R$ is simple as a $\ZZ_2$-graded algebra, so, by \cref{thm:End-over-D}, $R \iso \End_\D (\U)$. 
+    Since $R$ is simple as a $\ZZ_2$-graded algebra, so, by \cref{thm:End-over-D}, $R \iso \End_\D (\U)$. 
     Let $(T, \beta, \kappa)$ be the parameters of $(\D, \U)$. 
     Since $T\subseteq \ZZ_2$, we either have $T = \{ \bar 0\}$ or $T = \ZZ_2$. 
     
     If $T = \{\bar 0\}$, then $\D = \FF$ and $R \iso \End_\FF (\U)$. 
     The isomorphism class of $\U$ is determined by the map $\kappa\from \ZZ_2/\{\bar 0\} = \ZZ_2 \to \ZZ_{\geq 0}$ defined by $\kappa(i) = \dim_\FF (\U^i)$ for all $i\in \ZZ_2$. 
-    In other words, the isomorphism class of $\U$ is determined by by the numbers $m \coloneqq \kappa(\bar 0)$ and $n \coloneqq \kappa(\bar 1)$. 
-    By choosing graded bases for $\U\even$ and $\U\odd$, we get $R \iso M(m,n)$. 
+    In other words, the isomorphism class of $\U$ is determined by the numbers $m \coloneqq \kappa(\bar 0)$ and $n \coloneqq \kappa(\bar 1)$. 
+    By choosing bases for $\U\even$ and $\U\odd$, we get $R \iso M(m,n)$. 
     By \cref{thm:iso-End_D-U-with-parameters}, we conclude that $M(m,n) \iso M(m',n')$ if, and only if, either $m=m'$ and $n=n'$ (for $g = \bar 0$), or $m=n'$ and $n=m'$ (for $g = \bar 1)$. 
     
     If $T = \ZZ_2$, we first note that the only alternating bicharacter $\beta\from \ZZ_2\times \ZZ_2 \to \FF^\times$ is the trivial one. 
-    Indeed, $\beta(\bar1, \bar1) = 1$ since $\beta$ is alternating, and $\beta(t, \bar 0) = \beta (\bar 0, t) = 1$ for all $t\in \ZZ_2$ since $\beta(t, \cdot) $ and $\beta (\cdot, t) $ are characters. 
     Hence, $\D \iso \FF\ZZ_2 \iso Q(1)$ and $R \iso \End_{Q(1)}(\U)$. 
-    The isomorphism class of $\U$ is determined by a map $\kappa\from \ZZ_2/\ZZ_2 \to \ZZ_{\geq 0}$, \ie, by single number $n \coloneqq \kappa(\ZZ_2) = \dim_{Q(1)} (\U)$. 
-    By \cref{thm:iso-End_D-U-with-parameters}, again because we have only one element in $\ZZ_2/\ZZ_2$, the number $n$ also determines the isomorphism class of $\End_{Q(1)}(\U)$. 
+    The isomorphism class of $\U$ is determined by a map $\kappa\from \ZZ_2/\ZZ_2 \to \ZZ_{\geq 0}$, \ie, by the single number $n \coloneqq \kappa(\ZZ_2) = \dim_{Q(1)} (\U)$. 
     
     To conclude the proof, we will show that $\End_{Q(1)}(\U) \iso Q(n)$.  
-    By \cref{prop:U_g-is-D_e-form}, we can take a graded-basis $\B$ for $\U$ with all elements having degree $\bar 0$.
-    We, then, can write $\End_{Q(1)}(\U) \iso M_n(Q(1)) \iso \M_n(\FF) \tensor Q(1)$, where the grading on $\M_n(\FF) \tensor Q(1)$ is described in \cref{rmk:M_k(F)-tensor-D}. 
-    By our choice of $\B$, the even matrices are the with entries in $Q(1)\even$ and the odd matrices are the ones with entries in $Q(1)\odd$. 
+    By \cref{prop:U_g-is-D_e-form}, we can take a graded basis $\B$ for $\U$ with all elements having degree $\bar 0$.
+    We, then, can write $\End_{Q(1)}(\U) \iso M_n(Q(1)) \iso \M_n(\FF) \tensor Q(1)$ as graded algebras (\cref{rmk:M_k(F)-tensor-D}), where the grading on $\M_n(\FF)$ is trivial. 
     Finally, using the Kronecker product, $M_n(\FF) \tensor Q(1) \iso Q(1)\tensor M_n(\FF) \iso Q(n)$. 
 \end{proof}
+
+\begin{defi}
+    Let $R\neq 0$ be an associative superalgebra. 
+    If $R \iso M(m,n)$, for some $m,n \in \ZZ_{\geq 0}$, we say that $R$ is of type $M$. 
+    If $R \iso Q(n)$, for some $n \in \ZZ_{\geq 0}$, we say that $R$ is of type $Q$. 
+\end{defi}
