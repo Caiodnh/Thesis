@@ -6,42 +6,17 @@ We start with the definition of the superdual for $G$-graded $\D$-supermodules o
 \begin{defi}\label{def:superdual-supermodule}
     Let $\U$ be a graded right $\D$-supermodule of finite rank. 
     The \emph{superdual of $\U$} is defined to be $\U\Star \coloneqq \Hom_\D (\U,\D)$, with its usual $G^\#$-grading (see \cref{prop:Hom_D-is-graded}). 
-    We give $\U\Star$ the structure of a \emph{left} graded $\D$-module: if $d \in \D$ and $f \in \U \Star$, then we define $(df)(u) = d\, f(u)$ for all $u\in \mc U$. 
+    We give $\U\Star$ the structure of a graded \emph{left} $\D$-module: if $d \in \D$ and $f \in \U \Star$, then we define $(df)(u) = d\, f(u)$ for all $u\in \mc U$. 
 \end{defi}
-
-While the prefix ``super'' is unimportant in \cref{def:superdual-supermodule}, it does make a difference in the definition of the superdual of a $\D$-linear map:
-
-\begin{defi}\label{defi:superdual-map}
-    Let $\U$ and $\V$ be graded right $\D$-modules of finite rank. 
-    Given a homogeneous $\D$-linear
-    $L:\U \rightarrow \V$, we define the \emph{superdual of $L$} to be the $\FF$-linear map $L\Star\from \V\Star \rightarrow \U\Star$ defined by
-    \[
-        L\Star (f) = (-1)^{|L||f|} f \circ L,
-    \] 
-    for every homogeneous $f\in \V\Star$. 
-    It is easy to see that $L\Star$ is (left) $\D$-linear. 
-    We extend the definition of superdual to every map in $\Hom_\D (\U, \V)$ by linearity.
-\end{defi}
-
-% Note that, since $\U\Star$ is a left $\D$-module, we have that $\U^{\star\star} \coloneqq \Hom_{\D} (\U^\Star, \D)$ is again a right $\D$-module. 
-% As we have with finite dimensional vector spaces, we can identify $\U^{\star\star}$ with $\U$. 
-
-% \begin{lemma}\label{lemma:double-dual}
-%     The $\D$-linear map $\epsilon\from \U \to \U^{\star\star}$ determined by $\epsilon(u)(f) = \sign{u}{f} f(u)$
-% \end{lemma}
-
-% \begin{defi}
-%     Let $\U$ be a graded right $\D$-module of finite rank. 
-%     The \emph{double dual} of $\U$ is the graded right $\D$-module $\U^{\star\star} \coloneqq \Hom_{\D\sop} (\U^\Star, \D\sop)$. 
-% \end{defi}
-
 
 We have used right supermodules over a graded-division superalgebra to classify graded-simple superalgebras (see \cref{ssec:D-modules,ssec:supermodules-over-D}). 
-Hence, it is convenient to see the superdual of a right supermodule again as right supermodule over a suitable graded-division superalgebra:
+Hence, it is convenient to see the superdual of a right supermodule again as a right supermodule over a suitable graded-division superalgebra.
 
 \begin{defi}\label{def:superopposite}
     Let $R$ be a $G$-graded superalgebra. 
-    We define the \emph{superopposite $G$-graded superalgebra $R\sop$} to be $R$ as graded superspace but with a new product given by $r * s \coloneqq \sign{r}{s} sr$, for every homogeneous elements $r,s \in R$.
+    We define the \emph{superopposite $G$-graded superalgebra $R\sop$} to be $R$ as a graded superspace, but with a different product. 
+    When an element $r\in R$ is regarded as an element of $R\sop$, we will denote it by $\bar r$. 
+    The product on $R\sop$ is defined by $\bar r \, \bar {s} = \sign{r}{s} \, \overline{sr}$ for all $r, s \in R\even \cup R\odd$. 
 \end{defi}
 
 Note that $R\sop$ being a $G$-graded superalgebra depends on the assumption that $G$ is abelian. 
@@ -51,28 +26,54 @@ Note that $R\sop$ being a $G$-graded superalgebra depends on the assumption that
 \end{remark}
 
 It is easy to see that $\D\sop$ is also a graded-division superalgebra. 
-For every graded right $\U$ as in \cref{def:superdual-supermodule}, the left $\D$-module $\U\Star$ can be considered as a right $\D\sop$-module by means of the action defined by $f\cdot d := (-1)^{|d||f|} df$, for every homogeneous elements $d\in \D$ and $f\in \U\Star$. 
-Also, for every $L\from \U \to \V$ as in \cref{defi:superdual-map}, $L\Star$ is a (right) $\D\sop$-linear map. 
+If $\V$ is a graded left $\D$-supermodule, then we can regard $\V$ as a graded right $\D\sop$-supermodule by means of the action $v \bar d \coloneqq (-1)^{|d||v|} dv$, for all $d\in \D\even \cup \D\odd$ and $v\in \V\even \cup \V\odd$. 
+In particular, if $\U$ is as in \cref{def:superdual-supermodule}, then the left $\D$-supermodule $\U\Star$ can be regarded as a graded right $\D\sop$-supermodule. 
 
-\begin{prop}\label{prop:dual-super-anti-iso}
-    Let $\U$ be a nonzero graded right $\D$-supermodule of finite rank. 
-    The map $\End_\D (\U) \rightarrow \End_{\D\sop} (\U\Star)$ defined by $L \mapsto L\Star$ is a degree-preserving super-anti-isomorphism.
-\end{prop}
+\begin{defi}\label{defi:superdual-map}
+    Let $\U$ and $\V$ be graded right $\D$-modules of finite rank. 
+    Given a homogeneous $\D$-linear
+    $L:\U \rightarrow \V$, we define the \emph{superdual of $L$} to be the $\FF$-linear map $L\Star\from \V\Star \rightarrow \U\Star$ defined by
+    \[
+        L\Star (f) = (-1)^{|L||f|} f \circ L,
+    \] 
+    for all $f\in (\V\Star)\even \cup (\V\Star)\odd$. 
+    It is easy to see that $L\Star$ is $\D\sop$-linear. 
+    We extend the definition of superdual to every map in $\Hom_\D (\U, \V)$ by linearity.
+\end{defi}
 
-\begin{proof}
-    Clearly the map $L \mapsto L\Star$ is linear and degree preserving (again, using the assumption that $G$ is abelian). 
-    It is easy to verify that $(L \circ M)\Star = \sign{L}{M} M\Star \circ L\Star$. 
-    Finally, the inverse of the map $L \mapsto L\Star$ is $M \mapsto \epsilon \circ M\Star \circ \epsilon\inv$ where $\epsilon\from \U \to \U^{\star\star}$ is given by $\epsilon(u)(f) = \sign{u}{f} f(u)$.
-\end{proof}
-
-\begin{defi}
-    Let $\B = \{u_1, \ldots, u_k\}$ is a graded basis, we can consider its \emph{superdual basis} $\mc B\Star = \{u_1\Star, \ldots, u_k\Star\}$ in $\U\Star$, where $u_i\Star : \U \rightarrow \D$ is defined by $u_i\Star (u_j) = (-1)^{|u_i||u_j|} \delta_{ij}$. 
-    Clearly, $\deg u_i\Star = (\deg u_i)\inv$ and $\mc B\Star$ is, indeed, a $\D\sop$-basis for $\U\Star$.
+\begin{defi}\label{defi:two-dual-bases}
+    If $\B = \{u_1, \ldots, u_k\}$ is a graded basis, we can consider its two \emph{superdual bases} ${}\Star \mc B = \{{}\Star u_1, \ldots, {}\Star u_k\}$ and $\mc B\Star = \{u_1\Star, \ldots, u_k\Star\}$ in $\U\Star$, where ${}\Star u_i \from \U \rightarrow \D$ is defined by ${}\Star u_i(u_j) = \delta_{ij}$ and $u_i\Star \from \U \rightarrow \D$ is defined by $u_i\Star (u_j) = (-1)^{|u_i||u_j|} \delta_{ij}$. 
+    Clearly, $\deg {}\Star u_i = \deg  u_i\Star = (\deg u_i)\inv$. 
 \end{defi}
 
 \begin{remark}
 	In the case $\D=\FF$, if we denote by $[L]$ the matrix of $L$ with respect to the graded bases $\mc B$ of $\U$ and $\mc C$ of $\V$, then the supertranspose $[L]\sT$ is the matrix corresponding to $L\Star$ with respect to the superdual bases $\mc C\Star$ and $\mc B\Star$.
 \end{remark}
+
+Since $\U\Star$ is a graded right $\D\sop$-supermodule of finite rank, we can define $\U^{\star\star} \coloneqq \Hom_{\D\sop} (\U\Star, \D\sop)$, which is a graded left $\D\sop$-supermodule and, hence, a graded right $\D$-supermodule. 
+As with finite dimensional vector spaces, there is a canonical isomorphism $\U \to \U^{\star\star}$: 
+
+\begin{lemma}\label{lemma:double-dual}
+    The $\FF$-linear map $\epsilon_\U\from \U \to \U^{\star\star}$ defined by $\epsilon_\U(u)(f) = \sign{u}{f}\, \overline{f(u)}$, for all $u \in \U\even \cup \U\odd$ and $f \in (\U\Star)\even \cup (\U\Star)\odd$, is an isomorphism of graded right $\D$-supermodules. 
+\end{lemma}
+
+\begin{proof}
+    Check $\D$-linearity; note that $\epsilon(u_i) = {}\Star (u_i \Star) = ({}\Star u_i) \Star$ for iso.
+\end{proof}
+
+We note in passing that the sign in the definition of $\epsilon_\U$ is essential: without it, $\epsilon_\U$ would not be $\D$-linear in the case of odd $\D$. 
+
+\begin{defi}\label{def:other-Star}
+    Let $\U$ and $\V$ be graded right $\D$-supermodules of finite rank.
+    For every $\D$-linear map $L\from \V\Star \to \U\Star$, we define ${}\Star L\from \U \to \V$ to be the map $\epsilon_\V\inv \circ L\Star \circ \epsilon_\U$, where $\epsilon_\U$ and $\epsilon_\V$ are as in \cref{lemma:double-dual}.
+\end{defi}
+
+The following result is a straightforward computation:
+
+\begin{prop}\label{prop:dual-super-anti-iso}
+    Let $\U$ be a nonzero graded right $\D$-supermodule of finite rank. 
+    The map $\End_\D (\U) \rightarrow \End_{\D\sop} (\U\Star)$ defined by $L \mapsto L\Star$ is a degree-preserving super-anti-isomorphism and its inverse is given by $L \mapsto {}\Star L$. \qed
+\end{prop}
 
 Since $G$ is abelian, $G^\#/T$ is a group and, hence, the map $G^\#/T \to G^\#/T$ given by $x \mapsto x\inv$ is well-defined. 
 From the construction of the superdual basis, it is easy to see that $\dim_\D \U_x = \dim_{\D\sop} \U\Star_{x\inv}$, for all $x \in G^\#/T$. 

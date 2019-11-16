@@ -1,3 +1,227 @@
+\section{Gradings on superinvolution-simple superalgebras of type \texorpdfstring{$M$}{M}}
+
+\begin{lemma}\label{lemma:sinv-type-M}
+    Let $(R, \vphi)$ be a graded superalgebra with superinvolution. 
+    If $R$ is simple as superalgebra and $\Char \FF\neq 2$, then $R$ is of type $M$.
+\end{lemma}
+
+\begin{proof}
+    Follows from \cref{prop:R-simple-iff-D-simple,cor:sinv-implies-type-M}. 
+\end{proof}
+
+Nice, let us repeat the same proof for general $G$ to get what we have to get
+
+\begin{itemize}
+    \item still, $T$ is even.
+    \item also, elementary $2$-group
+    \item What are the possible $\eta$? given one $\vphi_0$, any other is composition with a automorphism
+    \item hence, by lemma, we get $\chi \eta$, since each automorphism correspond to $\chi$
+    \item By nondegeneracy, one class at most!
+    \item but is there one?
+    \item yes, we can refer to paper and standard realization, and get the transpose
+    \item in other words, $\eta(ab) = \beta(a,b)$
+\end{itemize}
+
+Fine, so only one class of $\eta$, fix $\eta$ as transpose and let's go. 
+Then make $\delta = 1$. 
+
+What is the $I^+$? 
+
+\begin{itemize}
+    \item Once we fixed $\delta$, we cannot act by $g$ odd... $\mc G$ is precisely $G$.
+    \item again, conditions of admissibility...
+    \item Ugly, isn't it?
+    \item 
+\end{itemize}
+
+Calm down. 
+From $\End_\D(\U)$ and $B$, how we find the underlying superalgebra?
+
+\begin{itemize}
+    \item Take $\D$ standard realization with transposition
+    \item From $\U$ to $U$... Take $U = \U \tensor \FF B$?
+    \item Nope
+    \item Take the basis with the matrices as in propositions 4.40 and 3.42
+    \item Take $B_x$ as defined there.
+    \item from this many $\FF$-forms, we get a big $\FF$-form
+    \item 
+\end{itemize}
+
+Other approach:
+
+\begin{itemize}
+    \item Ok, from kappas we get $m$ and $n$, as in corollary in chap 2.
+    \item We need only to see what is the parity of $g_0$. 
+    It must be the same! 
+    But how to argue that?
+    \item Well, we need a standard realization any way...
+    \item The problem here is that we can't work only on the superalgebra level as before, we need to go to the superspace level.
+    \item ok, back to define $U_x = V_x \tensor \FF B$
+\end{itemize}
+
+\section{Where to put this?}
+
+For the remainder of the section, we will consider, as before, $R \coloneqq \End_\D(\U)$, where $\D$ is a graded division superalgebra and $\U$ is a nonzero graded right $\D$-module of finite rank.
+Also, let $\vphi$ be a super-anti-automorphism on $R$ and let $(\vphi_0, B)$ be pair determining $\vphi$ as in Theorem \ref{thm:vphi-iff-vphi0-and-B} and following Convention \ref{conv:pick-even-form}.
+
+We will now show that we can identify $(Z(\D), \vphi_0)$ with $(Z(R), \vphi)$.
+For every $c\in Z(\D)$, consider $r_c\from \U \to \U$ given by $r_c(u) = uc$.
+Clearly, $r_c$ is $\D$-linear, so $r_c \in R$.
+Actually, we have $r_c\in Z(R)$.
+Indeed, for all $r\in R = \End_\D(\U)$ and all $u\in \U$, we have $r (r_c(u)) = r(uc) = r(u) c = r_c(r(u))$.
+
+\begin{prop}%\label{prop:R-and-D-have-the-same-center}
+	The map $Z(\D) \to Z(R)$ given by $c \mapsto r_c$ is an isomorphism of $G$-graded superalgebras.
+	Moreover, $\vphi (r_c) = r_{\vphi_0(c)}$.
+\end{prop}
+
+\begin{proof}
+	Given $r\in Z(R)$, we can define $c_r\in \End_R (\U) =\D$ by $uc_r = r(u)$ for all $u\in \U$.
+	Computations analogous to the ones above show that $c\in Z(\D)$, and it is clear that the map $r\mapsto c_r$ is the inverse of the map $c \mapsto r_c$.
+	The definition of grading on $R = \End_\D (\U)$ implies that these maps are isomorphisms of $G$-graded superalgebras.
+
+	For the ``moreover'' part, fix $c\in Z(\D)\even \cup Z(\D)\odd$ and let $u, v \in \U\even \cup \U\odd$.
+	On the one hand,
+	\begin{align*}
+		B(uc,v) = B(r_c u), v) = (-1)^{|r_c||u|} B(u, \vphi(r_c) v) = (-1)^{|c||u|} B(u, \vphi(r_c) v).
+	\end{align*}
+	On the other hand,
+	\begin{align*}
+		B(uc, v) = (-1)^{(|B| + |u|) |c|} \vphi_0(c) B(u, v) & = (-1)^{(|B| + |u|) |c|} B(u, v) \vphi_0(c)     \\
+		                                                     & = (-1)^{(|B| + |u|) |c|} B(u, v \vphi_0(c) )    \\
+		                                                     & = (-1)^{(|B| + |u|) |c|} B(u, r_{\vphi_0(c)}v).
+	\end{align*}
+	%
+	Since we are following Convention \ref{conv:pick-even-form}, either $\D$ is even, and hence $|c| = \bar 0$, or
+	$|B| = \bar 0$.
+	In any case, $|B||c| = \bar 0$, so we have that \[(-1)^{|c||u|} B(u, \vphi(r_c) v) = (-1)^{|c||u|} B(u, r_{\vphi_0(c)}v),\] and, hence, $B(u, (\vphi(r_c) - \vphi_0(c)) v) = 0$ for all $u, v \in \U$.
+	Since $B$ is nondegenerate, the results follows.
+\end{proof}
+
+\begin{prop}\label{prop:vphi-R-simple-D-simple}
+	The superalgebra $R$ is $\vphi$-simple if, and only if, the superalgebra $\D$ is $\vphi_0$-simple.
+\end{prop}
+
+\begin{proof}
+	Pick a homogeneous $\D$-basis for $\U$ following Convention \ref{conv:pick-even-basis} and use it to identify $R$ with $M_k(\D) = M_k(\FF) \tensor \D$.
+	By \cref{conv:pick-even-form}, we may assume that $B$ is even and then,
+	by Proposition \ref{prop:matrix-vphi}, for every $X \in M_k(\D)$, we have
+	$\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi$, where $\Phi \in M_k(\D)$ is the matrix representing $B$. 
+
+	It is well known that the ideals of $M_k(\D)$ are precisely the sets of the form $M_k(I)$ for $I$ an ideal of $\D$.
+	We will prove an analog of this, first, for superideals and, then, for $\vphi$-invariant superideals.
+
+	If $I$ is a superideal, $M_k(I) = M_k(\FF) \tensor I$ is also a superideal since it is spanned by a set of $\ZZ_2$-homogeneous elements, namely, the elements of the form $E_{ij}\tensor d$ where $1 \leq i,j \leq k$ and $d \in I\even \cup I\odd$.
+	Conversely, if $J = M_k(I)$ is a superideal, then we can write $I = \{ d\in  \D \mid E_{11}\tensor d \in J\}$.
+	For every $d\in I$, write $d = d_{\bar 0} + d_{\bar 1}$, where $d_\alpha \in \D^\alpha$, $\alpha \in \ZZ_2$.
+	Since the $\ZZ_2$-homogeneous components of $E_{11}\tensor d$ are $E_{11}\tensor d_{\bar 0}$ and $E_{11}\tensor d_{\bar 1}$ and they belong to $J$, we have $d_{\bar 0}, d_{\bar 1} \in I$.
+
+	Now we are going to show that $M_k(I)$ is $\vphi$-invariant if, and only if, $I$ is $\vphi_0$-invariant.
+	Suppose $I$ is $\vphi_0$-invariant.
+	Then if $X \in M_k(I)$, it is clear that $\vphi_0 (X\stransp)$ is also in $M_k(I)$.
+	But then $\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi \in M_k(I)$ since $M_k(I)$ is an ideal.
+	Conversely, suppose $M_k(I)$ is $\vphi$-invariant.
+	Let $d \in I$ and consider $X = E_{11} \tensor d \in M_k(I)$.
+	Then $E_{11} \tensor \vphi_0(d) = \vphi_0(X\stransp) = \Phi\, \vphi(X)\, \Phi\inv \in M_k(I)$, which shows that $\vphi_0(d) \in I$.
+\end{proof}
+
+\begin{cor}\label{cor:D-has-the-same-type}
+	Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$.
+	Assume that $\vphi$ is a superinvolution and that $R$ is $\vphi$-simple.
+	Then $(R, \vphi)$ is of the same type as $(\D, \vphi_0)$. \qed
+\end{cor}
+
+% \begin{cor}\label{cor:D-has-the-same-type}
+%     Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$. 
+%     Assume that $\vphi$ is a superinvolution and that $R$ is $\vphi$-simple.
+%     %
+%      \begin{enumerate}[(i)]
+%         \item If $R\iso M(m,n)$, then there are $m', n'\geq 0$ such that $\D \iso M(m', n')$;
+%         \item If $R\iso M(m,n)\times M(m,n)\sop$ with exchange superinvolution, then there are $m', n'\geq 0$ such that $(\D, \vphi_0)$ is isomorphic to $M(m', n')\times M(m', n')\sop$ with exchange superinvolution;
+%         \item If $R\iso Q(n)\times Q(n)\sop$ with exchange superinvolution, then there is $n' \geq 0$ such that $(\D, \vphi_0)$ is isomorphic to $Q(n')\times Q(n')\sop$ with exchange superinvolution.\qed
+%     \end{enumerate}
+% \end{cor}
+
+We will obtain more precise information about $\D$ in the next section.
+
+% As a consequence of this last Corollary, we can only put a $G$-grading on $M(m,n)\times $Em particular, em MxM precisamos de um elemento par de ordem 2 e em QxQ precisamos de um elemento impar de ordem 4 (comparar com resultado no paper sobre Q).
+
+% \begin{remark}\label{rmk:we-only-need-B'-nonzero}
+%     Note that in the proof of the ``moreover'' part of Theorem \ref{thm:vphi-iff-vphi0-and-B}, we do not need to assume $B'$ is nondegenerate, we only use that it is nonzero.
+% \end{remark}
+
+% \section{Graded division superalgebras with super-anti-automorphism}
+% % -----------------------------------------
+
+% We are now going is to investigate the finite dimensional graded division superalgebras that admit a superinvolution. 
+% Throughout this section, we will assume that $\FF$ is an algebraically closed field with $\Char \FF \neq 2$, and we will fix a primitive fourth root of unity $i \in \FF$.
+% %In this case, because of Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, we are primarily interested in the case the graded division superalgebra admits a superinvolution.
+% Our final goal is to classify the division gradings on finite dimensional superinvolution-simple associative superalgebras.
+
+% Recall that a graded division superalgebra is the same as a graded division algebra if we consider the $G^\#$-grading. 
+% In particular, the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a pair $(T, \beta)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group and $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter {\tt (see ??)}. 
+% \marginpar{\tt (for the ``see'' part: [EK] $D_4$ and [BK] gradings on classical \\lie algebras)}
+% Instead of writing subscripts for the $G$-grading and superscripts for the canonical $\ZZ_2$-grading, it will be convenient to write $\D = \bigoplus_{t\in T} \D_t$ and recover the parity via the map $p\from T \to \ZZ_2$ which is the restriction of the projection $G^\# = G\times \ZZ_2 \to \ZZ_2$.
+
+% Since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
+
+% \begin{prop}\label{prop:superpolarization}
+%     Let $\vphi_0\from \D \to \D$ be the invertible degree-preserving map determined by $\eta\from T \to \FF^\times$  such that $\vphi_0(X_t) = \eta(t) X_t$ for all $t\in T$ and $X_t\in \D_t$. 
+%     Then $\vphi_0$ is a super-anti-automorphism if, and only if,
+%     %
+%     \begin{equation}\label{eq:superpolarization}
+%         \forall a,b\in T, \quad (-1)^{p(a) p(b)} \beta(a,b) =  \eta(ab) \eta(a)\inv \eta(b)\inv.
+%     \end{equation}
+%     %
+%     Moreover, $\D$ admits a super-anti-automorphism if, and only if, $\beta$ only takes values $\pm 1$.
+% \end{prop}
+
+% \begin{proof}
+%     For all $a,b \in T$, let $X_a \in \D_a$ and $X_b\in \D_b$. Then:
+%     %
+%     \begin{alignat*}{2}
+%         &&\vphi_0(X_a X_b) &= (-1)^{p(a) p(b)} \vphi_0(X_b) \vphi_0(X_a)\\
+%         \iff&&\,\, \eta(ab)X_a X_b &= (-1)^{p(a) p(b)} \eta(a) \eta(b) X_b X_a\\
+%         \iff&&\, \eta(ab)X_a X_b &= (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a) X_a X_b\\
+%         \iff&& \eta(ab) &= (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a)
+%         \\
+%         \iff&& (-1)^{p(a) p(b)} \beta(b, a) &=  \eta(ab) \eta(a)\inv \eta(b)\inv.
+%     \end{alignat*}
+%     The right-hand side of this last equation does not change if $a$ and $b$ are switched, hence $\beta(b,a) = \beta(a,b)$. 
+
+%     Since $\beta$ is alternating, $\beta(b, a) = \beta (a, b)\inv$, therefore $\beta(a,b)^2 = 1$, which proves one direction of the ``moreover'' part.
+%     %from where we conclude that $\beta(a,b) = \pm 1$. 
+%     The converse follows from the fact that the isomorphism class of $\D\sop$ is determined by $(T, \beta\inv)$, so if $\beta$ takes only values in $\{ \pm 1 \}$, there must be an isomorphism from $\D$ to $\D\sop$, which can be seen as a super-anti-isomorphism on $\D$.
+% \end{proof}
+
+% With this we can translate our task to the level of abelian groups. 
+% Instead of considering the graded superalgebra with super-anti-automorphism $(\D, \vphi_0)$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}. 
+% Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$.
+
+
+\section{Application: Superinvolutions on Simple Superalgebras}\label{ssec:simple-sa-but-with-vphi}
+
+\begin{itemize}
+    \item We will classify first the graded-simple superalgebras with superinvolution (case $G$ trivial), and then the gradings on them.
+    \item Note that, from lemma bla, for general $G$, we have that simple as superalgebra implies type $M$ and even gradings.
+    \item In particular, for trivial $G$, the superalgebra must be of the form $\End_\FF (U)$ for a superspace $U$.
+    \item Lemm
+    \item Prop: G trivial, $G^\# = \ZZ_2$.
+    \item even grading, $T = e$ so only one $\eta$.
+    \item The action is only a $G^\# = \ZZ_2$ action
+    \item fix $\delta = 1$, as above, and then we have only a $\mc G = e$ action.
+    \item Good, no orbits, only points
+    \item Conditions of admissibility:
+    \item i and ii are trivial now
+    \item define $k(0) = m$ and $k(1) = n$
+    \item iii becomes k(i) = k(g0i)
+    \item in the case $g_0 = \bar 1$, so $m = n$. In the other case, trivial
+    \item condition (iv): for any $i \in \ZZ_2$, if $g_0 + 2i = \bar 0$, \ie, $g_0 = 0$ and $\mu_i = (-1)^{i} = -1$, \ie, $i = \bar 1$, then $k(i) = m$ is even.
+    \item the construction we have there implies we have $\End_\FF (\FF^m \oplus \FF^n)$ with the matrices of $\vphi$ given by what they have to be.
+    \item this is what we have in the introduction.
+\end{itemize}
+
+
 
 \section{Division gradings on superinvolution-simple\texorpdfstring{\\}{} superalgebras}\label{sec:div-grads-on-sinv-simple}
 % -----------------------------------------

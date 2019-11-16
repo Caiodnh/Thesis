@@ -1,25 +1,23 @@
-\section{Super-anti-automorphisms and \texorpdfstring{ses\-qui\-li\-near\\}{sequilinear} forms}\label{sec:super-anti-auto-and-sesquilinear}
+\section[Super-anti-automorphisms and sesquilinear forms]{Super-anti-automorphisms and \texorpdfstring{\\}{} sesquilinear forms}\label{sec:super-anti-auto-and-sesquilinear}
 
-Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero graded right $\D$-supermodule of finite rank. 
+Let $\D$ be a graded-division superalgebra and let $\U$ be a nonzero graded right $\D$-supermodule of finite rank. 
 Consider the graded superalgebra $R := \End_\D(\mc U)$.
 Then $\mc U$ is an $(R, \D)$-superbimodule.
 By \cref{lemma:converse-density-thm}, 
 % $\mc U$ is a simple graded left supermodule over $R$ and 
 we have a natural identification between $\D$ and $\End_R(\mc U)$.
 
-Recall that for a superalgebra $S$, the superalgebra $S\sop$ is defined by $S\sop = S$ as superspaces, but with a different product. For every element $s\in S$, we denote it by $\bar s$ when regarded as an element of $S\sop$, and the product on $S\sop$ is defined by $\bar a \overline {B} = \sign{a}{b} \overline{ba}$ for all $a, b \in S$.
 % \begin{notation}
 %     Let  be . As sets, we have that $S = S\sop$, but given $s\in S$, we will it by $ \bar s$ when regarded as an element of $S\sop$.
 % \end{notation}
 
-As we saw on {\tt Section ??}, $\mc U\Star = \Hom_\D (\mc U, \D)$ is a graded left $\D$-supermodule through $(df)(u) = df(u)$, for all $d\in \D$, $f\in \U\Star$ and $u\in U$.
-We can, then, regard $\U\Star$ as a graded right $\D\sop$-supermodule, through $f \bar d = \sign{f}{d} df$.
+As we saw on \cref{ssec:superdual}, $\mc U\Star = \Hom_\D (\mc U, \D)$ is a graded right $\D\sop$-supermodule, through $f \bar d = \sign{f}{d} df$.
 Also, we can make $\mc U\Star$ a graded right $R$-supermodule by defining $(f r) (u) := f(r u)$ for all $f\in \mc U\Star$, $r\in R$ and $u\in \mc U$ (i.e., $f r = f \circ r$, since $R = \End_\D(\mc U)$).
 Hence, we can consider $\mc U\Star$ as a graded left $R\sop$-supermodule via $\bar r f = (-1)^{|r||f|} f r$, % (i.e., $r\cdot f = r\Star (f)$)
 and $\mc U\Star$ becomes a $(R\sop, \D\sop)$-superbimodule.
 
 \begin{lemma}\label{lemma:U-star-R-sop}
-	The left $R\sop$-supermodule $\mc U\Star$ is graded simple, and the action of $\D\sop$ gives an isomorphism $\D\sop \to \End_{R\sop}(\mc U\Star)$.
+	The left $R\sop$-supermodule $\mc U\Star$ is graded-simple, and the action of $\D\sop$ gives an isomorphism $\D\sop \to \End_{R\sop}(\mc U\Star)$.
 \end{lemma}
 
 \begin{proof}
@@ -43,7 +41,7 @@ In particular, the superalgebra $\End_R(\U\Star)$ should be understood as the se
 Also, since the action is on the left, we will follow the convention of writing $R$-linear maps on the right.
 
 From Lemma \ref{lemma:U-star-R-sop}, it follows that $\U\Star$ is a simple graded left $R$-supermodule and that we can identify $\D\sop$ with $\End_R (\U\Star) = \End_{R\sop} (\U\Star)$.
-But from Proposition {\tt ??}, $R$ has only one graded simple supermodule up to isomorphism and shift, hence there is an invertible $R$-linear map $\vphi_1: \mc U \to \mc U\Star$ which is homogeneous of some degree $(g_0, \alpha)\in G^\#$.
+But from \cite[Lemma 2.7]{livromicha}, $R$ has only one graded-simple supermodule up to isomorphism and shift, hence there is an invertible $R$-linear map $\vphi_1: \mc U \to \mc U\Star$ which is homogeneous of some degree $(g_0, \alpha)\in G^\#$.
 Fix one such $\vphi_1$.
 % This map is not unique, but we are going to fix one for now. 
 
@@ -142,17 +140,18 @@ Then, for all $u\in \U$ and $d\in \D$, we have
 % The map $\vphi_0$ depends on the choice o f $\vphi_1$. Following Lemma \ref{lemma:all-possible-vphi1}, if we had started with $\vphi_1' \coloneqq d \vphi_1$ instead, we would have gotten the map $\vphi_0' \coloneqq \vphi_0 \circ \operatorname{sInt}_d$, where $\operatorname{sInt}_d: \D \to \D$ is defined by $\operatorname{sInt}_d(c) = \sign{d}{c} d\inv c d$.
 
 \begin{defi}\label{def:change-map-to-the-left}
-	Let $V$ and $V'$ be left $R$-supermodules and let $\psi: V \to V'$ be an $R$-linear map. We define $\psi^\circ: V \to  V'$ to be the following map, written on the left:
+	Let $\V$ and $\V'$ be left $R$-supermodules and let $\psi: \V \to \V'$ be a $\ZZ_2$-homogeneous $R$-linear map. 
+	We define $\psi^\circ: \V \to  \V'$ to be the following map, written on the left:
 	\[
-		\psi^\circ(v) = \sign{\psi}{v} v\psi.
+		\forall v\in \V\even \cup \V\odd, \quad \psi^\circ(v) = \sign{\psi}{v} v\psi.
 	\]
 \end{defi}
 
 For example, using the identification $\D\sop = \End_R (\U\Star)$ as before, the left $\D$-action on $\U\Star$ is given by $df = \bar d^\circ (f)$, for all $d\in \D$ and $f\in \U\Star$.
 
 \begin{lemma}\label{lemma:change-of-side-properties}
-	Under the conditions of Definition \ref{def:change-map-to-the-left}, we have that, for all $r\in R$ and $v\in V$,  $\psi^\circ (rv) = \sign{\psi}{v} r \psi^\circ (v)$.
-	Further, given another $R$-linear map $\tau: V' \to V''$, we have $(\psi\tau)^\circ = \sign{\psi}{\tau} \tau^\circ\psi^\circ$. \qed
+	Under the conditions of Definition \ref{def:change-map-to-the-left}, we have that, for all $r\in R\even \cup R\odd$ and $v\in \V$,  $\psi^\circ (rv) = \sign{\psi}{r} r \psi^\circ (v)$.
+	Further, given another $\ZZ_2$-homogeneous $R$-linear map $\tau: \V' \to \V''$, we have $(\psi\tau)^\circ = \sign{\psi}{\tau} \tau^\circ\psi^\circ$. \qed
 \end{lemma}
 
 % \begin{remark}
