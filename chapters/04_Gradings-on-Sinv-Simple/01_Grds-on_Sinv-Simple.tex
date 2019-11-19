@@ -1,4 +1,4 @@
-\section{Graded-superinvolution-simple superalgebras}
+\section{Graded-superinvolution-simple superalgebras}\label{grd-sinv-simple}
 
 In \cite{racine}, finite dimensional superinvolution-simple superalgebras are classified over any field $\FF$ with $\Char \FF \neq 2$. 
 In this section we adapt some of the results there to classify the finite dimensional graded-superinvolution-simple superalgebras in the case $\FF$ is algebraically closed. 
@@ -109,8 +109,8 @@ Then $S\times S\sop$ with the exchange superinvolution is isomorphic to $S\times
 
 \begin{defi}\label{defi:superdual-exchange}
     Let $\D$ be a graded-division superalgebra and $\U$ be a graded right $\D$-supermodule of finite rank. 
-    Recall that $\U\Star \coloneqq \Hom_\D(\U, \D)$ (\cref{def:superdual-supermodule}) is a graded right $\D\sop$-module, and that the map $\psi\from \End_\D (\U) \to \End_{\D\sop} (\U\Star)$ given by $\psi(L) = L\Star$ (\cref{defi:superdual-map}) is a super-anti-isomorphism (\cref{prop:dual-super-anti-iso}). 
-    We define $E^{\mathrm{ex}} (\D, \U)$ to be the graded superalgebra $\End_\D (\U) \times \End_{\D\sop} (\U\Star)$ endowed with the superivolution $(L_1, L_2) \mapsto (\psi\inv(L_2), \psi(L_1))$.
+    Recall that $\U\Star \coloneqq \Hom_\D(\U, \D)$ (\cref{def:superdual-supermodule}) is a graded right $\D\sop$-module, and that the map $\End_\D (\U) \to \End_{\D\sop} (\U\Star)$ given by $L \mapsto L\Star$ (\cref{defi:superdual-map}) is a super-anti-isomorphism whose inverse is $L \mapsto {}\Star L$ (\cref{prop:dual-super-anti-iso}). 
+    We define $\Eex (\D, \U)$ to be the graded superalgebra $\End_\D (\U) \times \End_{\D\sop} (\U\Star)$ endowed with the superivolution $(L_1, L_2) \mapsto ({}\Star L_2, L_1\Star)$.
 \end{defi}
 
 % Let $\D$ be a graded-division superalgebra, let $\U$ be a graded right $\D$-supermodule of finite rank and set $S \coloneqq \End_\D (\U)$. 
@@ -122,7 +122,7 @@ Combining \cref{prop:only-SxSsop-is-simple,thm:End-over-D,thm:vphi-involution-if
 \begin{cor}\label{cor:SxSsop-with-dcc}
     Let $(R, \vphi)$ be a graded-superalgebra with superinvolution and suppose $R$ satisfies the \dcc on graded left superideals. 
     Then $(R, \vphi)$ is graded-superinvolution-simple if, and only if, there exists a graded-division superalgebra $\D$ and graded right $\D$-supermodule $\U$, of finite rank, such that either
-    $(R, \vphi) \iso E\times E\sop (\D, \U)$ or $(R, \vphi) \iso E(\D, \U)$, for a some nondegenerate sesquilinear form $B$ on $\U$ with $\overline{B} = \pm B$. \qed
+    $(R, \vphi) \iso \Eex (\D, \U)$ or $(R, \vphi) \iso E(\D, \U, B)$, for some nondegenerate sesquilinear form $B$ on $\U$ with $\overline{B} = \pm B$. \qed
 \end{cor}
 
 Let us now assume $\FF$ is algebraically closed and $\Char \FF \neq 2$. 
@@ -133,7 +133,7 @@ The classification of the ones that are not graded-simple is a consequence of \c
 \begin{thm}\label{thm:iso-D-even-ExEsop}
 	Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)-super}, with both $\D$ and $\D'$ even. 
 	Let $(T, \beta, \kappa_\bz, \kappa_\bo)$ and $(T', \beta', \kappa_\bz', \kappa_\bo')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
-	Then $E\times E\sop(\D, \U) \iso E\times E\sop(\D', \U')$ only if, $T=T'$ and
+	Then $\Eex(\D, \U) \iso \Eex(\D', \U')$ only if, $T=T'$ and
 	\begin{enumerate}[(i)]
 	    \item $\beta'=\beta$ and there is $g\in G$ such that either $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$, or $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 1}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 0}$;
 	    
@@ -145,7 +145,7 @@ The classification of the ones that are not graded-simple is a consequence of \c
 \begin{thm}\label{thm:iso-D-odd-ExEsop}
     Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)-super}, with both $\D$ and $\D'$ odd. 
     Let $(T, \beta, p, \kappa)$ and $(T', \beta', p', \kappa')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
-	Then $E\times E\sop(\D, \U) \iso E\times E\sop(\D', \U')$ if, and only if, $T=T'$, $p = p'$ and
+	Then $\Eex(\D, \U) \iso \Eex(\D', \U')$ if, and only if, $T=T'$, $p = p'$ and
 	\begin{enumerate}[(i)]
 	    \item $\beta'=\beta$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$;
 	    
@@ -154,11 +154,11 @@ The classification of the ones that are not graded-simple is a consequence of \c
 	\end{enumerate}
 \end{thm}
 
-\subsection{Finite dimensional superinvolution-simple superalgebras}
+\section[Finite dimensional superinvolution-simple superalgebras]{Finite dimensional superinvolution-simple superalgebras}
 
-% As a corollary, we classify the finite dimensional superinvolution-simple superalgebras over $\FF$. 
+In this section we apply the classification results of \cref{sec:classification-grd-simple-with-sinv,grd-sinv-simple} to the case $G$ is trivial to get a classification of superinvolution-simple superalgebras, which is already known. 
 
-% Note that \cref{lemma:sinv-type-M} implies, in the case $G$ is trivial, that superalgebras of type $Q$ do not admit superinvolutions (\cite{Sh98}). 
+We start with a general result about the center of a superalgebra with superinvolution: 
 
 \begin{lemma}
 	Let $(R, \vphi)$ be a superalgebra with super-anti-automorphism.
@@ -171,7 +171,10 @@ The classification of the ones that are not graded-simple is a consequence of \c
 	Since $c\vphi\inv (r) = \vphi\inv (r)c$, we can apply $\vphi$ on both sides and get $\sign{c}{r} r \vphi(c) = \sign{c}{r} \vphi(c) r$ and, hence, $r \vphi(c) = \vphi(c) r$.
 \end{proof}
 
-\begin{cor}\label{cor:Q-no-spuerinv-center}
+The following result was achieved by similar methods in \cite[Theorem 8.1]{Sh98}, for example. 
+See also https://doi.org/10.1016/j.jalgebra.2007.10.044, Theorem 28.
+
+\begin{cor}\label{cor:Q-no-sinv-center}
 	If $\Char \FF \neq 2$, the associative superalgebra $Q(n)$ does not admit a superinvolution.
 \end{cor}
 
@@ -184,7 +187,11 @@ The classification of the ones that are not graded-simple is a consequence of \c
 	But then $\vphi^2 (u) = \lambda^2 u = -u \neq u$, hence $\vphi^2 \neq \id$.
 \end{proof}
 
-It follows that we can divide the superinvolution simple superalgebras in 3 types.
+\begin{remark}
+    \Cref{cor:Q-no-sinv-center} could also be deduced from \cref{lemma:sinv-type-M} assuming $\FF$ is algebraically closed. 
+\end{remark}
+
+It follows that, in the case $\FF$ is algebraically closed, we can divide the superinvolution-simple superalgebras in 3 types:
 
 \begin{defi}
     Let $(R, \vphi)$ be a finite dimensional superinvolution-simple superalgebra. 
@@ -211,8 +218,8 @@ We can distinguish these types using the center:
 	It is easy to check that $Z(S\times S\sop) = Z(S) \times Z(S)\sop$ for any superalgebra $S$, so items \eqref{item:FZ2-exchg} and \eqref{item:FZ4-exchg} follow from $Z(M_{m+n}(\FF)) \iso \FF$ and $Z(Q(n)) \iso Q(1)$.
 \end{proof}
 
-The isomorphism classes of the double types are parametrized only by $m$ and $n$. 
-The isomorphism condition is easy from \cref{lemma:iso-SxSsop} and the fact that $M\iso M\sop$ and $Q\times Q\sop$ since they always admit a super-anti-automorphism.
+The classification of the superalgebras with superinvolution of types $M\times M\sop$ and $Q\times Q\sop$ is easier. 
+The following result is valid over any field.
 
 \begin{prop}
     Let $m,m',n,n' \geq 0$. % such that $m \geq n$ and $m' \geq n'$. 
@@ -225,29 +232,37 @@ The isomorphism condition is easy from \cref{lemma:iso-SxSsop} and the fact that
 \end{prop}
 
 \begin{proof}
-    Follows from \cref{thm:fd-simple-SA,lemma:iso-SxSsop}, and the fact that $M(m,n) \iso M(m,n)\sop$ and $Q(n) \iso Q(n)\sop$. 
-    To see this last assertion, let $\psi\from M(m,n) \to M(m,n)$ be defined by 
-    \[
-        \begin{pmatrix}
-            a & b\\
-            c & d
-        \end{pmatrix}
-        \mapsto
-        \begin{pmatrix}
-            a\transp & ic\transp\\
-            ib\transp & d\transp
-        \end{pmatrix},
-    \]
-    where $i\in \FF$ is a square root of $-1$. 
-    It is straightforward that $\psi$ is a super-anti-automorphism of $M(m,n)$ and that, if $m=n$, it restricts to a super-anti-automorphism of $Q(n)$. 
+    Let $S_1$ and $S_2$ be simple superalgebras. 
+    From \cref{lemma:iso-SxSsop}, $S_1\times S_2\sop \iso S_1\times S_2\sop$ if, and only if, $S_1 \iso S_2$ or $S_1 \iso S_2\sop$. 
+    In our case, we claim that  $S_1 \iso S_2$ or $S_1 \iso S_2\sop$ if, and only if, $S_1 \iso S_2$. 
+    
+    Indeed, if $S_1$ and $S_2$ are of type $M$, then then $S_1 \iso S_2\sop$ imply $S_1 \iso S_2$ since $S_2\sop \iso S_2$ via supertransposition. 
+    If $S_1$ and $S_2$ are of type $Q$, then $S_1 \iso S_2\sop$ imply that $S_1 \iso S_2$ by dimension count. 
+    
+    The isomorphism condition follows from \cref{thm:fd-simple-SA}.
 \end{proof}
+    % and the fact that $M(m,n) \iso M(m,n)\sop$ and $Q(n) \iso Q(n)\sop$. 
+    % To see this last assertion, let $\psi\from M(m,n) \to M(m,n)$ be defined by 
+    % \[
+    %     \begin{pmatrix}
+    %         a & b\\
+    %         c & d
+    %     \end{pmatrix}
+    %     \mapsto
+    %     \begin{pmatrix}
+    %         a\transp & ic\transp\\
+    %         ib\transp & d\transp
+    %     \end{pmatrix},
+    % \]
+    % where $i\in \FF$ is a square root of $-1$. 
+    % It is straightforward that $\psi$ is a super-anti-automorphism of $M(m,n)$ and that, if $m=n$, it restricts to a super-anti-automorphism of $Q(n)$. 
 
 It remains to classify the superinvolution-simple superalgebras of type $M$. 
-First of all, it should be noted that $M(m,n)$ does not admit a superinvolution for every values of $m$ and $n$. 
-Also, $M(m,n)$ with different superinvolutions can be non-isomorphic.
+It should be noted that $M(m,n)$ does not admit a superinvolution for every values of $m$ and $n$. 
+Also, $M(m,n)$ endowed with different superinvolutions may lead to non-isomorphic superalgebras with superinvolution. 
 % making  make $M(m,n)$ a superalgebra with superinvolution two superinvolutions on $M(m,n)$ making it non-isomorphic.
 
-\begin{prop}\label{prop:iso-M-with-vphi}
+\begin{defi}\label{defi:M(m-n-g_0)}
     Let $m,n \in \ZZ_{\geq 0}$ not both zero and let $g_0 \in \ZZ_2$. 
     If $g_0 = \bar 0$ and $n$ is even, set 
     \[
@@ -266,29 +281,36 @@ Also, $M(m,n)$ with different superinvolutions can be non-isomorphic.
                     I_n & 0
                 \end{array}\right).
     \]
-    Then $\vphi(X) \coloneqq \Phi X\stransp \Phi\inv$ defines a superinvolution on $M(m,n)$. 
-    Moreover, every su\-per\-in\-vo\-lu\-tion-sim\-ple superalgebra of type $M$ is isomorphic to a unique of those.
+    It is straightforward to see that $\vphi(X) \coloneqq \Phi X\stransp \Phi\inv$ defines a superinvolution on $M(m,n)$. 
+    We will denote the superalgebra with superinvolution $(M(m,n), \vphi)$ by $M(m,n, g_0)$. 
+\end{defi}
+
+We note that the superalgebras with superinvolution $M(m,n,g_0)$ are the ones used in the Introduction to define orthosymplectic Lie superalgebras (series $B$, $C$ and $D$) and the periplectic superalgebra (series $P$).
+
+\begin{prop}\label{prop:iso-M-with-vphi}
+    Every superalgebra with superinvolution of type $M$ is isomorphic to $M(m,n, g_0)$ for some $m,n \geq 0$ and $g_0 \in \ZZ_2$ as in \cref{defi:M(m-n-g_0)}. 
+    Moreover, $M(m,n, g_0) \iso M(m',n', g_0')$ if, and only if $m = m'$, $n = n'$ and $g_0 = g_0'$.
 \end{prop}
 
 \begin{proof}
-    Type $M$, is a special case of graded-simple, from last chapter. 
-    Recall the definition of $\mathbf{I}(\D)$ (\cref{defi:X(D)}) and let us see how it simplifies in the present case. 
-    First of all, $G^\# = \ZZ_2$ and $\D = \FF$. 
-    We have that $T$ is the trivial group and, hence, $\beta$, $p$ and $\eta$ are trivial maps. 
-    The map $\kappa\from G^\#/T \iso \ZZ_2 \to \ZZ_{\geq 0}$ is then determined by the numbers $m \coloneqq \kappa(\bar 0)$ and $n \coloneqq \kappa(\bar 1)$. 
-    The element $g_0$ can be either $\bar 0$ or $\bar 1$ and $\delta \in \pmone$. 
-    Since we have only one class of $\eta$, we can focus on the set $\mathbf{I}(\FF)_\eta^+$. 
-    The conditions in \cref{defi:X(D)} that are not automatically satisfied are \eqref{item:kappa-duality} and \eqref{item:kappa-parity}. 
-    If $g_0 = \bar 0$, then \eqref{item:kappa-duality} is tautological, and if $g_0 = \bar 1$, \eqref{item:kappa-duality} is equivalent to $m=n$. 
-    Condition \eqref{item:kappa-parity} becomes if $g_0 = \bar 0$ and $(-1)^{|g|}= -1$, \ie, $g = \bar 1$, then $n = \kappa (g)$ is even.
+    This is precisely the case o graded-simple superalgebras, of \cref{chap:grd-simple-assc}, but with trivial $G$ (and, hence, with $G^\# = \ZZ_1$). 
+    By Theorem \ref{thm:iso-(R,vphi)-with-parameters}, those graded-superalgebras are parametrized by $(T, \beta, p, \eta, \kappa, g_0, \delta)$ where $(T, \beta, p)$ are associated to a graded-division superalgebra (see \cref{ssec:param-D-vphi}), and $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(\D)$ (see \cref{defi:X(D)}). 
+    
+    Superalgebras of type $M$ are of the form $\End_\FF (U)$ for a finite dimensional superspace $U$, so we have $\D = \FF$ and, hence, $T$ is the trivial group and $\beta$, $p$ and $\eta$ are trivial maps. 
+    Since we have only one possible $\eta$, we have only one equivalence class of $\eta$ and, therefore, our parametrization reduces to elements of $\mathbf{I}(\FF)_\eta^+$ (see \cref{prop:after-fixing-delta}), \ie, we choose $\delta = 1$ and the only parameters left are $\kappa\from G^\#/T = \ZZ_2 \to \ZZ_{\geq 0}$ and $g_0 \in G^\# = \ZZ_2 = \ZZ_2$. 
+    
+    The isomorphism classes then become in bijection with orbits by $\mc G$-action (see ??) on $\mathbf{I}(\FF)_\eta^+$. 
+    In the present case, it is clear that $\mc G$ is trivial, hence the isomorphism classes are in bijection with points in $\mathbf{I}(\FF)_\eta^+$. 
+    Let us describe these points and find a representative for each isomorphism class. 
+    
+    The map $\kappa\from G^\#/T \iso \ZZ_2 \to \ZZ_{\geq 0}$ is determined by the numbers $m \coloneqq \kappa(\bar 0)$ and $n \coloneqq \kappa(\bar 1)$, so our parametrization reduces to triples $(m,n,g_0)$ satisfying some conditions that come from \cref{defi:X(D)}. 
+    The only of those conditions  that are not automatically satisfied are \eqref{item:kappa-duality} and \eqref{item:kappa-parity}. 
+    Condition \eqref{item:kappa-duality} is tautological if $g_0 = \bar 0$, and equivalent to $m=n$ if $g_0 = \bar 1$. 
+    Condition \eqref{item:kappa-parity} simplifies to if $g_0 = \bar 0$ and $g = \bar 1$, then $n = \kappa (g)$ is even. 
     In other words, conditions \eqref{item:kappa-duality} and \eqref{item:kappa-parity} become equivalent to $n$ is even if $g_0 = \bar 0$, and $m = n$ if $g_0= \bar 1$. 
-
-    The $T\times G^\#$-action becomes a $\ZZ_2$-action on $\mathbf{I}(\D)$ and a trivial action on $\mathbf{I}(\D)^+$.
+    
+    A representative for each point can be found by using the matrices in \cref{prop:self-dual-components,prop:pair-of-dual-components}. 
 \end{proof}
-
-\begin{remark}
-    Note that the superinvolutions defined in \cref{prop:iso-M-with-vphi} are the ones used to define the Lie algebras osp and p in the introduction.
-\end{remark}
 
 % \begin{prop}
 %     Let $(R, \vphi)$ be a superalgebra with superinvolution that is simple as an superalgebra. 

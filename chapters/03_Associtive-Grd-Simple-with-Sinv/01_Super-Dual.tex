@@ -58,7 +58,23 @@ As with finite dimensional vector spaces, there is a canonical isomorphism $\U \
 \end{lemma}
 
 \begin{proof}
-    Check $\D$-linearity; note that $\epsilon(u_i) = {}\Star (u_i \Star) = ({}\Star u_i) \Star$ for iso.
+    It is easy to see that $\epsilon(u)$ has the same $G^\#$-degree of $u$, for all $u \in \U$. 
+    
+    To show $\D$-linearity, let $u\in \U\even \cup \U\odd$, $d\in \D\even \cup \D\odd$. 
+    Then, 
+    \begin{align}
+        \epsilon(ud)(f) &= \sign{ud}{f}\, \overline{f(ud)} 
+        = (-1)^{(|u| + |d|)|f|}\, \overline{f(u)d} \\
+        &= (-1)^{|u||f| + |d||f|} (-1)^{(|f| + |u|) |d|} \bar d \,\, \overline{f(u)} \\
+        &= (-1)^{|u||f| + |d||u|} \bar d\,\, \overline{f(u)} 
+        = \sign{d}{u} \bar d \,\epsilon(u)(f),
+        \intertext{for all $f\in (\U\Star)\even \cup (\U\Star)\odd$, so}
+        \epsilon(ud) &= \sign{d}{u} \bar d \epsilon(u) = \epsilon(u)d
+    \end{align}
+
+    To $\epsilon$ is a isomorphism, let $\{u_1, \ldots, u_k\}$ be a graded basis of $\U$. 
+    We have that $\epsilon(u_i)(u_j\Star) = \sign{u_i}{u_j} u_j\Star(u_i) = \delta_{ij}$, \ie, $\epsilon(u_i) = {}\Star (u_i \Star) = ({}\Star u_i) \Star$. 
+    Therefore $\epsilon$ sends a graded basis to a graded basis, concluding the proof.
 \end{proof}
 
 We note in passing that the sign in the definition of $\epsilon_\U$ is essential: without it, $\epsilon_\U$ would not be $\D$-linear in the case of odd $\D$. 

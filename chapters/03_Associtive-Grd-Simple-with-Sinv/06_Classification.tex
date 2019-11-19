@@ -525,39 +525,41 @@ Thus, the $(\rad \tilde\beta) \times G^\#$-action on $\mathbf{I}(T, \beta, p, \e
 	% \intertext{and}
 	g \cdot (\kappa, g_0) & \coloneqq (g\cdot \kappa, g_0 g^{-2}),
 \end{align}
-for all $(t, g)\in \mc G$ and $(\kappa, g_0) \in \mathbf{I}(T, \beta, p, \eta)^+$.
+for all $(t, g)\in \mc G$ and $(\kappa, g_0) \in \mathbf{I}(T, \beta, p, \eta)^+$. 
 
-\begin{prop}
+\Cref{lemma:lemma-on-actions} implies the following:
+
+\begin{prop}\label{prop:after-fixing-delta}
 	Fix $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$.
-	We have that the map $\iota\from \mathbf{I}(T,\beta,p,\eta)^+ \to \mathbf{I}(T,\beta,p)$ given by $\iota(\kappa, g_0) \coloneqq (\eta,\kappa, g_0, 1)$ induces a bijection between the $\mc G$-orbits in $\mathbf{I}(T,\beta,p,\eta)^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathbf{I}(T,\beta,p)$.
+	We have that the map $\iota\from \mathbf{I}(T,\beta,p,\eta)^+ \to \mathbf{I}(T,\beta,p)$ given by $\iota(\kappa, g_0) \coloneqq (\eta,\kappa, g_0, 1)$ induces a bijection between the $\mc G$-orbits in $\mathbf{I}(T,\beta,p,\eta)^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathbf{I}(T,\beta,p)$. \qed
 \end{prop}
 
-\begin{proof}
-	If $(\kappa, g_0), (\kappa', g_0') \in \mathbf{I}(T, \beta, p, \eta)^+$ are in the same $\mc G$-orbit, let $(t, g) \in G \subseteq T\times G^\#$ such that $(t, g) \cdot (\kappa, g_0) = (\kappa', g_0')$.
-	Then $(t, g) \cdot \iota(\kappa, g_0) = (t, g) \cdot (\eta,\kappa, g_0, \delta) =  (\eta,\kappa' , g_0' , \delta) = \iota(\kappa' , g_0')$, \ie, $\iota(\kappa, g_0)$ and $\iota(\kappa', g_0')$ are in the same $T\times G^\#$-orbit.
-	So $\iota$ induces a function between the $\mc G$-orbits in $\mathbf{I}(T,\beta,p,\eta)^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathbf{I}(T,\beta,p)$.
-	%
-	\begin{itemize}
-		\item \textit{Injectivity:}
+% \begin{proof}
+% 	If $(\kappa, g_0), (\kappa', g_0') \in \mathbf{I}(T, \beta, p, \eta)^+$ are in the same $\mc G$-orbit, let $(t, g) \in G \subseteq T\times G^\#$ such that $(t, g) \cdot (\kappa, g_0) = (\kappa', g_0')$.
+% 	Then $(t, g) \cdot \iota(\kappa, g_0) = (t, g) \cdot (\eta,\kappa, g_0, \delta) =  (\eta,\kappa' , g_0' , \delta) = \iota(\kappa' , g_0')$, \ie, $\iota(\kappa, g_0)$ and $\iota(\kappa', g_0')$ are in the same $T\times G^\#$-orbit.
+% 	So $\iota$ induces a function between the $\mc G$-orbits in $\mathbf{I}(T,\beta,p,\eta)^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathbf{I}(T,\beta,p)$.
+% 	%
+% 	\begin{itemize}
+% 		\item \textit{Injectivity:}
 
-		      % To check injectivity, 
-		      Consider $(\kappa, g_0), (\kappa', g_0') \in \mathbf{I}(T, \beta, p, \eta)^+$ such that $\iota(\kappa, g_0)$ and $\iota(\kappa', g_0')$ are in the same $T\times G^\#$-orbit.
-		      Then there is $(t, g) \in T\times G^\#$ such that $(t, g) \cdot \iota(\kappa, g_0) = \iota(\kappa' , g_0')$, \ie, $(t, g) \cdot (\eta,\kappa, g_0, \delta) =  (\eta,\kappa' , g_0' , \delta)$.
-		      By \cref{def:TxG-action}, it follows that $\eta = \tilde\beta(t, \cdot)\eta$ and $(-1)^{|t|}\eta(t) = (-1)^{|g|}$, so $(g, t) \in \mc G$.
-		      Also, $(t, g) \cdot (\kappa, g_0) = (\kappa', g_0')$, so $(\kappa, g_0)$ and $(\kappa', g_0')$ are in the same $\mc G$-orbit.
-		      %
-		\item \textit{Surjectivity:}
+% 		      % To check injectivity, 
+% 		      Consider $(\kappa, g_0), (\kappa', g_0') \in \mathbf{I}(T, \beta, p, \eta)^+$ such that $\iota(\kappa, g_0)$ and $\iota(\kappa', g_0')$ are in the same $T\times G^\#$-orbit.
+% 		      Then there is $(t, g) \in T\times G^\#$ such that $(t, g) \cdot \iota(\kappa, g_0) = \iota(\kappa' , g_0')$, \ie, $(t, g) \cdot (\eta,\kappa, g_0, \delta) =  (\eta,\kappa' , g_0' , \delta)$.
+% 		      By \cref{def:TxG-action}, it follows that $\eta = \tilde\beta(t, \cdot)\eta$ and $(-1)^{|t|}\eta(t) = (-1)^{|g|}$, so $(g, t) \in \mc G$.
+% 		      Also, $(t, g) \cdot (\kappa, g_0) = (\kappa', g_0')$, so $(\kappa, g_0)$ and $(\kappa', g_0')$ are in the same $\mc G$-orbit.
+% 		      %
+% 		\item \textit{Surjectivity:}
 
-		      % To check surjectivity, 
-		      Let $(\eta', \kappa, g_0, \delta)$ bi in the $\eta$-block of $\mathbf{I}(T, \beta, p)$.
-		      Then there is $t\in T$ such that $\eta = \tilde\beta(t, \cdot) \eta'$, so $t\cdot (\eta', \kappa, g_0, \delta) = (\eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$.
+% 		      % To check surjectivity, 
+% 		      Let $(\eta', \kappa, g_0, \delta)$ bi in the $\eta$-block of $\mathbf{I}(T, \beta, p)$.
+% 		      Then there is $t\in T$ such that $\eta = \tilde\beta(t, \cdot) \eta'$, so $t\cdot (\eta', \kappa, g_0, \delta) = (\eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$.
 
-		      If $(-1)^{|t|} \eta(t)\delta = 1$, this means that $\iota(\kappa, t g_0)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$.
+% 		      If $(-1)^{|t|} \eta(t)\delta = 1$, this means that $\iota(\kappa, t g_0)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$.
 
-		      If $(-1)^{|t|} \eta(t)\delta = -1$, then let $g = (e, \bar1) \in G^\#= G\times \ZZ_2$.
-		      We then have that $g\cdot (\eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta) = (\eta, g\cdot \kappa, g^{-2} t g_0, -1)$, so $\iota(g\cdot \kappa, g^{-2} t g_0)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$, concluding the proof.
-	\end{itemize}
-\end{proof}
+% 		      If $(-1)^{|t|} \eta(t)\delta = -1$, then let $g = (e, \bar1) \in G^\#= G\times \ZZ_2$.
+% 		      We then have that $g\cdot (\eta, \kappa, t g_0, (-1)^{|t|} \eta(t)\delta) = (\eta, g\cdot \kappa, g^{-2} t g_0, -1)$, so $\iota(g\cdot \kappa, g^{-2} t g_0)$ is in the same $T\times G^\#$-orbit of $(\eta', \kappa, g_0, \delta)$, concluding the proof.
+% 	\end{itemize}
+% \end{proof}
 
 % \begin{prop}
 %     Fix $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$. 
