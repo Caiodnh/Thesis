@@ -455,16 +455,17 @@ We start with even gradings on superalgebras of type $M$:
         \item the elementary grading (see \cref{defi:elementary-grd-super}) on $M(k_\bz, k_\bo)$ defined by $(\gamma_\bz, \gamma_\bo)$, where $\gamma_\bz$ and $\gamma_\bo$ are, respectively, a $k_\bz$-tuple and a $k_\bo$-tuple of elements of $G$, $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$, such that the number of entries $g$ in $\gamma_i$ with $g\in x$ is equal to $\kappa_i (x)$, for every $i\in \ZZ_2$ and $x\in G/T$.
     \end{enumerate}
     %
-    We define $\Gamma (T, \beta, \kappa_\bz, \kappa_\bo)$ to be the even grading on $M(m,n)$ given by identifying $M(m,n)$ with the graded superalgebra $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product, \ie,
+    We define $\Gamma_M (T, \beta, \kappa_\bz, \kappa_\bo)$ to be the even grading on $M(m,n)$ given by identifying $M(m,n)$ with the graded superalgebra $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product, \ie,
     \[
         \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
     \] 
-    for all $1\leq i, j \leq k_\bz + k_\bo$, $t\in T$ and $0 \neq d \in \D_t$.
+    for all $1\leq i, j \leq k_\bz + k_\bo$, $t\in T$ and $0 \neq d \in \D_t$. 
+    We will denote the superalgebra $M(m,n)$ endowed with $\Gamma_M (T, \beta, \kappa_\bz, \kappa_\bo)$ by $M(T, \beta, \kappa_\bz, \kappa_\bo)$. 
 \end{defi}
 
 \begin{cor}\label{cor:iso-M-even}
-    Every even $G$-grading on $M(m,n)$ is isomorphic to $\Gamma (T, \beta, \kappa_\bz, \kappa_\bo)$ as in \cref{def:Gamma-T-beta-kappa}. 
-    Two such gradings $\Gamma (T, \beta, \kappa_\bz, \kappa_\bo)$ and $\Gamma (T', \beta', \kappa_\bz', \kappa_\bo')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and there is $g\in G$ such that either $g \cdot \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \cdot \kappa_{\bar 1}=\kappa_{\bar 1}'$, or $g \cdot \kappa_{\bar 0}=\kappa_{\bar 1}'$ and $g \cdot \kappa_{\bar 1}=\kappa_{\bar 0}'$.  \qed
+    Every even $G$-grading on $M(m,n)$ is isomorphic to $\Gamma_M (T, \beta, \kappa_\bz, \kappa_\bo)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Two such gradings $\Gamma_M (T, \beta, \kappa_\bz, \kappa_\bo)$ and $\Gamma_M (T', \beta', \kappa_\bz', \kappa_\bo')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and there is $g\in G$ such that either $g \cdot \kappa_{\bar 0}=\kappa_{\bar 0}'$ and $g \cdot \kappa_{\bar 1}=\kappa_{\bar 1}'$, or $g \cdot \kappa_{\bar 0}=\kappa_{\bar 1}'$ and $g \cdot \kappa_{\bar 1}=\kappa_{\bar 0}'$.  \qed
 \end{cor}
 
 Note that if $m \neq n$, 
@@ -488,7 +489,7 @@ Note that in this case, by \cref{lemma:odd-M-m=n}, we have that $m = n$.
         of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g$ in $\gamma$ with $g\in x$ is equal to $\kappa (x)$, for every $x\in G/T^+$. 
     \end{enumerate}
     %
-    We define $\Gamma (T, \beta, p, \kappa)$ to be the odd grading on $M(n,n)$ given by identifying $M(n,n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
+    We define $\Gamma_M (T, \beta, p, \kappa)$ to be the odd grading on $M(n,n)$ given by identifying $M(n,n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
     \[
         \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
     \] 
@@ -496,8 +497,8 @@ Note that in this case, by \cref{lemma:odd-M-m=n}, we have that $m = n$.
 \end{defi}
 
 \begin{cor}\label{cor:iso-M-odd}
-    Every $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma (T, \beta, p, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
-    Two such gradings $\Gamma (T, \beta, p, \kappa)$ and $\Gamma (T', \beta', p, \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$ and there is a $g\in G$ such that $g\cdot \kappa = \kappa'$. \qed
+    Every odd $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma_M (T, \beta, p, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Two such gradings $\Gamma_M (T, \beta, p, \kappa)$ and $\Gamma_M (T', \beta', p, \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$ and there is a $g\in G$ such that $g\cdot \kappa = \kappa'$. \qed
 \end{cor}
 
 % ----------------------------------
@@ -516,14 +517,15 @@ Note that we only have odd gradings in this case.
         of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g$ in $\gamma$ with $g\in x$ is equal to $\kappa (x)$, for every $x\in G/T^+$.  
     \end{enumerate}
     %
-    We define $\Gamma (T^+, \beta^+, h, \kappa)$ to be the grading on $Q(n)$ given by identifying $Q(n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
+    We define $\Gamma_Q (T^+, \beta^+, h, \kappa)$ to be the grading on $Q(n)$ given by identifying $Q(n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
     \[
         \deg \left( E_{ij} \tensor d \right) = g_ig_j\inv t,
     \] 
-    for all $1\leq i, j \leq k$, $t\in T$ and $0 \neq d \in \D_t$.
+    for all $1\leq i, j \leq k$, $t\in T$ and $0 \neq d \in \D_t$. 
+    We will denote the superalgebra $Q(n)$ endowed with $\Gamma_Q (T^+, \beta^+, h, \kappa)$ by $Q (T^+, \beta^+, h, \kappa)$. 
 \end{defi}
 
 \begin{cor}\label{cor:iso-Q}
-    Every $G$-grading on $Q(n)$ is isomorphic to $\Gamma (T^+, \beta^+, h, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
-    Two such gradings $\Gamma (T^+, \beta^+, h, \kappa)$ and $\Gamma (T'^+, \beta'^+, h', \kappa')$ are isomorphic if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, $h = h'$ and there is a $g\in G$ such that $g\cdot \kappa = \kappa'$. \qed
+    Every $G$-grading on $Q(n)$ is isomorphic to $\Gamma_Q (T^+, \beta^+, h, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Two such gradings $\Gamma_Q (T^+, \beta^+, h, \kappa)$ and $\Gamma_Q (T'^+, \beta'^+, h', \kappa')$ are isomorphic if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, $h = h'$ and there is a $g\in G$ such that $g\cdot \kappa = \kappa'$. \qed
 \end{cor}
