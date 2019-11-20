@@ -216,67 +216,8 @@ Using Lemma \ref{lemma:change-of-side-properties} and Equation \eqref{eq:R-actio
 		B(ru,v) &= \vphi_1^\circ (ru)(v) = \sign{r}{\vphi_1} \big(r \cdot \vphi_1^\circ (u) \big) (v)\\ &= \sign{r}{\vphi_1} (-1)^{|r|(|\vphi_1| + |u|)} \big(\vphi_1^\circ (u) \circ \vphi(r) \big)(v) \\ &= \sign{r}{u} \vphi_1^\circ (u) \big( \vphi(r)v \big)= \sign{r}{u} B(u,\vphi(r)v).
 	\end{split}
 \end{equation*}
-%\ie, we have that $\vphi$ is the \emph{superadjunction} with respect to $B$.
-We have proved one direction of Theorem \ref{thm:vphi-iff-vphi0-and-B}, below.
-
-% \begin{lemma}\label{lemma:superadjoint}
-%     Let $B$ be a nondegenerate $\vphi_0$-sesquilinear form on a graded right $\D$-module $\U$ and set $R \coloneqq \End_\D (\U)$. 
-%     For each homogeneous $\D$-linear map $r\in \End_\D(\U)$, there is a unique homogeneous $\D$-linear map $\vphi(r) \in \End_\D(\U)$ such that
-%     \begin{equation}\label{eq:superadjunction}
-%         \forall r\in R\even \cup R\odd,\,\forall u, v \in \U\even \cup \U\odd,  \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
-%     \end{equation}
-%     Further, extending $\vphi$ by linearity to all elements in $End_\D(\U)$, we have a super-anti-automorphism $\vphi\from \End_\D(\U) \to \End_\D(\U)$.
-% \end{lemma}
-
-% \begin{prop}
-%     Let $\vphi_0\from \D \to \D$ be a super-anti-automorphism and let $B\from \U\times \U \to \D$ be a nonzero $\vphi_0$-sesquilinear form. 
-%     We have that $B$ is nondegenerate if, and only if, there is a unique super-anti-automorphism $\vphi\from R \to R$ such that
-%     %
-%     \begin{equation}\label{eq:superadjunction}
-%         \forall u, v \in \U, \forall r\in R, \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
-%     \end{equation}
-%     %
-%     Moreover, if $ $
-% \end{prop}
-
-To state the theorem, recall \cref{def:superinner}.
-% Recall that, any invertible element $d\in \D$ gives rise to the inner automorphism $\operatorname{Int}_d\from \D \to \D$ defined by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$.
-% If we require $d$ to be homogeneous with respect to the $G^\#$-grading, then $\operatorname{Int}_d$ is an automorphism of $\D$ as a graded superalgebra (Definition \ref{def:inner-automorphism}).
-
-% \begin{defi}\label{def:superinner}
-% 	Let $d\in \D$ be a nonzero $G^\#$-homogeneous element.
-% 	We define the \emph{superinner automorphism} $\operatorname{sInt}_d\from \D \to \D$ by $\operatorname{sInt}_d (c) \coloneqq \sign{c}{d} dcd\inv$, for all $c\in \D$.
-% \end{defi}
-
-% Considered as a $\FF$-linear map $B: \U\tensor \U \to \D$, it is homogeneous of same parity and degree of $\vphi_1$. It is $\vphi_0$-sesquilinear: since $\vphi_1^\circ (u) \in \U\Star$, we have that $\vphi_1^\circ(u)(vd) = \vphi_1^\circ(u)(v)d$, which give us condition \eqref{enum:linear-on-the-second} of Definition \ref{def:sesquilinear-form};
-% condition \eqref{enum:vphi0-linear-on-the-first} is a restatement of \eqref{eq:sesquilinear-with-vphi1-circ}. It is nondegenerate since $\rad B = \ker \vphi_1^\circ$, and $\vphi_1^\circ$ is a bijective $\D$-linear map.
-
-% \begin{lemma}
-%     Let $\vphi_0\colon \D\to \D$ be a fixed degree-preserving su\-per\--an\-ti\--auto\-mor\-phism. 
-%     Given re is a bijective correspondence between the $\vphi_0$-sesquilinear maps $B$ is in bijection with the set of homogeneous maps $\theta\colon \U \to \U\Star$ such that $\theta (ud) = \theta(u) \vphi_0(d)$.
-% \end{lemma}
-
-% \begin{proof}
-%     Let $B\colon \U \times \U \to \D$ be a $\vphi_0$-sesquilinear form. Define $\theta(u)  \coloneqq B(u, \cdot)$. By condition \eqref{enum:linear-on-the-second} in Definition \ref{def:sesquilinear-form}, the map $\theta (u) \in \U\Star$ for all $u\in \U$. Note that $\theta$ have the same degree and parity of $B$. Hence, the condition \eqref{enum:vphi0-linear-on-the-first} tells us that $\theta(ud) = (-1)^ {(|\theta| + |u|)|d|} \vphi_0(d) \theta(u)$, which, by the Definition of the right $\D\sop$-action on $\U\Star$, becomes $\theta(ud) = \theta (u) \vphi_0 (d)$. 
-% \end{proof}
-
-% In particular, we can recover $\vphi$ from the pair $(\vphi_0, B)$.
-
-% One should note that the $\vphi_0: \D \to \D\sop$ give $\U\Star$ a right $\D$-module structure by defining $f\cdot d = f\vphi_0(d)$, for all $f\in \U\Star$ and $d\in \D$. In this sense, from
-
-% Clearly, the $\vphi_0$-sesquilinear form $B$ is \emph{nondegenerate} in the sense that the map $\U \to \U\Star$ given by $u \mapsto B(u, \cdot)$ is an isomorphism of right $\D$-modules. 
-
-% \begin{thm}\label{thm:vphi-iff-vphi0-and-B}
-%     Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero right graded module of finite rank over $\D$. 
-%     If $\vphi$ is degree-preserving super-anti-automorphism on $R \coloneqq \End_\D(\U)$, then there is a pair $(\vphi_0, B)$, where $\vphi_0$ is a degree-preserving super-anti-automorphism on $\D$ and $B\from \U \times \U \to \D$ is a nondegenerate $\vphi_0$-sesquilinear form, such that
-%     %
-%     \begin{equation}\label{eq:superadjunction}
-%         \forall r\in R\even \cup R\odd,\,\forall u, v \in \U\even \cup \U\odd,  \quad B(ru,v) = \sign{r}{u} B(u,\vphi(r)v).
-%     \end{equation}
-%     %
-%     Conversely, given a pair $(\vphi_0, B)$ as above, there is a unique degree-preserving super-anti-automorphism $\vphi$ on $R$ satisfying Equation \eqref{eq:superadjunction}. 
-%     Moreover, another pair $(\vphi_0', B')$ determines the same super-anti-automorphism $\vphi$ if, and only if, there is a nonzero $G^\#$-homogeneous element $d\in \D$ such that $\vphi_0' = \mathrm{sInt}_d \circ \vphi_0$ and $B'(u, v) = dB (u, v)$ for all $u, v \in \U$.
-% \end{thm}
+We have proved one direction of Theorem \ref{thm:vphi-iff-vphi0-and-B}, below. 
+Recall the superinner automorphism $\operatorname{sInt}_d$ (\cref{def:superinner}). 
 
 \begin{thm}\label{thm:vphi-iff-vphi0-and-B}
 	Let $\D$ be a graded division superalgebra and let $\U$ be a nonzero right graded module of finite rank over $\D$.
@@ -375,8 +316,8 @@ The ``conversely'' part of Theorem \ref{thm:vphi-iff-vphi0-and-B} motivates the 
 
 \begin{defi}\label{def:superadjunction}
 	Let $\D$ be a graded-division superalgebra, $\U$ a graded right $\D$-module of finite rank and $B$ a nondegenerate sesquilinear form on $\U$.
-	The unique super-anti-automorphism $\vphi$ on $\End_\D(\U)$ defined by Equation \eqref{eq:superadjunction} is called the \emph{superadjunction with respect to $B$} and, for every $r\in \End_\D(\U)$, the $\D$-linear map $\vphi(r)$ is called the \emph{superadjoint of $r$}.
-	% Under the conditions of Lemma \ref{lemma:superadjoint}, the $\D$-linear map $\vphi(r)$ is called the \emph{superadjoint of $r$}, for every $r\in R$, and the super-anti-automorphism $\vphi \from R \to R$ is called the \emph{superadjunction with respect to $B$}.
+	The unique super-anti-automorphism $\vphi$ on $\End_\D(\U)$ defined by Equation \eqref{eq:superadjunction} is called the \emph{superadjunction with respect to $B$} and, for every $r\in \End_\D(\U)$, the $\D$-linear map $\vphi(r)$ is called the \emph{superadjoint of $r$}. 
+	We will denote by $E(\D, \U, B)$ the graded superalgebra $\End_\D(\U)$ endowed with this super-anti-automorphism $\vphi$. 
 \end{defi}
 
 \begin{remark}\label{conv:pick-even-form}

@@ -325,8 +325,9 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
 We start with a definition to have a concise description of the graded superalgebras with superinvolution we are working on:
 
 \begin{defi}\label{def:E(D,U,B)}
-	Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, let $\U\neq 0$ be a graded right $\D$-module of finite rank and let $B$ be a nondegenerate homogeneous sesquilinear form on $\U$ such that $\overline{B} = \pm B$.
-	We define $E(\D, \U, B)$ to be the (finite dimensional) graded superalgebra with superinvolution $(\End_\D(\U), \vphi)$, where $\vphi$ is the superadjunction with respect to $B$.
+	Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, $\Char \FF \neq 2$, let $\U\neq 0$ be a graded right $\D$-module of finite rank and let $B$ be a nondegenerate homogeneous sesquilinear form on $\U$ such that $\overline{B} = \pm B$. 
+	By \cref{thm:vphi-involution-iff-delta-pm-1},
+	$E(\D, \U, B)$ (see \cref{def:superadjunction}) is a (finite dimensional) graded superalgebra with superinvolution. 
 	If $\D$ is associated to $(T, \beta, p)$ (see \cref{ssec:grd-div-alg}) and $(\U, B)$ has inertia $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$ (see Definitions \ref{def:parameter-of-(U,B)} and \ref{defi:X(D)}), then we say that $(T, \beta, p, \eta, \kappa, g_0, \delta)$ are the parameters of the triple $(\D, \U, B)$.
 \end{defi}
 
@@ -514,7 +515,8 @@ By the definition of the $(\rad \tilde\beta) \times G^\#$-action on $\mathbf{I}(
 	(-1)^{|t|}\eta(t) = (-1)^{|g|}.
 $
 Note that $\eta\restriction_{\rad \tilde\beta}$ is a group homomorphism, since $\mathrm{d}\eta = \tilde\beta = 1$ on $\rad \tilde\beta$.
-Hence \[
+Hence
+\[\label{eq:mathcal-G}
 	\mathcal G \coloneqq \{ (t,g) \in (\rad \tilde\beta) \times G^\# \mid (-1)^{|t|}\eta(t) = (-1)^{|g|} \}
 \]
 is a subgroup of $(\rad \tilde\beta) \times G^\#$.

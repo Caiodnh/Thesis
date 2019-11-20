@@ -43,7 +43,7 @@ In particular, if $\U$ is as in \cref{def:superdual-supermodule}, then the left 
 
 \begin{defi}\label{defi:two-dual-bases}
     If $\B = \{u_1, \ldots, u_k\}$ is a graded basis, we can consider its two \emph{superdual bases} ${}\Star \mc B = \{{}\Star u_1, \ldots, {}\Star u_k\}$ and $\mc B\Star = \{u_1\Star, \ldots, u_k\Star\}$ in $\U\Star$, where ${}\Star u_i \from \U \rightarrow \D$ is defined by ${}\Star u_i(u_j) = \delta_{ij}$ and $u_i\Star \from \U \rightarrow \D$ is defined by $u_i\Star (u_j) = (-1)^{|u_i||u_j|} \delta_{ij}$. 
-    Clearly, $\deg {}\Star u_i = \deg  u_i\Star = (\deg u_i)\inv$. 
+    Clearly, $\deg ({}\Star u_i) = \deg  (u_i\Star) = (\deg u_i)\inv$. 
 \end{defi}
 
 \begin{remark}
@@ -58,10 +58,21 @@ As with finite dimensional vector spaces, there is a canonical isomorphism $\U \
 \end{lemma}
 
 \begin{proof}
-    It is easy to see that $\epsilon(u)$ has the same $G^\#$-degree of $u$, for all $u \in \U$. 
+    For brevity, we will write $\epsilon$ for $\epsilon_\U$. 
+    First we check that $\epsilon (u)$ belongs to $\U^{\star\star}$, \ie, it is a $\D\sop$-linear map. 
+    Let $f\in (\U\Star)\even \cup (\U\Star)\odd$ and $d\in \D\even \cup \D\odd$. 
+    Then,
+    \begin{align}
+        \epsilon(u)(f\bar d) &= \sign{u}{f \bar d}\, \overline{f\bar d(u)} 
+        = (-1)^{|u| (|f| + |d|)}\, \sign{f}{d}\, \overline{df(u)} \\
+        &= (-1)^{|u||f| + |u||d| + |f||d|} (-1)^{(|f| + |u|) |d|} \, \overline{f(u)} \, \bar d \\
+        &= (-1)^{|u||f|} \, \overline{f(u)} \bar d 
+        = \epsilon(u)(f) \bar d. 
+    \end{align}
+
+    It is easy to see that $\epsilon(u)$ has the same $G^\#$-degree as $u$, for all $u \in \U$. 
     
-    To show $\D$-linearity, let $u\in \U\even \cup \U\odd$, $d\in \D\even \cup \D\odd$. 
-    Then, 
+    To show $\D$-linearity of $\epsilon$, we compute: 
     \begin{align}
         \epsilon(ud)(f) &= \sign{ud}{f}\, \overline{f(ud)} 
         = (-1)^{(|u| + |d|)|f|}\, \overline{f(u)d} \\
@@ -69,15 +80,15 @@ As with finite dimensional vector spaces, there is a canonical isomorphism $\U \
         &= (-1)^{|u||f| + |d||u|} \bar d\,\, \overline{f(u)} 
         = \sign{d}{u} \bar d \,\epsilon(u)(f),
         \intertext{for all $f\in (\U\Star)\even \cup (\U\Star)\odd$, so}
-        \epsilon(ud) &= \sign{d}{u} \bar d \epsilon(u) = \epsilon(u)d
+        \epsilon(ud) &= \sign{d}{u} \bar d \epsilon(u) = \epsilon(u)d.
     \end{align}
 
-    To $\epsilon$ is a isomorphism, let $\{u_1, \ldots, u_k\}$ be a graded basis of $\U$. 
-    We have that $\epsilon(u_i)(u_j\Star) = \sign{u_i}{u_j} u_j\Star(u_i) = \delta_{ij}$, \ie, $\epsilon(u_i) = {}\Star (u_i \Star) = ({}\Star u_i) \Star$. 
-    Therefore $\epsilon$ sends a graded basis to a graded basis, concluding the proof.
+    To see that $\epsilon$ is a isomorphism, let $\{u_1, \ldots, u_k\}$ be a graded basis of $\U$. 
+    We have that $\epsilon(u_i)(u_j\Star) = \sign{u_i}{u_j}\, \overline{u_j\Star(u_i)} = \delta_{ij}$, \ie, $\epsilon(u_i) = {}\Star (u_i \Star) = ({}\Star u_i) \Star$. 
+    Therefore, $\epsilon$ sends a graded basis to a graded basis, concluding the proof.
 \end{proof}
 
-We note in passing that the sign in the definition of $\epsilon_\U$ is essential: without it, $\epsilon_\U$ would not be $\D$-linear in the case of odd $\D$. 
+We note in passing that the sign in the definition of $\epsilon_\U$ is essential: without it, $\epsilon_\U$ would not be well-defined in the case of odd $\D$. 
 
 \begin{defi}\label{def:other-Star}
     Let $\U$ and $\V$ be graded right $\D$-supermodules of finite rank.
@@ -103,6 +114,6 @@ Finally, let us assume that $\FF$ is algebraically closed and $\D$ is finite dim
 Then, if $(T, \beta, p)$ is the triple associated to $\D$, then it is clear that $\supp \D\sop = T$ and that the parity map for $\D\sop$ is also $p$. 
 Moreover, if $s,t \in T$, $0 \neq X_s \in \D_s$ and $0 \neq X_t \in \D_t$, then, following the notation in \cref{def:superopposite}, we have:
 \[
-    X_s * X_t = \sign{s}{t} X_tX_s = \sign{s}{t} \beta(t, s) X_sX_t = \beta(t, s) X_t*X_s = \beta(s, t)\inv X_t*X_s.
+    \overline{X_s} \, \overline{X_t} = \sign{s}{t} \, \overline{X_tX_s} = \sign{s}{t}\,  \beta(t, s) \overline{X_sX_t} = \beta(t, s) \overline{X_t} \, \overline{X_s} = \beta(s, t)\inv \, \overline{X_t} \, \overline{X_s}.
 \]
 We conclude that $(T,\beta\inv, p)$ is the triple associated to $\D\sop$.
