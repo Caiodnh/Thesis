@@ -1,64 +1,3 @@
-\section{Gradings on superinvolution-simple superalgebras of type \texorpdfstring{$M$}{M}}
-
-\begin{lemma}\label{lemma:sinv-type-M}
-    Let $(R, \vphi)$ be a graded superalgebra with superinvolution. 
-    If $R$ is simple as superalgebra and $\Char \FF\neq 2$, then $R$ is of type $M$.
-\end{lemma}
-
-\begin{proof}
-    Follows from \cref{thm:vphi-involution-iff-delta-pm-1,prop:R-simple-iff-D-simple,lemma:sinv-type-M}. 
-\end{proof}
-
-Nice, let us repeat the same proof for general $G$ to get what we have to get
-
-\begin{itemize}
-    \item still, $T$ is even.
-    \item also, elementary $2$-group
-    \item What are the possible $\eta$? given one $\vphi_0$, any other is composition with a automorphism
-    \item hence, by lemma, we get $\chi \eta$, since each automorphism correspond to $\chi$
-    \item By nondegeneracy, one class at most!
-    \item but is there one?
-    \item yes, we can refer to paper and standard realization, and get the transpose
-    \item in other words, $\eta(ab) = \beta(a,b)$
-\end{itemize}
-
-Fine, so only one class of $\eta$, fix $\eta$ as transpose and let's go. 
-Then make $\delta = 1$. 
-
-What is the $I^+$? 
-
-\begin{itemize}
-    \item Once we fixed $\delta$, we cannot act by $g$ odd... $\mc G$ is precisely $G$.
-    \item again, conditions of admissibility...
-    \item Ugly, isn't it?
-    \item 
-\end{itemize}
-
-Calm down. 
-From $\End_\D(\U)$ and $B$, how we find the underlying superalgebra?
-
-\begin{itemize}
-    \item Take $\D$ standard realization with transposition
-    \item From $\U$ to $U$... Take $U = \U \tensor \FF B$?
-    \item Nope
-    \item Take the basis with the matrices as in propositions 4.40 and 3.42
-    \item Take $B_x$ as defined there.
-    \item from this many $\FF$-forms, we get a big $\FF$-form
-    \item 
-\end{itemize}
-
-Other approach:
-
-\begin{itemize}
-    \item Ok, from kappas we get $m$ and $n$, as in corollary in chap 2.
-    \item We need only to see what is the parity of $g_0$. 
-    It must be the same! 
-    But how to argue that?
-    \item Well, we need a standard realization any way...
-    \item The problem here is that we can't work only on the superalgebra level as before, we need to go to the superspace level.
-    \item ok, back to define $U_x = V_x \tensor \FF B$
-\end{itemize}
-
 \section{Where to put this?}
 
 For the remainder of the section, we will consider, as before, $R \coloneqq \End_\D(\U)$, where $\D$ is a graded division superalgebra and $\U$ is a nonzero graded right $\D$-module of finite rank.
@@ -198,28 +137,6 @@ We will obtain more precise information about $\D$ in the next section.
 % Instead of considering the graded superalgebra with super-anti-automorphism $(\D, \vphi_0)$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}. 
 % Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$.
 
-
-\section{Application: Superinvolutions on Simple Superalgebras}\label{ssec:simple-sa-but-with-vphi}
-
-\begin{itemize}
-    \item We will classify first the graded-simple superalgebras with superinvolution (case $G$ trivial), and then the gradings on them.
-    \item Note that, from lemma bla, for general $G$, we have that simple as superalgebra implies type $M$ and even gradings.
-    \item In particular, for trivial $G$, the superalgebra must be of the form $\End_\FF (U)$ for a superspace $U$.
-    \item Lemm
-    \item Prop: G trivial, $G^\# = \ZZ_2$.
-    \item even grading, $T = e$ so only one $\eta$.
-    \item The action is only a $G^\# = \ZZ_2$ action
-    \item fix $\delta = 1$, as above, and then we have only a $\mc G = e$ action.
-    \item Good, no orbits, only points
-    \item Conditions of admissibility:
-    \item i and ii are trivial now
-    \item define $k(0) = m$ and $k(1) = n$
-    \item iii becomes k(i) = k(g0i)
-    \item in the case $g_0 = \bar 1$, so $m = n$. In the other case, trivial
-    \item condition (iv): for any $i \in \ZZ_2$, if $g_0 + 2i = \bar 0$, \ie, $g_0 = 0$ and $\mu_i = (-1)^{i} = -1$, \ie, $i = \bar 1$, then $k(i) = m$ is even.
-    \item the construction we have there implies we have $\End_\FF (\FF^m \oplus \FF^n)$ with the matrices of $\vphi$ given by what they have to be.
-    \item this is what we have in the introduction.
-\end{itemize}
 
 
 

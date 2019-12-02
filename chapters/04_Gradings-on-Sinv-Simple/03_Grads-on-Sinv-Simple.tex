@@ -1,0 +1,242 @@
+\section[Gradings on superinvolution-simple superalgebras of type \texorpdfstring{$M$}{M}]{Gradings on superinvolution-simple \\ superalgebras of type $M$}
+
+For this section we assume $\FF$ is algebraically closed and $\Char \FF \neq 2$.
+
+Let $(R, \vphi)$ be a finite dimensional graded superalgebra with superinvolution of type $M$. 
+Since $R$ is simple as a superalgebra, $(R, \vphi)$ is graded-simple and, hence, by \cref{subsec:param-(R-phi)}, $(R, \vphi) \iso E(\D, \U, B)$ for some triple $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}. 
+Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)$ and let $\vphi_0$ be the superinvolution on $\D$ determined by $\eta$.
+
+Since $E(\D, \U, B) = \End_\D (\U)$ is of type $M$, by \cref{prop:R-simple-iff-D-simple}, we have that $(\D, \vphi_0)$ is of type $M$ and, by  \cref{cor:D-simple-iff-beta-nondeg}, that $\beta$ is nondegenerate. 
+
+\begin{lemma}
+    The graded-division superalgebra $\D$ is even and $T$ is an elementary $2$-group.
+\end{lemma}
+
+\begin{proof}
+    By \cref{cor:super-anti-auto-squares-in-radical}, we have that $t^2 
+    \in \rad\tilde\beta = \{e\}$ for all $t\in T$, so $T$ is an elementary $2$-group. 
+    Hence, by \cref{cor:eta-t-square}, $T^-$ is empty. 
+\end{proof}
+
+Since $\D$ is even and of type $M$, we have that $\D \iso \End_\FF (N)$ as a superalgebra, where $N = N\even$ is a finite dimensional superspace.
+From now on, let us identify $\D$ with $\End_\FF(N)$. 
+Since $N$ is a left $\D$-supermodule, we can define $U \coloneqq \U \tensor_\D N$. 
+Note that $U$ is a superspace, with $U\even = \U\even \tensor_\D N$ and $U\odd = \U\odd \tensor_\D N$, but it is not $G$-graded since $N$ is not $G$-graded. 
+Also, $U$ is not a $\D$-supermodule. 
+
+Recall that the $\FF$-span of any graded $\D$-basis of $\U$ is an $\FF$-form of $\U$ (see \cref{def:D_e-form} with $\D_e = \FF$). 
+
+\begin{lemma}\label{lemma:FF-basis-for-U}
+    If $\tilde\U$ is an $\FF$-form of $\U$, then $\tilde\U \tensor_\FF N$ is canonically isomorphic to $\U \tensor_\D N$ by $u\tensor_\FF v \mapsto u\tensor_\D v$, for all $u\in \tilde\U$ and $v\in N$. \qed
+\end{lemma}
+
+\begin{proof}
+    By \cref{def:D_e-form}, the map $\tilde \U \tensor_{\FF} \D \to \U$ given by $u \tensor_\FF d \mapsto ud$ is an isomorphism of (graded) right $\D$-modules. 
+    Hence, we have canonical isomorphisms:
+    \[
+        \tilde\U \tensor_\FF N \iso \tilde\U \tensor_\FF (\D \tensor_\D N) \iso (\tilde\U \tensor_\FF \D) \tensor_\D N \iso \U \tensor_\D N,
+    \]
+    whose composition sends $u\tensor_\FF v$ to $u\tensor_\D v$.
+\end{proof}
+
+It follows that if $\{ u_1, \ldots, u_k \}$ is a graded $\D$-basis of $\U$ and $\{ v_1, \ldots, v_\ell \}$ is an $\FF$-basis of $N$, then $\{ u_i \tensor_\D v_j \mid 1\leq i \leq k \AND 1\leq j \leq \ell\}$ is an $\FF$-basis of $U$. 
+
+\begin{lemma}\label{lemma:End-over-D-becomes-over-FF}
+    The map $\psi\from \End_\D(\U) \to \End_\FF (U)$ given by $\psi(L) \coloneqq L \tensor_\D \id_N$ is an isomorphism of superalgebras. 
+\end{lemma}
+
+\begin{proof}
+    It is clear that $\psi$ is a homomorphism and that it preserves the $\ZZ_2$-degree. 
+    To show that $\psi$ is an isomorphism, recall the canonical isomorphism $N\tensor_\FF N^* \iso \End_\FF (N)$, where $N^* \coloneqq \Hom_\FF (N, \FF)$. 
+    Since $N$ is a left $\D$-module, $N^*$ is a right $\D$-module. 
+    So we obtain canonical isomorphisms:
+    \[
+        U \tensor_\FF N^* = (\U \tensor_\D N) \tensor_\FF N^* \iso \U \tensor_\D (N \tensor_\FF N^*) \iso \U\tensor_\D \D \iso \U.
+    \]
+    We claim that $\psi'\from \End_\FF (U) \to \End_\D (U \tensor_\FF N^*)$ defined by $\psi'(L) \coloneqq L \tensor_\FF \id_{N^*}$ is the inverse of $\psi$ under the canonical isomorphisms above. 
+    Indeed, 
+    \[
+        (\psi' \circ \psi) (L) = (L \tensor_\D \id_N) \tensor_\FF \id_{N^*} = L \tensor_\D (\id_N \tensor_\FF \id_{N^*}) = L \tensor_\D 1_\D = L.
+    \]
+    The result follows since $\dim_\FF \End_\D(\U) = k^2\ell^2 = \dim_\FF \End_\FF (U)$. 
+\end{proof}
+
+Note that $\psi \circ \vphi \circ \psi\inv = \psi\tensor_\D \id_N$. 
+We are now going to construct a $\FF$-bilinear form on $U$ whose superadjunction is $\psi\tensor_\D \id_N$. 
+
+It is well-known (and also follow from \cref{thm:vphi-iff-vphi0-and-B} with trivial grading) that there is a bilinear form $\langle \, , \rangle_N \from N\times N \to \FF$ such that $\vphi_0$ is the (super)adjunction with respect to $\langle \, , \rangle_N$. 
+
+\begin{lemma}\label{lemma:the-same-vphi}
+    There is a $\FF$-bilinear map $\langle \, , \rangle_U \from U\times U \to \FF$ determined by 
+    \[
+        \langle u \tensor_\D v , u' \tensor_\D v' \rangle_U \coloneqq \langle v , B(u, u') v' \rangle_N,
+    \]
+    for all $u, u'\in \U$ and $v, v' \in N$. 
+    Moreover, $\vphi \tensor \id_N$ is the superadjunction with respect to $\langle \, , \rangle_U$. 
+\end{lemma}
+
+\begin{proof}
+    For every $u\in \U$, let $C_u \from \U \times N \to \FF$ be defined by $C(u', v') \coloneqq B(u, u') v'$. 
+    Clearly, $C_u$ is $\FF$-bilinear. 
+    Further, it is $\D$-balanced:
+    \[
+        C_u(u'd, v') = B(u,u'd)v' = \big( B(u,u')d \big)v' = B(u, u') (d v') = C_u(u', dv').
+    \]
+    Hence, there is a unique $\FF$-linear map $\U \tensor_\D N \to N$, which we will also denote by $C_u$, such that $u' \tensor_\D v' \mapsto B(u, u')v'$. 
+    It is easy to see that the mapping $\U \to \Hom_\FF(\U \tensor N, N)$ also is $\FF$-linear. 
+    
+    Now $u'\tensor_F v' \in \U \tensor_\D N$ fixed, and let $C'\from \U\times N \to \FF$ be given by $C'(u,v) \coloneqq \langle v, C_u(u',v') \rangle_N$, \ie, $C'(u,v) = \langle v, B(u, u')v' \rangle_N$. 
+    Clearly, $C'$ is $\FF$-bilinear. 
+    Further, it is $\D$-balanced:
+    \begin{align}
+        C'(ud,v) = \langle v, B(ud, u')v' \rangle_N &= \langle v, (-1)^{(|B| + |u|)|d|} \vphi_0(d) B(u, u')v' \rangle_N \\
+        &= \langle v, \vphi_0(d) B(u, u')v' \rangle_N = \langle d v, B(u, u')v' \rangle_N,
+    \end{align}
+    for all $u \in \U\even \cup \U\odd$, $v\in N$ and $d \in \D = \D\even$.
+    It follows that there is a unique $\FF$-linear map $\U \tensor \V \to \FF$ such that $u\tensor_\D v \mapsto C' (u,v)$. 
+    We conclude that the $\FF$-bilinear map $\langle \, , \rangle_U \from U\times U \to \FF$ is well-defined. 
+    
+    For the ``moreover'' part, recall from \cref{lemma:End-over-D-becomes-over-FF} that every element in $\End_D(U)$ is of the form $L\tensor_\D \id_N$ for some $L \in \End_\D (\U)$. 
+    Also, we have:
+    \begin{align}
+        \langle (L\tensor_\D \id_N) (u \tensor_D v), u' \tensor_D v' \rangle_U 
+        &= \langle L(u) \tensor_\D v, u' \tensor_D v' \rangle_U 
+        = \langle v, B(L(u), u') v' \rangle_N \\
+        &= \langle v, \sign{L}{u} B(u, \vphi(L) (u')) v' \rangle_N \\
+        &= \sign{L}{u} \langle u \tensor_\D v, \vphi(L) (u') \tensor_D v' \rangle_U \\
+        &= \sign{L}{u} \langle  u \tensor_D v, ( \vphi(L)\tensor_\D \id_N) (u' \tensor_D v') \rangle_U,
+    \end{align}
+    for all $L \in \End_\D (\U)\even \cup \End_\D (\U)\odd$, $u, u'\in \U\even \cup \U\odd$ and $v,v' \in N$. 
+\end{proof}
+
+\begin{prop}
+    As a superalgebra with superivolution, $E(\D, \U, B)$ is isomorphic to $M^*(m,n, p_0)$, where $m \coloneqq \dim \U\even \tensor_\D N$, $n \coloneqq \dim \U\odd \tensor_\D N$ and $g_0 = (g, p_0) \in G^\#$, where $g\in G$. 
+\end{prop}
+
+\begin{proof}
+    It is clear that the bilinear form $\langle \, , \rangle_U \from U\times U \to \FF$ defined in \cref{lemma:the-same-vphi} has the same parity as $B$, which is $p_0$. 
+    By \cref{prop:self-dual-components,prop:pair-of-dual-components}, we can find a ($\ZZ_2$-graded) basis of $U$ where the matrix representing $\vphi \tensor_\D \id_N$ is the one as in \cref{defi:M(m-n-p_0)}, so $(\End_\FF (U), \vphi \tensor_\D \id_N) \iso M^*(m, n, p_0)$. 
+    By \cref{lemma:End-over-D-becomes-over-FF}, we have the desired result. 
+\end{proof}
+
+To state the classification theorem of gradings on $M^*(m,n, p_0)$, we will revisit \cref{def:standard-realization}. 
+Let $T$ be a finite abelian group, let $\beta$ be a nondegenerate alternating bicharacter on $T$. 
+Decompose $T$ as $A\times B$ where $\beta(A,A) = \beta(B,B) = 1$, and let $\D \coloneqq \End_\FF (N)$ be the corresponding standard realization of a graded-division algebra, where $N$ is a vector space with a fixed basis $\{ e_b \}_{b\in B}$. 
+
+\begin{lemma}\label{lemma:transp-std-realization}
+    If we identify $\D$ with a matrix algebra using the basis $\{ e_b \}_{b\in B}$, we have that $X_{ab}\transp = \beta(a,b) X_{ab\inv}$, for all $a\in A$ and $b\in B$. 
+\end{lemma}
+
+\begin{proof}
+    Let $\langle \, , \rangle_U \from U\times U \to \FF$ be the bilinear form determined by
+    \[
+        \langle e_b , e_{b'} \rangle_N \coloneqq \begin{cases}
+            1, & \text{if}\ b=b' \\
+            0, & \text{if}\ b\neq b'\ .
+        \end{cases}
+    \]
+    Clearly, the adjunction with respect to $\langle \, , \rangle_U$ correspond to the transposition. 
+    
+    Let $a \in A$. 
+    Then
+    \[
+        \langle X_a e_{b'}, e_{b''} \rangle_N = \beta(a, b') \langle X_a e_{b'}, e_{b''} \rangle_N = \beta(a, b'') \langle X_a e_{b'} , e_{b''} \rangle_N = \langle e_{b'}, X_a e_{b''} \rangle_N,
+    \]
+    for all $b',b'' \in B$, so $X_a\transp = X_a$. 
+    Let $b \in B$. 
+    Then
+    \[
+        \langle X_b e_{b'}, e_{b''} \rangle_N = \langle e_{bb'}, e_{b''} \rangle_N = \langle e_{b'}, e_{b\inv b''} \rangle_N = \langle e_{b'}, X_{b\inv} e_{b''} \rangle_N,
+    \]
+    for all $b',b'' \in B$, so $X_b\transp = X_{b\inv}$. 
+    Finally, 
+    \[
+        X_{ab}\transp = (X_a X_b)\transp = X_{b\inv}X_a = \beta(b\inv, a) X_a X_{b\inv} = \beta(b,a)\inv X_{ab\inv} = \beta(a,b) X_{ab\inv}.
+    \]
+\end{proof}
+
+\begin{prop}\label{prop:osp-p-unique-eta}
+    Suppose $T$ is a elementary $2$-group. 
+    Then there is a unique equivalence class (see \cref{def:equiv-eta}) of maps of the form $\eta\from T \to \FF^\times$ such that $\mathrm{d}\eta = \tilde\beta = \beta$.
+\end{prop}
+
+\begin{proof}
+    Let $\D$ be the standard realization of $(T, \beta)$ as before. 
+    Since $T$ is an elementary $2$-group, by \cref{lemma:transp-std-realization}, the transposition gives us a degree-preserving involution on $\D$, corresponding to the map $\eta\from T \to \FF^\times$ given by $\eta(ab) = \beta(a,b)$. 
+
+    Let $\eta'\from T \to \FF^\times$ be a map corresponding to another degree-preserving involution $\vphi_0$ on $\D$. 
+    Clearly, $\vphi_0$ is the transposition composed with a degree-preserving automorphism of $\D$, so, by \cref{lemma:Aut(D)-widehat-T}, $\eta' = \chi \eta$, for some $\chi \in \widehat{T}$. 
+    Since $\tilde\beta = \beta$ is nondegenerate, there is a $t\in T$ such that $\chi = \tilde\beta(t, \cdot)$, and hence $\eta' \sim \eta$.
+\end{proof}
+
+We are now in a position to define explicit models for gradings on $M^*(m,n,p_0)$. 
+The choice of $\vphi_0$ to be the transposition on $\D$ (when $\D$ is realized as a matrix algebra) is convenient if we view a matrix $X \in M_{k_\bz \mid k_\bo} (\D)$ as a (block) matrix with entries in $\FF$ by interpreting the entries of $X$ as matrices with entries in $\FF$, or, in other words, if we identify $M(k_\bz, k_\bo) \tensor \D$ with $M(m,n)$ via Kronecker product. 
+This corresponds to the isomorphism $\End_\D(\U) \to \End_\FF (U)$ of \cref{lemma:End-over-D-becomes-over-FF} if we use a graded $\D$-basis $\{ u_1, \ldots, u_k \}$ for $\U$ and the basis $u_i \tensor_\D e_b$ for $U$,  ordered lexicographically. 
+Then $\vphi_0(X)\stransp$ in \cref{eq:matrix-vphi-D-even} becomes $X\stransp$. 
+
+We reformulate the conditions on $\kappa$ of \cref{defi:X(D)} in terms of $\kappa_\bz$ and $\kappa_\bo$: 
+
+\begin{defi}\label{inertia-even-and-odd-case}
+    Let $T \subseteq G$ be a finite subgroup, $\beta\from T\times T \to \FF^\times$ be an alternating bicharacter, $\eta\from T \to \pmone$ be a map such that $\mathrm{d}\eta = \beta$, $g_0 = (h_0, p_0) \in G^\#$ and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support. 
+    If $p_0 = \bar 0$, we say that $(\kappa_\bz, \kappa_\bo)$ is \emph{$g_0$-admissible} if, for all $i\in \ZZ_2$ and $x\in G/T$, 
+    \begin{enumerate}[(i)]
+        \item $\kappa_i(x) = \kappa_i(h_0\inv x\inv)$;
+        \item if $h_0 x^2 = T$ and, for some (and, hence, any) $g\in x$, $\eta(h_0 g^2) = -(-1)^{i}$, then $\kappa_i(x)$ is even.
+    \end{enumerate}
+    If $p_0 = \bar 1$, we say that $(\kappa_\bz, \kappa_\bo)$ is \emph{$g_0$-admissible} if, for all  $x\in G/T$, 
+    \begin{enumerate}[(i)]
+        \setcounter{enumi}{2}
+        \item $\kappa_\bo (x) = \kappa_\bz (h_0\inv x\inv)$. 
+    \end{enumerate}
+\end{defi}
+
+Under the conditions of \cref{inertia-even-and-odd-case}, let $p\from T \to \ZZ_2$ be the trivial homomorphism and define $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by $\kappa ((g,i) T) = \kappa_i (gT)$, for all $i\in \ZZ_2$ and $g\in G$. 
+It is easy to see that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible if, and only if, $(\kappa, g_0) \in \mathbf{I}(T, \beta, p)^+_\eta$, \ie, $(\eta, \kappa, g_0, 1) \in \mathbf{I}(T, \beta, p)$ (see \cref{defi:X(D),eq:I-eta-plus}). 
+In other words, $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible if, and only if, there is a pair $(\U, B)$ whose inertia is $(\eta, \kappa, g_0, 1)$ (see Definition \ref{def:parameter-of-(U,B)}). 
+In this case, we say that $(\U, B)$ has \emph{inertia determined by} $(\kappa_\bz, \kappa_\bo)$. 
+
+% $(\eta, \kappa, g_0, 1) \in \mathbb{I}(T, \beta, p)$ is the inertia of 
+
+% \begin{lemma}\label{inertia-determined-by-kappas}
+%     Under the conditions of \cref{inertia-even-case}, let $p\from T \to \ZZ_2$ be the trivial homomorphism and define $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by $\kappa ((g,i) T) = \kappa_i (gT)$, for all $i\in \ZZ_2$ and $g\in G$. 
+%     Then $\kappa_\bz$ and $\kappa_\bo$ are $h_0$-admissible if, and only if, $(\kappa, h_0) \in \mathbb{I}(T, \beta, p)^+_\eta$, \ie, $(\eta, \kappa, g_0, 1) \in \mathbb{I}(T, \beta, p)$ (see \cref{defi:X(D),eq:I-eta-plus}). \qed
+    
+%     Then:
+%     \begin{enumerate}[(i)]
+%         \item $(\kappa, h_0) \in \mathbb{I}(T, \beta, p)^+_\eta$ if, and only if, $\kappa_\bz$ and $\kappa_\bo$ are $h_0$-admissible;
+%         \item $(\kappa, (h_0, \bar 1)) \in \mathbb{I}(T, \beta, p)^+_\eta$ if, and only if, $\kappa_\bo (x) = \kappa_\bz (h_0\inv x\inv)$ for all $x\in G/T$. \qed
+%     \end{enumerate}
+% \end{lemma}
+
+\begin{defi}\label{def:model-grd-M(m-n-0)}
+    Let $m, n\in \ZZ_{\geq 0}$, not both zero. 
+    Let $T \subseteq G$ be a finite $2$-elementary subgroup $T \subseteq G$, let $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 = (h_0, p_0) \in G^\#$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|} = m$ and $|\kappa_\bo| \sqrt{|T|} = n$. 
+    We choose:
+    \begin{enumerate}[(i)]
+        \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$
+    \end{enumerate}
+    and define $\eta\from T \to \pmone$ to be the map corresponding to the transposition on $\D$, \ie, $X_t\transp = \eta(t) X_t$, for all $t\in T$. 
+    Assuming that $(\kappa_\bz, \kappa_\bo)$ is \emph{$g_0$-admissible}, we choose:
+    \begin{enumerate}[(i)]
+        \setcounter{enumi}{1}
+        %
+        \item a graded $\D$-supermodule $\U$ and a nondegenerate sesquilinear form $B\from \U\times \U \to \D$ such that $(\U, B)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$. 
+    \end{enumerate}
+    We define $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be $E(\D, \U, \B)$. 
+    With a choice of a graded basis for $\U$, this becomes
+    the graded superalgebra $M (T, \beta, \kappa_\bz, \kappa_\bo)$ (see \cref{def:Gamma-T-beta-kappa-even}), endowed with the superinvolution $\vphi$ given by 
+    \[
+        \vphi(X) \coloneqq \Phi\inv X\stransp \Phi,
+    \]
+    for all $X \in M(m,n)= M(k_\bz, k_\bo) \tensor \D$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis. 
+\end{defi}
+
+\begin{thm}
+    Suppose the superalgebra with superinvolution $M^*(m,n,p_0)$ is endowed with a $G$-grading. 
+    Then it is isomorphic, as a graded superalgebra with superinvolution, to $M^*(T,\beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:model-grd-M(m-n-0)}, where $p_0 = |g_0|$. 
+    Moreover, $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso M^*(T', \beta', \kappa_\bz', \kappa_\bo', g_0')$ if, and only if, $T =T'$, $\beta = \beta'$ and there is $g \in G$ such that $\kappa_\bz' = g\cdot\kappa_\bz$, $\kappa_\bo' = g\cdot\kappa_\bo$ and $g_0' = g^{-2}g_0$. 
+\end{thm}
+
+\begin{proof}
+    It only remains to prove the isomorphism condition.
+\end{proof}

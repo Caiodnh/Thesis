@@ -1,9 +1,9 @@
 
-\section[Finite dimensional superinvolution-simple superalgebras]{Finite dimensional superinvolution-simple superalgebras}
+\section[Finite dimensional superinvolution-simple superalgebras]{Finite dimensional superinvolution-simple \\ superalgebras}\label{sec:sinv-simple}
 
-In this section we apply the classification results of \cref{sec:classification-grd-simple-with-sinv,grd-sinv-simple} to the case $G$ is trivial to get a classification of superinvolution-simple superalgebras, which is already known. 
+As an application of our results of \cref{sec:classification-grd-simple-with-sinv,grd-sinv-simple}, we can obtain the known classification of superinvolution-simple superalgebras over an algebraically closed field $\FF$ with $\Char \FF \neq 2$. 
 
-We start with a general result about the center of a superalgebra with superinvolution: 
+We start with a general observation: 
 
 \begin{lemma}
 	Let $(R, \vphi)$ be a superalgebra with super-anti-automorphism.
@@ -16,8 +16,7 @@ We start with a general result about the center of a superalgebra with superinvo
 	Since $c\vphi\inv (r) = \vphi\inv (r)c$, we can apply $\vphi$ on both sides and get $\sign{c}{r} r \vphi(c) = \sign{c}{r} \vphi(c) r$ and, hence, $r \vphi(c) = \vphi(c) r$.
 \end{proof}
 
-The following result was achieved by similar methods in \cite[Theorem 8.1]{Sh98}, for example. 
-See also https://doi.org/10.1016/j.jalgebra.2007.10.044, Theorem 28.
+The following result was achieved by similar methods in \cite[Theorem 8.1]{Sh98} and \cite[Theorem 28]{MR2407903}. 
 
 \begin{cor}\label{cor:Q-no-sinv-center}
 	If $\Char \FF \neq 2$, the associative superalgebra $Q(n)$ does not admit a superinvolution.
@@ -36,7 +35,7 @@ See also https://doi.org/10.1016/j.jalgebra.2007.10.044, Theorem 28.
     \Cref{cor:Q-no-sinv-center} could also be deduced from \cref{lemma:sinv-type-M} assuming $\FF$ is algebraically closed. 
 \end{remark}
 
-It follows that, in the case $\FF$ is algebraically closed, we can divide the superinvolution-simple superalgebras in 3 types:
+It follows from \cref{thm:fd-simple-SA} and \cref{prop:only-SxSsop-is-simple} that, over an algebraically closed field $\FF$ with $\Char \FF \neq 2$, every finite dimensional superinvolution-simple superalgebra is of one of the following 3 types:
 
 \begin{defi}
     Let $(R, \vphi)$ be a finite dimensional superinvolution-simple superalgebra. 
@@ -72,44 +71,28 @@ The following result is valid over any field.
     \begin{enumerate}[(i)]
         \item $M(m,n) \times M(m,n)\sop \iso M(m',n') \times M(m',n')\sop$ if, and only if, either $m = m'$ and $n = n'$, or $m = n'$ and $n = m'$; 
         %
-        \item $Q(n) \times Q(n)\sop \iso Q(n') \times Q(n')\sop$ if, and only if, either $m = m'$ and $n = n'$.
+        \item $Q(n) \times Q(n)\sop \iso Q(n') \times Q(n')\sop$ if, and only if, $n = n'$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
     Let $S_1$ and $S_2$ be simple superalgebras. 
-    From \cref{lemma:iso-SxSsop}, $S_1\times S_2\sop \iso S_1\times S_2\sop$ if, and only if, $S_1 \iso S_2$ or $S_1 \iso S_2\sop$. 
+    From \cref{lemma:iso-SxSsop} with trivial $G$, $S_1\times S_2\sop \iso S_1\times S_2\sop$ if, and only if, $S_1 \iso S_2$ or $S_1 \iso S_2\sop$. 
     In our case, we claim that  $S_1 \iso S_2$ or $S_1 \iso S_2\sop$ if, and only if, $S_1 \iso S_2$. 
     
-    Indeed, if $S_1$ and $S_2$ are of type $M$, then then $S_1 \iso S_2\sop$ imply $S_1 \iso S_2$ since $S_2\sop \iso S_2$ via supertransposition. 
-    If $S_1$ and $S_2$ are of type $Q$, then $S_1 \iso S_2\sop$ imply that $S_1 \iso S_2$ by dimension count. 
+    Indeed, if $S_1$ and $S_2$ are of type $M$, then $S_1 \iso S_2\sop$ implies $S_1 \iso S_2$ since $S_2\sop \iso S_2$ via supertransposition. 
+    If $S_1$ and $S_2$ are of type $Q$, then $S_1 \iso S_2\sop$ implies $S_1 \iso S_2$ by dimension count. 
     
     The isomorphism condition follows from \cref{thm:fd-simple-SA}.
 \end{proof}
-    % and the fact that $M(m,n) \iso M(m,n)\sop$ and $Q(n) \iso Q(n)\sop$. 
-    % To see this last assertion, let $\psi\from M(m,n) \to M(m,n)$ be defined by 
-    % \[
-    %     \begin{pmatrix}
-    %         a & b\\
-    %         c & d
-    %     \end{pmatrix}
-    %     \mapsto
-    %     \begin{pmatrix}
-    %         a\transp & ic\transp\\
-    %         ib\transp & d\transp
-    %     \end{pmatrix},
-    % \]
-    % where $i\in \FF$ is a square root of $-1$. 
-    % It is straightforward that $\psi$ is a super-anti-automorphism of $M(m,n)$ and that, if $m=n$, it restricts to a super-anti-automorphism of $Q(n)$. 
 
 It remains to classify the superinvolution-simple superalgebras of type $M$. 
-It should be noted that $M(m,n)$ does not admit a superinvolution for every values of $m$ and $n$. 
+It should be noted that $M(m,n)$ does not admit a superinvolution for all values of $m$ and $n$. 
 Also, $M(m,n)$ endowed with different superinvolutions may lead to non-isomorphic superalgebras with superinvolution. 
-% making  make $M(m,n)$ a superalgebra with superinvolution two superinvolutions on $M(m,n)$ making it non-isomorphic.
 
-\begin{defi}\label{defi:M(m-n-g_0)}
-    Let $m,n \in \ZZ_{\geq 0}$ not both zero and let $g_0 \in \ZZ_2$. 
-    If $g_0 = \bar 0$ and $n$ is even, set 
+\begin{defi}\label{defi:M(m-n-p_0)}
+    Let $m,n \in \ZZ_{\geq 0}$, not both zero, and let $p_0 \in \ZZ_2$. 
+    If $p_0 = \bar 0$ and $n$ is even, set 
     \[
         \sbox0{$\begin{matrix} 0& I_{n/2}\\ -I_{n/2}& 0\end{matrix}$}
         \Phi \coloneqq \left(\begin{array}{c|c}
@@ -118,7 +101,7 @@ Also, $M(m,n)$ endowed with different superinvolutions may lead to non-isomorphi
                     0 & \usebox{0}
                 \end{array}\right).
     \]
-    If $g_0 = \bar 1$ and $m = n$, let
+    If $p_0 = \bar 1$ and $m = n$, let
     \[
         \Phi \coloneqq \left(\begin{array}{c|c}
                     0 & I_n\\
@@ -126,48 +109,33 @@ Also, $M(m,n)$ endowed with different superinvolutions may lead to non-isomorphi
                     I_n & 0
                 \end{array}\right).
     \]
-    It is straightforward to see that $\vphi(X) \coloneqq \Phi X\stransp \Phi\inv$ defines a superinvolution on $M(m,n)$. 
-    We will denote the superalgebra with superinvolution $(M(m,n), \vphi)$ by $M(m,n, g_0)$. 
+    It is straightforward to see that $\vphi(X) \coloneqq \Phi\inv X\stransp \Phi$ defines a superinvolution on $M(m,n)$. 
+    We will denote the superalgebra with superinvolution $(M(m,n), \vphi)$ by $M^*(m,n, p_0)$. 
 \end{defi}
 
-We note that the superalgebras with superinvolution $M(m,n,g_0)$ are the ones used in the Introduction to define orthosymplectic Lie superalgebras (series $B$, $C$ and $D$) and the periplectic superalgebra (series $P$).
+We note that the superalgebras with superinvolution $M^*(m,n,p_0)$ are the ones used in the Introduction to define orthosymplectic Lie superalgebras (series $B$, $C$ and $D$) and the periplectic superalgebra (series $P$).
 
 \begin{prop}\label{prop:iso-M-with-vphi}
-    Every superalgebra with superinvolution of type $M$ is isomorphic to $M(m,n, g_0)$ for some $m,n \geq 0$ and $g_0 \in \ZZ_2$ as in \cref{defi:M(m-n-g_0)}. 
-    Moreover, $M(m,n, g_0) \iso M(m',n', g_0')$ if, and only if $m = m'$, $n = n'$ and $g_0 = g_0'$.
+    Every superalgebra with superinvolution of type $M$ is isomorphic to $M^*(m,n, p_0)$ for some $m,n \geq 0$ and $p_0 \in \ZZ_2$ as in \cref{defi:M(m-n-p_0)}. 
+    Moreover, $M^*(m,n, p_0) \iso M^*(m',n', p_0')$ if, and only if $m = m'$, $n = n'$ and $p_0 = p_0'$.
 \end{prop}
 
 \begin{proof}
-    This is precisely the case o graded-simple superalgebras, of \cref{chap:grd-simple-assc}, but with trivial $G$ (and, hence, with $G^\# = \ZZ_1$). 
-    By Theorem \ref{thm:iso-(R,vphi)-with-parameters}, those graded-superalgebras are parametrized by $(T, \beta, p, \eta, \kappa, g_0, \delta)$ where $(T, \beta, p)$ are associated to a graded-division superalgebra (see \cref{ssec:param-D-vphi}), and $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(\D)$ (see \cref{defi:X(D)}). 
+    This is precisely the case of graded-simple superalgebras considered \cref{sec:classification-grd-simple-with-sinv}, but with trivial $G$ (and, hence, with $G^\# = \ZZ_2$). 
+    By \cref{subsec:param-(R-phi)}, these graded superalgebras are parametrized by $(T, \beta, p, \eta, \kappa, g_0, \delta)$ where $(T, \beta, p)$ are associated to a graded-division superalgebra (see \cref{ssec:param-D-vphi}), and $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(\D)$ (see \cref{defi:X(D)}). 
     
     Superalgebras of type $M$ are of the form $\End_\FF (U)$ for a finite dimensional superspace $U$, so we have $\D = \FF$ and, hence, $T$ is the trivial group and $\beta$, $p$ and $\eta$ are trivial maps. 
-    Since we have only one possible $\eta$, we have only one equivalence class of $\eta$ and, therefore, our parametrization reduces to elements of $\mathbf{I}(\FF)_\eta^+$ (see \cref{prop:after-fixing-delta}), \ie, we choose $\delta = 1$ and the only parameters left are $\kappa\from G^\#/T = \ZZ_2 \to \ZZ_{\geq 0}$ and $g_0 \in G^\# = \ZZ_2 = \ZZ_2$. 
+    Since we have only one possible $\eta$, we have only one equivalence class of $\eta$ and, therefore, our parametrization reduces to elements of $\mathbf{I}(\FF)_\eta^+$ (see \cref{prop:after-fixing-delta}), \ie, we choose $\delta = 1$ and the only parameters left are $\kappa\from G^\#/T = \ZZ_2 \to \ZZ_{\geq 0}$ and $p_0 \coloneqq g_0 \in G^\# = \ZZ_2$. 
     
-    The isomorphism classes then become in bijection with orbits by $\mc G$-action (see \cref{eq:mathcal-G}) on $\mathbf{I}(\FF)_\eta^+$. 
+    Then, the isomorphism classes are in bijection with the orbits by $\mc G$-action (see \cref{eq:mathcal-G}) on $\mathbf{I}(\FF)_\eta^+$. 
     In the present case, it is clear that $\mc G$ is trivial, hence the isomorphism classes are in bijection with points in $\mathbf{I}(\FF)_\eta^+$. 
     Let us describe these points and find a representative for each isomorphism class. 
     
-    The map $\kappa\from G^\#/T \iso \ZZ_2 \to \ZZ_{\geq 0}$ is determined by the numbers $m \coloneqq \kappa(\bar 0)$ and $n \coloneqq \kappa(\bar 1)$, so our parametrization reduces to triples $(m,n,g_0)$ satisfying some conditions that come from \cref{defi:X(D)}. 
-    The only of those conditions  that are not automatically satisfied are \eqref{item:kappa-duality} and \eqref{item:kappa-parity}. 
-    Condition \eqref{item:kappa-duality} is tautological if $g_0 = \bar 0$, and equivalent to $m=n$ if $g_0 = \bar 1$. 
-    Condition \eqref{item:kappa-parity} simplifies to if $g_0 = \bar 0$ and $g = \bar 1$, then $n = \kappa (g)$ is even. 
-    In other words, conditions \eqref{item:kappa-duality} and \eqref{item:kappa-parity} become equivalent to $n$ is even if $g_0 = \bar 0$, and $m = n$ if $g_0= \bar 1$. 
+    The map $\kappa\from G^\#/T \iso \ZZ_2 \to \ZZ_{\geq 0}$ is determined by the numbers $m \coloneqq \kappa(\bar 0)$ and $n \coloneqq \kappa(\bar 1)$, so our parametrization reduces to triples $(m,n,p_0)$ satisfying some conditions that come from \cref{defi:X(D)}. 
+    The only conditions that are not automatically satisfied are \eqref{item:kappa-duality} and \eqref{item:kappa-parity}. 
+    Condition \eqref{item:kappa-duality} is tautological if $p_0 = \bar 0$, and equivalent to $m=n$ if $p_0 = \bar 1$. 
+    Condition \eqref{item:kappa-parity} simplifies to the following: if $p_0 = \bar 0$ and $g = \bar 1$, then $n = \kappa (g)$ is even. 
+    In other words, conditions \eqref{item:kappa-duality} and \eqref{item:kappa-parity} become equivalent to $n$ being even if $p_0 = \bar 0$, and $m = n$ if $p_0= \bar 1$. 
     
-    A representative for each point can be found by using the matrices in \cref{prop:self-dual-components,prop:pair-of-dual-components}. 
+    A representative for each point in $\mathbf{I}(\FF)_\eta^+$ can be found by using the matrices in \cref{prop:self-dual-components,prop:pair-of-dual-components}. 
 \end{proof}
-
-% \begin{prop}
-%     Let $(R, \vphi)$ be a superalgebra with superinvolution that is simple as an superalgebra. 
-%     Then $R$ is isomorphic to one of the superalgebras of the introduction.
-% \end{prop}
-
-% \begin{proof}
-%     This is a consequence of Theorem \ref{thm:iso-(R,vphi)-with-parameters}. 
-% \end{proof}
-
-% \begin{defi}
-%     Let $R$ be a superalgebra and let $\vphi\from R\to R$ be a superinvolution. 
-%     We say that $\vphi$ is of the \emph{first kind} if it fixes all the elements of $Z(R)$. 
-%     Otherwise, we say that $\vphi$ is of the \emph{second kind}.
-% \end{defi}

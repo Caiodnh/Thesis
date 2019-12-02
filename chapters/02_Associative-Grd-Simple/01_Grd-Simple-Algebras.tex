@@ -127,7 +127,7 @@ Note that $\D$ can be regarded as a left $\D_e$-module.
 
 \begin{defi}\label{def:D_e-form}
     Let $\U$ be a graded $\D$-module. 
-    A \emph{$\D_e$-form} of $\U$ is a graded $\D_e$-submodule $\tilde \U \subsetneq \U$ such that the map $\tilde \U \tensor_{\D_e} \D \to \U$ given by $u\tensor d \mapsto ud$ is an isomorphism of graded right $\D$-modules. 
+    A \emph{$\D_e$-form} of $\U$ is a graded $\D_e$-submodule $\tilde \U \subseteq \U$ such that the map $\tilde \U \tensor_{\D_e} \D \to \U$ given by $u\tensor d \mapsto ud$ is an isomorphism of graded right $\D$-modules. 
     If this is the case, we will use this map to identify $\tilde \U \tensor_{\D_e} \D$ with $\U$. 
 \end{defi}
 
@@ -224,7 +224,7 @@ If $\dim_\D (\U) < \infty$, we can say more:
 \end{prop}
 
 \begin{proof}
-    Let $\B = \{ u_1, \ldots, u_l \}$ be graded basis for $\U$ and $\mc C = \{v_i\}_{i\in I}$ be graded basis for $\V$, set $g_j \coloneqq \deg u_j$ and $h_i \coloneqq \deg v_i$, for $1\leq j \leq l$ and $i\in I$. 
+    Let $\B = \{ u_1, \ldots, u_l \}$ be a graded basis for $\U$ and $\mc C = \{v_i\}_{i\in I}$ be a graded basis for $\V$, set $g_j \coloneqq \deg u_j$ and $h_i \coloneqq \deg v_i$, for $1\leq j \leq l$ and $i\in I$. 
     
     Since $\B$ is, in particular, a basis for $\D$ as a free $\D$-module, a $\D$-linear map $f\from \U \to \U$ can be defined by its values on the elements of $\B$. 
     Given $1\leq j \leq l$, $i\in I$, $t\in T$ and $0\neq d \in \D_t$, define $f_{i, j, d}\from \U \to \V$ to be the $\D$-linear map defined by $f_{i, j, d}(u_r) = \delta_{jr} v_i d$, for every $r \in \{1, \ldots, l \}$. 
@@ -247,7 +247,7 @@ More precisely, given graded bases $\B = \{ u_1, \ldots, u_l \}$ and $\mc C = \{
 Under this isomorphism, the map $f_{i, j, d}$ defined in the proof of \cref{prop:Hom_D-is-graded}, corresponds to the matrix $E_{ij}(d) \in M_{k\times \ell}(\D)$, \ie, the matrix which has $d$ in the position $(i,j)$ and $0$ elsewhere. 
 
 \begin{remark}\label{rmk:M_k(F)-tensor-D}
-    Note that we can identify $M_{k \times \ell}(\D) = M_{k \times \ell}(\FF) \tensor_\FF \D$,     with $E_{ij}(d)$ corresponding to $E_{ij}\tensor d$. 
+    Note that we can identify $M_{k \times \ell}(\D) = M_{k \times \ell}(\FF) \tensor_\FF \D$, with $E_{ij}(d)$ corresponding to $E_{ij}\tensor d$. 
     In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_{k\times \ell}(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_{k\times \ell}(\FF)$ has an elementary grading (see \cref{defi:elementary-grd-matrix}).
 \end{remark}
 
@@ -441,6 +441,8 @@ Since $T$ is abelian and every homogeneous component is one-dimensional, for any
 \]
 Note that $\beta(t,s)$ does not depend on the choice of $X_t$ and $X_s$. 
 It is easy to see that the map $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter and that $\rad \beta$ is the support of $Z(\D)$. 
+We will say that $(T, \beta)$ is the \emph{pair associated to the graded-division superalgebra $\D$}, or that $\D$ is a \emph{graded-superalgebra associated to the pair $(T,\beta)$}.
+
 The following is a consequence of a well-known result in group cohomology (see \cite[Section 2.2]{EK_d4}), but we give a different proof here for completeness (see \cite[Section 4]{BZ18}). 
 
 \begin{prop}\label{prop:T-beta-determines-iso}

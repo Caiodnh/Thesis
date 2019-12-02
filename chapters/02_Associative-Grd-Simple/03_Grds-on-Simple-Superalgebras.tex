@@ -1,6 +1,6 @@
 \section{Odd gradings on simple associative superalgebras only in terms of \texorpdfstring{$G$}{G}}\label{sec:assc-only-G}
 
-Here $\FF$ is algebraically closed and $\D$ is finite dimensional.
+In this section we will assume $\FF$ is algebraically closed and find a classification of finite dimensional odd graded-simple $G$-graded superalgebras in term of the group $G$, not $G^\#$.
 
 \subsection{Odd graded-simple superalgebras in terms of \texorpdfstring{$G$}{G}}\label{ssec:odd-div-G-only}
 
@@ -74,36 +74,39 @@ It remains to see when different quadruples determine isomorphic graded-division
     for all $t\in T^+$ and $(h, \chi) \in \mathbf{O} (T^+, \beta^+)$.
 \end{defi}
 
-If $t\in T^+$ and $(h, \chi) \in \mathbf {O} (T^+, \beta^+)$, then $(th)^2 = t^2h^2\in T^+$ and $\beta(th^2, \cdot) = \beta(t, \cdot) \chi$, hence, indeed, $t \cdot (h, \chi) \in \mathbf {O} (T^+, \beta^+)$. 
+If $t\in T^+$ and $(h, \chi) \in \mathbf {O} (T^+, \beta^+)$, then $(th)^2 = t^2h^2\in T^+$, $\beta^+(t, (t h)^2) \chi( (t h)^2) = \beta^+(t, h^2) \chi(t^2) \chi (h^2) = \chi^{-2}(t) \chi
+^2 (t) = 1$ and $\beta^+((th)^2, \cdot) = \beta^+(t, \cdot) \chi$, hence, indeed, $t \cdot (h, \chi) \in \mathbf {O} (T^+, \beta^+)$. 
 It is straightforward that the axioms of action are satisfied. 
 
 \begin{thm}\label{thm:iso-odd-D-only-G}
-    Let $\D$ and $\D'$ be finite dimensional odd graded-division superalgebras, associated to quadruples $(T^+, \beta^+, h, \chi)$ and $(T'^+, \beta'^+, h', \chi')$, respectively. 
-    Then $\D \iso \D'$ if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, and $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$. 
+    Let $\D$ and $\D'$ be finite dimensional odd graded-division superalgebras associated to quadruples $(T^+, \beta^+, h, \chi)$ and $(T'^+, \beta'^+, h', \chi')$, respectively. 
+    Then $\D \iso \D'$ as graded algebras if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, and $(h', \chi')$ is in the $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$. 
 \end{thm}
 
 \begin{proof}
     Let $(T, \beta, p)$ and $(T', \beta', p')$ be the triples associated to $\D$ and $\D'$, respectively. 
-    By other theorem, $\D \iso \D'$ if, and only if, $T= T'$ and $\beta = \beta'$. 
+    By \cref{prop:T-beta-determines-iso}, $\D \iso \D'$ if, and only if, $T= T'$ and $\beta = \beta'$. 
     
-    By definition, $T= T'$ if, and only if, $T^+ = T'^+$ and $(h, \bar 1)T^+ = (h', \bar 1)T^+$. 
-    Note that the latter condition is equivalent to 
+    Let $t_1 \coloneqq (h, \bar 1)$ and $t_1' \coloneqq (h', \bar 1)$.
+    By definition, $T= T'$ if, and only if, $T^+ = T'^+$ and $t_1 T^+ = t_1' T^+$. 
+    Clearly, the latter condition is equivalent to 
     % Hence $T= T'$ if, and only if, $T^+ = T'^+$ and 
     $h' = th$ for some $t\in T^+$. 
     
     Now suppose $T= T'$ and let $t\in T^+$ be such that $h' = th$. 
-    Clearly, $\beta = \beta'$ if, and only if, 
-    $\beta^+ = \beta'^+$ and $\beta((h', \bar 1), \cdot) = \beta'((h', \bar 1), \cdot)$. 
-    By definition of $\beta'$, the latter condition is equivalent to $\chi' = \beta((h', \bar 1), \cdot)$. 
-    Since $\beta((h', \bar 1), \cdot) = \beta ((th, \bar), \cdot) = \beta^+ (t, \cdot) \beta ((h, \bar 1), \cdot) = \chi$, we have the desired result. 
+    By \cref{lemma:existence-beta}, $\beta = \beta'$ if, and only if, 
+    $\beta^+ = \beta'^+$ and $\beta(t_1, \cdot) = \beta'(t_1, \cdot)$. 
+    Since $t_1 = t\inv t_1'$, the latter condition is equivalent to $\chi = \beta^+ (t, \cdot)\inv \chi'$. 
 \end{proof}
 
+Combining this with \cref{thm:iso-D-odd}, we obtain: 
+
 \begin{cor}\label{cor:classification-odd-general}
-    Let $(\D, \U)$ and $(\D', \U')$ be pairs as in \cref{def:odd-parameters} and let $(T^+, \beta^+, h,\chi)$ and $(T'^+, \beta'^+, h',\chi')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
+    Let $(\D, \U)$ and $(\D', \U')$ be pairs as in  \cref{def:odd-parameters} and let $(T^+, \beta^+, h, \chi, \kappa)$ and $(T'^+, \beta'^+, h', \chi', \kappa)$ be the $G$-parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
 	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T=T'$, $\beta=\beta'$, $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$. \qed
 \end{cor}
 
-For specific cases, this parametrization can be simplified using the following lemma about group actions: 
+For specific cases, this parametrization can be simplified using the following general observation about group actions, which will also be useful in the following chapters: 
 
 \begin{lemma}\label{lemma:lemma-on-actions}
     Let $H$ be a group, let $X$ and $Y$ be $H$-sets, and let $\pi\from X \to Y$ be an $H$-equivariant map. 
@@ -114,26 +117,24 @@ For specific cases, this parametrization can be simplified using the following l
     The first assertion is straightforward: if $x\in \pi\inv(y)$ and $g \in \operatorname{Stab}_H (y)$, then $g \cdot x \in \pi\inv(y)$. 
     
     Now suppose that the $H$-action on $Y$ is transitive. 
-    It is clearly that the $\operatorname{Stab}_H (y)$-orbit of any $x\in \pi\in(y)$ is contained in the $H$-orbit of $x$. Conversely, given $x\in X$, by transitivity, there is $g\in H$ such that $g \cdot \pi(x) = y$ and, hence, $g\cdot x \in \pi\inv (y)$. 
-    We claim that $\operatorname{Stab}_H (y)$-orbit of $g\cdot x$ is the only contained in the $H$-orbit of $x$. 
-    % We claim the $\operatorname{Stab}_H (y)$-orbit of $g\cdot x$ is the only $\operatorname{Stab}_H (y)$-orbit contained in the $H$-orbit of $x$. 
-    Indeed, if for some $g'\in H$ we have $g'\cdot x \in \pi\inv(y)$, then $g'\cdot x = (g'g\inv)\cdot (g\cdot x)$ and, hence, $y = \pi(g'\cdot x) = (g'g\inv)\cdot \pi(g\cdot x) = (g'g\inv) \cdot y$, so $g'g\inv \in \operatorname{Stab}_H (y)$.
+    It is clear that the $\operatorname{Stab}_H (y)$-orbit of any $x\in \pi\inv (y)$ is contained in the $H$-orbit of $x$. 
+    Conversely, given $x\in X$, by transitivity, there is $g\in H$ such that $g \cdot \pi(x) = y$ and, hence, $g\cdot x \in \pi\inv (y)$. 
+    We claim that the intersection of the $H$-orbit of $x$ with $\pi\inv (y)$ is precisely the  $\operatorname{Stab}_H (y)$-orbit of $g\cdot x$. 
+    Indeed, if for some $g'\in H$ we have $g'\cdot x \in \pi\inv(y)$, then $y = \pi(g'\cdot x) = (g'g\inv)\cdot \pi(g\cdot x) = (g'g\inv) \cdot y$, so $g'g\inv \in \operatorname{Stab}_H (y)$.
 \end{proof}
 
 As an application of this lemma, we will revisit the classification of graded-division superalgebras of type $Q$. 
+Recall that in this case $\beta^+$ is nondegenerate. 
 
-fix $(T^+, \beta^+)$ with $\beta^+$ nondegenerate. 
-Consider the action of $T^+$ on $\widehat{T^+}$ given by $t\cdot \chi = \beta^+(t,\cdot) \chi$ and let $\pi\from \mathbf {O} (T^+, \beta^+) \to \widehat{T^+}$ be the projection on the second entry, which clearly a $\widehat{T^+}$-equivariant map. 
+Let $\pi\from \mathbf {O} (T^+, \beta^+) \to \widehat{T^+}$ be the projection on the second entry, which is a $T^+$-equivariant map if we define the action of $T^+$ on $\widehat{T^+}$ by $t\cdot \chi = \beta^+(t,\cdot) \chi$, for all $t\in T$ and $\chi \in \widehat{T^+}$. 
 
-Since $\beta^+$ is nondegenerate, the $T^+$-action on $\widehat{T^+}$ is transitive. 
-Indeed, for every $\chi \in \widehat{T^+}$, there is $t \in T^+$ such that $\chi = \beta(t, \cdot)$, so $\chi = t \cdot 1$, where $1\in \widehat{T^+}$ is the trivial character. 
+Since $\beta^+$ is nondegenerate, the map $T \to \widehat{T^+}$ sending $s \to \beta^+(s, \cdot)$ is an isomorphism of $T^+$-sets, hence the $T^+$-action on $\widehat{T^+}$ is simply transitive. 
 
-The nondegeneracy of $\beta$ also implies that $\operatorname{Stab}_{T^+} (1) = \{e \}$. 
-By \cref{lemma:lemma-on-actions}, it follows that the $T^+$-orbits in $\mathbf {O} (T^+, \beta^+)$ are in bijection with points in $\pi\inv (1)$. 
-By the definition of $\mathbf {O} (T^+, \beta^+)$, $(h, 1) \in G \times \widehat{T^+}$ if, and only if, $h^2 \in T^+$ and $h^2 \in \ker \beta^+$, hence, if, and only if, $h^2 = e$. 
+By \cref{lemma:lemma-on-actions}, it follows that the $T^+$-orbits in $\mathbf {O} (T^+, \beta^+)$ are in bijection with points in $\pi\inv (1)$, where $1$ denotes the trivial character of $T^+$. 
+By \cref{def:O(T+-beta+)}, $(h, 1) \in \mathbf {O} (T^+, \beta^+)$, $(h, 1)$ if, and only if, $h^2 \in T^+$ and $h^2 \in \ker \beta^+$, \ie, $h^2 = e$. 
 
-% Our theorem reduces to ... and $h = h'$. 
-Note that in this case $(h, \bar 1) \in \ker \beta$, so in view of \cref{lemma:beta-deg-beta-tilde-nondeg}, $\ker \beta = \langle (h, \bar 1) \rangle$ and $\D$ is isomorphic to the standard realization of (see \cref{def:standard-realization-Q}).
+Note that in this case $(h, \bar 1) \in \ker \beta$, so in view of \cref{lemma:beta-deg-beta-tilde-nondeg}, $\ker \beta = \langle (h, \bar 1) \rangle$ and $\D$ is isomorphic to a standard realization of a graded-division superalgebra of type $Q$ associated to $(T^+, \beta^+, h)$ (see \cref{def:standard-realization-Q}). 
+Thus, in this case, \cref{cor:classification-odd-general} reduces to \cref{cor:iso-Q}.
 
 \subsection{Odd graded-division superalgebras of type \texorpdfstring{$M$}{M} in terms of \texorpdfstring{$G$}{M}}
 

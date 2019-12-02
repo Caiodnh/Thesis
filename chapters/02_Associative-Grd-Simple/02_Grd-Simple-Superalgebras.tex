@@ -127,14 +127,17 @@ Since the property of being an even or an odd a graded-division superalgebra is 
     If $\D$ is an even graded-division superalgebra, we say that the grading on $R$ is \emph{even}; if $\D$ is an odd graded-division superalgebra, we say that the grading on $R$ is \emph{odd}. 
 \end{defi}
 
-For the remaining of this subsection, fix a graded-division algebra $\D$ and a nonzero graded right $\D$-module of finite rank $\U$, and set $R \coloneqq \End_{\D} (\U)$. 
+For the remaining part of this subsection, fix a graded-division algebra $\D$ and a nonzero graded right $\D$-module of finite rank $\U$, and set $R \coloneqq \End_{\D} (\U)$. 
 
-By the discussion on \cref{ssec:supermodules-over-D}, if the grading on $R$ is even, all the information related to the canonical $\ZZ_2$-grading on $R$ is encoded on the graded right $\D$-supermodule $\mc U=\mc U\even \oplus \mc U\odd$. 
+By the discussion on \cref{ssec:supermodules-over-D}, if the grading on $R$ is even, all the information related to the canonical $\ZZ_2$-grading on $R$ is encoded in the graded right $\D$-supermodule $\mc U=\mc U\even \oplus \mc U\odd$. 
 More explicitly, 
 \[\label{eq:almost-ZZ-grading}
     R\even = \End_\D(\U\even) \oplus \End_\D(\U\odd) \AND R\odd = \Hom_\D(\U\even, \U\odd) \oplus \Hom_\D(\U\odd, \U\even).
 \]
-If $G$ is an abelian group, this can also be seen from the fact that, following \cref{rmk:M(D)=M(FF)-tensor-D}, we can identify  $R$ with $M_k(\FF)\tensor \D$, where we have the usual tensor product of graded (super)algebras (\cref{defi:grd-on-tensor-product}) on the latter. So, $R\even = M_k(\FF)\even \tensor \D$ and $R\odd = M_k(\FF)\odd \tensor \D$. 
+This can also be seen by fixing a graded basis $\{u_1, \ldots, u_{k_\bz}\}$ of $\U\even$ and a graded basis $\{u_{k_\bz + 1}, \ldots, u_{k_\bz + k_\bo}\}$ of $\U\odd$. 
+Then $R$ can be identified with $M_{k_\bz \mid k_\bo}(\D)$ as a graded superalgebra. 
+If $G$ is an abelian group, following \cref{rmk:M_k(F)-tensor-D}, we can identify $R$ with the tensor product of $G^\#$-graded algebras $M_{k_\bz \mid k_\bo}(\FF)\tensor \D$. 
+So, $R\even = M_{k_\bz \mid k_\bo}(\FF)\even \tensor \D$ and $R\odd = M_{k_\bz \mid k_\bo}(\FF)\odd \tensor \D$. 
 
 \begin{remark}\label{rmk:even-ZZ-grading}
     Note that, if the $G$-grading on $R$ is even, we can refine the $G^\#$-grading to a $G\times \ZZ$-grading by defining $R\inv \coloneqq \Hom_{\D} (\U\odd, \U\even)$, $R^0 \coloneqq R\even = \End_\D(\U\even) \oplus \End_\D(\U\odd)$ and $R^1 \coloneqq \Hom_{\D} (\U\even, \U\odd)$. 
@@ -144,8 +147,14 @@ If the grading on $R$ is odd, then, again by the discussion on \cref{ssec:superm
 To see it more explicitly, let us follow \cref{conv:pick-even-basis} and recall the maps $f_{i, j, d} \in R = \End_\D (\U)$ defined in the beginning of \cref{ssec:Grd-Wedderburn-Theory}. 
 Those maps generate $R$ and, by \cref{eq:grd-M_k(D)-nonabelian}, their parity depend only on $d \in \D$. 
 
-If $G$ is an abelian group, again, this can also be seen from the identification $R = M_k(\FF)\tensor \D$ on \cref{rmk:M(D)=M(FF)-tensor-D}. 
-The grading on $M_k(\FF)$ is elementary grading defined by a tuple of elements in $G = G \times \{ \bar 0 \}$ and, hence,  $R\even = M_k(\D) \tensor \D\even$ and $R\odd = M_k(\D) \tensor \D\odd$. 
+If $G$ is an abelian group, again, this can also be seen from the identification $R = M_k(\FF)\tensor \D$ in \cref{rmk:M_k(F)-tensor-D}. 
+The grading on $M_k(\FF)$ is elementary grading defined by a tuple of elements in $G = G \times \{ \bar 0 \}$ and, hence, $R\even = M_k(\D) \tensor \D\even$ and $R\odd = M_k(\D) \tensor \D\odd$. 
+
+\begin{remark}\label{rmk:M(D)=M(FF)-tensor-D}
+	For superalgebras, tensor product is usually defined with a different multiplication on the superspace $M_k(\FF)\tensor \D$, given by \[(r_1 \tensor s_1) (r_2 \tensor s_2) = \sign{r_2}{s_1} (r_1 r_2) \tensor (s_1 s_2).\]
+	If we are following Convention \ref{conv:pick-even-basis}, either $M_k(\FF)$ or $\D$ have trivial canonical $\ZZ_2$-grading, hence the tensor product of superalgebras coincides with that of algebras.
+\end{remark}
+
 
 % \begin{remark}
 %     If $\D$ is odd, then the canonical $\ZZ_2$-grading on $R$ \emph{cannot} be refined to a $\ZZ$-grading, because of $T$ (see somewhere in \cite{livromicha}).
@@ -448,7 +457,7 @@ We note that, in the same way it as with  \cref{def:Gamma-T-beta-kappa}, there i
 We start with even gradings on superalgebras of type $M$:
 
 \begin{defi}\label{def:Gamma-T-beta-kappa-even}
-    Let $m, n\in \ZZ_{\geq 0}$ such that $m+n > 0$. 
+    Let $m, n\in \ZZ_{\geq 0}$, not both zero. 
     Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and maps $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa_\bz| \sqrt{|T|} = m$ and $|\kappa_\bo| \sqrt{|T|} = n$, consider:
     \begin{enumerate}[(i)]
         \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$;

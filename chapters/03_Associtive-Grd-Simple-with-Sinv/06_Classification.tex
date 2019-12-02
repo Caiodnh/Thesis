@@ -14,18 +14,6 @@ that, under above assumptions, we have that $R \iso \End_\D (\U)$ and that $\vph
 Recall, from \cref{ssec:T-beta-p}, that the isomorphism class of a finite dimensional graded division superalgebra $\D$ is determined by a triple $(T, \beta, p)$ where $T \coloneqq \supp \D \subseteq G^\#$ is a finite abelian group, $\beta\from T\times T \to \FF^\times$ is an alternating bicharacter and $p\from T \to \ZZ_2$ is a group homomorphism. 
 Also recall that we define the skew-symmetric bicharacter $\tilde\beta \from T\times T \to \FF^\times$ by $\tilde\beta (a,b) = (-1)^{p(a) p(b)} \beta(a, b)$, for all $a, b \in T$ (see \cref{eq:tilde-beta-def}). 
 
-Next definition allows a compact statement of \cref{eq:superpolarization}, and will be also used in \cref{sec:model-O}.
-
-% gives  us a more compact way to express Equation \eqref{eq:superpolarization}.  
-
-\begin{defi}\label{def:coboundary}
-	Let $H$ and $K$ be groups and let $f\from H \to K$ be any map.
-	We define $\mathrm{d} f\from H\times H \to K$ to be the map given by $\mathrm{d} f\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$.
-	The maps $H\times H \to K$ of this form are called \emph{$2$-coboundaries}.
-\end{defi}
-
-Note that $f\from H \to K$ is a group homomorphism if, and only if, $\mathrm{d} f\, (a,b) = e$ for all $a,b \in H$. 
-
 Recall that, since each component $\D_t$ of $\D$ is one-dimensional, an invertible degree-preserving map $\vphi_0\from \D \to \D$ is completely determined by a map $\eta\from T \to \FF^\times$.
 
 \begin{prop}\label{prop:superpolarization}
@@ -33,16 +21,15 @@ Recall that, since each component $\D_t$ of $\D$ is one-dimensional, an invertib
 	Then $\vphi_0$ is a super-anti-automorphism if, and only if, 
 	%
 	\begin{equation}\label{eq:superpolarization}
-		\forall a,b\in T, \quad \eta(ab) = \tilde\beta(a,b) \eta(a) \eta(b)
+		\forall a,b\in T, \quad \eta(ab) = \tilde\beta(a,b) \eta(a) \eta(b).
 	\end{equation}
 	%
 	%
 % 	\begin{equation}\label{eq:superpolarization}
 % 		\forall a,b\in T, \quad (-1)^{p(a) p(b)} \beta(a,b) =  \eta(ab) \eta(a)\inv \eta(b)\inv,
 % 	\end{equation}
-	%
-	\ie, $\tilde\beta = \mathrm{d}\eta$. 
-	Moreover, $\D$ admits a super-anti-automorphism if, and only if, $\beta$ only takes values $\pm 1$.
+	% 
+	Moreover, $\D$ admits a super-anti-automorphism if, and only if, $\tilde\beta$ (or, equivalently, $\beta$) only takes values $\pm 1$.
 \end{prop}
 
 \begin{proof}
@@ -56,56 +43,75 @@ Recall that, since each component $\D_t$ of $\D$ is one-dimensional, an invertib
 		\iff &  & \eta(ab)                     & = (-1)^{p(a) p(b)} \eta(a) \eta(b) \beta(b,a)
 		\\
 		\iff &  & \eta(ab)                     & = \tilde\beta(b,a) \eta(a) \eta(b)
-		\\
-		\iff &  & \eta(ab) \eta(a)\inv \eta(b)\inv & = \tilde\beta(b,a). 
+% 		\\
+% 		\iff &  & \eta(ab) \eta(a)\inv \eta(b)\inv & = \tilde\beta(b,a). 
 	\end{alignat*}
-	The left-hand side of this last equation does not change if $a$ and $b$ are switched, hence $\tilde\beta(b,a) = \tilde\beta(a,b)$. 
-	This proves the first assertion. 
-
-	Also, since $\tilde\beta$ is skew-symmetric, $\tilde\beta(b, a) = \tilde\beta (a, b)\inv$ and, hence, $\tilde\beta(a,b)^2 = 1$. 
-	Therefore $\tilde\beta$, and hence $\beta$, takes values $\pm 1$, proving one direction of the ``moreover'' part.
-	%from where we conclude that $\beta(a,b) = \pm 1$. 
-	The converse follows from the fact that the isomorphism class of $\D\sop$ is determined by $(T, \beta\inv)$, so if $\beta$ takes only values in $\{ \pm 1 \}$, there must be an isomorphism from $\D$ to $\D\sop$, which can be seen as a super-anti-isomorphism on $\D$.
+	%
+	If $a$ and $b$ are switched, since $T$ is abelian, we get $\eta(ab) = \tilde\beta(a,b) \eta(a) \eta(b)$, as desired. 
+	Also, it follows that $\tilde\beta(b,a) = \tilde\beta(a,b)$. 
+	Using that $\tilde\beta$ is skew-symmetric, \ie,  $\tilde\beta(b, a) = \tilde\beta (a, b)\inv$, we have that $\tilde\beta(a,b)^2 = 1$ and, hence, $\tilde\beta$ only takes values $\pm 1$, proving one direction of the ``moreover'' part. 
+	The converse follows from the fact that the isomorphism class of $\D\sop$ is determined by $(T, \beta\inv, p)$, so if $\beta$ takes only values in $\{ \pm 1 \}$, there must be an isomorphism from $\D$ to $\D\sop$, which can be seen as a super-anti-automorphism of $\D$.
 \end{proof}
 
-With this we can translate the problem of classifying $(\D, \vphi_0)$ to the level of abelian groups.
-Instead of the graded superalgebra $\D$ with super-anti-automorphism $\vphi_0$, we can focus, instead, on the data $(T, \beta, p, \eta)$, where $T$ is a finite abelian group, $\beta$ is an alternating bicharacter on $T$, $p\from T \to \ZZ_2$ is a group homomorphism and $\eta\from T \to \FF^\times$ satisfies Equation \eqref{eq:superpolarization}.
-Also, the condition of $\vphi_0$ being a superinvolution clearly corresponds to $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$. 
+\begin{cor}\label{cor:super-anti-auto-squares-in-radical}
+    The graded-superalgebra $\D$ admits a super-anti-automorphism if, and only if, 
+    $t^2\in \rad\tilde\beta$, for all $t \in T$. \qed
+\end{cor}
 
-\Cref{prop:superpolarization} gives a strong restriction if $\D$ simple as a superalgebra. 
-This case will be considered with more details in \cref{ssec:simple-sa-but-with-vphi}.
+Next definition is borrowed from the theory of group cohomology, and allows a compact statement of \cref{eq:superpolarization}. 
+It will also be used in \cref{sec:model-O}.
 
-\begin{lemma}\label{lemma:odd-cant-have-order-2}
-	If $\D$ admits a superinvolution, %$\vphi_0$ is a superinvolution. 
-	% $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$. 
-	then every odd element in $T$ must have order at least $4$.
-\end{lemma}
+% gives  us a more compact way to express Equation \eqref{eq:superpolarization}.  
 
-\begin{proof}
-	The bicharacter $\beta$ is alternating, so if we put $a = b = t$ in Equation \eqref{eq:superpolarization}, we get
-	%
-	\begin{equation}\label{eq:eta-t-square}
-		\forall t\in T, \quad 1 = \eta(t)^2 = (-1)^{p(t)} \eta(t^2).
-	\end{equation}
-	%
-	% Also, since $\vphi_0^2 = \id$, $\eta(t)^2 = 1$ for all $t\in T$.
+\begin{defi}\label{def:coboundary}
+	Let $H$ and $K$ be groups and let $f\from H \to K$ be any map.
+	We define $\mathrm{d} f\from H\times H \to K$ to be the map given by $(\mathrm{d} f)\, (a,b) = f(ab)f(a)\inv f(b)\inv$ for all $a,b \in H$.
+	The maps $H\times H \to K$ of this form are called \emph{$2$-coboundaries}.
+\end{defi}
 
-	Now let $t\in T^-$.
-	Every odd power of $t$ is also an odd element, so $t$ cannot have an odd order.
-	By Equation \eqref{eq:eta-t-square}, $\eta (t^2) = - \eta(t)^2 = -1$, hence $t^2 \neq e$.
-\end{proof}
+% Note that $f\from H \to K$ is a group homomorphism if, and only if, $(\mathrm{d} f)\, (a,b) = e$ for all $a,b \in H$. 
 
-\begin{cor}\label{cor:sinv-implies-type-M}
-    If $\D$ is simple as a superalgebra and admits a superinvolution, then $T$ is an elementary $2$-group and 
-    $\D$ is even of type $M$.
+Hence \cref{eq:superpolarization} can be written simply as $\mathrm{d}\eta = \tilde\beta.$
+
+If $\vphi_0$ is a super-anti-automorphism on $\D$ as in \cref{prop:superpolarization}, we say that
+% $(T, \beta, p, \eta)$ is the \emph{quadruple associated} to the graded-division superalgebra with super-anti-automorphism $(\D,\vphi_0)$, or that 
+$(\D,\vphi_0)$ is a graded-division superalgebra with super-anti-automorphism \emph{associated} to the quadruple $(T, \beta, p, \eta)$. 
+It follows from \cref{lemma:colour-tensor-product,prop:superpolarization} that for any finite abelian group $T$, alternating bicharacter $\beta\from T\times T \to \FF^\times$, group homomorphism $p\from T \to \ZZ_2$ and map $\eta\from T \to \FF^\times$ such that $\mathrm{d}\eta = \tilde\beta$, there is a graded-division superalgebra with super-anti-automorphism associated to $(T, \beta, p, \eta)$. 
+Thus the quadruples $(T, \beta, p, \eta)$ parametrize the isomorphism classes of finite dimensional graded-division superalgebra with super-anti-automorphism. 
+It is clear that the corresponding $\vphi_0$ is a superinvolution if, and only if, $\eta(t) \in \{ \pm 1 \}$ for all $t\in T$. 
+
+\begin{remark}
+    By \cref{prop:skew-bicharacter-grd-SA}, it follows that from $(T, \eta)$, where $T$ is a finite abelian group and $\eta\from T \to \FF^\times$ is a map such that $\mathrm{d}\eta$ is a skew-symmetric bicharacter, we can recover both $\beta$ and $p$. 
+\end{remark}
+
+% The following is an easy consequence of \cref{prop:superpolarization} and will be used in \cref{chap:grds-sinv-simple}. 
+
+\begin{cor}\label{cor:eta-t-square}
+    Suppose $\eta$ determines a superinvolution on $\D$, \ie, $\eta$ takes values in $\pmone$. 
+    For every element $t\in T$, $\eta(t^2) = (-1)^{p(t)}$ for all $t\in T$. 
+    In particular, every element in $T^-$ has order at least $4$. 
 \end{cor}
 
 \begin{proof}
-    In this case, since $\tilde\beta$ is nondegenerate, the map $T \to \widehat T$ given by $t \mapsto \tilde\beta(t, \cdot)$ is a group isomorphism. 
-    Since $\tilde\beta$ only takes values $\pm 1$, it follows that $T$ is an elementary $2$-group. 
-    By \cref{lemma:odd-cant-have-order-2}, we conclude that $T = T^+$, \ie, $\D$ is even. 
-    But graded-division algebras of type $Q$ are always odd, so we must have that $\D$ is of type $M$. 
+    By \cref{eq:superpolarization}, we have $\eta (t^2) = \tilde\beta(t,t) \eta(t)^2 = (-1)^{p(t)} \beta(t,t) = (-1)^{p(t)}$. 
+    
+    Now let $t\in T^-$.
+	Every odd power of $t$ is also an odd element, so $t$ cannot have an odd order.
+	But $\eta (t^2) = -1$, hence $t^2 \neq e$. 
 \end{proof}
+
+
+% \begin{prop}
+%     Let $(\D,\vphi_0)$ and $(\D',\vphi_0')$ be finite dimensional graded-division superalgebras with super-anti-automorphism associated to quadruples $(T, \beta, p, \eta)$ and $(T', \beta', p', \eta')$, respectively. 
+%     Then $(\D,\vphi_0) \iso (\D,\vphi_0)$ if, and only if, $T =T'$, $\beta = \beta'$, $p = p'$ and $\eta = \eta'$.
+% \end{prop}
+
+% \begin{proof}
+%     We have that $\D \iso \D'$ if, and only if, $T =T'$, $\beta = \beta'$ and $p = p'$. 
+%     Suppose this is the case, fix $0 \neq X_t\in \D_t$ and let $\psi\from \D \to \D'$ be an isomorphism of graded algebras. 
+%     We have that $\psi(X_t) = \chi(t) X_t'$
+%     If $\eta = \eta'$, it is easy to see that $\psi$ is an isomorphism of graded superalgebras with super-anti-automorphism. 
+% \end{proof}
 
 \subsection{Parametrization of \texorpdfstring{$(\U, B)$}{(U, B)}}
 
@@ -279,7 +285,7 @@ By the results above, the quadruple $(\eta, \kappa, g_0, \delta)$ satisfies the 
 	Given $\eta\from T \to \pmone$,
 	$\kappa\from G^\#/T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$ and $\delta \in \pmone$, we say that the quadruple $(\eta, \kappa, g_0, \delta)$ is \emph{admissible} if:
 	\begin{enumerate}[(i)]
-		\item $\mathrm{d}\eta = \tilde\beta$ (see Definitions \ref{def:coboundary} and \ref{def:tilde-beta}); \label{item:eta-is-eta}
+		\item $\mathrm{d}\eta = \tilde\beta$ (see  \cref{eq:tilde-beta-def,def:coboundary}); \label{item:eta-is-eta}
 		\item $\kappa$ has finite support; \label{item:kappa-finite-support}
 		\item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
 		\item for any $x\in G^\#/T$, if $g_0 x^2 = T$ and $\mu_x = -1$, then $\kappa (x)$ is even (where \\$\mu_x\coloneqq (-1)^{|g|}\eta(g_0g^2)\delta$ for $g\in x$, see Proposition \ref{prop:self-dual-components}). \label{item:kappa-parity}
@@ -289,8 +295,8 @@ By the results above, the quadruple $(\eta, \kappa, g_0, \delta)$ satisfies the 
 
 Given a quadruple $(\eta, \kappa, g_0, \delta) \in \mathbf{I} (\D)$, we can construct a pair $(\U, B)$ such that $(\eta, \kappa, g_0, \delta)$ is its inertia.
 To see that, fix a total order $\leq$ on the set $G^\#/T$.
-We define $U_x \coloneqq \FF^{\kappa(x)}$, and $\U = \sum_{g \in G^\#} \U_g$ where $\U_x \coloneqq U_x \tensor \D$, for all $x\in G^\#/T$.
-For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ the $\vphi_0$-sesquilinear on $\U_x + \U_y$ represented, relative to the standard basis of $U_x+U_y$, by to the matrices in Proposition \ref{prop:self-dual-components}, if $x=y$, or in Proposition \ref{prop:pair-of-dual-components}, if $x\neq y$.
+We define $W_x \coloneqq (\FF^{\kappa(x)})^{[\xi(x)]}$, and $\U = \sum_{x \in G^\#/T} \U_x$ where $\U_x \coloneqq W_x \tensor \D$, for all $x\in G^\#/T$.
+For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ be the $\vphi_0$-sesquilinear on $\U_x + \U_y$ represented, relative to the standard basis of $W_x + W_y$, by the matrices in Proposition \ref{prop:self-dual-components}, if $x=y$, or in Proposition \ref{prop:pair-of-dual-components}, if $x\neq y$.
 
 \begin{thm}\label{thm:iso-(U,B)}
 	Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$.
@@ -320,7 +326,7 @@ For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ th
 	The existence of such bases follows from $\dim_\D (\U_x) = \dim_\D (\U_x') = \kappa(x)$, for all $x \in G^\#/T$, and Propositions \ref{prop:self-dual-components} and \ref{prop:pair-of-dual-components}.
 \end{proof}
 
-\subsection{Parametrization of \texorpdfstring{$(R, \vphi)$}{(R, phi)}}
+\subsection{Parametrization of \texorpdfstring{$(R, \vphi)$}{(R,phi)}}\label{subsec:param-(R-phi)}
 
 We start with a definition to have a concise description of the graded superalgebras with superinvolution we are working on:
 
@@ -414,7 +420,7 @@ Note that $(\eta', \kappa', g_0', \delta')$ depends only on $t$, so the $\D^\tim
 
 Finally, we consider the $G^\#$-action.
 Let $g\in G$ and let $(\eta'', \kappa'', g_0'', \delta'')$ be the parameters corresponding to $g \cdot (\U, B) = (\U^{[g]}, B^{[g]})$ (see Equation \eqref{eq:G-action}).
-Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of $\U^{[g]}$, $\kappa'' = g\cdot \kappa$ where $(g\cdot \kappa) (x) = \kappa(g\inv x)$ for all $x\in G^\#/T$ {\tt (computed before)}.
+Since $B^{[g]}$ is $\vphi_0$-sesquilinear, $\eta'' = \eta$. By the definition of $\U^{[g]}$, $\kappa'' = g\cdot \kappa$ where $(g\cdot \kappa) (x) = \kappa(g\inv x)$ for all $x\in G^\#/T$. 
 As noted in Remark \ref{rmk:deg-B^[g]}, $g_0'' = \deg B^{[g]} = g_0 g^{-2}$.
 Also, for all $u, v\ \in \U\even \cup \U\odd$, and writing $u^{[g]}$ and $v^{[g]}$ for $u$ and $v$ when they are considered as elements of $\U^{[g]}$, we compute:
 \begin{align*}
@@ -506,8 +512,8 @@ for all $t\in \rad \tilde\beta$, $g\in G^\#$ and $(\kappa, g_0, \delta) \in \mat
 Now we wish to fix $\delta = 1$.
 Note that in every orbit we have a triple with $\delta = 1$ since the action by $(e, \bar1) \in G^\# = G \times \ZZ_2$ changes the sign of $\delta$.
 We define
-\[
-	\mathbf{I}(T, \beta, p, \eta)^+ \coloneqq \{ (\kappa, g_0) \mid (\kappa, g_0, 1) \in \mathbf{I}(T, \beta, p, \eta)\}.
+\[\label{eq:I-eta-plus}
+	\mathbf{I}(T, \beta, p)_\eta^+ \coloneqq \{ (\kappa, g_0) \mid (\kappa, g_0, 1) \in \mathbf{I}(T, \beta, p, \eta)\}.
 \]
 
 % We proceed in a similar fashion as above. 
@@ -574,5 +580,5 @@ for all $(t, g)\in \mc G$ and $(\kappa, g_0) \in \mathbf{I}(T, \beta, p, \eta)^+
 % \end{prop}
 
 Therefore, the classification up to isomorphism of $G$-graded superalgebras with superinvolution that are finite dimensional and graded-simple over an algebraically closed field $\FF$, $\Char \FF \neq 2$, reduces to the classification of finite subgroups $T\subseteq G^\#$, alternating bicharacters $\beta\from T\times T \to \pmone$, equivalence classes of $\eta$ (see \cref{def:equiv-eta}) and $\mathcal G$-orbits in $\mathbf{I}(T,\beta, p, \eta)^+$.
-This gives a useful simplification when we have few equivalence classes of $\eta$, as it will be the case in the next Chapter, where we will study gradings on superinvolution-simple associative superalgebras. 
+This gives a useful simplification when we have one equivalence class of $\eta$, as it will be the case in the next chapter, where we will study gradings on superinvolution-simple associative superalgebras. 
 
