@@ -324,3 +324,24 @@ The ``conversely'' part of Theorem \ref{thm:vphi-iff-vphi0-and-B} motivates the 
 	Under the conditions of Theorem \ref{thm:vphi-iff-vphi0-and-B}, if $\D$ is an odd graded division superalgebra (\ie, $\D\odd \neq 0$), then we can choose the form $B$ to be even.
 	This is possible since, by the ``moreover'' part, we can substitute an odd form $B$ by $dB$, for some $d\in \D\odd$.
 \end{remark}
+
+\begin{prop}\label{prop:R-and-D-have-the-same-center}
+	Recall the isomorphism of $G^\#$-graded algebras $\iota\from Z(\D) \to Z(R)$ given by $\iota (d)(u) \coloneqq ud$, for all $d\in Z(\D)$ and $u\in \U$ (see \cref{prop:R-and-D-have-the-same-center}). 
+	We have that $\vphi (\iota (d)) = (-1)^{|B||d|} \iota (\vphi_0(d))$. 
+\end{prop}
+
+\begin{proof}
+	Fix $d\in Z(\D)\even \cup Z(\D)\odd$ and let $u, v \in \U\even \cup \U\odd$.
+	On the one hand,
+	\begin{align*}
+		B(ud,v) = B(\iota (d)(u), v) = (-1)^{|d||u|} B(u, \vphi(\iota (d)) v).
+	\end{align*}
+	On the other hand,
+	\begin{align*}
+		B(ud, v) &= (-1)^{(|B| + |u|) |d|} \vphi_0(d) B(u, v) = (-1)^{(|B| + |u|) |d|} B(u, v) \vphi_0(d)     \\
+		 & = (-1)^{|B||d| + |u||d|} B(u, v \vphi_0(d) ) 
+		 = (-1)^{|B||d|} (-1)^{|u||d|} B(u, \iota (\vphi_0(d))(v)). 
+	\end{align*}
+	%
+	Since $B$ is nondegenerate, we conclude that $\vphi (\iota (d)) = (-1)^{|B||d|} \iota (\vphi_0(d))$, as desired. 
+\end{proof}

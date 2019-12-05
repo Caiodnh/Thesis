@@ -1,0 +1,125 @@
+\section[Gradings on superinvolution-simple superalgebras of types  \texorpdfstring{$M\times M\sop$ and $Q\times Q\sop$}{MxMsop and QxQsop}]{Gradings on superinvolution-simple \\ superalgebras of types $M\times M\sop$ and $Q\times Q\sop$}\label{sec:model-O}
+
+For this section we assume $\FF$ is algebraically closed and $\Char \FF \neq 2$. 
+
+Let $R \coloneqq S \times S\sop$ where $S$ is a finite dimensional simple superalgebra, and let $\vphi$ denote the exchange superinvolution. 
+By \cref{lemma:SxSsop-simple}, $(R, \vphi)$ is a superinvolution-simple superalgebra. 
+If we endow $(R, \vphi)$ with a grading, then it becomes, clearly, graded-superinvolution-simple, but not necessarily graded-simple. 
+
+In the case $R$ is not graded-simple, the situation is easier: since the nonzero proper superideals are $S \times \{ 0 \}$ and $\{ 0 \} \times S\sop$, at lest one of them must be a graded superideal, and since $\vphi$ sends graded subsuperspaces onto graded subsuperspaces, $S \times \{ 0 \}$ is a graded superideal if, and only if, so is $\{ 0 \} \times S\sop$. 
+Therefore, we can apply  \cref{cor:SxSsop-with-dcc,thm:iso-D-even-ExEsop,thm:iso-D-odd-ExEsop}, in \cref{grd-sinv-simple}, and specialize them to the case of simple superalgebra $S$, as in  \cref{cor:iso-M-even,cor:iso-M-odd,cor:iso-Q}, in \cref{sec:grd-simple-salg}.
+
+\begin{thm}
+    Let $(R, \vphi)$ be a superinvolution-simple superalgebra of type $M\times M\sop$ endowed with a $G$-grading and suppose it is not graded-simple. 
+    % Then there is a finite subgroup $T \subseteq G^\#$ such that: 
+    Then $(R, \vphi)$ is isomorphic to either $M(T, \beta, \kappa_\bz, \kappa_\bo) \times M(T, \beta, \kappa_\bz, \kappa_\bo)\sop$ (see \cref{def:Gamma-T-beta-kappa-even}), or to $M (T, \beta, p, \kappa) \times M (T, \beta, p, \kappa)\sop$ (see \cref{def:Gamma-T-beta-kappa-odd}), but not both, where we consider the exchange superinvolution in both cases. 
+    
+    Moreover, $M(T, \beta, \kappa_\bz, \kappa_\bo) \times M(T, \beta, \kappa_\bz, \kappa_\bo)\sop \iso M(T', \beta', \kappa_\bz', \kappa_\bo') \times M(T', \beta', \kappa_\bz', \kappa_\bo')\sop$ if, and only if, $T = T'$ and one of the following conditions holds:
+	\begin{enumerate}[(i)]
+	    \item $\beta'=\beta$ and there is $g\in G$ such that such that either $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$, or $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 1}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 0}$; 
+	    \item $\beta'=\beta\inv$ and there is $g\in G$ such tha either $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$, or $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 1}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 0}\Star$;
+	\end{enumerate}
+    and $M (T, \beta, p, \kappa) \times M (T, \beta, p, \kappa)\sop \iso M (T', \beta', p', \kappa') \times M (T', \beta', p', \kappa')\sop$ if, and only if, $T = T'$, $p=p'$ and one of the following conditions holds:
+    \begin{enumerate}[(i)]
+        \setcounter{enumi}{2}
+	    \item $\beta'=\beta$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$;
+	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa\Star$. \qed
+	\end{enumerate}
+\end{thm}
+
+\begin{thm}
+    Let $(R, \vphi)$ be a superinvolution-simple superalgebra of type $Q\times Q\sop$ endowed with a $G$-grading and suppose it is not graded-simple. 
+    Then $(R, \vphi)$ is isomorphic to $Q (T^+, \beta^+, h, \kappa) \times Q (T^+, \beta^+, h, \kappa)\sop$ (see \cref{def:Gamma-T-beta-kappa-Q}), where we consider the exchange superinvolution. 
+    
+    Moreover, $Q (T^+, \beta^+, h, \kappa) \times Q (T^+, \beta^+, h, \kappa)\sop \iso Q (T^+, \beta^+, h, \kappa) \times Q (T^+, \beta^+, h, \kappa)\sop$ if, and only if, $T^+ = T'^+$, $h = h'$ and one of the following conditions holds: 
+    \begin{enumerate}[(i)]
+	    \item $\beta'^+ = \beta^+$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$;
+	    \item $\beta'^+ = (\beta^+)\inv$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa\Star$. \qed
+	\end{enumerate}
+\end{thm}
+
+% \begin{enumerate}
+%     \item supercenters are the same, anyway
+%     \item the element $f$, unique class
+%     \item prop: tensor product
+% \end{enumerate}
+
+Now let us focus on the case when $R$ is graded-simple, so by \cref{cor:SxSsop-with-dcc}, $(R, \vphi) \iso E(\D, \U, B)$ for some triple $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}. 
+Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)$ and let $\vphi_0$ be the superinvolution on $\D$ determined by $\eta$. 
+Recall that, by \cref{prop:vphi-R-simple-D-simple}, $(R, \vphi)$ is superinvolution-simple if, and only if, so is $(\D, \vphi_0)$. 
+
+\begin{lemma}\label{lemma:types-of-D-via-rad-beta}
+    $(R, \vphi)$ is superinvolution-simple but not simple if, and only if, $\rad \tilde\beta = \langle f \rangle$, where $f$ has order $2$ and $\eta(f) = -1$.
+    If this is the case, then $(R, \vphi)$ is of type
+	\begin{enumerate}[(i)]
+		\item  $M\times M\sop$ if, and only if, $\rad \beta = \rad \tilde\beta$;
+		\item $Q\times Q\sop$ if, and only if, $\rad \beta = \langle t_1 \rangle$ for an element $t_1 \in T^-$ with $t_1^2 = f$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    Suppose $(R, \vphi)$ is superinvolution-simple but not simple. 
+    By \cref{prop:types-of-SA-via-center}, we can distinguish among the different types of su\-per\-in\-vo\-lu\-tion-simple superalgebras by their center,  and, by \cref{prop:R-and-D-have-the-same-center}, $(Z(R), \vphi)$ is isomorphic to $(Z(\D), \vphi_0)$ if $B$ is even and to $(Z(\D), \upsilon\vphi_0)$ if $B$ is odd (where $\upsilon$ is the parity automorphism). 
+    Since $\supp Z(\D) = \rad \beta$ and $\rad \tilde\beta = (\rad \beta) \cap T^+$ (\cref{lemma:rad-tilde-beta}), $\rad\tilde\beta = \langle f \rangle$, with $\eta(f) = -1$ result follows. 
+    
+    For the converse, by \cref{prop:vphi-R-simple-D-simple}, it suffices to prove that $\D$ is $\vphi_0$-simple. 
+    By \cref{lemma:undoubling-D}, $(\D, \vphi_0)$ is isomorphic to a graded-division refinement of $\barr \D \times \barr \D\sop$, where $\barr \D$ is a graded-division superalgebra associated to $(T / \rad \tilde\beta, \bar \beta, \bar p)$. 
+    It follows from \cref{cor:tilde-beta-nondeg} that $\bar \D$ is simple as a superalgebra, so $\D$ is $\vphi_0$-simple by \cref{prop:only-SxSsop-is-simple}. 
+\end{proof}
+
+From now on, let us suppose $(R,\vphi)$ is superinvolution-simple of type $M\times M\sop$ or $Q\times Q\sop$.
+
+\begin{lemma}\label{lemma:T+-is-elem-2-grp}
+    The subgroup $T^+ \subseteq T$ is $2$-elementary and, for every $t\in T^-$, $t^2 = f$. 
+\end{lemma}
+
+\begin{proof}
+	By Lemma \ref{lemma:types-of-D-via-rad-beta}, we can write $\rad \tilde\beta = \{ e, f\}$, with $\eta(e) = 1$ and $\eta(f) = -1$.  
+	Let $t\in T$. 
+	By \cref{cor:super-anti-auto-squares-in-radical}, $t^2 \in \rad\tilde\beta$. 
+	If $t$ is even, then $\eta(t^2) = \eta(t)^2 = 1$, hence $t^2 = e$.
+	If $t$ is odd, then, $\eta(t^2) = -\eta(t)^2 = -1$, hence $t^2 = f$. 
+\end{proof}
+
+\begin{enumerate}
+    \item Define parity element.
+\end{enumerate}
+
+
+
+\begin{thm}
+	Let $\D$ be a finite dimensional superinvolution-simple superalgebra endowed with a division grading.
+	Then $\D \iso \D' \otimes \D''$ as graded superalgebras with superinvolution, where $\D'$ is of type $M$ (and, hence, even) and
+	\begin{enumerate}[(i)]
+		\item if $\D$ is of type $M\times M\sop$, then $\D''$ is weakly isomorphic to $\mc O$, as in Example \ref{ex:superalgebra-O};
+		\item if $\D$ is of type $Q\times Q\sop$, then $\D''$ is weakly isomorphic to $\FF\ZZ_4$, as in Example \ref{ex:FZ4-revisited}.
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+	Let $\D$ be associated to $(T, \beta, p, \eta)$.
+	By Lemma \ref{lemma:types-of-D-via-rad-beta}, we can write $\rad \beta \cap T^+ = \{ e, f\}$, with $\eta(e) = 1$ and $\eta(f) = -1$.
+
+	Consider $\overline{T} = \frac{T}{\rad \beta}$ with its induced bicharacter $\bar \beta$.
+	Since $\bar\beta$ takes values in $\{\pm 1\}$ and it is nondegenerate, by \cref{cor:super-anti-auto-squares-in-radical} we have that $\overline{T}$ is an elementary $2$-group.
+	%We claim that $T^+$ is also an elementary $2$-group. 
+	Let $t\in T$.
+	We have that $\bar t^2 = \bar e \in \overline{T}$, so, since $t^2$ is even, $t^2 \in \{ e, f \}$.
+	If $t$ is even, then $\eta(t^2) = \eta(t)^2 = 1$, hence $t^2 = e$.
+	If $t$ is odd, then, $\eta(t^2) = -\eta(t)^2 = -1$, hence $t^2 = f$.
+	Note that, in particular, $T^+$ is an elementary $2$-group.
+
+	If $\D \iso Q(n)$, let $t_1$ be an odd element in $\rad \beta$ and complete $\{f\}$ to a $\ZZ_2$-basis $\{f, t_2, \ldots, t_\ell \}$ of $T^+$.
+	Then $T$ is generated by $\{t_1, t_2, \ldots, t_\ell \}$ and this generating set give us an isomorphism $T \iso \ZZ_4 \times (\ZZ_2)^{\ell - 1}$.
+	Restricting $\beta$ and $\eta$ to $\ZZ_4$ and $(\ZZ_2)^{\ell - 1}$ we find $\D'$ and $\D''$, respectively.
+
+	If $\D \iso M(m,n) \times M(m,n)\sop$, them there are no odd elements in $\rad \beta$ so, in particular, $p$ induces an homomorphism in $\overline{T}$.
+	Since $\bar \beta$ is nondegenerate, this homomorphism corresponds to a element $\bar {t_0} \in \overline T$ such that $\bar \beta (\bar {t_0}, \bar t) = (-1)^{p(t)}$.
+	We choose $t_0 \in T$ to be a preimage of $\bar {t_0}$ and choose $t_1$ to be any element in $T^-$.
+	Note that $t_0 \in T^+$ since $1 = \beta(\bar {t_0}, \bar {t_0}) = (-1)^{p(t_0)}$.
+	Again, since $T^+$ is an elementary $2$-group, complete $\{t_0, f\}$ to a $\ZZ_2$-basis $\{ t_0, f, t_2, \ldots, t_\ell \}$ of $T^+$.
+	Hence $\{ t_0, t_1, t_2, \ldots, t_\ell \}$ is a generating set for $T$ that gives us an isomorphism $T \iso \ZZ_2 \times \ZZ_4 \times (\ZZ_2)^{\ell - 1}$.
+	If, for some $i$, $2 \leq i \leq \ell$, we have $\beta(t_1, t_i)= -1$, replace $t_i$ for $t_it_0$ and so we have $\beta(t_1, t_it_0) = \beta(t_1, t_i) \beta(t_1, t_0) = +1$.
+	We can, then, assume that the sets $\{ t_0, t_1 \}$ and $\{ t_2, \ldots, t_\ell \}$ are orthogonal with respect to $\beta$.
+	Restricting $\beta$ and $\eta$ to $\ZZ_2 \times \ZZ_4$ and to $(\ZZ_2)^{\ell - 1}$ we find $\D'$ and $\D''$, respectively.
+\end{proof}

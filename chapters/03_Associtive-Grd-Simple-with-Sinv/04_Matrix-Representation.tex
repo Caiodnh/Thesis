@@ -33,11 +33,11 @@ Also, we will denote $|u_i|$ simply by $|i|$ for all $i \in \{1, \ldots, k\}$.
 \begin{prop}\label{prop:matrix-vphi}
 	Let $\Phi$ be the matrix representing $B$.
 	For every $r\in  R\even \cup R\odd$, let $X \in M_k(\D)$ be the matrix representing $r$ and let $Y \in M_k(\D)$ be the matrix representing $\vphi(r)$.
-	Then, following Conventions \ref{conv:pick-even-form} and \ref{conv:pick-even-basis}, we have that
+	Then, if $\D$ is even, we have that
 	%
 	\begin{align}
-		Y & = \Phi\inv\, \vphi_0( X\stransp )\, \Phi. \addtocounter{equation}{1}\tag{\theequation}\label{eq:matrix-vphi-D-even} 
-		\intertext{and, if $\D$ is odd, we have}
+		Y & = \Phi\inv\, \vphi_0( X\stransp )\, \Phi, \addtocounter{equation}{1}\tag{\theequation}\label{eq:matrix-vphi-D-even} 
+		\intertext{and, if $\D$ is odd, following Convention \ref{conv:pick-even-basis}, we have}
 		Y & = \sign{B}{r}\,\Phi\inv\, \vphi_0( X\stransp )\, \Phi.\addtocounter{equation}{1}\tag{\theequation}\label{eq:matrix-vphi-D-odd}
 	\end{align}
 \end{prop}
@@ -97,69 +97,25 @@ Also, we will denote $|u_i|$ simply by $|i|$ for all $i \in \{1, \ldots, k\}$.
 		(-1)^{|B| |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj} =  \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j},
 	\]
 	which, by the same reasoning as above, implies $(-1)^{|B||r|} \vphi_0(X\stransp) \Phi = \Phi Y$. 
-% 	But we are following Convention \ref{conv:pick-even-form}, hence $|B| = \bar 0$ and, therefore, we have the desired result.
 \end{proof}
 
-% \begin{proof}
-%     First of all, note that Equation \ref{eq:superadjunction} is equivalent to, for all $u_i, u_j \in \mc B$,
-%     %
-%     \[
-%         B(ru_i, u_j) = \sign{r}{i} B(u_i, \vphi(r) u_j).
-%     \]
-%     By the definitions of $X$, $Y$ and $\Phi$, we have that
-%     %
-%     \begin{align*}
-%         B\bigg(\sum_{\ell=1}^k u_\ell x_{\ell i}, u_j\bigg) &= \sum_{\ell=1}^k (-1)^{( |B| + |\ell|) |x_{\ell i}|} \vphi_0( x_{\ell i} ) B (u_\ell x_{\ell i}, u_j)\\ &= \sum_{\ell=1}^k (-1)^{( |B| + |\ell|) |x_{\ell i}|} \vphi_0( x_{\ell i} ) \Phi_{\ell j}
-%         \intertext{and}
-%         \sign{r}{i} B\bigg(u_i, \sum_{\ell=1}^k u_\ell y_{\ell j}\bigg) 
-%         &= \sign{r}{i} \sum_{\ell=1}^k B(u_i, u_\ell) y_{\ell j}\\
-%         &= \sign{r}{i} \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}. 
-%     \end{align*}
-%     %
+\begin{prop}\label{prop:vphi-R-simple-D-simple}
+	The superalgebra $R$ is $\vphi$-simple if, and only if, the superalgebra $\D$ is $\vphi_0$-simple. 
+\end{prop}
 
-%     Let $p,q \in \{1, \ldots, k\}$, and suppose $X$ is such that $x_{pq}$ is a nonzero $G^\#$-homogeneous element of $\D$ and $x_{ij} = 0$ elsewhere, \ie, $X$ represents the map $r \in \End_\D(\U)$ defined by $r u_i = \delta_{iq} u_p x_{pq}$. 
-%     By the $\FF$-linearity of Equations \eqref{eq:matrix-vphi-D-even} and \eqref{eq:matrix-vphi-D-odd}, it suffices to consider such $X$. 
-%     Note that $|r| = |u_q| + |x_{pq}| - |u_p| = |p| + |q| + |x_{pq}|$. 
-%     Then
-%     %
-%     \begin{align*}
-%         B\bigg(\sum_{\ell=1}^k u_\ell x_{\ell i}, u_j\bigg) = B (u_p x_{pi}, u_j) &= (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) B(u_p, u_j)
-%         \\&= (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj},
-%     \end{align*}
-%     %
-%     which is only nonzero if $i = q$. 
-%     Combining this with Equation \eqref{eq:superadjunction-matrix}, we get
-%     %
-%     \begin{align*}
-%         (-1)^{ (|B| + |p|) |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj} &= \sign{r}{i} \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}\\
-%         &= (-1)^{ (|p| + |q| + |x_{pq}|) |i| } \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}. \addtocounter{equation}{1}\tag{\theequation}\label{eq:expression}
-%     \end{align*}
-%     %
-%     If $\D$ is even, then $|x_{pi}| = 0$ and this expression reduces to
-%     \[              \vphi_0(x_{pi}) \Phi_{pj} = (-1)^{ (|p| + |q|) |i| } \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j}
-%     \]
-%     or, reordering it, 
-%     \[
-%         \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j} = (-1)^{ (|p| + |q|) |i| } \vphi_0(x_{pi}) \Phi_{pj}.
-%     \]
-%     The left-hand side is the entry $ij$ of $\Phi\, Y$. 
-%     The right-hand side is only nonzero if $i = q$, so it can be rewritten as 
-%     $(-1)^{ (|p| + |i|) |i| } \vphi_0(x_{pi}) \Phi_{pj}$. 
-%     Also, recalling our choice of $X$, it is equal to $\sum_{\ell =1}^k (-1)^{ (|\ell| + |i|) |i| } \vphi_0(x_{\ell i}) \Phi_{\ell j}$, since $x_{\ell i}$ is only nonzero if $\ell = p$. Hence the right-hand side is the $ij$ entry of $\vphi_0 (X\stransp) \Phi$, and Equation \eqref{eq:matrix-vphi-D-even} follows. 
+\begin{proof}
+	Pick a homogeneous $\D$-basis for $\U$ following Convention \ref{conv:pick-even-basis} and use it to identify $R$ with $M_k(\D) = M_k(\FF) \tensor \D$.
+	By \cref{conv:pick-even-form}, we may assume that $B$ is even and then,
+	by Proposition \ref{prop:matrix-vphi}, for every $X \in M_k(\D)$, we have
+	$\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi$, where $\Phi \in M_k(\D)$ is the matrix representing $B$. 
 
-%     If $\D$ is odd, by our choice of basis, Equation \eqref{eq:expression} reduces to
-%     \[
-%         (-1)^{|B| |x_{pi}|} \vphi_0(x_{pi}) \Phi_{pj} =  \sum_{\ell=1}^k \Phi_{i \ell} y_{\ell j},
-%     \]
-%     which implies $(-1)^{|B||r|} \phi_0(X\stransp) \Phi = \Phi Y$.
-% \end{proof}
-
-% \begin{remark}
-%     Note that if $\D$ is odd, replacing $B$ by $dB$ with an odd $d$ if necessary, we can guarantee that $B$ is even. 
-%     In this case, Equation \eqref{eq:matrix-vphi-D-odd} reduces to \eqref{eq:matrix-vphi-D-even}.
-% \end{remark}
-
-% \begin{cor}[of the proof]
-%     Let $\vphi_0$ be a super-anti-automorphism on $\D$ and let $B$ be a nonzero $\vphi_0$-sesquilinear form on $\U$. If $\vphi\from R \to R$ be a parity preserving map satisfying Equation \eqref{eq:superadjunction}. 
-%     Then $B$ is nondegenerate if, and only if, $\vphi$ is a super-anti-automorphism.
-% \end{cor}
+    It was proved in \cref{prop:simple-R-D-super} that the superideals of $M_k(\D) = M_k(\FF) \tensor \D$ are precisely the sets of the form $M_k(I) = M_k(\FF) \tensor I$, where $I$ an superideal of $\D$. 
+    We are going to show that $M_k(I)$ is $\vphi$-invariant if, and only if, $I$ is $\vphi_0$-invariant. 
+    
+	Suppose $I$ is $\vphi_0$-invariant.
+	Then if $X \in M_k(I)$, it is clear that $\vphi_0 (X\stransp)$ is also in $M_k(I)$.
+	But then $\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi \in M_k(I)$ since $M_k(I)$ is an ideal.
+	Conversely, suppose $M_k(I)$ is $\vphi$-invariant.
+	Let $d \in I$ and consider $X = E_{11} \tensor d \in M_k(I)$.
+	Then $E_{11} \tensor \vphi_0(d) = \vphi_0(X\stransp) = \Phi\, \vphi(X)\, \Phi\inv \in M_k(I)$, which shows that $\vphi_0(d) \in I$.
+\end{proof}
