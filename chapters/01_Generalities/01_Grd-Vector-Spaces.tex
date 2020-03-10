@@ -39,6 +39,22 @@ If we assume $V$ to be finite-dimensional then we have $\Hom(V,W)=\Hom^{\gr}(V,W
     Elementary grading, on $\End(V)$ and on $M_n(\FF)$.
 \end{defi}
 
+\begin{defi}\label{defi:elementary-grd-abstract}
+    Elementary grading, on $\End(V)$
+\end{defi}
+
+\begin{defi}\label{defi:elementary-grd-matrix}
+    Elementary grading, on $M_n(\FF)$.
+\end{defi}
+
+\begin{defi}\label{defi:elementary-grd-super}
+    Elementary grading, on $M(m,n)$.
+\end{defi}
+
+\begin{defi}\label{def:queer-stp}
+    Queer supertranspose.
+\end{defi}
+
 % Prop: V is a graded module
 We also note that $V$ becomes a graded module over $\End(V)$ in the following sense:
 
@@ -231,3 +247,13 @@ Note that, for trivial $G$, Lemma \ref{lemma:center-is-graded} implies that the 
 
 % \subsection{Superinvolution-simple superalagebras equi}
 
+\begin{lemma}\label{lemma:eigenvector-homogeneous}
+	Let $V$ be a $G$-graded vector space and let $f: V \to V$ be a homogeneous map of degree $e$. Then the eigenspaces of $f$ are graded subspaces.
+\end{lemma}
+
+\begin{proof}
+	Let $v\in V$ be an eigenvector with eigenvalue $\lambda \in \FF$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$. 
+	On the one hand, $f(v) = \lambda v = \sum_{g\in G} \lambda v$. 
+	On the other hand, $f(v) = \sum_{g\in G} f(v_g)$. 
+	Since the decomposition on homogeneous elements is unique, we have that $f(v_g) = \lambda v_g$ for all $g\in G$, completing the proof.
+\end{proof}

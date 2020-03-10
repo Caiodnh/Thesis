@@ -196,15 +196,18 @@ We will now restrict ourselves to graded right $\D$-modules of finite rank.
 It is clear that a graded right $\D$-module $\U$ has finite rank if, and only if, all isotypic components have finite rank and only finitely many of them are nonzero. 
 In view of \cref{lemma:iso-D-modules,cor:iso-isotypic-components,prop:dim-U_x}, this means that an isomorphism class of such modules is determined by the map $\kappa \from G/T \to \ZZ_{\geq 0}$ defined by $\kappa(x) \coloneqq \dim_\D (\U_x)$, which has finite support. 
 In other words, $\kappa$ is a finite \emph{multiset} in $G/T$, where $\kappa(x)$ is viewed as the multiplicity of the point $x$. 
-As it is usually dine for multisets, we define $|\kappa| \coloneqq \sum_{x \in G/T} \kappa(x)$. 
+As it is usually dine for multisets, we define $|\kappa| \coloneqq \sum_{x \in \supp \kappa} \kappa(x)$. 
 Clearly $|\kappa| = \dim_\D (\U)$.
 
-Given an arbitrary map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support, we can construct a representative $\U$ for the corresponding isomorphism class of graded $\D$-modules. 
-To do so, we set $k = |\kappa|$ and choose a $k$-tuple $\gamma = (g_1, \ldots, g_k)$ such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T$.
-Then we put $\U \coloneqq {}^{[g_1]}\D \oplus \cdots \oplus {}^{[g_k]}\D$.
+\begin{defi}\label{defi:gamma-realizes-kappa}
+    Given a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support, we say that a $k$-tuple $\gamma = (g_1, \ldots, g_k) \in G^k$, where $k \coloneqq |\kappa|$, \emph{realizes} $\kappa$ if the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T$.
+\end{defi}
+
+Clearly, we can always choose a $k$-tuple $\gamma = (g_1, \ldots, g_k)$ realizing $\kappa$. 
+We can use $\gamma$ to construct to define the graded $\D$-module $\U \coloneqq {}^{[g_1]}\D \oplus \cdots \oplus {}^{[g_k]}\D$, which is clearly a representative of the isomorphism class of graded $\D$-modules determined by $\kappa$. 
 
 \begin{remark}
-	Both parameters, the multiset and the the tuple, have been used in previous works. 
+	Both parameters, the map $\kappa$ and the the $k$-tuple $\gamma$ realizing it, have been used in previous works. 
 	Sometimes both are present, as in \cite{livromicha} (where the tuple is defined so that all elements belong to different left cosets and the multiplicities are recorded as recorded as a separate tuple) and \cite{paper-Qn,paper-MAP}; sometimes only the tuple, as in \cite{BK10}; sometimes only the multiset, as in \cite{paper-adrian,felipe-misha}.
 	Here we follow the notation of the latter.
 \end{remark}
@@ -591,11 +594,6 @@ We finish with a well-known result for future reference.
     It is easy to see that $\psi$ is an automorphism if, and only if, $\chi$ is a group homomorphism, \ie, $\chi \in \widehat T$. 
 \end{proof}
 
-% \begin{remark}
-%     Recall the $\widehat T$-action defined by the $T$-grading on $\D$ (see \cref{sec:g-hat-action}) and let $\rho\from \widehat T \to \Aut (\D)$ be its corresponding representation map. 
-%     Then \cref{lemma:Aut(D)-widehat-T} implies that that $\rho$ is an isomorphism of groups.
-% \end{remark}
-
 \subsection{Finite dimensional graded-simple algebras over an algebraically closed field}\label{ssec:param-End_D-U}
 
 We continue assuming that $\FF$ is algebraically closed and that $G$ is abelian.
@@ -608,7 +606,8 @@ Since $\End_\D (\U) \iso M_k(\D)$, we have that $R$ is finite dimensional if, an
 	If $\D$ is associated to $(T, \beta)$ and $\U$ is associated to $\kappa\from G/T \to \ZZ_{\geq 0}$ (see Subsection \ref{ssec:D-modules}), we say that $(T, \beta, \kappa)$ are the \emph{parameters} of the pair $(\D, \U)$.
 \end{defi}
 
-It is easy to see that, since $G$ is abelian, $\U^{[g]}$ is associated to $g \cdot \kappa$, where the $G$-action on functions $G/T \to \ZZ_{\geq 0}$ is defined as usual: $(g\cdot \kappa) (x) \coloneqq \kappa(g\inv x)$ for all $x\in G/T$.
+It is easy to see that, since $G$ is abelian, $\U^{[g]}$ is associated to $g \cdot \kappa$, where the $G$-action on functions $G/T \to \ZZ_{\geq 0}$ is defined as usual: $(g\cdot \kappa) (x) \coloneqq \kappa(g\inv x)$ for all $x\in G/T$. 
+Note that if $(g_1, \ldots, g_k)$ is a $k$-tuple realizing $\kappa$ (see \cref{defi:gamma-realizes-kappa}), then $(gg_1, \ldots, gg_k)$ is a $k$-tuple realizing $g\cdot \kappa$. 
 
 If $\psi_0\from \D \to \D'$ is an isomorphism of graded algebras and $\U'$ is a graded right $\D'$-module associated to $\kappa'$, it is clear that $\dim_{\D'} \U_x' = \dim_\D (\U_x')^{\psi_0}$, for all $x \in G/T$, and, hence, the graded $\D$-module $(\U')^{\psi_0}$ is also associated to $\kappa'$. 
 
@@ -616,8 +615,7 @@ Thus, \cref{thm:iso-abstract} becomes the following:
 
 \begin{thm}\label{thm:iso-End_D-U-with-parameters}
 	Let $(\D, \U)$ and $(\D', \U')$ be pairs as in Definition \ref{def:E(D,U)}, and let $(T, \beta, \kappa)$ and $(T', \beta', \kappa')$ be their parameters. 
-	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T = T'$, $\beta = \beta'$, and $\kappa'$ belongs to the $G$-orbit of $\kappa$. \qed
-% 	and there is $g\in G$ such that $\kappa' = g \cdot \kappa$. 
+	Then $\End_\D (\U) \iso \End_{\D'} (\U')$ if, and only if, $T = T'$, $\beta = \beta'$, and $\kappa$ and $\kappa'$ belong to the same $G$-orbit. \qed 
 \end{thm}
 
 It should be noted that, combining \cref{prop:R-simple-iff-D-simple,cor:D-simple-iff-beta-nondeg}, we have that $\End_\D (\U)$ is simple as an (ungraded) algebra if, and only if, $\beta$ is nondegenerate. 
@@ -628,7 +626,7 @@ If this is the case, \cref{thm:iso-End_D-U-with-parameters} gives us the classif
     Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider
     \begin{enumerate}[(i)]
         \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$;
-        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma = (g_1, \ldots, g_{k})$ of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g_i$ with $g_i\in x$ is equal to $\kappa (x)$ for every $x\in G/T$. 
+        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}).  
     \end{enumerate}
     We define $\Gamma_M (T, \beta, \kappa)$ to be the grading on $M_n(\FF)$ given by identifying $M_n(\FF)$ with the graded algebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
     \[
@@ -639,7 +637,7 @@ If this is the case, \cref{thm:iso-End_D-U-with-parameters} gives us the classif
 \end{defi}
 
 Note that we are abusing notation in \cref{def:Gamma-T-beta-kappa}. 
-The grading $\Gamma_M (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$. 
+The grading $\Gamma_M (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$ realizing $\kappa$. 
 Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$. 
 
 \begin{cor}[{\cite[Theorem 2.6]{BK10},\cite[Theorem 2.27]{livromicha}}]

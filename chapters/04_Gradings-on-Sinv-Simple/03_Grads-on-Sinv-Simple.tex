@@ -8,7 +8,7 @@ Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)
 
 Since $E(\D, \U, B) = \End_\D (\U)$ is of type $M$, by \cref{prop:R-simple-iff-D-simple}, we have that $(\D, \vphi_0)$ is of type $M$ and, by  \cref{cor:D-simple-iff-beta-nondeg}, that $\beta$ is nondegenerate. 
 
-\begin{lemma}
+\begin{lemma}\label{lemma:sinv-type-M}
     The graded-division superalgebra $\D$ is even and $T$ is an elementary $2$-group.
 \end{lemma}
 
@@ -64,7 +64,9 @@ It follows that if $\{ u_1, \ldots, u_k \}$ is a graded $\D$-basis of $\U$ and $
 Note that $\psi \circ \vphi \circ \psi\inv = \psi\tensor_\D \id_N$. 
 We are now going to construct a $\FF$-bilinear form on $U$ whose superadjunction is $\psi\tensor_\D \id_N$. 
 
-It is well-known (and also follow from \cref{thm:vphi-iff-vphi0-and-B} with trivial grading) that there is a bilinear form $\langle \, , \rangle_N \from N\times N \to \FF$ such that $\vphi_0$ is the (super)adjunction with respect to $\langle \, , \rangle_N$. 
+It is well-known (and also follows from \cref{thm:vphi-iff-vphi0-and-B} with trivial grading) that there is a bilinear form $\langle \, , \rangle_N \from N\times N \to \FF$ such that $\vphi_0$ is the (super)adjunction with respect to $\langle \, , \rangle_N$. 
+Since $\vphi_0$ is a (super)involution, $\langle \, , \rangle_N$ is either symmetric or skew-symmetric. 
+We will write $\delta_N \coloneqq 1$ in the former case and $\delta_N \coloneqq -1$ in the latter. 
 
 \begin{lemma}\label{lemma:the-same-vphi}
     There is a $\FF$-bilinear map $\langle \, , \rangle_U \from U\times U \to \FF$ determined by 
@@ -72,6 +74,7 @@ It is well-known (and also follow from \cref{thm:vphi-iff-vphi0-and-B} with triv
         \langle u \tensor_\D v , u' \tensor_\D v' \rangle_U \coloneqq \langle v , B(u, u') v' \rangle_N,
     \]
     for all $u, u'\in \U$ and $v, v' \in N$. 
+    This bilinear map is supersymmetric if $\delta \delta_N =1$ and super-skew-symmetric if $\delta \delta_N = -1$. 
     Moreover, $\vphi \tensor \id_N$ is the superadjunction with respect to $\langle \, , \rangle_U$. 
 \end{lemma}
 
@@ -96,6 +99,18 @@ It is well-known (and also follow from \cref{thm:vphi-iff-vphi0-and-B} with triv
     It follows that there is a unique $\FF$-linear map $\U \tensor \V \to \FF$ such that $u\tensor_\D v \mapsto C' (u,v)$. 
     We conclude that the $\FF$-bilinear map $\langle \, , \rangle_U \from U\times U \to \FF$ is well-defined. 
     
+    The form $\langle \, , \rangle_U$ is supersymmetric or super-skew-symmetric, depending on $\delta \delta_N$, since
+    %
+    \begin{align}
+        \langle u' \tensor_\D v' ,\,  u \tensor_\D v \rangle_U 
+        &= \langle v' , B(u', u) v \rangle_N 
+        = \langle v' , \sign{u}{u'}\delta\, \vphi_0( B(u, u') ) v \rangle_N \\
+        &= \sign{u}{u'}\delta \langle B(u, u') v' , v \rangle_N 
+        = \sign{u}{u'} \delta \delta_N \langle v, B(u, u') v' \rangle_N \\
+        &= \sign{u}{u'} \delta \delta_N \langle u \tensor_\D v , u' \tensor_\D v' \rangle_U, 
+    \end{align}
+    for all $u, u' \in \U\even \cup \U\odd$ and $v \in N = N\even$.
+    
     For the ``moreover'' part, recall from \cref{lemma:End-over-D-becomes-over-FF} that every element in $\End_D(U)$ is of the form $L\tensor_\D \id_N$ for some $L \in \End_\D (\U)$. 
     Also, we have:
     \begin{align}
@@ -109,8 +124,8 @@ It is well-known (and also follow from \cref{thm:vphi-iff-vphi0-and-B} with triv
     for all $L \in \End_\D (\U)\even \cup \End_\D (\U)\odd$, $u, u'\in \U\even \cup \U\odd$ and $v,v' \in N$. 
 \end{proof}
 
-\begin{prop}
-    As a superalgebra with superivolution, $E(\D, \U, B)$ is isomorphic to $M^*(m,n, p_0)$, where $m \coloneqq \dim \U\even \tensor_\D N$, $n \coloneqq \dim \U\odd \tensor_\D N$ and $g_0 = (g, p_0) \in G^\#$, where $g\in G$. 
+\begin{prop}\label{prop:g_0-goes-to-p_0}
+    As a superalgebra with superivolution, $E(\D, \U, B)$ is isomorphic to $M^*(m,n, p_0)$, where $m \coloneqq \dim \U\even \tensor_\D N$, $n \coloneqq \dim \U\odd \tensor_\D N$ and $p_0 \coloneqq |B|$.
 \end{prop}
 
 \begin{proof}
@@ -195,43 +210,22 @@ It is easy to see that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible if, and on
 In other words, $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible if, and only if, there is a pair $(\U, B)$ whose inertia is $(\eta, \kappa, g_0, 1)$ (see Definition \ref{def:parameter-of-(U,B)}). 
 In this case, we say that $(\U, B)$ has \emph{inertia determined by} $(\kappa_\bz, \kappa_\bo)$. 
 
-% $(\eta, \kappa, g_0, 1) \in \mathbb{I}(T, \beta, p)$ is the inertia of 
-
-% \begin{lemma}\label{inertia-determined-by-kappas}
-%     Under the conditions of \cref{inertia-even-case}, let $p\from T \to \ZZ_2$ be the trivial homomorphism and define $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ by $\kappa ((g,i) T) = \kappa_i (gT)$, for all $i\in \ZZ_2$ and $g\in G$. 
-%     Then $\kappa_\bz$ and $\kappa_\bo$ are $h_0$-admissible if, and only if, $(\kappa, h_0) \in \mathbb{I}(T, \beta, p)^+_\eta$, \ie, $(\eta, \kappa, g_0, 1) \in \mathbb{I}(T, \beta, p)$ (see \cref{defi:X(D),eq:I-eta-plus}). \qed
-    
-%     Then:
-%     \begin{enumerate}[(i)]
-%         \item $(\kappa, h_0) \in \mathbb{I}(T, \beta, p)^+_\eta$ if, and only if, $\kappa_\bz$ and $\kappa_\bo$ are $h_0$-admissible;
-%         \item $(\kappa, (h_0, \bar 1)) \in \mathbb{I}(T, \beta, p)^+_\eta$ if, and only if, $\kappa_\bo (x) = \kappa_\bz (h_0\inv x\inv)$ for all $x\in G/T$. \qed
-%     \end{enumerate}
-% \end{lemma}
+In what follows, for each pair $(T, \beta)$ where $T$ is a finite abelian group and $\beta\from {T\times T} \to \FF^\times$ is a nondegenerate alternating bicharacter, we fix $\D$ to be a standard realization associated to $(T, \beta)$, and define $\vphi_0\from \D \to \D$ to be the transposition on $\D$ and $\eta\from T \to \FF^\times$ to be the corresponding map, which satisfies $\mathrm{d}\eta = \beta \, (= \tilde\beta)$. 
 
 \begin{defi}\label{def:model-grd-M(m-n-0)}
     Let $m, n\in \ZZ_{\geq 0}$, not both zero. 
-    Let $T \subseteq G$ be a finite $2$-elementary subgroup $T \subseteq G$, let $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 = (h_0, p_0) \in G^\#$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|} = m$ and $|\kappa_\bo| \sqrt{|T|} = n$. 
-    We choose:
-    \begin{enumerate}[(i)]
-        \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$
-    \end{enumerate}
-    and define $\eta\from T \to \pmone$ to be the map corresponding to the transposition on $\D$, \ie, $X_t\transp = \eta(t) X_t$, for all $t\in T$. 
-    Assuming that $(\kappa_\bz, \kappa_\bo)$ is \emph{$g_0$-admissible}, we choose:
-    \begin{enumerate}[(i)]
-        \setcounter{enumi}{1}
-        %
-        \item a graded $\D$-supermodule $\U$ and a nondegenerate sesquilinear form $B\from \U\times \U \to \D$ such that $(\U, B)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$. 
-    \end{enumerate}
+    Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 = (h_0, p_0) \in G^\#$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps such that $k_\bz \sqrt{|T|} = m$ and $k_\bo \sqrt{|T|} = n$, where $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$. 
+    Choose a graded $\D$-supermodule $\U$ and a nondegenerate sesquilinear form $B\from \U\times \U \to \D$ such that $(\U, B)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$. 
     We define $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be $E(\D, \U, \B)$. 
     With a choice of a graded basis for $\U$, this becomes
     the graded superalgebra $M (T, \beta, \kappa_\bz, \kappa_\bo)$ (see \cref{def:Gamma-T-beta-kappa-even}), endowed with the superinvolution $\vphi$ given by 
     \[
         \vphi(X) \coloneqq \Phi\inv X\stransp \Phi,
     \]
-    for all $X \in M(m,n)= M(k_\bz, k_\bo) \tensor \D$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis. 
+    for all $X \in M(m,n)= M(k_\bz, k_\bo)$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis (viewed as an element of $M(m,n)$ rather than $M_{k_\bz | k_\bo} (\D)$). 
 \end{defi}
 
-\begin{thm}
+\begin{thm}\label{thm:osp-and-p-associative}
     Suppose the superalgebra with superinvolution $M^*(m,n,p_0)$ is endowed with a $G$-grading. 
     Then it is isomorphic, as a graded superalgebra with superinvolution, to $M^*(T,\beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:model-grd-M(m-n-0)}, where $p_0 = |g_0|$. 
     Moreover, $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso M^*(T', \beta', \kappa_\bz', \kappa_\bo', g_0')$ if, and only if, $T =T'$, $\beta = \beta'$ and there is $g \in G$ such that $\kappa_\bz' = g\cdot\kappa_\bz$, $\kappa_\bo' = g\cdot\kappa_\bo$ and $g_0' = g^{-2}g_0$. 

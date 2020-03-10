@@ -1,0 +1,204 @@
+
+\section[Gradings on the Lie Superalgebras of types \texorpdfstring{$B$, $C$, $D$ and $P$}{B, C, D and P}]{Gradings on the Lie Superalgebras of series $B$, $C$, $D$ and $P$}
+
+We will now classify the gradings on the orthosymplectic and peripletic Lie superalgebras, \ie, the Lie superalgebras of the form $L \coloneqq \Skew(R, \vphi)^{(1)}$ where $(R, \vphi) = M^*(m,n, p_0)$ (see \cref{defi:M(m-n-p_0)}). 
+
+By \cref{cor:transfer-R-vphi-to-L}, these gradings are precisely the restrictions of the gradings on $M^*(m,n, p_0)$, which are classified in \cref{thm:osp-and-p-associative}. 
+Here we will get a more explicit description of these gradings and, for the Lie superalgebras of types $B$ and $P$, recover the classification results in \cite{Helens_thesis} and \cite{paper-MAP}, respectively. 
+
+In what follows, for each pair $(T, \beta)$ where $T$ is a finite abelian group and $\beta\from {T\times T} \to \FF^\times$ is a nondegenerate alternating bicharacter, we fix $\D$ to be a standard realization associated to $(T, \beta)$, and define $\vphi_0\from \D \to \D$ to be the transposition on $\D$ and $\eta\from T \to \FF^\times$ to be the corresponding map, which satisfies $\mathrm{d}\eta = \beta \, (= \tilde\beta)$. 
+
+\subsection{Gradings on periplectic Lie superalgebras}\label{ssec:grds-P(n)}
+
+The gradings on $P(n-1)$ correspond to the gradings on $M^*(n, n, \bar 1)$. 
+By \cref{thm:osp-and-p-associative}, if we endow $M^*(n, n, \bar 1)$ with a grading, then it becomes isomorphic to $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:model-grd-M(m-n-0)}, with $|g_0| = \bar 1$. 
+Let $h_0 \in G$ be the element such that $g_0 = (h_0, \bar 1) \in G^\#$. 
+
+Recall that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible (\cref{inertia-even-and-odd-case}), so since $|g_0| = \bar 1$, $\kappa_\bz$ encodes the same information as $(\kappa_\bz, \kappa_\bo)$. 
+More precisely, for any map $\kappa_\bz\from G/T \to \ZZ_{\geq 0}$ with finite support, there is a unique map $\kappa_\bo\from G/T \to \ZZ_{\geq 0}$ such that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible, namely, the one defined by $\kappa_\bo (x) \coloneqq \kappa_\bz (h_0\inv x\inv)$. 
+
+The argument above can be seen from the point of view of the graded $\D$-supermodule $\U = \U\even \oplus \U\odd$ and the nondegenerate $\vphi_0$-sesquilinear form $B\from \U\times \U \to \D$ that we have to choose in \cref{def:model-grd-M(m-n-0)}. 
+Recall that, since $\D$ is even, both $\U\even$ and $\U\odd$ are $G$-graded right $\D$-modules. 
+Since $g_0 = \deg B$ is odd, $B$ defines an isomorphism $(\U\odd)^{[h_0]} \to (\U\even)\Star$ by $u \mapsto B(u, \cdot)$. 
+Recall that $(\U\even)\Star$ is a right $\D$-module by $(f\cdot d) (u) \coloneqq \vphi_0(d) f(u)$, for all $d\in \D$, $f\in (\U\even)\Star$ and $u \in \U\even$ (see \cref{ssec:superdual}).  
+
+This gives us an explicit way to construct the pair $(\U, B)$. 
+Let $\gamma = (g_1, \ldots, g_k)$, where $k \coloneqq |\kappa_\bz|$, be a $k$-tuple of elements in $G$ 
+realizing $\kappa_\bz$ (see \cref{defi:gamma-realizes-kappa}). 
+% such that, for all $x\in G/T$, the number of elements $g_i$ with $g_i \in x$ is $\kappa_\bz (x)$. 
+Then define $\U\even \coloneqq \D^{[g_1]}\oplus \cdots \oplus \D^{[g_k]}$, $\U\odd \coloneqq ((\U\even)\Star)^{[h_0\inv]}$, $\U \coloneqq \U\even \oplus \U\odd$ and $B\from \U\times\U \to \D$ by
+\[\label{eq:defi-B-for-P(n)}
+    \forall u_\bz, u_\bz' \in \U\even, \, u_\bo, u_\bo' \in \U\odd, \quad B(u_\bz + u_\bo, u_\bz' + u_\bo') \coloneqq u_\bo(u_\bz') + \vphi_0( u_\bo' (u_\bz) ).
+\]
+One can check that $\bar B = B$ and $(\U, B)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$.
+
+Let $\B = \{ u_1, \ldots, u_k \}$ be the canonical graded basis of $\U\even$ (\ie, $u_i$ has $1$ in the $i$-th entry and zero elsewhere). 
+Then $\B \cup \B\Star$ is a graded basis for $\U$. 
+Using this basis, the matrix $\Phi \in M_{k|k}(\D)$ representing $B$ is 
+\[
+    \Phi = 
+    \begin{pmatrix}
+        0 & I_{k}\\
+        I_{k} & 0
+    \end{pmatrix}.
+\]
+As in \cref{def:model-grd-M(m-n-0)}, we identify $\End_\D (\U)$ with $M_{k|k}(\D)$ and, then, with $M(n, n)$ by considering each entry in $\D$ as a block with entries in $\FF$. 
+With this identification, we have that
+\[\label{eq:matrix-Phi-for-P}
+    \Phi = 
+    \begin{pmatrix}
+        0 & I_{n}\\
+        I_{n} & 0
+    \end{pmatrix}, 
+\]
+and, hence, the superinvolution $\vphi$ of \cref{def:model-grd-M(m-n-0)} becomes precisely the superinvolution of \cref{defi:M(m-n-p_0)} (with $p_0 = \bar 1$). 
+
+\begin{defi}\label{defi:Gamma_P}
+    Let $n\geq 2$, 
+    let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be a nondegenerate alternating bicharacter, let $h_0 \in G$
+    % $g_0 = (h_0, p_0) \in G^\#$ 
+    and let $\kappa_\bz\from G/T \to \ZZ_{\geq 0}$ be a map with finite support such that $k \sqrt{|T|} = n+1$, where $k \coloneqq |\kappa_\bz|$. 
+    Choose a $k$-tuple $\gamma_\bz = (g_1, \ldots, g_k)$ of elements in $G$ realizing $\kappa_\bz$, 
+    % such that, for all $x\in G/T$, the number of elements $g_i$ with $g_i \in x$ is $\kappa_\bz (x)$
+    and define $\gamma_\bo \coloneqq (h_0\inv g_1\inv, \ldots, h_0\inv g_k\inv)$. 
+    Consider the elementary grading on $M(k,k)$ determined by $(\gamma_\bz, \gamma_\bo)$ (see \cref{defi:elementary-grd-super}) and let $\Gamma$ be the grading on $M(n+1, n+1, \bar 1)$ given by identifying it with $M(k,k) \tensor \D$ via Kronecker product. 
+    We define $\Gamma_P (T, \beta, \kappa_\bz, h_0)$ to be the restriction of $\Gamma$ to $P(n)$. 
+\end{defi}
+
+
+\begin{remark}
+    In \cite{paper-MAP}, the $k$-tuple $\gamma \coloneqq \gamma_\bz$ is taken as a parameter instead of the map $\kappa_\bz$, which is denoted by $\Xi (\gamma)$ there, and our element $h_0$ corresponds to $g_0\inv$ there. 
+\end{remark}
+
+The following result is a consequence of \cref{thm:osp-and-p-associative} (compare with \cite[Theorem 6.9]{paper-MAP}). 
+
+\begin{thm}\label{thm:last-one-for-P}
+    Let $n \geq 2$. 
+    Every grading on the Lie superalgebra $P(n)$ is isomorphic to some $\Gamma_P (T, \beta, \kappa_\bz, h_0)$ as in \cref{defi:Gamma_P}. 
+    Moreover, $\Gamma_P (T, \beta, \kappa_\bz, h_0) \iso \Gamma_P (T', \beta', \kappa_\bz', h_0')$ \IFF $T = T'$, $\beta = \beta'$ and there is an element $g\in G$ such that $\kappa_\bz' = g \cdot \kappa_\bz$ and $h_0' = g^{-2} h_0$. \qed 
+\end{thm}
+
+\subsection{Gradings on orthosymplectic Lie superalgebras}\label{ssec:grds-osp} 
+
+The gradings on $\osp(m,n)$ correspond to the gradings on $M^*(m, n, \bar 0)$. 
+By \cref{thm:osp-and-p-associative}, if we endow $M^*(m, n, \bar 0)$ with a grading, then it becomes isomorphic to $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:model-grd-M(m-n-0)}, with $|g_0| = \bar 0$. 
+
+Unlike in the case of \cref{ssec:grds-P(n)}, our construction of the pair $(\U, B)$ will be closer to the one in \cref{ssec:parameters-(U-B)}. 
+Let $\xi\from G/T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T$ (or just its finite subset $\supp \kappa_\bz \cup \supp \kappa_\bo$) with no elements between $x$ and $g_0\inv x\inv$. 
+Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
+
+Set $k_\bz \coloneqq |\kappa_\bz|$ and let $\gamma_\bz = (g_1, \ldots, g_{k_\bz})$ be the $k_\bz$-tuple given by putting the elements of $\{ \xi(x) \mid x \in \supp \kappa_\bz\}$ following the order $\leq$ and repeating $\kappa_\bz(x)$ times each element $\xi(x)$. 
+Clearly, $\gamma_\bz$ realizes $\kappa_\bz$. 
+Similarly, set $k_\bo \coloneqq |\kappa_\bo|$ and construct the $k_\bo$-tuple $\gamma_\bo = (h_1, \ldots, h_{k_\bo})$, which realizes $\kappa_\bo$. 
+We then define $\U\even \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_{k_\bz}]}$, $\U\odd \coloneqq \D^{[h_1]} \oplus \cdots \oplus \D^{[h_{k_\bz}]}$ and $\U \coloneqq \U\even \oplus \U\odd$. 
+
+To define the $\vphi_0$-sesquilinear form $B$, we will use the following:
+
+\begin{defi}\label{defi:blocks-of-Phi}
+    Let $i\in \ZZ_2$ and $x \in G/T$. 
+    If $g_0x^2 = T$, we put $t \coloneqq g_0 \xi(x)^2 \in T$ and define $\Phi(i, x)$ to be the following $\kappa(x) \times \kappa(x)$-matrix with entries in $\D$:
+    %
+    \begin{enumerate}[(i)]
+        \item $I_{\kappa(x)} \tensor X_{t}$ if $(-1)^i \eta(t_x) = +1$;
+        %
+		\item  $J_{\kappa(x)} \tensor X_{t}$, where $J_{\kappa(x)} \coloneqq \begin{pmatrix}
+				      0                & I_{\kappa(x)/2} \\
+				      -I_{\kappa(x)/2} & 0
+			      \end{pmatrix}$, if  $(-1)^i \eta(t_x) = -1$ (recall that, in this case, $\kappa (x)$ is even by \cref{inertia-even-and-odd-case}). 
+	\end{enumerate}
+    %
+    If $g_0 x^2 \neq T$, we define $\Phi(i, x)$ to be the following $2\kappa(x) \times 2\kappa(x)$-matrix with entries in $\D$:
+    %
+    \begin{enumerate}[(i)]
+        %
+        \setcounter{enumi}{2}
+        %
+		\item $\begin{pmatrix}
+			0                                                  & I_{\kappa(x)} \\
+			(-1)^{i} I_{\kappa(x)} & 0
+		\end{pmatrix} \tensor 1$, where $1$ is the identity element of $\D$. 
+    \end{enumerate}
+\end{defi}
+
+Let $\B = \{u_1, \ldots, u_{k_\bz + k_\bo} \}$ be the canonical graded basis of $\U$, and 
+let $x_1 < \ldots < x_{\ell_\bz}$ be the elements of $\{ x \in \supp \kappa_\bz \mid x \leq g_0\inv x^2 \}$ and, similarly, let $y_1 < \ldots < y_{\ell_\bo}$ be the elements of $\{ y \in \supp \kappa_\bo \mid y \leq g_0\inv y^2 \}$. 
+
+Let $B\from \U\times \U \to \D$ be the nondegenerate $\vphi_0$-sesquilinear form represented by the following matrix $\Phi \in M_{\kappa_\bz \mid \kappa_\bo} (\D)$:
+\[\label{eq:puting-the-blocks-of-Phi-together}
+    %
+    \sbox0{$\begin{matrix}
+        \Phi(\bar 0, x_1)&& \\
+        & \ddots &\\
+        && \Phi(\bar 0, x_{\ell_\bz})
+    \end{matrix}$}
+    %
+    \sbox1{$\begin{matrix}
+        \Phi(\bar 1, y_1)&& \\
+        & \ddots &\\
+        && \Phi(\bar 1, y_{\ell_\bo})
+    \end{matrix}$}
+    %
+    \Phi \coloneqq
+    \left(\begin{array}{c|c}
+            \usebox{0} & 0\\
+            \hline
+            0 & \usebox{1}
+        \end{array}\right).
+\]
+%
+Then $\bar B = B$ and $(\U, B)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$. 
+
+As in \cref{def:model-grd-M(m-n-0)}, we use the graded basis $\B$ to identify $\End_\D(\U)$ with $M_{k_\bz|k_\bo}(\D)$ and, then, consider each entry in $\D$ as a block matrix with entries in $\FF$, so $X$ and $\Phi$ can be seen as elements of $M(m,n)$, and
+\[\label{eq:Phi-for-graded-osp}
+    \forall X\in M(m,n), \quad \vphi(X) = \Phi\inv X\stransp \Phi.
+\]
+Note that, unlike in the case $|g_0| = \bar 1$ (\cref{ssec:grds-P(n)}), this $\vphi$ does not necessarily correspond to the superinvolution of \cref{defi:M(m-n-p_0)} (with $p_0 = \bar 0$). 
+Nevertheless, disregarding the $G$-grading, $(M(m,n), \vphi)$ must be isomorphic to $M^*(m,n, \bar 0)$ by \cref{prop:g_0-goes-to-p_0}.
+
+\begin{defi}\label{defi:Gamma_osp}
+    Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 \in G = G\times \{ \bar 0 \}$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps. 
+    Set $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$, and choose the $k_i$-tuple $\gamma_i$ realizing $\kappa_i$ as described before \cref{defi:blocks-of-Phi}. 
+    Consider the elementary grading on $M(k_\bz, k_\bo)$ determined by $(\gamma_\bz, \gamma_\bo)$ (see \cref{defi:elementary-grd-super}), and let $R = M(m,n)$, where $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$, be the graded superalgebra with grading given by identifying it with $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product. 
+    Consider on $R$ the superivolution $\vphi$ defined by \cref{eq:Phi-for-graded-osp}, where $\Phi$ is the matrix given by \cref{eq:puting-the-blocks-of-Phi-together}. 
+    We define $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the graded Lie superalgebra $\Skew(R, \vphi)$. 
+\end{defi}
+
+Note that, disregarding the grading, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ is isomorphic to $\osp(m,n)$, where $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$.
+The following result is a consequence of \cref{thm:osp-and-p-associative}:
+
+\begin{thm}\label{thm:grds-osp-final}
+    Let $L$ be an orthosymplectic Lie superalgebra endowed with a $G$-grading. 
+    Then $L$ is isomorphic to some $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{defi:Gamma_osp}. 
+    Moreover, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso \osp(T', \beta', \kappa_\bz', \kappa_\bo', g_0')$ \IFF $T =T'$, $\beta = \beta'$ and there is an element $g \in G$ such that $\kappa_\bz' = g\cdot\kappa_\bz$, $\kappa_\bo' = g\cdot\kappa_\bo$ and $g_0' = g^{-2}g_0$. \qed
+\end{thm}
+
+Recall that the Lie superalgebras $\osp(m,n)$ are separated into series $B$, $C$ and $D$: the ones for which $m$ is odd constitute series $B$, the ones for which $m = 2$ constitute series $C$ and the remaining ones constitute series $D$ (see Definition ??). 
+The restriction on the values of $m$ allows us to simplify the classification of $G$-gradings on the Lie superalgebras of series $B$. 
+
+Consider a graded Lie superalgebra $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{defi:Gamma_osp} and, as before, set $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$. 
+
+Assume $m$ odd. 
+The group $T$ is  $2$-elementary, so $\sqrt{|T|}$ is a power of $2$. 
+It follows that $T$ must be the trivial group and, hence, $ m = k_\bz$. 
+We will identify $G/T$ with $G$ and, hence, consider $G$ to be the domain of $\kappa_\bz$ and $\kappa_\bo$. 
+
+We claim that the element $g_0 \in G$ must be a square. 
+Indeed, suppose $g_0 \neq g^2$, for all $g\in G$. 
+Then $g\inv \neq g_0\inv g$ and, since $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible, $\kappa(g\inv) = \kappa(g_0\inv g)$. 
+Therefore $k_\bz = |\kappa_\bz| = \sum_{g \in G} \kappa_\bz(g)$ is an even number, a contradiction. 
+By \cref{thm:grds-osp-final}, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso \osp(T, \beta, g\cdot \kappa_\bz, g\cdot \kappa_\bo, e)$, where $g^2 = g_0$. 
+In other words, we can restrict ourselves to the case where $g_0 = e$ and, hence, $(\kappa_\bz, \kappa_\bo)$ is $e$-admissible.
+
+For every $e$-admissible pair $(\kappa_\bz, \kappa_\bo)$, we define $\Gamma_B(\kappa_\bz, \kappa_\bo)$ to be the grading on $\osp(m,n)$ given by the isomorphism with $\osp(\{e\}, \beta, \kappa_\bz, \kappa_\bo, e)$, where $\beta$ is the trivial bicharacter on $T = \{e\}$. 
+In \cite{Helens_thesis}, this corresponds to Definition 4.4.3, and the following result corresponds to Theorems 4.4.4 and 4.4.6: 
+
+\begin{cor}
+    Let $m\geq 0$ and $n > 0$. 
+    Every grading on $B(m,n) = \osp(2m+1, 2n)$ is isomorphic to some $\Gamma_B (\kappa_\bz, \kappa_\bo)$. 
+    Moreover, two gradings $\Gamma_B (\kappa_\bz, \kappa_\bo)$ and $\Gamma_B (\kappa_\bz', \kappa_\bo')$ are isomorphic \IFF there is an element $g \in G$ such that $g^2 = e$, $\kappa_\bz' = g\cdot \kappa_\bz$ and $\kappa_\bo' = g\cdot \kappa_\bo$. \qed
+\end{cor}
+
+We can define gradings on the Lie superalgebras in the series $C$ and $D$ in a similar fashion. 
+If $m = 2$, we can denote by $\Gamma_C (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ the grading on $\osp (2,n)$ given by the isomorphism with $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$. 
+If $m > 2$ is even, we can define $\Gamma_D (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ analogously. 
+However, in these cases, we cannot simplify the parameters of these gradings, as we have done for series $B$. 

@@ -105,17 +105,17 @@ Also, we will denote $|u_i|$ simply by $|i|$ for all $i \in \{1, \ldots, k\}$.
 
 \begin{proof}
 	Pick a homogeneous $\D$-basis for $\U$ following Convention \ref{conv:pick-even-basis} and use it to identify $R$ with $M_k(\D) = M_k(\FF) \tensor \D$.
-	By \cref{conv:pick-even-form}, we may assume that $B$ is even and then,
-	by Proposition \ref{prop:matrix-vphi}, for every $X \in M_k(\D)$, we have
-	$\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi$, where $\Phi \in M_k(\D)$ is the matrix representing $B$. 
+% 	By \cref{conv:pick-even-form}, we may assume that $B$ is even and then, 
+	By Proposition \ref{prop:matrix-vphi}, for every $X \in M_k(\D)\even \cup M_k(\D)\odd$, we have
+	$\vphi(X) = \sign{B}{X}\Phi\inv \vphi_0(X\stransp) \Phi$, where $\Phi \in M_k(\D)$ is the matrix representing $B$. 
 
     It was proved in \cref{prop:simple-R-D-super} that the superideals of $M_k(\D) = M_k(\FF) \tensor \D$ are precisely the sets of the form $M_k(I) = M_k(\FF) \tensor I$, where $I$ an superideal of $\D$. 
     We are going to show that $M_k(I)$ is $\vphi$-invariant if, and only if, $I$ is $\vphi_0$-invariant. 
     
 	Suppose $I$ is $\vphi_0$-invariant.
-	Then if $X \in M_k(I)$, it is clear that $\vphi_0 (X\stransp)$ is also in $M_k(I)$.
-	But then $\vphi(X) = \Phi\inv \vphi_0(X\stransp) \Phi \in M_k(I)$ since $M_k(I)$ is an ideal.
+	Then if $X \in M_k(\D)\even \cup M_k(\D)\odd$, it is clear that $\vphi_0 (X\stransp)$ is also in $M_k(I)$.
+	It follows that $\vphi(X) = \sign{B}{X} \Phi\inv \vphi_0(X\stransp) \Phi \in M_k(I)$ since $M_k(I)$ is an ideal.
 	Conversely, suppose $M_k(I)$ is $\vphi$-invariant.
-	Let $d \in I$ and consider $X = E_{11} \tensor d \in M_k(I)$.
-	Then $E_{11} \tensor \vphi_0(d) = \vphi_0(X\stransp) = \Phi\, \vphi(X)\, \Phi\inv \in M_k(I)$, which shows that $\vphi_0(d) \in I$.
+	Take $d \in I\even \cup I\odd$ and define $X \coloneqq E_{11} \tensor d \in M_k(I)\even \cup M_k(I)\odd$.
+	Then $E_{11} \tensor \vphi_0(d) = \vphi_0(X\stransp) = \sign{B}{X} \Phi\, \vphi(X)\, \Phi\inv \in M_k(I)$, which shows that $\vphi_0(d) \in I$.
 \end{proof}

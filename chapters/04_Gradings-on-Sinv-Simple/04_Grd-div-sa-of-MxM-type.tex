@@ -45,7 +45,11 @@ We put it here for completeness and for fixing notation.
 \end{defi}
 
 \begin{ex}\label{ex:main-extension}
-    Let $T$ be an abelian group and consider $E \coloneqq \big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big)$ as a subgroup of $\{ \pm 1, \pm i \} \times T$, and let $\iota\from \pmone \to E$ and $\pi\from E \to T$ be the homomorphisms given by $\iota(\delta) = (\delta, e)$ and $\pi (\delta, t) = t$ for all $\delta \in \pmone$ and $t\in T$.
+    Let $T = T^+ \cup T^-$ be the support of a finite graded-division superalgebra.  Consider 
+    \[
+        E \coloneqq \big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big) \subseteq \{ \pm 1, \pm i \} \times T,
+    \] 
+    and let $\iota\from \pmone \to E$ and $\pi\from E \to T$ be the homomorphisms given by $\iota(\delta) \coloneqq (\delta, e)$, for all $\delta \in \pmone$,  and $\pi (x, t) \coloneqq t$, for all $x \in \{ \pm 1, \pm i \}$ and $t\in T$.
 	Then $\pmone \xrightarrow{\iota} E \xrightarrow{\pi} T$ is an extension of $T$ by $\pmone$.
 \end{ex}
 
@@ -93,6 +97,10 @@ Note that the usual product on $K\times H$ is recovered as the particular case w
 	If $\sigma$ is trivial, we say that the extension is \emph{trivial}.
 \end{defi}
 
+\begin{ex}\label{ex:pmone-x-tilde-beta-T}
+    Under the conditions of \cref{ex:beta-is-cocycle}, with $\tilde\beta$ only taking values $\pm 1$, we have a group extension $\pmone \xrightarrow{\iota} \pmone \times_{\tilde\beta} T \xrightarrow{\pi} T$. 
+\end{ex}
+
 The next result tells us that, essentially, these are all abelian group extensions:
 
 \begin{prop}\label{prop:all-ext-are-cocycle}
@@ -100,12 +108,12 @@ The next result tells us that, essentially, these are all abelian group extensio
 \end{prop}
 
 \begin{proof}
-	Fix $\tau\from H \to E$ a (set theoretical) map such that $\pi\tau = id_H$ and $\tau(e) = e$.
+	Fix $\tau\from H \to E$ a set- theoretic section of $\tau$ such that $\tau(e) = e$.
 	For every $x \in E$, we have that $x (\tau(\pi(x)))\inv$ is in $\ker \pi$ and, hence, it equal to $\iota(k)$ for a unique $k_x\in K$.
 	It follows that $x = \iota(k_x) \tau(\pi(x))$.
-	Define $f\from E \to K\times H$ by $f(x) = (k_x, \tau(\pi(x)) )$.
-	Clearly, $f$ is bijective, so we can make it an isomorphism by using it to define a product on $K\times H$.
-	It is easy to check that this product is the one on $K \times_\sigma H$ where $\sigma\from H\times H \to K$ is given by $\sigma(h_1, h_2) = \tau(h_1) \tau(h_2) \tau(h_1 h_2)\inv$ and $f$ is the desired equivalence.
+	Define $\alpha\from E \to K\times H$ by $\alpha(x) = (k_x, \tau(\pi(x)) )$.
+	Clearly, $\alpha$ is bijective, so we can make it an isomorphism by using it to define a product on $K\times H$.
+	It is easy to check that this product is the one on $K \times_\sigma H$ where $\sigma\from H\times H \to K$ is given by $\sigma(h_1, h_2) = \tau(h_1) \tau(h_2) \tau(h_1 h_2)\inv$ and $\alpha$ is the desired equivalence.
 \end{proof}
 
 We will now see to know when two extensions determined by different normalized symmetric $2$-cocycles are equivalent. 
@@ -167,7 +175,7 @@ Let $\D$ be a finite dimensional graded-division superalgebra associated to $(T,
 Recall from \cref{prop:superpolarization} that super-anti-automorphisms of $\D$ are in bijection with maps $\eta\from T \to \FF^\times$ such that $\mathrm{d}\eta = \tilde\beta$. 
 The same computation with $p$ trivial shows that anti-automorphisms of $\D$ are in bijection with maps $\eta\from T \to \FF^\times$ such that $\mathrm{d}\eta = \beta$ (see also \cite{livromicha}). 
 
-Even though we are mainly interested in superinvolutions, some super-anti-automorphisms which are not involutive, and even some anti-automorphisms, will useful in what follows and also in \cref{chap:Lie}. 
+Even though we are mainly interested in superinvolutions, some su\-per-an\-ti-au\-to\-mor\-phisms which are not involutive (and even some an\-ti-au\-to\-mor\-phisms) will useful in what follows and also in \cref{chap:Lie}. 
 We will need the ones that correspond to quadratic maps.
 
 \begin{defi}
@@ -233,128 +241,50 @@ We will now refine the statement about existence of $\eta$ in \cref{prop:superpo
 
 	Since $\barr \beta$ is nondegenerate and takes values $\pm 1$, $\barr T$ is an elementary $2$-group. 
 	Choose a standard realization $\barr \D$ associated to $(\barr T, \barr \beta)$. 
-	By \cref{lemma:transp-std-realization}, the transposition is a degree-preserving involution of $\barr \D$, so it is determined by a map $\bar \mu\from T \to \FF^\times$ be the map determining the transposition on $\barr \D$. 
+	By \cref{lemma:transp-std-realization}, the transposition is a degree-preserving involution of $\barr \D$, so it is determined by a map $\bar \mu\from T \to \FF^\times$. 
 	By \cref{lemma:quadratic-form-involutions}, $\bar\mu$ is a quadratic map taking values in  $\{ \pm 1 \}$ whose polarization is $\bar\beta$. 
 	Define $\mu\from T\to \FF^\times$ by $\mu (t) = \barr \mu (\bar t)$ for all $t\in T$.
 	Then $\mu$ takes values in $\{ \pm 1 \}$ and $\beta = \mathrm{d} \mu$. 
 	
-	To get a quadratic map with polarization $\tilde \beta$, simply multiply $\mu$ by the quadratic map $\mu_0$ of Example \ref{ex:quadratic-form-polarization-parity}.
+	To get a quadratic map with polarization $\tilde \beta$, simply multiply $\mu$ by the quadratic map $\mu_0$ of \cref{ex:quadratic-form-polarization-parity}.
 \end{proof}
 
-\subsection{Division gradings on $\D \times \D\sop$}
+\subsection[Division gradings on \texorpdfstring{$\D \times \D\sop$}{DxDsop}]{Division gradings on $\D \times \D\sop$}
 
 We are now in position to apply these concepts and results to our original problem. 
-
-\begin{lemma}\label{lemma:tildeT-finally}
-	Suppose $\beta$ takes values in $\pmone$ and let $\sigma\from T\times T \to \pmone$ be the $2$-cocycle given by $\sigma(a,b) \coloneqq (-1)^{p(a)p(b)}$.
-	The group extensions corresponding to $\pmone \times_{\tilde\beta} T$ and $\pmone \times_\sigma T$ are both equivalent to the extension of Example
-	\ref{ex:main-extension}.
-	% Further, $\pmone \times_\sigma T$ is isomorphic to the subgroup of $\{\pm 1, \pm i\} \times T$ given by $\big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big)$.
-\end{lemma}
-
-\begin{proof}
-	By Proposition \ref{prop:existence-involution}, there is a map $\mu\from T \to \{\pm 1\}$ such that $\beta = \mathrm{d}\mu$, hence, using Proposition \ref{prop:coboundary}, the group extensions corresponding to $\pmone \times_{\tilde\beta} T$ and $\pmone \times_\sigma T$ are equivalent.
-
-	We can consider the $2$-cocycle $\sigma$ as admitting values in $\{\pm 1, \pm i\}$.
-	We then have $\pmone \times_\sigma T \subseteq \{\pm 1, \pm i\} \times_\sigma T$.
-	But then we can use the quadratic map $\mu_0$ from Example \ref{ex:quadratic-form-polarization-parity} to conclude that, since $\sigma = \mathrm{d} \mu_0$, the extension $\{\pm 1, \pm i\} \to \{\pm 1, \pm i\} \times_\sigma T \to T$ is equivalent to the trivial extension $\{\pm 1, \pm i\} \to \{\pm 1, \pm i\} \times T \to T$ via the isomorphism $\alpha\from \{\pm 1, \pm i\} \times_\sigma T \to \{\pm 1, \pm i\} \times T$ given by $\alpha(\lambda, t) = (\mu_0(t) \lambda, t)$.
-	Following this isomorphism, we see that the image of $\pmone \times_\sigma T$ is precisely the group extension of Example \ref{ex:main-extension} and we get an equivalence if we restrict $\alpha$ accordingly.
-\end{proof}
-
-% The next result show us Our strategy consists in start with a graded division superalgebra $\D$ with $\beta$ taking values in $\{ \pm 1 \}$. 
-% By Proposition \ref{prop:refinement-DxDsop} below, we can, then, refine the grading on $\D \times \D\sop$ to a division grading such that the exchange superinvolution preserves degree. 
-% The refinement 
-
-% If $\D$ is a graded division superalgebra with $\beta$ taking values in $\{ \pm 1 \}$, we can refine the 
-% Then the grading on $\D \times \D\sop$ can be refined to a division grading such that the exchange superinvolution $\vphi$ preserves degree.
-
-% \begin{prop}\label{prop:refinement-DxDsop}
-%     Let $\D$ be a graded division superalgebra with support $T$ and $\beta$ taking values in $\{ \pm 1 \}$. 
-%     Consider $\mc E \coloneqq \D \times \D\sop$ with its natural $T$-grading $\Gamma\colon \mc E = \bigoplus_{t\in T} \D_t \times \overline{\D_t}$ and let $\vphi$ be the exchange superinvolution on $\mc E$. 
-%     Then there is a division grading $\widetilde \Gamma$ on $(\mc E, \vphi)$ by $\widetilde T$ such that $\Gamma = {}^\pi\widetilde \Gamma$, \ie, $\Gamma$ is the coarsening of $\widetilde \Gamma$ by $\pi$. 
-%     Moreover, if $\Gamma'$ is another division grading on $(\mc E, \vphi)$ by an abelian group $T'$ such that $\Gamma = {}^{\pi'}\Gamma'$ for some homomorphism $\pi'\from T' \to T$, then there is a unique isomorphism $\alpha\from T \to  T'$ such that $\pi = \pi' \alpha$ and $\Gamma' = {}^\alpha \widetilde \Gamma$.
-
-%     % , let $\mc E \coloneqq \D \times \D\sop$ and $\vphi$ be the exchange superinvolution on $\mc E$. 
-%     % The grading on $\mc E$ can be refined to a division grading such that $\vphi$ preserves degrees if, and only if, $\beta$ takes values $\pm 1$. 
-%     % % If $\beta$ takes values $\pm 1$, the grading on $\D \times \D\sop$ can be refined to a division grading such that the exchange superinvolution preserves degree. 
-%     % % if, and only if, $\beta$ takes values $\pm 1$
-%     % Every such refinement has support isomorphic to $\widetilde T \coloneqq \{ \pm 1 \}\times T$ with product
-%     % % and suppose there is a super-anti-automorphism $\psi$ on $\D$ preserving degrees. 
-%     % % Then the grading on $\D \times \D\sop$ can be refined to a division grading such that the exchange superinvolution $\vphi$ preserves degree.
-% \end{prop}
-
-% \begin{prop}\label{prop:refinement-DxDsop}
-%     Let $\D$ be a graded division superalgebra associated to $(T, \beta, p)$.  
-%     Consider $\mc E \coloneqq \D \times \D\sop$ with its natural $T$-grading $\Gamma\colon \mc E = \bigoplus_{t\in T} \D_t \times \overline{\D_t}$ and let $\vphi$ be the exchange superinvolution on $\mc E$. 
-%     There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
-%     If $\widetilde \Gamma$ is a such grading and $\widetilde T$ is its support, then there are group homomorphisms $\tilde \pi\from \widetilde T \to T$ and $\alpha\from \widetilde T \to \{ \pm 1\} \times_\sigma T$, where $\sigma$ is the bicharater defined by $\sigma(a,b) = (-1)^{p(a)p(b)}$, such that $\Gamma = {}^{\tilde\pi}\widetilde \Gamma$ and $\pi_\sigma \alpha = \tilde \pi$.
-% \end{prop}
-
-% \begin{thm}\label{thm:refinement-DxDsop}
-%     Let $\D$ be a graded division superalgebra associated to $(T, \beta, p)$.  
-%     Consider $\mc E \coloneqq \D \times \D\sop$ with its natural $T$-grading $\Gamma\colon \mc E = \bigoplus_{t\in T} \D_t \times \overline{\D_t}$ and let $\vphi$ be the exchange superinvolution on $\mc E$. 
-%     There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
-%     If this is the case, we have the following:
-%     % and $\widetilde T$ is its support, then:
-
-%     % Then:
-%     \begin{enumerate}[(i)]
-%         % \item There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$; \label{item:refinement-iff-pmone} 
-
-%         \item %$\widetilde T$ fits into
-%         If $\Delta$ is such a refinement, then there is a unique group extension $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ such that $\supp \Delta = E$ and ${}^{\pi} \Delta = \Gamma$; \label{item:there-is-extension}
-
-%         \item This group extension is equivalent to the one of Example \ref{ex:main-extension}; \label{item:equivalent-extension-example}
-%         %determined by the $2$-cocycle $\sigma(a,b) \coloneqq (-1)^{p(a) p(b)}$, for all $a,b\in T$; 
-
-%         \item The set of all refinements $\Delta$ such that $\supp \Delta = E$ and ${}^\pi \Delta = \Gamma$ is in bijection with the group homomorphisms from $T$ to $\{ \pm 1 \}$. \label{item:number-of-extensions}
-%     \end{enumerate}
-%     % There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
-%     % If $\widetilde \Gamma$ is a such grading and $\widetilde T$ is its support, then there is a unique group extension $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ such that ${}^\pi \widetilde \Gamma = \Gamma$, and this extension is equivalent to the one given by the $2$-cocycle $\sigma$ given by $\sigma(a,b) = (-1)^{p(a) p(b)}$. 
-%     % Moreover, the set of all gradings corresponding to $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ is in bijection with its self-equivalences.
-% \end{thm}
 
 \begin{thm}\label{thm:refinement-DxDsop}
 	Let $\D$ be a graded division superalgebra associated to $(T, \beta, p)$.
 	Consider $\mc E \coloneqq \D \times \D\sop$ with its natural $T$-grading $\Gamma\colon \mc E = \bigoplus_{t\in T} \D_t \times \overline{\D_t}$ and let $\vphi$ be the exchange superinvolution on $\mc E$.
 	There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$.
-	If this is the case, let $\Delta$ be such a refinement, associated to $(T_\Delta, \beta_\Delta, p_\Delta, \eta_\Delta)$.
-	Then: % we have the following:
-	% and $\widetilde T$ is its support, then:
-	%
+	If this is the case, then: 
 	\begin{enumerate}[(i)]
-		% \item There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$; \label{item:refinement-iff-pmone} 
-
-		\item %$\widetilde T$ fits into
-		      $T_\Delta$ fits into a unique group extension $\{ \pm 1 \} \xrightarrow{\iota} T_\Delta \xrightarrow{\pi} T$ such that ${}^{\pi} \Delta = \Gamma$; \label{item:there-is-extension}
-
-		\item This group extension is equivalent to the one of Example \ref{ex:main-extension}; \label{item:equivalent-extension-example}
-		      %determined by the $2$-cocycle $\sigma(a,b) \coloneqq (-1)^{p(a) p(b)}$, for all $a,b\in T$; 
-		\item $\beta_\Delta = \beta \circ (\pi \times \pi)$ and $p_\Delta = p \circ \pi$; \label{item:beta-and-p-delta}
-		\item If $\tilde \Delta$ is another refinement with $\supp \tilde \Delta = T_\Delta$ and ${}^\pi \tilde \Delta = \Gamma$, then there is a unique self-equivalence $\alpha$ of $\{ \pm 1 \} \xrightarrow{\iota} T_\Delta \xrightarrow{\pi} T$ such that $\tilde \Delta = {}^\alpha \Delta$.
-		Moreover, $\eta_{\tilde \Delta} = \eta_\Delta \circ \alpha$. \label{item:number-of-extensions}
+		\item For each such refinement $\Delta$, associated to $(T_\Delta, \beta_\Delta, p_\Delta, \eta_\Delta)$, $T_\Delta$ fits into a unique group extension $\{ \pm 1 \} \xrightarrow{\iota} T_\Delta \xrightarrow{\pi} T$ such that ${}^{\pi} \Delta = \Gamma$. 
+		Moreover, $\beta_\Delta = \beta \circ (\pi \times \pi)$, $p_\Delta = p \circ \pi$ and $\eta_\Delta \circ \iota = \id_{\pmone}$.
+		\label{item:there-is-extension}
+		%
+		\item If $\tilde \Delta$ is another refinement, associated to $(T_{\tilde\Delta}, \beta_{\tilde\Delta}, p_{\tilde\Delta}, \eta_{\tilde\Delta})$, there is a unique equivalence between the corresponding group extensions $\alpha\from T_\Delta \to T_{\tilde\Delta}$ such that ${}^\alpha \Delta = \tilde \Delta$. 
+		Moreover, $\beta_\Delta = \beta_{\tilde\Delta} \circ (\alpha \times \alpha)$, $p_\Delta = p_{\tilde\Delta} \circ \alpha$ and $\eta_\Delta = \eta_{\tilde\Delta} \circ \alpha$.
+        \label{item:number-of-extensions}
+		%
+		\item There is a refinement $\Delta_0$ corresponding to the extension $\{ \pm 1 \} \xrightarrow{\iota} \pmone \times_{\tilde\beta} T \xrightarrow{\pi} T$ (\cref{ex:pmone-x-tilde-beta-T}), for which the map $\eta_{\Delta_0}\from \pmone \times_{\tilde\beta} T \to \pmone$ determining the exchange superinvolution is the projection onto the first component. 
+		\label{item:pmone-x-T}
 	\end{enumerate}
-
-	% There is a division grading on $(\mc E, \vphi)$ refining $\Gamma$ if, and only if, $\beta$ takes values in $\{ \pm 1 \}$. 
-	% If $\widetilde \Gamma$ is a such grading and $\widetilde T$ is its support, then there is a unique group extension $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ such that ${}^\pi \widetilde \Gamma = \Gamma$, and this extension is equivalent to the one given by the $2$-cocycle $\sigma$ given by $\sigma(a,b) = (-1)^{p(a) p(b)}$. 
-	% Moreover, the set of all gradings corresponding to $0 \to \{ \pm 1 \} \xrightarrow{\iota} \widetilde T \xrightarrow{\pi} T \to 0$ is in bijection with its self-equivalences.
 \end{thm}
 
 \begin{proof}
+    We will first prove the main assertion of \eqref{item:there-is-extension}. 
+	Recall that, for a division grading, its support is its universal group (Lemma \ref{lemma:div-grd-unvrsl-grp}).
+	Since $\Gamma$ is a coarsening of $\Delta$, by the universal property of the universal group, there is a unique homomorphism $\pi\from T_\Delta \to T$ such that ${}^{\pi}\Delta = \Gamma$.
+	Also, since $|T_\Delta| = 2 |T|$, we must have $|\ker \pi| = 2$, and therefore there is a unique monomorphism $\iota\from \pmone \to T_\Delta$ with $\iota(\pmone) = \ker \pi$. 
+
 	We claim that all division gradings on $(\mc E, \vphi)$ refining $\Gamma$ must have the same set of subspaces of $\mc E$ as their homogeneous components.
-	Indeed, for each $t\in T$, let $\mc E_t$ denote the homogeneous component of degree $t$ of $\Gamma$.
+	Indeed, for each $t\in T$, let $\mc E_t$ denote the homogeneous component of degree $t$ of $\Gamma$. 
 	Clearly, $\mc E_t$ is $2$-dimensional and $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ are eigenvectors of $\vphi$, associated to the eigenvalues $1$ and $-1$, respectively.
-	It follows that the eigenspaces of $\vphi \restriction_{\mc E_t}$ are $1$-dimensional and, hence, $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ must be homogeneous in any grading $\Delta$ on $(\mc E, \vphi)$ refining $\Gamma$.
-	If $\Delta$ is a division grading, all the components are $1$-dimensional, so the components must be $\mc E_{(\delta, t)} \coloneqq \FF (X_t, \delta \overline{X_t})$, for $t\in T$ and $\delta \in \pmone$.
-
-	% the eigenspaces of $\vphi \restriction_{\mc E_t}$ associated to $1$ and $-1$ are both one dimensional, spanned by $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$, respectively. 
-	% It follows that $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ must be homogeneous in any grading on $(\mc E, \vphi)$ refining $\Gamma$. 
-	% If such refinement is a division grading, the components must be $1$-dimensional, so the components must be the 
-
-	% Hence on any division grading on $(\mc E, \vphi)$ refining the natural $T$-grading on $\mc E$, these eigenspaces have to be the homogeneous components. 
-	% We will denote the subspace generated by $(X_t, \delta\overline{X_t})$, for $\delta \in \{ \pm 1 \}$, by $\mc E_{(\delta, t)}$. 
-	% Clearly, $\mc E$ is the direct sum of all subspaces of this form. 
-
+	Hence, the eigenspaces of $\vphi \restriction_{\mc E_t}$ are $1$-dimensional. 
+	By \cref{lemma:eigenvector-homogeneous}, it follows that $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ are homogeneous in any grading $\Delta$ on $(\mc E, \vphi)$ refining $\Gamma$. 
+	If $\Delta$ is a division grading, all the components are $1$-dimensional, so they must be the subspaces $\mc E_{(\delta, t)} \coloneqq \FF (X_t, \delta \overline{X_t})$, for $t\in T$ and $\delta \in \pmone$. 
+	
 	Now, for all $a, b \in T$ and $\delta_1, \delta_2 \in \{ \pm 1 \}$, we have:
 	%
 	\begin{align*}
@@ -364,84 +294,32 @@ We are now in position to apply these concepts and results to our original probl
 		                                                                     & = (X_{a} X_{b}, \delta_1 \delta_2 \tilde\beta (a,b) \overline{X_{a} X_{b}}).
 	\end{align*}
 	%
-	On the one hand, if $\beta(a, b) \neq \pm 1$ for some $a,b \in T$, the direct sum decomposition $\mc E = \bigoplus \mc E_{(\delta, t)}$ not a grading of $\mc E$ as a superalgebra.
-	On the other hand, if $\beta$ takes values in $\{ \pm 1 \}$, it follows that $\mc E_{(\delta_1, a)} \mc E_{(\delta_2, b)} = \mc E_{(\delta_1 \delta_2 \tilde\beta (a,b), ab)}$.
-	Therefore we have a grading by the group $\{ \pm 1\} \times_{\tilde\beta} T$.
-	Let us denote this grading by $\Delta_0$.
-	% If $\pmone \xrightarrow{\tilde\iota} \{ \pm 1\} \times_{\tilde\beta} T \xrightarrow{\tilde\pi} T$ is the extension correponding to $\{ \pm 1\} \times_{\tilde\beta} T$, then it is clear that ${}^{\tilde\pi}\Delta_0 = \Gamma$. 
-	% Note that, by Lemma ??, this group extension is equivalent to the one in Example \ref{ex:main-extension}.
-
-	We will now proceed to prove \eqref{item:there-is-extension}.
-	Recall that, for a division grading, its support is its universal group (Lemma \ref{lemma:div-grd-unvrsl-grp}).
-	Since $\Gamma$ is a coarsening of $\Delta$, by the universal property of the universal group, there is a unique map $\pi\from E\to T$ such that ${}^{\pi}\widetilde \Gamma = \Gamma$.
-	Also, since $|\widetilde T| = 2 |T|$, we must have $|\ker \pi| = 2$, and therefore there is a unique monomorphism $\iota\from \pmone \to \widetilde T$ with $\iota(\pmone) = \ker \pi$.
-	Note that in the particular case $\Delta = \Delta_0$, we get the extension associated to $\pmone \times_{\tilde\beta} T$.
-
-	We will also use the universal property of the universal group to prove items \eqref{item:equivalent-extension-example} and \eqref{item:number-of-extensions}.
-	Let $\Delta$ and $\Delta'$ be division gradings on $(\mc E, \vphi)$ refining $\Gamma$, with the correponding extensions being $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ and $\{ \pm 1 \} \xrightarrow{\iota'} E' \xrightarrow{\pi'} T$, respectively.
-	Since they have the same components, $\Delta$ is a (improper) refinement of $\Delta'$, so there is a unique group homomorphism $\alpha\from E \to E'$ such that ${}^\alpha \Delta = \Delta'$.
-	% Exchanging the roles of $\Delta$ and $\Delta'$ we have that $\alpha$ is an isomorphism. 
-	Also, by the uniqueness of $\pi$, we have $\pi = \pi' \alpha$ and, by the uniqueness of $\iota'$, we have $\iota' = \alpha \iota$.
-	We conclude not only that the extensions are equivalent, but also that $\alpha$ is the unique equivalence between them such that ${}^\alpha \Delta = \Delta'$.
-
-	Putting $\Delta' = \Delta_0$, we obtain item \eqref{item:equivalent-extension-example} follows from Lemma \ref{lemma:tildeT-finally}.
-
-	To prove \eqref{item:number-of-extensions},
-	suppose $\Delta$ and $\Delta'$ correspond to the same group extension.
-	Then there is a unique self-equivalence $\alpha$ of $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ such that ${}^\alpha \Delta = \Delta'$.
-	Conversely,
-	note that for every self-equivalence $\alpha$ of $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$, we have that the grading ${}^\alpha \Delta$ also corresponds to this extension, since $\pi\alpha = \pi$.
-	So the gradings corresponding to the extension $\{ \pm 1 \} \xrightarrow{\iota} E \xrightarrow{\pi} T$ are in bijection with its self-equivalences.
-	% Now Corollary \ref{cor:self-equivalences-are-homomorphisms} concludes the proof.
+	On the one hand, if $\beta(a, b) \neq \pm 1$ for some $a,b \in T$, the direct sum decomposition $\mc E = \bigoplus \mc E_{(\delta, t)}$ not a grading of $\mc E$ as a superalgebra. 
+	On the other hand, if $\beta$ takes values in $\{ \pm 1 \}$, it follows that $\mc E_{(\delta_1, a)} \mc E_{(\delta_2, b)} = \mc E_{(\delta_1 \delta_2 \tilde\beta (a,b), ab)}$. 
+	Therefore we have a grading $\Delta_0$ with support $\{ \pm 1\} \times_{\tilde\beta} T$. 
+	Clearly, the exchange superinvolution is determined by the projection on the first entry $\{ \pm 1\} \times_{\tilde\beta} T \to \pmone$, $\pi\from \{ \pm 1\} \times_{\tilde\beta} T \to T$ is the projection on the second entry and that $\ker \pi = \pmone \times_{\tilde\beta} \{ e \}$, proving item \eqref{item:pmone-x-T}. 
+	
+	We will use the universal property of the universal group again to prove item \eqref{item:number-of-extensions}.
+	Let $\{ \pm 1 \} \xrightarrow{\iota} T_\Delta \xrightarrow{\pi} T$ and $\{ \pm 1 \} \xrightarrow{\tilde\iota} T_{\tilde \Delta} \xrightarrow{\tilde\pi} T$ be the group extensions corresponding to $\Delta$ and $\tilde\Delta$, respectively. 
+	Since they have the same components, $\Delta$ is an (improper) refinement of $\tilde\Delta$, so there is a unique group homomorphism $\alpha\from T_\Delta \to T_{\tilde \Delta}$ such that ${}^\alpha \Delta = \tilde\Delta$. 
+	By the uniqueness of $\pi$, we have $\pi = \tilde\pi \alpha$ and, by the uniqueness of $\tilde\iota$, we have $\tilde\iota = \alpha \iota$, hence $\alpha$ is an equivalence between the corresponding extensions. 
+	Since the component of $\Delta$ of degree $t$ is the same subspace as the component of $\tilde\Delta$ of degree $\alpha(t)$, we get $\beta_\Delta = \beta_{\tilde\Delta} \circ (\alpha \times \alpha)$, $p_\Delta = p_{\tilde\Delta} \circ \alpha$ and $\eta_\Delta = \eta_{\tilde\Delta} \circ \alpha$. 
+	
+	Finally, the ``moreover'' part of item \eqref{item:there-is-extension} is trivial for $\Delta_0$, and it follows in general by item \eqref{item:number-of-extensions}.
 \end{proof}
 
-\begin{prop}\label{lemma:undoubling-D}
-    Let $(\mc E, \vphi_0)$ be a finite dimensional graded-division superalgebra with superinvolution associated to a quadruple $(T, \beta, p, \eta)$. 
-    Suppose there is an order 
-\end{prop}
+\begin{ex}\label{ex:now-FZ2-is-division}
+    The (trivially) graded superalgebra with superinvolution $\FF \times \FF\sop = M(1,0) \times M(1,0)\sop$ of \cref{ex:FxF-iso-FZ2} admits a $\ZZ_2$-grading (refining the trivial grading) that makes it isomorphic to $\FF\ZZ_2$ with superinvolution determined by $\eta(\bar 0) = 1$ and $\eta(\bar 1) = -1$. 
+\end{ex}
 
+\begin{ex}\label{ex:now-FZ4-is-division}
+    The graded superalgebra with superinvolution $Q(1) \times Q(1)\sop$ of \cref{ex:FZ2xFZ2sop-iso-FZ4} 
+    admits a $\ZZ_4$-grading (refining the trivial grading) that makes it isomorphic to $\FF\ZZ_4$ with superinvolution determined by $\eta(\bar 0) = 1$, $\eta(\bar 1) = 1$, $\eta(\bar 2) = -1$ and $\eta(\bar 3) = -1$. 
+    By \cref{thm:refinement-DxDsop}, up to relabeling the components, those are the only possible gradings on these superalgebras with superinvolutions. 
+\end{ex}
 
-% Since this extension is equivalent to the one corresponding to $\pmone \times_{\tilde\beta} T$, we can apply Corollary \ref{cor:self-equivalences-are-homomorphisms} to conclude that the self-equivalences are in bijection with group homomorphisms from $T$ to $\pmone$, concluding the proof.
-% 
-% 
-% 
-% Since the direct sum decomposition of $\widetilde \Gamma$ must be the same of $\Delta$, let $\alpha\from \widetilde T \to \pmone \times_{\tilde\beta} T$ be the bijection such that the component of degree $\tilde t$ with respect to $\widetilde T$ is the component of degree $\alpha(\tilde t)$ with respect to $\Delta$. 
-% In other
-% 
-% the identity map on $\mc E$ an equivalence between 
-% Recall that the support of a division grading is its universal group (Lemma ??). 
-% For each $\tilde t\in \widetilde T$, there are unique $\delta \in \pmone$ and $t\in T$ such that the component of $\tilde t$ with respect to $\widetilde \Gamma$ is $\mc E_{(\delta, t)}$. 
-% Let us define 
-
-% Let $\pi\from \widetilde T \to T$ be defined by $\pi(\tilde t) = t$ and $\alpha\from \widetilde T \to \pmone \times_{\tilde\beta} T$  be defined by $\alpha(\tilde t) = (\delta, t)$. 
-
-% We claim that $\pi$ is a group homomorphism. 
-% Indeed, given $\tilde t_1, \tilde t_2 \in \widetilde T$, since the component of $\tilde t_1, \tilde t_2$ is nonzero, there is a $t\in T$ such that $\pi(\tilde t_1, \tilde t_2) = t$ and, since $\Gamma$ is a grading, $t = \pi(\tilde t_1) \pi(\tilde t_2)$. 
-% Clearly, ${}^{\pi}\widetilde \Gamma = \Gamma$. 
-% On the one hand, if there is a group homomorphism $\pi'\from \widetilde T \to T$ such that ${}^{\pi'}\widetilde \Gamma = \Gamma$, then, clearly, we need $\pi'(\tilde t) = t$, so $\pi' = \pi$. 
-% % On the other hand, defining $\pi$ this formula , we have that, since $\widetilde T$ is the support of $\widetilde \Gamma$, $\pi$ is, indeed, a group homomorphism
-% Also, since $|\widetilde T| = 2 |T|$, we must have $|\ker \pi| = 2$, so there is a unique monomorphism $\iota\from \pmone \to \widetilde T$ with $\iota(\pmone) = \ker \pi$. 
-% This proves \eqref{item:there-is-extension}. 
-% Note that, for the particular case $\widetilde \Gamma = \Delta$, we have that this produces the group extension associated to $\tilde \beta$.
-
-% We now claim that $\alpha\from \widetilde T \to \pmone \times_{\tilde\beta} T$ is a group isomorphism. 
-% The proof it is a homomorphism is analogous to the proof $\pi$ is a homomorphism. 
-% Also, $\alpha$ is necessarily a bijection, since every component $\mc E_{(\delta, t)}$ also corresponds to a unique component of the grading $\widetilde \Gamma$. 
-% By definition, it is the only map such ${}^\alpha \widetilde\Gamma = \Delta$. 
-% The isomorphism $\alpha$ is an equivalence between the corresponding group extensions. 
-% In particular, given two gradings, there is a unique equivalence between the corresponding group extensions. 
-
-% % From this and the assumption that $\beta$ takes values in $\{ \pm 1 \}$, it follows that we can grade $\mc E$ by the group $\{ \pm 1\} \times_{\tilde\beta} T$ by defining the degree of $(X_t, \delta\overline{X_t})$ to be $(\delta, t)$, for all $t \in T$ and $\delta \in \{ \pm 1 \}$.
-
-% Using again that $\beta$ takes values in $\{ \pm 1 \}$, by Proposition ?? there is a quadratic map $\mu$ on $T$ whose polarization is $\beta$. 
-% Since $\mu$ takes values in $\{ \pm 1 \}$, it follows that $\beta$ is a $2$-coboundary, so by Proposition ??, there is an isomorphism from $\{ \pm 1 \} \times_{\tilde\beta} T$ to $\{ \pm 1 \} \times_{\sigma} T$ preserving the projection on $T$.
-
-% % Consider the automorphism $\theta\from \D \times \D\sop \to \D \times \D\sop$ given by $\theta (x, \bar y) = (\psi(y), \overline{\psi(x)})$. 
-% % Clearly, $\theta$ is preserves degrees and commutes with the exchange superinvolution. 
-% % Hence, by ??, it corresponds to a refinement of the grading on $(\D \times \D\sop, \psi)$. 
-% % Also, if $\eta\from T \to \FF^\times$ is the map corresponding to $\psi$, then $\theta(X_t, \overline{X_t}) = \eta(t) (X_t, \overline{X_t})$ and $\theta(X_t, -\overline{X_t}) = -\eta(t) (X_t, \overline{X_t})$, hence $(X_t, \overline{X_t})$ and $(X_t, -\overline{X_t})$ lie in different components. 
-% % Therefore each component have dimension at most $1$, completing the proof.
-% \end{proof}
+It is straightforward that, if $\Delta$ is as in item \eqref{item:there-is-extension},  $\{ \pm 1 \} \rightarrow E \rightarrow T$ is another group extension and $\alpha\from T_\Delta \to E$ is an equivalence of extensions, then ${}^\alpha \Delta$ is a refinement corresponding to $\{ \pm 1 \} \rightarrow E \rightarrow T$. 
+Hence, we get:
 
 \begin{cor}\label{cor:old-item-iv}
 	Under the conditions of Theorem \ref{thm:refinement-DxDsop}, the set of all refinements $\Delta$ such that $\supp \Delta = T_\Delta$ and ${}^\pi \Delta = \Gamma$ is in bijection with the group homomorphisms from $T$ to $\{ \pm 1 \}$.
@@ -451,23 +329,32 @@ We are now in position to apply these concepts and results to our original probl
 	It follows from item \eqref{item:number-of-extensions} and Corollary \ref{cor:self-equivalences-are-homomorphisms}.
 \end{proof}
 
-It is worth emphasizing that all these refinements are nonisomorphic as graded superalgebras with superinvolution, but they are isomorphic as graded superalgebras.
-% The parameters are $(T_\Delta, \beta_\Delta, p_\Delta, \eta_\Delta \circ \alpha)$.
-% This can be seen by looking on the parameters defining their equivalence class. 
+Note that all these refinements are nonisomorphic as graded superalgebras with superinvolution (since they have different $\eta$), but they are isomorphic as graded superalgebras (since they have the same $\beta$ and $p$). 
 
-% \begin{remark}
-%     Note that quadratic maps could have been avoided if we decided to keep working with the group $\pmone \times_{\tilde\beta} T$. 
-%     Nevertheless, the quadratic maps allowed us to to find a more explicit model for the extension, not depending on $\beta$.
-% \end{remark}
+We can use quadratic forms to replace the extension in \cref{ex:pmone-x-tilde-beta-T,thm:refinement-DxDsop} by an equivalent one, which does not depend on $\tilde\beta$. 
 
-% \begin{remark}
-%     The refinement above could have been construct using the eigenspace decomposition of an automorphism on $\mc E$. 
-%     Since $\beta$ takes values in $\{ \pm 1 \}$, there is a super-anti-automorphism $\psi\from \D \to \D$ of order form. 
-%     Then the map $\Psi\from \mc E \to \mc E$ defined by $\Psi(x, \bar y) = (\psi (y), \overline{\psi(x)})$ is an automorphism of order $4$ commuting with the exchange superinvolution.
-% \end{remark}
+\begin{lemma}\label{lemma:tildeT-finally}
+	Under the conditions of \cref{thm:refinement-DxDsop}, suppose $\beta$ takes values in $\pmone$ and let $\Delta_0$ be the refinement in item \eqref{item:pmone-x-T}. 
+    Then every quadratic map $\mu\from T \to \FF^\times$ such that $\mathrm{d}\mu = \tilde\beta$ gives us an equivalence $\alpha\from \pmone \times_{\tilde\beta} T \to E \coloneqq (\pmone \times T^+) \cup (\{ \pm \mathbf{i}\} \times T^-)$ between the group extensions of Examples \ref{ex:pmone-x-tilde-beta-T} and  \ref{ex:main-extension} given by $\alpha(\delta, t) \coloneqq (\delta \mu(t), t)$. 
+    Further, in the grading ${}^\alpha \Delta_0$, the exchange superinvolution is determined by the map $\eta\from E \to \pmone$ given by $\eta(\lambda, t) = \lambda\mu(t)\inv$, for all $(\lambda, t) \in E$. 
+\end{lemma}
 
-We will now present an example of such a refinement, which will play an important role in the next section. 
-Let $\D$ be $M(1,1)$ with the division grading by $T \coloneqq \ZZ_2 \times \ZZ_2$ determined by:
+\begin{proof}
+    By \cref{lemma:quadratic-form-involutions}, $\mu(T^+) \subseteq \pmone$ and $\mu(T^-) \subseteq \{ \pm \bi \}$. 
+    Hence, by \cref{prop:coboundary}, the map $\alpha'\from \{ \pm 1, \pm i \} \times_{\tilde\beta} T \to \{ \pm 1, \pm i \} \times T$ given by $\alpha'(\lambda, t) \coloneqq (\lambda\mu(t), t)$, for all $\lambda \in \{ \pm 1, \pm \bi \}$ and $t\in T$, is an equivalence between the corresponding extensions. 
+    Restricting $\alpha'$ to $\pmone \times_{\tilde\beta} T$, we get precisely $\alpha$, proving that it is an equivalence. 
+    The ``further'' part follows from item \eqref{item:number-of-extensions} in \cref{thm:refinement-DxDsop}. 
+\end{proof}
+
+\Cref{lemma:tildeT-finally} can be seen as taking a different model for $\D \times \D\sop$. 
+Recall that $\mu$ defines a super-anti-automorphism on $\psi\from \D\to \D$, which can be seen as an isomorphism $\psi\from \D\sop\to \D$. 
+Then the map $\D \times \D\sop \to \D \times \D$ given by $(d_1, \bar{d}_2) \mapsto (d_1, \psi(d_2))$, for all $d_1, d_2 \in \D$, is an isomorphism of graded superalgebras with superinvolution, where we consider the superinvolution $(d_1, d_2) \mapsto (\psi\inv (d_2), \psi (d_1))$ on $\D \times \D$. 
+Under this isomorphism, the element $(X_t, \delta \overline{X_t})$ goes to $(X_t, \delta\mu(t) X_t)$ (compare with the formula for $\alpha$). 
+If one follows the proof of \cref{thm:refinement-DxDsop} with $\D\times \D$ instead of $\D \times \D\sop$, the group $E$ would naturally appear in the place of $\pmone \times_{\tilde\beta} T$. 
+
+We will now construct an example of
+an odd graded-division superalgebra of type $M \times M\sop$, which will play an important role in the next section. 
+Let $\D$ be the graded-division superalgebra of \cref{ex:Pauli-2x2-super}, \ie,  $\D = M(1,1)$ with the grading by $T \coloneqq \ZZ_2 \times \ZZ_2$ determined by:
 \begin{align*}
 	\deg \begin{pmatrix}
 		\phantom{.}1 & \phantom{-}0\phantom{.} \\
@@ -486,44 +373,20 @@ Let $\D$ be $M(1,1)$ with the division grading by $T \coloneqq \ZZ_2 \times \ZZ_
 	\end{pmatrix} = (\bar 1, \bar 1).
 \end{align*}
 %
-%
-% \begin{center}
-%     \begin{tabular}{ c c }
-%         $\deg \begin{pmatrix}
-%         \phantom{.}1 & \phantom{-}0\phantom{.}\\
-%         \phantom{.}0 & \phantom{-}1\phantom{.}
-%         \end{pmatrix} = (\bar 0, \bar 0)$, & $\deg \begin{pmatrix}
-%         \phantom{.}0 & \phantom{-}1\phantom{.} \\
-%         \phantom{.}1 & \phantom{-}0\phantom{.}
-%         \end{pmatrix} = (\bar 0, \bar 1)$,\\
-%         \rule{0pt}{4ex}   
-%         $\deg \begin{pmatrix}
-%         \phantom{.}1 & \phantom{-}0\phantom{.}\\
-%         \phantom{.}0 & -1\phantom{.}
-%         \end{pmatrix} = (\bar 1, \bar 0)$, &
-%         $\deg \begin{pmatrix}
-%         \phantom{.}0 & -1\phantom{.} \\
-%         \phantom{.}1 & \phantom{-}0\phantom{.}
-%         \end{pmatrix} = (\bar 1, \bar 1)$.
-%     \end{tabular}
-% \end{center}
-%
-From Theorem \ref{thm:refinement-DxDsop}, we get a grading by the subgroup $E \coloneqq \big( \pmone \times \ZZ_2 \times \{ \bar 0 \} \big) \cup \big( \{ \pm i \} \times \ZZ_2 \times \{ \bar 1 \} \big)$ of $\{\pm 1, \pm i\} \times \ZZ_2 \times \ZZ_2$.
-Note that this group is isomorphic to $\ZZ_2 \times \ZZ_4$ via the homomorphism determined by $(1, \bar 1, \bar 0) \mapsto (\bar 1, \bar 0)$ and $(i, \bar 0, \bar 1) \mapsto (\bar 0, \bar 1)$.
+Following the proof of \cref{thm:refinement-DxDsop}, we get a $\pmone \times_{\tilde\beta} T$-grading refining the natural $T$-grading on $\D \times \D\sop$, given by $\deg (X_t, \delta \overline{X_t}) = (\delta, t)$, for all $\delta \in \pmone$ and $t\in T$. 
 
-To construct this grading explicitly, we follow the proof of Theorem \ref{thm:refinement-DxDsop}.
-First, we get a grading by $\pmone \times_{\tilde\beta} T$ on $\D\times \D\sop$ given by $\deg (X_t, \delta \overline{X_t}) = (\delta, t)$, for all $\delta \in \pmone$ and $t\in T$.
-Then, to get a simpler model for the group, we follow the proof of Lemma \ref{lemma:tildeT-finally}, where we need to choose a quadratic map $\mu$ on $T$ whose polarization is $\beta$, which is equivalent to choosing an involution on $\D$ as a graded algebra.
-We can choose the involution to be the transposition, \ie, $\mu(\bar 0, \bar 0) = 1$, $\mu(\bar 0, \bar 1) = 1$, $\mu(\bar 1, \bar 0) = 1$ and $\mu(\bar 1, \bar 1) = -1$.
-We then get a grading by $\pmone \times_\sigma T$, where $\sigma(a,b) \coloneqq (-1)^{p(a)p(b)}$, given by $\deg (X_t, \delta \overline{X_t}) = (\mu(t) \delta, t)$, for all $\delta \in \pmone$ and $t\in T$.
-This can be transplanted to the groups $\big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big)$ and $\ZZ_2\times \ZZ_4$ via the explicit isomorphisms given in the proof of Lemma \ref{lemma:tildeT-finally} and above.
-To summarize:
+To use \cref{lemma:tildeT-finally} and get a simpler model for the group, we need a quadratic map whose polarization is $\tilde\beta$. 
+To construct one, we can follow the proof of \cref{prop:existence-involution}. 
+First, let $\mu'\from T \to \pmone$ be the quadratic map determining the transposition on $\D = M(1,1)$, \ie, $\mu'(\bar 0, \bar 0) = 1$, $\mu'(\bar 0, \bar 1) = 1$, $\mu'(\bar 1, \bar 0) = 1$ and $\mu'(\bar 1, \bar 1) = -1$. 
+Then we define $\mu \coloneqq \mu' \mu_0$, where $\mu_0$ is the quadratic map of \cref{ex:quadratic-form-polarization-parity}. 
+In other words, $\mu$ is the map determining the queer supertranspose on $\D$ (see \cref{def:queer-stp}). 
+Then, by \cref{lemma:tildeT-finally}, we construct a refinement as in \cref{thm:refinement-DxDsop} with grading group $E = \big(\pmone \times \ZZ_2 \times \{ \bar 0 \} \big) \cup \big(\{\pm \bi \} \times \ZZ_2 \times \{ \bar 1 \} \big)$. 
+
+Finally, we have a group isomorphism $E \to \ZZ_2 \times \ZZ_4$, defined by $(1, \bar 1, \bar 0) \mapsto (\bar 1, \bar 0)$ and $(i, \bar 0, \bar 1) \mapsto (\bar 0, \bar 1)$. 
+We then get: 
 
 \begin{ex}\label{ex:superalgebra-O}
-	Let $\mc O$ denote the superalgebra $M(1,1) \times M(1,1)\sop$ endowed with the $\ZZ_2\times \ZZ_4$-grading determined by:
-	%
-	% We can refine the algebra the natural grading on $\D\times \D\sop$ by the division grading determined by:
-	%
+	Let $\mc O$ denote the superalgebra $M(1,1) \times M(1,1)\sop$ endowed with the $\ZZ_2\times \ZZ_4$-grading determined by: 
 	\begin{align*}
 		% -- 1st row --
 		\deg \left(\begin{pmatrix}
@@ -532,7 +395,7 @@ To summarize:
 		\end{pmatrix}, \overline{\begin{pmatrix}
 				\phantom{.}1 & \phantom{-}0\phantom{.} \\
 				\phantom{.}0 & \phantom{-}1\phantom{.}
-			\end{pmatrix}}\right) = (\bar 0, \bar 0),\, &
+			\end{pmatrix}}\right) = (\bar 0, \bar 0),\quad &
 		\deg \left(\begin{pmatrix}
 			\phantom{.}1 & \phantom{-}0\phantom{.} \\
 			\phantom{.}0 & \phantom{-}1\phantom{.}
@@ -547,7 +410,7 @@ To summarize:
 		\end{pmatrix}, \overline{\begin{pmatrix}
 				\phantom{.}1 & \phantom{-}0\phantom{.} \\
 				\phantom{.}0 & -1\phantom{.}
-			\end{pmatrix}}\right) = (\bar 1, \bar 0),\, &
+			\end{pmatrix}}\right) = (\bar 1, \bar 0),\quad &
 		\deg \left(\begin{pmatrix}
 			\phantom{.}1 & \phantom{-}0\phantom{.} \\
 			\phantom{.}0 & -1\phantom{.}
@@ -562,7 +425,7 @@ To summarize:
 		\end{pmatrix}, \overline{\begin{pmatrix}
 				\phantom{.}0 & \phantom{-}1\phantom{.} \\
 				\phantom{.}1 & \phantom{-}0\phantom{.}
-			\end{pmatrix}}\right) = (\bar 0, \bar 1),\, &
+			\end{pmatrix}}\right) = (\bar 0, \bar 1),\quad &
 		\deg \left(\begin{pmatrix}
 			\phantom{.}0 & \phantom{-}1\phantom{.} \\
 			\phantom{.}1 & \phantom{-}0\phantom{.}
@@ -577,7 +440,7 @@ To summarize:
 		\end{pmatrix}, \overline{\begin{pmatrix}
 				\phantom{.}0 & -1\phantom{.}           \\
 				\phantom{.}1 & \phantom{-}0\phantom{.}
-			\end{pmatrix}}\right) = (\bar 1, \bar 3),\, &
+			\end{pmatrix}}\right) = (\bar 1, \bar 3),\quad &
 		\deg \left(\begin{pmatrix}
 			\phantom{.}0 & -1\phantom{.}           \\
 			\phantom{.}1 & \phantom{-}0\phantom{.}
@@ -587,77 +450,89 @@ To summarize:
 			\end{pmatrix}}\right) = (\bar 1, \bar 1).
 	\end{align*}
 	%
-	%
-	% \setlength\tabcolsep{2pt}
-	%  \begin{center}
-	%  \begin{tabular}{c c}
-	%  % -- 1st row --
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & \phantom{-}1\phantom{.}
-	%  \end{pmatrix}, \overline{\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & \phantom{-}1\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 0, \bar 0),$&
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & \phantom{-}1\phantom{.}
-	%  \end{pmatrix}, -\overline{\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & \phantom{-}1\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 0, \bar 2)$\\
-	%  % -- 2nd row --
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & -1\phantom{.}
-	%  \end{pmatrix}, \overline{\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & -1\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 1, \bar 0),$&
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & -1\phantom{.}
-	%  \end{pmatrix}, -\overline{\begin{pmatrix}
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}\\
-	%   \phantom{.}0 & -1\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 1, \bar 2)$\\
-	%  % -- 3rd row --
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}0 & \phantom{-}1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}, \overline{\begin{pmatrix}
-	%   \phantom{.}0 & \phantom{-}1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 0, \bar 1),$&
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}0 & \phantom{-}1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}, -\overline{\begin{pmatrix}
-	%   \phantom{.}0 & \phantom{-}1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 0, \bar 3)$\\
-	%  % -- 4th row --
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}0 & -1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}, \overline{\begin{pmatrix}
-	%   \phantom{.}0 & -1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 1, \bar 3),$&
-	%  $\deg \left(\begin{pmatrix}
-	%   \phantom{.}0 & -1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}, -\overline{\begin{pmatrix}
-	%   \phantom{.}0 & -1\phantom{.} \\
-	%   \phantom{.}1 & \phantom{-}0\phantom{.}
-	%  \end{pmatrix}}\right) = (\bar 1, \bar 1)$
-	%  \end{tabular}
-	%  \end{center}
-	%
 	Then $\mc O$ is an odd graded division superalgebra and the exchange superinvolution on it preserves degrees. 
+	Thus $\eta$ takes value $1$ on $(\bar 0, \bar 0)$, $(\bar 1, \bar 0)$, $(\bar 0, \bar 1)$ and $(\bar 1, \bar 3)$, and value $-1$ on $(\bar 0, \bar 2)$, $(\bar 1, \bar 2)$, $(\bar 0, \bar 3)$ and $(\bar 1, \bar 1)$.
 \end{ex}
 
-As we are going to see, $\mc O$ is of special importance among the odd graded division superalgebras with superinvolution of type $M\times M\sop$.
+% Of course, the construction of $\mc O$ depend on the choice of the quadratic map $\mu$ on $ T = \ZZ_2 \times \ZZ_2$. 
+We note that, by \cref{cor:old-item-iv}, there are $4$ different gradings by $\ZZ_2 \times \ZZ_4$ on the superalgebra with superinvolution $M(1,1)\times M(1,1)\sop$ refining the $\ZZ_2 \times \ZZ_2$-grading. 
+The above is one of these $4$ gradings. 
 
-Of course, the construction of $\mc O$ depend on the choice of the involution on $\D$.
-By Corollary \ref{cor:old-item-iv}, there are $4$ different graded superalgebras with superinvolution we could end up with if we took different choices.
+The next result gives us a characterization of graded-division superalgebras with superinvolution that appear in \cref{thm:refinement-DxDsop}. 
+
+\begin{prop}\label{lemma:undoubling-D}
+    Let $(\mc E, \vphi_0)$ be a finite dimensional graded-division superalgebra with superinvolution associated to a quadruple $(T_{\mc E}, \beta_{\mc E}, p_{\mc E}, \eta_{\mc E})$. 
+    Then there is a graded-division superalgebra $\D$ such that $(\mc E, \vphi_0)$ is isomorphic to $\D \times \D\sop$ with exchange superinvolution and natural grading refined as in \cref{thm:refinement-DxDsop} if, and only if, there is an order $2$ element $f\in \rad \tilde\beta_{\mc E}$ such that $\eta_{\mc E}(f) = -1$. 
+\end{prop}
+
+\begin{proof}
+    For the ``only if'' direction, let $(T, \beta, p, \eta)$ be the quadruple associated to $\D$. 
+    By item \eqref{item:there-is-extension} of \cref{thm:refinement-DxDsop}, the element $f \coloneqq \iota(-1)$ has order $2$ and satisfies $\eta_{\mc E} (f) = -1$. 
+    Also, $f \in \ker \pi$, so $f \in \rad \tilde\beta_{\mc E}$.
+    
+    For the ``if'' direction, define $T \coloneqq T_{\mc E} / \langle f \rangle$, let $\pi\from T_{\mc E} \to T$ be the natural homomorphism, and let $\beta\from T\times T \to \pmone$ and $p\from T \to \ZZ_2$ be the maps induced by $\beta_{\mc E}$ and $p_{\mc E}$, respectively. 
+    They are well defined since $f\in \rad \tilde\beta = (\rad \beta) \cap T^+$. 
+    Thus, $T_{\mc E}$ fits into an extension $\pmone \xrightarrow{\iota}  T_{\mc E} \xrightarrow{\pi} T$ where $\iota (-1) = f$. 
+    For each $t \in T$, there precisely $2$ elements of $T_{\mc E}$, $t'$ and $t''$, with image $t$ under $\pi$, but $\eta(t') = -\eta(t'')$ since $t'' = t'f$. 
+    We define a set-theoretic section $\tau\from T \to T_{\mc E}$ of $\pi$ by taking $\tau(t)$ to be the element such that $\eta(\tau(t)) = 1$. 
+    Then the map $\alpha\from T_{\mc E} \to \{ \pm 1 \} \times_{\tilde\beta} T$ given by $\alpha(\tau(t)) = (1, t)$ and $\alpha(f\tau(t)) = (-1, t)$, for all $t\in T$, is an equivalence from $T_{\mc E}$ to the extension in item \eqref{item:pmone-x-T} in \cref{thm:refinement-DxDsop} (compare with the proof of \cref{prop:all-ext-are-cocycle}). 
+\end{proof}
+
+We conclude with a result will be useful in \cref{chap:Lie}. 
+
+\begin{prop}\label{prop:lemma-for-undoubling-and-fine-gradings}
+    Let $(\mc E, \vphi_0)$ be as in \cref{lemma:undoubling-D}, with $f\in \ker \tilde \beta$ and $\eta(f) = -1$. 
+    Let $\V$ be a graded right $\mc E$-supermodule associated to a map $\kappa\from G/T_{\mc E} \to \ZZ_{\geq 0}$ and suppose there is a superinvolution $\vphi$ on $R \coloneqq \End_{\mc E} (\V)$ determined by a nondegenerate $\vphi_0$-sesquilinear form on $\V$. 
+    Set $\overline{G} \coloneqq G/\langle f \rangle$, $\barr G^\# \coloneqq \barr G \times \ZZ_2 \iso G^\#/\langle f \rangle$, $\overline{T_{\mc E}} \coloneqq T_{\mc E}/\langle f \rangle$,  and let $\pi\from G \to \overline{G}$ be the natural homomorphism and let $\barr \beta$ and $\bar p$ be the maps induced by $\beta$ and $p$, respectively.
+    Then the coarsening $({}^\pi R, \vphi)$ is isomorphic to $S \times S\sop$ with exchange superinvolution, where $S \iso E(\overline{T_{\mc E}}, \barr \beta, \bar p, \kappa)$,  seeing $\kappa$ as a map from $\barr G^\#/\barr T \iso G^\#/T$ to $\ZZ_{\geq 0}$. 
+\end{prop}
+
+\begin{proof}  
+    Recall that $\rad \tilde\beta = \supp Z(\mc E)\even$. 
+    Let $\zeta \in Z(\mc E)\even$ be an element with degree $f$ and, scaling it if necessary, we may assume that $\zeta^2 = 1$. 
+    Since $\eta(f) = -1$, $\vphi_0(\zeta) = - \zeta$. 
+    By \cref{prop:R-and-D-have-the-same-center-vphi}, we can identify $(Z(\mc E)\even, \vphi_0)$ and $(Z(R)\even, \vphi)$, so $\zeta \in Z(R)\even$ with $\vphi(\zeta) = -\zeta$ (recall that the ground field $\FF$ is algebraically closed). 
+    Set $\epsilon \coloneqq \frac{1+\zeta}{2}$ and $\epsilon' \coloneqq \frac{1-\zeta}{2}$. 
+    Clearly, $\epsilon$ and $\epsilon'$ are orthogonal central idempotents and $1 = \epsilon + \epsilon'$. 
+    It follows that we can write $R = S \oplus S'$, a direct sum of superideals, where $S \coloneqq 
+    \epsilon R$ and $S' \coloneqq \epsilon' R$. 
+    If we consider on $R$ the $\barr G^\#$-grading, the elements $\epsilon$ and $\epsilon'$ are homogeneous, so $S$ and $S'$ are graded superideals. 
+    Since $\vphi(\epsilon) = \epsilon'$, it follows that $\vphi(S) = S'$ and, hence, $S' \iso S\sop$ as $\barr G$-graded superalgebras. 
+    It remains to prove that $S$ is graded-simple and describe its parameters. 
+    
+    Set $\U \coloneqq \V \epsilon$ and $\U' \coloneqq \V \epsilon'$. 
+    Clearly, $\U$ and $\U'$ are $\barr G$-graded right $\mc E$-supermodules and $\V = \U \oplus \U'$. 
+    For any $\mc E$-linear map $r \in R = \End_{\mc E} (\V)$, it is clear that $\epsilon r(u) = r(u)\epsilon \in \U$ for all $u\in \U$ and, since $\epsilon \epsilon' = 0$, $\epsilon r (u') = 0$ for all $u'\in \U'$. 
+    It follows that we can identify $S = \epsilon R$ with $\End_{\mc E}(\U)$. 
+    
+    Set $\D \coloneqq \epsilon \mc E$. 
+    Restricting the action of $\mc E$ on $\U$, we can consider $\U$ as a $\D$-supermodule. 
+    We claim that if $f\from \U \to \U$ is $\D$-linear, then it is also $\mc E$-linear. 
+    Indeed, $u = u\epsilon$ for every $u \in \U$, so
+    $f(ud) = f(u\epsilon d) = f(u) \epsilon d = f(u) d$. 
+    We conclude that $\End_{\mc E} (\U) = \End_\D(\U)$. 
+    
+    We claim that $\D$ is a graded-division superalgebra. 
+    Clearly, $\epsilon \in \D$ is the identity element. 
+    For every $t \in T_{\mc E}$, choose $0\neq X_t \in \mc E_t$. 
+    Note that, for every $t \in T_{\mc E}$, we have $X_{ft} \in \FF \zeta X_t$ and, hence, $\epsilon X_{ft} \in \FF X_t$ since $\epsilon\zeta = \epsilon$. 
+    It follows that the $\barr G$-homogeneous component $\D_{\bar t}$ is spanned by $\epsilon X_t$. 
+    Since $\epsilon X_t$ is invertible in $\D$, with inverse $\epsilon X_t\inv$, 
+    we have that $\D$ is a graded-division superalgebra and that $\supp \D = \overline{T_{\mc E}}$. 
+    Also, $\epsilon X_s \epsilon X_t = \epsilon X_s X_t = \beta(s,t) \epsilon X_t X_s = \beta(s,t) \epsilon X_t \epsilon X_s$, for all $s, t\in T$, so $\D$ is associated to $(\overline{T_{\mc E}}, \bar \beta, \bar p)$. 
+    
+    Finally, to see that the map $\kappa\from G^\#/T_{\mc E} \iso \barr G^\#/ \overline{T_{\mc E}} \to \ZZ_{\geq 0}$ is associated to the graded right $\D$-supermodule $\U$, let $\{v_1, \ldots, v_k\}$ be a $G$-graded $\mc E$-basis for $\V$. 
+    We claim that $\mc B = \{v_1 \epsilon , \ldots, v_k \epsilon \}$ is a $\barr G^\#$-graded $\D$-basis for $\U$. 
+    Indeed, for every $v \in \V$, write $v = v_1 d_1 + \cdots + v_k d_k$, where $d_1, \ldots, d_k \in \mc E$. 
+    Then $v \epsilon = v_1 d_1 \epsilon + \cdots + v_k d_k \epsilon = (v_1 \epsilon) (d_1 \epsilon) + \cdots + (v_k \epsilon) (d_k \epsilon)$. 
+    We conclude that $\U$ the $\D$-span of $\mc B$. 
+    For the $\D$-linear independence, we note that if
+    $(v_1 \epsilon) (d_1 \epsilon) + \cdots + (v_k \epsilon) (d_k \epsilon) = 0$, then $v_1 d_1 \epsilon + \cdots + v_k d_k \epsilon = 0$, so $d_1 \epsilon = \cdots = d_k \epsilon = 0$. 
+\end{proof}
+
+\begin{remark}\label{rmk:S-iso-Ssop-in-this-case}
+    The $\overline{G}$-graded superalgebra $S' \iso S\sop$ is also isomorphic to $E(\overline{T_{\mc E}}, \barr \beta, \bar p, \kappa)$, so $S$ admits a super-anti-automorphism. 
+    % This would not be true if $\FF = \RR$. 
+    Nevertheless, we cannot construct one canonically. 
+    We will revisit this point in \cref{ssec:undoubling}.
+\end{remark}

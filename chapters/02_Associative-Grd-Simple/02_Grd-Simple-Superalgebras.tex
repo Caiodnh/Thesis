@@ -93,11 +93,11 @@ The resulting set is, clearly, a even basis of $\U$.
 
 It follows that the canonical $\ZZ_2$-grading on $\U$ is determined only by $\D$. 
 To see that, take any even basis of $\U$ and let $\tilde \U$ be its $\D_e$-span. 
-Clearly, $\tilde \U \subseteq \U\even$ and it is a  $\D_e$-form of $\U$, \ie, we can identify $\U = \tilde\U \tensor_{\D_e} \D$ and, hence, $\U\even = \U \tensor_{\D_e} \U\even$ and  $\U\odd = \U \tensor_{\D_e} \U\odd$. 
+Clearly, $\tilde \U \subseteq \U\even$ and it is a  $\D_e$-form of $\U$, \ie, we can identify $\U = \tilde\U \tensor_{\D_e} \D$ and, hence, $\U\even = \tilde\U \tensor_{\D_e} \D\even$ and  $\U\odd = \tilde\U \tensor_{\D_e} \D\odd$. 
 
-This can also be seen from the point of view from the map $\kappa$. 
+This can also be seen from the point of view of the map $\kappa$. 
 Note that, every coset $x \in G^\#/T$ has an even representative. 
-This entails that the map $\iota\from G/T^+ \to G^\#/T$ given by $\iota ( gT^+) = (g, \bar 0) T$ is an isomorphism of left $G$-sets, so we can work with $\kappa \circ \iota$, which we will, by abuse of notation, also denote by $\kappa$.
+This entails that the map $\iota\from G/T^+ \to G^\#/T$ given by $\iota ( gT^+) = (g, \bar 0) T$ is a bijection, so we can work with $\kappa \circ \iota$, which we will, by abuse of notation, also denote by $\kappa$.
 
 \subsection{Graded Wedderburn theory for superalgebras}\label{ssec:wedderburn-super}
 
@@ -291,16 +291,16 @@ In view of \cref{lemma:rad-tilde-beta}, if $\Char \FF \neq 2$, the next result c
 In \cref{def:standard-realization} we introduced the standard realizations for finite dimensional graded-division algebras that are simple as algebras. 
 We are now going to extend this definition for finite dimensional graded-division superalgebras that are simple as superalgebras, \ie, to include superalgebras of type $Q$. 
 
-If $\D \iso Q(n)$, then we $\D\even \iso M(n)$ is a graded-division algebra that is simple as an algebra. 
+If $\D \iso Q(n)$, then $\D\even \iso M(n)$ is a graded-division algebra that is simple as an algebra. 
 Clearly, $\D\even$ is associated to the pair $(T^+, \beta^+)$, so by \cref{cor:D-simple-iff-beta-nondeg,lemma:beta-deg-beta-tilde-nondeg}, we have that $\rad \beta = \langle t_1 \rangle$ for an element $t_1\in T^-$ of order $2$, hence $t_1 = (h, \bar 1) \in G^\#$ for an element $h \in G$ of order at most $2$. 
 
 Conversely, given a finite subgroup $T^+ \subseteq G$, a nondegenerate alternating bicharacter $\beta^+\from T^+ \times T^+ \to \FF^\times$ and an element $h\in G$ of order at most $2$, let $\D\even$ be a standard realization (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T^+, \beta^+)$, set $t_1 \coloneqq (h, \bar 1)$ and $T \coloneqq \langle t_1 \rangle \times T^+$, and define $\beta\from T \times T \to \FF^\times$ by $\beta(s t_1^i, t t_1^j) \coloneqq \beta^+(s,t)$. 
 It is clear that $\beta$ is an alternating bicharacter and that $\rad \beta = \langle t_1 \rangle$. 
 If we consider $Q(1) = \FF \langle u \rangle$ as in \cref{ex:Q(1)-as-grd-div-SA}, with $h$ the $G$-degree of $u$, then $Q(1)$ is the graded-division superalgebra associated to $(\langle t_1 \rangle, \beta\restriction_{ \langle t_1 \rangle \times \langle t_1 \rangle })$. 
-By \cref{lemma:colour-tensor-product}, $\D \coloneqq Q(1)\tensor \D\even$ is the graded $G^\#$-graded graded-division algebra associated to $(T, \beta)$, and by the Kronecker product, it is easy to see that $\D$ is a superalgebra of $Q$ type. 
+By \cref{lemma:colour-tensor-product}, $\D \coloneqq Q(1)\tensor \D\even$ is the graded $G^\#$-graded graded-division algebra associated to $(T, \beta)$, and, via Kronecker product, it is easy to see that $\D$ is a superalgebra of type $Q$. 
 
 \begin{defi}\label{def:standard-realization-Q}
-    The $G$-graded superalgebra $\D \coloneqq Q(1) \tensor \D\even = \D\even \oplus u\D\odd$, where we declare the $G$-degree of $u$ to be $h$, will be referred to as a \emph{standard realization} of type $Q$ superalgebra with division grading associated to $(T^+, \beta^+, h)$.
+    The $G$-graded superalgebra $\D \coloneqq Q(1) \tensor \D\even = \D\even \oplus u\D\even$, where we declare the $G$-degree of $u$ to be $h$, will be referred to as a \emph{standard realization} of type $Q$ superalgebra with division grading associated to $(T^+, \beta^+, h)$.
 \end{defi}
 
 % \begin{cor}\label{prop:Q-T-beta-t_1}
@@ -344,10 +344,10 @@ By \cref{lemma:colour-tensor-product}, $\D \coloneqq Q(1)\tensor \D\even$ is the
 
     Conversely, suppose $\tilde\beta$ is nondegenerate. 
     If $\beta$ is nondegenerate, then $\D$ is simple as an algebra, by \cref{cor:D-simple-iff-beta-nondeg}.  
-    If $\beta$ is degenerate, then combining  \cref{lemma:beta-deg-beta-tilde-nondeg}\eqref{item:T+tensor-t_1} with \cref{lemma:colour-tensor-product}, we get that, as a $G^\#$-graded algebra, $\D \iso \mc A \tensor \mc B$, where $\mc A$ is the graded-division algebra associated to $(\rad \beta, \beta\restriction_{(\rad \beta)\times (\rad \beta)})$ and $\mc B$ is the graded-division algebra associated to $(T^+, \beta\restriction_{T^+ \times T^+})$. 
+    If $\beta$ is degenerate, then combining  \cref{lemma:beta-deg-beta-tilde-nondeg} with \cref{lemma:colour-tensor-product}, we get that, as a $G^\#$-graded algebra, $\D \iso \mc A \tensor \mc B$, where $\mc A$ is the graded-division algebra associated to $(\rad \beta, \beta\restriction_{(\rad \beta)\times (\rad \beta)})$ and $\mc B$ is the graded-division algebra associated to $(T^+, \beta\restriction_{T^+ \times T^+})$. 
     
-    By \cref{lemma:beta-deg-beta-tilde-nondeg}\eqref{item:rad-beta=t_1}, it is easy to see that $\mc A \iso Q(1)$, where we declare the elements of $Q(1)\odd$ to have degree $t_1$. 
-    By \cref{lemma:beta-deg-beta-tilde-nondeg}\eqref{item:beta+nondeg} and \cref{cor:D-simple-iff-beta-nondeg}, $\mc B$ is a $G^\#$-graded matrix algebra, say $M_n(\FF)$, with $\supp \mc B = T^+$. 
+    By \cref{lemma:beta-deg-beta-tilde-nondeg}, it is easy to see that $\mc A \iso Q(1)$, where we declare the elements of $Q(1)\odd$ to have degree $t_1$. 
+    By \cref{lemma:beta-deg-beta-tilde-nondeg} and \cref{cor:D-simple-iff-beta-nondeg}, $\mc B$ is a $G^\#$-graded matrix algebra, say $M_n(\FF)$, with $\supp \mc B = T^+$. 
     Hence, as a superalgebra, $\D \iso \mc A \tensor \B \iso Q(1) \tensor M_n(\FF) \iso Q(n)$, where the second isomorphism is given by the Kronecker product. 
 \end{proof}
 
@@ -382,8 +382,8 @@ We will now generalize this to graded superalgebras:
     An straightforward computation shows that $\psi_0 = \operatorname{sInt}_{X_t}$.
 \end{proof}
 
-\begin{defi}
-    We say that $t_p \in T$ is a \emph{parity element} if $\tilde\beta(t_p, t) = (-1)^{p(t)}$ for all $t\in T$. 
+\begin{defi}\label{def:parity-element}
+    We say that $t_p \in T$ is \emph{a parity element} if $\tilde\beta(t_p, t) = (-1)^{p(t)}$ for all $t\in T$. 
 \end{defi}
 
 Clearly, $t_p$ is a parity element if, and only if, $\operatorname{sInt}_{X_{t_p}} = \nu$, where $\nu\from \D \to \D$ is the parity automorphism $\nu(X_t) = (-1)^{p(t)} X_t$ for every $t\in T$. 
@@ -407,13 +407,46 @@ For \cref{ex:Pauli-2x2-super}, the parity automorphism is given by $\operatornam
 hence $\deg d = (\bar 1, \bar 0) \in T^+$ is a parity element. 
 
 \begin{cor}\label{cor:existence-parity-element}
-    There always exists a parity element $t_p \in T$, and it is unique if, and only if, $\tilde\beta$ is nondegenerate.
+    There always exists a parity element $t_p \in T$, and 
+    the set $T_p$ of all parity elements in $T$ is the coset $t_p (\rad \tilde\beta)$. 
+    % In particular, the parity element is unique if, and only if, $\tilde\beta$ is nondegenerate. 
 \end{cor}
 
 \begin{proof}
-    Existence follows from \cref{prop:all-central-automorphisms-of-D-are-superinner}, since the inner automorphism is trivial on $sZ(\D) = Z(\D) \cap \D\even$. 
-    Also, given a parity element $t_p \in T$, it is clear from the definition that the set of all parity is the coset $t_p (\rad \tilde\beta)$.
+    Existence follows from \cref{prop:all-central-automorphisms-of-D-are-superinner}, since the parity automorphism is trivial on $Z(\D) \cap \D\even$. 
+    The second assertion is clear from the definition. 
 \end{proof}
+
+We can describe the set $T_p = t_p (\rad \tilde\beta)$ differently: 
+
+\begin{lemma}\label{lemma:set-parity-elements}
+    Suppose $\Char \FF \neq 2$. 
+    If $T^- =\emptyset$ or $\Char \FF =2$, then the set of all parity elements is $\rad \tilde\beta = \rad \beta = \rad \beta^+$. 
+    Otherwise, $T_p \cap T^+ = (\rad \beta^+) \smallsetminus (\rad\beta)$ and $T_p \cap T^- = (\rad \beta) \cap T^-$. 
+\end{lemma}
+
+\begin{proof}
+    If $T^- =\emptyset$, then $(-1)^{p(t)} = 1$ for all $t\in T$, so $T_p = \rad \tilde\beta$ and $\tilde\beta = \beta = \beta^+$. 
+    We will now suppose $T^- \neq\emptyset$.
+    
+    If $t_p$ is an even parity element, then clearly $t_p \in \rad\beta^+$ but $t_p \not\in \rad \beta$. 
+    Conversely, if $t_p \in \rad \beta^+ \setminus \rad\beta$, let $t_1\in T^-$. 
+    Since $\beta(t_p, T^+) = 1$, we have $\beta(t_p, T^-) = \beta(t_p, t_1 T^+) = \beta(t_p, t_1) \neq 1$. 
+    Since $t_1^2 \in T^+$, $\beta(t_p, t_1)^2 = \beta(t_p, t_1^2) = 1$ and, hence, $\beta(t_p, t_1) = - 1$, proving that $t_p$ is a parity element. 
+    
+    Finally, an odd element $t_p$ is a parity element if, and only if, $\tilde\beta(t_p, t) = (-1)^{p(t)} = (-1)^{p(t_p) p(t)}$ for all $t\in T$ which, by the definition of $\tilde\beta$, is equivalent to $\beta(t_p, t) = 1$ for all $t\in T$. 
+    The result follows. 
+\end{proof} 
+
+Note that, if $\Char \FF \neq 2$, then, by \cref{lemma:rad-tilde-beta}, all elements in $T_p$ have the same parity, \ie, either $T_p \cap T^+ = \emptyset$ or $T_p \cap T^- = \emptyset$. 
+
+\begin{cor}\label{cor:radical-with-parity}
+    Let $t_p\in T$ be a parity element. 
+    If $t_p\in T^+$, then $\rad \beta = \rad \tilde\beta$ and $\rad \beta^+ = (\rad \tilde\beta) \cup  t_p(\rad \tilde\beta)$. 
+    If $t_p\in T^-$, then $\rad \beta^+ = \rad \tilde\beta$ and $\rad \beta = (\rad \tilde\beta) \cup  t_p(\rad \tilde\beta)$. \qed
+\end{cor}
+
+
 
 % -----------------
 \subsection{Finite dimensional graded-simple superalgebras over an algebraically closed field}\label{ssec:classification-assc-super}
@@ -461,7 +494,7 @@ We start with even gradings on superalgebras of type $M$:
     Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and maps $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa_\bz| \sqrt{|T|} = m$ and $|\kappa_\bo| \sqrt{|T|} = n$, consider:
     \begin{enumerate}[(i)]
         \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$;
-        \item the elementary grading (see \cref{defi:elementary-grd-super}) on $M(k_\bz, k_\bo)$ defined by $(\gamma_\bz, \gamma_\bo)$, where $\gamma_\bz$ and $\gamma_\bo$ are, respectively, a $k_\bz$-tuple and a $k_\bo$-tuple of elements of $G$, $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$, such that the number of entries $g$ in $\gamma_i$ with $g\in x$ is equal to $\kappa_i (x)$, for every $i\in \ZZ_2$ and $x\in G/T$.
+        \item the elementary grading (see \cref{defi:elementary-grd-super}) on $M(k_\bz, k_\bo)$ defined by $(\gamma_\bz, \gamma_\bo)$, where $\gamma_\bz$ and $\gamma_\bo$ are a $k_\bz$-tuple and a $k_\bo$-tuple of elements of $G$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, where $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$  (see \cref{defi:gamma-realizes-kappa}).
     \end{enumerate}
     %
     We define $\Gamma_M (T, \beta, \kappa_\bz, \kappa_\bo)$ to be the even grading on $M(m,n)$ given by identifying $M(m,n)$ with the graded superalgebra $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product, \ie,
@@ -493,9 +526,7 @@ Note that in this case, by \cref{lemma:odd-M-m=n}, we have that $m = n$.
     \begin{enumerate}[(i)]
         % \item the group homomorphism $p\from T \to \ZZ_2$ given by the projection on the second component of $G^\# = G\times \ZZ_2$;
         \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$, viewed as a $G$-graded superalgebra with canonical $\ZZ_2$-grading given by the projection on the second entry $p\from T \subseteq G^\# \to \ZZ_2$;
-        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ 
-        % = (g_1, \ldots, g_{k})$ 
-        of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g$ in $\gamma$ with $g\in x$ is equal to $\kappa (x)$, for every $x\in G/T^+$. 
+        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}). 
     \end{enumerate}
     %
     We define $\Gamma_M (T, \beta, p, \kappa)$ to be the odd grading on $M(n,n)$ given by identifying $M(n,n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
@@ -522,9 +553,7 @@ Note that we only have odd gradings in this case.
     Given a finite subgroup $T^+ \subseteq G$, a nondegenerate bicharacter $\beta\from T^+ \times T^+ \to \FF^\times$, an element $h\in G$ such that $h^2 = 1$ and a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T^+|} = n$, consider 
     \begin{enumerate}[(i)]
         \item a standard realization $\D$ (see \cref{def:standard-realization-Q}) of a superalgebra of type $Q$ with a division grading associated to $(T^+, \beta^+, h)$;
-        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ 
-        % = (g_1, \ldots, g_{k})$ 
-        of elements of $G$, $k \coloneqq |\kappa|$, such that the number of entries $g$ in $\gamma$ with $g\in x$ is equal to $\kappa (x)$, for every $x\in G/T^+$.  
+        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$  of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}).  
     \end{enumerate}
     %
     We define $\Gamma_Q (T^+, \beta^+, h, \kappa)$ to be the grading on $Q(n)$ given by identifying $Q(n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,

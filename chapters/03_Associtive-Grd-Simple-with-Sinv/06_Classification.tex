@@ -113,7 +113,7 @@ It is clear that the corresponding $\vphi_0$ is a superinvolution if, and only i
 %     If $\eta = \eta'$, it is easy to see that $\psi$ is an isomorphism of graded superalgebras with super-anti-automorphism. 
 % \end{proof}
 
-\subsection{Parametrization of \texorpdfstring{$(\U, B)$}{(U, B)}}
+\subsection{Parametrization of \texorpdfstring{$(\U, B)$}{(U, B)}}\label{ssec:parameters-(U-B)}
 
 % Let $R \coloneqq \End_\D (\U)$ and let $\vphi$ be a superinvolution on R. 
 % From Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, $\vphi$ is determined by a pair $(\vphi_0, B)$, where $\vphi_0$ is a superinvolution on $\D$ and $B\from \U \times \U \to \D$ is a homogeneous $\vphi_0$-sesquilinear form on $\U$ such that $\overline B = \delta B$ with $\delta \in \{ \pm 1 \}$. 
@@ -179,8 +179,8 @@ If this is the case, $\U_x$ and $\U_y$ are dual to each other and, hence, $\kapp
 \end{proof}
 
 We are interested in the case when the superadjunction with respect to $B$ is involutive.
-By Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, this happens if, and only if, $\vphi_0$ is involutive and $\overline B = \delta B$ for some $\delta \in \pmone$.
-So, from now on, we will assume that $\eta$ takes values in $\pmone$.
+By Theorem \ref{thm:vphi-involution-iff-delta-pm-1}, if this is the case, then $\vphi_0$ is also involutive. 
+Hence, from now on, we will assume that $\eta$ takes values in $\pmone$.
 
 \begin{lemma}\label{lemma:B_x-delta}
 	Let $\delta \in \pmone$.
@@ -288,7 +288,7 @@ By the results above, the quadruple $(\eta, \kappa, g_0, \delta)$ satisfies the 
 		\item $\mathrm{d}\eta = \tilde\beta$ (see  \cref{eq:tilde-beta-def,def:coboundary}); \label{item:eta-is-eta}
 		\item $\kappa$ has finite support; \label{item:kappa-finite-support}
 		\item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G^\#/T$; \label{item:kappa-duality}
-		\item for any $x\in G^\#/T$, if $g_0 x^2 = T$ and $\mu_x = -1$, then $\kappa (x)$ is even (where \\$\mu_x\coloneqq (-1)^{|g|}\eta(g_0g^2)\delta$ for $g\in x$, see Proposition \ref{prop:self-dual-components}). \label{item:kappa-parity}
+		\item for any $x\in G^\#/T$, if $g_0 x^2 = T$ and $\mu_x = -1$, then $\kappa (x)$ is even (where \\$\mu_x\coloneqq (-1)^{|g|}\eta(g_0 g^2)\delta$ for $g\in x$, see Proposition \ref{prop:self-dual-components}). \label{item:kappa-parity}
 	\end{enumerate}
 	The set of all admissible quadruples will be denoted by $\mathbf{I}(\D)$ or $\mathbf{I}(T, \beta, p)$.
 \end{defi}
@@ -299,11 +299,10 @@ We define $W_x \coloneqq (\FF^{\kappa(x)})^{[\xi(x)]}$, and $\U = \sum_{x \in G^
 For all $x, y \in G^\#/T$ such that $g_0x y = T$ and $x \leq y$, we let $B_x$ be the $\vphi_0$-sesquilinear on $\U_x + \U_y$ represented, relative to the standard basis of $W_x + W_y$, by the matrices in Proposition \ref{prop:self-dual-components}, if $x=y$, or in Proposition \ref{prop:pair-of-dual-components}, if $x\neq y$.
 
 \begin{thm}\label{thm:iso-(U,B)}
-	Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$.
-	Let $\D$ be a finite dimensional graded-division superalgebra and let $\vphi_0$ be a degree preserving superinvolution on $\D$.
+	Suppose $\FF$ is an algebraically closed field and $\Char \FF \neq 2$. 
+	Let $\D$ be a finite dimensional graded-division superalgebra and let $\vphi_0$ be a degree preserving superinvolution on $\D$. 
 	% The map assigning a triple $(\kappa, g_0, \delta) \in \mathbf{I} (\D, \vphi_0)$ for ever
-	The assignment of inertia to a pair $(\U, B)$ as in Definition \ref{def:parameter-of-(U,B)} gives a bijection between the isomorphism classes of these pairs and the set $\mathbf{I} (\D)$.
-	% Two pairs $(\U, B)$ and $(\U', B')$ are isomorphic if, and only if, they are associated to the same triple in $\mathbf{I} (\D, \vphi_0)$.
+	The assignment of inertia to a pair $(\U, B)$ as in Definition \ref{def:parameter-of-(U,B)} gives a bijection between the isomorphism classes of these pairs and the set $\mathbf{I} (\D)$. 
 \end{thm}
 
 \begin{proof}
@@ -364,11 +363,6 @@ If $(R, \vphi) \iso (R', \vphi')$, then $\D \iso \D'$ and, hence, $T = T'$, $\be
 		                                      & = \psi_0\inv \bigg( \sign{u}{v} \vphi_0 \big( B(v,u) \big) \bigg)                                                       \\
 		                                      & = \psi_0\inv \big( \overline B (u,v) \big) = \psi_0\inv \big( \delta B (u,v) \big) = \delta (\psi_0\inv \circ B) (u,v),
 	\end{align*}
-	% \begin{align*}
-	%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
-	%     &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
-	%     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
-	% \end{align*}
 	for all $u, v \in \U\even \cup \U\odd$.
 \end{proof}
 
@@ -376,27 +370,6 @@ By Corollary \ref{cor:iso-with-actions}, $(R, \vphi) \iso (R', \vphi')$ if, and 
 Let us compute this action explicitly.
 
 First, applying \cref{lemma:twist-same-inertia} in the case $\D' = \D$, we have that the $A$-action on $\mathbf{I}(T, \beta, p)$ is trivial.
-
-% First, in our case of algebraically closed $\FF$, the $A$-action (defined by Equation \eqref{eq:Aut(D)-action}) is trivial. 
-% To see that,
-% fix $\eta$ and suppose $(\kappa, g_0, \delta)$ is assigned to $(\U, B)$. 
-% Note that $\psi_0 \in A$ must be a scalar operator on each component $\D_t$ of $\D$, hence $\psi_0$ commutes with $\vphi_0$. 
-% It follows that $\psi_0\inv \circ B$ is $\vphi_0$-sesquilinear, so we can use Theorem \ref{thm:iso-(U,B)} to show that $(\U, B)$ is isomorphic to $\psi_0\cdot (\U, B) = (\U^{\psi_0\inv}, \psi \circ B)$. 
-% The graded $\D$-modules $\U$ and $\U^{\psi_0\inv}$ have the same $\kappa$, since $\dim_\D \U_x = \dim_\D (\U_x)^{\psi_0\inv}$, for all $x \in G^\#/T$. 
-% Also, it is clear that $\deg (\psi_0 \circ B) = \deg B$. 
-% Finally, 
-% % \begin{align*}
-% %     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} (\psi_0\inv \circ \vphi \circ \psi_0)\inv \big( (\psi_0 \circ B)(v, u) \big) \\
-% %     &= \sign{u}{v} (\psi_0 \circ \vphi\inv \circ \psi_0\inv) \big( (\psi_0 \circ B)(v,u) \big) \\
-% %     &= \psi_0 \bigg( \sign{u}{v} \vphi\inv \big( B(v,u) \big) \bigg) \\
-% %     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
-% % \end{align*}
-% \begin{align*}
-%     \overline{(\psi_0 \circ B)} (u,v) &= \sign{u}{v} \vphi_0\inv \big( (\psi_0 \circ B)(v, u) \big) \\
-%     &= \psi_0 \bigg( \sign{u}{v} \vphi_0\inv \big( B(v,u) \big) \bigg) \\
-%     &= \psi_0 \big( \overline B (u,v) \big) = \psi_0 \big( \delta B (u,v) \big) = \delta (\psi_0 \circ B) (u,v),
-% \end{align*}
-% for all $u, v \in \U\even \cup \U\odd$.
 
 Let us now consider the $\D^\times_{\mathrm{gr}}$-action.
 Let $t\in T$ and $0\neq d \in \D_t$ and let $(\eta', \kappa', g_0', \delta')$ be the parameters corresponding to $d \cdot (\U, B) = (\U, d B)$ (see Equation \eqref{eq:Dx_gr-action}).
@@ -455,7 +428,7 @@ We conclude that $\delta'' = (-1)^{|g|} \delta$.
 
 In view of these considerations, Corollary \ref{cor:iso-with-actions} can be restated as follows:
 
-\begin{thm}\label{thm:iso-(R,vphi)-with-parameters}
+\begin{thm}\label{thm:iso-(R-vphi)-with-parameters}
 	Let $(\D, \U, B)$ and $(\D', \U', B')$ be triples as in Definition \ref{def:E(D,U,B)}, and let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ and $(T', \beta', p', \eta', \kappa', g_0', \delta')$ be their parameters.
 	Then $E(\D, \U, B) \iso E(\D', \U', B')$ if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$, and $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ lie in the same orbit of the $T\times G^\#$-action in $\mathbf{I}(T, \beta, p)$ given in Definition \ref{def:TxG-action}. \qed
 \end{thm}
@@ -465,9 +438,8 @@ We will now proceed to simplify our parameter set and the group acting on it, by
 To this end, consider the following equivalence relation among all possible $\eta$.
 
 \begin{defi}\label{def:equiv-eta}
-	Let $\eta, \eta'\from T \to \pmone$ such that $\mathrm{d}\eta = \mathrm{d}\eta' = \tilde\beta$.
-	We say that $\eta$ and $\eta'$ are \emph{equivalent}, and write $\eta \sim \eta'$, if there is $t \in T$ such that $\eta' = \tilde\beta(t, \cdot) \eta$.
-	% The equivalence class of $\eta$ will be denoted by $[\eta]$.
+	Let $\eta, \eta'\from T \to \pmone$ be maps such that $\mathrm{d}\eta = \mathrm{d}\eta' = \tilde\beta$.
+	We say that $\eta$ and $\eta'$ are \emph{equivalent}, and write $\eta \sim \eta'$, if there is $t \in T$ such that $\eta' = \tilde\beta(t, \cdot) \eta$. 
 \end{defi}
 
 We partition the set $\mathbf{I}(T, \beta, p)$ according to the equivalence class of $\eta$ and refer to $\{ (\eta', \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p) \mid \eta' \sim \eta \}$ as the $\eta$-block of the partition.
@@ -478,70 +450,87 @@ We wish to fix $\eta$.
 Given $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$,
 we define
 \[
-	\mathbf{I}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)\}.
+	\mathbf{I}(T, \beta, p)_\eta \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)\}.
 \]
 
-% On the other hand, the $T\times G^\#$-action does not, in general, restrict to the subset of the quadruples whose first entry is actually equal to $\eta$.
-
-% But ins $T\times G^\#$-action on this subset is related to the following one:
-
-% Nevertheless, we can understand the action on this subset by an action 
-
-% Clearly, if $(\eta, \kappa, g_0, \delta)$ and $(\eta', \kappa', g_0', \delta')$ are in the same $T\times G^\#$-orbit, then $\eta \iso \eta'$. 
-% We want to describe all
-% Our goal is, once $\eta$ is fixed, to describe the $T\times G^\#$-orbits of quadruples $(\eta', \kappa', g_0', \delta')$ such that $\eta' \sim \eta$.
-
-% \begin{defi}
-%     Let $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$. 
-%     Given $\kappa\from G^\#/T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$ and $\delta \in \pmone$, we say that the triple $(\kappa, g_0, \delta)$ is \emph{$\eta$-admissible} if
-%     $(\eta, \kappa, g_0, \delta)$ is admissible, \ie, $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$. 
-%     We denote the set of all $\eta$-admissible triples by $\mathbf{I}(T, \beta, p, \eta)$. 
-%     In other words, $\mathbf{I}(T, \beta, p, \eta) \coloneqq \{ (\kappa, g_0, \delta) \mid (\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)\}$. 
-% \end{defi}
-
 It is clear from Definition \ref{def:TxG-action} that the action by $(t,g)\in T\times G^\#$ does not change $\eta$ if, and only if, $t\in \rad \tilde\beta$.
-Thus, the $T\times G^\#$-action on $\mathbf{I}(T, \beta, p)$ induces an action of the subgroup $(\rad \tilde\beta) \times G^\#$ on $\mathbf{I}(T, \beta, p, \eta)$ given by
+Thus, the $T\times G^\#$-action on $\mathbf{I}(T, \beta, p)$ induces an action of the subgroup $(\rad \tilde\beta) \times G^\#$ on $\mathbf{I}(T, \beta, p)_\eta$ given by
 \begin{align}
-	t \cdot (\kappa, g_0, \delta) & \coloneqq (\kappa, t g_0, (-1)^{|t|} \eta(t)\delta)
+	t \cdot (\kappa, g_0, \delta) & \coloneqq (\kappa, t g_0, \eta(t)\delta)
 	\quad \text{and}                                                                          \\
 	%\intertext{and}
 	g \cdot (\kappa, g_0, \delta) & \coloneqq (g\cdot \kappa, g_0 g^{-2}, (-1)^{|g|} \delta),
 \end{align}
-for all $t\in \rad \tilde\beta$, $g\in G^\#$ and $(\kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p, \eta)$.
+for all $t\in \rad \tilde\beta = (\rad \beta) \cap T^+$ (recall \cref{lemma:rad-tilde-beta}), $g\in G^\#$ and $(\kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)_\eta$. 
 
 Now we wish to fix $\delta = 1$.
 Note that in every orbit we have a triple with $\delta = 1$ since the action by $(e, \bar1) \in G^\# = G \times \ZZ_2$ changes the sign of $\delta$.
 We define
 \[\label{eq:I-eta-plus}
-	\mathbf{I}(T, \beta, p)_\eta^+ \coloneqq \{ (\kappa, g_0) \mid (\kappa, g_0, 1) \in \mathbf{I}(T, \beta, p, \eta)\}.
+	\mathbf{I}(T, \beta, p)_\eta^+ \coloneqq \{ (\kappa, g_0) \mid (\eta, \kappa, g_0, 1) \in \mathbf{I}(T, \beta, p) \}.
 \]
-
-% We proceed in a similar fashion as above. 
-By the definition of the $(\rad \tilde\beta) \times G^\#$-action on $\mathbf{I}(T, \beta, p, \eta)$, we see that the action of $(t,g)$ does not change $\delta$ if, and only if, $
-	(-1)^{|t|}\eta(t) = (-1)^{|g|}.
+By the definition of the $(\rad \tilde\beta) \times G^\#$-action on $\mathbf{I}(T, \beta, p)_\eta$, we see that the action of $(t,g)$ does not change $\delta$ if, and only if, $
+	\eta(t) = (-1)^{|g|}.
 $
 Note that $\eta\restriction_{\rad \tilde\beta}$ is a group homomorphism, since $\mathrm{d}\eta = \tilde\beta = 1$ on $\rad \tilde\beta$.
 Hence
 \[\label{eq:mathcal-G}
-	\mathcal G \coloneqq \{ (t,g) \in (\rad \tilde\beta) \times G^\# \mid (-1)^{|t|}\eta(t) = (-1)^{|g|} \}
+	\mathcal G \coloneqq \{ (t,g) \in (\rad \tilde\beta) \times G^\# \mid \eta(t) = (-1)^{|g|} \}
 \]
 is a subgroup of $(\rad \tilde\beta) \times G^\#$.
-Thus, the $(\rad \tilde\beta) \times G^\#$-action on $\mathbf{I}(T, \beta, p, \eta)$ induces an $\mc G$-action on $\mathbf{I}(T, \beta, p, \eta)^+$ given by
-\begin{align}
+Thus, the $(\rad \tilde\beta) \times G^\#$-action on $\mathbf{I}(T, \beta, p)_\eta$ induces an $\mc G$-action on $\mathbf{I}(T, \beta, p)_\eta^+$ given by
+\begin{equation}\label{eq:mc-G-action}
+\begin{split}
 	t \cdot (\kappa, g_0) & \coloneqq (\kappa, t g_0)
-	\quad \text{and}                                               \\
-	% \intertext{and}
+	\quad \text{and} \\
 	g \cdot (\kappa, g_0) & \coloneqq (g\cdot \kappa, g_0 g^{-2}),
-\end{align}
-for all $(t, g)\in \mc G$ and $(\kappa, g_0) \in \mathbf{I}(T, \beta, p, \eta)^+$. 
+\end{split}
+\end{equation}
+for all $(t, g)\in \mc G$ and $(\kappa, g_0) \in \mathbf{I}(T, \beta, p)_\eta^+$. 
 
 \Cref{lemma:lemma-on-actions} implies the following:
 
 \begin{prop}\label{prop:after-fixing-delta}
-	Fix $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$.
-	We have that the map $\iota\from \mathbf{I}(T,\beta,p)_\eta^+ \to \mathbf{I}(T,\beta,p)$ given by $\iota(\kappa, g_0) \coloneqq (\eta,\kappa, g_0, 1)$ induces a bijection between the $\mc G$-orbits in $\mathbf{I}(T,\beta,p)_\eta^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathbf{I}(T,\beta,p)$. \qed
+	Fix a map $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$.
+	Then the map $\iota\from \mathbf{I}(T,\beta,p)_\eta^+ \to \mathbf{I}(T,\beta,p)$ given by $\iota(\kappa, g_0) \coloneqq (\eta,\kappa, g_0, 1)$ induces a bijection between the $\mc G$-orbits in $\mathbf{I}(T,\beta,p)_\eta^+$ and the $T\times G^\#$-orbits in the $\eta$-block of $\mathbf{I}(T,\beta,p)$. \qed
 \end{prop}
 
-Therefore, the classification up to isomorphism of $G$-graded superalgebras with superinvolution that are finite dimensional and graded-simple over an algebraically closed field $\FF$, $\Char \FF \neq 2$, reduces to the classification of finite subgroups $T\subseteq G^\#$, alternating bicharacters $\beta\from T\times T \to \pmone$, equivalence classes of $\eta$ (see \cref{def:equiv-eta}) and $\mathcal G$-orbits in $\mathbf{I}(T,\beta, p, \eta)^+$.
+Therefore, the classification up to isomorphism of $G$-graded superalgebras with superinvolution that are finite dimensional and graded-simple over an algebraically closed field $\FF$, $\Char \FF \neq 2$, reduces to the classification of finite subgroups $T\subseteq G^\#$, alternating bicharacters $\beta\from T\times T \to \pmone$, equivalence classes of $\eta$ (see \cref{def:equiv-eta}) and $\mathcal G$-orbits in $\mathbf{I}(T,\beta, p)^+_\eta$.
 This gives a useful simplification when we have one equivalence class of $\eta$, as it will be the case in the next chapter, where we will study gradings on superinvolution-simple associative superalgebras. 
 
+In the case $T^- \neq \emptyset$, another simplification can be made, but it has to be done before fixing $\eta$. 
+As noted in \cref{conv:pick-even-form}, we can make the sesquilinear form $B$ even, \ie, we can choose $g_0$ such that $|g_0| = \bar 0$. 
+Equivalently, every $T\times G^\#$-orbit has a element $(\eta, \kappa, g_0, \delta)$ with $|g_0| = \bar 0$. 
+We let 
+\[
+    \mathbf{I}(T, \beta, p)^{\bz} \coloneqq \{ (\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p) \, \mid \, |g_0| = \bz\}.
+\]
+If we wish to restrict the action to only these elements, we have to act by $T^+ \times G^\#$. 
+
+\begin{defi}\label{def:equiv-eta-even}
+	Let $\eta, \eta'\from T \to \pmone$ be maps such that $\mathrm{d}\eta = \mathrm{d}\eta' = \tilde\beta$.
+	We say that $\eta$ and $\eta'$ are \emph{evenly equivalent}, and write $\eta \sim_\bz \eta'$, if there is $t \in T^+$ such that $\eta' = \tilde\beta(t, \cdot) \eta$. 
+\end{defi}
+
+We partition the set $\mathbf{I}(T, \beta, p)^{\bz}$ according to this new equivalence relation: the $\eta$-block is now $\{ (\eta', \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)^{\bz} \mid \eta' \sim_\bz \eta \}$. 
+If $(\eta, \kappa, g_0, \delta), (\eta', \kappa', g_0', \delta') \in \mathbf{I}(T, \beta, p)^{\bz}$ are in the same $T^+ \times G^\#$-orbit, then $\eta' \sim_\bz \eta$.
+Hence, the $T^+\times G^\#$-action on $\mathbf{I}(T, \beta, p)^{\bz}$ restricts to each $\eta$-block of the partition. 
+
+\begin{remark}\label{rmk:different-eta-blocks}
+    It should be noted that the equivalence class of $\eta$ according to the relation $\sim_\bz$ is, in general, smaller than the equivalence class according to $\sim$. 
+    This implies that graded superalgebras corresponding to points in the same $\eta$-block of $\mathbf{I}(T,\beta,p)$ may correspond to different $\eta$-blocks of $\mathbf{I}(T,\beta,p)^{\bz}$.
+\end{remark}
+
+As before, we wish to fix $\eta$ and make $\delta = 1$. 
+Given $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$,
+we define
+\[
+	\mathbf{I}(T, \beta, p)^{\bz, +}_\eta \coloneqq \{ (\kappa, g_0) \mid (\eta, \kappa, g_0, 1) \in \mathbf{I}(T, \beta, p) \AND |g_0| = \bz \}.
+\]
+Following the same reasoning as above, we get a $\mc G$-action on $\mathbf{I}(T, \beta, p)^{\bz, +}_\eta$, where $\mc G$ is defined by \cref{eq:mathcal-G} and the action by \cref{eq:mc-G-action}. 
+Then \cref{lemma:lemma-on-actions} implies:
+
+\begin{prop}\label{prop:now-fixing-parity-of-g0}
+	Suppose $T^- \neq \emptyset$ and fix a map $\eta\from T \to \pmone$ such that $\mathrm{d}\eta = \tilde\beta$.
+	Then the map $\iota\from \mathbf{I}(T,\beta,p)^{\bz, +}_\eta \to \mathbf{I}(T,\beta,p)^{\bz}$ given by $\iota(\kappa, g_0) \coloneqq (\eta,\kappa, g_0, 1)$ induces a bijection between the $\mc G$-orbits in $\mathbf{I}(T,\beta,p)^{\bz, +}_\eta$ and the $T^+ \times G^\#$-orbits in the $\eta$-block of $\mathbf{I}(T,\beta,p)^{\bz}$. \qed
+\end{prop}

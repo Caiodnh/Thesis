@@ -1,0 +1,357 @@
+\section{Gradings on the Lie Superalgebras of Type \texorpdfstring{$A$ and $Q$}{A and Q}}
+
+By the discussion \cref{sec:Aut-Lie-chap}, we have a classification of $G$-gradings on the Lie superalgebras of series $A$ and $Q$ in terms of the model $\Skew(R, \vphi)$, where $R = S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
+We want to describe these gradings in terms of the original model, $S^{(-)}$, where $S$ is either $M(m,n)$ or $Q(n)$ for some positive integers $m$ and $n$. 
+We use the approach similar to \cite[Appendix]{paper-adrian}
+
+We will also express the parameters in terms of the group $G$ rather than $G^\# =G \times \ZZ_2$. 
+ 
+\subsection{Undoubling}\label{ssec:undoubling}
+% Reducing from \texorpdfstring{$S\times S\sop$}{SxSsop} to \texorpdfstring{$S$}{S}
+
+Let $L$ be a finite dimensional simple Lie superalgebra in the series $A$ or $Q$, and suppose $L$ is not of type $A(1,1)$. 
+By definition, we have that $L = S^{(1)}/Z(S^{(1)})$. 
+On the other hand, \cref{cor:transfer-R-vphi-to-L} allows us to classify the gradings on $L$ by considering its isomorphic copy $\tilde L \coloneqq \Skew(R, \vphi)^{(1)}/Z(\Skew(R, \vphi)^{(1)})$, where $R = S\times S\sop$ and $\vphi$ is the exchange superinvolution:
+the gradings on $\tilde L$ (and their isomorphism classes) are in bijection with the gradings (and their isomorphism classes) on $(R, \vphi)$. 
+The goal of this subsection is to translate the classification of gradings on $L$ from $(R, \vphi)$ to $S$. 
+Recall that the isomorphism $\tilde L \to L$ is induced by the projection $R \to S$. 
+
+\begin{defi}\label{defi:types-I-and-II}
+    A grading on $L$ is said to be of \emph{Type I} if it is obtained by restriction and reduction modulo the center from a (unique) grading on $S$. 
+    Otherwise, the grading on $L$ is said to be of \emph{Type II}. 
+\end{defi}
+
+As recalled above, all gradings on $\tilde L \iso L$ come from gradings on $(R, \vphi)$. 
+Type I and Type II gradings can be distinguished in this model as follows. 
+Recall that gradings on $(R, \vphi)$ were divided in two classes: those that make $R$ graded-simple, classified in \cref{thm:MxM-even,thm:MxM-odd}, and those that do not, classified in \cref{thm:MxM-type-II,thm:QxQ-type-II}. 
+We claim that these classes correspond to the Type II and Type I gradings on $\tilde L$, respectively. 
+Indeed, consider a Type I grading on $L$ and the corresponding grading on $S$. 
+Then $(R, \vphi)$ is naturally graded so that $S\times \{ 0 \}$ and $\{0\} \times S\sop$ are graded superideals, and the projection $R \to S$ is a homomorphism of graded superalgebras. 
+This grading on $(R, \vphi)$ induces to a grading on $\tilde L$ and the isomorphism of Lie superalgebras $\tilde L \to L$ preserves degrees. 
+This proves that the gradings on $\tilde L$ corresponding to Type I gradings on $L$ (under the isomorphism $\tilde L \to L$) come from the gradings on $R$ that do not make it graded-simple. 
+By \cref{prop:only-SxSsop-is-simple}, every grading on $(R, \vphi)$ such that $R$ is not graded-simple is of this form, so the converse follows. 
+
+By definition, Type I gradings are described in terms of $S$, so we will now focus on Type II gradings. 
+
+Suppose $(R, \vphi)$ is endowed with a grading $\Gamma$ making $R$ graded-simple. 
+By \cref{thm:iso-(R-vphi)-with-parameters}, there is a triple $(\D, \U, B)$ with parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ as in Definition \ref{def:E(D,U,B)} such that $(R, \vphi) \iso E(\D, \U, B)$. 
+Recall that, in this case, $\rad \tilde\beta = \langle f \rangle$ for an element $f\in T$ of order $2$ such that $\eta(f) = -1$ (\cref{prop:types-of-D-via-rad-beta}). 
+
+Set $\barr G = G/\langle f \rangle$, let  $\pi\from G\to \barr G$ be the natural homomorphism and write $\bar g \coloneqq \pi(g)$, for all $g\in G$. 
+By \cref{prop:lemma-for-undoubling-and-fine-gradings}, ${}^\pi R$ is the sum of two graded-simple superideals, $S\times \{ 0 \}$ and $\{0\} \times S\sop$, so the restriction of ${}^\pi \Gamma$ to $S \iso S\times \{ 0 \}$ induces a $\barr G$-grading on $L$ of Type I. 
+
+To recover $\Gamma$ from its coarsening ${}^\pi \Gamma$, fix a character $\chi \in \widehat G$ such that $\chi (f) = -1$ (which exists since $\FF$ is algebraically closed) and let $\psi\from R \to R$ be the automorphism given by the action of $\chi$, \ie, $\psi(r) \coloneqq \chi(g) r$ for every $r\in R_g$. 
+Clearly, we have that,
+\[\label{eq:Rg-recovered-with-chi}
+    R_g = \{ r \in R_{\bar g} \mid \psi(r) = \chi(g)r \}.
+\]
+Let $\zeta \coloneqq (1, -1) \in Z(R)\even$. 
+We have that $\vphi(\zeta) = -\zeta$ and, by \cref{prop:R-and-D-have-the-same-center-vphi}, $\zeta$ is homogeneous of degree $f$ with respect to $\Gamma$. 
+Let $\theta\from R \to R$ be the super-anti-automorphism defined by $\theta \coloneqq \vphi \psi = \psi \vphi$. 
+By the definition of $\psi$, $\psi(\zeta) = -\zeta$ and, hence, $\theta(\zeta) = \zeta$. 
+It follows that $\theta(1,0) = \theta \left(\frac{1+\zeta}{2}\right) = (1,0)$, so  $\theta(S\times \{0\}) = \theta ((1,0)R) = S\times \{0\}$. 
+Hence, $\theta$ restricts to a super-anti-automorphism on $S$. 
+Then, it is straightforward to see that
+\[\label{eq:psi-in-terms-of-theta}
+    \psi(s_1, \overline{s_2}) = (\theta(s_2), \overline{\theta(s_1)}),
+\]
+for all $s_1, s_2\in S$. 
+Since $\Skew(R, \vphi) = \{ (s, -s) \mid s \in S \}$, combining \cref{eq:Rg-recovered-with-chi,eq:psi-in-terms-of-theta}, we get that the Type II grading on $L$ corresponding to $\Gamma$ can be recovered from the Type I grading corresponding to ${}^\pi \Gamma$ as follows:
+\[\label{eq:refiniment-on-L}
+    L_g = \{ s \in L_{\bar g} \mid \theta(s) = -\chi(g) s\}.
+\]
+Hence, a Type II grading on $L$ can be described in terms of a Type I grading and a super-anti-automorphism on $S$. 
+
+Our next goal is to describe $(S, \theta)$, where $S$ is endowed with the restriction of ${}^\pi\Gamma$, without reference to $(R,\vphi)$. 
+By \cref{prop:lemma-for-undoubling-and-fine-gradings}, $S \iso E(\barr T, \barr \beta, \barr p, \kappa)$, where $\barr T \coloneqq T/\langle f \rangle$, $\barr \beta$ and $\barr p$ are the maps induced by $\beta$ and $p$ on $\barr T$, and $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is seen as a map $\kappa\from \barr G^\#/ \barr T \to \ZZ_{\geq 0}$ via the canonical isomorphism $G^\#/T \iso \barr G^\#/ \barr T$. 
+
+To describe $\theta\from S \to S$, let us first write $\theta\from R\to R$ in matrix terms. 
+Let $\B = \{ u_1, \ldots, u_k \}$ be a $G$-graded basis of $\U$, following \cref{conv:pick-even-basis}, and use it to identify $\End_\D (\U)$ with $M_k(\D)$. 
+We will also assume that $B$ is even if $\D$ is odd (\cref{conv:pick-even-form}). 
+Set $g_i \coloneqq \deg u_i$. 
+By \cref{prop:matrix-vphi}, we have $\vphi(X) = \Phi\inv \vphi_0(X) \Phi$, for all $X \in M_k(\D)$, where $\Phi_{ij} = B(u_i, u_j)$. 
+Also, given $i, j \in \{ 1, \ldots, k \}$ and $0 \neq d \in \D_t$, $t\in T$, we have $\psi( E_{ij}(d) ) = \chi(g_i\inv t  g_j) E_{ij}(d) = \chi(g_i)\inv \chi(t) \chi(g_j) E_{ij}(d)$. 
+Let $\Lambda \in M_k(\D)$ be the diagonal matrix with $\Lambda_{ii} = \chi(g_i)$ for all $i \in \{ 1, \ldots, k \}$, and let $\psi_0$ denote the action of $\chi$ on $\D$. 
+Then $\psi(X) = \Lambda\inv \psi_0(X) \Lambda$, for all $X \in M_k(\D)$. 
+Define $\theta_0 \coloneqq \psi_0 \vphi_0 = \vphi_0 \psi_0$. 
+Then:
+\[\label{eq:theta-with-matrix-1}
+    \theta(X) = (\Lambda\Phi)\inv \theta_0(X)\, \Lambda\Phi,
+\]
+for all $X \in M_k(\D)$. 
+
+Clearly, $\theta_0$ is a super-anti-automorphism on $\D$ associated to the map $\mu \coloneqq \eta \chi$. 
+Note that $\mu(f) = 1$ and, hence, we can see $\mu$ as a map $\barr \mu\from \barr T \to \FF^\times$. 
+Indeed,  since $f\in \ker \tilde\beta$, we have
+\begin{equation}
+    \mu(tf) = \tilde\beta (t,f) \mu(t)\mu(f) = \mu(t)\mu(f) = \mu(t),
+\end{equation}
+for all $t\in T$, so $\mu$ is well-defined for every coset $\bar t \in \barr T$. 
+Recall, from \cref{cor:T+-is-elem-2-grp}, that $T^+$ is a elementary $2$-group and for every $t\in T^-$, $t^2 = f$. 
+Hence $\chi$ takes values $\pm 1$ on $T^+$ and $\pm \mathbf{i}$ on $T^-$. 
+By \cref{lemma:quadratic-form-involutions}, $\mu$ is a quadratic map on $\barr T$. 
+
+Let $\epsilon \coloneqq (1,0) \in Z(R)\even$ be the identity element of $S$, and consider it also as an element of $Z(\D)\even$ using \cref{prop:R-and-D-have-the-same-center-vphi}. 
+Following the proof of \cref{prop:lemma-for-undoubling-and-fine-gradings}, with $\D$ playing the role of $\mc E$ and $\U$ playing the role of $\V$, we have that $S \iso \End_{\barr \D}(\bar \U)$, where $\barr \D \coloneqq \D\epsilon$ and $\barr \U \coloneqq \U\epsilon$, and that $\B\epsilon \coloneqq \{ u_1\epsilon, \ldots, u_k\epsilon\}$ is a $\barr G^\#$-graded $\barr \D$-basis of $\barr \U$. 
+Using this basis, we can identify $\End_{\barr \D}(\bar \U)$ with $M_k(\barr \D)$, and \cref{eq:theta-with-matrix-1} implies that 
+\[\label{eq:theta-with-matrix-2}
+    \theta(X) = (\Lambda\barr\Phi)\inv \theta_0(X)\, \Lambda\barr\Phi,
+\]
+for all $X \in M_k(\barr \D)$, where $\barr \Phi \in M_k(\barr \D)$ is defined by $\barr \Phi_{ij} \coloneqq B(u_i, u_j) \epsilon$. 
+
+We note that the refinement obtained in \cref{eq:refiniment-on-L} is determined by the values of $\chi$ on the subgroup $T \subseteq G^\#$. 
+To be more precise, let $\tilde \chi \in \widehat {G^\#}$ be a character such that $\chi\restriction_{T} = \tilde\chi\restriction_{T}$, let $\tilde \psi \from R\to R$ be the action by $\tilde \chi$, and set $\tilde \theta \coloneqq \tilde\psi \vphi = \vphi \tilde\psi$. 
+We claim that, for every $s \in S_{\bar g}$, $\tilde\theta(s) = - \tilde\chi(g) s$ \IFF $\theta(s) = - \chi(g) s$. 
+
+Indeed, set $\sigma \coloneqq \tilde\chi\chi\inv$, so $\tilde\chi = \sigma \chi$. 
+Then $\sigma$ is a character on $G^\#$ with $\sigma(T) = 1$ and, in particular, can be seen as a character on $G^\#/\langle f \rangle$. 
+We identify $S$ with $M_k(\barr \D)$. 
+Then every element in $S_{\bar g}$ is a linear combination of elements of the form $E_{ij}(d)$, where $1 \leq i, j \leq k$ and $d\in \barr \D_{\bar t}$, such that $\bar g_i \bar t \bar g_j\inv = \bar g$. 
+By \cref{eq:theta-with-matrix-2}, $\tilde\theta(E_{ij}(d)) = \sigma\inv(g_i) \sigma\inv(g_j\inv) \theta (E_{ij}(d)) = \sigma\inv(\bar g_i) \sigma(\bar g_j\inv) \theta (E_{ij}(d)) = \sigma\inv(\bar t\inv \bar g) \theta(E_{ij}(d)) = \sigma(\bar g) \theta(E_{ij}(d))$. 
+We conclude that $\tilde\theta(E_{ij}(d)) = \sigma(g)\chi(g) E_{ij}(d)$ \IFF $\theta(E_{ij}(d)) = \chi(g) E_{ij}(d)$, as desired. 
+$\sigma \coloneqq \chi \tilde\chi\inv$ and let $\tilde\Lambda \in M_k(\D)$ be the matrix . Then, by \cref{eq:theta-with-matrix-2}, 
+
+% \begin{remark}
+%     By \cref{lemma:tildeT-finally}, we could have chosen any quadratic form $\mu$ and there would be a $\chi \in \widehat T$ such that $\mu = \eta\chi$, which we can extend to a character on $G$. 
+% \end{remark}
+
+% The condition that $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$ (\cref{defi:X(D)}) can be restated in terms of $(\mu, \kappa, g_0, \delta)$: 
+
+% \begin{defi}\label{def:chi-admissible}
+%     Given $\mu\from \barr T \to \FF^\times$,
+% 	$\kappa\from \barr G^\#/\barr T \to \ZZ_{\geq 0}$, $g_0 \in G^\#$, and $\delta \in \pmone$, we say that the quadruple $(\mu, \kappa, g_0, \delta)$ is \emph{$\chi$-admissible} if:
+% 	\begin{enumerate}[(i)]
+% 		\item $\mu$ is a quadratic form with polarization  
+% 		$\mathrm{d}\mu (\bar s, \bar t) = \sign{\bar s}{\bar t} \bar\beta (\bar s, \bar t)$; 
+% 		%
+% 		\item $\kappa$ has finite support; 
+% 		%
+% 		\item $\kappa(x) = \kappa(\barr{g_0}\inv x\inv)$ for all $x \in \barr G^\#/\barr T$;
+% 		%
+% 		\item for any $x\in \barr G^\#/\barr T$, if $\barr{g_0} x^2 = \barr T$ and $(-1)^{|\bar g|} \chi\inv (g_0) \chi^{-2} (\bar g) \mu (\barr{g_0} \bar g^2)\delta =-1$, for some (and, hence, any) $\bar g\in x$, then $\kappa (x)$ is even.
+% 	\end{enumerate}
+% \end{defi}
+
+% But we can choose a basis $\B$ where $B(u_i, u_j)$ depending only on the parameters, removing the reference to $(\U, B)$ from the picture. 
+
+% Clearly, the existence of a good basis for $\mc U$ implies the existence of a good basis for $\bar \U$. 
+
+% \begin{defi}\label{def:type-II-G-sharp}
+%     We denote the Type II grading on $L$ corresponding to $R$ by $\Gamma^{\mathrm{(II)}}(\barr T, \bar \beta, \bar p, \mu, \kappa, g_0, \delta)$. 
+% \end{defi}
+
+% We conclude with the following theorem:
+
+% \begin{thm}\label{thm:type-II-G-sharp}
+%     Let $L$ be as above. 
+%     Every Type II grading on $L$ is isomorphic to some $\Gamma^{\mathrm{(II)}}(\barr T, \bar \beta, \bar p, \mu, \kappa, g_0, \delta)$. 
+%     Further, $\Gamma^{\mathrm{(II)}}(\barr T, \bar \beta, \bar p, \mu, \kappa, g_0, \delta) \iso \Gamma^{\mathrm{(II)}}(\barr T', \bar \beta', \bar p', \mu', \kappa', g_0', \delta')$ if, and only if, $\barr T = \barr T'$, $\bar \beta = \bar \beta'$, $\bar p = \bar p'$ and orbits, action?
+% \end{thm}
+
+% \newpage
+
+
+% --------------
+
+% We will now describe a formula for the super-anti-automorphism $\theta\from S \to S$. 
+
+% Let $\B = \{ u_1, \ldots, u_k \}$ be a $G$-graded basis of $\U$, following \cref{conv:pick-even-form}, and use it to identify $\End_\D (\U)$ with $M_k(\U)$. 
+% Let $g_i \coloneqq \deg u_i$. 
+
+% By xx, we have that $\vphi(X) = \Phi\inv \vphi_0(X) \Phi$, for all $X \in M_k(\D)$, where $\Phi_{ij} = B(u_i, u_j)$. 
+
+% Also, given $i, j \in \{ 1, \ldots, k \}$ and $0 \neq d \in \D_t$, $t\in T$, we have that $\psi( E_{ij}(d) ) = \chi(g_i t \inv g_j) E_{ij}(d) = \chi(g_i) \chi(t \inv) \chi(g_j) E_{ij}(d)$. 
+% Let $\Lambda \in M_k(\D)$ be the diagonal matrix with $\Lambda_{ii} = \chi(g_i)$ for all $i \in \{ 1, \ldots, k \}$, and let $\psi_0$ denote the action of $\chi$ on $\D$. 
+% Then $\psi(X) = \Lambda\inv \psi_0(X) \Lambda$, for all $X \in M_k(\D)$. 
+% Define $\theta_0 \coloneqq \psi_0 \vphi_0 = \vphi_0 \psi_0$. 
+% Then:
+% \[\label{eq:theta-with-matrix-3}
+%     \theta(X) = (\Lambda\Phi)\inv \theta_0(X)\, \Lambda\Phi,
+% \]
+% for all $X \in M_k(\D)$. 
+
+% We will now translate \cref{eq:theta-with-matrix-1} to $S$.
+
+% Clearly, $\theta_0$ is a super-anti-automorphism on $\D$ associated to the map $\mu \coloneqq \eta \chi$. 
+% Note that $\mu(f) = 1$ and, hence, since $f\in \ker \tilde\beta$, we can see $\mu$ as a map $\barr \mu\from \barr T \to \FF^\times$. 
+% Indeed,
+% \begin{equation}
+%     \mu(tf) = \tilde\beta (t,f) \mu(t)\mu(f) = \mu(t)\mu(f) = \mu(t),
+% \end{equation}
+% for all $t\in T$, so $\mu$ is well-defined for every equivalence class $\bar t \in \barr T$. 
+
+
+
+% By the proof of \cref{prop:lemma-for-undoubling-and-fine-gradings},
+
+% It is ea
+
+% % --------------
+% Need: the matrix representation of $\theta$. 
+
+
+
+
+
+
+
+To describe it with parameters, let $\barr T$, bla, bla. 
+By \cref{prop:lemma-for-undoubling-and-fine-gradings}, the type I grading has parameters ...
+
+Let $\mu \coloneqq \chi \eta$. 
+It restricts to $\barr T$ by polarization formula and $\mu(f) = +1$. 
+Also, corresponds to a super-anti-auto on $\overline{\D} \coloneqq \epsilon \D$. 
+Compare with \cref{prop:lemma-for-undoubling-and-fine-gradings} changing roles of things. 
+The parameters of $\Gamma$ are blah, which can be recovered from $(..., \mu, \kappa, g_0, \delta)$. 
+Note the condition that $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$ can be restated in terms of $\chi$. 
+
+
+
+We will follow the notation of \cref{lemma:undoubling-D,}
+
+
+In this case, the grading corresponds to a grading making $(R, \vphi) \iso E(\D, \U, B)$, with parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ as in Def. ??. 
+Also, by ??, $\ker \tilde\beta = \langle f \rangle$ with $\eta(f) = -1$. 
+% In this case, $\zeta \coloneqq (1, -1) \in R$ is a homogeneous element with $\deg \zeta = f$. 
+
+We will now focus on the Type II gradings. 
+Suppose $(R, \vphi)$ has a grading making it graded-simple. 
+As we saw before, in this case the element $\zeta \coloneqq (1, -1) \in R$ is homogeneous and $f \coloneqq \deg \zeta \in G$ has order $2$. 
+Fix $\chi \in \widehat G$ such that $\chi (f) = -1$ and let $\psi\from R \to R$ be the automorphism given by the action of $\chi$, \ie, $\psi(r) = \chi(g) r$ for every $r\in R_g$. 
+If we consider ${}^\pi R$, where $\pi\from G\to \overline{G} \coloneqq G/\langle f \rangle$ is the quotient map, then $\deg \zeta = \bar e$ and, hence, ${}^\pi R$ is not graded-simple. 
+In particular, the corresponding $\overline{G}$-grading on $L$ is a Type I grading. 
+
+We can recover the $G$-grading on $R$ using $\psi$. 
+Since $\chi(f) = -1$, we have that $R_g = \{ r \in R_{\bar g} \mid \psi(r) = \chi(g)r \}$. 
+
+Define $\epsilon \coloneqq (1,0) \frac{1+\zeta}{2}$ and $\epsilon' \coloneqq (0, 1) = \frac{1-\zeta}{2}$. 
+Clearly, $\epsilon$ and $\epsilon'$ are central idempotents,  $\vphi(\epsilon) = \epsilon'$ and $S\times \{ 0 \} = \epsilon R$ and $\{ 0 \} \times S\sop = \epsilon' R$. 
+Since both $\epsilon$ and $\epsilon'$ are $\overline{G}$-homogeneous, the grading ${}^\pi R$ is not graded-simple. 
+
+Also, $\psi(\epsilon) = \epsilon'$, so $\psi(S\times \{ 0 \}) = \{ 0 \} \times S\sop$. 
+Note that $\psi \vphi = \vphi \psi$ is a super-anti-automorphism of $R$. 
+Then $\theta \coloneqq (\psi \vphi)\restriction_{S\times \{ 0 \}}$ is a super-anti-automorphism of $S = S\times \{0 \}$. 
+It is straightforward that $\psi(s_1, \bar s_2) = ( \theta(s_2), \overline{\theta(s_1)})$. 
+In particular, $\psi( s, - \bar s) = ( -\theta(s), \overline{\theta(s)})$. 
+Hence, eq xx reduces to 
+\[
+    L_g = \{ s \in L_{\bar g} \mid \theta(s) = - \chi(g) s\}.
+\]
+
+In other words, given $f$ and with $\chi$ is fixed, the type II grading on $L$ is described by a type I grading and an super-anti-automorphism $\theta\from S \to S$. 
+Conversely, with this data, we can define $\psi$ by the formula above and get a $G$-grading on $(R, \vphi)$. 
+It is graded-simple since both $S \times \{ 0 \}$ and $\{ 0 \} \times S\sop$ are not $G$-graded superideals. 
+To see that, note that $r $
+
+\begin{lemma}
+    Let $f \in G$ be an order $2$ element and let $\chi\in \widehat G$ such that $\chi(f) = -1$. 
+    Set $\barr G \coloneqq G/ \langle f \rangle$. 
+    Let $(S, \theta)$ be $\barr G$-graded superalgebra with superinvolution such that $S$ is graded-simple and $\theta^2(s) = \chi^2(\bar g) s$ for all $s\in S_{\bar g}$ (note that $\chi^2$ is well-defined in $\barr G$). 
+    Then the grading on $R \coloneqq S \times S\sop$ can be refined by to a $G$-grading by setting 
+    \[
+        R_g = \{ (s, \chi(g) \theta\inv(s)) \mid s \in R_{\bar g}\},
+    \]
+    which makes $R$ graded-simple.
+\end{lemma}
+
+\begin{proof}
+    afjks
+\end{proof}
+
+\begin{defi}
+    Grading $\Gamma(f, S, \theta)$. 
+    We fix $\chi$. 
+\end{defi}
+
+\begin{thm}
+    The isomorphism, which must follows from the other iso thm. 
+    But not with so little parameters...
+\end{thm}
+
+The isomorphism condition on $(R, \vphi)$ implies that $f = f'$ and $(S, \theta)$ is isomorphic to $(S', \theta')$. 
+Conversely, from this we have...
+
+It only remains to see how to describe the $\overline{G}$-grading on $S$ and the $\theta$. 
+Let $\Lambda$ be the matrix...
+
+\cref{prop:lemma-for-undoubling-and-fine-gradings}.
+
+% ---------------------------------
+
+\newpage
+
+
+As we have seen, we can classify the gradings on the Lie superalgebras in the series $A$ and $Q$ by considering an different model than the one in their definitions. 
+The goal of this subsection is to describe these gradings in terms of the original model. 
+For uniformity, we will use the parameters in terms of the group $G^\#$. 
+
+Let $S$ be a finite dimensional simple associative superalgebra and let $\vphi$ denote the exchange superinvolution on $R \coloneqq S\times S\sop$. 
+We will put $\tilde L \coloneqq S^{(1)}/Z(S^{(1)})$ and $L_2 \coloneqq \Skew(R, \vphi)^{(1)}/Z(\Skew(R, \vphi)^{(1)})$. 
+
+\begin{defi}
+    
+\end{defi}
+
+
+Let $\Gamma$ be a grading on $L$ and let $\tilde \Gamma$ be the corresponding grading on $(R, \vphi)$. 
+    If $\Gamma$ corresponds to a grading on $(R, \vphi)$ that does not make it graded simple, then
+    We say that $\Gamma$ is of \emph{Type I} if $\Gamma$ correspond to a grading on 
+    A grading on $L_2$ is said to be of \emph{Type I} if the
+
+Let $\zeta = (1, -1) \in R = S\times S\sop$. 
+For type I gradings, $\zeta$ is homogeneous of degree $e$. 
+By identification, it is clear that $\zeta$ is homogeneous and $\deg \zeta = f$. 
+
+A Type I grading on $L_2$ can be easily seen as a grading on $\tilde L$: the superideal $S\times \{ 0 \} \subseteq S\times S\sop$ is graded, and the grading on $\tilde L$ is given by the restriction and reduction modulo the center of the grading on $S$. 
+
+\begin{defi}
+    Parameters of a type I grading. 
+\end{defi}
+
+Paragraph describing the grading in terms of $\End_\D (\U)$. 
+Remark that the isomorphism condition (see future thm) still comes from the second model.
+
+We will now consider the type II gradings. 
+Those are of the form $E(\D, \U, B)$. 
+Let $T$, $\beta$, $f$. 
+Fix $\chi\in \widehat G$ such that $\chi(f) = -1$. 
+% Extend $\chi$ to $G^\#$ by $\chi (g, p) = \chi(g)$. 
+
+
+
+
+\subsection{Gradings on \texorpdfstring{$A(m,n)$}{A(m,n)} for \texorpdfstring{$m \neq n$}{m different than n}}
+
+
+
+We define Type I and Type II gradings. 
+
+For each $(T, \beta)$ with $T =T^+$ and $\rad \beta \langle f \rangle$, as in \cref{def:model-grd-MxM-odd-or-QxQ}(a), fix $\chi\from G \to \FF^\times$ with $\chi(f) = -1$. 
+Note that this exists since $f\in G$ has order $2$. 
+
+For each graded superalgebra $Q^{\mathrm{ex}}(T, \beta, \kappa, g_0)$, the action of $\chi$ determines an automorphism $\psi$, \ie, $\psi(r_g) \coloneqq \chi(g) r_g$. 
+The composition $\tilde\vphi \coloneqq \vphi\psi$ is a super-anti-automorphism, and $\tilde\vphi (\zeta) = \zeta$. 
+It follows that
+
+
+\begin{thm}
+    \boxed{\mathrm{Type \,\,I}}
+    
+    \boxed{\mathrm{Type \,\,II}}
+\end{thm}
+
+\subsection{Gradings on \texorpdfstring{$A(n,n)$}{A(n,n)}}
+
+For odd Type I, we have descriptions only in terms of $G$ using bla. The classification becomes:
+
+\begin{thm}
+    \boxed{\mathrm{Type \,\,I}_M}
+    
+    \boxed{\mathrm{Type \,\,I}_Q}
+    
+    \boxed{\mathrm{Type \,\,II}_{osp}}
+    
+    \boxed{\mathrm{Type \,\,II}_P}
+    
+    \boxed{\mathrm{Type \,\,II}_Q}
+\end{thm}

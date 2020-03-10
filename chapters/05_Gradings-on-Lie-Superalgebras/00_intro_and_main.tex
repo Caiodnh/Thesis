@@ -20,54 +20,8 @@ a generalization of \cite[Proposition 1.12]{livromicha} and the same proof works
 
 % ** Sections:
 
-\section{somewhere}
+\input{chapters/05_Gradings-on-Lie-Superalgebras/01_Automorphisms-Groups}
 
-\begin{defi}\label{def:model-grd-M(m-n-0)}
-    Let $m, n\in \ZZ_{\geq 0}$, not both zero, with $n$ even. 
-    Let $T \subseteq G$ be a finite $2$-elementary subgroup $T \subseteq G$, let $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 = (\tilde g_0, p_0) \in G^\#$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|} = m$ and $|\kappa_\bo| \sqrt{|T|} = n$. 
-    We choose:
-    \newcounter{enumi-all}
-    \begin{enumerate}[(i)]
-        \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$;
-        \item a total order $\leq$ on $G/T$;
-        \item a set-theoretic section $\xi\from G/T \to G$ of the natural homomorphism $G \to G/T$.
-        %
-        \setcounter{enumi-all}{\value{enumi}}
-    \end{enumerate}
-    Then, we fix:
-    \begin{enumerate}[(i)]
-        \setcounter{enumi}{\value{enumi-all}}
-        %
-        \item $p\from T \to \ZZ_2$ to be the trivial homomorphism; 
-        \item $\eta\from T \to \pmone$ to be the map determining to the transposition on $\D$; 
-        \item for each $i\in \ZZ_2$, $k_i \coloneqq |\kappa_i|$ and $\gamma_i$ to be the $k_i$-tuple whose entries are the elements $\xi(x) \in G$ for $x\in \supp \kappa_i$, repeated $\kappa_i(x)$ times and following the order given by $\leq$. 
-        %
-        \setcounter{enumi-all}{\value{enumi}}
-    \end{enumerate}
-    If $p_0 = \bar 0$, assume that $\kappa_\bz, \kappa_\bo$ are such that, for all $x\in G/T$ and $i \in ZZ_2$:
-    \begin{enumerate}[(i)]
-        \setcounter{enumi}{\value{enumi-all}}
-        %
-        \item $\kappa_i(x) = \kappa_i(\tilde g_0\inv x\inv)$;
-        \item if $\tilde g_0 x^2 = T$ and $(-1)^i \eta(\tilde g_0 \xi(g)^2) = -1$, then $\kappa_i(x)$ is even.
-        %
-        \setcounter{enumi-all}{\value{enumi}}
-    \end{enumerate}
-    If $p_1 = \bar 0$, assume that $\kappa_\bz, \kappa_\bo$ are such that, for all $x\in G/T$:
-    \begin{enumerate}[(i)]
-        \setcounter{enumi}{\value{enumi-all}}
-        %
-        \item $\kappa_\bo (x) = \kappa_\bz (\tilde g_0\inv x\inv)$.
-        %
-        \setcounter{enumi-all}{\value{enumi}}
-    \end{enumerate}
-    We define $M^*(T, \beta, \kappa_\bz, \kappa_\bo, p_0)$ to be the graded superalgebra $M^* (T, \beta, \kappa_\bz, \kappa_\bo)$, using the choices for $\D$ and $\gamma_i$ above (see \cref{def:Gamma-T-beta-kappa-even}), endowed with the superinvolution $\vphi$ given by 
-    \[
-        \vphi(X) \coloneqq \Phi\inv X\stransp \Phi,
-    \]
-    for all $X \in M(m,n)= M(k_\bz, k_\bo) \tensor \D$, where $\Phi$ is the matrix given by 
-\end{defi}
+\input{chapters/05_Gradings-on-Lie-Superalgebras/02_Ortho-and-Periplectic}
 
-\input{chapters/05_Gradings-on-Lie-Superalgebras/01_Ortho-and-Periplectic}
-
-\input{chapters/05_Gradings-on-Lie-Superalgebras/02_A-and-Q}
+\input{chapters/05_Gradings-on-Lie-Superalgebras/03_A-and-Q}
