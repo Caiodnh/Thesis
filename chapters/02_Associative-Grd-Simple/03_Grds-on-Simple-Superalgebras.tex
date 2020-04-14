@@ -231,7 +231,7 @@ In vague terms, this is because $(T^+, \beta^+)$ carries some information restri
     Using the first assertion, we have that $|A| = |(A^\perp)^\perp|$ and, therefore, $A = (A^\perp)^\perp$.
 \end{proof}
 
-\begin{defi}
+\begin{defi}\label{def:A_[m]}
     Let $A$ be an abelian group and $m \in \ZZ$. 
     We define $A_{[m]} \coloneqq \{a^m \mid a\in A\}$ and $A_{[m]} \coloneqq \{a\in A \mid a^m = e \}$.
 \end{defi}
@@ -294,27 +294,27 @@ The next result is similar to \cref{lemma:small-perp}, but does not follow from 
 % ------------------------------------
 
 We are now in position to restrict the results of the previous section to our specific case. 
-Let $T^+$ be a finite subgroup of $G$ and $\beta^+$ be an alternating bicharacter on $T^+$ such that $\rad \beta^+ = \langle t_0 \rangle$, where $t_0\in T^+$ is an element of order $2$. 
+Let $T^+$ be a finite subgroup of $G$ and $\beta^+$ be an alternating bicharacter on $T^+$ such that $\rad \beta^+ = \langle t_p \rangle$, where $t_p\in T^+$ is an element of order $2$. 
 Also, consider $\barr G$, $\theta$, $\barr {T^+}$ and $\bar{\beta^+}$ as defined before. 
 
 \begin{lemma}\label{lemma:motivation-O_M}
     Let $(h, \chi) \in \mathbf{O}(T^+, \beta^+)$ and let $\D$ be a graded-division superalgebra associated to $(T^+, \beta^+, h, \chi)$. 
-    Then $\D$ is of type $M$ if, and only if, $\chi(t_0) = -1$.
+    Then $\D$ is of type $M$ if, and only if, $\chi(t_p) = -1$.
 \end{lemma}
 
 \begin{proof}
     Let $(T, \beta, p)$ be the triple constructed from $(T^+, \beta^+, h, \chi)$ and let $t_1 = (h, \bar 1)$. 
     
-    If $\beta$ is nondegenerate, then $\chi(t_0) = \beta(t_1, t_0) = -1$ by \cref{rmk:t_0-is-parity}. 
+    If $\beta$ is nondegenerate, then $\chi(t_p) = \beta(t_1, t_p) = -1$ by \cref{rmk:t_0-is-parity}. 
     
-    Conversely, assume $\chi(t_0) = -1$. 
-    Then $\beta(t_0, T^-) = \beta(t_0, t_1T^+) = \beta (t_0, t_1) = \chi(t_0)\inv = -1$. 
-    We conclude that $(\rad \beta)\cap T^- = \emptyset$ and that $t_0 \not\in \rad\beta$. 
-    Also, it is clear that $(\rad \beta)\cap T^+ \subseteq \rad \beta^+ = \langle t_0 \rangle$, hence $(\rad \beta)\cap T^+ = \{e\}$ and, therefore, $\rad \beta = \{e\}$.
+    Conversely, assume $\chi(t_p) = -1$. 
+    Then $\beta(t_p, T^-) = \beta(t_p, t_1T^+) = \beta (t_p, t_1) = \chi(t_p)\inv = -1$. 
+    We conclude that $(\rad \beta)\cap T^- = \emptyset$ and that $t_p \not\in \rad\beta$. 
+    Also, it is clear that $(\rad \beta)\cap T^+ \subseteq \rad \beta^+ = \langle t_p \rangle$, hence $(\rad \beta)\cap T^+ = \{e\}$ and, therefore, $\rad \beta = \{e\}$.
 \end{proof}
 
 \begin{defi}\label{def:O_M}
-    We define $\mathbf{O}_M(T^+, \beta^+) \coloneqq \{ (h, \chi) \in \mathbf{O}(T^+, \beta^+) \mid \chi(t_0) = -1 \}$.
+    We define $\mathbf{O}_M(T^+, \beta^+) \coloneqq \{ (h, \chi) \in \mathbf{O}(T^+, \beta^+) \mid \chi(t_p) = -1 \}$.
 \end{defi}
 
 % Combining \cref{thm:iso-odd-D-only-G,lemma:motivation-O_M}, we have:
@@ -324,11 +324,11 @@ Also, consider $\barr G$, $\theta$, $\barr {T^+}$ and $\bar{\beta^+}$ as defined
 %     Then $\D \iso \D'$ if, and only if, $T^+ = T'^+$, $\beta^+ = \beta'^+$, and $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$.  \qed
 % \end{cor}
 
-We note that the $T^+$-action on $\mathbf{O}(T^+, \beta^+)$ restricts to $\mathbf{O}_M(T^+, \beta^+)$ since $t_0\in \rad \beta^+$. 
+We note that the $T^+$-action on $\mathbf{O}(T^+, \beta^+)$ restricts to $\mathbf{O}_M(T^+, \beta^+)$ since $t_p\in \rad \beta^+$. 
 In view of \cref{lemma:lemma-on-actions}, we can simplify the description of the orbits of this action. 
 
-Set $Y \coloneqq \{\chi \in \widehat{T^+} \mid \chi (t_0)\}$ with $T^+$-action defined by $t\cdot \chi = \beta^+(t, \cdot) \chi$. 
-Again, this action is well-defined since $t_0 \in \rad \beta^+$. 
+Set $Y \coloneqq \{\chi \in \widehat{T^+} \mid \chi (t_p)\}$ with $T^+$-action defined by $t\cdot \chi = \beta^+(t, \cdot) \chi$. 
+Again, this action is well-defined since $t_p \in \rad \beta^+$. 
 We also let $\pi\from \mathbf{O}_M(T^+, \beta^+) \to Y$ be the $T^+$-equivariant map given by $(h, \chi) \mapsto \chi$. 
 
 \begin{lemma}
@@ -339,10 +339,10 @@ We also let $\pi\from \mathbf{O}_M(T^+, \beta^+) \to Y$ be the $T^+$-equivariant
     To see that $Y$ is no empty, note that $\beta^+$ is a nondegenerate bicharacter on $\barr T^+$ and that $|T^+| = 2 |\barr T^+|$. 
     By \cref{prop:char-does-not-divide-T}, $\Char \FF$ does not divide $|\barr T^+|$ and, since $\Char \FF \neq 2$, $\Char \FF$ does not divide $|T^+|$. 
     In this case, it is well-known that every character on a subgroup of $|T^+|$ can be extended to a character of $T^+$. 
-    Clearly, $\chi(t_0) = -1$ defines a character on $\langle t_0 \rangle$, therefore $Y \neq \emptyset$. 
+    Clearly, $\chi(t_p) = -1$ defines a character on $\langle t_p \rangle$, therefore $Y \neq \emptyset$. 
     
     To see that the action is transitive, let $\chi, \chi' \in Y$. 
-    We have $(\chi' \chi\inv) (t_0) = 1$, hence $(\chi' \chi\inv)$ induces a character on $\barr T^+ = T^+/ \langle t_0 \rangle$. 
+    We have $(\chi' \chi\inv) (t_p) = 1$, hence $(\chi' \chi\inv)$ induces a character on $\barr T^+ = T^+/ \langle t_p \rangle$. 
     By nondegeneracy of $\barr \beta^+$, there is $t\in T^+$ such that $(\chi' \chi\inv) = \beta(\bar t, \cdot)$ as a character of $\barr T^+$. 
     It follows that $(\chi' \chi\inv) = \beta(t, \cdot)$ as a character of $T^+$, so $\chi' = \beta(t, \cdot)\chi$. 
     We conclude that $\chi' = t \cdot \chi$, as desired. 
@@ -357,18 +357,18 @@ In the present case, we can also fix the character $\chi \in Y$, but there is no
 \end{lemma}
 
 \begin{proof}
-    Since $\chi^2(t_0) = 1$, $\chi^2$ can be seem as a character on $\barr {T^+}$. 
+    Since $\chi^2(t_p) = 1$, $\chi^2$ can be seem as a character on $\barr {T^+}$. 
     It follows that there is a unique element $\barr a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr {T^+}$. 
-    We have that $\theta\inv(\barr a) = \{ a, tt_0 \}$ for some $a\in T^+$. 
+    We have that $\theta\inv(\barr a) = \{ a, tt_p \}$ for some $a\in T^+$. 
     Since $\chi^2(a) = \chi^2(\barr a) = 1$, $\chi (a) = \pm 1$. 
-    Relabeling if necessary, we can assume $\chi (a) = 1$ and $\chi(at_0) = -1$. 
+    Relabeling if necessary, we can assume $\chi (a) = 1$ and $\chi(at_p) = -1$. 
     This shows existence and uniqueness.
     
     The ``further'' part follows directly from \cref{def:O(T+-beta+),def:O_M}.
 \end{proof}
 
 \begin{defi}
-    Given $\chi \in \widehat{T^+}$ such that $\chi(t_0) = -1$, let $a\in T^+$ as in \cref{lemma:chi-defines-a}. 
+    Given $\chi \in \widehat{T^+}$ such that $\chi(t_p) = -1$, let $a\in T^+$ as in \cref{lemma:chi-defines-a}. 
     We define $\mathbf{O}_M{O}_M(T^+, \beta^+)_{\chi} \coloneqq \{ h\in G \mid h^2 = a \}$.
 \end{defi}
 
@@ -383,8 +383,8 @@ Hence, by \cref{lemma:lemma-on-actions,lemma:motivation-O_M}, we have:
 
 As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $(T, \beta, p)$ with $\beta$ nondegenerate, \ie, the set $\mathbf{O}_M(T^+, \beta^+)$ might be empty.
 
-\begin{prop}
-    % Let $R \coloneqq \frac{T^+_{[2]}}{\langle t_0 \rangle}$. 
+\begin{prop}\label{prop:O_M-non-empty}
+    % Let $R \coloneqq \frac{T^+_{[2]}}{\langle t_p \rangle}$. 
     The set $\mathbf{O}_M(T^+, \beta^+)$ is non-empty if, and only if, $\theta(T^+_{[2]})^\perp \subseteq \barr G^{[2]}$.
 \end{prop}
 
@@ -401,11 +401,11 @@ As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $
 	\]    
 	By our assumption, we conclude that $\theta(a) \in G^{[2]}$. 
 	Let $h\in G$ such that $\theta(h)^2 = \theta(a)$. 
-	Then, either $a = h^2$ or $a = h^2t_0$. 
+	Then, either $a = h^2$ or $a = h^2t_p$. 
 % 	and, in particular, $h^2 \in T^+$. 
-% 	If $a=h^2$, the claim is established, so let us suppose $a=h^2t_0$. 
+% 	If $a=h^2$, the claim is established, so let us suppose $a=h^2t_p$. 
 
-	If $t_0 \in G^{[2]}$, then both $h^2$ and $h^2 t_0$ are in $G^{[2]}$, and we are done. 
+	If $t_p \in G^{[2]}$, then both $h^2$ and $h^2 t_p$ are in $G^{[2]}$, and we are done. 
 	Otherwise, we have that $\theta(T^+_{[2]}) = \theta(T^+)_{[2]}$. 
 	Hence, using \cref{lemma:small-perp}, we have $a \in \theta(T^+_{[2]})^\perp = (\theta(T^+)_{[2]})^\perp = \theta(T^+)^{[2]}$, so we can suppose $h\in T^+$. 
 	In this case, 
@@ -421,7 +421,7 @@ As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $
 
 
 
-% \input{chapters/02_Associative-Grd-Simple/existence_t_0}
+% \input{chapters/02_Associative-Grd-Simple/existence_t_p}
 
 
 
@@ -446,9 +446,9 @@ As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $
 
 % Since $\beta$ is nondegenerate, we have an isomorphism $T\rightarrow \widehat T$ given by $t\mapsto \beta(t,\cdot)$. For a subgroup $A\subseteq T$, we denote by $A^\perp$ its orthogonal complement in $T$ with respect to $\beta$, i.e., $A^\perp = \{t\in T\mid \beta(t, A) =1\}$. In view of the above isomorphism, $|A^\perp| = [T:A]$.
 
-% In particular, we have $(T^+)^\perp = \langle t_0 \rangle$ where $t_0$ is an element of order 2. It follows that $\beta(t_0, t) = 1$ if $t\in T^+$ and $\beta(t_0, t) = -1$ if $t\in T^-$. For this reason, we call $t_0$ the \emph{parity element} of the odd grading $\Gamma$. Note that $\rad \beta^+ = T^+\cap (T^+)^\perp = \langle t_0 \rangle$.
+% In particular, we have $(T^+)^\perp = \langle t_p \rangle$ where $t_p$ is an element of order 2. It follows that $\beta(t_p, t) = 1$ if $t\in T^+$ and $\beta(t_p, t) = -1$ if $t\in T^-$. For this reason, we call $t_p$ the \emph{parity element} of the odd grading $\Gamma$. Note that $\rad \beta^+ = T^+\cap (T^+)^\perp = \langle t_p \rangle$.
 
-% Fix an element $0\neq d_0\in \D$  of degree $t_0$. By the definition of $\beta$, $d_0$ commutes with all elements of $\D\even$ and anticommutes with all elements of $\D\odd$. Since $d_0^2\in \D_e = \FF$, and $\FF$ is algebraically closed, we may rescale $d_0$ so that $d_0^2=1$. Then $\epsilon := \frac{1}{2}(1+d_0)$ is a central idempotent of $\D\even$. Take a homogeneous element $0\neq d_1\in\D\odd$. Then $d_1\epsilon d_1\inv = \frac{1}{2}(1-d_0)=1-\epsilon$, which is another central idempotent of $\D\even$ and must have the same rank as $\epsilon$. 
+% Fix an element $0\neq d_0\in \D$  of degree $t_p$. By the definition of $\beta$, $d_0$ commutes with all elements of $\D\even$ and anticommutes with all elements of $\D\odd$. Since $d_0^2\in \D_e = \FF$, and $\FF$ is algebraically closed, we may rescale $d_0$ so that $d_0^2=1$. Then $\epsilon := \frac{1}{2}(1+d_0)$ is a central idempotent of $\D\even$. Take a homogeneous element $0\neq d_1\in\D\odd$. Then $d_1\epsilon d_1\inv = \frac{1}{2}(1-d_0)=1-\epsilon$, which is another central idempotent of $\D\even$ and must have the same rank as $\epsilon$. 
 % Hence, $\D\even\iso \epsilon\D\even\oplus (1-\epsilon)\D\even$ (direct sum of ideals) and, consequently, $E\even \iso \End(\tilde U)\tensor \D\even = \End(\tilde U)\tensor \epsilon\D\even \oplus \End(\tilde U)\tensor (1-\epsilon)\D\even$, where the two summands have the same dimension. Therefore, odd gradings exist only if $m=n$. 
 % Also note that we have 
 % \begin{equation}\label{eq:D1eps}
@@ -457,16 +457,16 @@ As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $
 
 % We are now going construct an even grading by coarsening a given odd grading. The reverse of this construction will be used in Subsection \ref{ssec:second-odd}.
 
-% Let $H$ be a group and suppose we have an even grading $\Gamma'$ on $M(n,n)$ that is the coarsening of $\Gamma$ induced by a group homomorphism $\alpha: G\rightarrow H$. Since $\Gamma'$ is even, then the idempotent $\id_{\tilde U}\tensor\epsilon$ must be homogeneous with respect to $\Gamma'$. This means that $\alpha(t_0)=e$, so $\alpha$ factors through $\barr G := G/\langle t_0 \rangle$. This motivates the following definition:
+% Let $H$ be a group and suppose we have an even grading $\Gamma'$ on $M(n,n)$ that is the coarsening of $\Gamma$ induced by a group homomorphism $\alpha: G\rightarrow H$. Since $\Gamma'$ is even, then the idempotent $\id_{\tilde U}\tensor\epsilon$ must be homogeneous with respect to $\Gamma'$. This means that $\alpha(t_p)=e$, so $\alpha$ factors through $\barr G := G/\langle t_p \rangle$. This motivates the following definition:
 
 % \begin{defi}
-% 	Let $\Gamma$ be an odd $G$-grading on $M(n,n)$ with parity element $t_0$. 
-% 	The \emph{finest even coarsening of $\Gamma$} is the $\barr G$-grading ${}^\theta \Gamma$, where $\barr G := G/\langle t_0 \rangle$ and $\theta: G \to \barr G$ is the natural homomorphism.
+% 	Let $\Gamma$ be an odd $G$-grading on $M(n,n)$ with parity element $t_p$. 
+% 	The \emph{finest even coarsening of $\Gamma$} is the $\barr G$-grading ${}^\theta \Gamma$, where $\barr G := G/\langle t_p \rangle$ and $\theta: G \to \barr G$ is the natural homomorphism.
 % \end{defi}
 
 % % Thm: this is the finest even coarsening
 % \begin{thm}
-% 	Let $\Gamma = \Gamma(T, \beta, \gamma)$ be an odd grading on $M(n,n)$ with parity element $t_0$. Then its finest even coarsening is isomorphic to $\barr \Gamma = \Gamma(\barr T, \barr \beta, \barr \gamma, \barr u\barr \gamma)$, where $\barr T= \frac{T^+}{\langle t_0 \rangle}$, $\barr\beta$ is the nondegenerate bicharacter on $\barr T$ induced by $\beta^+$, $\barr\gamma$ is the tuple whose entries are the images of the entries of $\gamma$ under $\theta$, and $u \in G$ is 
+% 	Let $\Gamma = \Gamma(T, \beta, \gamma)$ be an odd grading on $M(n,n)$ with parity element $t_p$. Then its finest even coarsening is isomorphic to $\barr \Gamma = \Gamma(\barr T, \barr \beta, \barr \gamma, \barr u\barr \gamma)$, where $\barr T= \frac{T^+}{\langle t_p \rangle}$, $\barr\beta$ is the nondegenerate bicharacter on $\barr T$ induced by $\beta^+$, $\barr\gamma$ is the tuple whose entries are the images of the entries of $\gamma$ under $\theta$, and $u \in G$ is 
 % 	any element such that $(u, \barr 1) \in T^-$.
 % \end{thm}
 
@@ -487,7 +487,7 @@ As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $
 
 % 	% Claim 2: parameters of \barr D
 % 	\begin{claim}
-% 		The support of $\barr \D$ is $\barr T= \frac{T^+}{\langle t_0 \rangle}$ and the bicharacter $\barr \beta: \barr T\times \barr T\rightarrow \FF^\times$ is induced by $\beta^+: T^+\times T^+ \rightarrow \FF^\times$.
+% 		The support of $\barr \D$ is $\barr T= \frac{T^+}{\langle t_p \rangle}$ and the bicharacter $\barr \beta: \barr T\times \barr T\rightarrow \FF^\times$ is induced by $\beta^+: T^+\times T^+ \rightarrow \FF^\times$.
 % 	\end{claim}
 
 % 	% Proof of Claim 2
@@ -518,7 +518,7 @@ As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $
 % Note that $T^{[2]}\subseteq T^+$, but $T^{[2]}$ can be larger than $(T^+)^{[2]}$ since it also includes the squares of elements of $T^-$. Also, the subgroup $\barr S = \{\barr t \in \barr T \mid t \in T^{[2]}\}$ of $\barr T$ can be larger than $\barr T^{[2]}$, but we will show that, surprisingly, it does not depend on $T^-$.
 
 % \begin{lemma}
-% 	Let $\theta: T^+\rightarrow \barr T=\frac{T^+}{\langle t_0 \rangle}$ be the natural homomorphism. 
+% 	Let $\theta: T^+\rightarrow \barr T=\frac{T^+}{\langle t_p \rangle}$ be the natural homomorphism. 
 % 	Consider the subgroups $\barr S = \theta(T^{[2]})$ and $\barr R=\theta(T^+_{[2]})$ of $\barr T$. 
 % 	Then $\barr S$ is the orthogonal complement of $\barr R$ with respect to the nondegenerate bicharacter $\barr\beta$.
 % \end{lemma}
@@ -537,19 +537,19 @@ As stated before, the pair $(T^+, \beta^+)$ might not correspond to any triple $
 % Our second description of an odd grading consists of its finest even coarsening and the data necessary to recover the odd grading from this coarsening. 
 % % All parameters will be obtained in terms of $G$ rather than its extension $G^\#=G\times \ZZ_2$.
 
-% Let $t_0\in G$ be an arbitrarily fixed element of order 2 and set $\barr G = \frac{G}{\langle t_0 \rangle}$. Let $\barr T \subseteq \barr G$ be a finite subgroup and let $\barr \beta: \barr T \times \barr T \rightarrow \FF^\times$ be a nondegenerate alternating bicharacter. 
-% We define $T^+\subseteq G$ to be the inverse image of $\barr T$ under the natural homomorphism $\theta: G\rightarrow \barr G$. Note that $\barr \beta$ gives rise to a bicharacter $\beta^+$ on $T^+$ whose radical is generated by the element $t_0$. 
+% Let $t_p\in G$ be an arbitrarily fixed element of order 2 and set $\barr G = \frac{G}{\langle t_p \rangle}$. Let $\barr T \subseteq \barr G$ be a finite subgroup and let $\barr \beta: \barr T \times \barr T \rightarrow \FF^\times$ be a nondegenerate alternating bicharacter. 
+% We define $T^+\subseteq G$ to be the inverse image of $\barr T$ under the natural homomorphism $\theta: G\rightarrow \barr G$. Note that $\barr \beta$ gives rise to a bicharacter $\beta^+$ on $T^+$ whose radical is generated by the element $t_p$. 
 % We wish to define $T^-\subseteq G\times \{\barr 1\}$ so that $T=T^+\cup T^-$ is a subgroup of $G^\#$ and $\beta^+$ extends to a nondegenerate alternating bicharacter on $T$.
 
-% From Lemma \ref{lemma:square-subgroup}, we have a necessary condition for the existence of such $T^-$, namely, for $\barr R=\frac{T^+_{[2]}}{\langle t_0 \rangle}$, we need $\barr R' \subseteq \barr G^{[2]}$ (indeed, $\barr S$ is a subgroup of $\overline {G^{[2]}} = \barr G^{[2]}$). 
+% From Lemma \ref{lemma:square-subgroup}, we have a necessary condition for the existence of such $T^-$, namely, for $\barr R=\frac{T^+_{[2]}}{\langle t_p \rangle}$, we need $\barr R' \subseteq \barr G^{[2]}$ (indeed, $\barr S$ is a subgroup of $\overline {G^{[2]}} = \barr G^{[2]}$). 
 % We will now prove that this condition is also sufficient.
 
 % \begin{prop}\label{prop:square-subgroup-converse}
-% 	If $\left( \frac{T^+_{[2]} }{\langle t_0 \rangle}\right)^\perp \subseteq \barr G^{[2]}$, then there exists an element $t_1\in G\times \{\barr 1\} \subseteq G^\#$ such that $T= T^+ \cup t_1\, T^+$ is a subgroup of $G^\#$ and  $\beta^+$ extends to a nondegenerate alternating bicharacter $\beta:T\times T\rightarrow \FF^\times$.
+% 	If $\left( \frac{T^+_{[2]} }{\langle t_p \rangle}\right)^\perp \subseteq \barr G^{[2]}$, then there exists an element $t_1\in G\times \{\barr 1\} \subseteq G^\#$ such that $T= T^+ \cup t_1\, T^+$ is a subgroup of $G^\#$ and  $\beta^+$ extends to a nondegenerate alternating bicharacter $\beta:T\times T\rightarrow \FF^\times$.
 % % \end{prop}
 
 % \begin{proof}
-% 	Let $\chi\in \widehat {T^+}$ be such that $\chi(t_0) = -1$. Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. Note that $\chi (a) = \pm 1$ and hence, changing $a$ to $a t_0$ if necessary, we may assume $\chi (a) = 1$.
+% 	Let $\chi\in \widehat {T^+}$ be such that $\chi(t_p) = -1$. Since $\chi^2(t_0)=1$, we can consider $\chi^2$ as a character of the group $\barr T = \frac{T^+}{\langle t_0 \rangle}$, hence there is $a\in T^+$ such that $\chi^2(\barr t) = \barr\beta(\barr a, \barr t)$ for all $\barr t\in \barr T$. Note that $\chi (a) = \pm 1$ and hence, changing $a$ to $a t_0$ if necessary, we may assume $\chi (a) = 1$.
 	
 % 	\bigskip 
 

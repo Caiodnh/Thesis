@@ -1,4 +1,4 @@
-\section[Gradings on superinvolution-simple superalgebras of types  \texorpdfstring{$M\times M\sop$ and $Q\times Q\sop$}{MxMsop and QxQsop}]{Gradings on superinvolution-simple \\ superalgebras of types $M\times M\sop$ and $Q\times Q\sop$}\label{sec:model-O}
+\section[Gradings on superinvolution-simple superalgebras of types  \texorpdfstring{$M\times M\sop$ and $Q\times Q\sop$}{MxMsop and QxQsop}]{Gradings on superinvolution-simple \\ superalgebras of types $M\times M\sop$ and $Q\times Q\sop$}\label{sec:MxM-and-QxQ-associative}
 
 As before, we continue assuming that $\FF$ is algebraically closed and $\Char \FF \neq 2$. 
 
@@ -9,7 +9,7 @@ If we endow $(R, \vphi)$ with a grading, then it becomes, clearly, graded-superi
 In the case $R$ is not graded-simple, the situation is easier: since the nonzero proper superideals are $S \times \{ 0 \}$ and $\{ 0 \} \times S\sop$, at lest one of them must be a graded superideal, and since $\vphi$ sends graded subsuperspaces onto graded subsuperspaces, $S \times \{ 0 \}$ is a graded superideal if, and only if, so is $\{ 0 \} \times S\sop$. 
 Therefore, we can apply  \cref{cor:SxSsop-with-dcc,thm:iso-D-even-ExEsop,thm:iso-D-odd-ExEsop}, in \cref{grd-sinv-simple}, and specialize them to the case of simple superalgebra $S$, as in  \cref{cor:iso-M-even,cor:iso-M-odd,cor:iso-Q}, in \cref{sec:grd-simple-salg}.
 
-\begin{thm}\label{thm:MxM-type-II}
+\begin{thm}\label{thm:MxM-type-I}
     Let $(R, \vphi)$ be a superinvolution-simple superalgebra of type $M\times M\sop$ endowed with a $G$-grading and suppose it is not graded-simple. 
     % Then there is a finite subgroup $T \subseteq G^\#$ such that: 
     Then $(R, \vphi)$ is isomorphic to either $M(T, \beta, \kappa_\bz, \kappa_\bo) \times M(T, \beta, \kappa_\bz, \kappa_\bo)\sop$ (see \cref{def:Gamma-T-beta-kappa-even}), or to $M (T, \beta, p, \kappa) \times M (T, \beta, p, \kappa)\sop$ (see \cref{def:Gamma-T-beta-kappa-odd}), but not both, where we consider the exchange superinvolution in both cases. 
@@ -28,7 +28,7 @@ Therefore, we can apply  \cref{cor:SxSsop-with-dcc,thm:iso-D-even-ExEsop,thm:iso
 	\end{enumerate}
 \end{thm}
 
-\begin{thm}\label{thm:QxQ-type-II}
+\begin{thm}\label{thm:QxQ-type-I}
     Let $(R, \vphi)$ be a superinvolution-simple superalgebra of type $Q\times Q\sop$ endowed with a $G$-grading and suppose it is not graded-simple. 
     Then $(R, \vphi)$ is isomorphic to $Q (T^+, \beta^+, h, \kappa) \times Q (T^+, \beta^+, h, \kappa)\sop$ (see \cref{def:Gamma-T-beta-kappa-Q}), where we consider the exchange superinvolution. 
     
@@ -78,7 +78,7 @@ Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)
 
 From now on, let us suppose $(R,\vphi)$ is superinvolution-simple of type $M\times M\sop$ or $Q\times Q\sop$ and get some corollaries from \cref{prop:types-of-D-via-rad-beta}. 
 
-\begin{cor}
+\begin{cor}\label{cor:associative-type-II-odd-m=n}
     If the superalgebra with superinvolution $M(m,n) \times M(m,n)\sop$ admits a grading that makes it graded-simple with $\D$ odd, then $m = n$.
 \end{cor}
 
@@ -230,13 +230,13 @@ We will now adapt the proof of \cref{thm:tensor-prd-decomposition} to construct 
     \begin{enumerate}[(i)]
         \item an element $t_1 \in T^-$, if we are in case (b);
         \label{item:choose-t_1-std-realization}
-        \item a subgroup $S \subseteq T^+$ such that $(\rad \beta^+) \times S = T^+$ and, if we are in case (b), $\beta(t_1, S) = 1$;
-        \label{item:S-can-be-orthogonal-to-t_1}
-        \item a standard realization $\mc M$ (see     \cref{def:standard-realization}) of a matrix algebra with a division grading  associated to $(S, \beta\restriction_{S\times S})$. 
+        \item a subgroup $K \subseteq T^+$ such that $(\rad \beta^+) \times K = T^+$ and, if we are in case (b), $\beta(t_1, K) = 1$;
+        \label{item:K-can-be-orthogonal-to-t_1}
+        \item a standard realization $\mc M$ (see     \cref{def:standard-realization}) of a matrix algebra with a division grading  associated to $(K, \beta\restriction_{K\times K})$. 
         \label{item:choose-mc-M}
     \end{enumerate}
-    A subgroup $S$ in item \eqref{item:S-can-be-orthogonal-to-t_1} exists because $T^+$ is an elementary $2$-group and, in case (b), the choice of $S$ satisfying $\beta(t, S) = 1$ is possible by the same argument as in the proof of \cref{thm:tensor-prd-decomposition}. 
-    A standard realization in item \eqref{item:choose-mc-M} is defined since $\beta\restriction_{S\times S} = \beta^+\restriction_{S\times S}$ is, clearly, nondegenerate. 
+    A subgroup $K$ in item \eqref{item:K-can-be-orthogonal-to-t_1} exists because $T^+$ is an elementary $2$-group and, in case (b), the choice of $K$ satisfying $\beta(t, K) = 1$ is possible by the same argument as in the proof of \cref{thm:tensor-prd-decomposition}. 
+    A standard realization in item \eqref{item:choose-mc-M} is defined since $\beta\restriction_{K\times K} = \beta^+\restriction_{K\times K}$ is, clearly, nondegenerate. 
     
     Let $\vphi_{\mc M}$ denote the transposition on $\mc M$, and let $(\mc C, \vphi_{\mc C})$ be as in \cref{thm:tensor-prd-decomposition}: item (a) if $t_p =e$, item (b) if $e \neq t_p \in T^+$, and item (c) if $t_p \in T^-$.
     We say that $(\mc C \tensor \mc M, \vphi_{\mc C} \tensor \vphi_{\mc M})$ is a \emph{standard realization} of a graded-division superalgebra with superinvolution associated to $(T, \tilde\beta, t_p)$. 

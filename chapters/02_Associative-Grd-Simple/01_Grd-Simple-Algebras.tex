@@ -196,7 +196,7 @@ We will now restrict ourselves to graded right $\D$-modules of finite rank.
 It is clear that a graded right $\D$-module $\U$ has finite rank if, and only if, all isotypic components have finite rank and only finitely many of them are nonzero. 
 In view of \cref{lemma:iso-D-modules,cor:iso-isotypic-components,prop:dim-U_x}, this means that an isomorphism class of such modules is determined by the map $\kappa \from G/T \to \ZZ_{\geq 0}$ defined by $\kappa(x) \coloneqq \dim_\D (\U_x)$, which has finite support. 
 In other words, $\kappa$ is a finite \emph{multiset} in $G/T$, where $\kappa(x)$ is viewed as the multiplicity of the point $x$. 
-As it is usually dine for multisets, we define $|\kappa| \coloneqq \sum_{x \in \supp \kappa} \kappa(x)$. 
+As usually done for multisets, we define $|\kappa| \coloneqq \sum_{x \in \supp \kappa} \kappa(x)$. 
 Clearly $|\kappa| = \dim_\D (\U)$.
 
 \begin{defi}\label{defi:gamma-realizes-kappa}
@@ -204,13 +204,21 @@ Clearly $|\kappa| = \dim_\D (\U)$.
 \end{defi}
 
 Clearly, we can always choose a $k$-tuple $\gamma = (g_1, \ldots, g_k)$ realizing $\kappa$. 
-We can use $\gamma$ to construct to define the graded $\D$-module $\U \coloneqq {}^{[g_1]}\D \oplus \cdots \oplus {}^{[g_k]}\D$, which is clearly a representative of the isomorphism class of graded $\D$-modules determined by $\kappa$. 
+We can use $\gamma$ to construct the graded $\D$-module $\U \coloneqq {}^{[g_1]}\D \oplus \cdots \oplus {}^{[g_k]}\D$, which is clearly a representative of the isomorphism class of graded $\D$-modules determined by $\kappa$. 
 
 \begin{remark}
 	Both parameters, the map $\kappa$ and the the $k$-tuple $\gamma$ realizing it, have been used in previous works. 
-	Sometimes both are present, as in \cite{livromicha} (where the tuple is defined so that all elements belong to different left cosets and the multiplicities are recorded as recorded as a separate tuple) and \cite{paper-Qn,paper-MAP}; sometimes only the tuple, as in \cite{BK10}; sometimes only the multiset, as in \cite{paper-adrian,felipe-misha}.
+	Sometimes both are present, as in \cite{livromicha} (where the tuple is defined so that all elements belong to different left cosets and the multiplicities are recorded as a separate tuple) and \cite{paper-Qn,paper-MAP}; sometimes only the tuple, as in \cite{BK10}; sometimes only the multiset, as in \cite{paper-adrian,felipe-misha}.
 	Here we follow the notation of the latter.
 \end{remark}
+
+A systematic way to obtain $\gamma$ from $\kappa$ is using a set-theoretic section $\xi\from G/T \to G$ of the natural homomorphism $\pi\from G \to G/T$ (\ie, a map such that $\pi(\xi(x)) = x$ for all $x \in G/T$) and a total order $\leq$ on $G/T$. 
+
+\begin{defi}\label{defi:tuple-governed}
+    Let $\xi\from G/T \to G$ be a set-theoretic section of the natural homomorphism $\pi\from G \to G/T$ and let $\leq$ be a total order on $G/T$. 
+    Given a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support, set $k \coloneqq |\kappa|$ and let $\gamma$ be the $k$-tuple given by putting the elements of $\{ \xi(x) \mid x \in \supp \kappa\} \subseteq G$ following the order $\leq$ and repeating $\kappa_\bz(x)$ times each element $\xi(x)$. 
+    We will call $\gamma$ the \emph{$k$-tuple realizing $\kappa$ governed by $\xi$ and $\leq$}.
+\end{defi}
 
 % \begin{notation}
     Let $\U$ and $\V$ be graded right $\D$-modules. We will denote by $\Hom_\D(\U,\V)$ the vector space of all homomorphisms from $\U$ to $\V$ as $\D$-modules, not as graded $\D$-modules. 

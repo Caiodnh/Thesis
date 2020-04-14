@@ -1,12 +1,12 @@
 
-\section[Gradings on the Lie Superalgebras of types \texorpdfstring{$B$, $C$, $D$ and $P$}{B, C, D and P}]{Gradings on the Lie Superalgebras of series $B$, $C$, $D$ and $P$}
+\section[Gradings on Lie Superalgebras of Series \texorpdfstring{$B$, $C$, $D$ and $P$}{B, C, D and P}]{Gradings on Lie Superalgebras of Series $B$, $C$, $D$ and $P$}
 
-We will now classify the gradings on the orthosymplectic and peripletic Lie superalgebras, \ie, the Lie superalgebras of the form $L \coloneqq \Skew(R, \vphi)^{(1)}$ where $(R, \vphi) = M^*(m,n, p_0)$ (see \cref{defi:M(m-n-p_0)}). 
+We will now classify the gradings on orthosymplectic and peripletic Lie superalgebras, \ie, the Lie superalgebras of the form $L \coloneqq \Skew(R, \vphi)^{(1)}$ where $(R, \vphi) = M^*(m,n, p_0)$ (see \cref{defi:M(m-n-p_0)}). 
 
 By \cref{cor:transfer-R-vphi-to-L}, these gradings are precisely the restrictions of the gradings on $M^*(m,n, p_0)$, which are classified in \cref{thm:osp-and-p-associative}. 
 Here we will get a more explicit description of these gradings and, for the Lie superalgebras of types $B$ and $P$, recover the classification results in \cite{Helens_thesis} and \cite{paper-MAP}, respectively. 
 
-In what follows, for each pair $(T, \beta)$ where $T$ is a finite abelian group and $\beta\from {T\times T} \to \FF^\times$ is a nondegenerate alternating bicharacter, we fix $\D$ to be a standard realization associated to $(T, \beta)$, and define $\vphi_0\from \D \to \D$ to be the transposition on $\D$ and $\eta\from T \to \FF^\times$ to be the corresponding map, which satisfies $\mathrm{d}\eta = \beta \, (= \tilde\beta)$. 
+In what follows, for each pair $(T, \beta)$, where $T$ is a finite abelian group and $\beta\from {T\times T} \to \FF^\times$ is a nondegenerate alternating bicharacter, we fix $\D$ to be a standard realization associated to $(T, \beta)$, and define $\vphi_0\from \D \to \D$ to be the transposition on $\D$ and $\eta\from T \to \{\pm 1\}$ to be the corresponding map, which satisfies $\mathrm{d}\eta = \beta \, (= \tilde\beta)$. 
 
 \subsection{Gradings on periplectic Lie superalgebras}\label{ssec:grds-P(n)}
 
@@ -25,7 +25,6 @@ Recall that $(\U\even)\Star$ is a right $\D$-module by $(f\cdot d) (u) \coloneqq
 This gives us an explicit way to construct the pair $(\U, B)$. 
 Let $\gamma = (g_1, \ldots, g_k)$, where $k \coloneqq |\kappa_\bz|$, be a $k$-tuple of elements in $G$ 
 realizing $\kappa_\bz$ (see \cref{defi:gamma-realizes-kappa}). 
-% such that, for all $x\in G/T$, the number of elements $g_i$ with $g_i \in x$ is $\kappa_\bz (x)$. 
 Then define $\U\even \coloneqq \D^{[g_1]}\oplus \cdots \oplus \D^{[g_k]}$, $\U\odd \coloneqq ((\U\even)\Star)^{[h_0\inv]}$, $\U \coloneqq \U\even \oplus \U\odd$ and $B\from \U\times\U \to \D$ by
 \[\label{eq:defi-B-for-P(n)}
     \forall u_\bz, u_\bz' \in \U\even, \, u_\bo, u_\bo' \in \U\odd, \quad B(u_\bz + u_\bo, u_\bz' + u_\bo') \coloneqq u_\bo(u_\bz') + \vphi_0( u_\bo' (u_\bz) ).
@@ -78,6 +77,8 @@ The following result is a consequence of \cref{thm:osp-and-p-associative} (compa
     Moreover, $\Gamma_P (T, \beta, \kappa_\bz, h_0) \iso \Gamma_P (T', \beta', \kappa_\bz', h_0')$ \IFF $T = T'$, $\beta = \beta'$ and there is an element $g\in G$ such that $\kappa_\bz' = g \cdot \kappa_\bz$ and $h_0' = g^{-2} h_0$. \qed 
 \end{thm}
 
+% ----------------------
+
 \subsection{Gradings on orthosymplectic Lie superalgebras}\label{ssec:grds-osp} 
 
 The gradings on $\osp(m,n)$ correspond to the gradings on $M^*(m, n, \bar 0)$. 
@@ -87,10 +88,12 @@ Unlike in the case of \cref{ssec:grds-P(n)}, our construction of the pair $(\U, 
 Let $\xi\from G/T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T$ (or just its finite subset $\supp \kappa_\bz \cup \supp \kappa_\bo$) with no elements between $x$ and $g_0\inv x\inv$. 
 Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
 
+HERE
+
 Set $k_\bz \coloneqq |\kappa_\bz|$ and let $\gamma_\bz = (g_1, \ldots, g_{k_\bz})$ be the $k_\bz$-tuple given by putting the elements of $\{ \xi(x) \mid x \in \supp \kappa_\bz\}$ following the order $\leq$ and repeating $\kappa_\bz(x)$ times each element $\xi(x)$. 
 Clearly, $\gamma_\bz$ realizes $\kappa_\bz$. 
 Similarly, set $k_\bo \coloneqq |\kappa_\bo|$ and construct the $k_\bo$-tuple $\gamma_\bo = (h_1, \ldots, h_{k_\bo})$, which realizes $\kappa_\bo$. 
-We then define $\U\even \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_{k_\bz}]}$, $\U\odd \coloneqq \D^{[h_1]} \oplus \cdots \oplus \D^{[h_{k_\bz}]}$ and $\U \coloneqq \U\even \oplus \U\odd$. 
+We then define $\U\even \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_{k_\bz}]}$, $\U\odd \coloneqq \D^{[h_1]} \oplus \cdots \oplus \D^{[h_{k_\bo}]}$ and $\U \coloneqq \U\even \oplus \U\odd$. 
 
 To define the $\vphi_0$-sesquilinear form $B$, we will use the following:
 
@@ -120,7 +123,7 @@ To define the $\vphi_0$-sesquilinear form $B$, we will use the following:
     \end{enumerate}
 \end{defi}
 
-Let $\B = \{u_1, \ldots, u_{k_\bz + k_\bo} \}$ be the canonical graded basis of $\U$, and 
+Let $\B = \{u_1, \ldots, u_{k_\bz + k_\bo} \}$ be the canonical $G^\#$-graded basis of $\U$, and 
 let $x_1 < \ldots < x_{\ell_\bz}$ be the elements of $\{ x \in \supp \kappa_\bz \mid x \leq g_0\inv x^2 \}$ and, similarly, let $y_1 < \ldots < y_{\ell_\bo}$ be the elements of $\{ y \in \supp \kappa_\bo \mid y \leq g_0\inv y^2 \}$. 
 
 Let $B\from \U\times \U \to \D$ be the nondegenerate $\vphi_0$-sesquilinear form represented by the following matrix $\Phi \in M_{\kappa_\bz \mid \kappa_\bo} (\D)$:
@@ -157,6 +160,7 @@ Nevertheless, disregarding the $G$-grading, $(M(m,n), \vphi)$ must be isomorphic
 
 \begin{defi}\label{defi:Gamma_osp}
     Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 \in G = G\times \{ \bar 0 \}$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps. 
+    HERE let gamma i be the... def 2.18.
     Set $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$, and choose the $k_i$-tuple $\gamma_i$ realizing $\kappa_i$ as described before \cref{defi:blocks-of-Phi}. 
     Consider the elementary grading on $M(k_\bz, k_\bo)$ determined by $(\gamma_\bz, \gamma_\bo)$ (see \cref{defi:elementary-grd-super}), and let $R = M(m,n)$, where $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$, be the graded superalgebra with grading given by identifying it with $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product. 
     Consider on $R$ the superivolution $\vphi$ defined by \cref{eq:Phi-for-graded-osp}, where $\Phi$ is the matrix given by \cref{eq:puting-the-blocks-of-Phi-together}. 
