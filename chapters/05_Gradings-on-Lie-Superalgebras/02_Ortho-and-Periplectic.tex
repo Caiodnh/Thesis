@@ -87,38 +87,33 @@ By \cref{thm:osp-and-p-associative}, if we endow $M^*(m, n, \bar 0)$ with a grad
 Unlike in the case of \cref{ssec:grds-P(n)}, our construction of the pair $(\U, B)$ will be closer to the one in \cref{ssec:parameters-(U-B)}. 
 Let $\xi\from G/T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T$ (or just its finite subset $\supp \kappa_\bz \cup \supp \kappa_\bo$) with no elements between $x$ and $g_0\inv x\inv$. 
 Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
-
-HERE
-
-Set $k_\bz \coloneqq |\kappa_\bz|$ and let $\gamma_\bz = (g_1, \ldots, g_{k_\bz})$ be the $k_\bz$-tuple given by putting the elements of $\{ \xi(x) \mid x \in \supp \kappa_\bz\}$ following the order $\leq$ and repeating $\kappa_\bz(x)$ times each element $\xi(x)$. 
-Clearly, $\gamma_\bz$ realizes $\kappa_\bz$. 
-Similarly, set $k_\bo \coloneqq |\kappa_\bo|$ and construct the $k_\bo$-tuple $\gamma_\bo = (h_1, \ldots, h_{k_\bo})$, which realizes $\kappa_\bo$. 
-We then define $\U\even \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_{k_\bz}]}$, $\U\odd \coloneqq \D^{[h_1]} \oplus \cdots \oplus \D^{[h_{k_\bo}]}$ and $\U \coloneqq \U\even \oplus \U\odd$. 
+For each $i \in \ZZ_2$, set $k_i \coloneqq |\kappa_i|$, and construct tuples $\gamma_\bz = (g_1, \ldots, g_{k_\bz})$ and $\gamma_\bo = (h_1, \ldots, h_{k_\bo})$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, governed by $\xi$ and $\leq$ (\cref{defi:tuple-governed}). 
+Then define $\U\even \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_{k_\bz}]}$, $\U\odd \coloneqq \D^{[h_1]} \oplus \cdots \oplus \D^{[h_{k_\bo}]}$ and $\U \coloneqq \U\even \oplus \U\odd$. 
 
 To define the $\vphi_0$-sesquilinear form $B$, we will use the following:
 
 \begin{defi}\label{defi:blocks-of-Phi}
     Let $i\in \ZZ_2$ and $x \in G/T$. 
-    If $g_0x^2 = T$, we put $t \coloneqq g_0 \xi(x)^2 \in T$ and define $\Phi(i, x)$ to be the following $\kappa(x) \times \kappa(x)$-matrix with entries in $\D$:
+    If $g_0x^2 = T$, we put $t \coloneqq g_0 \xi(x)^2 \in T$ and define $\Phi(i, x)$ to be the following $\kappa_i(x) \times \kappa_i(x)$-matrix with entries in $\D$:
     %
     \begin{enumerate}[(i)]
-        \item $I_{\kappa(x)} \tensor X_{t}$ if $(-1)^i \eta(t_x) = +1$;
+        \item $I_{\kappa_i(x)} \tensor X_{t}$ if $(-1)^i \eta(t_x) = +1$;
         %
-		\item  $J_{\kappa(x)} \tensor X_{t}$, where $J_{\kappa(x)} \coloneqq \begin{pmatrix}
-				      0                & I_{\kappa(x)/2} \\
-				      -I_{\kappa(x)/2} & 0
-			      \end{pmatrix}$, if  $(-1)^i \eta(t_x) = -1$ (recall that, in this case, $\kappa (x)$ is even by \cref{inertia-even-and-odd-case}). 
+		\item  $J_{\kappa_i(x)} \tensor X_{t}$, where $J_{\kappa_i(x)} \coloneqq \begin{pmatrix}
+				      0                & I_{\kappa_i(x)/2} \\
+				      -I_{\kappa_i(x)/2} & 0
+			      \end{pmatrix}$, if  $(-1)^i \eta(t_x) = -1$ (recall that, in this case, $\kappa_i(x)$ is even by \cref{inertia-even-and-odd-case}). 
 	\end{enumerate}
     %
-    If $g_0 x^2 \neq T$, we define $\Phi(i, x)$ to be the following $2\kappa(x) \times 2\kappa(x)$-matrix with entries in $\D$:
+    If $g_0 x^2 \neq T$, we define $\Phi(i, x)$ to be the following $2\kappa_i(x) \times 2\kappa_i(x)$-matrix with entries in $\D$:
     %
     \begin{enumerate}[(i)]
         %
         \setcounter{enumi}{2}
         %
 		\item $\begin{pmatrix}
-			0                                                  & I_{\kappa(x)} \\
-			(-1)^{i} I_{\kappa(x)} & 0
+			0                                                  & I_{\kappa_i(x)} \\
+			(-1)^{i} I_{\kappa_i(x)} & 0
 		\end{pmatrix} \tensor 1$, where $1$ is the identity element of $\D$. 
     \end{enumerate}
 \end{defi}
@@ -160,8 +155,7 @@ Nevertheless, disregarding the $G$-grading, $(M(m,n), \vphi)$ must be isomorphic
 
 \begin{defi}\label{defi:Gamma_osp}
     Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 \in G = G\times \{ \bar 0 \}$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps. 
-    HERE let gamma i be the... def 2.18.
-    Set $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$, and choose the $k_i$-tuple $\gamma_i$ realizing $\kappa_i$ as described before \cref{defi:blocks-of-Phi}. 
+    Set $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$, and let $\gamma_i$ the $k_i$-tuple governed by $\xi$ and $\leq$ (\cref{defi:tuple-governed}). 
     Consider the elementary grading on $M(k_\bz, k_\bo)$ determined by $(\gamma_\bz, \gamma_\bo)$ (see \cref{defi:elementary-grd-super}), and let $R = M(m,n)$, where $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$, be the graded superalgebra with grading given by identifying it with $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product. 
     Consider on $R$ the superivolution $\vphi$ defined by \cref{eq:Phi-for-graded-osp}, where $\Phi$ is the matrix given by \cref{eq:puting-the-blocks-of-Phi-together}. 
     We define $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the graded Lie superalgebra $\Skew(R, \vphi)$. 
