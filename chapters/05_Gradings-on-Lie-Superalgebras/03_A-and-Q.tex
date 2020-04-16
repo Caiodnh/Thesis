@@ -344,6 +344,11 @@ Different from \cref{ssec:grds-on-A-m-n}, the gradings on $S$ are separated into
 The gradings on $L$ induced by even gradings on $S$ will be called gradings of \emph{Type I\textsubscript{M}}, and the gradings on $L$ induced by odd gradings on $S$ will be called gradings of \emph{Type I\textsubscript{Q}}. 
 
 \begin{defi}\label{def:Type-I_M}
+    Let $n\in \ZZ_{> 0}$ and set $m \coloneqq n$. 
+    We define $\Gamma^{\mathrm{(I)_M}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ to be the grading on $L$ induced by the grading $\Gamma^{\mathrm{(I)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ on $M(n+1, n+1)^{(1)}$ (\cref{def:A-Type-I}).
+\end{defi}
+
+\begin{defi}
     Let $n\in \ZZ_{> 0}$, $T \subseteq G$ be a finite subgroup, $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|} = |\kappa_\bo| \sqrt{|T|} = n+1$. 
     We will denote by $\Gamma^{\mathrm{(I)_M}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ the restriction to $L$ of the grading $\Gamma_M(T, \beta, \kappa_\bz, \kappa_\bo)$ on $S$ (see \cref{def:Gamma-T-beta-kappa-even}).
 \end{defi}
@@ -369,6 +374,8 @@ The nomenclature is justified by the following:
     Every $G$-grading on $Q(n)$ induces a $G\times \ZZ_2$-grading on $M(n,n)$. 
 \end{prop}
 
+SHOULD IT BE IN CHAPTER II?
+
 The Type II gradings on $L$ will also be subdivided in into different types. 
 As in the case $m\neq n$ (\cref{ssec:grds-on-A-m-n}), these gradings correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S \times S\sop$ and $\vphi$ is the exchange superinvolution. 
 
@@ -377,19 +384,12 @@ Write $g_0$ as $(h_0, p_0)$, with $h_0 \in G$ and $p_0 \in \ZZ_2$.
 If $p_0 = \bar 0$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{osp}. 
 If $p_0 = \bar 1$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{P}. 
 
-Gradings of Type II\textsubscript{osp} are construct exactly like in the previous subsection. 
-The definition is the same. 
-
 \begin{defi}\label{def:type-II-osp}
-    If $m = n$ in \cref{defi:type-II-A-m-not-n}, we will denote $\Gamma(...)$ by $\Gamma()$... .
+    Let $n\in \ZZ_{> 0}$ and set $m \coloneqq n$. 
+    We define $\Gamma^{\mathrm{(II)_osp}}_A(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the grading on $L = R^{(1)}/Z(R^{(1)})$ induced by the grading $\Gamma^{\mathrm{(II)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ on $M(n+1, n+1)^{(1)}$ (\cref{defi:type-II-A-m-not-n}).
 \end{defi}
 
-The proof it works is also the same. 
-
-To construct a model for gradings of Type II\textsubscript{P}, we follow a similar approach as for Type II\textsubscript{osp}, but it is simpler since we do not need to choose $\xi$ and $\leq$ to define the matrix $\Theta$. 
-This is the same reason why it is simpler to construct models for gradings on $P(n)$ (ssec or def?) than it is to construct gradings on $\osp(m,n)$ (ssec). 
-
-We choose $\chi$ as before, and put $\Theta$ as what it should be, the same diagonal matrix as blocks in the secondary diagonal.
+To construct a model for gradings of Type II\textsubscript{P}, we follow a similar approach as for Type II\textsubscript{osp}, but it is simpler since we do not need to choose $\xi$ and $\leq$ to define the matrix $\Theta$ (in the same way this choices were needed in \cref{ssec:grds-osp} but not in \cref{ssec:grds-P(n)}). 
 
 \begin{defi}\label{def:type-II-P}
     Let $n\geq 2$. 
