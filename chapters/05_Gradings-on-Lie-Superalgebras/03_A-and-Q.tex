@@ -289,9 +289,9 @@ Let us summarize what have been done for future reference:
     Let $\{u_1, \ldots, u_k \}$ be the canonical graded basis for $\U$. 
     Then define the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together} and use it to define the $\vphi_0$-sesquilinear form $B\from \U\times \U \to \D$ by $B(u_i, u_j) \coloneqq \Phi_{ij}$. 
     
-    To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis for $\U$: if $g_0 (\deg u_i)^2 \in T$ (\ie, $u_i$ belongs to a self-dual isotypic component), we define $\tilde u_i \coloneqq \sqrt{\chi(\deg u_i)\inv}$; if $(\deg u_i) T < g_0\inv (\deg u_j)\inv T$, then let $\tilde u_i \coloneqq \chi(\deg u_i)\inv u_i$; in the remaining cases, define $\tilde u_i \coloneqq u_i$. 
-    Then let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\{\tilde u_1, \ldots, \tilde u_k \}$.
-    
+    To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis for $\U$: if $g_0 (\deg u_i)^2 \in T$ (\ie, $u_i$ belongs to a self-dual isotypic component), we define $\tilde u_i \coloneqq \sqrt{\chi(\deg u_i)\inv}$; if $(\deg u_i) T < g_0\inv (\deg u_j)\inv T$, then let $\tilde u_i \coloneqq \chi(\deg u_i)\inv u_i$; otherwise, define $\tilde u_i \coloneqq u_i$. 
+    Then let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\{\tilde u_1, \ldots, \tilde u_k \}$. 
+    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get that $\Lambda \tilde \Phi$ corresponds to $\Theta$ as above. 
     % With those choices being made to construct $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, and choosing $\chi \in \widehat{G}$ such that $\chi(K) = 1$ and $\chi(f) = -1$, it is clear that if follow the steps in \cref{ssec:undoubling}, the result follows. 
 \end{proof}
 
