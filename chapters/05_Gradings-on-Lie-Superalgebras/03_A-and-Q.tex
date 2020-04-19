@@ -74,11 +74,11 @@ Set $g_i \coloneqq \deg u_i$.
 By \cref{prop:matrix-vphi}, we have $\vphi(X) = \Phi\inv \vphi_0(X)\stransp \Phi$, for all $X \in M_k(\D)$, where $\Phi_{ij} = B(u_i, u_j)$. 
 Also, given $i, j \in \{ 1, \ldots, k \}$ and $0 \neq d \in \D_t$, $t\in T$, we have $\psi( E_{ij}(d) ) = \chi(g_i t  g_j\inv) E_{ij}(d) = \chi(g_i) \chi(t) \chi(g_j)\inv E_{ij}(d)$. 
 Let $\Lambda \in M_k(\D)$ be the diagonal matrix with $\Lambda_{ii} = \chi(g_i)$ for all $i \in \{ 1, \ldots, k \}$, and let $\psi_0$ denote the action of $\chi$ on $\D$. 
-Then $\psi(X) = \Lambda\inv \psi_0(X) \Lambda$, for all $X \in M_k(\D)$. 
-Define $\theta_0 \coloneqq \psi_0 \vphi_0 = \vphi_0 \psi_0$ and $\Theta \coloneqq \Lambda\Phi$. 
+Then $\psi(X) = \Lambda \psi_0(X) \Lambda\inv$, for all $X \in M_k(\D)$. 
+Define $\theta_0 \coloneqq \psi_0 \vphi_0 = \vphi_0 \psi_0$. 
 Then:
 \[\label{eq:theta-with-matrix-1}
-    \theta(X) = \Theta\inv\, \theta_0(X)\stransp \, \Theta,
+    \theta(X) = (\Lambda\Phi)\inv\, \theta_0(X)\stransp \, (\Lambda\Phi),
 \]
 for all $X \in M_k(\D)$. 
 
@@ -108,7 +108,7 @@ From \cref{eq:theta-with-matrix-1}, we now get that
 \[\label{eq:theta-with-matrix-2}
     \forall X\in M_k(\barr \D), \quad \theta(X) = \Theta\inv\, \theta_0(X)\stransp\, \Theta,
 \]
-where $\Theta \in M_k(\barr \D)$ is defined by $\Theta_{ij} \coloneqq \chi(g_i) B(u_i, u_j) \epsilon$, and $\theta_0$ is the super-anti-automorphism on $\barr \D$ associated to $\bar \mu$. 
+where $\Theta \coloneqq \Lambda \Phi \epsilon \in M_k(\barr \D)$ or, equivalently, $\Theta_{ij} = \chi(g_i) B(u_i, u_j) \epsilon$, and $\theta_0$ is the super-anti-automorphism on $\barr \D$ associated to $\bar \mu$. 
 
 We note that the refinement obtained in \cref{eq:refiniment-on-L}, from $\theta$ given by \cref{eq:theta-with-matrix-2}, is determined by the values of $\chi$ on the subgroup $T \subseteq G^\#$. 
 To be more precise, let $\tilde \chi \in \widehat {G^\#}$ be a character such that $\chi\restriction_{T} = \tilde\chi\restriction_{T}$, let $\tilde \psi \from R\to R$ be the action by $\tilde \chi$, and set $\tilde \theta \coloneqq \tilde\psi \vphi = \vphi \tilde\psi$. 
@@ -141,7 +141,7 @@ We first parametrize the Type I gradings.
 Since $m\neq n$, by \cref{lemma:odd-M-m=n}, every grading on $S$ is even in this case. 
 In particular, $\kappa\from G^\# \to \ZZ_{\geq 0}$ corresponds to a pair $(\kappa_\bz, \kappa_\bo)$ (see \cref{ssec:supermodules-over-D}). 
 
-In the next definition, we allow the possibility of $m=n$ for future reference in \cref{ssec:grds-on-Ann}).
+In the next definition, we allow the possibility of $m=n$ for future reference (in \cref{ssec:grds-on-Ann}).
 
 \begin{defi}\label{def:A-Type-I}
     Let $m, n\in \ZZ_{\geq 0}$, not both zero, $T \subseteq G$ be a finite subgroup, $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
@@ -173,20 +173,19 @@ Note that this definition agrees with \cref{def:std-realization-MxM-QxQ} (see th
 
 
 Extend $\chi$ to $G$. 
-It remains to define a graded right $\barr \D$-supermodule $\barr \U$, and the matrix $\Theta$. 
-Note that, once we fixed $\eta$, we can say that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-balanced. 
+It remains to define a graded right $\barr \D$-supermodule $\barr \U$ and the matrix $\Theta$. 
 The following is analogous to the construction in \cref{ssec:grds-osp}. 
 
-Let $\xi\from G/ T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T \iso \barr G/ \barr T$ (or just its finite subset $\supp \kappa_\bz \cup \supp \kappa_\bo$) with no elements between $x$ and $\bar g_0\inv x\inv$. 
+Let $\xi\from G/ T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T \iso \barr G/ \barr T$ with no elements between $x$ and $\bar g_0\inv x\inv$. 
 Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
-For each $i \in \ZZ_2$, set $k_i \coloneqq |\kappa_i|$, let $\gamma_i$ be the $k_i$-tuple of elements in $G$ realizing $\kappa_i$ governed by $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma_i$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma_i$ (\ie, $\barr \gamma_i$ is the $k_i$-tuple realizing $\kappa$ governed by $\pi \circ \xi$ and $\leq$). 
+For each $i \in \ZZ_2$, set $k_i \coloneqq |\kappa_i|$, let $\gamma_i$ be the $k_i$-tuple of elements in $G$ realizing $\kappa_i$ according to $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma_i$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma_i$ (\ie, $\barr \gamma_i$ is the $k_i$-tuple realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$). 
 Consider on $M_{k_\bz | k_\bo}(\FF)$ the elementary grading determined by $(\bar  \gamma_\bz, \bar \gamma_\bo)$ (see \cref{defi:elementary-grd-super}). 
 We identify the $\barr G$-graded superalgebra $M_{k_\bz | k_\bo}(\barr \D) = M_{k_\bz | k_\bo}(\FF) \tensor \barr\D$ with $S = M(m+1, n+1)$ via Kronecker product. 
 
 \begin{defi}\label{defi:blocks-of-Theta}
     Let $i\in \ZZ_2$ and $x \in G/T$. 
     If $g_0x^2 = T$, we put $t \coloneqq g_0 \xi(x)^2 \in T$ and let $\bar t \in \barr T$ be its image under the natural homomorphism $T \to \barr T$. 
-    We define $\Theta(i, x)$ to be the following $\kappa(x) \times \kappa(x)$-matrix with entries in $\D$:
+    We define $\Theta(i, x)$ to be the following $\kappa_i(x) \times \kappa_i(x)$-matrix with entries in $\barr \D$:
     %
     \begin{enumerate}[(i)]
         \item $I_{\kappa_i(x)} \tensor X_{\bar t}$ if $(-1)^i \eta(t) = +1$;
@@ -197,7 +196,7 @@ We identify the $\barr G$-graded superalgebra $M_{k_\bz | k_\bo}(\barr \D) = M_{
 			      \end{pmatrix}$, if  $(-1)^i \eta(t) = -1$ (recall that, in this case, $\kappa_i(x)$ is even by \cref{inertia-even-and-odd-case}). 
 	\end{enumerate}
     %
-    If $g_0 x^2 \neq T$, we define $\Theta(i, x)$ to be the following $2\kappa_i(x) \times 2\kappa_i(x)$-matrix with entries in $\barr\D$:
+    If $g_0 x^2 \neq T$, we define $\Theta(i, x)$ to be the following $2\kappa_i(x) \times 2\kappa_i(x)$-matrix:
     %
     \begin{enumerate}[(i)]
         %
@@ -241,10 +240,11 @@ Hence, \cref{eq:theta-with-matrix-2} reduces to
     \forall X\in M_{k_\bz \mid k_\bo} (\barr \D), \quad \theta(X) = \Theta\inv\, X\stransp\, \Theta.
 \]
 
-Let us summarize what have been done for future reference:
+In the next definition, we summarize what have been done for future reference. 
+We also allow the case $m=n$.
 
 \begin{defi}\label{defi:type-II-A-m-not-n}
-    Let $m,n \in \ZZ_{\geq 0}$. 
+    Let $m,n \in \ZZ_{\geq 0}$, not both zero. 
     Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be an alternating bicharacter with $\rad \beta = \langle f \rangle$, for some order $2$ element $f\in T$, and let $g_0 \in G$. 
     Set $\barr G \coloneqq G/\langle f \rangle$, $T \coloneqq T/\langle f \rangle$, and let $\bar \beta$ be the nondegenerate alternating bicharacter on $\barr T$ induced by $\beta$. 
     Choose:
@@ -258,13 +258,13 @@ Let us summarize what have been done for future reference:
     let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(f) = -1$, and extend it to a character on $\widehat{G}$, also denoted by $\chi$. 
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
     Let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = k_\bz \sqrt{|T|/2}$ and $n+1 = k_\bo \sqrt{|T|/2}$, where $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$. 
-    Then construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, governed by $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
-    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction $\Gamma : L = \bigoplus_{\bar g \in \barr G} L_{\bar g}$ to $L \coloneqq S^{(1)}/Z(S^{(1)})$. 
+    Then construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
+    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction to $S^{(1)} = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
     Define ${\Theta \in S}$ by \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ by
     \cref{eq:theta-with-matrix-3}. 
     Finally, we define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $L$ given by
     \[
-        L_{g} \coloneqq \{ s\in L_{\bar g} \mid s = - \chi(g) s \},
+        L_{g} \coloneqq \{ s\in L_{\bar g} \mid \theta (s) = - \chi(g) s \},
     \]
     for all $g\in G$. 
 \end{defi}
@@ -277,22 +277,27 @@ Let us summarize what have been done for future reference:
 \begin{proof}
     We will show how the choices in \cref{defi:type-II-A-m-not-n} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(a) and \ref{def:model-grd-MxM-even}. 
     
-    The choices in items (i) and (ii) give us a way to make to the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(a).
+    The choices in items (i) and (ii) give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(a).
     Recall that a standard realization $\barr \D$ associated to $(\barr T, \bar \beta)$ (\cref{defi:type-II-A-m-not-n}(i)) is obtained by choosing subgroups $\barr A$ and $\barr B$ of $\barr T$ such that $\barr T = \barr A \times \barr B$ and $\barr \beta (\barr A, \barr A) = \barr \beta (\barr B, \barr B) = 1$. 
     Note that $\pi\from G \to \barr G$ restricts to an isomorphism $K \to \barr T$, and $\beta(s,t) = \barr\beta(\bar s, \bar t)$, for all $s,t \in K$. 
-    Hence, the choice of the subsets $\barr  A$, $\barr  B$ as above is, then, equivalent to a choice of subgroups $A,B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
+    Hence, the choice of the subgroups $\barr  A$ and $\barr  B$ as above is equivalent to a choice of subgroups $A, B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
     In other words, our choices of $\barr \D$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}(a)\eqref{item:choose-mc-M}. 
-    Also, by \cref{lemma:transp-std-realization}, $\mu (ab) = \beta(a,b)$ for all $a\in A$ and $b\in B$, so $\mu\restriction_{K}$ is the map determining $\vphi_{\mc M}$. 
+    Also, $\mu (ab) = \barr \mu (ab) = \barr\beta (\bar a, \bar b) = \beta(a,b)$ for all $a\in A$ and $b\in B$, so $\mu\restriction_{K}$ is the map determining $\vphi_{\mc M}$ (see \cref{lemma:transp-std-realization}). 
     Further, since $\eta\restriction_{K} = \mu\restriction_{K}$ and $\eta\restriction_{\langle f \rangle} = \chi\inv \restriction_{\langle f \rangle}$, the map $\eta$ defined by \cref{eq:fix-eta-undouble} is the map determining to $\vphi_{\mc C} \tensor \vphi_{\mc M}$. 
     
-    We can use the choices in items (iii) and (iv) to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-even}, by following the same construction done in \cref{ssec:grds-osp}: Let $\gamma_\bz = (g_1, \ldots, g_{k_\bz})$ and $\gamma_\bo = (h_1, \ldots, h_{k_\bo})$ be the tuples realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, governed by $\xi$ and $\leq$ (\cref{defi:tuple-governed}), and define $\U\even \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_{k_\bz}]}$, $\U\odd \coloneqq \D^{[h_1]} \oplus \cdots \oplus \D^{[h_{k_\bo}]}$ and $\U \coloneqq \U\even \oplus \U\odd$. 
-    Let $\{u_1, \ldots, u_k \}$ be the canonical graded basis for $\U$. 
-    Then define the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together} and use it to define the $\vphi_0$-sesquilinear form $B\from \U\times \U \to \D$ by $B(u_i, u_j) \coloneqq \Phi_{ij}$. 
-    
-    To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis for $\U$: if $g_0 (\deg u_i)^2 \in T$ (\ie, $u_i$ belongs to a self-dual isotypic component), we define $\tilde u_i \coloneqq \sqrt{\chi(\deg u_i)\inv}$; if $(\deg u_i) T < g_0\inv (\deg u_j)\inv T$, then let $\tilde u_i \coloneqq \chi(\deg u_i)\inv u_i$; otherwise, define $\tilde u_i \coloneqq u_i$. 
-    Then let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\{\tilde u_1, \ldots, \tilde u_k \}$. 
-    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get that $\Lambda \tilde \Phi$ corresponds to $\Theta$ as above. 
-    % With those choices being made to construct $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, and choosing $\chi \in \widehat{G}$ such that $\chi(K) = 1$ and $\chi(f) = -1$, it is clear that if follow the steps in \cref{ssec:undoubling}, the result follows. 
+    We can use the choices in items (iii) and (iv) to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-even}, by following the same construction as in \cref{ssec:grds-osp}. 
+    With respect with the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
+    To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
+    \[
+        \tilde u_i \coloneqq 
+        \begin{cases}
+            \sqrt{\chi(\deg u_i)\inv}, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
+            \chi(\deg u_i)\inv u_i, & \text{if }(\deg u_i) T < g_0\inv (\deg u_i)\inv T;\\
+            \hfill u_i, & \text{if }(\deg u_i) T > g_0\inv (\deg u_i)\inv T.
+        \end{cases}
+    \]
+    Let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
+    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}. 
 \end{proof}
 
 For the next result, we will fix choices (i) and (ii), for each pair $(T, \beta)$ as in \cref{defi:type-II-A-m-not-n}. 
@@ -336,7 +341,7 @@ It reduces to $A(n,1)$ by corollary in Chapter 4.
 
 \subsection{Gradings on \texorpdfstring{$A(n,n)$}{A(n,n)}}\label{ssec:grds-on-Ann}
 
-We now go to our final case of gradings on $A(n,n)$. 
+We now go to our final series of Lie superalgebras, $A(n,n)$. 
 Let $S = M(n+1, n+1)$,  
 so $L = \mathfrak{psl} (n+1, n+1) = S^{(1)}/Z(S^{(1)})$. 
 
@@ -442,6 +447,11 @@ To construct a model for gradings of Type II\textsubscript{P}, we follow a simil
 We now go to the last case: odd type II. 
 In this case parameters $R$ are bla...
 We can use $\chi_1$ to move it to $G$. 
+
+
+
+
+\subsection{Old...}
 
 % % -----------
 
