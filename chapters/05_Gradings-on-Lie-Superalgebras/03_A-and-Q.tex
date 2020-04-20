@@ -145,13 +145,13 @@ In the next definition, we allow the possibility of $m=n$ for future reference (
 
 \begin{defi}\label{def:A-Type-I}
     Let $m, n\in \ZZ_{\geq 0}$, not both zero, $T \subseteq G$ be a finite subgroup, $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
-    We will denote by $\Gamma^{\mathrm{(I)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ the restriction to $L$ of the grading $\Gamma_M(T, \beta, \kappa_\bz, \kappa_\bo)$ on $S$ (see \cref{def:Gamma-T-beta-kappa-even}). 
+    We will denote by $\Gamma^{\mathrm{(I)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ the restriction to $S^{(1)}$ of the grading $\Gamma_M(T, \beta, \kappa_\bz, \kappa_\bo)$ on $S$ (see \cref{def:Gamma-T-beta-kappa-even}). 
 \end{defi}
 
 Parametrizing Type II gradings is more involved. 
 As we have seen in \cref{ssec:undoubling}, those correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S \times S\sop$ and $\vphi$ is the exchange superinvolution. 
 Again, since $m\neq n$, these gradings on $R$ are even (see \cref{cor:associative-type-II-odd-m=n}). 
-Hence, by \cref{thm:MxM-even}, a Type II grading on $S$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}), where $T$ is an elementary $2$-group, $\beta\from T\times T \to \pmone$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
+Hence, by \cref{thm:MxM-even}, a Type II grading on $S$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}), where $T \subseteq G$ is a finite $2$-elementary sugroup, $\beta\from T\times T \to \pmone$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
 Since $m\neq n$, the $g_0$-admissibility implies that $g_0 \in G$. 
 Recall that the graded algebra $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ corresponds to $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$, where $\eta\from T \to \pmone$ is fixed, $p\from T \to \ZZ_2$ is the trivial homomorphism, and $\delta = 1$. 
 The map $\eta$ was determined by fixing a standard realization $\D$ for $(T, \beta, e)$ (see \cref{def:std-realization-MxM-QxQ}), 
@@ -205,7 +205,7 @@ We identify the $\barr G$-graded superalgebra $M_{k_\bz | k_\bo}(\barr \D) = M_{
 		\item $\begin{pmatrix}
 			0  &  I_{\kappa_i(x)} \\
 			(-1)^{i} \chi(g_0 \xi(x)^2)\inv I_{\kappa_i(x)} & 0
-		\end{pmatrix} \tensor 1$, where $1$ is the identity element of $\barr\D$. 
+		\end{pmatrix} \tensor 1_{\barr \D}$. 
     \end{enumerate}
 \end{defi}
 
@@ -259,12 +259,12 @@ We also allow the case $m=n$.
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
     Let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = k_\bz \sqrt{|T|/2}$ and $n+1 = k_\bo \sqrt{|T|/2}$, where $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$. 
     Then construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
-    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction to $S^{(1)} = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
+    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
     Define ${\Theta \in S}$ by \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ by
     \cref{eq:theta-with-matrix-3}. 
     Finally, we define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $L$ given by
     \[
-        L_{g} \coloneqq \{ s\in L_{\bar g} \mid \theta (s) = - \chi(g) s \},
+        S^{(1)}_{g} \coloneqq \{ s\in S^{(1)}_{\bar g} \mid \theta (s) = - \chi(g) s \},
     \]
     for all $g\in G$. 
 \end{defi}
@@ -347,16 +347,16 @@ so $L = \mathfrak{psl} (n+1, n+1) = S^{(1)}/Z(S^{(1)})$.
 
 Gradings on $S$ are separated into two classes: even gradings, which are similar to what we saw in \cref{ssec:grds-on-A-m-n}, and odd gradings. 
 The gradings on $L$ induced by even gradings on $S$ will be said to be of \emph{Type I\textsubscript{M}}, and the gradings on $L$ induced by odd gradings on $S$ will be said to be \emph{Type I\textsubscript{Q}}. 
-Our notation is justified by the following fact:
 
 \begin{remark}\label{prop:Q-implies-GxZZ2-grading-on-M}
-    Every $G$-grading of Type I on the Lie superalgebra $Q(n)$ gives rise to a $G\times \ZZ_2$-grading of Type I\textsubscript{Q} on $A(n,n)$. 
-    Indeed, the associative superalgebra $Q(n+1)$ consists of the fixed points of the order $2$ automorphism $\pi$ of $M(n+1, n+1)$, and any automorphism of $Q(n+1)$ extends uniquely to an automorphism of $M(n+1, n+1)$ commuting with $\pi$.
+    Our notation is justified by the following fact: 
+    every $G$-grading of Type I on the Lie superalgebra $Q(n)$ gives rise to a $G\times \ZZ_2$-grading of Type I\textsubscript{Q} on $A(n,n)$. 
+    Indeed, the associative superalgebra $Q(n+1)$ consists of the fixed points of the order $2$ automorphism $\pi$ of $M(n+1, n+1)$, and any automorphism of $Q(n+1)$ extends uniquely to an automorphism of $M(n+1, n+1)$ commuting with $\pi$ (see \cref{sec:Aut-Lie-chap}). 
 \end{remark}
 
 \begin{defi}\label{def:Type-I_M}
     Let $n\in \ZZ_{> 0}$, $T \subseteq G$ be a finite subgroup, $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|} = |\kappa_\bo| \sqrt{|T|} = n+1$. 
-    We define $\Gamma^{\mathrm{(I_M)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ to be the grading on $L$ induced by the grading $\Gamma^{\mathrm{(I)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ on $M(n+1, n+1)^{(1)}$ (\cref{def:A-Type-I}).
+    We define $\Gamma^{\mathrm{(I_M)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ to be the grading on $L$ induced from the grading $\Gamma^{\mathrm{(I)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ on $M(n+1, n+1)^{(1)}$ (\cref{def:A-Type-I}) by reduction modulo the center.
 \end{defi}
 
 To parametrize the gradings of Type I\textsubscript{Q}, we recall the parametrization of odd gradings on $S$ in terms of the group $G$ (\cref{sec:assc-only-G}, \cref{cor:iso-odd-M-simplified}). 
@@ -401,11 +401,11 @@ Also, $\kappa_\bo$ is determined by $\kappa_\bz$ and $h_0$ (recall \cref{inertia
         \item a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$.
         \item a $k$-tuple $\gamma_\bz = (g_1, \ldots, g_k)$ of elements in $G$ realizing $\kappa_\bz$. 
     \end{enumerate}
-    Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the transposition on $\barr \D$ (see \cref{ssec:param-D-vphi}), 
+    Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the transposition on $\barr \D$, 
     let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(f) = -1$, and extend $\chi$ to a character on $\widehat{G}$, which will also be denoted by $\chi$. 
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and fix $\eta\from T \to \pmone$ as in \cref{eq:fix-eta-undouble}. 
     Also, set $\gamma_\bo = (h_0\inv g_1\inv, \ldots, h_0\inv g_k\inv)$.   
-    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(n+1,n+1)$ using the choices above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction to $S^{(1)} = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
+    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(n+1,n+1)$ using the choices above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction to $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
     Consider ${\Theta \in S}$ 
     given by
     \[\label{eq:Theta-for-Type-II-P}
@@ -427,14 +427,14 @@ Also, $\kappa_\bo$ is determined by $\kappa_\bz$ and $h_0$ (recall \cref{inertia
             0 & \usebox{0}\\
             \hline
             \usebox{1} & 0
-        \end{array}\right).
+        \end{array}\right) \tensor 1_{\barr \D}.
     \]
     %
     and ${\theta\from S \to S}$ as in
     \cref{eq:theta-with-matrix-3}. 
     We define $\Gamma_A^{\mathrm{(II_P)}}(T, \beta, \kappa_\bz, h_0)$ to be the $G$-grading on $L = S^{(1)}/Z(S^{(1)})$ induced from the grading $S^{(1)} = \bigoplus_{g\in G} S^{(1)}_g$, where
     \[
-        S^{(1)}_{g} \coloneqq \{ s\in L_{\bar g} \mid \theta(s) = - \chi(g) s \},
+        S^{(1)}_{g} \coloneqq \{ s\in S^{(1)}_{\bar g} \mid \theta(s) = - \chi(g) s \},
     \]
     for all $g\in G$. 
 \end{defi}
