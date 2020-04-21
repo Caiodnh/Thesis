@@ -139,7 +139,7 @@ so $L = \Sl(m+1, n+1) = S^{(1)}$ is a simple Lie superalgebra of type $A(m,n)$.
 
 We first parametrize the Type I gradings. 
 Since $m\neq n$, by \cref{lemma:odd-M-m=n}, every grading on $S$ is even in this case. 
-In particular, $\kappa\from G^\# \to \ZZ_{\geq 0}$ corresponds to a pair $(\kappa_\bz, \kappa_\bo)$ (see \cref{ssec:supermodules-over-D}). 
+In particular, $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ corresponds to a pair $(\kappa_\bz, \kappa_\bo)$ (see \cref{ssec:supermodules-over-D}). 
 
 In the next definition, we allow the possibility of $m=n$ for future reference (in \cref{ssec:grds-on-Ann}).
 
@@ -151,7 +151,7 @@ In the next definition, we allow the possibility of $m=n$ for future reference (
 Parametrizing Type II gradings is more involved. 
 As we have seen in \cref{ssec:undoubling}, those correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S \times S\sop$ and $\vphi$ is the exchange superinvolution. 
 Again, since $m\neq n$, these gradings on $R$ are even (see \cref{cor:associative-type-II-odd-m=n}). 
-Hence, by \cref{thm:MxM-even}, a Type II grading on $S$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}), where $T \subseteq G$ is a finite $2$-elementary sugroup, $\beta\from T\times T \to \pmone$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
+Hence, by \cref{thm:MxM-even}, a Type II grading on $S$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}), where $T \subseteq G$ is a finite $2$-elementary subgroup, $\beta\from T\times T \to \pmone$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $e\neq f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
 Since $m\neq n$, the $g_0$-admissibility implies that $g_0 \in G$. 
 Recall that the graded algebra $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ corresponds to $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$, where $\eta\from T \to \pmone$ is fixed, $p\from T \to \ZZ_2$ is the trivial homomorphism, and $\delta = 1$. 
 The map $\eta$ was determined by fixing a standard realization $\D$ for $(T, \beta, e)$ (see \cref{def:std-realization-MxM-QxQ}), 
@@ -333,9 +333,23 @@ Recall that, for every $\kappa\Star\from G/T \to \ZZ_{\geq 0}$, we defined $\kap
 
 \subsection{Gradings on \texorpdfstring{$Q(n)$}{Q(n)}}
 
-Should it be before or after $A(n,n)$? 
-
 It reduces to $A(n,1)$ by corollary in Chapter 4.
+
+We will now discuss the case where $S$ is the associative superalgebra $Q(n+1)$, so $L = S^{(1)}/Z(S^{(1)})$ is the Lie superalgebra $Q(n)$. 
+
+Let us first parametrize the Type I gradings. 
+As seen in (\cref{ssec:classification-assc-super}), every grading on $S$ is odd in this case. 
+Nevertheless, we can use parameters in terms of the group $G$ to parametrize the gradings (see \cref{def:Gamma-T-beta-kappa-Q,cor:iso-Q}).  
+
+\begin{defi}\label{def:Q-Type-I}
+    Let $n > 0$ be a natural number, $T^+ \subseteq G$ be a finite subgroup, $\beta\from T^+ \times T^+ \to \FF^\times$ be a nondegenerate bicharacter, $h\in G$ be an element such that $h^2 = 1$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ be a map with finite support such that $|\kappa| \sqrt{|T^+|} = n + 1$. 
+    We will denote by $\Gamma^{\mathrm{(I)}}_Q(T^+, \beta^+, h, \kappa)$ to be the grading on $L$ induced from the grading $\Gamma_Q (T^+, \beta^+, h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}) by reduction modulo the center. 
+\end{defi}
+
+Let $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on $R$. 
+To parametrize Type II gradings on $L$, we will use the parametrization of gradings on $(R, \vphi)$, making $R$ graded-simple, described before  \cref{cor:QxQ-reduced-to-MxM}. 
+Every such grading is isomorphic to $Q^{\mathrm{ex}} (T^+, \beta^+,  h, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+ \times T^+ \to \FF^\times$ is a bicharacter with $\rad \beta^+ = \langle f \rangle$ for a order $2$ element $f\in T^+$, $h \in G$ is an element such that $h^2 = f$
+
 
 % ---------------------------
 
