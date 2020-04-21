@@ -154,8 +154,7 @@ Again, since $m\neq n$, these gradings on $R$ are even (see \cref{cor:associativ
 Hence, by \cref{thm:MxM-even}, a Type II grading on $S$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}), where $T \subseteq G$ is a finite $2$-elementary subgroup, $\beta\from T\times T \to \pmone$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $e\neq f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
 Since $m\neq n$, the $g_0$-admissibility implies that $g_0 \in G$. 
 Recall that the graded algebra $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ corresponds to $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$, where $\eta\from T \to \pmone$ is fixed, $p\from T \to \ZZ_2$ is the trivial homomorphism, and $\delta = 1$. 
-The map $\eta$ was determined by fixing a standard realization $\D$ for $(T, \beta, e)$ (see \cref{def:std-realization-MxM-QxQ}), 
-namely, $\eta$ is the map associated to the superinvolution $\vphi_{\mc C} \tensor \vphi_{\mc M}$ on $\D$. 
+The map $\eta$ was determined by fixing a standard realization $\D$ for $(T, \beta, e)$ (see \cref{def:std-realization-MxM-QxQ}), namely, $\eta$ is the map associated to the superinvolution $\vphi_{\mc C} \tensor \vphi_{\mc M}$ on $\D$. 
 
 We will use the parameters $(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
 As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$, let $\barr \beta$ be the (nondegenerate) bicharacter on $\barr T$ induced by $\beta$, and consider $\kappa_\bz$ and $\kappa_\bo$ as maps defined on $\barr G/\barr T \iso G/T$. 
@@ -348,7 +347,41 @@ Nevertheless, we can use parameters in terms of the group $G$ to parametrize the
 
 Let $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on $R$. 
 To parametrize Type II gradings on $L$, we will use the parametrization of gradings on $(R, \vphi)$, making $R$ graded-simple, described before  \cref{cor:QxQ-reduced-to-MxM}. 
-Every such grading is isomorphic to $Q^{\mathrm{ex}} (T^+, \beta^+,  h, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+ \times T^+ \to \FF^\times$ is a bicharacter with $\rad \beta^+ = \langle f \rangle$ for a order $2$ element $f\in T^+$, $h \in G$ is an element such that $h^2 = f$
+Every such grading is isomorphic to $Q^{\mathrm{ex}} (T^+, \beta^+,  h, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+ \times T^+ \to \FF^\times$ is a bicharacter with $\rad \beta^+ = \langle f \rangle$ for a order $2$ element $f\in T^+$, $h \in G$ is an element such that $h^2 = f$, $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a map with finite support such that $|\kappa| \sqrt{2|T^+|} = n+1$, and $g_0 \in G = G\times \{ \bar 0 \}$ is any element. 
+
+We will use the parameters $(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
+As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$, let $\barr \beta$ be the (nondegenerate) bicharacter on $\barr T$ induced by $\beta$, and consider $\kappa_\bz$ and $\kappa_\bo$ as maps defined on $\barr G/\barr T \iso G/T$. 
+
+Let $\barr \D$ be a standard realization associated to $(\barr T, \bar\beta)$ (see \cref{def:standard-realization}), let $\theta_0\from \barr \D \to \barr \D$ be the transposition map, and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
+(Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D_{\bar t}$, for all $\bar t \in \barr T$.)
+
+% --------------------
+
+\begin{thm}\label{thm:final-Q(n)}
+    Let $m,n \in \ZZ_{\geq 0}$, $m \neq n$. 
+    Let $L = \Sl(m+1, n+1)$. 
+    Every grading on $L$ is isomorphic to either $\Gamma_A^{\mathrm{(I)}}(T, \beta, \kappa_\bz, \kappa_\bo)$ or $\Gamma_A^{\mathrm{(II)}}(T,\beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:A-Type-I,defi:type-II-A-m-not-n}. 
+    Gradings belonging to different types are not isomorphic. 
+    Within each type, we have:
+    
+    \noindent\boxed{\mathrm{Type \,\,I}}
+    
+    \noindent $\Gamma_A^{\mathrm{(I)}}(T, \beta, \kappa_\bz, \kappa_\bo) \iso \Gamma_A^{\mathrm{(I)}}(T', \beta', \kappa_\bz', \kappa_\bo')$ \IFF  $T' = T$ and one of the following conditions holds:
+	\begin{enumerate}[(i)]
+	    \item $\beta'=\beta$ and there is $g\in G$ such that $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$; 
+	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$.
+	\end{enumerate}
+
+    \noindent\boxed{\mathrm{Type \,\,II}}
+    
+    \noindent $\Gamma_A^{\mathrm{(II)}}(T,\beta, \kappa_\bz, \kappa_\bo, g_0) \iso \Gamma_A^{\mathrm{(II)}}(T,\beta, \kappa_\bz, \kappa_\bo, g_0)$ \IFF
+    $T' =T$, $\beta' = \beta$ and there is $g \in G$ such that $g\cdot\kappa_\bz' = \kappa_\bz$, $g\cdot\kappa_\bo' = \kappa_\bo$ and $g_0' = g^{-2}g_0$.
+\end{thm}
+
+\begin{proof}
+    The result follows from \cref{prop:m-not-n-Type-II-correspondence,thm:MxM-type-I,thm:MxM-even}. 
+    Note that, since $m \neq n$, the isomorphism conditions in \cref{thm:MxM-type-I,thm:MxM-even} simplify: we cannot have $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$ or $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$. 
+\end{proof}
 
 
 % ---------------------------
