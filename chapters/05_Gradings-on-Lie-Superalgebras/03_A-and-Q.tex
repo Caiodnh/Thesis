@@ -170,7 +170,6 @@ Then set
 \]
 Note that this definition agrees with \cref{def:std-realization-MxM-QxQ} (see the proof of \cref{prop:m-not-n-Type-II-correspondence}). 
 
-
 Extend $\chi$ to $G$. 
 It remains to define a graded right $\barr \D$-supermodule $\barr \U$ and the matrix $\Theta$. 
 The following is analogous to the construction in \cref{ssec:grds-osp}. 
@@ -347,13 +346,23 @@ Nevertheless, we can use parameters in terms of the group $G$ to parametrize the
 
 Let $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on $R$. 
 To parametrize Type II gradings on $L$, we will use the parametrization of gradings on $(R, \vphi)$, making $R$ graded-simple, described before  \cref{cor:QxQ-reduced-to-MxM}. 
-Every such grading is isomorphic to $Q^{\mathrm{ex}} (T^+, \beta^+,  h, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+ \times T^+ \to \FF^\times$ is a bicharacter with $\rad \beta^+ = \langle f \rangle$ for a order $2$ element $f\in T^+$, $h \in G$ is an element such that $h^2 = f$, $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a map with finite support such that $|\kappa| \sqrt{2|T^+|} = n+1$, and $g_0 \in G = G\times \{ \bar 0 \}$ is any element. 
 
-We will use the parameters $(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
-As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$, let $\barr \beta$ be the (nondegenerate) bicharacter on $\barr T$ induced by $\beta$, and consider $\kappa_\bz$ and $\kappa_\bo$ as maps defined on $\barr G/\barr T \iso G/T$. 
+Like we did in \cref{ssec:grds-on-A-m-n}, we will construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
+Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr \beta^+$ be the (nondegenerate) bicharacter on $\barr T^+$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr T \iso G/T$. 
 
-Let $\barr \D$ be a standard realization associated to $(\barr T, \bar\beta)$ (see \cref{def:standard-realization}), let $\theta_0\from \barr \D \to \barr \D$ be the transposition map, and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
-(Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D_{\bar t}$, for all $\bar t \in \barr T$.)
+Let $\barr \D$ be a standard realization of type Q associated to $(\barr T^+, \bar\beta^+, \bar h)$ (see \cref{def:standard-realization-Q}). 
+Recall that we define $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$, let $\beta\from T\times T$ be the (unique) alternating bicharacter such that $\rad \beta = \langle t_1 \rangle$, and let $p\from T \to \ZZ_2$ be the (unique) homomorphism with kernel $T^+$. 
+Then we have that $\barr \D$ is a graded-division superalgebra associated to $(T, \beta, p)$.
+
+Choose a complement $K$ for $\langle f \rangle$ in $T^+$, \ie, a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$ (it can be done, since $T^+$ is a elementary $2$-group). 
+Also, fix a primitive fourth root of the unit $\bi \in \FF$ and let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(t_1) = \bi$ (hence $\chi(f) = -1$). 
+Let $\theta_0\from \barr \D \to \barr \D$ be the queer transposition map (\cref{def:queer-stp}), and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
+Then set $\mu \coloneqq \barr \mu \circ \pi$ and 
+\[\label{eq:fix-eta-undouble-Q}
+    \forall t\in T, \quad \eta(t) \coloneqq \mu(t) \chi\inv(t).
+\]
+
+
 
 % --------------------
 
