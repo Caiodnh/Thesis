@@ -151,7 +151,7 @@ In the next definition, we allow the possibility of $m=n$ for future reference (
 Parametrizing Type II gradings is more involved. 
 As we have seen in \cref{ssec:undoubling}, those correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S \times S\sop$ and $\vphi$ is the exchange superinvolution. 
 Again, since $m\neq n$, these gradings on $R$ are even (see \cref{cor:associative-type-II-odd-m=n}). 
-Hence, by \cref{thm:MxM-even}, a Type II grading on $S$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}), where $T \subseteq G$ is a finite $2$-elementary subgroup, $\beta\from T\times T \to \pmone$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $e\neq f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
+Hence, by \cref{thm:MxM-even}, a Type II grading on $L$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}), where $T \subseteq G$ is a finite $2$-elementary subgroup, $\beta\from T\times T \to \pmone$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $e\neq f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
 Since $m\neq n$, the $g_0$-admissibility implies that $g_0 \in G$. 
 Recall that the graded algebra $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ corresponds to $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$, where $\eta\from T \to \pmone$ is fixed, $p\from T \to \ZZ_2$ is the trivial homomorphism, and $\delta = 1$. 
 The map $\eta$ was determined by fixing a standard realization $\D$ for $(T, \beta, e)$ (see \cref{def:std-realization-MxM-QxQ}), namely, $\eta$ is the map associated to the superinvolution $\vphi_{\mc C} \tensor \vphi_{\mc M}$ on $\D$. 
@@ -344,13 +344,11 @@ Nevertheless, we can use parameters in terms of the group $G$ to parametrize the
     We will denote by $\Gamma^{\mathrm{(I)}}_Q(T^+, \beta^+, h, \kappa)$ to be the grading on $L$ induced from the grading $\Gamma_Q (T^+, \beta^+, h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}) by reduction modulo the center. 
 \end{defi}
 
-Let $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on $R$. 
-To parametrize Type II gradings on $L$, we will use the parametrization of gradings on $(R, \vphi)$, making $R$ graded-simple, described before  \cref{cor:QxQ-reduced-to-MxM}. 
+We will now parametrize the Type II gradings on $L$. 
+By \cref{ssec:undoubling}, those correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
+Hence, by \cref{cor:QxQ-reduced-to-MxM}, a Type II grading on $L$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \pmone$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $g_0$ is an element in $G = G \times \{ 0 \}$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $|\kappa| \sqrt{|T^+|/2} = n+1$. 
 
-Parameters need to be here...
-\cref{defi:odd-D-kappa-g_0-admissible}
-
-Like we did in \cref{ssec:grds-on-A-m-n}, we will construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
+Like we did in \cref{ssec:grds-on-A-m-n}, we will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
 Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr \beta^+$ be the (nondegenerate) bicharacter on $\barr T^+$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr T \iso G/T$. 
 
 Let $\barr \D$ be a standard realization of type Q associated to $(\barr T^+, \bar\beta^+, \bar h)$ (see \cref{def:standard-realization-Q}). 
