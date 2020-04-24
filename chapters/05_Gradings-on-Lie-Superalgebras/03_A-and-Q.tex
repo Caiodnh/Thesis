@@ -366,12 +366,73 @@ Note that this definition agrees with \cref{def:std-realization-MxM-QxQ}(c) (see
 
 Extend $\chi$ to $G$. 
 It remains to define a graded right $\barr \D$-supermodule $\barr \U$ and the matrix $\Theta$. 
+The following is analogous to the construction in \cref{ssec:grds-osp,ssec:grds-on-A-m-n}. 
+
+Let $\xi\from G/ T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T \iso \barr G/ \barr T$ with no elements between $x$ and $\bar g_0\inv x\inv$. 
+Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
+Set $k \coloneqq |\kappa|$, let $\gamma$ be the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma$ (\ie, $\barr \gamma_i$ is the $k_i$-tuple realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$). 
+Consider on $M_{k}(\FF)$ the elementary grading determined by $\bar  \gamma$ (see \cref{defi:elementary-grd}). 
+We identify the $\barr G$-graded superalgebra $M_{k}(\barr \D) = M_{k}(\FF) \tensor \barr\D$ with $S = Q(n+1)$ via Kronecker product. 
+
+\begin{defi}\label{defi:blocks-of-Theta-odd}
+    Let $x \in G/T$. 
+    We define the matrix $\Theta(x)$ (with entries in $\barr \D$) to be $\Theta(\bar 0, x)$ as in \cref{defi:blocks-of-Theta}, with $\kappa$ playing the role of $\kappa_\bz$. 
+\end{defi}
+
+Let $x_1 < \ldots < x_{\ell}$ be the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$. 
+Then, we define 
+\[\label{eq:puting-the-blocks-of-Phi-together-version-A}
+    \Theta \coloneqq
+    \begin{pmatrix}
+        \Theta(x_1)&& \\
+        & \ddots &\\
+        && \Theta(x_{\ell})
+    \end{pmatrix}.
+\]
+%
+Finally, we define the super-anti-automorphism $\theta\from S\to S$ by \cref{eq:theta-with-matrix-2}. 
+
+Since $\theta_0$ is the queer supertransposition on $\barr \D$ and, with respect to the elementary grading above, $M_{k}(\FF)\even = M_{k}(\FF)$, $\theta_0(X)\stransp = \theta_0(X)\transp \in M_{k} (\barr \D)$ becomes $X\sTq \in Q(n+1)$. 
+Hence, \cref{eq:theta-with-matrix-2} reduces to 
+\[\label{eq:theta-with-matrix-4}
+    \forall X\in M_{k} (\barr \D), \quad \theta(X) = \Theta\inv\, X\sTq\, \Theta.
+\]
+
+In the next definition, we summarize what have been done for future reference:
+
+\begin{defi}\label{defi:type-II-A-m-not-n}
+    Let $m,n \in \ZZ_{\geq 0}$, not both zero. 
+    Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be an alternating bicharacter with $\rad \beta = \langle f \rangle$, for some order $2$ element $f\in T$, and let $g_0 \in G$. 
+    Set $\barr G \coloneqq G/\langle f \rangle$, $T \coloneqq T/\langle f \rangle$, and let $\bar \beta$ be the nondegenerate alternating bicharacter on $\barr T$ induced by $\beta$. 
+    Choose:
+    \begin{enumerate}[(i)]
+        \item a standard realization $\barr \D$ associated to $(\barr T, \barr \beta)$; 
+        \item a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$; 
+        \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
+        \item a total order $\leq$ on $G/T$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T$. 
+    \end{enumerate}
+    Let $\barr \mu\from \barr T \to \FF^\times$ be the map determining the transposition on $\barr \D$ (see \cref{ssec:param-D-vphi}), and 
+    let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(f) = -1$, and extend it to a character on $\widehat{G}$, also denoted by $\chi$. 
+    Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
+    Let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = k_\bz \sqrt{|T|/2}$ and $n+1 = k_\bo \sqrt{|T|/2}$, where $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$. 
+    Then construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
+    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
+    Define ${\Theta \in S}$ by \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ by
+    \cref{eq:theta-with-matrix-3}. 
+    Finally, we define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $L$ given by
+    \[
+        S^{(1)}_{g} \coloneqq \{ s\in S^{(1)}_{\bar g} \mid \theta (s) = - \chi(g) s \},
+    \]
+    for all $g\in G$. 
+\end{defi}
+
 
 
 % --------------------
 
 \begin{prop}\label{prop:Q-Type-II-correspondence}
-    xx
+    Consider $(R, \vphi) \coloneqq M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}). 
+    Then $\Skew (R,\vphi)^{(1)}$ is isomorphic to $M(m+1, n+1)^{(1)}$ endowed with $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$. 
 \end{prop}
 
 \begin{proof}
