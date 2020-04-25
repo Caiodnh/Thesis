@@ -257,7 +257,7 @@ We also allow the case $m=n$.
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
     Let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = k_\bz \sqrt{|T|/2}$ and $n+1 = k_\bo \sqrt{|T|/2}$, where $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$. 
     Then construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
-    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
+    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction to $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
     Define ${\Theta \in S}$ by \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ by
     \cref{eq:theta-with-matrix-3}. 
     Finally, we define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $L$ given by
@@ -402,24 +402,27 @@ In the next definition, we summarize what have been done for future reference:
 
 \begin{defi}\label{defi:type-II-Q}
     Let $n \in \ZZ_{> 0}$. 
-    Let $T^+ \subseteq G$ be a finite $2$-elementary subgroup, let $\beta^+\from {T^+\times T^+} \to \FF^\times$ be an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$, for some order $2$ element $f\in T$, let $h \in G$ be an element such that $h^2=f$, and let $g_0 \in G$. 
+    Let $T^+ \subseteq G$ be a finite $2$-elementary subgroup, let $\beta^+\from {T^+\times T^+} \to \FF^\times$ be an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$, for some order $2$ element $f\in T$, let $h \in G$ be an element such that $h^2=f$, and let $g_0 \in G$ be any element. 
     Set $\barr G \coloneqq G/\langle f \rangle$, $\barr T^+ \coloneqq T/\langle f \rangle$, and let $\bar \beta^+$ be the nondegenerate alternating bicharacter on $\barr T^+$ induced by $\beta^+$. 
     Choose:
     \begin{enumerate}[(i)]
         \item a standard realization $\barr \D$ associated to $(\barr T^+, \barr \beta^+, h)$; 
         \item a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$; 
+        \item a primitive $4^{th}$ root of the unity $\bi \in \FF$.
         \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
         \item a total order $\leq$ on $G/T$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T$. 
     \end{enumerate}
-    Let $\barr \mu\from \barr T \to \FF^\times$ be the map determining the transposition on $\barr \D$ (see \cref{ssec:param-D-vphi}), and 
-    let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(f) = -1$, and extend it to a character on $\widehat{G}$, also denoted by $\chi$. 
+    Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$. 
+    Recall that, by construction of $\barr \D$, we have $T / \langle f \rangle = \supp \barr \D$.
+    Let $\barr \mu\from \barr T \to \FF^\times$ be the map determining the queer super transposition on $\barr \D$ (see \cref{ssec:param-D-vphi}), and 
+    let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(t_1) = \bi$, and extend it to a character on $\widehat{G}$, also denoted by $\chi$. 
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
-    Let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = k_\bz \sqrt{|T|/2}$ and $n+1 = k_\bo \sqrt{|T|/2}$, where $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$. 
-    Then construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
-    Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
+    Let $\kappa \to \ZZ_{\geq 0}$ be a $g_0$-admissible map (\cref{defi:odd-D-kappa-g_0-admissible}) such that $n+1 = k\sqrt{|T^+|/2}$, where $k \coloneqq |\kappa|$. 
+    Then construct a tuple $\bar\gamma$ realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
+    Consider the $\barr G$-grading $\Gamma_Q(\barr T^+, \barr \beta^+, \bar h, \kappa)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$ and $\barr \gamma$ above (see \cref{def:Gamma-T-beta-kappa-Q}), and consider its restriction to $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
     Define ${\Theta \in S}$ by \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ by
-    \cref{eq:theta-with-matrix-3}. 
-    Finally, we define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $L$ given by
+    \cref{eq:theta-with-matrix-4}. 
+    Finally, we define $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ to be the $G$-grading on $L = S^{(1)}/Z(S^{(1)})$ induced from the grading $S^{(1)} = \bigoplus_{g\in G} S^{(1)}_g$, where
     \[
         S^{(1)}_{g} \coloneqq \{ s\in S^{(1)}_{\bar g} \mid \theta (s) = - \chi(g) s \},
     \]
