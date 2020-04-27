@@ -409,10 +409,19 @@ In the next definition, we summarize what have been done for future reference:
     Choose:
     \begin{enumerate}[(i)]
         \item a standard realization $\barr \D$ associated to $(\barr T^+, \barr \beta^+, h)$; 
-        \item a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$; 
-        \item a primitive $4^{\mathrm{th}}$ root of the unity $\bi \in \FF$.
+        \label{item:choice-barr-D-Q}
+        %
+        \item a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$; 
+        \label{item:choice-K-Q}
+        %
+        \item a primitive $4^{\mathrm{th}}$ root of the unity $\bi \in \FF$; 
+        \label{item:choice-i-Q}
+        %
         \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
+        \label{item:choice-xi-Q}
+        %
         \item a total order $\leq$ on $G/T$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T$. 
+        \label{item:choice-leq-Q}
     \end{enumerate}
     Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$. 
     Recall that, by construction of $\barr \D$, we have $T / \langle f \rangle = \supp \barr \D$.
@@ -442,6 +451,8 @@ In the next definition, we summarize what have been done for future reference:
 
 \begin{proof}
     We will show how the choices in \cref{defi:type-II-Q} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(c) and \ref{def:model-grd-MxM-odd-or-QxQ}. 
+    
+    \eqref{item:choice-xi-Q}
     
     The choices of items (i), (ii) and (iii) in \cref{defi:type-II-Q} give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(c). 
     Indeed, the only choice for standard realization of type Q $\barr \D$ associated to $(\barr T^+, \bar \beta^+, h)$ (\cref{def:standard-realization-Q}) is the choice of standard realization $\barr \D\even$ associated to $(\barr T^+, \bar \beta^+)$. 
