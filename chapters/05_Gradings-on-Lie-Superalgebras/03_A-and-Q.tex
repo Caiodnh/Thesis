@@ -333,9 +333,8 @@ Recall that, for every $\kappa\Star\from G/T \to \ZZ_{\geq 0}$, we defined $\kap
 
 \subsection{Gradings on \texorpdfstring{$Q(n)$}{Q(n)}}
 
-It reduces to $A(n,1)$ by corollary in Chapter 4.
-
 We will now discuss the case where $S$ is the associative superalgebra $Q(n+1)$, so $L = S^{(1)}/Z(S^{(1)})$ is the Lie superalgebra $Q(n)$. 
+In this subsection, we fix a primitive $4^{\mathrm{th}}$ root of the unity $\bi \in \FF$. 
 
 Let us first parametrize the Type I gradings. 
 As seen in (\cref{ssec:classification-assc-super}), every grading on $S$ is odd in this case. 
@@ -414,9 +413,6 @@ In the next definition, we summarize what have been done for future reference:
         \item a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$; 
         \label{item:choice-K-Q}
         %
-        \item a primitive $4^{\mathrm{th}}$ root of the unity $\bi \in \FF$; 
-        \label{item:choice-i-Q}
-        %
         \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
         \label{item:choice-xi-Q}
         %
@@ -425,7 +421,7 @@ In the next definition, we summarize what have been done for future reference:
     \end{enumerate}
     Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$. 
     Recall that, by construction of $\barr \D$, we have $T / \langle f \rangle = \supp \barr \D$.
-    Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$ (see \cref{ssec:param-D-vphi}) and the $4^{\mathrm{th}}$ root of unity $\bi$. 
+    Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$ (see \cref{ssec:param-D-vphi}). 
     Let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(t_1) = \bi$, and extend it to a character on $\widehat{G}$, also denoted by $\chi$. 
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
     Let $\kappa \to \ZZ_{\geq 0}$ be a $g_0$-admissible map (\cref{defi:odd-D-kappa-g_0-admissible}) such that $n+1 = k\sqrt{|T^+|/2}$, where $k \coloneqq |\kappa|$. 
@@ -443,21 +439,17 @@ In the next definition, we summarize what have been done for future reference:
 % --------------------
 
 \begin{prop}\label{prop:Q-Type-II-correspondence}
-    Consider $(R, \vphi) \coloneqq Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$ (as defined before \cref{cor:QxQ-reduced-to-MxM}). 
-    Then $\Skew (R,\vphi)^{(1)}$ is isomorphic to $Q(n+1)^{(1)}$ endowed with $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$. 
+    Consider $(R, \vphi) \coloneqq Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$, as defined before \cref{cor:QxQ-reduced-to-MxM}. 
+    Then the grade Lie superalgebra $\Skew (R,\vphi)^{(1)}$ is isomorphic to $Q(n+1)^{(1)}$ endowed with $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$. 
 \end{prop}
-
-% @1
 
 \begin{proof}
     We will show how the choices in \cref{defi:type-II-Q} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(c) and \ref{def:model-grd-MxM-odd-or-QxQ}. 
     
-    \eqref{item:choice-xi-Q}
-    
-    The choices of items (i), (ii) and (iii) in \cref{defi:type-II-Q} give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(c). 
+    The choices of items \eqref{item:choice-barr-D-Q}, \eqref{item:choice-K-Q} and \eqref{item:choice-i-Q} in \cref{defi:type-II-Q} give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(c). 
     Indeed, the only choice for standard realization of type Q $\barr \D$ associated to $(\barr T^+, \bar \beta^+, h)$ (\cref{def:standard-realization-Q}) is the choice of standard realization $\barr \D\even$ associated to $(\barr T^+, \bar \beta^+)$. 
-    Let $\barr \mu\from T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$. 
-    It is clear that is associated to a determined by the transposition on $\barr \D\even$ and the $4^{\mathrm{th}}$ root of unity $\bi \in \FF$. 
+    Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$. 
+    It is clear that $\mu\restriction_{\barr T^+}$ is the map associated to the transposition on $\barr \D\even$, and that $\mu(t_1) = \bi$. % @1
     By the same argument as in \cref{prop:m-not-n-Type-II-correspondence}, this corresponds to the standard realization $\mc M$ associated to $(K, \beta^+\restriction_{K \times K})$. 
     Further, the queer supertransposition on $\barr \D$ corresponds to the transposition on the standard realization associated to $(\barr T^+, \bar \beta^+)$ and, hence, to the transposition on $\mc M$. 
     
