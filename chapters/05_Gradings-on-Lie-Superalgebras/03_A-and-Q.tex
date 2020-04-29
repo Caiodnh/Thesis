@@ -288,7 +288,7 @@ We also allow the case $m=n$.
     We can use the choices in items (iii) and (iv) to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-even}, by following the same construction as in \cref{ssec:grds-osp}. 
     With respect with the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
     To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
-    \[
+    \[\label{eq:tilde-u_i-from-u_i}
         \tilde u_i \coloneqq 
         \begin{cases}
             \sqrt{\chi(\deg u_i)\inv} u_i, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
@@ -470,19 +470,40 @@ In the next definition, we summarize what have been done for future reference:
     
     % @1
     
-    We can use the choices in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-odd-or-QxQ}, by following a construction analogous to the one in \cref{ssec:grds-osp}. 
-    With respect with the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
-    To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
+    THERE WASN'T A EXPLICIT CONSTRUCTION OF $(\U, B)$ FOR ODD $\D$, SO I DO IT HERE.
+    
+    In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a pair $(\U, B)$ that has inertia determined by $\kappa$. 
+    To construct such pair, we will follow a construction similar to the one in \cref{ssec:grds-on-A-m-n}. 
+    Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let $\gamma = (g_1, \ldots, g_k)$ be the $k$-tuple realizing $\kappa$ according to $\xi$ and $\leq$ (which are chosen in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} of \cref{defi:type-II-Q}). 
+    We define $\U \coloneqq \D^{[g_1]}\oplus \cdots \oplus \D^{[g_k]}$ and let $\B = \{ u_1, \ldots, u_k\}$ be its canonical graded basis. 
+    Let $x_1 < \ldots < x_{\ell}$ be the elements of $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$ and set 
     \[
-        \tilde u_i \coloneqq 
-        \begin{cases}
-            \sqrt{\chi(\deg u_i)\inv} u_i, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
-            \hfill \chi(\deg u_i)\inv u_i, & \text{if }(\deg u_i) T < g_0\inv (\deg u_i)\inv T;\\
-            \hfill u_i, & \text{if }(\deg u_i) T > g_0\inv (\deg u_i)\inv T.
-        \end{cases}
+        \begin{pmatrix}
+        \Phi(\bar 0, x_1)&& \\
+        & \ddots &\\
+        && \Phi(\bar 0, x_{\ell})
+    \end{pmatrix} \in M_k(\D)
     \]
-    Let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
-    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}. 
+    (see \cref{defi:blocks-of-Phi}). 
+    We define $B\from \U \times \U \to \D$ to be the $\vphi_0$-sesquilinear form such that $B(u_i, u_j) \coloneqq \Phi_{ij}$. 
+    It is straightforward to see that $B$ is nondegenerate and $(\U, B)$ has inertia determined by $\kappa$. 
+    To get the matrix $\Theta$, we also proceed as in \cref{prop:m-not-n-Type-II-correspondence}. 
+    We consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
+    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-Q}.
+    %
+    % We can use the choices in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-odd-or-QxQ}, by following a construction analogous to the one in \cref{ssec:grds-osp}. 
+    % With respect with the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
+    % To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
+    % \[\label{eq:tilde-u_i-from-u_i}
+    %     \tilde u_i \coloneqq 
+    %     \begin{cases}
+    %         \sqrt{\chi(\deg u_i)\inv} u_i, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
+    %         \hfill \chi(\deg u_i)\inv u_i, & \text{if }(\deg u_i) T < g_0\inv (\deg u_i)\inv T;\\
+    %         \hfill u_i, & \text{if }(\deg u_i) T > g_0\inv (\deg u_i)\inv T.
+    %     \end{cases}
+    % \]
+    % Let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
+    % Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}. 
 \end{proof}
 
 % --------------------
