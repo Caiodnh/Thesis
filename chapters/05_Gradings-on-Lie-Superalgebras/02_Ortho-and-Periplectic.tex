@@ -33,13 +33,13 @@ One can check that $\bar B = B$ and $(\U, B)$ has inertia determined by $(\kappa
 
 Let $\B = \{ u_1, \ldots, u_k \}$ be the canonical graded basis of $\U\even$ (\ie, $u_i$ has $1$ in the $i$-th entry and zero elsewhere). 
 Then $\B \cup \B\Star$ is a graded basis for $\U$. 
-Using this basis, the matrix $\Phi \in M_{k|k}(\D)$ representing $B$ is 
+Using this basis, the matrix $\Phi \in M_{k|k}(\D) = M(k,k) \tensor (\D)$ representing $B$ is 
 \[
     \Phi = 
     \begin{pmatrix}
         0 & I_{k}\\
         I_{k} & 0
-    \end{pmatrix}.
+    \end{pmatrix} \tensor 1_{\D}.
 \]
 As in \cref{def:model-grd-M(m-n-0)}, we identify $\End_\D (\U)$ with $M_{k|k}(\D)$ and, then, with $M(n, n)$ by considering each entry in $\D$ as a block with entries in $\FF$. 
 With this identification, we have that
@@ -121,7 +121,7 @@ To define the $\vphi_0$-sesquilinear form $B$, we will use the following:
 Let $\B = \{u_1, \ldots, u_{k_\bz + k_\bo} \}$ be the canonical $G^\#$-graded basis of $\U$, and 
 let $x_1 < \ldots < x_{\ell_\bz}$ be the elements of $\{ x \in \supp \kappa_\bz \mid x \leq g_0\inv x\inv \}$ and, similarly, let $y_1 < \ldots < y_{\ell_\bo}$ be the elements of $\{ y \in \supp \kappa_\bo \mid y \leq g_0\inv y\inv \}$. 
 
-Let $B\from \U\times \U \to \D$ be the nondegenerate $\vphi_0$-sesquilinear form represented by the following matrix $\Phi \in M_{\kappa_\bz \mid \kappa_\bo} (\D)$:
+Let $B\from \U\times \U \to \D$ be the nondegenerate $\vphi_0$-sesquilinear form represented by the following matrix $\Phi \in M_{k_\bz \mid k_\bo} (\D)$:
 \[\label{eq:puting-the-blocks-of-Phi-together}
     %
     \sbox0{$\begin{matrix}
