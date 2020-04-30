@@ -272,8 +272,6 @@ We also allow the case $m=n$.
     Then $\Skew (R,\vphi)^{(1)}$ is isomorphic to $M(m+1, n+1)^{(1)}$ endowed with $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$. 
 \end{prop}
 
-% @2
-
 \begin{proof}
     We will show how the choices in \cref{defi:type-II-A-m-not-n} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(a) and \ref{def:model-grd-MxM-even}. 
     
@@ -468,8 +466,6 @@ In the next definition, we summarize what have been done for future reference:
     
     % Further, since $\eta\restriction_{K} = \mu\restriction_{K}$ and $\eta\restriction_{\langle f \rangle} = \chi\inv \restriction_{\langle f \rangle}$, the map $\eta$ defined by \cref{eq:fix-eta-undouble} is the map determining to $\vphi_{\mc C} \tensor \vphi_{\mc M}$. 
     
-    % @1
-    
     THERE WASN'T A EXPLICIT CONSTRUCTION OF $(\U, B)$ FOR ODD $\D$, SO I DO IT HERE.
     
     In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a pair $(\U, B)$ that has inertia determined by $\kappa$. 
@@ -507,17 +503,18 @@ In the next definition, we summarize what have been done for future reference:
 \end{proof}
 
 % --------------------
+% @1
 
 \begin{thm}\label{thm:final-Q(n)}
-    Let $n \in \ZZ_{\geq 0}$ and 
+    Let $n \in \ZZ_{> 0}$ and 
     let $L$ denote the Lie superalgebra $Q(n)$. 
-    Every grading on $L$ is isomorphic to either $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa)$ or $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ as in \cref{def:Q-Type-I,defi:type-II-A-m-not-n}. 
+    Every grading on $L$ is isomorphic to either $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa)$ or $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ as in \cref{def:Q-Type-I,defi:type-II-Q}. 
     Gradings belonging to different types are not isomorphic. 
     Within each type, we have:
     
     \noindent\boxed{\mathrm{Type \,\,I}}
     
-    \noindent $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa) \iso \Gamma_Q^{\mathrm{(I)}}(T'^+, \beta'^+, h', \kappa')$ \IFF  $T'^+ = T^+$ and one of the following conditions holds:
+    \noindent $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa) \iso \Gamma_Q^{\mathrm{(I)}}(T'^+, \beta'^+, h', \kappa')$ \IFF  $T'^+ = T^+$, $h = h'$ and one of the following conditions holds:
 	\begin{enumerate}[(i)]
 	    \item $\beta'^+ = \beta^+$ and there is $g\in G$ such that $g \cdot \kappa'=\kappa$; 
 	    \item $\beta'= (\beta^+)\inv$ and there is $g\in G$ such that $g \cdot \kappa'= \kappa\Star$.
@@ -526,13 +523,21 @@ In the next definition, we summarize what have been done for future reference:
     \noindent\boxed{\mathrm{Type \,\,II}}
     
     \noindent $\Gamma_A^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0) \iso \Gamma_A^{\mathrm{(II)}}(T'^+, \beta'^+, h', \kappa', g_0')$ \IFF
-    $T'^+ =T^+$, $\beta'^+ = \beta^+$ and there is $g \in G$ such that $g\cdot\kappa' = \kappa$, $g\cdot\kappa' = \kappa_\bo$ and $g_0' = g^{-2}g_0$. 
-    AND SOMETHING ABOUT $h$
+    $T'^+ =T^+$, $\beta'^+ = \beta^+$, $h' = h$ and there is $g \in G$ such that $g\cdot\kappa' = \kappa$ and $g_0' = g^{-2}g_0$. 
 \end{thm}
 
 \begin{proof}
-    The result follows from \cref{prop:m-not-n-Type-II-correspondence,thm:MxM-type-I,thm:MxM-even}. 
-    Note that, since $m \neq n$, the isomorphism conditions in \cref{thm:MxM-type-I,thm:MxM-even} simplify: we cannot have $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$ or $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$. 
+    The result follows from \cref{prop:Q-Type-II-correspondence,thm:QxQ-type-I,cor:QxQ-reduced-to-MxM}. 
+    
+    % Let $S$ denote the the the associative superalgebra $Q(n+1)$. 
+    % The classification of gradings on the Lie superalgebra $Q(n)$ is equivalent to the classification of gradings on the associative superalgebra $S \times S\sop$, endowed with exchange superinvolution, by \cref{cor:transfer-R-vphi-to-L}. 
+    % The gradings on the latter 
+    
+    % That there are this two types, it comes from .
+    
+    % The isomorphism condition for Type I, follows from \cref{thm:QxQ-type-I}, but there its in in terms of different paramenters.
+    
+    % The isomorphism condition for Type II gradings follows from \cref{cor:QxQ-reduced-to-MxM,prop:Q-Type-II-correspondence}. 
 \end{proof}
 
 
