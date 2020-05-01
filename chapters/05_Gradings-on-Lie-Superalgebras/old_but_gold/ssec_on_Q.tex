@@ -1,0 +1,172 @@
+\subsection{Gradings on \texorpdfstring{$Q(n)$}{Q(n)}}
+
+We will now discuss the case where $S$ is the associative superalgebra $Q(n+1)$, so $L = S^{(1)}/Z(S^{(1)})$ is the Lie superalgebra $Q(n)$. 
+% In this subsection, we fix a primitive $4^{\mathrm{th}}$ root of the unity $\bi \in \FF$. 
+
+Let us first parametrize the Type I gradings. 
+As seen in (\cref{ssec:classification-assc-super}), every grading on $S$ is odd in this case. 
+Nevertheless, we can use parameters in terms of the group $G$ to parametrize the gradings (see \cref{def:Gamma-T-beta-kappa-Q,cor:iso-Q}).  
+
+\begin{defi}\label{def:Q-Type-I}
+    Let $n > 0$ be a natural number, $T^+ \subseteq G$ be a finite subgroup, $\beta\from T^+ \times T^+ \to \FF^\times$ be a nondegenerate bicharacter, $h\in G$ be an element such that $h^2 = 1$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ be a map with finite support such that $|\kappa| \sqrt{|T^+|} = n + 1$. 
+    We will denote by $\Gamma^{\mathrm{(I)}}_Q(T^+, \beta^+, h, \kappa)$ to be the grading on $L$ induced from the grading $\Gamma_Q (T^+, \beta^+, h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}) by reduction modulo the center. 
+\end{defi}
+
+We will now parametrize the Type II gradings on $L$. 
+By \cref{ssec:undoubling}, those correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
+Hence, by \cref{cor:QxQ-reduced-to-MxM}, a Type II grading on $L$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $g_0$ is an element in $G$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $|\kappa| \sqrt{|T^+|/2} = n+1$. 
+
+Like we did in \cref{ssec:grds-on-A-m-n}, we will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
+Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr \beta^+$ be the (nondegenerate) bicharacter on $\barr T^+$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr T \iso G/T$. 
+
+Let $\barr \D$ be a standard realization of type Q associated to $(\barr T^+, \bar\beta^+, \bar h)$ (see \cref{def:standard-realization-Q}). 
+Recall that we define $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$, let $\beta\from T\times T$ be the (unique) alternating bicharacter such that $\rad \beta = \langle t_1 \rangle$, and let $p\from T \to \ZZ_2$ be the (unique) homomorphism with kernel $T^+$. 
+Then we have that $\barr \D$ is a graded-division superalgebra associated to $(T, \beta, p)$.
+
+Choose a complement $K$ for $\langle f \rangle$ in $T^+$, \ie, a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$ (it can be done, since $T^+$ is a elementary $2$-group). 
+Also, fix a primitive fourth root of the unit $\bi \in \FF$ and let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(t_1) = \bi$ (hence $\chi(f) = -1$). 
+Let $\theta_0\from \barr \D \to \barr \D$ be the queer transposition map (\cref{def:queer-stp}), and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
+Then set $\mu \coloneqq \barr \mu \circ \pi$ and 
+\[\label{eq:fix-eta-undouble-Q}
+    \forall t\in T, \quad \eta(t) \coloneqq \mu(t) \chi\inv(t).
+\]
+Note that this definition agrees with \cref{def:std-realization-MxM-QxQ}(c) (see the proof of \cref{prop:Q-Type-II-correspondence}). 
+
+Extend $\chi$ to $G$. 
+It remains to define a graded right $\barr \D$-supermodule $\barr \U$ and the matrix $\Theta$. 
+The following is analogous to the construction in \cref{ssec:grds-osp,ssec:grds-on-A-m-n}. 
+
+Let $\xi\from G/ T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T \iso \barr G/ \barr T$ with no elements between $x$ and $\bar g_0\inv x\inv$. 
+Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
+Set $k \coloneqq |\kappa|$, let $\gamma$ be the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma$ (\ie, $\barr \gamma_i$ is the $k_i$-tuple realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$). 
+Consider on $M_{k}(\FF)$ the elementary grading determined by $\bar  \gamma$ (see \cref{defi:elementary-grd}). 
+We identify the $\barr G$-graded superalgebra $M_{k}(\barr \D) = M_{k}(\FF) \tensor \barr\D$ with $S = Q(n+1)$ via Kronecker product. 
+
+\begin{defi}\label{defi:blocks-of-Theta-odd}
+    Let $x \in G/T$. 
+    We define the matrix $\Theta(x)$ (with entries in $\barr \D$) to be $\Theta(\bar 0, x)$ as in \cref{defi:blocks-of-Theta}, with $\kappa$ playing the role of $\kappa_\bz$. 
+\end{defi}
+
+Let $x_1 < \ldots < x_{\ell}$ be the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$. 
+Then, we define 
+\[\label{eq:puting-the-blocks-of-Phi-together-version-Q}
+    \Theta \coloneqq
+    \begin{pmatrix}
+        \Theta(x_1)&& \\
+        & \ddots &\\
+        && \Theta(x_{\ell})
+    \end{pmatrix}.
+\]
+%
+Finally, we define the super-anti-automorphism $\theta\from S\to S$ by \cref{eq:theta-with-matrix-2}. 
+
+Since $\theta_0$ is the queer supertransposition on $\barr \D$ and, with respect to the elementary grading above, $M_{k}(\FF)\even = M_{k}(\FF)$, $\theta_0(X)\stransp = \theta_0(X)\transp \in M_{k} (\barr \D)$ becomes $X\sTq \in Q(n+1)$. 
+Hence, \cref{eq:theta-with-matrix-2} reduces to 
+\[\label{eq:theta-with-matrix-4}
+    \forall X\in M_{k} (\barr \D), \quad \theta(X) = \Theta\inv\, X\sTq\, \Theta.
+\]
+
+In the next definition, we summarize what have been done for future reference:
+
+\begin{defi}\label{defi:type-II-Q}
+    Let $n \in \ZZ_{> 0}$. 
+    Let $T^+ \subseteq G$ be a finite $2$-elementary subgroup, let $\beta^+\from {T^+\times T^+} \to \FF^\times$ be an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$, for some order $2$ element $f\in T$, let $h \in G$ be an element such that $h^2=f$, and let $g_0 \in G$ be any element. 
+    Set $\barr G \coloneqq G/\langle f \rangle$, $\barr T^+ \coloneqq T/\langle f \rangle$, and let $\bar \beta^+$ be the nondegenerate alternating bicharacter on $\barr T^+$ induced by $\beta^+$. 
+    Choose:
+    \begin{enumerate}[(i)]
+        \item a standard realization $\barr \D$ associated to $(\barr T^+, \barr \beta^+, h)$; 
+        \label{item:choice-barr-D-Q}
+        %
+        \item a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$; 
+        \label{item:choice-K-Q}
+        %
+        \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
+        \label{item:choice-xi-Q}
+        %
+        \item a total order $\leq$ on $G/T$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T$. 
+        \label{item:choice-leq-Q}
+    \end{enumerate}
+    Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$. 
+    Recall that, by construction of $\barr \D$, we have $T / \langle f \rangle = \supp \barr \D$.
+    Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$ (see \cref{ssec:param-D-vphi}). 
+    Let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(t_1) = \bi$, and extend it to a character on $\widehat{G}$, also denoted by $\chi$. 
+    Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
+    Let $\kappa \to \ZZ_{\geq 0}$ be a $g_0$-admissible map (\cref{defi:odd-D-kappa-g_0-admissible}) such that $n+1 = k\sqrt{|T^+|/2}$, where $k \coloneqq |\kappa|$. 
+    Then construct a tuple $\bar\gamma$ realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
+    Consider the $\barr G$-grading $\Gamma_Q(\barr T^+, \barr \beta^+, \bar h, \kappa)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$ and $\barr \gamma$ above (see \cref{def:Gamma-T-beta-kappa-Q}), and consider its restriction to $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
+    Define ${\Theta \in S}$ by \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ by
+    \cref{eq:theta-with-matrix-4}. 
+    Finally, we define $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ to be the $G$-grading on $L = S^{(1)}/Z(S^{(1)})$ induced from the grading $S^{(1)} = \bigoplus_{g\in G} S^{(1)}_g$, where
+    \[
+        S^{(1)}_{g} \coloneqq \{ s\in S^{(1)}_{\bar g} \mid \theta (s) = - \chi(g) s \},
+    \]
+    for all $g\in G$. 
+\end{defi}
+
+% --------------------
+
+\begin{prop}\label{prop:Q-Type-II-correspondence}
+    Consider $(R, \vphi) \coloneqq Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$, as defined before \cref{cor:QxQ-reduced-to-MxM}. 
+    Then the grade Lie superalgebra $\Skew (R,\vphi)^{(1)}$ is isomorphic to $Q(n+1)^{(1)}$ endowed with $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$. 
+\end{prop}
+
+\begin{proof}
+    We will show how the choices in \cref{defi:type-II-Q} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(c) and \ref{def:model-grd-MxM-odd-or-QxQ}. 
+    
+    Let $\barr \D$ and $K \subseteq T^+$ be, respectively, the graded-division superalgebra and the subgroup chosen in items \eqref{item:choice-barr-D-Q} and \eqref{item:choice-K-Q} of \cref{defi:type-II-Q}. 
+    By \cref{def:standard-realization-Q}, $\barr \D = \barr \D\even \oplus u \barr \D\even$, where $\barr \D\even$ is a standard realization of a graded-division algebra associated to $(T^+, \beta^+)$, and $u \in Z(\barr \D)$ is a element with degree $\barr t_p \coloneqq (\barr h, \bar 1) \in \barr G^\#$. 
+    Following the argument in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, we have that $\barr \D\even$ corresponds to a standard realization $\mc M$ of a graded-division algebra associated to $(K, \beta^+\restriction_{K \times K})$. 
+    Moreover, if $\barr \mu\from \barr T \to \FF^\times$ is the map associated to the queer supertranspose on $\barr \D$, then $\barr \mu \restriction_{\barr T^+}$ is the map associated to the transposition on $\barr \D\even$ and, again following the proof of \cref{prop:m-not-n-Type-II-correspondence}, we have that $(\mu = \barr \mu \circ \pi) \restriction_K$ is the map associated to the transposition on $\mc M$. 
+    
+    We claim that the map $\eta\from T \to \FF^\times$ defined in \cref{eq:fix-eta-undouble-Q} is the map associated to $\vphi_{\mc M} \tensor \vphi_{\mc C}$ in \cref{def:std-realization-MxM-QxQ}(c). 
+    First, note that by the definition of queer supertranspose, $\barr \mu (e) = 1$ and $\barr \mu(\bar t_p) = \bi$. 
+    It follows that $\mu(e)=\mu(f) = 1$ and $\mu(t_p)=\mu(t_p f) = \bi$. 
+    Since $\chi$ is a homomorphism and and $\chi(t_p) = \bi$, it is straightforward that $\eta(e) = \eta(t_p) = 1$ and $\eta(f) = \eta(t_p f) = -1$, \ie, $\eta\restriction_{\langle t_p \rangle}$ is the map associated to $\vphi_{\mc C}$. 
+    By definition, $\eta\restriction_K = \mu\restriction_K$ is the map associated to $\vphi_{\mc M}$, so the claim follows.  
+    
+    % The choices of items \eqref{item:choice-barr-D-Q} and \eqref{item:choice-K-Q} in \cref{defi:type-II-Q} give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(c). 
+    % Indeed, the only choice for standard realization of type Q $\barr \D$ associated to $(\barr T^+, \bar \beta^+, h)$ (\cref{def:standard-realization-Q}) is the choice of standard realization $\barr \D\even$ associated to $(\barr T^+, \bar \beta^+)$. 
+    % Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$. 
+    % It is clear that $\mu\restriction_{\barr T^+}$ is the map associated to the transposition on $\barr \D\even$, and that $\mu(t_1) = \bi$. 
+    % By the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $T^+$ playing the role of $T$, this corresponds to a standard realization $\mc M$ associated to $(K, \beta^+\restriction_{K \times K})$, and $\mu\restriction_{\barr T^+} \circ \pi$ is the map associated to the transposition on $\mc M$. 
+    % It
+    
+    % SHOULD I BE MORE EXPLICIT HERE, OR IS IT OK TO REFER TO THAT PROOF?
+    
+    % Further, since $\eta\restriction_{K} = \mu\restriction_{K}$ and $\eta\restriction_{\langle f \rangle} = \chi\inv \restriction_{\langle f \rangle}$, the map $\eta$ defined by \cref{eq:fix-eta-undouble} is the map determining to $\vphi_{\mc C} \tensor \vphi_{\mc M}$. 
+    
+    THERE WASN'T A EXPLICIT CONSTRUCTION OF $(\U, B)$ FOR ODD $\D$, SO I DO IT HERE.
+    
+    In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a pair $(\U, B)$ that has inertia determined by $\kappa$. 
+    To construct such pair, we will follow a construction similar to the one in \cref{ssec:grds-on-A-m-n}. 
+    Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let $\gamma = (g_1, \ldots, g_k)$ be the $k$-tuple realizing $\kappa$ according to $\xi$ and $\leq$ (which are chosen in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} of \cref{defi:type-II-Q}). 
+    We define $\U \coloneqq \D^{[g_1]}\oplus \cdots \oplus \D^{[g_k]}$ and let $\B = \{ u_1, \ldots, u_k\}$ be its canonical graded basis. 
+    Let $x_1 < \ldots < x_{\ell}$ be the elements of $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$ and set 
+    \[
+        \begin{pmatrix}
+        \Phi(\bar 0, x_1)&& \\
+        & \ddots &\\
+        && \Phi(\bar 0, x_{\ell})
+    \end{pmatrix} \in M_k(\D)
+    \]
+    (see \cref{defi:blocks-of-Phi}). 
+    We define $B\from \U \times \U \to \D$ to be the $\vphi_0$-sesquilinear form such that $B(u_i, u_j) \coloneqq \Phi_{ij}$. 
+    It is straightforward to see that $B$ is nondegenerate and $(\U, B)$ has inertia determined by $\kappa$. 
+    To get the matrix $\Theta$, we also proceed as in \cref{prop:m-not-n-Type-II-correspondence}. 
+    We consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
+    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-Q}.
+    %
+    % We can use the choices in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-odd-or-QxQ}, by following a construction analogous to the one in \cref{ssec:grds-osp}. 
+    % With respect with the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
+    % To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
+    % \[\label{eq:tilde-u_i-from-u_i}
+    %     \tilde u_i \coloneqq 
+    %     \begin{cases}
+    %         \sqrt{\chi(\deg u_i)\inv} u_i, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
+    %         \hfill \chi(\deg u_i)\inv u_i, & \text{if }(\deg u_i) T < g_0\inv (\deg u_i)\inv T;\\
+    %         \hfill u_i, & \text{if }(\deg u_i) T > g_0\inv (\deg u_i)\inv T.
+    %     \end{cases}
+    % \]
+    % Let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
+    % Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}. 
+\end{proof}
