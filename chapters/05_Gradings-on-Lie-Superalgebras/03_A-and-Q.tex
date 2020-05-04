@@ -162,6 +162,8 @@ As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorph
 Let $\barr \D$ be a standard realization associated to $(\barr T, \bar\beta)$ (see \cref{def:standard-realization}), let $\theta_0\from \barr \D \to \barr \D$ be the transposition map, and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
 (Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D_{\bar t}$, for all $\bar t \in \barr T$.)
 
+% @2
+
 Choose a complement $K$ for $\langle f \rangle$ in $T$, \ie, a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$ (it can be done, since $T$ is a elementary $2$-group). 
 Let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$, and set $\mu \coloneqq \barr \mu \circ \pi$. 
 Then set 
@@ -327,7 +329,7 @@ Recall that, for every $\kappa\Star\from G/T \to \ZZ_{\geq 0}$, we defined $\kap
     Note that, since $m \neq n$, the isomorphism conditions in \cref{thm:MxM-type-I,thm:MxM-even} simplify: we cannot have $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$ or $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$. 
 \end{proof}
 
-% -----------------------
+% ----------------------------------
 
 \subsection{Gradings on \texorpdfstring{$Q(n)$}{Q(n)}}
 
@@ -344,13 +346,35 @@ Nevertheless, we can use parameters in terms of the group $G$ to parametrize the
 \end{defi}
 
 We will now parametrize the Type II gradings on $L$. 
-By \cref{ssec:undoubling}, those correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
-Hence, by \cref{cor:QxQ-reduced-to-MxM}, a Type II grading on $L$ corresponds to a grading on $(R, \vphi)$ making it isomorphic to $Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $g_0$ is an element in $G$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $|\kappa| \sqrt{|T^+|/2} = n+1$. 
+Set $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on it. 
+We will follow the parametrization for gradings on $(R, \vphi)$ making $R$ graded-simple introduced in the end of \cref{sec:MxM-and-QxQ-associative}. 
+By  \cref{cor:QxQ-reduced-to-MxM}, $(R, \vphi)$ endowed with a such grading is isomorphic to $Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $g_0$ is an element in $G$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $|\kappa| \sqrt{|T^+|/2} = n+1$. 
 
-Like we did in \cref{ssec:grds-on-A-m-n}, we will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
-Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr \beta^+$ be the (nondegenerate) bicharacter on $\barr T^+$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr T \iso G/T$. 
+We will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II $G$-grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
+Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$. 
 
-Let $\barr \D$ be a standard realization of type Q associated to $(\barr T^+, \bar\beta^+, \bar h)$ (see \cref{def:standard-realization-Q}). 
+We will proceed as in \cref{ssec:grds-on-A-m-n}, with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
+Since $\barr {\beta^+}$ is nondegenerate, we can choose a standard realization $\barr \D\even$ of a graded-division algebra associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}). 
+Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr {T^+}$. 
+Let $\theta_0\from \barr \D\even \to \barr \D\even$ be the transposition map, let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$ and set $\mu \coloneqq \barr \mu \circ \pi$. 
+Choose a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$ (it can be done, since $T^+$ is a elementary $2$-group), and let $\chi\from T^+ \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$. 
+Then set $\eta^+\from T^+ \to \pmone$ by
+\[\label{eq:fix-eta-undouble-Q-v2}
+    \forall t\in T^+, \quad \eta^+(t) \coloneqq \mu(t) \chi\inv(t).
+\] 
+In the proof of \cref{prop:Q-Type-II-correspondence}, we will show that $\eta^+$ is the map associated to the superinvolution on the even part of a graded-division superalgebra as in \cref{def:std-realization-MxM-QxQ}(c). 
+
+% A priori, the assertion that $\kappa$ is $g_0$-admissible depends on a map $\eta$ defined on the support of an odd graded-division superalgebra (\cref{defi:odd-D-kappa-g_0-admissible}(ii)). 
+% Nevertheless, since $g_0\in G$ and $x\subseteq G$, the element $g_0g^2 \in T^+$, so we only need to know $\eta\restriction_{T^+}$. 
+
+% @1
+
+Let $\xi\from G/ T^+ \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T^+ \iso \barr G/ \barr {T^+}$ with no elements between $x$ and $\bar g_0\inv x\inv$. 
+Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
+
+
+
+Let $\barr \D$ be a standard realization of type Q associated to $(\barr {T^+}, \bar\beta^+, \bar h)$ (compare with \cref{def:standard-realization-Q}). 
 Recall that we define $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$, let $\beta\from T\times T$ be the (unique) alternating bicharacter such that $\rad \beta = \langle t_1 \rangle$, and let $p\from T \to \ZZ_2$ be the (unique) homomorphism with kernel $T^+$. 
 Then we have that $\barr \D$ is a graded-division superalgebra associated to $(T, \beta, p)$.
 
@@ -402,10 +426,10 @@ In the next definition, we summarize what have been done for future reference:
 \begin{defi}\label{defi:type-II-Q}
     Let $n \in \ZZ_{> 0}$. 
     Let $T^+ \subseteq G$ be a finite $2$-elementary subgroup, let $\beta^+\from {T^+\times T^+} \to \FF^\times$ be an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$, for some order $2$ element $f\in T$, let $h \in G$ be an element such that $h^2=f$, and let $g_0 \in G$ be any element. 
-    Set $\barr G \coloneqq G/\langle f \rangle$, $\barr T^+ \coloneqq T/\langle f \rangle$, and let $\bar \beta^+$ be the nondegenerate alternating bicharacter on $\barr T^+$ induced by $\beta^+$. 
+    Set $\barr G \coloneqq G/\langle f \rangle$, $\barr {T^+} \coloneqq T/\langle f \rangle$, and let $\bar \beta^+$ be the nondegenerate alternating bicharacter on $\barr {T^+}$ induced by $\beta^+$. 
     Choose:
     \begin{enumerate}[(i)]
-        \item a standard realization $\barr \D$ associated to $(\barr T^+, \barr \beta^+, h)$; 
+        \item a standard realization $\barr \D$ associated to $(\barr {T^+}, \barr {\beta^+}, h)$; 
         \label{item:choice-barr-D-Q}
         %
         \item a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$; 
@@ -424,7 +448,7 @@ In the next definition, we summarize what have been done for future reference:
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
     Let $\kappa \to \ZZ_{\geq 0}$ be a $g_0$-admissible map (\cref{defi:odd-D-kappa-g_0-admissible}) such that $n+1 = k\sqrt{|T^+|/2}$, where $k \coloneqq |\kappa|$. 
     Then construct a tuple $\bar\gamma$ realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
-    Consider the $\barr G$-grading $\Gamma_Q(\barr T^+, \barr \beta^+, \bar h, \kappa)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$ and $\barr \gamma$ above (see \cref{def:Gamma-T-beta-kappa-Q}), and consider its restriction to $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
+    Consider the $\barr G$-grading $\Gamma_Q(\barr {T^+}, \barr {\beta^+}, \bar h, \kappa)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$ and $\barr \gamma$ above (see \cref{def:Gamma-T-beta-kappa-Q}), and consider its restriction to $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
     Define ${\Theta \in S}$ by \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ by
     \cref{eq:theta-with-matrix-4}. 
     Finally, we define $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ to be the $G$-grading on $L = S^{(1)}/Z(S^{(1)})$ induced from the grading $S^{(1)} = \bigoplus_{g\in G} S^{(1)}_g$, where
@@ -447,7 +471,7 @@ In the next definition, we summarize what have been done for future reference:
     Let $\barr \D$ and $K \subseteq T^+$ be, respectively, the graded-division superalgebra and the subgroup chosen in items \eqref{item:choice-barr-D-Q} and \eqref{item:choice-K-Q} of \cref{defi:type-II-Q}. 
     By \cref{def:standard-realization-Q}, $\barr \D = \barr \D\even \oplus u \barr \D\even$, where $\barr \D\even$ is a standard realization of a graded-division algebra associated to $(T^+, \beta^+)$, and $u \in Z(\barr \D)$ is a element with degree $\barr t_p \coloneqq (\barr h, \bar 1) \in \barr G^\#$. 
     Following the argument in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, we have that $\barr \D\even$ corresponds to a standard realization $\mc M$ of a graded-division algebra associated to $(K, \beta^+\restriction_{K \times K})$. 
-    Moreover, if $\barr \mu\from \barr T \to \FF^\times$ is the map associated to the queer supertranspose on $\barr \D$, then $\barr \mu \restriction_{\barr T^+}$ is the map associated to the transposition on $\barr \D\even$ and, again following the proof of \cref{prop:m-not-n-Type-II-correspondence}, we have that $(\mu = \barr \mu \circ \pi) \restriction_K$ is the map associated to the transposition on $\mc M$. 
+    Moreover, if $\barr \mu\from \barr T \to \FF^\times$ is the map associated to the queer supertranspose on $\barr \D$, then $\barr \mu \restriction_{\barr {T^+}}$ is the map associated to the transposition on $\barr \D\even$ and, again following the proof of \cref{prop:m-not-n-Type-II-correspondence}, we have that $(\mu = \barr \mu \circ \pi) \restriction_K$ is the map associated to the transposition on $\mc M$. 
     
     We claim that the map $\eta\from T \to \FF^\times$ defined in \cref{eq:fix-eta-undouble-Q} is the map associated to $\vphi_{\mc M} \tensor \vphi_{\mc C}$ in \cref{def:std-realization-MxM-QxQ}(c). 
     First, note that by the definition of queer supertranspose, $\barr \mu (e) = 1$ and $\barr \mu(\bar t_p) = \bi$. 
@@ -456,10 +480,10 @@ In the next definition, we summarize what have been done for future reference:
     By definition, $\eta\restriction_K = \mu\restriction_K$ is the map associated to $\vphi_{\mc M}$, so the claim follows.  
     
     % The choices of items \eqref{item:choice-barr-D-Q} and \eqref{item:choice-K-Q} in \cref{defi:type-II-Q} give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(c). 
-    % Indeed, the only choice for standard realization of type Q $\barr \D$ associated to $(\barr T^+, \bar \beta^+, h)$ (\cref{def:standard-realization-Q}) is the choice of standard realization $\barr \D\even$ associated to $(\barr T^+, \bar \beta^+)$. 
+    % Indeed, the only choice for standard realization of type Q $\barr \D$ associated to $(\barr {T^+}, \bar \beta^+, h)$ (\cref{def:standard-realization-Q}) is the choice of standard realization $\barr \D\even$ associated to $(\barr {T^+}, \bar \beta^+)$. 
     % Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$. 
-    % It is clear that $\mu\restriction_{\barr T^+}$ is the map associated to the transposition on $\barr \D\even$, and that $\mu(t_1) = \bi$. 
-    % By the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $T^+$ playing the role of $T$, this corresponds to a standard realization $\mc M$ associated to $(K, \beta^+\restriction_{K \times K})$, and $\mu\restriction_{\barr T^+} \circ \pi$ is the map associated to the transposition on $\mc M$. 
+    % It is clear that $\mu\restriction_{\barr {T^+}}$ is the map associated to the transposition on $\barr \D\even$, and that $\mu(t_1) = \bi$. 
+    % By the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $T^+$ playing the role of $T$, this corresponds to a standard realization $\mc M$ associated to $(K, \beta^+\restriction_{K \times K})$, and $\mu\restriction_{\barr {T^+}} \circ \pi$ is the map associated to the transposition on $\mc M$. 
     % It
     
     % SHOULD I BE MORE EXPLICIT HERE, OR IS IT OK TO REFER TO THAT PROOF?
@@ -503,7 +527,7 @@ In the next definition, we summarize what have been done for future reference:
 \end{proof}
 
 % --------------------
-% @1
+
 
 \begin{thm}\label{thm:final-Q(n)}
     Let $n \in \ZZ_{> 0}$ and 

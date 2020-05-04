@@ -294,6 +294,15 @@ Recall that in this situation the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ carr
 % @3
 
 \begin{defi}\label{defi:odd-D-kappa-g_0-admissible}
+    Let $T^+ \subseteq G$ be a finite subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ be an alternating bicharacter let $\eta^+\from T^+ \to \pmone$ be a map such that $\mathrm{d}\eta^+ = \beta^+$ and let $g_0 \in G = G \times \{ \bar 0 \} \subseteq G^\#$. 
+    We say that a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support is \emph{$g_0$-admissible} if
+    %
+	\begin{enumerate}[(i)]
+		\item $\kappa(x) = \kappa(g_0\inv x\inv)$ for all $x \in G/T^+$;
+		\item if $g_0 x^2 = T^+$ and 
+		for some (and, hence, any) $g\in x$, we have $\eta^+(g_0g^2) = -1$, then $\kappa (x)$ is even.
+	\end{enumerate}
+
     Let $(\D, \vphi_0)$ be an odd graded-division superalgebra with involution associated to $(T, \beta, p, \eta)$ and let $g_0 \in G = G \times \{ \bar 0 \} \subseteq G^\#$. 
     We say that a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support is \emph{$g_0$-admissible} if
     %
@@ -377,6 +386,8 @@ Conversely, given $(T^+, \beta^+, e)$ is as in case (a) and an element $h\in G$ 
 Then $(T, \beta, t_p)$ is a triple as in case (c). 
 In other words, we can reparametrize $(T, \beta, t_p)$ by $(T^+, \beta^+, h)$, which are parameters only in terms of the group $G$. 
 The graded superinvolution-simple superalgebra $Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$ in \cref{def:model-grd-MxM-odd-or-QxQ} will also be denoted by $Q^{\mathrm{ex}} (T^+, \beta^+,  h, \kappa, g_0)$. 
+
+NOTE THAT WE CAN STILL SAY THAT $\kappa$ IS $g_0$-ADMISSIBLE, BY USING THE RIGHT $\eta$. 
 
 By \cref{thm:MxM-odd}, we have:
 
