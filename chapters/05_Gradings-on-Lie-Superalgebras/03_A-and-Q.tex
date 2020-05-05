@@ -162,8 +162,6 @@ As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorph
 Let $\barr \D$ be a standard realization associated to $(\barr T, \bar\beta)$ (see \cref{def:standard-realization}), let $\theta_0\from \barr \D \to \barr \D$ be the transposition map, and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
 (Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D_{\bar t}$, for all $\bar t \in \barr T$.)
 
-% @2
-
 Choose a complement $K$ for $\langle f \rangle$ in $T$, \ie, a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$ (it can be done, since $T$ is a elementary $2$-group). 
 Let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$, and set $\mu \coloneqq \barr \mu \circ \pi$. 
 Then set 
@@ -233,6 +231,7 @@ Then, we define
         \end{array}\right).
 \]
 %
+% @2
 Finally, we define the super-anti-automorphism $\theta\from S\to S$ by \cref{eq:theta-with-matrix-2}. 
 Since $\theta_0$ is the transposition on $\barr \D$, $\theta_0(X)\stransp \in M_{k_\bz \mid k_\bo} (\barr \D)$ becomes $X\stransp \in M(m+1,n+1)$. 
 Hence, \cref{eq:theta-with-matrix-2} reduces to 
@@ -353,7 +352,11 @@ By  \cref{cor:QxQ-reduced-to-MxM}, $(R, \vphi)$ endowed with a such grading is i
 We will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II $G$-grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
 Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$. 
 
-We will proceed as in \cref{ssec:grds-on-A-m-n}, with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
+We will first construct a grading on $S\even$. 
+Recall that $S = Q(n+1)$ can be identified with $Q(1) \tensor M_{n+1}(\FF)$ via Kronecker product (where we are using the associative $Q(1)$), so have an identification of $S\even$ with $M_{n+1}(\FF) = M(n+1, 0)$. 
+
+We proceed as in \cref{ssec:grds-on-A-m-n}, with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
+Note that 
 Since $\barr {\beta^+}$ is nondegenerate, we can choose a standard realization $\barr \D\even$ of a graded-division algebra associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}). 
 Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr {T^+}$. 
 Let $\theta_0\from \barr \D\even \to \barr \D\even$ be the transposition map, let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$ and set $\mu \coloneqq \barr \mu \circ \pi$. 
@@ -364,81 +367,48 @@ Then set $\eta^+\from T^+ \to \pmone$ by
 \] 
 In the proof of \cref{prop:Q-Type-II-correspondence}, we will show that $\eta^+$ is the map associated to the superinvolution on the even part of a graded-division superalgebra as in \cref{def:std-realization-MxM-QxQ}(c). 
 
-% A priori, the assertion that $\kappa$ is $g_0$-admissible depends on a map $\eta$ defined on the support of an odd graded-division superalgebra (\cref{defi:odd-D-kappa-g_0-admissible}(ii)). 
-% Nevertheless, since $g_0\in G$ and $x\subseteq G$, the element $g_0g^2 \in T^+$, so we only need to know $\eta\restriction_{T^+}$. 
+Extend $\chi$ to $G$ and set $k \coloneqq |\kappa|$. 
+Following the construction after \cref{eq:fix-eta-undouble} in \cref{ssec:grds-on-A-m-n} with $\kappa_\bz \coloneqq \kappa$ and $\kappa_\bo$ being the zero map, we get an elementary $\barr G$-grading on $M_k(\FF) = M(k , 0)$. 
+We, then, identify the $\barr G$-graded superalgebra $M_{k}(\barr \D\even) = M_{k}(\FF) \tensor \barr\D\even$ with $S\even = M(n+1)$ via Kronecker product, and define 
+\[\label{eq:puting-the-blocks-of-Phi-together-version-Q-v2}
+    \Theta \coloneqq \begin{pmatrix}
+        \Theta(\bar 0, x_1)&& \\
+        & \ddots &\\
+        && \Theta(\bar 0, x_{\ell})
+    \end{pmatrix},
+\]
+where $x_1 < \ldots < x_{\ell}$ are the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$, and $\Theta(\bar 0, x)$, for $x\in \barr G/\barr {T^+}$, is defined in \cref{defi:blocks-of-Theta}. 
+
+% Set $k \coloneqq |\kappa|$, let $\gamma$ be the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma$ (\ie, $\barr \gamma$ is the $k$-tuple realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$). 
+% Consider on $M_{k}(\FF)$ the elementary grading determined by $\bar \gamma$ (see \cref{defi:elementary-grd}). 
+
 
 % @1
-
-Let $\xi\from G/ T^+ \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T^+ \iso \barr G/ \barr {T^+}$ with no elements between $x$ and $\bar g_0\inv x\inv$. 
-Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
-
-
-
-Let $\barr \D$ be a standard realization of type Q associated to $(\barr {T^+}, \bar\beta^+, \bar h)$ (compare with \cref{def:standard-realization-Q}). 
-Recall that we define $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$, let $\beta\from T\times T$ be the (unique) alternating bicharacter such that $\rad \beta = \langle t_1 \rangle$, and let $p\from T \to \ZZ_2$ be the (unique) homomorphism with kernel $T^+$. 
-Then we have that $\barr \D$ is a graded-division superalgebra associated to $(T, \beta, p)$.
-
-Choose a complement $K$ for $\langle f \rangle$ in $T^+$, \ie, a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$ (it can be done, since $T^+$ is a elementary $2$-group). 
-Also, fix a primitive fourth root of the unit $\bi \in \FF$ and let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(t_1) = \bi$ (hence $\chi(f) = -1$). 
-Let $\theta_0\from \barr \D \to \barr \D$ be the queer transposition map (\cref{def:queer-stp}), and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
-Then set $\mu \coloneqq \barr \mu \circ \pi$ and 
-\[\label{eq:fix-eta-undouble-Q}
-    \forall t\in T, \quad \eta(t) \coloneqq \mu(t) \chi\inv(t).
-\]
-Note that this definition agrees with \cref{def:std-realization-MxM-QxQ}(c) (see the proof of \cref{prop:Q-Type-II-correspondence}). 
-
-Extend $\chi$ to $G$. 
-It remains to define a graded right $\barr \D$-supermodule $\barr \U$ and the matrix $\Theta$. 
-The following is analogous to the construction in \cref{ssec:grds-osp,ssec:grds-on-A-m-n}. 
-
-Let $\xi\from G/ T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T \iso \barr G/ \barr T$ with no elements between $x$ and $\bar g_0\inv x\inv$. 
-Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
-Set $k \coloneqq |\kappa|$, let $\gamma$ be the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma$ (\ie, $\barr \gamma_i$ is the $k_i$-tuple realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$). 
-Consider on $M_{k}(\FF)$ the elementary grading determined by $\bar  \gamma$ (see \cref{defi:elementary-grd}). 
-We identify the $\barr G$-graded superalgebra $M_{k}(\barr \D) = M_{k}(\FF) \tensor \barr\D$ with $S = Q(n+1)$ via Kronecker product. 
-
-\begin{defi}\label{defi:blocks-of-Theta-odd}
-    Let $x \in G/T$. 
-    We define the matrix $\Theta(x)$ (with entries in $\barr \D$) to be $\Theta(\bar 0, x)$ as in \cref{defi:blocks-of-Theta}, with $\kappa$ playing the role of $\kappa_\bz$. 
-\end{defi}
-
-Let $x_1 < \ldots < x_{\ell}$ be the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$. 
-Then, we define 
-\[\label{eq:puting-the-blocks-of-Phi-together-version-Q}
-    \Theta \coloneqq
-    \begin{pmatrix}
-        \Theta(x_1)&& \\
-        & \ddots &\\
-        && \Theta(x_{\ell})
-    \end{pmatrix}.
-\]
-%
-Finally, we define the super-anti-automorphism $\theta\from S\to S$ by \cref{eq:theta-with-matrix-2}. 
-
-Since $\theta_0$ is the queer supertransposition on $\barr \D$ and, with respect to the elementary grading above, $M_{k}(\FF)\even = M_{k}(\FF)$, $\theta_0(X)\stransp = \theta_0(X)\transp \in M_{k} (\barr \D)$ becomes $X\sTq \in Q(n+1)$. 
+Finally, we define the super-anti-automorphism $\theta\from S\even \to S\even$ by \cref{eq:theta-with-matrix-2}. 
+Since $\theta_0$ is the transposition on $\barr \D\even$, $\theta_0(X)\stransp \in M_{k} (\barr \D\even)$ becomes $X\stransp \in M_{n+1}(\FF)$. 
 Hence, \cref{eq:theta-with-matrix-2} reduces to 
 \[\label{eq:theta-with-matrix-4}
-    \forall X\in M_{k} (\barr \D), \quad \theta(X) = \Theta\inv\, X\sTq\, \Theta.
+    \forall X\in M_{n+1}(\FF), \quad \theta(X) = \Theta\inv\, X\stransp\, \Theta.
 \]
 
 In the next definition, we summarize what have been done for future reference:
 
 \begin{defi}\label{defi:type-II-Q}
     Let $n \in \ZZ_{> 0}$. 
-    Let $T^+ \subseteq G$ be a finite $2$-elementary subgroup, let $\beta^+\from {T^+\times T^+} \to \FF^\times$ be an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$, for some order $2$ element $f\in T$, let $h \in G$ be an element such that $h^2=f$, and let $g_0 \in G$ be any element. 
+    Let $T^+ \subseteq G$ be a finite $2$-elementary subgroup, let $\beta^+\from {T^+\times T^+} \to \FF^\times$ be an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$, for some element $e \neq f\in T$, let $h \in G$ be an element such that $h^2=f$, and let $g_0 \in G$ be any element. 
     Set $\barr G \coloneqq G/\langle f \rangle$, $\barr {T^+} \coloneqq T/\langle f \rangle$, and let $\bar \beta^+$ be the nondegenerate alternating bicharacter on $\barr {T^+}$ induced by $\beta^+$. 
     Choose:
     \begin{enumerate}[(i)]
-        \item a standard realization $\barr \D$ associated to $(\barr {T^+}, \barr {\beta^+}, h)$; 
+        \item a standard realization $\barr \D\even$ associated to $(\barr {T^+}, \barr {\beta^+})$; 
         \label{item:choice-barr-D-Q}
         %
         \item a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$; 
         \label{item:choice-K-Q}
         %
-        \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
+        \item a set-theoretic section $\xi\from G/T^+ \to G$ for the natural homomorphism $G \to G/T^+$;
         \label{item:choice-xi-Q}
         %
-        \item a total order $\leq$ on $G/T$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T$. 
+        \item a total order $\leq$ on $G/T^+$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T^+$. 
         \label{item:choice-leq-Q}
     \end{enumerate}
     Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+ \subseteq G^\#$ and $T\coloneqq T^+ \cup T^-$. 
