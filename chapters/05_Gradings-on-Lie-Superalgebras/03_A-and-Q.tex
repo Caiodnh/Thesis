@@ -349,11 +349,12 @@ Set $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution 
 We will follow the parametrization for gradings on $(R, \vphi)$ making $R$ graded-simple introduced in the end of \cref{sec:MxM-and-QxQ-associative}. 
 By  \cref{cor:QxQ-reduced-to-MxM}, $(R, \vphi)$ endowed with a such grading is isomorphic to $Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $g_0$ is an element in $G$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $|\kappa| \sqrt{|T^+|/2} = n+1$. 
 
-We will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II $G$-grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
-Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$. 
-
-We will first construct a grading on $S\even$. 
 Recall that $S = Q(n+1)$ can be identified with $Q(1) \tensor M_{n+1}(\FF)$ via Kronecker product (where we are using the associative $Q(1)$), so have an identification of $S\even$ with $M_{n+1}(\FF) = M(n+1, 0)$. 
+
+We will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II $G$-grading in the same s
+
+terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
+Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$. 
 
 We proceed as in \cref{ssec:grds-on-A-m-n}, with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
 Note that 
@@ -382,14 +383,15 @@ where $x_1 < \ldots < x_{\ell}$ are the elements of the set $\{ x \in \supp \kap
 % Set $k \coloneqq |\kappa|$, let $\gamma$ be the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma$ (\ie, $\barr \gamma$ is the $k$-tuple realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$). 
 % Consider on $M_{k}(\FF)$ the elementary grading determined by $\bar \gamma$ (see \cref{defi:elementary-grd}). 
 
-
-% @1
 Finally, we define the super-anti-automorphism $\theta\from S\even \to S\even$ by \cref{eq:theta-with-matrix-2}. 
 Since $\theta_0$ is the transposition on $\barr \D\even$, $\theta_0(X)\stransp \in M_{k} (\barr \D\even)$ becomes $X\stransp \in M_{n+1}(\FF)$. 
 Hence, \cref{eq:theta-with-matrix-2} reduces to 
 \[\label{eq:theta-with-matrix-4}
     \forall X\in M_{n+1}(\FF), \quad \theta(X) = \Theta\inv\, X\stransp\, \Theta.
 \]
+
+% @1
+We will now extend 
 
 In the next definition, we summarize what have been done for future reference:
 
