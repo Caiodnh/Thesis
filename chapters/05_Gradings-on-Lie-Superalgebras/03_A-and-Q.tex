@@ -344,24 +344,33 @@ Nevertheless, we can use parameters in terms of the group $G$ to parametrize the
     We will denote by $\Gamma^{\mathrm{(I)}}_Q(T^+, \beta^+, h, \kappa)$ to be the grading on $L$ induced from the grading $\Gamma_Q (T^+, \beta^+, h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}) by reduction modulo the center. 
 \end{defi}
 
-We will now parametrize the Type II gradings on $L$. 
-Set $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on it. 
+For Type II gradings on $L$,
+set $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on it. 
 We will follow the parametrization for gradings on $(R, \vphi)$ making $R$ graded-simple introduced in the end of \cref{sec:MxM-and-QxQ-associative}. 
 By  \cref{cor:QxQ-reduced-to-MxM}, $(R, \vphi)$ endowed with a such grading is isomorphic to $Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $g_0$ is an element in $G$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $|\kappa| \sqrt{|T^+|/2} = n+1$. 
 
-Recall that $S = Q(n+1)$ can be identified with $Q(1) \tensor M_{n+1}(\FF)$ via Kronecker product (where we are using the associative $Q(1)$), so have an identification of $S\even$ with $M_{n+1}(\FF) = M(n+1, 0)$. 
+We will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II $G$-grading directly on the superalgebra $L$ instead of $\Skew(R, \vphi)$. 
+Recall that the parametrization above for gradings on $\Skew(R, \vphi)$ was obtained by writing $R = R\even \oplus u R\even$, where $0 \neq u \in Z(R)\odd$, and using that $(R\even, \vphi\restriction_{R\even})$ is of type $M\times M\sop$.  
+We will follow an analogous strategy here. % @1
+Recall that $S = Q(n+1) = S\even \oplus u S\even$, where
+$
+    u = \begin{pmatrix}
+            0 & I_{n+1}\\
+            I_{n+1} & 0\\
+        \end{pmatrix} \in Z(S)\odd
+$,
+and that $S\even$ can be identified with $M_{n+1}(\FF) = M(n+1, 0)$. 
+We will construct a $\barr G$-grading on $S\even$, where $\barr G \coloneqq G/\langle f \rangle$, following the same steps as we did in \cref{ssec:grds-on-A-m-n}, but with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
 
-We will the parameters $(T^+, \beta^+, h, \kappa)$ to construct a representative for the Type II $G$-grading in the same s
+Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$ and  let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$. 
 
-terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
-Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$ and set $\bar h \coloneqq \pi(h)$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$. 
+Let $\barr \D\even$ be a standard realization associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}), let $\theta_0\from \barr \D\even \to \barr \D\even$ be the transposition map, and let $\bar \mu\from \barr{T^+} \to \FF^\times$ be the map associated to $\theta_0$. 
+% (Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr{T^+}$.)
 
-We proceed as in \cref{ssec:grds-on-A-m-n}, with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
-Note that 
-Since $\barr {\beta^+}$ is nondegenerate, we can choose a standard realization $\barr \D\even$ of a graded-division algebra associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}). 
-Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr {T^+}$. 
-Let $\theta_0\from \barr \D\even \to \barr \D\even$ be the transposition map, let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$ and set $\mu \coloneqq \barr \mu \circ \pi$. 
-Choose a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$ (it can be done, since $T^+$ is a elementary $2$-group), and let $\chi\from T^+ \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$. 
+% Since $\barr {\beta^+}$ is nondegenerate, we can choose a standard realization $\barr \D\even$ of a graded-division algebra associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}). 
+% Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr {T^+}$. 
+% Let $\theta_0\from \barr \D\even \to \barr \D\even$ be the transposition map, let $\bar \mu\from \barr{T^+} \to \FF^\times$ be the map associated to $\theta_0$ and set $\mu \coloneqq \barr \mu \circ \pi$. 
+Choose a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$, and let $\chi\from T^+ \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$. 
 Then set $\eta^+\from T^+ \to \pmone$ by
 \[\label{eq:fix-eta-undouble-Q-v2}
     \forall t\in T^+, \quad \eta^+(t) \coloneqq \mu(t) \chi\inv(t).
@@ -391,7 +400,10 @@ Hence, \cref{eq:theta-with-matrix-2} reduces to
 \]
 
 % @1
-We will now extend 
+We will now extend this $\barr G$-grading and the super-anti-automorphism $\vphi_0$ to $S = S\even \oplus u S\even$. 
+For that we set $\deg u \coloneqq (\pi(h), \bar 1)$. 
+
+
 
 In the next definition, we summarize what have been done for future reference:
 
