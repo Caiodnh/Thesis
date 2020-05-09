@@ -369,7 +369,7 @@ With this identifications, we have $S \iso Q(1)\tensor S\even$ via Kronecker pro
 We will, first, construct a $\barr G$-grading on $S\even$, where $\barr G \coloneqq G/\langle f \rangle$, following the same steps as we did in \cref{ssec:grds-on-A-m-n}, but with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
 Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$.
 
-Let $\barr \D\even$ be a standard realization associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}), and let $\barr {\mu^+}\from \barr{T^+} \to \FF^\times$ be the map associated to the transposition map. 
+Let $\barr \D\even$ be a standard realization associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}), let $\barr {\mu^+}\from \barr{T^+} \to \FF^\times$ be the map associated to the transposition map and set $\mu^+ \coloneqq \barr {\mu^+} \circ \pi$
 % (Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr{T^+}$.)
 % Since $\barr {\beta^+}$ is nondegenerate, we can choose a standard realization $\barr \D\even$ of a graded-division algebra associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}). 
 % Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr {T^+}$. 
@@ -377,7 +377,7 @@ Let $\barr \D\even$ be a standard realization associated to $(\barr{T^+}, \barr{
 Choose a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$, and let $\chi\from T^+ \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$. 
 Then set $\eta^+\from T^+ \to \pmone$ by
 \[\label{eq:fix-eta-undouble-Q-v2}
-    \forall t\in T^+, \quad \eta^+(t) \coloneqq \mu(t) \chi\inv(t).
+    \forall t\in T^+, \quad \eta^+(t) \coloneqq \mu^+(t) \chi\inv(t).
 \] 
 In the proof of \cref{prop:Q-Type-II-correspondence}, we will show that $\eta^+$ is the map associated to the superinvolution on the even part of a graded-division superalgebra as in \cref{def:std-realization-MxM-QxQ}(c). 
 
@@ -396,11 +396,9 @@ where $x_1 < \ldots < x_{\ell}$ are the elements of the set $\{ x \in \supp \kap
 % Set $k \coloneqq |\kappa|$, let $\gamma$ be the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$ (see \cref{defi:tuple-governed}), and let $\bar \gamma$ be the tuple of elements in $\barr G$ consisting of the images under $\pi\from G\to \barr G$ of the entries of $\gamma$ (\ie, $\barr \gamma$ is the $k$-tuple realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$). 
 % Consider on $M_{k}(\FF)$ the elementary grading determined by $\bar \gamma$ (see \cref{defi:elementary-grd}). 
 
-Finally, we define the super-anti-automorphism $\theta\from S\even \to S\even$ by \cref{eq:theta-with-matrix-2}. 
-Since $\theta_0$ is the transposition on $\barr \D\even$, $\theta_0(X)\stransp = \theta_0(X)\transp \in M_{k} (\barr \D\even)$ becomes $X\stransp = X\transp \in M_{n+1}(\FF)$. 
-Hence, \cref{eq:theta-with-matrix-2} reduces to 
+Finally, we define the super-anti-automorphism $\theta\from S\even \to S\even$ by 
 \[\label{eq:theta-with-matrix-4}
-    \forall X\in M_{n+1}(\FF), \quad \theta(X) = \Theta_\bz\inv\, X\transp\, \Theta_\bz.
+    \forall X\in M_{n+1}(\FF), \quad \theta(X) \coloneqq \Theta_\bz\inv\, X\transp\, \Theta_\bz.
 \]
 
 We will now extend this $\barr G$-grading and the super-anti-automorphism $\theta$ to $S = S\even \oplus u S\even$. 
