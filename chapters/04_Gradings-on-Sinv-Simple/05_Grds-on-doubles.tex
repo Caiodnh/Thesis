@@ -211,12 +211,12 @@ We will now adapt the proof of \cref{thm:tensor-prd-decomposition} to construct 
     Define $T^+, T^- \subseteq T$, $\tilde\beta\from T\times T \to \pmone$ and $\beta^+\from T^+\times T^+ \to \pmone$ as usual (see \cref{ssec:supermodules-over-D,ssec:T-beta-p}).
     Suppose that:
     \begin{itemize}
-        \item $\rad \tilde \beta = \langle f \rangle$ for an element $f\in T^+$ of order $2$;
+        \item $\rad \tilde \beta = \langle f \rangle$ for an element $e \neq f\in T^+$ ;
         \item $T^+$ is an elementary $2$-group;
         \item for every $t\in T^-$, $t^2 = f$.
     \end{itemize}
     Under these assumptions, we have precisely $2$ parity elements in $T$. 
-    Let $t_p \in T$ one of them, taking $t_p \coloneqq e$ in the case $T = T^+$. 
+    Let $t_p \in T$ be one of them, taking $t_p \coloneqq e$ in the case $T = T^+$. 
     Also note that:
     \begin{enumerate}[(a)]
         \item if $t_p =e$, then $T = T^+$ and $\beta^+ = \beta = \tilde\beta$;
@@ -248,20 +248,21 @@ In what follows, for each triple $(T, \tilde\beta, t_p)$, we will fix a standard
 % --- MxMsop even --- %
 
 \begin{defi}\label{def:model-grd-MxM-even}
-    Let $m, n\in \ZZ_{\geq 0}$, not both zero, 
-    let $(T, \beta, t_p)$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ = T$ (so $t_p = e$), 
+    Let $(T, \beta, t_p)$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ = T$ (so $t_p = e$), 
     let $g_0 \in G^\#$ be any element, and
-    let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be  $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $k_\bz \sqrt{|T|/2} = m$ and $k_\bo \sqrt{|T|/2} = n$, where $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$. 
+    let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be  $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}). 
     
     Choose a graded $\D$-supermodule $\U$ and a sesquilinear form $B\from {\U\times \U} \to \D$ such that $(\U, B)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$. 
     The graded superalgebra with superinvolution $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ is defined to be $E(\D, \U, \B)$. 
     With a choice of a graded basis for $\U$, this becomes
-    the graded superalgebra $M_{k_\bz | k_\bo} (\D)$, endowed with the superinvolution $\vphi$ given by 
+    the graded superalgebra $M_{k_\bz | k_\bo} (\D)$, where $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$, endowed with the superinvolution $\vphi$ given by 
     \[
         \vphi(X) \coloneqq \Phi\inv \vphi_0(X\stransp) \Phi,
     \]
     for all $X \in M_{k_\bz | k_\bo} (\D)$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis. 
 \end{defi}
+
+Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso M(m,n)\times M(m,n)\sop$, where $m = k_\bz \sqrt{|T|/2}$ and $n = k_\bo \sqrt{|T|/2}$. 
 
 \begin{thm}\label{thm:MxM-even}
     Suppose the superalgebra with superinvolution $M(m,n) \times M(m,n)\sop$ is endowed with an even $G$-grading making it graded-simple. 
@@ -306,18 +307,19 @@ In other words, $\kappa$ is $g_0$-admissible if, and only if, there is a pair $(
 In this case, we say that $(\U, B)$ has \emph{inertia determined by} $\kappa$. 
 
 \begin{defi}\label{def:model-grd-MxM-odd-or-QxQ}
-    Let $n\in \ZZ_{> 0}$, 
-    let $(T, \beta, t_p)$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ \neq T$, 
+    Let $(T, \beta, t_p)$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ \neq T$, 
     let $g_0 \in G$ be any element and
-    let $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ be a $g_0$-admissible map such that $k \sqrt{|T|/2} = 2n$, if $t_p \in T^+$, and $k \sqrt{|T|} = 2n$, if $t_p \in T^-$, where $k \coloneqq |\kappa|$.
+    let $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ be a $g_0$-admissible map.
     Choose a graded $\D$-supermodule $\U$ and a nondegenerate sesquilinear form $B\from \U\times \U \to \D$ such that $(\U, B)$ has inertia determined by $\kappa$. 
     The graded superalgebra with superinvolution $E(\D, \U, \B)$ will be denoted by $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$, if $t_p \in T^+$, and by $Q^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$, if $t_p \in T^-$. 
-    With a choice of an even graded basis for $\U$, $E(\D, \U, \B)$ becomes $M_k (\D)$, endowed with the superinvolution $\vphi$ given by 
+    With a choice of an even graded basis for $\U$, $E(\D, \U, \B)$ becomes $M_k (\D)$, where $k \coloneqq |\kappa|$, endowed with the superinvolution $\vphi$ given by 
     \[
         \vphi(X) \coloneqq \Phi\inv \vphi_0(X\transp) \Phi,
     \]
-    for all $X \in M(\D)$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis. 
+    for all $X \in M_k(\D)$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis. 
 \end{defi}
+
+Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso M(n,n)\times M(n,n)\sop$, where $n = k \sqrt{|T|/8}$, and $Q^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso Q(n)\times Q(n)\sop$, where $n = k \sqrt{|T|/4}$.
 
 \begin{thm}\label{thm:MxM-odd}
     Suppose the superalgebra with superinvolution $M(n,n) \times M(n,n)\sop$ (respectively, $Q(n) \times Q(n)\sop$) is endowed with an odd $G$-grading making it graded-simple. 

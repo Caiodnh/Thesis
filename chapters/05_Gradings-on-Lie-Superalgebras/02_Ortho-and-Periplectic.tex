@@ -37,20 +37,21 @@ Let $\B = \{ u_1, \ldots, u_k \}$ be the canonical graded basis of $\U\even$ (\i
 Then $\B \cup \B\Star$ is a graded basis for $\U$. 
 Using this basis, the matrix $\Phi \in M_{k|k}(\D) = M(k,k) \tensor (\D)$ representing $B$ is 
 \[
-    \Phi = 
-    \begin{pmatrix}
-        0 & I_{k}\\
-        I_{k} & 0
-    \end{pmatrix} \tensor 1_{\D}.
+    \Phi = \left(\begin{array}{c|c}
+            0 & I_{k}\\
+            \hline
+            I_{k} & 0
+        \end{array}\right) \tensor 1_{\D}.
 \]
 As in \cref{def:model-grd-M(m-n-0)}, we identify $\End_\D (\U)$ with $M_{k|k}(\D)$ and, then, with $M(n, n)$ by considering each entry in $\D$ as a block with entries in $\FF$. 
 With this identification, we have that
 \[\label{eq:matrix-Phi-for-P}
     \Phi = 
-    \begin{pmatrix}
-        0 & I_{n}\\
-        I_{n} & 0
-    \end{pmatrix}, 
+    \left(\begin{array}{c|c}
+            0 & I_{n}\\
+            \hline
+            I_{n} & 0
+        \end{array}\right), 
 \]
 and, hence, the superinvolution $\vphi$ of \cref{def:model-grd-M(m-n-0)} becomes precisely the superinvolution of \cref{defi:M(m-n-p_0)} (with $p_0 = \bar 1$). 
 

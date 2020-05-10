@@ -248,7 +248,7 @@ We also allow the case $m=n$.
 
 \begin{defi}\label{defi:type-II-A-m-not-n}
     Let $m,n \in \ZZ_{\geq 0}$, not both zero. 
-    Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be an alternating bicharacter with $\rad \beta = \langle f \rangle$, for some order $2$ element $f\in T$, and let $g_0 \in G$. 
+    Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be an alternating bicharacter with $\rad \beta = \langle f \rangle$, for some $e \neq f\in T$, and let $g_0 \in G$. 
     Set $\barr G \coloneqq G/\langle f \rangle$, $\barr T \coloneqq T/\langle f \rangle$, and let $\bar \beta$ be the nondegenerate alternating bicharacter on $\barr T$ induced by $\beta$. 
     Choose:
     \begin{enumerate}[(i)]
@@ -337,15 +337,15 @@ Recall that, for every $\kappa\Star\from G/T \to \ZZ_{\geq 0}$, we defined $\kap
 \subsection{Gradings on \texorpdfstring{$Q(n)$}{Q(n)}}
 % @3
 We will now discuss the case where $S$ is the associative superalgebra $Q(n+1)$, so $L = S^{(1)}/Z(S^{(1)})$ is the Lie superalgebra $Q(n)$. 
-% In this subsection, we fix a primitive $4^{\mathrm{th}}$ root of the unity $\bi \in \FF$. 
+In this subsection, we fix $\bi \in \FF$ such that $\bi^2 = -1$. 
 
-Let us first parametrize the Type I gradings. 
-As seen in (\cref{ssec:classification-assc-super}), every grading on $S$ is odd in this case. 
+Let us first parametrize Type I gradings. 
+As seen in (\cref{ssec:classification-assc-super}), every grading on $S$ is odd. 
 Nevertheless, we can use parameters in terms of the group $G$ to parametrize the gradings (see \cref{def:Gamma-T-beta-kappa-Q,cor:iso-Q}).  
 
 \begin{defi}\label{def:Q-Type-I}
-    Let $n > 0$ be a natural number, $T^+ \subseteq G$ be a finite subgroup, $\beta\from T^+ \times T^+ \to \FF^\times$ be a nondegenerate bicharacter, $h\in G$ be an element such that $h^2 = 1$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ be a map with finite support such that $|\kappa| \sqrt{|T^+|} = n + 1$. 
-    We will denote by $\Gamma^{\mathrm{(I)}}_Q(T^+, \beta^+, h, \kappa)$ to be the grading on $L$ induced from the grading $\Gamma_Q (T^+, \beta^+, h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}) by reduction modulo the center. 
+    Let $n \in \ZZ_{> 0}$, $T^+ \subseteq G$ be a finite subgroup, $\beta\from T^+ \times T^+ \to \FF^\times$ be a nondegenerate bicharacter, $h\in G$ be an element such that $h^2 = 1$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ be a map with finite support such that $|\kappa| \sqrt{|T^+|} = n + 1$. 
+    We will denote by $\Gamma^{\mathrm{(I)}}_Q(T^+, \beta^+, h, \kappa)$ the grading on $L$ induced from the grading $\Gamma_Q (T^+, \beta^+, h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}) by reduction modulo the center. 
 \end{defi}
 
 For Type II gradings on $L$,
@@ -369,7 +369,7 @@ With this identifications, we have $S \iso Q(1)\tensor S\even$ via Kronecker pro
 We will, first, construct a $\barr G$-grading on $S\even$, where $\barr G \coloneqq G/\langle f \rangle$, following the same steps as we did in \cref{ssec:grds-on-A-m-n}, but with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
 Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$.
 
-Let $\barr \D\even$ be a standard realization associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}), let $\barr {\mu^+}\from \barr{T^+} \to \FF^\times$ be the map associated to the transposition map and set $\mu^+ \coloneqq \barr {\mu^+} \circ \pi$
+Let $\barr \D\even$ be a standard realization associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}), let $\barr {\mu^+}\from \barr{T^+} \to \FF^\times$ be the map associated to the transposition map, and set $\mu^+ \coloneqq \barr {\mu^+} \circ \pi$
 % (Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr{T^+}$.)
 % Since $\barr {\beta^+}$ is nondegenerate, we can choose a standard realization $\barr \D\even$ of a graded-division algebra associated to $(\barr{T^+}, \barr{\beta^+})$ (see \cref{def:standard-realization}). 
 % Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D\even_{\bar t}$, for all $\bar t \in \barr {T^+}$. 
@@ -410,7 +410,7 @@ A straightforward computation (using that $\barr G$ is abelian, $u$ is central a
 To extend $\theta$ to $S$, we declare $\theta (u) = \bi u$. 
 Using the identification $S = Q(1)\tensor S\even$, this is the same as 
 \[\label{eq:theta-with-matrix-5}
-    \forall X\in Q(n+1), \quad \theta(X) = \Theta\inv\, X\stransp\, \Theta,
+    \forall X\in Q(n+1), \quad \theta(X) = \Theta\inv\, X\sTq\, \Theta,
 \]
 where 
 \[
@@ -613,7 +613,7 @@ Recall that an element $h \in G$ (and, hence, a grading $\Gamma^{\mathrm{(I_Q)}}
 The Type II gradings on $L$ will also be subdivided into different types. 
 As in the case $m\neq n$ (\cref{ssec:grds-on-A-m-n}), these gradings correspond to gradings on $(R, \vphi)$ making $R$ graded-simple, where $R \coloneqq S \times S\sop$ and $\vphi$ is the exchange superinvolution. 
 
-If the grading on $(R,\vphi)$ is even, then, by \cref{thm:MxM-even}, $R$ is isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, where $T$ is a finite elementary $2$-group, $\beta\from {T\times T} \to \FF^\times$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|} = |\kappa_\bo| \sqrt{|T|} = n+1$ (see \cref{def:model-grd-MxM-even}). 
+If the grading on $(R,\vphi)$ is even, then, by \cref{thm:MxM-even}, $R$ is isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, where $T$ is a finite elementary $2$-group, $\beta\from {T\times T} \to \FF^\times$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $e \neq f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|} = |\kappa_\bo| \sqrt{|T|} = n+1$ (see \cref{def:model-grd-MxM-even}). 
 Write $g_0$ as $(h_0, p_0)$, with $h_0 \in G$ and $p_0 \in \ZZ_2$. 
 If $p_0 = \bar 0$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{osp}. 
 If $p_0 = \bar 1$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{P}. 
