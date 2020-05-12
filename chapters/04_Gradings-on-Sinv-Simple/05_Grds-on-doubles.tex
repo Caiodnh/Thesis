@@ -302,7 +302,7 @@ Recall that in this situation the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ carr
 	\end{enumerate}
 \end{defi}
 
-It is straightforward to check that $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is $g_0$-admissible if, and only if, $(\kappa, g_0) \in \mathbf{I}(T,\beta,p)^{\bz, +}_\eta$ (see \cref{defi:X(D)}, where $\kappa$ should be regarded as a function $G^\#/T \to \ZZ_{\geq 0}$). 
+It is straightforward to check that $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is $g_0$-admissible if, and only if, $(\kappa, g_0) \in \mathbf{I}(T,\beta,p)^{\bz, +}_\eta$ (see \cref{defi:X(D)}, where $\kappa$ should be regarded as a function $G^\#/T \to \ZZ_{\geq 0}$ and $\eta$ satisfies $\eta^+ = \eta\restriction_{T^+}$). 
 In other words, $\kappa$ is $g_0$-admissible if, and only if, there is a pair $(\U, B)$ whose inertia is $(\eta, \kappa, g_0, 1)$ (see Definition \ref{def:parameter-of-(U,B)}). 
 In this case, we say that $(\U, B)$ has \emph{inertia determined by} $\kappa$. 
 
@@ -319,7 +319,7 @@ In this case, we say that $(\U, B)$ has \emph{inertia determined by} $\kappa$.
     for all $X \in M_k(\D)$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis. 
 \end{defi}
 
-Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso M(n,n)\times M(n,n)\sop$, where $n = k \sqrt{|T|/8}$, and $Q^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso Q(n)\times Q(n)\sop$, where $n = k \sqrt{|T|/4}$.
+Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso M(n,n)\times M(n,n)\sop$, where $n = |\kappa| \sqrt{|T|/8}$, and $Q^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso Q(n)\times Q(n)\sop$, where $n = |\kappa| \sqrt{|T|/4}$.
 
 \begin{thm}\label{thm:MxM-odd}
     Suppose the superalgebra with superinvolution $M(n,n) \times M(n,n)\sop$ (respectively, $Q(n) \times Q(n)\sop$) is endowed with an odd $G$-grading making it graded-simple. 
@@ -335,36 +335,13 @@ Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, 
     Then $E(\D, \U, B)$ is isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ ($Q^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$) by \cref{thm:iso-(R-vphi)-with-parameters,prop:after-fixing-delta}. 
     
     To prove the isomorphism condition, let  $\tilde\kappa\from G^\#/T \to \ZZ_{\geq 0}$ and  $\tilde\kappa\from G^\#/T' \to \ZZ_{\geq 0}$ be the maps in terms of $G^\#$ corresponding to $\kappa'$ and $\kappa'$, respectively. 
-    By \cref{thm:iso-(R-vphi)-with-parameters,prop:now-fixing-parity-of-g0,lemma:2-etas}, the gradings are isomorphic \IFF $T =T'$, $\beta = \beta'$, $t_p = t_p'$ and 
-    
-    % two  continuations, (1) and (2)
-    %
-    % (1)
-    $(\tilde\kappa, g_0)$ and $(\tilde\kappa', g_0')$ are in the same $\mc G$-orbit in $\mathbf{I}(T,\beta,p)^{\bz, +}_\eta$. 
+    By \cref{thm:iso-(R-vphi)-with-parameters,prop:now-fixing-parity-of-g0,lemma:2-etas}, the gradings are isomorphic \IFF $T =T'$, $\beta = \beta'$, $t_p = t_p'$ and $(\tilde\kappa, g_0)$ and $(\tilde\kappa', g_0')$ are in the same $\mc G$-orbit in $\mathbf{I}(T,\beta,p)^{\bz, +}_\eta$. 
     Note that in the present case, $\mc G = \big( \{e\} \times (G \times \{ \bar 0 \}) \big) \cup \big( \{f\} \times (G \times \{ \bar 1 \}) \big)$ (see \cref{eq:mathcal-G}), so 
     $\mc G = \big( \{e\} \times (G \times \{ \bar 0 \}) \big) \cup (f, \tilde t)\big( \{e\} \times (G \times \{ \bar 0 \}) \big)$, for any $\tilde t \in T^-$. 
     We claim the action by $(f, \tilde t)$ is trivial. 
     Indeed, $(f, \tilde t) \cdot (\tilde\kappa, g_0) = (\tilde t \cdot \tilde\kappa, f \tilde t ^{-2} g_0)$ (see \cref{eq:mc-G-action}), and we have that $\tilde t \cdot \tilde\kappa = \kappa$, since $\tilde t \in T$, and $f \tilde t ^{-2} = e$. 
     Therefore, the $\mc G$-orbits coincide with the $\big( \{e\} \times (G \times \{ \bar 0 \}) \big)$ orbits. 
     The result follows. 
-    
-    %
-    % (2)
-    there is $(t, \tilde g) \in \mc G \subseteq (\rad \tilde \beta) \times G^\#$ such that $(\kappa', g_0') = (t, \tilde g) \cdot (\kappa, g_0)$. 
-    In our case, $\mc G = \big( \{e\} \times (G \times \{ \bar 0 \}) \big) \cup \big( \{f\} \times (G \times \{ \bar 1 \}) \big)$ (see \cref{eq:mathcal-G}). 
-    If $t = e$, then $\tilde g \in G = G\times \{ \bar 0 \}$, so the result follows by taking $g \coloneqq \tilde g$. 
-    If $t = f$, let $\tilde t \in T^-$ and put $g \coloneqq \tilde g \tilde t$. 
-    The map $(\tilde g \cdot \tilde \kappa)\from G^\#/T \to \ZZ_{\geq 0}$ corresponds to the map $(g \cdot \kappa)\from G/T^+ \to \ZZ_{\geq 0}$. 
-    Indeed, for every $s\in T^+$,
-    \[
-    (g\cdot \kappa) (sT^+) =
-    \kappa (g\inv sT^+) =
-    \kappa (\tilde g\inv \tilde t\inv sT^+) = 
-    \tilde\kappa (\tilde g\inv \tilde t\inv sT) = 
-    \tilde\kappa (\tilde g\inv \tilde sT)  =
-    (\tilde g \cdot \tilde\kappa)(sT).
-    \]
-    Therefore, $(f, \tilde g) \cdot g_0 = f \tilde g ^{-2} g_0 = f g ^{-2} \tilde t ^{2} g_0 = fg ^{-2} f g_0 =  g ^{-2} g_0$, concluding the proof. 
 \end{proof}
 
 As done in \cref{chap:grd-simple-assc} for $Q(n)$, gradings on the even part, $Q(n)\times Q(n)\sop$ can be easily reduced to gradings on $(Q(n)\times Q(n)\sop)\even \iso M(n, 0) \times M(n, 0) \sop$. 

@@ -217,16 +217,12 @@ In what follows, for each pair $(T, \beta)$ where $T$ is a finite abelian group 
     Choose a graded $\D$-supermodule $\U$ and a nondegenerate sesquilinear form $B\from \U\times \U \to \D$ such that $(\U, B)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$. 
     We define $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be $E(\D, \U, \B)$. 
     With a choice of a graded basis for $\U$, this becomes
-    the graded superalgebra $M (T, \beta, \kappa_\bz, \kappa_\bo)$ (see \cref{def:Gamma-T-beta-kappa-even}), endowed with the superinvolution $\vphi$ given by 
+    the graded superalgebra $M (T, \beta, \kappa_\bz, \kappa_\bo)$, \ie, the graded superalgebra $M(m,n)$ endowed with the grading $\Gamma_M(T,\beta,\kappa_\bz,\kappa_\bo)$, where $m \coloneqq |\kappa_\bz|\sqrt{|T|}$ and $n \coloneqq |\kappa_\bo|\sqrt{|T|}$ (see \cref{def:Gamma-T-beta-kappa-even}), and the superinvolution $\vphi$ is given by 
     \[
         \vphi(X) \coloneqq \Phi\inv X\stransp \Phi,
     \]
-    for all $X \in M(m,n)= M_{k_\bz \mid k_\bo}(\D)$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis (viewed as an element of $M(m,n)$ rather than $M_{k_\bz | k_\bo} (\D)$). 
+    for all $X \in M(m,n)$, where $\Phi$ is the matrix representing $B$ with respect to the chosen basis (viewed as a matrix with entries in $\FF$ rather than $\D$). 
 \end{defi}
-
-Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso M(m,n)\times M(m,n)\sop$, where $m = |\kappa_\bz| \sqrt{|T|}$ and $n = |\kappa_\bo| \sqrt{|T|}$.
-
- such that $k_\bz \sqrt{|T|} = m$ and $k_\bo \sqrt{|T|} = n$, where $k_\bz \coloneqq |\kappa_\bz|$ and $k_\bo \coloneqq |\kappa_\bo|$
 
 \begin{thm}\label{thm:osp-and-p-associative}
     Suppose the superalgebra with superinvolution $M^*(m,n,p_0)$ is endowed with a $G$-grading. 
@@ -236,5 +232,5 @@ Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, 
 
 \begin{proof}
     The first assertion follows from the discussion above. 
-    The isomorphism condition follows from \cref{prop:after-fixing-delta} by noting that, in this case, $\mc G = {e} \times G$ (see \cref{eq:mathcal-G}). 
+    The isomorphism condition follows from \cref{prop:after-fixing-delta} by noting that, in this case, $\mc G = \{e\} \times G$ (see \cref{eq:mathcal-G}). 
 \end{proof}

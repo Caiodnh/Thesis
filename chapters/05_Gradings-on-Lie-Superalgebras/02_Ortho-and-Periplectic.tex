@@ -1,12 +1,12 @@
 
-\section[Gradings on Lie Superalgebras of Series \texorpdfstring{$B$, $C$, $D$ and $P$}{B, C, D and P}]{Gradings on Lie Superalgebras of Series $B$, $C$, $D$ and $P$}
+\section[Gradings on Lie Superalgebras of Series \texorpdfstring{$B$, $C$, $D$ and $P$}{B, C, D and P}]{Gradings on Lie Superalgebras of Series $B$, $C$, $D$ and $P$}\label{sec:grds-osp-and-p}
 
 We will now classify the gradings on orthosymplectic and peripletic Lie superalgebras, \ie, the Lie superalgebras of the form $L \coloneqq \Skew(R, \vphi)^{(1)}$ where $(R, \vphi) = M^*(m,n, p_0)$ (see \cref{defi:M(m-n-p_0)}). 
 
 By \cref{cor:transfer-R-vphi-to-L}, these gradings are precisely the restrictions of the gradings on $M^*(m,n, p_0)$, which are classified in \cref{thm:osp-and-p-associative}. 
 Here we will get a more explicit description of these gradings and, for the Lie superalgebras of types $B$ and $P$, recover the classification results in \cite{Helens_thesis} and \cite{paper-MAP}, respectively. 
 
-In what follows, for each pair $(T, \beta)$, where $T$ is a finite abelian group and $\beta\from {T\times T} \to \FF^\times$ is a nondegenerate alternating bicharacter, we fix $\D$ to be a standard realization associated to $(T, \beta)$. 
+In what follows, for each pair $(T, \beta)$, where $T$ is a finite abelian group and $\beta\from {T\times T} \to \FF^\times$ is a nondegenerate alternating bicharacter, we fix a standard realization $\D$ of a matrix algebra with a division grading associated to $(T, \beta)$ (see \cref{def:standard-realization}). 
 Recall that this gives us a choice of elements $0 \neq X_{ t} \in \D_{t}$, for all $\bar t \in \barr T$. 
 We also fix $\vphi_0\from \D \to \D$ to be the transposition on $\D$ and $\eta\from T \to \{\pm 1\}$ to be the corresponding map, which satisfies $\mathrm{d}\eta = \beta \, (= \tilde\beta)$. 
 
@@ -90,7 +90,7 @@ By \cref{thm:osp-and-p-associative}, if we endow $M^*(m, n, \bar 0)$ with a grad
 Unlike in the case of \cref{ssec:grds-P(n)}, our construction of the pair $(\U, B)$ will be closer to the one in \cref{ssec:parameters-(U-B)}. 
 Let $\xi\from G/T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T$ with no elements between $x$ and $g_0\inv x\inv$. 
 Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
-For each $i \in \ZZ_2$, set $k_i \coloneqq |\kappa_i|$, and construct tuples $\gamma_\bz = (g_1, \ldots, g_{k_\bz})$ and $\gamma_\bo = (h_1, \ldots, h_{k_\bo})$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, governed by $\xi$ and $\leq$ (\cref{defi:tuple-governed}). 
+For each $i \in \ZZ_2$, set $k_i \coloneqq |\kappa_i|$, and construct tuples $\gamma_\bz = (g_1, \ldots, g_{k_\bz})$ and $\gamma_\bo = (h_1, \ldots, h_{k_\bo})$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, according to $\xi$ and $\leq$ (\cref{defi:tuple-governed}). 
 Then define $\U\even \coloneqq \D^{[g_1]} \oplus \cdots \oplus \D^{[g_{k_\bz}]}$, $\U\odd \coloneqq \D^{[h_1]} \oplus \cdots \oplus \D^{[h_{k_\bo}]}$ and $\U \coloneqq \U\even \oplus \U\odd$. 
 
 To define the $\vphi_0$-sesquilinear form $B$, we will use the following:
@@ -158,14 +158,14 @@ Nevertheless, disregarding the $G$-grading, $(M(m,n), \vphi)$ must be isomorphic
 
 \begin{defi}\label{defi:Gamma_osp}
     Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be a nondegenerate alternating bicharacter, let $g_0 \in G = G\times \{ \bar 0 \}$ and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps. 
-    Set $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$, and let $\gamma_i$ the $k_i$-tuple governed by $\xi$ and $\leq$ (\cref{defi:tuple-governed}). 
+    Set $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$, and let $\gamma_i$ the $k_i$-tuple according to $\xi$ and $\leq$ (\cref{defi:tuple-governed}). 
     Consider the elementary grading on $M(k_\bz, k_\bo)$ determined by $(\gamma_\bz, \gamma_\bo)$ (see \cref{defi:elementary-grd-super}), and let $R = M(m,n)$, where $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$, be the graded superalgebra with grading given by identifying it with $M(k_\bz, k_\bo) \tensor \D$ via Kronecker product. 
     Consider on $R$ the superivolution $\vphi$ defined by \cref{eq:Phi-for-graded-osp}, where $\Phi$ is the matrix given by \cref{eq:puting-the-blocks-of-Phi-together}. 
     We define $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the graded Lie superalgebra $\Skew(R, \vphi)$. 
 \end{defi}
 
-Note that, disregarding the grading, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ is isomorphic to $\osp(m,n)$, where $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$.
-The following result is a consequence of \cref{thm:osp-and-p-associative}:
+Note that, disregarding the grading, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ is isomorphic to $\osp(m,n)$.
+The following result is a consequence of \cref{thm:osp-and-p-associative}, since $(R, \vphi)$ in the definition above is isomorphic to $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ in \cref{def:model-grd-M(m-n-0)}:
 
 \begin{thm}\label{thm:grds-osp-final}
     Let $L$ be an orthosymplectic Lie superalgebra endowed with a $G$-grading. 
