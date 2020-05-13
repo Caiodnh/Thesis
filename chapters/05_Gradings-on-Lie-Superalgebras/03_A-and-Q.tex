@@ -168,6 +168,7 @@ Then set
 \[\label{eq:fix-eta-undouble}
     \forall t\in T, \quad \eta(t) \coloneqq \mu(t) \chi\inv(t).
 \]
+Clearly, $\mathrm{d} \eta = \beta$. 
 Note that this definition agrees with \cref{def:std-realization-MxM-QxQ}(a) (see the proof of \cref{prop:m-not-n-Type-II-correspondence}). 
 
 Extend $\chi$ to $G$. 
@@ -277,7 +278,7 @@ We also allow the case $m=n$.
     Recall that a standard realization $\barr \D$ associated to $(\barr T, \bar \beta)$ is obtained by choosing subgroups $\barr A$ and $\barr B$ of $\barr T$ such that $\barr T = \barr A \times \barr B$ and $\barr \beta (\barr A, \barr A) = \barr \beta (\barr B, \barr B) = 1$. 
     Note that $\pi\from G \to \barr G$ restricts to an isomorphism $K \to \barr T$, and $\beta(s,t) = \barr\beta(\bar s, \bar t)$, for all $s,t \in K$. 
     Hence, the choice of the subgroups $\barr  A$ and $\barr  B$ as above is equivalent to a choice of subgroups $A, B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
-    In other words, our choices of $\barr \D$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}(a)\eqref{item:choose-mc-M}. 
+    In other words, our choices of $\barr \D$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}. 
     Also, $\mu (ab) = \barr \mu (ab) = \barr\beta (\bar a, \bar b) = \beta(a,b)$ for all $a\in A$ and $b\in B$, so $\mu\restriction_{K}$ is the map determining $\vphi_{\mc M}$ (see \cref{lemma:transp-std-realization}). 
     Further, since $\eta\restriction_{K} = \mu\restriction_{K}$ and $\eta\restriction_{\langle f \rangle} = \chi\inv \restriction_{\langle f \rangle}$, the map $\eta$ defined by \cref{eq:fix-eta-undouble} is the map determining to $\vphi_{\mc C} \tensor \vphi_{\mc M}$. 
     
@@ -369,6 +370,7 @@ Then define $\eta^+\from T^+ \to \pmone$ by
 \[\label{eq:fix-eta-plus-undouble-Q}
     \forall t\in T^+, \quad \eta^+(t) \coloneqq \mu^+(t) \chi\inv(t).
 \] 
+Clearly, $\mathrm{d} \eta^+ = \beta^+$. 
 In the proof of \cref{prop:Q-Type-II-correspondence}, we will show that $\eta^+$ is the map associated to the superinvolution on the even part of a graded-division superalgebra as in \cref{def:std-realization-MxM-QxQ}(c). 
 
 Extend $\chi$ to $G$ and set $k \coloneqq |\kappa|$. 
@@ -453,18 +455,21 @@ In the next definition, we summarize what have been done for future reference:
 \end{prop}
 
 \begin{proof}
-    We will show how the choices in \cref{defi:type-II-Q} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(c) and \ref{def:model-grd-MxM-odd-or-QxQ}. 
+    First recall that, as seen before \cref{cor:QxQ-reduced-to-MxM}, $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0) = Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$ (see \cref{def:model-grd-MxM-odd-or-QxQ}), where $t_p \coloneqq (h, \bar 1)$, $T \coloneqq T^+ \cup t_p T^+$ and $\beta\from T\times T \to \FF^\times$ is the unique alternating bicharacter extending $\beta^+$ such that $\rad \beta = \langle t_p \rangle$. 
+    We will show how the choices in \cref{defi:type-II-Q} correspond to the choices in Definition \ref{def:model-grd-MxM-odd-or-QxQ} (and, hence, also in \cref{def:std-realization-MxM-QxQ}(c)).
     
-    Let $\barr \D$ and $K \subseteq T^+$ be, respectively, the graded-division superalgebra and the subgroup chosen in items \eqref{item:choice-barr-D-Q} and \eqref{item:choice-K-Q} of \cref{defi:type-II-Q}. 
-    By \cref{def:standard-realization-Q}, $\barr \D = \barr \D\even \oplus u \barr \D\even$, where $\barr \D\even$ is a standard realization of a graded-division algebra associated to $(T^+, \beta^+)$, and $u \in Z(\barr \D)$ is a element with degree $\barr t_p \coloneqq (\barr h, \bar 1) \in \barr G^\#$. 
-    Following the argument in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, we have that $\barr \D\even$ corresponds to a standard realization $\mc M$ of a graded-division algebra associated to $(K, \beta^+\restriction_{K \times K})$. 
-    Moreover, if $\barr \mu\from \barr T \to \FF^\times$ is the map associated to the queer supertranspose on $\barr \D$, then $\barr \mu \restriction_{\barr {T^+}}$ is the map associated to the transposition on $\barr \D\even$ and, again following the proof of \cref{prop:m-not-n-Type-II-correspondence}, we have that $(\mu = \barr \mu \circ \pi) \restriction_K$ is the map associated to the transposition on $\mc M$. 
+    Following the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, the choices of $\barr \D\even$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}, and if $\mu_K\from K \to \pmone$ is the map associated to the transposition on $\mc M$, then $\mu_K = \mu^+\restriction_K$. 
+    Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let
+    $\eta\from T \to \pmone$ be the map associated to $\vphi_0$.  
+    By definition, $\eta\restriction_{K} = \mu_K$ and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. % @1
+    Since $\chi\inv\restriction_K$ and $\mu\restriction_{\langle f \rangle}$ are trivial, it follows that $\eta^+ = \eta\restriction_{T^+}$. 
+    In particular, the condition that $\kappa$ is $g_0$-admissible is the same in both \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}. 
     
-    We claim that the map $\eta\from T \to \FF^\times$ defined in \cref{eq:fix-eta-undouble-Q} is the map associated to $\vphi_{\mc M} \tensor \vphi_{\mc C}$ in \cref{def:std-realization-MxM-QxQ}(c). 
-    First, note that by the definition of queer supertranspose, $\barr \mu (e) = 1$ and $\barr \mu(\bar t_p) = \bi$. 
-    It follows that $\mu(e)=\mu(f) = 1$ and $\mu(t_p)=\mu(t_p f) = \bi$. 
-    Since $\chi$ is a homomorphism and and $\chi(t_p) = \bi$, it is straightforward that $\eta(e) = \eta(t_p) = 1$ and $\eta(f) = \eta(t_p f) = -1$, \ie, $\eta\restriction_{\langle t_p \rangle}$ is the map associated to $\vphi_{\mc C}$. 
-    By definition, $\eta\restriction_K = \mu\restriction_K$ is the map associated to $\vphi_{\mc M}$, so the claim follows.  
+    % We claim that the map $\eta\from T \to \FF^\times$ defined in \cref{eq:fix-eta-undouble-Q} is the map associated to $\vphi_{\mc M} \tensor \vphi_{\mc C}$ in \cref{def:std-realization-MxM-QxQ}(c). 
+    % First, note that by the definition of queer supertranspose, $\barr \mu (e) = 1$ and $\barr \mu(\bar t_p) = \bi$. 
+    % It follows that $\mu(e)=\mu(f) = 1$ and $\mu(t_p)=\mu(t_p f) = \bi$. 
+    % Since $\chi$ is a homomorphism and and $\chi(t_p) = \bi$, it is straightforward that $\eta(e) = \eta(t_p) = 1$ and $\eta(f) = \eta(t_p f) = -1$, \ie, $\eta\restriction_{\langle t_p \rangle}$ is the map associated to $\vphi_{\mc C}$. 
+    % By definition, $\eta\restriction_K = \mu\restriction_K$ is the map associated to $\vphi_{\mc M}$, so the claim follows.  
     
     % The choices of items \eqref{item:choice-barr-D-Q} and \eqref{item:choice-K-Q} in \cref{defi:type-II-Q} give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(c). 
     % Indeed, the only choice for standard realization of type Q $\barr \D$ associated to $(\barr {T^+}, \bar \beta^+, h)$ (\cref{def:standard-realization-Q}) is the choice of standard realization $\barr \D\even$ associated to $(\barr {T^+}, \bar \beta^+)$. 
@@ -480,7 +485,7 @@ In the next definition, we summarize what have been done for future reference:
     THERE WASN'T A EXPLICIT CONSTRUCTION OF $(\U, B)$ FOR ODD $\D$, SO I DO IT HERE.
     
     In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a pair $(\U, B)$ that has inertia determined by $\kappa$. 
-    To construct such pair, we will follow a construction similar to the one in \cref{ssec:grds-on-A-m-n}. 
+    To construct such pair, we follow a construction similar to the one in \cref{ssec:grds-on-A-m-n}. 
     Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let $\gamma = (g_1, \ldots, g_k)$ be the $k$-tuple realizing $\kappa$ according to $\xi$ and $\leq$ (which are chosen in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} of \cref{defi:type-II-Q}). 
     We define $\U \coloneqq \D^{[g_1]}\oplus \cdots \oplus \D^{[g_k]}$ and let $\B = \{ u_1, \ldots, u_k\}$ be its canonical graded basis. 
     Let $x_1 < \ldots < x_{\ell}$ be the elements of $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$ and set 
