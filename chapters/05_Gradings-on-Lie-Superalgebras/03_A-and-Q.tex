@@ -59,10 +59,11 @@ Then, it is straightforward to see that
 for all $s_1, s_2\in S$. 
 Since $\Skew(R, \vphi) = \{ (s, -s) \mid s \in S \}$, combining \cref{eq:Rg-recovered-with-chi,eq:psi-in-terms-of-theta}, we get that the Type II grading on $L$ corresponding to $\Gamma$ can be recovered from the restriction of ${}^\pi \Gamma$ to $S$ as follows: we define a $G$-grading $S^{(-)} = \bigoplus_{g\in G} S^{(-)}_g$ by setting
 \[\label{eq:refiniment-on-L}
-    S^{(-)}_g \coloneqq \{ s \in S_{\bar g} \mid \theta(s) = -\chi(g) s\},
+    \forall g\in G, \quad S^{(-)}_g \coloneqq \{ s \in S_{\bar g} \mid \theta(s) = -\chi(g) s\},
 \]
 and induce a $G$-grading on $L = S^{(1)}/Z(S^{(1)})$. 
 Hence, a Type II grading on $L$ can be described in terms of a $\barr G$-grading on $S$ and a super-anti-automorphism on $S$. 
+We will call $L$ endowed with this grading the \emph{undoubled model} of $\Skew(R, \vphi)/Z(\Skew(R, \vphi))$. 
 
 Our next goal is to describe $(S, \theta)$, where $S$ is endowed with the restriction of ${}^\pi\Gamma$, without reference to $(R,\vphi)$. 
 By \cref{prop:lemma-for-undoubling-and-fine-gradings}, $S \iso E(\barr T, \barr \beta, \barr p, \kappa)$, where $\barr T \coloneqq T/\langle f \rangle$, $\barr \beta$ and $\barr p$ are the maps induced by $\beta$ and $p$ on $\barr T$, and $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is seen as a map $\kappa\from \barr G^\#/ \barr T \to \ZZ_{\geq 0}$ via the canonical isomorphism $G^\#/T \iso \barr G^\#/ \barr T$. 
@@ -157,7 +158,7 @@ Since $m\neq n$, the $g_0$-admissibility implies that $g_0 \in G$.
 Recall that the graded algebra $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ corresponds to $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$, where $\eta\from T \to \pmone$ is fixed, $p\from T \to \ZZ_2$ is the trivial homomorphism, and $\delta = 1$. 
 The map $\eta$ was determined by fixing a standard realization $\D$ for $(T, \beta, e)$ (see \cref{def:std-realization-MxM-QxQ}), namely, $\eta$ is the map associated to the superinvolution $\vphi_{\mc C} \tensor \vphi_{\mc M}$ on $\D$. 
 
-We will use the parameters $(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
+We will use the parameters $(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to construct a representative for the Type II grading in terms of the undoubled model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
 As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$, let $\barr \beta$ be the (nondegenerate) bicharacter on $\barr T$ induced by $\beta$, and consider $\kappa_\bz$ and $\kappa_\bo$ as maps defined on $\barr G/\barr T \iso G/T$. 
 
 Let $\barr \D$ be the chosen standard realization associated to $(\barr T, \bar\beta)$, and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to the transposition map. 
@@ -358,8 +359,8 @@ $
     \end{array}\right)
     \in Z(S)\odd
 $,
-that $Z(S) = \FF1 \oplus \FF u$ can be identified with the associative superalgebra $Q(1)$, and that $S\even$ can be identified with $M_{n+1}(\FF) = M(n+1, 0)$. 
-With these identifications, we have $S \iso Q(1)\tensor S\even$ via Kronecker product. 
+that $Z(S) = \FF1 \oplus \FF u$ can be identified with the associative superalgebra $Q(1)$, that $S\even$ can be identified with $M_{n+1}(\FF) = M(n+1, 0)$ and that $S$ can be identified with $Q(1)\tensor S\even$ via Kronecker product. 
+% With these identifications, we have $S \iso Q(1)\tensor S\even$ via Kronecker product. 
 
 We will, first, construct a $\barr G$-grading on $S\even$, where $\barr G \coloneqq G/\langle f \rangle$, following the same steps as we did in \cref{ssec:grds-on-A-m-n}, but with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
 Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$.
@@ -375,7 +376,7 @@ In the proof of \cref{prop:Q-Type-II-correspondence}, we will show that $\eta^+$
 
 Extend $\chi$ to $G$ and set $k \coloneqq |\kappa|$. 
 Following the construction after \cref{eq:fix-eta-undouble} in \cref{ssec:grds-on-A-m-n} with $\kappa_\bz \coloneqq \kappa$ and $\kappa_\bo$ being the zero map, we get an elementary $\barr G$-grading on $M_k(\FF) = M(k , 0)$. 
-We, then, identify the $\barr G$-graded superalgebra $M_{k}(\barr \D\even) = M_{k}(\FF) \tensor \barr\D\even$ with $S\even = M_{n+1}(\FF)$ via Kronecker product, and define 
+We identify the $\barr G$-graded superalgebra $M_{k}(\barr \D\even) = M_{k}(\FF) \tensor \barr\D\even$ with $S\even = M_{n+1}(\FF)$ via Kronecker product, and define 
 \[\label{eq:Theta_bz-for-Q}
     \Theta_\bz \coloneqq \begin{pmatrix}
         \Theta(\bar 0, x_1)&& \\
@@ -384,23 +385,24 @@ We, then, identify the $\barr G$-graded superalgebra $M_{k}(\barr \D\even) = M_{
     \end{pmatrix},
 \]
 where $x_1 < \ldots < x_{\ell}$ are the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$, and $\Theta(\bar 0, x)$, for $x\in \barr G/\barr {T^+}$, is as in \cref{defi:blocks-of-Theta}. 
-
-Finally, we define the super-anti-automorphism $\theta\from S\even \to S\even$ by 
+We, then, define the (super-)anti-automorphism $\theta\from S\even \to S\even$ by 
 \[\label{eq:theta-with-matrix-4}
     \forall X\in M_{n+1}(\FF), \quad \theta(X) \coloneqq \Theta_\bz\inv\, X\transp\, \Theta_\bz.
 \]
 
-We will now extend this $\barr G$-grading and the super-anti-automorphism $\theta$ to $S = S\even \oplus u S\even$. 
-
-To extend the grading, we declare $\deg u = \barr h$ (compare with \cref{def:standard-realization-Q}). 
-More explicitly, we define $S_{\bar g} = S\even_{\bar g}$ and $S_{\barr{t_p}\bar g} = u 
+We extend the $\barr G$-grading on $S\even$ to $S = S\even \oplus u S\even$ by declaring $\deg u = \barr h$, \ie, we define $S_{\bar g} = S\even_{\bar g}$ and $S_{\barr{t_p}\bar g} = u 
 S\even_{\bar g}$, for all $\barr g \in \barr G$. 
-% A straightforward computation (using that $\barr G$ is abelian, $u$ is central and $u^2 = 1$) shows that this, indeed, defines a grading on $S$. 
+In terms of the identification $S = Q(1) \tensor S\even$, this corresponds to the usual tensor product of graded superalgebras. 
 
-To extend $\theta$ to $S$, we declare $\theta (u) = \bi u$. 
-Using the identification $S = Q(1)\tensor S\even$, this is the same as 
+\begin{remark}\label{rmk:change-Q(1)-of-place}
+    Note that $S = Q(1) \tensor S\even = Q(1) \tensor M_k(\FF) \tensor \barr \D\even \iso M_k(\FF) \tensor Q(1) \tensor \barr\D\even$. 
+    Hence, this $\barr G$-grading is isomorphic to $\Gamma_Q(\barr {T^+}, \barr {\beta^+}, \bar h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}), by choosing the standard realization of type Q (\cref{def:standard-realization-Q}) to be $Q(1)\tensor \D\even = \D\even \oplus u \D\even$.
+\end{remark}
+
+We also extend the (super-)anti-automorphism $\theta$ to $S$, by declaring $\theta (u) = \bi u$. 
+In terms of the identification $S = Q(1)\tensor S\even$, this corresponds to  
 \[\label{eq:theta-with-matrix-5}
-    \forall X\in Q(n+1), \quad \theta(X) = \Theta\inv\, X\sTq\, \Theta,
+    \forall X\in Q(n+1), \quad \theta(X) \coloneqq \Theta\inv\, X\sTq\, \Theta,
 \]
 where 
 \[\label{eq:Theta-for-Q}
@@ -410,6 +412,7 @@ where
             0 & \Theta_\bz
         \end{array}\right).
 \]
+Note that, differently from \cref{eq:theta-with-matrix-3}, we are using the queer supertranspose (\cref{def:queer-stp}) here.
 
 Finally, we define a $G$-grading on $S^{(1)}$ by 
 \[\label{eq:final-G-grd-on-Q}
@@ -442,10 +445,21 @@ In the next definition, we summarize what have been done for future reference:
 % -------------------------------
 
 \begin{remark}
-    One can easily see that the $\barr G$-grading on $S$ above is isomorphic to $\Gamma_Q(\barr {T^+}, \barr {\beta^+}, \bar h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}) by using the choices (i) $\barr \D \coloneqq \barr \D\even \oplus u\barr\D\even$ and (ii) $\barr \gamma$ as above. 
     We also note that in \cite[Theorem 5.1]{paper-Qn} it is described how to extend a $G$-grading $\Gamma$ on $S\even$ to $S$, without using a full description of $\Gamma$. 
-    The construction above corresponds directly to the case where $\Gamma$ is of Type II there. 
+    The construction above corresponds to the case where $\Gamma$ is of Type II there. 
 \end{remark}
+
+% \begin{lemma}
+%     The $\barr G$-grading on $S$ constructed above is isomorphic to $\Gamma_Q(\barr {T^+}, \barr {\beta^+}, \bar h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}). 
+% \end{lemma}
+
+% \begin{proof}
+%     The $\barr G$-grading on $S$ is given by $S = Q(1) \tensor S\even = Q(1) \tensor $
+    
+%     Since $u$ is central. 
+    
+%     by using the choices (i) $\barr \D \coloneqq \barr \D\even \oplus u\barr\D\even$ and (ii) $\barr \gamma$ as above
+% \end{proof}
 
 % --------------------
 
