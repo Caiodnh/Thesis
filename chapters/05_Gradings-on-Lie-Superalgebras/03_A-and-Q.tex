@@ -233,7 +233,6 @@ Then, we define
         \end{array}\right).
 \]
 %
-% @2
 We define the super-anti-automorphism $\theta\from S\to S$ by \cref{eq:theta-with-matrix-2}, where $\theta_0\from \barr \D \to \barr \D$ denotes the transposition on $\barr \D$. 
 Note that $\theta_0(X)\stransp \in M_{k_\bz \mid k_\bo} (\barr \D)$ becomes $X\stransp \in M(m+1,n+1)$. 
 Hence, \cref{eq:theta-with-matrix-2} reduces to 
@@ -266,6 +265,23 @@ We also allow the case $m=n$.
     \cref{eq:theta-with-matrix-3}. 
     Finally, we define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $S^{(1)}$ by \cref{eq:def-final-grd-A(m-n)}. 
 \end{defi}
+
+% @2
+The following is an easy result that will also be used in \cref{ssec:grds-on-Q(n),ssec:grds-on-Ann}.
+
+\begin{lemma}\label{lemma:barr-D-to-mc-M}
+    Let $T$ be a finite abelian group, $\beta\from T\times T \to \pmone$ be an alternating bicharacter and $K\subseteq T$ be a subgroup such that $T = K \times (\rad \beta)$. 
+    Set $\barr T \coloneqq T/(\rad \beta)$ and let $\barr \beta\from \barr T\times \barr T \to \pmone$ be the bicharacter induced by $\beta$. 
+    Then the natural homomorphism $\pi\from T \to \barr T$ induces a bijection between standard realizations $\barr \D$ associated to $(\barr T, \barr \beta)$ and standard realizations $\mc M$ associated to $(K, \beta\restriction_{K\times K})$ (see \cref{def:standard-realization}). 
+    Further, if $\barr \mu \from \barr T \to \pmone$ is the map associated to the transposition on $\barr \D$, then $\mu \coloneqq \barr \mu \circ \pi\restriction_K$ is the map associated to the transposition on $\mc M$. 
+\end{lemma}
+
+\begin{proof}
+    Recall that a standard realization $\barr \D$ associated to $(\barr T, \bar \beta)$ is obtained by choosing subgroups $\barr A$ and $\barr B$ of $\barr T$ such that $\barr T = \barr A \times \barr B$ and $\barr \beta (\barr A, \barr A) = \barr \beta (\barr B, \barr B) = 1$. 
+    Since $\pi\restriction_K\from K \to \barr T$ is an isomorphism, and $\beta(s,t) = \barr\beta(\pi(s), \pi(t))$, for all $s,t \in K$, the choice of the subgroups $\barr  A$ and $\barr  B$ as above is equivalent to a choice of subgroups $A, B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
+    The ``further'' part follows from \cref{lemma:transp-std-realization}: since
+    $\mu ( \bar a \bar b) = \barr\beta (\bar a, \bar b)$, for all $\bar a\in \barr A$ and $\bar b\in \barr B$, we have that $\mu (ab) = \beta(a,b)$, for all $a\in A$ and $b\in B$. 
+\end{proof}
 
 \begin{prop}\label{prop:m-not-n-Type-II-correspondence}
     Consider $(R, \vphi) \coloneqq M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}). 
@@ -328,7 +344,7 @@ Recall that, for every $\kappa\from G/T \to \ZZ_{\geq 0}$, we defined $\kappa\St
 
 % ----------------------------------
 
-\subsection{Gradings on \texorpdfstring{$Q(n)$}{Q(n)}}
+\subsection{Gradings on \texorpdfstring{$Q(n)$}{Q(n)}}\label{ssec:grds-on-Q(n)}
 
 We will now discuss the case where $S$ is the associative superalgebra $Q(n+1)$, so $L = S^{(1)}/Z(S^{(1)})$ is the Lie superalgebra $Q(n)$. 
 
@@ -462,6 +478,15 @@ In the next definition, we summarize what have been done for future reference:
 % \end{proof}
 
 % --------------------
+A BIT OF OVER-EXPLANATION:
+
+The following is an easy result that will be also used in \cref{ssec:grds-on-Ann}:
+
+\begin{lemma}
+    Let $\D$ be an odd graded-division superalgebra, $\U$ be graded right $\D$-supermodule and $B\from \U \times \U \to \D$ be a homogeneous nondegenerate sesquilinear form with $\deg B \in G$. 
+    Set $R = \End_\D(\U)$ and, as done in Section \cref{}, identify $R\even$ with $\End_{\D\even} (\U\even)$. 
+    If $\vphi\from R \to R$ is the superadjunction with respect to $B$ (Def.), then $\vphi\restriction_{R\even}\from R\even \to R\even$ is the superadjunction with respect to $B\restriction_{\U\even \times \U\even} \from \U\even \times \U\even \to \D\even$. \qed
+\end{lemma}
 
 \begin{prop}\label{prop:Q-Type-II-correspondence}
     Consider $(R, \vphi) \coloneqq Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$, as defined before \cref{cor:QxQ-reduced-to-MxM}. 
