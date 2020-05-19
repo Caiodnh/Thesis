@@ -79,10 +79,10 @@ But we can follow a different approach.
 
 Let $\B = \{u_\lambda\}_{\lambda \in \Lambda}$ be any basis for $\U$, and let $0 \neq d_1\in \D\odd$. 
 For every $\lambda \in \Lambda$, if $u_\lambda$ is an odd element, let us replace it by $u_\lambda d_1$. 
-The resulting set is, clearly, a even basis of $\U$.
+The resulting set is, clearly, a even basis of $\U$. 
 
 \begin{convention}\label{conv:pick-even-basis}
-    If $\D$ is an odd graded-division superalgebra, we will always choose the graded basis $\B$ to be an even basis.
+    If $\D$ is an odd graded-division superalgebra, we choose the graded basis $\B$ to be an even basis.
 \end{convention}
 
 It follows that the canonical $\ZZ_2$-grading on $\U$ is determined only by $\D$. 
@@ -91,7 +91,16 @@ Clearly, $\tilde \U \subseteq \U\even$ and it is a  $\D_e$-form of $\U$, \ie, we
 
 This can also be seen from the point of view of the map $\kappa$. 
 Note that, every coset $x \in G^\#/T$ has an even representative. 
-This entails that the map $\iota\from G/T^+ \to G^\#/T$ given by $\iota ( gT^+) = (g, \bar 0) T$ is a bijection, so we can work with $\kappa \circ \iota$, which we will, by abuse of notation, also denote by $\kappa$.
+This entails that the map $\iota\from G/T^+ \to G^\#/T$ given by $\iota ( gT^+) = (g, \bar 0) T$ is a bijection, so we can work with $\kappa \circ \iota$, which we will, by abuse of notation, also denote by $\kappa$. 
+
+It should be noted that, even though $\U\even$ and $\U\odd$ are not $\D$-submodules, they are $\D\even$-submodules. 
+Clearly, the map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ above is the map associated to both $\U\even$ and $\U\odd$, and a even graded $\D$-basis for $\U$ is a graded $\D\even$-basis for $\U\even$. 
+
+\begin{remark}\label{rmk:R-even-identificatios}
+    Letn $R \coloneqq \End_{\D}(\U)$. 
+    If $\D$ is even, then we can identify $R\even$ with $\End_{\D}(\U\even) \oplus \End_{\D} (\U\odd)$. 
+    If $\D$ is odd, then we can identify $R\even$ with $\End_{\D\even}(\U\even)$. 
+\end{remark}
 
 \subsection{Graded Wedderburn theory for superalgebras}\label{ssec:wedderburn-super}
 
