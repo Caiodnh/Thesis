@@ -494,67 +494,41 @@ The following is an easy result that will be also used in \cref{ssec:grds-on-Ann
 \end{prop}
 
 \begin{proof}
-    First recall that, as seen before \cref{cor:QxQ-reduced-to-MxM}, $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0) = Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$ (see \cref{def:model-grd-MxM-odd-or-QxQ}), where $t_p \coloneqq (h, \bar 1)$, $T \coloneqq T^+ \cup t_p T^+$ and $\beta\from T\times T \to \FF^\times$ is the unique alternating bicharacter extending $\beta^+$ such that $\rad \beta = \langle t_p \rangle$. 
-    We will show how the choices in \cref{defi:type-II-Q} correspond to the choices in Definition \ref{def:model-grd-MxM-odd-or-QxQ} (and, hence, also in \cref{def:std-realization-MxM-QxQ}(c)).
+    % Recall what Q^ex means, including what $T$ and $t_p$ are, and how to see \kappa with the proper domain. 
+    First recall that, by definition, $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0) = Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$ (see \cref{def:model-grd-MxM-odd-or-QxQ}), where $t_p \coloneqq (h, \bar 1)$, $T \coloneqq T^+ \cup t_p T^+$, $\beta\from T\times T \to \FF^\times$ is the unique alternating bicharacter extending $\beta^+$ such that $\rad \beta = \langle t_p \rangle$, and $\kappa$ is seen as defined on $G^\#/T \iso G/ T^+$. 
     
+    % Say what we are going to do
+    We will now show how the choices in \cref{defi:type-II-Q} correspond to the choices in \cref{def:std-realization-MxM-QxQ}(c) and \cref{def:model-grd-MxM-odd-or-QxQ}. 
+    % (and, hence, also in \cref{def:std-realization-MxM-QxQ}(c)).
+    
+    % The choices of K and \barr\D\even given us the correct \eta^+, and fix \D as \M\tensor\C
     Following the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, the choices of $\barr \D\even$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}, and if $\mu_K\from K \to \pmone$ is the map associated to the transposition on $\mc M$, then $\mu_K = \mu^+\restriction_K$. 
     Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let
     $\eta\from T \to \pmone$ be the map associated to $\vphi_0$.  
-    By definition, $\eta\restriction_{K} = \mu_K$ and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. % @1
+    By definition, $\eta\restriction_{K} = \mu_K$ and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. 
     Since $\chi\inv\restriction_K$ and $\mu\restriction_{\langle f \rangle}$ are trivial, it follows that $\eta^+ = \eta\restriction_{T^+}$. 
     In particular, the condition that $\kappa$ is $g_0$-admissible is the same in both \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}. 
     
-    % We claim that the map $\eta\from T \to \FF^\times$ defined in \cref{eq:fix-eta-undouble-Q} is the map associated to $\vphi_{\mc M} \tensor \vphi_{\mc C}$ in \cref{def:std-realization-MxM-QxQ}(c). 
-    % First, note that by the definition of queer supertranspose, $\barr \mu (e) = 1$ and $\barr \mu(\bar t_p) = \bi$. 
-    % It follows that $\mu(e)=\mu(f) = 1$ and $\mu(t_p)=\mu(t_p f) = \bi$. 
-    % Since $\chi$ is a homomorphism and and $\chi(t_p) = \bi$, it is straightforward that $\eta(e) = \eta(t_p) = 1$ and $\eta(f) = \eta(t_p f) = -1$, \ie, $\eta\restriction_{\langle t_p \rangle}$ is the map associated to $\vphi_{\mc C}$. 
-    % By definition, $\eta\restriction_K = \mu\restriction_K$ is the map associated to $\vphi_{\mc M}$, so the claim follows.  
+    % @1
     
-    % The choices of items \eqref{item:choice-barr-D-Q} and \eqref{item:choice-K-Q} in \cref{defi:type-II-Q} give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(c). 
-    % Indeed, the only choice for standard realization of type Q $\barr \D$ associated to $(\barr {T^+}, \bar \beta^+, h)$ (\cref{def:standard-realization-Q}) is the choice of standard realization $\barr \D\even$ associated to $(\barr {T^+}, \bar \beta^+)$. 
-    % Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the queer supertransposition on $\barr \D$. 
-    % It is clear that $\mu\restriction_{\barr {T^+}}$ is the map associated to the transposition on $\barr \D\even$, and that $\mu(t_1) = \bi$. 
-    % By the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $T^+$ playing the role of $T$, this corresponds to a standard realization $\mc M$ associated to $(K, \beta^+\restriction_{K \times K})$, and $\mu\restriction_{\barr {T^+}} \circ \pi$ is the map associated to the transposition on $\mc M$. 
-    % It
+    % Need: $\D$ is what it should be
+    Note that 
     
-    % SHOULD I BE MORE EXPLICIT HERE, OR IS IT OK TO REFER TO THAT PROOF?
+    % Constructs $(\U, B)$ using the construction in osp, by reducing it to $(\U\even, B\even)$
+    In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a graded right $\D$-supermodule $\U$ and a $\vphi_0$-sesquilinear form $B\from \U \times \U \to \D$ such that $(\U, B)$ has inertia determined by $\kappa$. 
+    To do that, we first construct a graded right $\D\even$-supermodule $\U\even$ and a $\vphi_0\restriction_{\D\even}$-sesquilinear form $B\even\from \U \times \U \to \D$ such that $(\U\even, B\even)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$ following the same construction as in \cref{ssec:grds-osp}, where we take $\kappa_\bz \coloneqq \kappa$  (seen as a map defined on $G/T^+$) and $\kappa_\bo$ to be the zero map. 
+    In other words, define $\D\even \coloneqq (\D\even)^{[g_1]}\oplus \cdots \oplus (\D\even)^{[g_k]}$, where $(g_1, \ldots, g_k)$ is the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$, and $B$ by $B(u_i, u_j) \coloneqq \Phi_{ij}$, where $\B \coloneqq \{ u_1, \ldots, u_k \}$ is the canonical graded $\D\even$-basis of $\U\even$ and $\Phi \in M_k(\D\even)$ is the matrix defined by \cref{eq:puting-the-blocks-of-Phi-together}. 
+    We then define $\U\odd \coloneqq \U\even \tensor_{\D\even} \D$. 
+    Note that $\B$ is an even graded $\D$-basis of $\U$, and let $B\from \U \times \U \to \D$ the unique $\vphi_0$-sesquilinear extension of $B\even$,\ie, $B$ is also represented by $\Phi$. 
+    % We now write $\Phi$ with entries in $\D$ in a smart way, putting $Q(1)$ in the front.
     
-    % Further, since $\eta\restriction_{K} = \mu\restriction_{K}$ and $\eta\restriction_{\langle f \rangle} = \chi\inv \restriction_{\langle f \rangle}$, the map $\eta$ defined by \cref{eq:fix-eta-undouble} is the map determining to $\vphi_{\mc C} \tensor \vphi_{\mc M}$. 
+    % From \Phi we get \Theta
+    To get the matrix $\Theta$, we proceed as in \cref{prop:m-not-n-Type-II-correspondence}. 
+    We consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi$ be the matrix representing $B$ with respect to $\tilde \B$. 
+    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get $\Theta$ as in \cref{eq:Theta-for-Q}. 
     
-    THERE WASN'T A EXPLICIT CONSTRUCTION OF $(\U, B)$ FOR ODD $\D$, SO I DO IT HERE.
+    %The final remark
     
-    In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a pair $(\U, B)$ that has inertia determined by $\kappa$. 
-    To construct such pair, we follow a construction similar to the one in \cref{ssec:grds-on-A-m-n}. 
-    Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let $\gamma = (g_1, \ldots, g_k)$ be the $k$-tuple realizing $\kappa$ according to $\xi$ and $\leq$ (which are chosen in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} of \cref{defi:type-II-Q}). 
-    We define $\U \coloneqq \D^{[g_1]}\oplus \cdots \oplus \D^{[g_k]}$ and let $\B = \{ u_1, \ldots, u_k\}$ be its canonical graded basis. 
-    Let $x_1 < \ldots < x_{\ell}$ be the elements of $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$ and set 
-    \[
-        \begin{pmatrix}
-        \Phi(\bar 0, x_1)&& \\
-        & \ddots &\\
-        && \Phi(\bar 0, x_{\ell})
-    \end{pmatrix} \in M_k(\D)
-    \]
-    (see \cref{defi:blocks-of-Phi}). 
-    We define $B\from \U \times \U \to \D$ to be the $\vphi_0$-sesquilinear form such that $B(u_i, u_j) \coloneqq \Phi_{ij}$. 
-    It is straightforward to see that $B$ is nondegenerate and $(\U, B)$ has inertia determined by $\kappa$. 
-    To get the matrix $\Theta$, we also proceed as in \cref{prop:m-not-n-Type-II-correspondence}. 
-    We consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
-    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-Q}.
-    %
-    % We can use the choices in items \eqref{item:choice-xi-Q} and \eqref{item:choice-leq-Q} to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-odd-or-QxQ}, by following a construction analogous to the one in \cref{ssec:grds-osp}. 
-    % With respect with the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
-    % To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
-    % \[\label{eq:tilde-u_i-from-u_i}
-    %     \tilde u_i \coloneqq 
-    %     \begin{cases}
-    %         \sqrt{\chi(\deg u_i)\inv} u_i, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
-    %         \hfill \chi(\deg u_i)\inv u_i, & \text{if }(\deg u_i) T < g_0\inv (\deg u_i)\inv T;\\
-    %         \hfill u_i, & \text{if }(\deg u_i) T > g_0\inv (\deg u_i)\inv T.
-    %     \end{cases}
-    % \]
-    % Let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
-    % Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}. 
 \end{proof}
 
 % --------------------
