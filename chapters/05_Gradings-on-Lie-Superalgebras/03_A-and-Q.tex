@@ -63,12 +63,18 @@ Since $\Skew(R, \vphi) = \{ (s, -s) \mid s \in S \}$, combining \cref{eq:Rg-reco
 \]
 and induce a $G$-grading on $L = S^{(1)}/Z(S^{(1)})$. 
 Hence, a Type II grading on $L$ can be described in terms of a $\barr G$-grading on $S$ and a super-anti-automorphism on $S$. 
-We will call $L$ endowed with this grading the \emph{undoubled model} of $\Skew(R, \vphi)/Z(\Skew(R, \vphi))$. 
 
-Our next goal is to describe $(S, \theta)$, where $S$ is endowed with the restriction of ${}^\pi\Gamma$, without reference to $(R,\vphi)$. 
+\begin{defi}
+    We will call $L$ endowed with the $G$-grading constructed above the \emph{undoubled model} or the \emph{undoubling} of $\Skew(R, \vphi)/Z(\Skew(R, \vphi))$. 
+\end{defi}
+
+Our next goal is to describe the undoubled model without reference to $(R,\vphi)$. 
+First, we need the parameters of 
+$S$ endowed with the restriction of ${}^\pi\Gamma$. 
 By \cref{prop:lemma-for-undoubling-and-fine-gradings}, $S \iso E(\barr T, \barr \beta, \barr p, \kappa)$, where $\barr T \coloneqq T/\langle f \rangle$, $\barr \beta$ and $\barr p$ are the maps induced by $\beta$ and $p$ on $\barr T$, and $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ is seen as a map $\kappa\from \barr G^\#/ \barr T \to \ZZ_{\geq 0}$ via the canonical isomorphism $G^\#/T \iso \barr G^\#/ \barr T$. 
 
-To describe $\theta\from S \to S$, let us first write $\theta\from R\to R$ in matrix terms. 
+It remains to describe the super-anti-automorphism $\theta\from S \to S$. 
+Let us write $\theta\from R\to R$ in matrix terms. 
 Let $\B = \{ u_1, \ldots, u_k \}$ be a $G$-graded basis of $\U$, following \cref{conv:pick-even-basis}, and use it to identify $\End_\D (\U)$ with $M_k(\D)$. 
 We will also assume that $B$ is even if $\D$ is odd (\cref{conv:pick-even-form}). 
 Set $g_i \coloneqq \deg u_i$. 
@@ -79,17 +85,19 @@ Then $\psi(X) = \Lambda \psi_0(X) \Lambda\inv$, for all $X \in M_k(\D)$.
 Define $\theta_0 \coloneqq \psi_0 \vphi_0 = \vphi_0 \psi_0$. 
 Then:
 \[\label{eq:theta-with-matrix-1}
-    \theta(X) = (\Lambda\Phi)\inv\, \theta_0(X)\stransp \, (\Lambda\Phi),
-\]
-for all $X \in M_k(\D)$. 
+    \forall X \in M_k(\D), \quad \theta(X) = (\Lambda\Phi)\inv\, \theta_0(X)\stransp \, (\Lambda\Phi).
+\] 
 
-Clearly, $\theta_0$ is a super-anti-automorphism on $\D$ associated to the map $\mu \coloneqq \eta \chi$. 
+Clearly, $\theta_0$ is a super-anti-automorphism on $\D$ associated to the map 
+\[\lable{eq:defi-mu-undoubled}
+    \mu \coloneqq \eta \chi.
+\]
 Note that $\mu(f) = 1$ and, hence, we can see $\mu$ as a map $\barr \mu\from \barr T \to \FF^\times$. 
-Indeed,  since $f\in \ker \tilde\beta$, we have
+Indeed, since $f\in \ker \tilde\beta$, we have
 \begin{equation}
-    \mu(tf) = \tilde\beta (t,f) \mu(t)\mu(f) = \mu(t)\mu(f) = \mu(t),
+    \forall t\in T, \quad \mu(tf) = \tilde\beta (t,f) \mu(t)\mu(f) = \mu(t)\mu(f) = \mu(t),
 \end{equation}
-for all $t\in T$, so $\barr\mu$ is well-defined for every coset $\bar t \in \barr T$. 
+so $\barr\mu$ is well-defined for every coset $\bar t \in \barr T$. 
 Recall, from \cref{cor:T+-is-elem-2-grp}, that $T^+$ is an elementary $2$-group and for every $t\in T^-$, $t^2 = f$. 
 Hence, $\chi$ takes values $\pm 1$ on $T^+$ and $\pm \mathbf{i}$ on $T^-$. 
 By \cref{lemma:quadratic-form-involutions}, $\bar\mu$ is a quadratic map on $\barr T$. 
@@ -111,22 +119,44 @@ From \cref{eq:theta-with-matrix-1}, we now get that
 \]
 where $\Theta \coloneqq \Lambda \Phi \epsilon \in M_k(\barr \D)$ or, equivalently, $\Theta_{ij} = \chi(g_i) B(u_i, u_j) \epsilon$, and $\theta_0$ is the super-anti-automorphism on $\barr \D$ associated to $\bar \mu$. 
 
-We note that the refinement obtained in \cref{eq:refiniment-on-L}, from $\theta$ given by \cref{eq:theta-with-matrix-2}, is determined by the values of $\chi$ on the subgroup $T \subseteq G^\#$. 
-To be more precise, let $\tilde \chi \in \widehat {G^\#}$ be a character such that $\chi\restriction_{T} = \tilde\chi\restriction_{T}$, let $\tilde \psi \from R\to R$ be the action by $\tilde \chi$, and set $\tilde \theta \coloneqq \tilde\psi \vphi = \vphi \tilde\psi$. 
-We claim that, for every $s \in S_{\bar g}$, $\tilde\theta(s) = - \tilde\chi(g) s$ \IFF $\theta(s) = - \chi(g) s$. 
+To summarize, the undoubled model is determined by a grading on $S$ making it isomorphic to $E(\barr T, \barr \beta, \barr p, \kappa) \iso M_k(\barr \D)$, a map $\mu \from \barr T \to \FF^{\times}$ associated to a super-anti-automorphism $\theta_0$ on $\barr(\D)$ and a matrix $\Theta \in M_k(\barr \D)$. 
 
-Indeed, set $\sigma \coloneqq \tilde\chi\chi\inv$, so $\tilde\chi = \sigma \chi$. 
-Then $\sigma$ is a character on $G^\#$ with $\sigma(T) = 1$ and, in particular, can be seen as a character on $G^\#/\langle f \rangle$. 
-Every element in $S_{\bar g}$ is a sum of elements of the form $E_{ij}(d)$, where $1 \leq i, j \leq k$ and $d\in \barr \D_{\bar t}$, such that $\bar g_i \bar t \bar g_j\inv = \bar g$. 
-By \cref{eq:theta-with-matrix-2}, 
-\begin{align}
-    \tilde\theta(E_{ij}(d)) 
-    &= \sigma(g_i) \sigma(g_j\inv) \theta (E_{ij}(d)) 
-    = \sigma(\bar g_i) \sigma(\bar g_j\inv) \theta (E_{ij}(d)) \\ 
-    &= \sigma(\bar t\inv \bar g) \theta(E_{ij}(d)) 
-    = \sigma(\bar g) \theta(E_{ij}(d)).
-\end{align} 
-We conclude that $\tilde\theta(s) = \sigma(\bar g) \theta(s)$ for all $s\in S_{\bar g}$ and the claim follows. 
+Finally, we note that the refinement obtained in \cref{eq:refiniment-on-L}, from $\theta$ given by \cref{eq:theta-with-matrix-2}, is determined by the values of $\chi$ on the subgroup $T \subseteq G^\#$. 
+% To be more precise, let $\tilde \chi \in \widehat {G^\#}$ be a character such that $\chi\restriction_{T} = \tilde\chi\restriction_{T}$, let $\tilde \psi \from R\to R$ be the action by $\tilde \chi$, and set $\tilde \theta \coloneqq \tilde\psi \vphi = \vphi \tilde\psi$. 
+% We claim that, for every $s \in S_{\bar g}$, $\tilde\theta(s) = - \tilde\chi(g) s$ \IFF $\theta(s) = - \chi(g) s$. 
+
+% Indeed, set $\sigma \coloneqq \tilde\chi\chi\inv$, so $\tilde\chi = \sigma \chi$. 
+% Then $\sigma$ is a character on $G^\#$ with $\sigma(T) = 1$ and, in particular, can be seen as a character on $G^\#/\langle f \rangle$. 
+% Every element in $S_{\bar g}$ is a sum of elements of the form $E_{ij}(d)$, where $1 \leq i, j \leq k$ and $d\in \barr \D_{\bar t}$, such that $\bar g_i \bar t \bar g_j\inv = \bar g$. 
+% By \cref{eq:theta-with-matrix-2}, 
+% \begin{align}
+%     \tilde\theta(E_{ij}(d)) 
+%     &= \sigma(g_i) \sigma(g_j\inv) \theta (E_{ij}(d)) 
+%     = \sigma(\bar g_i) \sigma(\bar g_j\inv) \theta (E_{ij}(d)) \\ 
+%     &= \sigma(\bar t\inv \bar g) \theta(E_{ij}(d)) 
+%     = \sigma(\bar g) \theta(E_{ij}(d)).
+% \end{align} 
+% We conclude that $\tilde\theta(s) = \sigma(\bar g) \theta(s)$ for all $s\in S_{\bar g}$ and the claim follows. 
+
+\begin{lemma}
+    Let $\tilde \chi \in \widehat {G^\#}$ be a character such that $\chi\restriction_{T} = \tilde\chi\restriction_{T}$, let $\tilde \psi \from R\to R$ be the action by $\tilde \chi$, and set $\tilde \theta \coloneqq \tilde\psi \vphi = \vphi \tilde\psi$. 
+    Then, for every $s \in S_{\bar g}$, $\tilde\theta(s) = - \tilde\chi(g) s$ \IFF $\theta(s) = - \chi(g) s$. 
+\end{lemma}
+
+\begin{proof}
+    Set $\sigma \coloneqq \tilde\chi\chi\inv$, so $\tilde\chi = \sigma \chi$. 
+    Then $\sigma$ is a character on $G^\#$ with $\sigma(T) = 1$ and, in particular, can be seen as a character on $G^\#/\langle f \rangle$. 
+    Every element in $S_{\bar g}$ is a sum of elements of the form $E_{ij}(d)$, where $1 \leq i, j \leq k$ and $d\in \barr \D_{\bar t}$, such that $\bar g_i \bar t \bar g_j\inv = \bar g$. 
+    By \cref{eq:theta-with-matrix-2}, 
+    \begin{align}
+        \tilde\theta(E_{ij}(d)) 
+        &= \sigma(g_i) \sigma(g_j\inv) \theta (E_{ij}(d)) 
+        = \sigma(\bar g_i) \sigma(\bar g_j\inv) \theta (E_{ij}(d)) \\ 
+        &= \sigma(\bar t\inv \bar g) \theta(E_{ij}(d)) 
+        = \sigma(\bar g) \theta(E_{ij}(d)).
+    \end{align} 
+    We conclude that $\tilde\theta(s) = \sigma(\bar g) \theta(s)$, for all $s\in S_{\bar g}$. 
+\end{proof}
 
 In the following subsections, we specialize these considerations to the cases of $A(m,n)$ and $Q(n)$. 
 As in \cref{sec:grds-osp-and-p}, we fix a standard realization of a matrix algebra with a division grading associated to each finite abelian group with a nondegenerate alternating bicharacter (see \cref{def:standard-realization}). 
@@ -266,7 +296,6 @@ We also allow the case $m=n$.
     Finally, we define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $S^{(1)}$ by \cref{eq:def-final-grd-A(m-n)}. 
 \end{defi}
 
-% @2
 The following is an easy result that will also be used in \cref{ssec:grds-on-Q(n),ssec:grds-on-Ann}.
 
 \begin{lemma}\label{lemma:barr-D-to-mc-M}
@@ -412,7 +441,7 @@ In terms of the identification $S = Q(1) \tensor S\even$, this corresponds to th
 
 \begin{remark}\label{rmk:change-Q(1)-of-place}
     Note that $S = Q(1) \tensor S\even = Q(1) \tensor M_k(\FF) \tensor \barr \D\even \iso M_k(\FF) \tensor Q(1) \tensor \barr\D\even$. 
-    Hence, this $\barr G$-grading is isomorphic to $\Gamma_Q(\barr {T^+}, \barr {\beta^+}, \bar h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}), by choosing the standard realization of type Q (\cref{def:standard-realization-Q}) to be $Q(1)\tensor \D\even = \D\even \oplus u \D\even$.
+    Hence, this $\barr G$-grading is isomorphic to $\Gamma_Q(\barr {T^+}, \barr {\beta^+}, \bar h, \kappa)$ (see \cref{def:Gamma-T-beta-kappa-Q}), by choosing the standard realization of type Q (\cref{def:standard-realization-Q}) to be $\barr \D \coloneqq Q(1)\tensor \barr\D\even = \barr\D\even \oplus u \barr\D\even$.
 \end{remark}
 
 We also extend the (super-)anti-automorphism $\theta$ to $S$, by declaring $\theta (u) = \bi u$. 
@@ -478,15 +507,16 @@ In the next definition, we summarize what have been done for future reference:
 % \end{proof}
 
 % --------------------
-A BIT OF OVER-EXPLANATION:
 
-The following is an easy result that will be also used in \cref{ssec:grds-on-Ann}:
+% A BIT OF OVER-EXPLANATION:
 
-\begin{lemma}
-    Let $\D$ be an odd graded-division superalgebra, $\U$ be graded right $\D$-supermodule and $B\from \U \times \U \to \D$ be a homogeneous nondegenerate sesquilinear form with $\deg B \in G$. 
-    Set $R = \End_\D(\U)$ and, as in \cref{rmk:R-even-identificatios}, identify $R\even$ with $\End_{\D\even} (\U\even)$. 
-    If $\vphi\from R \to R$ is the superadjunction with respect to $B$ (\cref{def:superadjunction}), then $\vphi\restriction_{R\even}\from R\even \to R\even$ is the superadjunction with respect to $B\restriction_{\U\even \times \U\even} \from \U\even \times \U\even \to \D\even$. \qed
-\end{lemma}
+% The following is an easy result that will be also used in \cref{ssec:grds-on-Ann}:
+
+% \begin{lemma}
+%     Let $\D$ be an odd graded-division superalgebra, $\U$ be graded right $\D$-supermodule and $B\from \U \times \U \to \D$ be a homogeneous nondegenerate sesquilinear form with $\deg B \in G$. 
+%     Set $R = \End_\D(\U)$ and, as in \cref{rmk:R-even-identificatios}, identify $R\even$ with $\End_{\D\even} (\U\even)$. 
+%     If $\vphi\from R \to R$ is the superadjunction with respect to $B$ (\cref{def:superadjunction}), then $\vphi\restriction_{R\even}\from R\even \to R\even$ is the superadjunction with respect to $B\restriction_{\U\even \times \U\even} \from \U\even \times \U\even \to \D\even$. \qed
+% \end{lemma}
 
 \begin{prop}\label{prop:Q-Type-II-correspondence}
     Consider $(R, \vphi) \coloneqq Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$, as defined before \cref{cor:QxQ-reduced-to-MxM}. 
@@ -507,28 +537,40 @@ The following is an easy result that will be also used in \cref{ssec:grds-on-Ann
     $\eta\from T \to \pmone$ be the map associated to $\vphi_0$.  
     By definition, $\eta\restriction_{K} = \mu_K$ and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. 
     Since $\chi\inv\restriction_K$ and $\mu\restriction_{\langle f \rangle}$ are trivial, it follows that $\eta^+ = \eta\restriction_{T^+}$. 
-    In particular, the condition that $\kappa$ is $g_0$-admissible is the same in both \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}. 
+    In particular, the condition that $\kappa$ is $g_0$-admissible is the same in both \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}.
     
-    % @1
-    
-    % Need: $\D$ is what it should be
-    Note that 
-    
-    % Constructs $(\U, B)$ using the construction in osp, by reducing it to $(\U\even, B\even)$
+    % Constructs $(\U, B)$
     In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a graded right $\D$-supermodule $\U$ and a $\vphi_0$-sesquilinear form $B\from \U \times \U \to \D$ such that $(\U, B)$ has inertia determined by $\kappa$. 
-    To do that, we first construct a graded right $\D\even$-supermodule $\U\even$ and a $\vphi_0\restriction_{\D\even}$-sesquilinear form $B\even\from \U \times \U \to \D$ such that $(\U\even, B\even)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$ following the same construction as in \cref{ssec:grds-osp}, where we take $\kappa_\bz \coloneqq \kappa$  (seen as a map defined on $G/T^+$) and $\kappa_\bo$ to be the zero map. 
+    We will first construct a graded right $\D\even$-supermodule $\U\even$ and a $\vphi_0\restriction_{\D\even}$-sesquilinear form $B\even\from \U \times \U \to \D$ such that $(\U\even, B\even)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$, where we take $\kappa_\bz \coloneqq \kappa$  (seen as a map defined on $G/T^+$) and $\kappa_\bo$ to be the zero map. 
+    % (we note that, by \cref{rmk:R-even-identificatios}, the superadjunction with respect to $B\even$ would give us a). 
+    To that end, it suffices to follow the same construction as in \cref{ssec:grds-osp}. 
     In other words, define $\D\even \coloneqq (\D\even)^{[g_1]}\oplus \cdots \oplus (\D\even)^{[g_k]}$, where $(g_1, \ldots, g_k)$ is the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$, and $B$ by $B(u_i, u_j) \coloneqq \Phi_{ij}$, where $\B \coloneqq \{ u_1, \ldots, u_k \}$ is the canonical graded $\D\even$-basis of $\U\even$ and $\Phi \in M_k(\D\even)$ is the matrix defined by \cref{eq:puting-the-blocks-of-Phi-together}. 
     We then define $\U\odd \coloneqq \U\even \tensor_{\D\even} \D$. 
-    Note that $\B$ is an even graded $\D$-basis of $\U$, and let $B\from \U \times \U \to \D$ the unique $\vphi_0$-sesquilinear extension of $B\even$,\ie, $B$ is also represented by $\Phi$. 
-    % We now write $\Phi$ with entries in $\D$ in a smart way, putting $Q(1)$ in the front.
+    Note that $\B$ is an even graded $\D$-basis of $\U$, and let $B\from \U \times \U \to \D$ the unique $\vphi_0$-sesquilinear extension of $B\even$, \ie, $B$ is also represented by $\Phi$, seen as a matrix in $M_k(\D)$.  
     
-    % From \Phi we get \Theta
-    To get the matrix $\Theta$, we proceed as in \cref{prop:m-not-n-Type-II-correspondence}. 
-    We consider a different graded basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi$ be the matrix representing $B$ with respect to $\tilde \B$. 
-    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get $\Theta$ as in \cref{eq:Theta-for-Q}. 
+    % Undoubling what we just constructed
+    We will now follow \cref{ssec:undoubling} to get the undoubled model of $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$ constructed with the choices above. 
+    % $\D$ is what it should be
+    Let $\epsilon \coloneqq \frac{1+\zeta}{2}\in \D$ be a central idempotent, where $\deg \zeta = f$, and consider $\D\epsilon$ as a $\barr G$-graded-division superalgebra. 
+    By \cref{prop:lemma-for-undoubling-and-fine-gradings}, the $\D\epsilon$ has parameters $(\barr T, \barr \beta, \barr p)$. 
+    Also, $\rad \barr\beta = \langle \barr t_p \rangle$, so $\D\epsilon$ is isomorphic to a standard realization of type Q associated to $(\barr {T^+}, \barr{\beta^+}, \barr h)$ (see discussion preceding \cref{def:standard-realization-Q}), \ie, it is isomorphic to $\barr \D \coloneqq Q(1) \tensor \barr \D\even$ as in \cref{rmk:change-Q(1)-of-place}. 
+    From now on, we will identify $\D\epsilon$ with $\barr \D$. %@1
     
-    %The final remark
+    We need to show that $\mu$ as defined in \cref{eq:defi-mu-undoubled} is the one associated to the queer supertranspose. 
     
+    We will now describe the matrix $\Phi\epsilon$. 
+    As in the proof of \cref{prop:m-not-n-Type-II-correspondence}, we consider a different graded $\D$-basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ of $\U$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi \in M_k(\D)$ be the matrix representing $B$ with respect to $\tilde \B$. 
+    Clearly, all the entries of $\tilde\Phi$ are in $\barr \D\even$. 
+    We will denote $\tilde\Phi$ by $\tilde\Phi\even$ when seen as a matrix in $M_k(\D\even)$. 
+    In the same way $\tilde\Phi \epsilon$ can be seen as a matrix in $M_k(\barr \D)$, $\tilde\Phi\even \epsilon$ can be seen as a matrix in $M_k(\barr \D\even)$. 
+    We identify $M_k(\barr \D\even) \iso M_k(\FF) \tensor \barr \D\even$ with $S\even = M_{n+1}(\FF)$ via Kronecker product. 
+    By construction, this gives us the restriction of $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ on $S\even$, and it is clear that it sends $\Lambda \tilde\Phi\even$ to $\Theta\even$. 
+    Also, following the isomorphisms
+    \[
+        M_k(\barr \D) \iso M_k(\FF) \tensor \barr \D \iso M_k(\FF) \tensor Q(1) \tensor \barr \D\even \iso Q(1) \tensor M_k(\FF) \tensor \barr \D\even \iso Q(1) \tensor S\even.
+    \]
+    we get $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ on $S = Q(1) \tensor S\even$, and $\Lambda\tilde\Phi\epsilon$ is sent to $I \tensor \Theta\even = \Theta$. 
+    Therefore, all the data in the description of the undoubled model of $\Skew(R, \vphi)$ coincide with with the data in \cref{defi:type-II-Q}, concluding the proof.
 \end{proof}
 
 % --------------------
