@@ -88,16 +88,16 @@ Then:
     \forall X \in M_k(\D), \quad \theta(X) = (\Lambda\Phi)\inv\, \theta_0(X)\stransp \, (\Lambda\Phi).
 \] 
 
-Clearly, $\theta_0$ is a super-anti-automorphism on $\D$ associated to the map 
-\[\label{eq:defi-mu-undoubled}
-    \mu \coloneqq \eta \chi.
-\]
+Clearly, $\theta_0$ is a super-anti-automorphism on $\D$ associated to the map $\mu \coloneqq \eta \chi$. 
 Note that $\mu(f) = 1$ and, hence, we can see $\mu$ as a map $\barr \mu\from \barr T \to \FF^\times$. 
 Indeed, since $f\in \ker \tilde\beta$, we have
 \begin{equation}
     \forall t\in T, \quad \mu(tf) = \tilde\beta (t,f) \mu(t)\mu(f) = \mu(t)\mu(f) = \mu(t),
 \end{equation}
-so $\barr\mu$ is well-defined for every coset $\bar t \in \barr T$. 
+so the map $\barr\mu \from \barr T \to \FF^\times$ given by
+\[\label{eq:defi-mu-undoubled}
+    \forall \bar t \in \barr T, \barr\mu \coloneqq \eta(t) \chi(t)
+\] is well-defined. 
 Recall, from \cref{cor:T+-is-elem-2-grp}, that $T^+$ is an elementary $2$-group and for every $t\in T^-$, $t^2 = f$. 
 Hence, $\chi$ takes values $\pm 1$ on $T^+$ and $\pm \mathbf{i}$ on $T^-$. 
 By \cref{lemma:quadratic-form-involutions}, $\bar\mu$ is a quadratic map on $\barr T$. 
@@ -532,7 +532,7 @@ In the next definition, we summarize what have been done for future reference:
 
 \begin{proof}
     % Recall what Q^ex means, including what $T$ and $t_p$ are, and how to see \kappa with the proper domain. 
-    First recall that, by definition, $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0) = Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$ (see \cref{def:model-grd-MxM-odd-or-QxQ}), where $t_p \coloneqq (h, \bar 1)$, $T \coloneqq T^+ \cup t_p T^+$, $\beta\from T\times T \to \FF^\times$ is the unique alternating bicharacter extending $\beta^+$ such that $\rad \beta = \langle t_p \rangle$, and $\kappa$ is seen as defined on $G^\#/T \iso G/ T^+$. 
+    First recall that, by definition, $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0) = Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$ (see \cref{def:model-grd-MxM-odd-or-QxQ}), where $t_p \coloneqq (h, \bar 1)$, $T \coloneqq T^+ \cup t_p T^+$, $\beta\from T\times T \to \FF^\times$ is the unique alternating bicharacter extending $\beta^+$ such that $\rad \beta = \langle f, t_p \rangle$, and $\kappa$ is seen as defined on $G^\#/T \iso G/ T^+$. 
     
     % Say what we are going to do
     We will now show how the choices in \cref{defi:type-II-Q} correspond to the choices in \cref{def:std-realization-MxM-QxQ}(c) and \cref{def:model-grd-MxM-odd-or-QxQ}. 
@@ -542,13 +542,13 @@ In the next definition, we summarize what have been done for future reference:
     Following the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, the choices of $\barr \D\even$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}, and if $\mu_K\from K \to \pmone$ is the map associated to the transposition on $\mc M$, then $\mu_K = \mu^+\restriction_K$. 
     Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let
     $\eta\from T \to \pmone$ be the map associated to $\vphi_0$.  
-    By definition, $\eta\restriction_{K} = \mu_K$ and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. 
+    By definition, $\eta\restriction_{K} = \mu_K$, and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. 
     Since $\chi\inv\restriction_K$ and $\mu\restriction_{\langle f \rangle}$ are trivial, it follows that $\eta^+ = \eta\restriction_{T^+}$. 
     In particular, the condition that $\kappa$ is $g_0$-admissible is the same in both \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}.
     
     % Constructs $(\U, B)$
     In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a graded right $\D$-supermodule $\U$ and a $\vphi_0$-sesquilinear form $B\from \U \times \U \to \D$ such that $(\U, B)$ has inertia determined by $\kappa$. 
-    We will first construct a graded right $\D\even$-supermodule $\U\even$ and a $\vphi_0\restriction_{\D\even}$-sesquilinear form $B\even\from \U \times \U \to \D$ such that $(\U\even, B\even)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$, where we take $\kappa_\bz \coloneqq \kappa$  (seen as a map defined on $G/T^+$) and $\kappa_\bo$ to be the zero map. 
+    We will first construct a graded right $\D\even$-supermodule $\U\even$ and a $(\vphi_0\restriction_{\D\even})$-sesquilinear form $B\even\from \U \times \U \to \D$ such that $(\U\even, B\even)$ has inertia determined by $(\kappa_\bz, \kappa_\bo)$, where we take $\kappa_\bz \coloneqq \kappa$  (seen as a map defined on $G/T^+$) and $\kappa_\bo$ to be the zero map. 
     % (we note that, by \cref{rmk:R-even-identificatios}, the superadjunction with respect to $B\even$ would give us a). 
     To that end, it suffices to follow the same construction as in \cref{ssec:grds-osp}. 
     In other words, define $\D\even \coloneqq (\D\even)^{[g_1]}\oplus \cdots \oplus (\D\even)^{[g_k]}$, where $(g_1, \ldots, g_k)$ is the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$, and $B$ by $B(u_i, u_j) \coloneqq \Phi_{ij}$, where $\B \coloneqq \{ u_1, \ldots, u_k \}$ is the canonical graded $\D\even$-basis of $\U\even$ and $\Phi \in M_k(\D\even)$ is the matrix defined by \cref{eq:puting-the-blocks-of-Phi-together}. 
@@ -556,17 +556,22 @@ In the next definition, we summarize what have been done for future reference:
     Note that $\B$ is an even graded $\D$-basis of $\U$, and let $B\from \U \times \U \to \D$ the unique $\vphi_0$-sesquilinear extension of $B\even$, \ie, $B$ is also represented by $\Phi$, seen as a matrix in $M_k(\D)$.  
     
     % Undoubling what we just constructed
-    We will now follow \cref{ssec:undoubling} to get the undoubled model of $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$ constructed with the choices above. 
+    We will now follow \cref{ssec:undoubling} to undouble $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$, constructed with the choices above. 
     % $\D$ is what it should be
     Let $\epsilon \coloneqq \frac{1+\zeta}{2}\in \D$ be a central idempotent, where $\deg \zeta = f$, and consider $\D\epsilon$ as a $\barr G$-graded-division superalgebra. 
     By \cref{prop:lemma-for-undoubling-and-fine-gradings}, the $\D\epsilon$ has parameters $(\barr T, \barr \beta, \barr p)$. 
     Also, $\rad \barr\beta = \langle \barr t_p \rangle$, so $\D\epsilon$ is isomorphic to a standard realization of type Q associated to $(\barr {T^+}, \barr{\beta^+}, \barr h)$ (see discussion preceding \cref{def:standard-realization-Q}), \ie, it is isomorphic to $\barr \D \coloneqq Q(1) \tensor \barr \D\even$ as in \cref{rmk:change-Q(1)-of-place}. 
-    From now on, we will identify $\D\epsilon$ with $\barr \D$. %@1
+    From now on, we will identify $\D\epsilon$ with $\barr \D$. 
     
-    We need to show that $\mu$ as defined in \cref{eq:defi-mu-undoubled} is the map associated to the queer supertranspose. 
-    This follows from 
+    We need to extend $\chi$ to $\widehat{G^\#}$. 
+    Since $\chi(f) = -1$, we can do it in a way such that $\chi(t_p) = \bi$. 
+    We will proceed to prove that the map $\barr\mu$ defined in \cref{eq:defi-mu-undoubled} coincides with the map $\barr \mu$ we defined in this subsection, \ie, the map associated to the queer supertranspose on $\barr \D$. 
+    We already showed that $\eta\restriction_{T^+} = \eta^+$, hence, by \cref{eq:I-eta-plus}, we have that $\barr\mu\restriction_{T^+}$, indeed, is the transposition on $\barr \D\even$. 
+    Also, from \cref{def:std-realization-MxM-QxQ}(c), $\eta(t_p) = 1$, so $\barr\mu (\barr t_p) = \eta(t_p) \chi(t_p) = \bi $, as desired. 
     
-    We will now describe the matrix $\Phi\epsilon$. 
+    % @1 
+    Let $\Lambda \in M_k(\D)$ be as in \cref{ssec:undoubling}. 
+    % We will now describe the matrix $\Lambda\Phi\epsilon$. 
     As in the proof of \cref{prop:m-not-n-Type-II-correspondence}, we consider a different graded $\D$-basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ of $\U$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi \in M_k(\D)$ be the matrix representing $B$ with respect to $\tilde \B$. 
     Clearly, all the entries of $\tilde\Phi$ are in $\barr \D\even$. 
     We will denote $\tilde\Phi$ by $\tilde\Phi\even$ when seen as a matrix in $M_k(\D\even)$. 
