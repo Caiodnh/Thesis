@@ -64,8 +64,8 @@ Since $\Skew(R, \vphi) = \{ (s, -s) \mid s \in S \}$, combining \cref{eq:Rg-reco
 and induce a $G$-grading on $L = S^{(1)}/Z(S^{(1)})$. 
 Hence, a Type II grading on $L$ can be described in terms of a $\barr G$-grading on $S$ and a super-anti-automorphism on $S$. 
 
-\begin{defi}
-    We will call $L$ endowed with the $G$-grading constructed above the \emph{undoubled model} or the \emph{undoubling} of $\Skew(R, \vphi)/Z(\Skew(R, \vphi))$. 
+\begin{defi}\label{defi:undoubled-model}
+    We will call $L$ endowed with the $G$-grading constructed above the \emph{undoubled model of $\Skew(R, \vphi)/Z(\Skew(R, \vphi))$}, or simply the \emph{undoubled model} if $(R, \vphi)$ is fixed in the context. 
 \end{defi}
 
 Our next goal is to describe the undoubled model without reference to $(R,\vphi)$. 
@@ -89,7 +89,7 @@ Then:
 \] 
 
 Clearly, $\theta_0$ is a super-anti-automorphism on $\D$ associated to the map 
-\[\lable{eq:defi-mu-undoubled}
+\[\label{eq:defi-mu-undoubled}
     \mu \coloneqq \eta \chi.
 \]
 Note that $\mu(f) = 1$ and, hence, we can see $\mu$ as a map $\barr \mu\from \barr T \to \FF^\times$. 
@@ -117,9 +117,11 @@ From \cref{eq:theta-with-matrix-1}, we now get that
 \[\label{eq:theta-with-matrix-2}
     \forall X\in M_k(\barr \D), \quad \theta(X) = \Theta\inv\, \theta_0(X)\stransp\, \Theta,
 \]
-where $\Theta \coloneqq \Lambda \Phi \epsilon \in M_k(\barr \D)$ or, equivalently, $\Theta_{ij} = \chi(g_i) B(u_i, u_j) \epsilon$, and $\theta_0$ is the super-anti-automorphism on $\barr \D$ associated to $\bar \mu$. 
-
-To summarize, the undoubled model is determined by a grading on $S$ making it isomorphic to $E(\barr T, \barr \beta, \barr p, \kappa) \iso M_k(\barr \D)$, a map $\mu \from \barr T \to \FF^{\times}$ associated to a super-anti-automorphism $\theta_0$ on $\barr(\D)$ and a matrix $\Theta \in M_k(\barr \D)$. 
+where 
+\[\label{eq:defi-Theta-undoubled-model}
+    \Theta \coloneqq \Lambda \Phi \epsilon \in M_k(\barr \D)
+\]
+or, equivalently, $\Theta_{ij} = \chi(g_i) B(u_i, u_j) \epsilon$, and $\theta_0$ is the super-anti-automorphism on $\barr \D$ associated to $\bar \mu$. 
 
 Finally, we note that the refinement obtained in \cref{eq:refiniment-on-L}, from $\theta$ given by \cref{eq:theta-with-matrix-2}, is determined by the values of $\chi$ on the subgroup $T \subseteq G^\#$. 
 % To be more precise, let $\tilde \chi \in \widehat {G^\#}$ be a character such that $\chi\restriction_{T} = \tilde\chi\restriction_{T}$, let $\tilde \psi \from R\to R$ be the action by $\tilde \chi$, and set $\tilde \theta \coloneqq \tilde\psi \vphi = \vphi \tilde\psi$. 
@@ -156,8 +158,13 @@ Finally, we note that the refinement obtained in \cref{eq:refiniment-on-L}, from
         = \sigma(\bar g) \theta(E_{ij}(d)).
     \end{align} 
     We conclude that $\tilde\theta(s) = \sigma(\bar g) \theta(s)$, for all $s\in S_{\bar g}$. 
-\end{proof}
+\end{proof} 
 
+% Vague summary of the subsec
+To summarize, once $\chi \in \widehat{T}$ is fixed, the undoubled model is determined by the $\barr G$-graded superalgebra $M_k(\barr \D)$ with parameters given by \cref{prop:lemma-for-undoubling-and-fine-gradings}, the map $\mu \from \barr T \to \FF^{\times}$ defined by \cref{eq:defi-mu-undoubled}, which is
+associated to a super-anti-automorphism $\theta_0$ on $\barr(\D)$, and the matrix $\Theta \in M_k(\barr \D)$ defined by \cref{eq:defi-Theta-undoubled-model}, which is used to define the super-anti-automorphism $\theta$ on $M_k(\barr \D)$ by \cref{eq:theta-with-matrix-2}. 
+
+% Prepare for following subsecs
 In the following subsections, we specialize these considerations to the cases of $A(m,n)$ and $Q(n)$. 
 As in \cref{sec:grds-osp-and-p}, we fix a standard realization of a matrix algebra with a division grading associated to each finite abelian group with a nondegenerate alternating bicharacter (see \cref{def:standard-realization}). 
 
@@ -556,7 +563,8 @@ In the next definition, we summarize what have been done for future reference:
     Also, $\rad \barr\beta = \langle \barr t_p \rangle$, so $\D\epsilon$ is isomorphic to a standard realization of type Q associated to $(\barr {T^+}, \barr{\beta^+}, \barr h)$ (see discussion preceding \cref{def:standard-realization-Q}), \ie, it is isomorphic to $\barr \D \coloneqq Q(1) \tensor \barr \D\even$ as in \cref{rmk:change-Q(1)-of-place}. 
     From now on, we will identify $\D\epsilon$ with $\barr \D$. %@1
     
-    We need to show that $\mu$ as defined in \cref{eq:defi-mu-undoubled} is the one associated to the queer supertranspose. 
+    We need to show that $\mu$ as defined in \cref{eq:defi-mu-undoubled} is the map associated to the queer supertranspose. 
+    This follows from 
     
     We will now describe the matrix $\Phi\epsilon$. 
     As in the proof of \cref{prop:m-not-n-Type-II-correspondence}, we consider a different graded $\D$-basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ of $\U$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi \in M_k(\D)$ be the matrix representing $B$ with respect to $\tilde \B$. 
