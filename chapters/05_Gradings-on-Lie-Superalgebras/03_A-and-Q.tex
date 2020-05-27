@@ -1,6 +1,6 @@
 \section{Gradings on the Lie Superalgebras of Type \texorpdfstring{$A$ and $Q$}{A and Q}}
 
-By the discussion in \cref{sec:Aut-Lie-chap}, we have a classification of $G$-gradings on the Lie superalgebras of series $A$ and $Q$ in terms of the model $\Skew(R, \vphi)$, where $R = S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
+By the discussion in \cref{sec:Aut-Lie-chap} (\cref{cor:transfer-R-vphi-to-L}), we have a classification of $G$-gradings on the Lie superalgebras of series $A$ and $Q$ in terms of the model $\Skew(R, \vphi)$, where $R = S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
 We want to describe these gradings in terms of the original model, $S^{(-)}$, where $S$ is either $M(m,n)$ or $Q(n)$ for some positive integers $m$ and $n$. 
 We use the approach similar to \cite[Appendix]{paper-adrian}. 
 
@@ -96,7 +96,7 @@ Indeed, since $f\in \ker \tilde\beta$, we have
 \end{equation}
 so the map $\barr\mu \from \barr T \to \FF^\times$ given by
 \[\label{eq:defi-mu-undoubled}
-    \forall \bar t \in \barr T, \barr\mu \coloneqq \eta(t) \chi(t)
+    \forall \bar t \in \barr T,\quad \barr\mu(\bar t) \coloneqq \eta(t) \chi(t)
 \] is well-defined. 
 Recall, from \cref{cor:T+-is-elem-2-grp}, that $T^+$ is an elementary $2$-group and for every $t\in T^-$, $t^2 = f$. 
 Hence, $\chi$ takes values $\pm 1$ on $T^+$ and $\pm \mathbf{i}$ on $T^-$. 
@@ -161,7 +161,7 @@ Finally, we note that the refinement obtained in \cref{eq:refiniment-on-L}, from
 \end{proof} 
 
 % Vague summary of the subsec
-To summarize, once $\chi \in \widehat{T}$ is fixed, the undoubled model is determined by the $\barr G$-graded superalgebra $M_k(\barr \D)$ with parameters given by \cref{prop:lemma-for-undoubling-and-fine-gradings}, the map $\mu \from \barr T \to \FF^{\times}$ defined by \cref{eq:defi-mu-undoubled}, which is
+To summarize, once $\chi \in \widehat{T}$ is fixed, the undoubled model is determined by the $\barr G$-graded superalgebra $M_k(\barr \D)$ with parameters given by \cref{prop:lemma-for-undoubling-and-fine-gradings}, the map $\barr\mu \from \barr T \to \FF^{\times}$ defined by \cref{eq:defi-mu-undoubled}, which is
 associated to a super-anti-automorphism $\theta_0$ on $\barr(\D)$, and the matrix $\Theta \in M_k(\barr \D)$ defined by \cref{eq:defi-Theta-undoubled-model}, which is used to define the super-anti-automorphism $\theta$ on $M_k(\barr \D)$ by \cref{eq:theta-with-matrix-2}. 
 
 % Prepare for following subsecs
@@ -183,7 +183,7 @@ In particular, $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ corresponds to a pair $(\ka
 In the next definition, we allow the possibility of $m=n$ for future reference (in \cref{ssec:grds-on-Ann}).
 
 \begin{defi}\label{def:A-Type-I}
-    Let $m, n\in \ZZ_{\geq 0}$, not both zero, $T \subseteq G$ be a finite subgroup, $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $|\kappa_\bz| \sqrt{|T|/2} = m+1$ and $|\kappa_\bo| \sqrt{|T|/2} = n+1$. 
+    Let $m, n\in \ZZ_{\geq 0}$, not both zero, $T \subseteq G$ be a finite subgroup, $\beta\from T\times T \to \FF^\times$ be a nondegenerate alternating bicharacter, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be maps with finite support such that $m+1 = |\kappa_\bz| \sqrt{|T|/2}$ and $n+1 = |\kappa_\bo| \sqrt{|T|/2} $. 
     We will denote by $\Gamma^{\mathrm{(I)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ the restriction to $S^{(1)}$ of the grading $\Gamma_M(T, \beta, \kappa_\bz, \kappa_\bo)$ on $S$ (see \cref{def:Gamma-T-beta-kappa-even}). 
 \end{defi}
 
@@ -544,7 +544,7 @@ In the next definition, we summarize what have been done for future reference:
     Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let
     $\eta\from T \to \pmone$ be the map associated to $\vphi_0$.  
     By definition, $\eta\restriction_{K} = \mu^+\restriction_K$, and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. 
-    Since $\chi\inv\restriction_K$ and $\mu\restriction_{\langle f \rangle}$ are trivial, it follows that $\eta\restriction_{T^+} = \eta^+$. 
+    Since $\chi\inv\restriction_K$ and $\mu\restriction_{\langle f \rangle}$ are trivial, it follows from \cref{eq:fix-eta-plus-undouble-Q} that $\eta\restriction_{T^+} = \eta^+$. 
     In particular, the condition that $\kappa$ is $g_0$-admissible is the same in both \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}.
     
     % Constructs $(\U, B)$
@@ -564,26 +564,27 @@ In the next definition, we summarize what have been done for future reference:
     Also, $\rad \barr\beta = \langle \barr t_p \rangle$, so $\D\epsilon$ is isomorphic to a standard realization of type Q associated to $(\barr {T^+}, \barr{\beta^+}, \barr h)$ (see discussion preceding \cref{def:standard-realization-Q}), \ie, it is isomorphic to $\barr \D \coloneqq Q(1) \tensor \barr \D\even$ as in \cref{rmk:change-Q(1)-of-place}. 
     From now on, we will identify $\D\epsilon$ with $\barr \D$. 
     
+    % Undoubling $\eta$
     We need to extend $\chi$ to $G^\#$. 
     Since $\chi(f) = -1$, we can do it in a way such that $\chi(t_p) = \bi$. 
-    We will proceed to prove that the map $\barr\mu$ defined in \cref{eq:defi-mu-undoubled} coincides with the map $\barr \mu$ we defined in this subsection, \ie, the map associated to the queer supertranspose on $\barr \D$. 
-    We already showed that $\eta\restriction_{T^+} = \eta^+$, hence, by \cref{eq:I-eta-plus}, we have that $\barr\mu\restriction_{T^+}$, indeed, is the transposition on $\barr \D\even$. 
+    Then, it follows that the map $\barr\mu$ as defined in \cref{eq:defi-mu-undoubled} is the map associated to the queer supertranspose on $\barr \D$. 
+    Indeed, we already showed that $\eta\restriction_{T^+} = \eta^+$, hence, by \cref{eq:fix-eta-plus-undouble-Q}, we have that $\barr\mu\restriction_{\barr{T^+}} = \barr{\mu^+}$. 
     Also, from \cref{def:std-realization-MxM-QxQ}(c), $\eta(t_p) = 1$, so $\barr\mu (\barr t_p) = \eta(t_p) \chi(t_p) = \bi $, as desired. 
     
-    % @1 
+    % Undoubling $\Theta$
     Let $\Lambda \in M_k(\D)$ be as in \cref{ssec:undoubling}. 
     % We will now describe the matrix $\Lambda\Phi\epsilon$. 
-    As in the proof of \cref{prop:m-not-n-Type-II-correspondence}, we consider a different graded $\D$-basis $\tilde B = \{ \tilde u_1, \ldots, \tilde u_k \}$ of $\U$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi \in M_k(\D)$ be the matrix representing $B$ with respect to $\tilde \B$. 
+    As in the proof of \cref{prop:m-not-n-Type-II-correspondence}, we consider a different graded $\D$-basis $\tilde \B = \{ \tilde u_1, \ldots, \tilde u_k \}$ of $\U$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi \in M_k(\D)$ be the matrix representing $B$ with respect to $\tilde \B$. 
     Clearly, all the entries of $\tilde\Phi$ are in $\barr \D\even$. 
     We will denote $\tilde\Phi$ by $\tilde\Phi\even$ when seen as a matrix in $M_k(\D\even)$. 
-    In the same way $\tilde\Phi \epsilon$ can be seen as a matrix in $M_k(\barr \D)$, $\tilde\Phi\even \epsilon$ can be seen as a matrix in $M_k(\barr \D\even)$. 
-    We identify $M_k(\barr \D\even) \iso M_k(\FF) \tensor \barr \D\even$ with $S\even = M_{n+1}(\FF)$ via Kronecker product. 
-    By construction, this gives us the restriction of $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ on $S\even$, and it is clear that it sends $\Lambda \tilde\Phi\even$ to $\Theta\even$. 
+    In \cref{ssec:undoubling}, $M_k(\D)\epsilon$ was identified with $M_k(\barr \D)$, so we now identify $M_k(\D\even)\epsilon$ with $M_k(\barr \D\even)$. 
+    In the definition $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$, we identified $M_k(\barr \D\even) = M_k(\FF) \tensor \barr \D\even$ with $S\even = M_{n+1}(\FF)$ via Kronecker product. 
+    It is clear that these identifications send $\Lambda \tilde\Phi\even \epsilon$ to $\Theta\even$. 
     Also, following the isomorphisms
     \[
-        M_k(\barr \D) \iso M_k(\FF) \tensor \barr \D \iso M_k(\FF) \tensor Q(1) \tensor \barr \D\even \iso Q(1) \tensor M_k(\FF) \tensor \barr \D\even \iso Q(1) \tensor S\even.
+        M_k(\barr \D) \iso M_k(\FF) \tensor \barr \D \iso M_k(\FF) \tensor Q(1) \tensor \barr \D\even \iso Q(1) \tensor M_k(\FF) \tensor \barr \D\even \iso Q(1) \tensor S\even,
     \]
-    we get $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ on $S = Q(1) \tensor S\even$, and $\Lambda\tilde\Phi\epsilon$ is sent to $I \tensor \Theta\even = \Theta$. 
+    the $\barr G$-grading on $M_k(\barr \D)$ becomes the $\barr G$-grading we defined on $S = Q(1) \tensor S\even$, and $\Lambda\tilde\Phi\epsilon$ is sent to $I_2 \tensor \Theta\even = \Theta$. 
     Therefore, all the data in the description of the undoubled model of $\Skew(R, \vphi)$ coincide with with the data in \cref{defi:type-II-Q}, concluding the proof.
 \end{proof}
 
@@ -591,18 +592,18 @@ In the next definition, we summarize what have been done for future reference:
 
 
 \begin{thm}\label{thm:final-Q(n)}
-    Let $n \in \ZZ_{> 0}$ and 
-    let $L$ denote the Lie superalgebra $Q(n)$. 
+    Let $n \geq 2$ and 
+    let $L$ denote the simple Lie superalgebra $Q(n)$. 
     Every grading on $L$ is isomorphic to either $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa)$ or $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ as in \cref{def:Q-Type-I,defi:type-II-Q}. 
     Gradings belonging to different types are not isomorphic. 
     Within each type, we have:
     
     \noindent\boxed{\mathrm{Type \,\,I}}
     
-    \noindent $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa) \iso \Gamma_Q^{\mathrm{(I)}}(T'^+, \beta'^+, h', \kappa')$ \IFF  $T'^+ = T^+$, $h = h'$ and one of the following conditions holds:
+    \noindent $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa) \iso \Gamma_Q^{\mathrm{(I)}}(T'^+, \beta'^+, h', \kappa')$ \IFF  $T'^+ = T^+$, $h' = h$ and one of the following conditions holds:
 	\begin{enumerate}[(i)]
 	    \item $\beta'^+ = \beta^+$ and there is $g\in G$ such that $g \cdot \kappa'=\kappa$; 
-	    \item $\beta'= (\beta^+)\inv$ and there is $g\in G$ such that $g \cdot \kappa'= \kappa\Star$.
+	    \item $\beta'^+ = (\beta^+)\inv$ and there is $g\in G$ such that $g \cdot \kappa'= \kappa\Star$.
 	\end{enumerate}
 
     \noindent\boxed{\mathrm{Type \,\,II}}
@@ -614,16 +615,8 @@ In the next definition, we summarize what have been done for future reference:
 \begin{proof}
     By \cref{cor:transfer-R-vphi-to-L}, the isomorphism classes of gradings on the Lie superalgebra $Q(n)$ is in bijection with the isomorphism classes of gradings on associative superalgebra $Q(n+1) \times Q(n+1)\sop$  endowed with the exchange superinvolution. 
     The correspondence between the Type I gradings is clear, and for Type II gradings is established in \cref{prop:Q-Type-II-correspondence}. 
-    Hence, the result follows from \cref{thm:QxQ-type-I}, and for Type II gradings follows from
-    \cref{cor:QxQ-reduced-to-MxM}.
-    % The classification of gradings on the Lie superalgebra $Q(n)$ is equivalent to the classification of gradings on the associative superalgebra $S \times S\sop$, endowed with exchange superinvolution, by \cref{cor:transfer-R-vphi-to-L}. 
-    % The gradings on the latter 
-    
-    % That there are this two types, it comes from .
-    
-    % The isomorphism condition for Type I, follows from \cref{thm:QxQ-type-I}, but there its in in terms of different paramenters.
-    
-    % The isomorphism condition for Type II gradings follows from \cref{cor:QxQ-reduced-to-MxM,prop:Q-Type-II-correspondence}. 
+    Hence, the result follows from \cref{thm:QxQ-type-I} for Type I gradings and from
+    \cref{cor:QxQ-reduced-to-MxM} for Type II gradings. 
 \end{proof}
 
 
@@ -729,9 +722,9 @@ Also, $\kappa_\bo$ is determined by $\kappa_\bz$ and $h_0$ (recall \cref{inertia
     for all $g\in G$. 
 \end{defi}
 
-We now proceed to the last case, the odd gradings of Type II, which will be referred to as gradings of Type II\textsubscript{Q}. 
-In this case parameters $R$ are bla...
-We can use $\chi$ to move it to $G$. 
+% @2
+
+\input{chapters/05_Gradings-on-Lie-Superalgebras/04_Ann-odd}
 
 
 
