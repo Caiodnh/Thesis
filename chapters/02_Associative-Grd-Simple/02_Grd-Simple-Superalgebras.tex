@@ -195,12 +195,11 @@ As done in \cref{ssec:grd-div-alg}, for every $t\in T$ we fix $0 \neq X_t\in D_t
 It is useful to consider another bicharacter on $T$. 
 We define $\tilde\beta\from T\times T \to \FF^\times$ by
 \[\label{eq:tilde-beta-def}
-    \tilde\beta(t,s) \coloneqq (-1)^{p(t)p(s)}\beta(t,s),
+    \forall t, s\in T, \quad \tilde\beta(t,s) \coloneqq (-1)^{p(t)p(s)}\beta(t,s). 
 \]
-for all $t, s\in T$. 
 In other words, we have that
 \[\label{eq:tilde-beta}
-    X_t X_s = (-1)^{p(t)p(s)} \tilde\beta(t,s) X_s X_t
+    \forall t, s\in T, \quad X_t X_s = (-1)^{p(t)p(s)} \tilde\beta(t,s) X_s X_t
 \]
 (compare with \cref{eq:beta}). 
 Clearly, the support of $sZ(\D)$, the supercenter of $\D$, is $\rad \tilde\beta$. 
@@ -419,7 +418,7 @@ We can describe the set $T_p = t_p (\rad \tilde\beta)$ differently:
 
 \begin{lemma}\label{lemma:set-parity-elements}
     Suppose $\Char \FF \neq 2$. 
-    If $T^- =\emptyset$ or $\Char \FF =2$, then the set of all parity elements is $\rad \tilde\beta = \rad \beta = \rad \beta^+$. 
+    If $T^- =\emptyset$, then the set of all parity elements is $\rad \tilde\beta = \rad \beta = \rad \beta^+$. 
     Otherwise, $T_p \cap T^+ = (\rad \beta^+) \smallsetminus (\rad\beta)$ and $T_p \cap T^- = (\rad \beta) \cap T^-$. 
 \end{lemma}
 

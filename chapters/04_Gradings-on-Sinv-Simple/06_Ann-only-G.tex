@@ -1,5 +1,6 @@
 % Intro for A(n,n) odd 
-We can also parametrize $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ with $t_p \not e$ in terms of $G$. 
+We can also parametrize $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ (\cref{def:model-grd-MxM-odd-or-QxQ}) in terms of $G$. 
+
 Let $t_1 \in T^-$ and $K \subseteq T^+$ chosen as in \cref{def:std-realization-MxM-QxQ}(b). 
 As done in \cref{ssec:in-terms-of-G}, let $h \in G$ be the element such that $t_1 = (h, \bar 1)$, and define $\chi \in \widehat{T^+}$ by $\chi(t) \coloneqq \beta(t_1, t)$, for all $t\in T^+$. 
 The triple $(T, \beta, p)$ can be recovered from the quadruple $(T^+, \beta^+, h, \chi)$ (see \cref{eq:beta-from-h-chi}), so $(T, \beta, t_p)$ can be recovered from $(T^+, \beta^+, h, \chi, t_p)$. 
@@ -8,13 +9,40 @@ Recall that we have $e \neq f = h^2$, $t_p \neq f$ and $\rad \beta^+ = \langle t
     \chi(K) = \chi(f) = 1 \AND \chi(t_p) = -1.
 \]
 
-Conversely, given a $2$-elementary subgroup $T^+ \subseteq G$, an alternating bicharacter $\beta^+\from T^+ \times T^+ \to \pmone$, $e \neq t_p \in T^+$ and $h\in G$ such that $f\coloneqq h^2 \in T^+$, $f \not\in \{e, t_p \}$ and $\rad \beta^+ = \langle t_p, h^2 \rangle$, we can choose a complement $K \subseteq T^+$ to $\rad \beta^+$ and define $\chi \in \widehat{T^+}$ by \cref{eq:equivalent-def-of-chi}. 
-Then, it is straightforward that the pair $(h, \chi)$ is $(T^+, \beta^+)$-admissible (\cref{def:O(T+-beta+)}). 
-Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+$, $T \coloneqq T^+ \cup T^-$, $\beta\from T\times T\to \pmone$ as in \cref{lemma:existence-beta} and $\tilde\beta\from T\times T\to \pmone$ as usual (\cref{}).  
-By \cref{}, we get that $\rad \tilde\beta = \langle f \rangle$, and, therefore, $(T, \beta, t_p)$ is as in \cref{}. 
+Conversely, let $T^+ \subseteq G$ be a $2$-elementary subgroup, $\beta^+\from T^+ \times T^+ \to \pmone$ be an alternating bicharacter, $e \neq t_p \in T^+$ and $h\in G$ such that $f\coloneqq h^2 \in \rad T^+$, $f \not\in \{e, t_p \}$ and $\rad \beta^+ = \langle t_p, f$. 
+Note that the element $f$ depends only on the coset $hT^+$. 
+For each such coset, we fix a complement $K \subseteq T^+$ to $\rad \beta^+$ and define $\chi \in \widehat{T^+}$ by \cref{eq:equivalent-def-of-chi}. 
+It is straightforward that the pair $(h, \chi)$ is $(T^+, \beta^+)$-admissible (\cref{def:O(T+-beta+)}). 
+Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+$, $T \coloneqq T^+ \cup T^-$, $\beta\from T\times T\to \pmone$ as in \cref{lemma:existence-beta} and $\tilde\beta\from T\times T\to \pmone$ as usual (\cref{eq:tilde-beta-def}). 
+Clearly, $t_p$ is a parity element and $f\in \rad \beta$, hence, by \cref{cor:radical-with-parity}, we have that $\rad \beta = \rad \tilde\beta = \langle f \rangle$. 
+Therefore, $(T, \beta, t_p)$ is as in \cref{def:std-realization-MxM-QxQ}(b). 
 
-Recall that our definition of $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ depended on a choice of a standard realization $(\D, \vphi)$ associated to $(T, \beta, t_p)$ (\cref{def:std-realization-MxM-QxQ}(b)), which depends on the choices ... (list?). 
-Note that $\beta(t_1, K) = 1$ and, hence, we can take $t_1$ and $K$ to be our choices
+Recall that in \cref{def:std-realization-MxM-QxQ}(b)) we have to make the choices \eqref{item:choose-t_1-std-realization}, \eqref{item:K-can-be-orthogonal-to-t_1} and \eqref{item:choose-mc-M}. 
+For \eqref{item:choose-t_1-std-realization} we choose $t_1$ and, for \eqref{item:K-can-be-orthogonal-to-t_1}, since $\beta(t_1, K) = 1$, we choose $K$.  
+For \cref{item:choose-mc-M}, choose any standard realization $\mc M$ of a matrix algebra with a division grading  associated to $(K, \beta\restriction_{K\times K})$, as before. 
+With these choices, we can fix the standard realization $(\D, \vphi)$ and, hence, the map $\eta^+ \from T^+ \to \pmone$ associated to $\vphi\restriction_{\D\even}$. 
+Note that $\eta^+$ can be defined as the only map such that $\mathrm{d}\eta^+ = \beta^+$, $\eta^+(t_p) = 1$, $\eta^+(f) = -1$ and $\eta^+\restriction_{K}$ is the map associated to the transposition on $\mc M$. 
+
+% given a $2$-elementary subgroup $T^+ \subseteq G$, an alternating bicharacter $\beta^+\from T^+ \times T^+ \to \pmone$, $e \neq t_p \in T^+$ and $h\in G$ such that $f\coloneqq h^2 \in T^+$, $f \not\in \{e, t_p \}$ and $\rad \beta^+ = \langle t_p, h^2 \rangle$, we can choose a complement $K \subseteq T^+$ to $\rad \beta^+$ and define $\chi \in \widehat{T^+}$ by \cref{eq:equivalent-def-of-chi}.
+
+\begin{defi}
+    Let $T^+$, $\beta^+$, $t_p$ and $h$ be as above, let $g_0 \in G$ and let $\kappa\from G/T^+ \to \ZZ_{\geq}$ be a $g_0$-admissible map. 
+    We define $M^{\mathrm{ex}}(T^+, \beta^+, t_p, h, \kappa, g_0)$ to be the graded superalgebra with superinvolution $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$. 
+\end{defi}
+
+Note that, if $M^{\mathrm{ex}}(T^+, \beta^+, t_p, h, \kappa, g_0) \iso M^{\mathrm{ex}}(T'^+, \beta'^+, t_p', h', \kappa', g_0')$, then, by \cref{thm:iso-odd-D-only-G}, $h' \in h T+$. 
+Also, by definition, the element $f$ depends only on the coset $hT^+$. 
+HenceFor each quadruple $(T^+, \beta^+, t_p, hT)$, we will fix the subgroup $K \subseteq T^+$ and the character $\chi \in \widehat{T^+}$
+
+Note that, since $T^+$ is $2$-elementary, our definition of $f$ depends only on the coset $hT^+$. 
+We will fix
+
+let $T^+ \subseteq G$ be a $2$-elementary subgroup, $\beta^+\from T^+ \times T^+ \to \pmone$ be an alternating bicharacter, $e \neq t_p \in \rad \beta^+$ and $h\in G$ such that $f\coloneqq h^2 \in \rad \beta^+$, $f \not\in \{e, t_p \}$ and $\rad \beta^+ = \langle t_p, f$.
+
+% ----
+NEED HERE: an isomorphism result to complete the connection between $(T, \beta, t_p)$ and $(T^+, \beta^+, h, \chi)$. 
+% ----
+
 
 
 We define $M^{\mathrm{ex}}(T^+, \beta^+, t_p, h, \kappa, g_0) \coloneqq M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$. 
