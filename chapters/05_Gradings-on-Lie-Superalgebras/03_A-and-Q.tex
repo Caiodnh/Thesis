@@ -35,7 +35,7 @@ By definition, Type I gradings are described in terms of $S$, so we will now foc
 
 Suppose $(R, \vphi)$ is endowed with a grading $\Gamma$ making $R$ graded-simple. 
 By \cref{thm:iso-(R-vphi)-with-parameters}, there is a triple $(\D, \U, B)$ with parameters $(T, \beta, p, \eta, \kappa, g_0, \delta)$ as in Definition \ref{def:E(D,U,B)} such that $(R, \vphi) \iso E(\D, \U, B)$. 
-Recall that, in this case, $\rad \tilde\beta = \langle f \rangle$ for an element $f\in T$ of order $2$ such that $\eta(f) = -1$ (\cref{prop:types-of-D-via-rad-beta}). 
+Recall that, in this case, $\rad \tilde\beta = \langle f \rangle$ for an element $f\in T^+$ of order $2$ such that $\eta(f) = -1$ (\cref{prop:types-of-D-via-rad-beta}). 
 
 Set $\barr G = G/\langle f \rangle$, let  $\pi\from G\to \barr G$ be the natural homomorphism and write $\bar g \coloneqq \pi(g)$, for all $g\in G$. 
 By \cref{prop:lemma-for-undoubling-and-fine-gradings}, ${}^\pi R$ is the sum of two graded-simple superideals, $S\times \{ 0 \}$ and $\{0\} \times S\sop$, so the restriction of ${}^\pi \Gamma$ to $S \iso S\times \{ 0 \}$ induces a $\barr G$-grading on $L$ of Type I. 
@@ -57,7 +57,7 @@ Then, it is straightforward to see that
     \psi(s_1, \overline{s_2}) = (\theta(s_2), \overline{\theta(s_1)}),
 \]
 for all $s_1, s_2\in S$. 
-Since $\Skew(R, \vphi) = \{ (s, -s) \mid s \in S \}$, combining \cref{eq:Rg-recovered-with-chi,eq:psi-in-terms-of-theta}, we get that the Type II grading on $L$ corresponding to $\Gamma$ can be recovered from the restriction of ${}^\pi \Gamma$ to $S$ as follows: we define a $G$-grading $S^{(-)} = \bigoplus_{g\in G} S^{(-)}_g$ by setting
+Since $\Skew(R, \vphi) = \{ (s, -\bar s) \mid s \in S \}$, combining \cref{eq:Rg-recovered-with-chi,eq:psi-in-terms-of-theta}, we get that the Type II grading on $L$ corresponding to $\Gamma$ can be recovered from the restriction of ${}^\pi \Gamma$ to $S$ as follows: we define a $G$-grading $S^{(-)} = \bigoplus_{g\in G} S^{(-)}_g$ by setting
 \[\label{eq:refiniment-on-L}
     \forall g\in G, \quad S^{(-)}_g \coloneqq \{ s \in S_{\bar g} \mid \theta(s) = -\chi(g) s\},
 \]
@@ -162,7 +162,7 @@ Finally, we note that the refinement obtained in \cref{eq:refiniment-on-L}, from
 
 % Vague summary of the subsec
 To summarize, once $\chi \in \widehat{T}$ is fixed, the undoubled model is determined by the $\barr G$-graded superalgebra $M_k(\barr \D)$ with parameters given by \cref{prop:lemma-for-undoubling-and-fine-gradings}, the map $\barr\mu \from \barr T \to \FF^{\times}$ defined by \cref{eq:defi-mu-undoubled}, which is
-associated to a super-anti-automorphism $\theta_0$ on $\barr(\D)$, and the matrix $\Theta \in M_k(\barr \D)$ defined by \cref{eq:defi-Theta-undoubled-model}, which is used to define the super-anti-automorphism $\theta$ on $M_k(\barr \D)$ by \cref{eq:theta-with-matrix-2}. 
+associated to a super-anti-automorphism $\theta_0$ on $\barr \D$, and the matrix $\Theta \in M_k(\barr \D)$ defined by \cref{eq:defi-Theta-undoubled-model}, which is used to define the super-anti-automorphism $\theta$ on $M_k(\barr \D)$ by \cref{eq:theta-with-matrix-2}. 
 
 % Prepare for following subsecs
 In the following subsections, we specialize these considerations to the cases of $A(m,n)$ and $Q(n)$. 
@@ -288,9 +288,9 @@ We also allow the case $m=n$.
 \begin{defi}\label{defi:type-II-A-m-not-n}
     Let $m,n \in \ZZ_{\geq 0}$, not both zero. 
     Let $T \subseteq G$ be a finite $2$-elementary subgroup and let $\beta\from {T\times T} \to \FF^\times$ be an alternating bicharacter with $\rad \beta = \langle f \rangle$, for some $e \neq f\in T$. 
-    Set $\barr G \coloneqq G/\langle f \rangle$, 
-    $\barr T \coloneqq T/\langle f \rangle$, let $\bar \beta$ be the nondegenerate alternating bicharacter on $\barr T$ induced by $\beta$, and consider the chosen standard realization $\barr \D$ of a matrix algebra with division grading associated to $(\barr T, \barr\beta)$ and the chosen subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
-    Then, let $g_0 \in G$ be any element and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = k_\bz \sqrt{|T|/2}$ and $n+1 = k_\bo \sqrt{|T|/2}$, where $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$. 
+    Set $\barr G \coloneqq G/\langle f \rangle$ and $\barr T \coloneqq T/\langle f \rangle$, and let $\bar \beta$ be the nondegenerate alternating bicharacter on $\barr T$ induced by $\beta$. 
+    Consider the chosen standard realization $\barr \D$ of a matrix algebra with division grading associated to $(\barr T, \barr\beta)$ and the chosen subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$, and define $\eta\from T \to \pmone$ by \cref{eq:fix-eta-undouble}. 
+    Then, let $g_0 \in G$ be any element and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = |\kappa_\bz| \sqrt{|T|/2}$ and $n+1 = |\kappa_\bo| \sqrt{|T|/2}$. 
     Choose: 
     \begin{enumerate}[(i)]
         \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
@@ -327,7 +327,7 @@ The following is an easy result that will also be used in \cref{ssec:grds-on-Q(n
 \begin{proof}
     We will show how the choices in \cref{defi:type-II-A-m-not-n} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(a) and \ref{def:model-grd-MxM-even}. 
     
-    In, view of lemma \cref{}, the choices of $\barr \D$ and $K$ give us a way to make the choices for a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(a).
+    In view of \cref{lemma:barr-D-to-mc-M}, the choices of $\barr \D$ and $K$ give us a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(a).
     Recall that a standard realization $\barr \D$ associated to $(\barr T, \bar \beta)$ is obtained by choosing subgroups $\barr A$ and $\barr B$ of $\barr T$ such that $\barr T = \barr A \times \barr B$ and $\barr \beta (\barr A, \barr A) = \barr \beta (\barr B, \barr B) = 1$. 
     Note that $\pi\from G \to \barr G$ restricts to an isomorphism $K \to \barr T$, and $\beta(s,t) = \barr\beta(\bar s, \bar t)$, for all $s,t \in K$. 
     Hence, the choice of the subgroups $\barr  A$ and $\barr  B$ as above is equivalent to a choice of subgroups $A, B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
@@ -540,7 +540,7 @@ In the next definition, we summarize what have been done for future reference:
     % (and, hence, also in \cref{def:std-realization-MxM-QxQ}(c)).
     
     % The choices of K and \barr\D\even given us the correct \eta^+, and fix \D as \M\tensor\C
-    By lemma \cref{}, Following the same argument as in the proof of \cref{prop:m-not-n-Type-II-correspondence}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, the choices of $\barr \D\even$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}, and the map associated to the transposition on $\mc M$ is $\mu^+\restriction_K$. 
+    By \cref{lemma:barr-D-to-mc-M}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, the choices of $\barr \D\even$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}, and the map associated to the transposition on $\mc M$ is $\mu^+\restriction_K$. 
     Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let
     $\eta\from T \to \pmone$ be the map associated to $\vphi_0$.  
     By definition, $\eta\restriction_{K} = \mu^+\restriction_K$, and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. 
@@ -665,9 +665,10 @@ If $p_0 = \bar 0$, we will say that the corresponding grading on $L$ is of Type 
 If $p_0 = \bar 1$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{P}. 
 
 \begin{remark}
-    A $G$-grading on the Lie superalgebra $\osp(m+1,n+1)$ (respectively, $P(n)$) gives rise to a $G \times \ZZ_2$-grading on $A(m,n)$ of Type II\textsubscript{osp} (respectively, II\textsubscript{P}). 
+    A $G$-grading on the Lie superalgebra $\osp(n+1,n+1)$ (respectively, $P(n)$) gives rise to a $G \times \ZZ_2$-grading on $A(m,n)$ of Type II\textsubscript{osp} (respectively, II\textsubscript{P}). 
 \end{remark}
 
+Recall that. for \cref{defi:type-II-A-m-not-n}, we have fixed a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$. 
 \begin{defi}\label{def:type-II-osp}
     Let $n\in \ZZ_{> 0}$. 
     We define $\Gamma^{\mathrm{(II_{osp})}}_A(T, \beta, \kappa_\bz, \kappa_\bo, h_0)$ to be the grading on $L$ induced from the grading $\Gamma^{\mathrm{(II)}}_A(T, \beta, \kappa_\bz, \kappa_\bo, h_0)$ on $M(n+1, n+1)^{(1)}$ (\cref{defi:type-II-A-m-not-n}) by reduction modulo the center.
@@ -678,12 +679,7 @@ Also, $\kappa_\bo$ is determined by $\kappa_\bz$ and $h_0$ (recall \cref{inertia
 
 \begin{defi}\label{def:type-II-P}
     Let $\barr G \coloneqq G/\langle f \rangle$, $T \coloneqq T/\langle f \rangle$, and let $\bar \beta$ be the nondegenerate alternating bicharacter on $\barr T$ induced by $\beta$. 
-    Choose:
-    \begin{enumerate}[(i)]
-        \item a standard realization $\barr \D$ associated to $(\barr T, \barr \beta)$; 
-        \item a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$.
-        \item a $k$-tuple $\gamma_\bz = (g_1, \ldots, g_k)$ of elements in $G$ realizing $\kappa_\bz$. 
-    \end{enumerate}
+    Choose a $k$-tuple $\gamma_\bz = (g_1, \ldots, g_k)$ of elements in $G$ realizing $\kappa_\bz$. 
     Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the transposition on $\barr \D$, 
     let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(f) = -1$, and extend $\chi$ to a character of $G$, which will also be denoted by $\chi$. 
     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and fix $\eta\from T \to \pmone$ as in \cref{eq:fix-eta-undouble}. 
