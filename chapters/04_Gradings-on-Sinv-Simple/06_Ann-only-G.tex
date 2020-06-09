@@ -1,95 +1,76 @@
 % Intro for A(n,n) odd 
 We can also reparametrize the odd graded superalgebras with superinvolution of type $M\times M\sop$ in terms of $G$. 
-Let $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ be as in \cref{def:model-grd-MxM-odd-or-QxQ}, and let $K \subseteq T^+$, $t_1 \in T^-$ and $\mc M$ be chosen as in items \eqref{}, \eqref{} and \eqref{} of \cref{def:std-realization-MxM-QxQ}(b). 
+Let $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ be as in \cref{def:model-grd-MxM-odd-or-QxQ}. 
 
-% --------
-
-Let $K \subseteq T^+$ be the complement to $\rad \beta^+$ chosen in item \eqref{} of \cref{def:std-realization-MxM-QxQ}(b), and let $t_1 (\rad \beta^+)$ be the coset of 
-
-Let $K \subseteq T^+$ and $t_1 \in T^-$ be chosen as in items \eqref{} and \eqref{} of \cref{def:std-realization-MxM-QxQ}(b). 
-
-% ---------
-
-As done in \cref{ssec:in-terms-of-G}, let $h \in G$ be the projection of $t_1$ onto $G$, \ie, $t_1 = (h, \bar 1)$, and define $\chi \in \widehat{T^+}$ by $\chi(t) \coloneqq \beta(t_1, t)$, for all $t\in T^+$. 
-By \cref{eq:beta-from-h-chi}, we can recover the triple $(T, \beta, p)$ from $T^+$, $\beta^+$, $h$ and $\chi$. 
-
-Recall that we have $e \neq f = h^2$, $t_p \neq f$, and $\rad \beta^+ = \langle t_p, f \rangle$, and note that, since $T^+ = K \times (\rad \beta^+)$ and $\beta(t_1, K) = 1$, $\chi$ is determined by 
+As done in \cref{ssec:odd-div-G-only}, we can recover the triple $(T, \beta, p)$ from $T^+$, $\beta^+$, an arbitrary element $t_1 \in T^-$ and the character $\chi \coloneqq \beta(t_1, \cdot) \in \widehat{T^+}$ (see \cref{eq:beta-from-h-chi}). 
+Let $K \subseteq T^+$ be the subgroup chosen in item \eqref{item:K-can-be-orthogonal-to-t_1} of \cref{def:std-realization-MxM-QxQ}(b), and let $S$ be the coset of $\rad \beta^+$ determined by $K$ as in \cref{lemma:K-before-t_1}. 
+We can use any representative of $S$ as $t_1$. 
+Then $\chi$ is determined by
 \[\label{eq:equivalent-def-of-chi}
     \chi(K) = \chi(f) = 1 \,\AND\, \chi(t_p) = -1.
 \]
-Therefore, we can recover $(T, \tilde\beta, t_p)$ from $T^+$, $\beta^+$, $t_p$, $K$ and $h$.  
-The choice of a standard realization of a graded-division algebra $\mc M$ associated to $(K, \beta\restriction_{K \times K})$ (item \eqref{} in Def.) is already in terms of the group $G$, hence we can encode the data necessary to construct a standard realization of a graded-division superalgebra with superinvolution with no reference to $G^\#$. 
-In particular, we can fix the map $\eta^+\from T^+ \to \pmone$, 
-which, by rmk, is characterized by
+Let $C$ be the image of $S$ under the projection $G^\# \to G$. 
+By \cref{cor:T+-is-elem-2-grp}, $f$ is the square of every element in $S$ and, hence, in $C$.
+It follows that we can recover $(T, \tilde\beta, t_p)$ from $T^+$, $\beta^+$, $t_p$, $K$ and the coset $C$. 
+
+Now let $\mc M$ be the standard realization chosen in item \eqref{item:choose-mc-M} of \cref{def:std-realization-MxM-QxQ}(b). 
+Clearly, the choice of $t_1 \in S$ in item \eqref{item:choose-t_1-std-realization} is equivalent to the choice of $h\in C$ via $t_1 \coloneqq (h, \bar 1)$, so we have all the data necessary to construct a graded-division superalgebra with superinvolution in terms of $G$ only. 
+In particular, by \cref{rmk:eta-for-MxM-or-QxQ}, the map $\eta^+\from T^+ \to \pmone$ is characterized by
 \[\label{eq:eta+-unsharpening-MxM}
-    \eta^+\restriction_{K} \,\text{is the map associated to transposition on}\, \mc M,\, \eta^+(f) = -1 \,\AND\, \eta^+(t_p) =1. 
+    \begin{aligned}
+        \mathrm{d}\eta^+ = \beta^+,\, \eta^+\restriction_{K} \,\, &\text{is the map associated to transposition on}\, \mc M,\\ 
+        &\eta^+(f) = -1 \,\AND\, \eta^+(t_p) =1. 
+    \end{aligned}
 \]
-and, hence, the condition that $\kappa$ is $g_0$-admissible is well-defined. 
-It follows that, and $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ can be constructed from $T^+$, $\beta^+$, $t_p$, $K$, $h$, $\mc M$, $g_0$ and $\kappa$. 
-
-% ----
-
-\begin{remark}
-    By \cref{lemma:K-before-t_1}, given the choice of $K$, there are four possible choices for $t_1$. 
-    More precisely, we could have chosen another element $t_1' \in t_1 (\rad \beta^+)$ instead of $t_1$. 
-    This would imply that we would have an element $h' \in h (\rad \beta^+)$ instead of $h$. 
-    Clearly, this would not change the character $\chi$, and we would still recover $(T, \tilde\beta, t_p)$ and the choices i and iii. 
-    By \cref{eq:eta+-unsharpening-MxM}, we would get the same $\eta^+$, so the the condition that a map $\kappa$ is $g_0$-admissible is the same. 
-    Nevertheless, the map $\eta$ could be different and, as noted in the 3rd rmk, the parametrization of $M^{ex}$ could be different. 
-\end{remark}
+Thus, $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ can be recovered from $T^+$, $\beta^+$, $t_p$, $K$, $h$, $\mc M$, $g_0$ and $\kappa$. 
 
 % ---------
 
-Conversely, let $T^+ \subseteq G$ be a $2$-elementary subgroup, let $e\neq t_p \in T^+$, let $h\in G$ such that $f \coloneqq h^2 \in T^+ \setminus \langle t_p \rangle$, and let $\beta^+\from T^+ \times T^+ \to \pmone$ be an alternating bicharacter such that $\rad \beta^+ = \langle t_p, f \rangle$. 
-Choose a complement $K \subseteq T^+$ to $\rad \beta^+$ and let $\chi \in \widehat{T^+}$ be defined by \cref{eq:equivalent-def-of-chi}. 
-It is straightforward to see that the pair $(h, \chi) \in \mathbf{O} (T^+, \beta^+)$, see \cref{def:O(T+-beta+)}. 
-Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+$, $T \coloneqq T^+ \cup T^-$, $\beta\from T\times T\to \pmone$ as in \cref{lemma:existence-beta}. 
-Clearly, if we change $h$ by another element in $h (\rad \beta^+)$, we would get the same element $f$ and the same bicharacter $\beta$. 
-Therefore, instead of $h$, we will consider as a parameter the coset $h(\rad \beta^+)$
-% such that $h^2 \in T^+ \setminus \langle t_p \rangle$ as a parameter
-, and fix $h$ to be a representative of this coset. 
-
-It follows that $t_p$ is a parity element and $f\in \rad \beta$, hence, by \cref{cor:radical-with-parity}, that $\rad \beta = \rad \tilde\beta = \langle f \rangle$. 
+Conversely, let $T^+ \subseteq G$ be a $2$-elementary subgroup, let $e\neq t_p \in T^+$, let $h \in G$ be such that $f \coloneqq h^2 \in T^+ \setminus \langle t_p \rangle$, and let $\beta^+\from T^+ \times T^+ \to \pmone$ be an alternating bicharacter such that $\rad \beta^+ = \langle t_p, f \rangle$. 
+Fix a complement $K \subseteq T^+$ to $\rad \beta^+$ and a standard realization $\mc M$ of a matrix algebra with division grading associated to $(K, \beta^+\restriction_{K \times K})$. 
+Let $\chi \in \widehat{T^+}$ be defined by \cref{eq:equivalent-def-of-chi}. 
+It is straightforward to check that $(h, \chi) \in \mathbf{O} (T^+, \beta^+)$, see \cref{def:O(T+-beta+)}. 
+Set $t_1 \coloneqq (h, \bar 1)$, $T^- \coloneqq t_1 T^+$ and $T \coloneqq T^+ \cup T^-$, and define $\beta\from T\times T\to \pmone$ as in \cref{lemma:existence-beta}. 
+It follows that $t_p$ is a parity element and that $f\in \rad \beta$, hence, by \cref{cor:radical-with-parity}, we have that $\rad \beta = \rad \tilde\beta = \langle f \rangle$. 
 Therefore, $(T, \tilde\beta, t_p)$ is as in \cref{def:std-realization-MxM-QxQ}(b). 
-Further, since $\beta(t_1, K) = \chi(K) = 1$, we can use $K$ and $t_1$ as the choices \eqref{item:choose-t_1-std-realization} and \eqref{item:K-can-be-orthogonal-to-t_1} in the mentioned definition. 
-For \eqref{item:choose-mc-M}, we still choose any standard realization $\mc M$ of a matrix algebra with a division grading associated to $(K, \beta\restriction_{K\times K})$. 
-We fix $\eta^+\from T^+ \to \pmone$ to be the unique map such that $\mathrm{d}\eta^+ = \beta^+$,  $\eta^+\restriction_{K}$ is the map associated to the transposition on $\mc M$ and $\eta^+\restriction_{\rad \beta^+}$ is the character defined by $\eta^+(t_p) = 1$ and $\eta^+(f) = -1$. 
-It is straightforward that, if $(\D, \vphi_0)$ is the standard realization as in \cref{def:std-realization-MxM-QxQ}(b) corresponding to these choices above and $\eta\from T \to \pmone$ is the map determining $\vphi_0$, then $\eta^+ = \eta\restriction_{T^+}$. 
+Further, since $\beta(t_1, K) = \chi(K) = 1$, we can use $K$, $\mc M$ and $t_1$ as the choices in items 
+\eqref{item:K-can-be-orthogonal-to-t_1}, \eqref{item:choose-mc-M} and \eqref{item:choose-t_1-std-realization}. 
 
+% Let $g_0 \in G$ be any element and let $\kappa\from G/T^+ \to \ZZ_2$ be a $g_0$-admissible map. 
+We will denote the graded superalgebra with superinvolution $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$, constructed using the choices above, by $M^{\mathrm{ex}}(T^+, \beta^+, t_p, h, \kappa, g_0)$. 
 
-
-Note that, since $T^+$ is $2$-elementary, the element $f \coloneqq h^2$ depends only on the coset $hT^+$. 
-Hence, we can (and will) fix the complement $K$ and the character $\chi$ depending only on $T^+$, $t_p$ and $hT^+$. 
-
-\begin{remark}
-    Let $\D$ and $\D'$ be, respectively, odd graded-division superalgebras associated to $(T^+, \beta^+, h,\chi)$ and $(T'^+, \beta'^+, h',\chi')$ as above. 
-    By \cref{thm:iso-odd-D-only-G}, if $\D \iso \D'$, then $h'T^+ = hT^+$, but we may have $h' \neq h$. 
-    Therefore, it is convenient for us to make $\chi$ depend only on the coset $hT^+$ and not the element $h$. 
-\end{remark}
-
-% GIVEN instead of LET:
-%
-% Conversely, given a $2$-elementary subgroup $T^+ \subseteq G$, nontrivial distinct elements $t_p, f \in T^+$, and an alternating bicharacter $\beta^+\from T^+ \times T^+ \to \pmone$ such that $\rad \beta^+ = \langle t_p, h^2 \rangle$, we fix a complement $K \subseteq T^+$ to $\rad \beta^+$ and a character $\chi \in \widehat{T^+}$ defined by \cref{eq:equivalent-def-of-chi}. 
-% Given a element $h \in G$ such that $h^2 = f$, it is straightforward to see that the pair $(h, \chi)$ is $(T^+, \beta^+)$-admissible (\cref{def:O(T+-beta+)}). 
-
-
-SHOULD THE FOLLOWING BE A LABELED DEFINITION?
-
-\begin{defi}
-    Let $T^+$, $\beta^+$, $t_p$ and $h$ be as above, let $g_0 \in G$ and let $\kappa\from G/T^+ \to \ZZ_{\geq}$ be a $g_0$-admissible map. 
-    We define $M^{\mathrm{ex}}(T^+, \beta^+, t_p, f, h, \kappa, g_0)$ to be the graded superalgebra with superinvolution $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$. 
-\end{defi}
+% \begin{remark}
+%     We emphasize that the definition of $M^{\mathrm{ex}}(T^+, \beta^+, t_p, C, \kappa, g_0)$ depends on fixing representatives for the cosets. 
+%     Analogously to \cref{rmk:choose-other-t_1}, another representative $h' \in C$ gives $M^{\mathrm{ex}}(T^+, \beta^+, t_p, C, \kappa, g_0)'$ as follows:
+%     \[
+%         M^{\mathrm{ex}}(T^+, \beta^+, t_p, C, \kappa, g_0)' \iso 
+%         \begin{case}
+%         \end{case}
+%     \]
+%     $M^{\mathrm{ex}}(T^+, \beta^+, t_p, C, \kappa, g_0)' \iso M^{\mathrm{ex}}(T^+, \beta^+, t_p, C, \kappa, g_0)$ for $h' \in \{ h, t_p h\}$, and $M^{\mathrm{ex}}(T^+, \beta^+, t_p, C, \kappa, g_0)' \iso M^{\mathrm{ex}}(T^+, \beta^+, t_p, C, \kappa, t_p g_0)$ if $h' \in \{ f h, f t_p h\}$. 
+% \end{remark}
 
 \begin{cor}\label{cor:MxMsop-odd-only-G}
     Suppose the superalgebra with superinvolution $M(n,n) \times M(n,n)\sop$ is endowed with a $G$-grading making it graded-simple. 
-    Then it is isomorphic, as a graded superalgebra with superinvolution, to $M^{\mathrm{ex}}(T^+, \beta^+, t_p, f, h, \kappa, g_0)$ as above. 
-    Moreover, the graded superalgebras with superinvolution $M^{\mathrm{ex}}(T^+, \beta^+, t_p, f, h, \kappa, g_0)$ and $M^{\mathrm{ex}} (T'^+, \beta'^+, t_p',  h', \kappa', g_0')$ are isomorphic if, and only if, $T^+ =T'^+$, $\beta^+ = \beta'^+$, $t_p = t_p'$, $h' \in h \langle t_p, f \rangle$ and there is $g \in G$ such that $\kappa' = g\cdot\kappa$ and $g_0' = g^{-2}g_0$. 
+    Then it is isomorphic, as a graded superalgebra with superinvolution, to $M^{\mathrm{ex}}(T^+, \beta^+, t_p, h, \kappa, g_0)$ as above. 
+    Moreover, $M^{\mathrm{ex}}(T^+, \beta^+, t_p, h, \kappa, g_0)$ and $M^{\mathrm{ex}} (T'^+, \beta'^+, t_p',  h', \kappa', g_0')$ are isomorphic if, and only if, $T^+ =T'^+$, $\beta^+ = \beta'^+$, $t_p = t_p'$, $h' \in h (\rad \beta^+)$ and there is $g \in G$ such that $\kappa' = g\cdot\kappa$ and
+    \begin{enumerate}[(i)]
+        \item $g_0' = g^{-2}g_0$ if $h' \in \{ h, f t_p h\}$;
+        \item $g_0' = t_p g^{-2}g_0$ if $h' \in \{ f h, t_p h\}$.
+    \end{enumerate}
 \end{cor}
 
 \begin{proof}
-    By \cref{thm:iso-odd-D-only-G,prop:T-beta-determines-iso}, $T =T'$ and $\beta = \beta'$ if, and only if, $(h', \chi')$ is in the $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$ (see \cref{def:T^+-action}). Since we have $\chi = \chi'$ if $h T^+ = h'T^+$, this condition reduces to $h' \in h(\rad \beta^+) = h\langle f \rangle$. 
-    Then, the result follows from \cref{thm:MxM-odd}. 
+    The first assertion follows immediately from \cref{thm:MxM-odd}. 
+    The second assertion also follows from \cref{thm:MxM-odd}, but we have to take into account that in the isomorphism condition there, the element $t_1$ was fixed for each triple $(T, \tilde\beta, t_p)$. 
+    Therefore, when comparing $M^{\mathrm{ex}}(T^+, \beta^+, t_p, h, \kappa, g_0)$ and $M^{\mathrm{ex}} (T^+, \beta^+, t_p,  h', \kappa', g_0')$, we have to apply \cref{rmk:choose-other-t_1} to bring 
+    $t_1' = (h', \bar 1)$ to $t_1= (h, \bar 1)$. 
 \end{proof}
+
+% \begin{proof}
+%     By \cref{thm:iso-odd-D-only-G,prop:T-beta-determines-iso}, $T =T'$ and $\beta = \beta'$ if, and only if, $(h', \chi')$ is in the $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$ (see \cref{def:T^+-action}). Since we have $\chi = \chi'$ if $h T^+ = h'T^+$, this condition reduces to $h' \in h(\rad \beta^+) = h\langle f \rangle$. 
+%     Then, the result follows from \cref{thm:MxM-odd}. 
+% \end{proof}
 
 % Since the the assertion that $\kappa$ is $g_0$-admissible depends only on the fixed map $\eta^+\from T^+ \to \pmone$, we have described all the information necessary to construct $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ with no reference to $G^\#$. 
 

@@ -207,32 +207,17 @@ Note that, in cases (a) and (c) in the proof above, we chose $K$ to be an arbitr
 The next result shows that we can do the same in case (b), and then choose the element $t_1 \in T^-$ depending on $K$. 
 
 \begin{lemma}\label{lemma:K-before-t_1}
-    Let $(T, \beta, p)$ be as in \cref{thm:tensor-prd-decomposition}, with $T^- \neq \emptyset$, and let $K \subseteq T^+$ be any subgroup such that $T^+ = (\rad \beta^+) \times K$. 
+    Let $(T, \beta, p)$ be as in \cref{thm:tensor-prd-decomposition}(b), and let $K \subseteq T^+$ be any subgroup such that $T^+ = (\rad \beta^+) \times K$. 
     Then the set $S \coloneqq \{ t_1 \in T^- \mid \beta(t_1, K) = 1 \}$ is a coset of $\rad \beta^+$. 
 \end{lemma}
 
 \begin{proof}
-    Its is straightforward that $t_1, t_1' \in S$ \IFF $t_1\inv t_1' \in \rad \beta^+$. 
+    Given $t_1 \in S$, its is straightforward that $t_1' \in S$ \IFF $t_1\inv t_1' \in \rad \beta^+$. 
     Hence we only have to show that $S \neq \emptyset$. 
-    If $t_p \in T^-$ is odd, then $t_p \in \rad \beta$, so $t_p \in S$. 
-    If $t_p \in T^+$, let $\chi$ be the character on $T^+$ determined by $\chi(K) = \chi(f) = 1$ and $\chi(t_p) = -1$, and extend $\chi$ to a character on $T$. 
+    Let $\chi$ be the character of $T^+$ determined by $\chi(K) = \chi(f) = 1$ and $\chi(t_p) = -1$, and extend $\chi$ to a character of $T$. 
     Since $\rad \tilde\beta = \langle f \rangle$, $\chi$ induces a character on $T/\rad \tilde\beta$ and, by the nondegeneracy of the bicharacter induced by $\tilde \beta$ on $T/\rad \tilde\beta$, there is $t_1 \in T$ such that $\chi = \tilde\beta(t_1, \cdot)$. 
     Since $\tilde\beta(t_1, t_p) = \chi(t_p) = -1$, $t_1\in T^-$, and hence, since $\tilde\beta(t_1, K) = \chi(K) = 1$, $t_1 \in S$. 
 \end{proof}
-
-% Remark
-
-OLDER VERSION:
-
-\begin{remark}\label{rmk:choose-K-before-t_1}
-    In the proof of \cref{thm:tensor-prd-decomposition}(b), we choose the complement $K \subseteq T^+$ for $\rad \beta^+$ such that $\beta(t_1, K) = 1$ depending on the (arbitrary) element $t_1 \in T^-$. 
-    We could proceed in the other direction: first choose an arbitrary complement $K$, and then find a element $t_1$ such that $\beta(t_1, K) = 1$. 
-    Indeed, $K$ is a vector space over $\ZZ_2$ and, hence, $\beta\restriction_{K \times K}\from K \times K \to \pmone \iso \ZZ_2$ is a nondegenerate alternating bilinear form. 
-    So there is a symplectic basis $\B' = \{ a_1, b_1, \ldots, a_k, b_k\}$ for $K$, \ie, for all $1\leq i \leq k$, $\beta(a_i, a_j) = \beta(b_i, b_j) = 1$, and $\beta(a_i, b_j) = -1$, if $i = j$, and $\beta(a_i, b_j) = 1$, if $i \neq j$. 
-    Start with an arbitrary element $t_1 \in T^-$ and, for all $i \in \{1,\ldots,k\}$ change it, in order, to $b_i t_1$ if $\beta(t_1, a_i) = -1$ and to $a_i t_1$ if $\beta(t_1, b_i) = -1$. 
-    It is clear that the resulting $t_1$ is in $T^-$ and $\beta(t_1,a_1) = \beta(t_1, b_i) = 1$. 
-    Further, another element $t_1' \in T^-$ is such that $\beta(t_1', K) = 1$ \IFF $t_1' \in t_1 \rad \beta^+$. 
-\end{remark}
 
 % --- Std Realization --- %
 We will now adapt the proof of \cref{thm:tensor-prd-decomposition} to construct standard realizations of superinvolution-simple graded-division superalgebras that are not simple as superalgebras. 
@@ -259,15 +244,16 @@ We will now adapt the proof of \cref{thm:tensor-prd-decomposition} to construct 
     where we have used \cref{cor:radical-with-parity} for (b) and (c).
     Then choose:
     \begin{enumerate}[(i)]
-        \item a subgroup $K \subseteq T^+$ such that $(\rad \beta^+) \times K = T^+$ and, if we are in case (b), $\beta(t_1, K) = 1$;
+        \item a subgroup $K \subseteq T^+$ such that $(\rad \beta^+) \times K = T^+$;
         \label{item:K-can-be-orthogonal-to-t_1}
-        \item an element $t_1 \in T^-$ such that $\beta(t_1, K) = 1$, if we are in case (b);
-        \label{item:choose-t_1-std-realization}
-        \item a standard realization $\mc M$ (see     \cref{def:standard-realization}) of a matrix algebra with a division grading  associated to $(K, \beta\restriction_{K\times K})$. 
+        \item a standard realization $\mc M$ (see   \cref{def:standard-realization}) of a matrix algebra with a division grading  associated to $(K, \beta\restriction_{K\times K})$;
         \label{item:choose-mc-M}
+        \item if we are in case (b), an element $t_1 \in T^-$ such that $\beta(t_1, K) = 1$. 
+        \label{item:choose-t_1-std-realization}
     \end{enumerate}
-    A subgroup $K$ in item \eqref{item:K-can-be-orthogonal-to-t_1} exists because $T^+$ is an elementary $2$-group and, in case (b), the element $t_1$ in \eqref{item:choose-t_1-std-realization} exists by \cref{rmk:choose-K-before-t_1}. 
-    A standard realization in item \eqref{item:choose-mc-M} is defined since $\beta\restriction_{K\times K} = \beta^+\restriction_{K\times K}$ is, clearly, nondegenerate. 
+    A subgroup $K$ in item \eqref{item:K-can-be-orthogonal-to-t_1} exists because $T^+$ is an elementary $2$-group, and
+    a standard realization in item \eqref{item:choose-mc-M} is defined since $\beta\restriction_{K\times K} = \beta^+\restriction_{K\times K}$ is, clearly, nondegenerate. 
+    Finally, in case (b), the element $t_1$ in \eqref{item:choose-t_1-std-realization} exists by \cref{lemma:K-before-t_1}. 
     
     Let $\vphi_{\mc M}$ denote the transposition on $\mc M$, and let $(\mc C, \vphi_{\mc C})$ be as in \cref{thm:tensor-prd-decomposition}: item (a) if $t_p =e$, item (b) if $e \neq t_p \in T^+$, and item (c) if $t_p \in T^-$.
     We say that $(\mc C \tensor \mc M, \vphi_{\mc C} \tensor \vphi_{\mc M})$ is a \emph{standard realization} of a graded-division superalgebra with superinvolution associated to $(T, \tilde\beta, t_p)$. 
@@ -282,8 +268,10 @@ We will now adapt the proof of \cref{thm:tensor-prd-decomposition} to construct 
         %
         \item if $t_p \in T^-$, then $\eta(t_p) = 1$.
     \end{enumerate}
+    % In any case, $\eta^+ \coloneqq \eta\restriction_{T^+}$ is characterized by  $\mathrm{d}\eta^+ = \beta^+$, $\eta^+\restriction_{K}$ is the map associated to the transposition on $\mc M$, $\eta^+(f) = -1$ and, if $t_p \in T^+$, $\eta^+(t_p) = 1$. 
     In particular, in all cases $\eta(f) = -1$ and the chosen $t_p$ is the $\eta$-parity element of $T$. 
-    Also, a different choice $t_1'$ in \eqref{item:choose-t_1-std-realization} leads to the the same $\eta$ if $t_1' \in \{ t_1, t_p t_1\}$, and to a different $\eta$ if $t_1' \in \{ f t_1, t_p f t_1\}$. 
+    Also, a different choice $t_1'$ in \eqref{item:choose-t_1-std-realization} leads to $\eta' = \eta$ if $t_1' \in \{ t_1, f t_p t_1\}$, and to $\eta' = \tilde\beta(t_p, \cdot) \eta$ if $t_1' \in \{ f t_1, t_p t_1\}$; 
+    in both cases, $\eta'\restriction_{T^+} = \eta\restriction_{T^+}$.
 \end{remark}
 
 In what follows, for each triple $(T, \tilde\beta, t_p)$, we will fix a standard realization $(\D, \vphi_0)$. 
@@ -343,7 +331,7 @@ Recall that in this situation the map $\kappa\from G^\#/T \to \ZZ_{\geq 0}$ carr
 	\end{enumerate}
 \end{defi}
 
-It is straightforward to check that $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is $g_0$-admissible if, and only if, $(\kappa, g_0) \in \mathbf{I}(T,\beta,p)^{\bz, +}_\eta$ (see \cref{defi:X(D)}, where $\kappa$ should be regarded as a function $G^\#/T \to \ZZ_{\geq 0}$ and $\eta$ satisfies $\eta^+ = \eta\restriction_{T^+}$). 
+For $\eta^+ \coloneqq \eta\restriction_{T^+}$, it is straightforward to check that $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is $g_0$-admissible if, and only if, $(\kappa, g_0) \in \mathbf{I}(T,\beta,p)^{\bz, +}_\eta$ (see \cref{defi:X(D)}, where $\kappa$ should be regarded as a function $G^\#/T \to \ZZ_{\geq 0}$). 
 In other words, $\kappa$ is $g_0$-admissible if, and only if, there is a pair $(\U, B)$ whose inertia is $(\eta, \kappa, g_0, 1)$ (see Definition \ref{def:parameter-of-(U,B)}). 
 In this case, we say that $(\U, B)$ has \emph{inertia determined by} $\kappa$. 
 
@@ -361,7 +349,13 @@ In this case, we say that $(\U, B)$ has \emph{inertia determined by} $\kappa$.
 \end{defi}
 
 \begin{remark}\label{rmk:choose-other-t_1}
-    Different choice of t1, same kappa but $g_0$ goes to $t_pg_0$ in half of the cases, up to isomorphism... check
+    Recall from \cref{def:std-realization-MxM-QxQ}(b) that the fixed standard realization $(\D, \vphi_0)$ depends on the choice of the element $t_1$ in item \eqref{item:choose-t_1-std-realization}. 
+    If $t_1'$ is another such element, then, by \cref{lemma:K-before-t_1}, $t_1' \in t_1(\rad \beta^+)$. 
+    By \cref{rmk:eta-for-MxM-or-QxQ}, $t_1'$ gives the same map $\eta^+\from T^+ \to \pmone$ as $t_1$. 
+    Hence, the set of $g_0$-admissible $\kappa$'s is the same (see \cref{defi:odd-D-kappa-g_0-admissible}). 
+    Nevertheless, $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)'$ obtained from $t_1'$ may not be isomorphic to $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ obtained from $t_1$. 
+    More precisely $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)' \iso M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)$ for $t_1' \in \{ t_1, f t_p t_1\}$, and $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0)' \iso M^{\mathrm{ex}}(T, \beta, t_p, \kappa, t_p g_0)$ if $t_1' \in \{ f t_1, t_p t_1\}$. 
+    This follows from \cref{rmk:eta-for-MxM-or-QxQ,thm:iso-(R-vphi)-with-parameters}. 
 \end{remark}
 
 Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso M(n,n)\times M(n,n)\sop$, where $n = |\kappa| \sqrt{|T|/8}$, and $Q^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso Q(n)\times Q(n)\sop$, where $n = |\kappa| \sqrt{|T|/4}$.
@@ -395,7 +389,13 @@ Then $(T^+, \beta^+, e)$ is as in case (a) and $h^2 = f$.
 Conversely, given $(T^+, \beta^+, e)$ as in case (a) and an element $h\in G$ with $h^2 = f$, we can define $t_p \coloneqq (h, \bar 1)$, $T \coloneqq T^+ \cup t_p T^+$ and $\tilde\beta\from T\times T \to \FF^\times$ by $\tilde\beta(s t_p^i, t t_p^j) = \beta^+(s,t)$, for all $s, t \in T^+$ and $i, j \in \ZZ$. 
 Then $(T, \tilde\beta, t_p)$ is a triple as in case (c). 
 Hence, we can reparametrize $(T, \tilde\beta, t_p)$ by $(T^+, \beta^+, h)$. 
-Also, $g_0 \in G$ and the $g_0$-admissibility condition involves only elements in $G$. 
+Also, $g_0 \in G$ and the $g_0$-admissibility condition involves only the map $\eta^+ \coloneqq \eta\restriction_{T^+}$, which is characterized by:
+\[\label{eq:eta+-unsharpening-MxM}
+    \begin{aligned}
+        \mathrm{d}\eta^+ = \beta^+,\, \eta^+\restriction_{K} \,\, &\text{is the map associated to transposition on}\, \mc M,\,\AND\,
+        \eta^+(f) = -1. 
+    \end{aligned}
+\]
 Therefore, the graded superinvolution-simple superalgebra $Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$ in \cref{def:model-grd-MxM-odd-or-QxQ} will also be denoted by $Q^{\mathrm{ex}} (T^+, \beta^+,  h, \kappa, g_0)$, with all parameters in terms of the group $G$. 
 
 By \cref{thm:MxM-odd}, we have:
