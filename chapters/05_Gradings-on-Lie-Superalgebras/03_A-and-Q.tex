@@ -201,7 +201,7 @@ As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorph
 Let $\barr \D$ be the chosen standard realization associated to $(\barr T, \bar\beta)$, and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to the transposition map. 
 
 Fix a complement $K$ for $\langle f \rangle$ in $T$, \ie, a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$ (it can be done, since $T$ is a elementary $2$-group). 
-Let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$, and set $\mu \coloneqq \barr \mu \circ \pi$. 
+Let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$, and set $\mu \coloneqq \barr \mu \circ \pi\restriction_{T}$. 
 Then set 
 \[\label{eq:fix-eta-undouble}
     \forall t\in T, \quad \eta(t) \coloneqq \mu(t) \chi\inv(t).
@@ -293,8 +293,9 @@ We also allow the case $m=n$.
     Then, let $g_0 \in G$ be any element and let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = |\kappa_\bz| \sqrt{|T|/2}$ and $n+1 = |\kappa_\bo| \sqrt{|T|/2}$. 
     Choose: 
     \begin{enumerate}[(i)]
-        \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$;
+        \item a set-theoretic section $\xi\from G/T \to G$ for the natural homomorphism $G \to G/T$; \label{item:A(m-n)-choose-chi}
         \item a total order $\leq$ on $G/T$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T$; 
+        \label{item:A(m-n)-choose-leq}
     \end{enumerate}
     and construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}), where $\pi\from G\to \barr G$ is the natural homomorphism. 
     Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ constructed using the choices of $\barr \D$, $\barr \gamma_\bz$ and $\barr \gamma_\bo$ above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction to $S^{(1)}$. 
@@ -316,7 +317,7 @@ The following is an easy result that will also be used in \cref{ssec:grds-on-Q(n
     Recall that a standard realization $\barr \D$ associated to $(\barr T, \bar \beta)$ is obtained by choosing subgroups $\barr A$ and $\barr B$ of $\barr T$ such that $\barr T = \barr A \times \barr B$ and $\barr \beta (\barr A, \barr A) = \barr \beta (\barr B, \barr B) = 1$. 
     Since $\pi\restriction_K\from K \to \barr T$ is an isomorphism, and $\beta(s,t) = \barr\beta(\pi(s), \pi(t))$, for all $s,t \in K$, the choice of the subgroups $\barr  A$ and $\barr  B$ as above is equivalent to a choice of subgroups $A, B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
     The ``further'' part follows from \cref{lemma:transp-std-realization}: since
-    $\barr \mu ( \bar a \bar b) = \barr\beta (\bar a, \bar b)$, for all $\bar a\in \barr A$ and $\bar b\in \barr B$, we have that $\mu (ab) = \barr \mu (ab) = \barr\beta (\bar a, \bar b) = \beta(a,b)$, for all $a\in A$ and $b\in B$. 
+    $\barr \mu ( \bar a \bar b) = \barr\beta (\bar a, \bar b)$, for all $\bar a\in \barr A$ and $\bar b\in \barr B$, we have that $\mu (a b) = \barr \mu (\barr a \barr b) = \barr\beta (\bar a, \bar b) = \beta(a,b)$, for all $a\in A$ and $b\in B$. 
 \end{proof}
 
 \begin{prop}\label{prop:m-not-n-Type-II-correspondence}
@@ -325,29 +326,38 @@ The following is an easy result that will also be used in \cref{ssec:grds-on-Q(n
 \end{prop}
 
 \begin{proof}
-    We will show how the choices in \cref{defi:type-II-A-m-not-n} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(a) and \ref{def:model-grd-MxM-even}. 
+    We will show how the choices in \cref{defi:type-II-A-m-not-n} correspond to the choices in
+    % \cref{def:model-grd-MxM-even}. 
+    Definitions \ref{def:std-realization-MxM-QxQ}(a) and \ref{def:model-grd-MxM-even}.
     
-    In view of \cref{lemma:barr-D-to-mc-M}, the choices of $\barr \D$ and $K$ give us a standard realization $(\D, \vphi_0)$ as in \ref{def:std-realization-MxM-QxQ}(a).
-    Recall that a standard realization $\barr \D$ associated to $(\barr T, \bar \beta)$ is obtained by choosing subgroups $\barr A$ and $\barr B$ of $\barr T$ such that $\barr T = \barr A \times \barr B$ and $\barr \beta (\barr A, \barr A) = \barr \beta (\barr B, \barr B) = 1$. 
-    Note that $\pi\from G \to \barr G$ restricts to an isomorphism $K \to \barr T$, and $\beta(s,t) = \barr\beta(\bar s, \bar t)$, for all $s,t \in K$. 
-    Hence, the choice of the subgroups $\barr  A$ and $\barr  B$ as above is equivalent to a choice of subgroups $A, B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
-    In other words, our choices of $\barr \D$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}. 
-    Also, $\mu (ab) = \barr \mu (ab) = \barr\beta (\bar a, \bar b) = \beta(a,b)$ for all $a\in A$ and $b\in B$, so $\mu\restriction_{K}$ is the map determining $\vphi_{\mc M}$ (see \cref{lemma:transp-std-realization}). 
-    Further, since $\eta\restriction_{K} = \mu\restriction_{K}$ and $\eta\restriction_{\langle f \rangle} = \chi\inv \restriction_{\langle f \rangle}$, the map $\eta$ defined by \cref{eq:fix-eta-undouble} is the map determining to $\vphi_{\mc C} \tensor \vphi_{\mc M}$. 
+    In view of \cref{lemma:barr-D-to-mc-M}, the choices of $K$ and $\barr \D$  give us the same information as the choices of $K$ in item \eqref{item:K-can-be-orthogonal-to-t_1} and $\mc M$ in item \eqref{item:choose-mc-M} of \cref{def:std-realization-MxM-QxQ}(a), and the map associated to the transposition on $\mc M$ is $\mu\restriction_K$. 
+    Let $(\D, \vphi_0)$ denote the standard realization constructed using these choices. 
+    Note that the map $\eta\from T\to \pmone$ defined in \cref{eq:fix-eta-undouble} is such that $\mathrm{d}\eta = \beta$, $\eta\restriction_{K} = \mu\restriction_K$ and $\eta(f) = -1$, so, by \cref{rmk:eta-for-MxM-or-QxQ}(a), $\eta$ is the map associated to $\vphi_0$. 
+    In particular, the $g_0$-admissibility condition for $\kappa$ is the same in \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-A-m-not-n}. 
     
-    We can use the choices in items (i) and (ii) to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-even}, by following the same construction as in \cref{ssec:grds-osp}. 
-    With respect with the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
-    To get the matrix $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}, we will consider a different graded basis $\tilde \B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
+    We can use the choices in items \eqref{item:A(m-n)-choose-chi} and \eqref{item:A(m-n)-choose-leq} in \cref{defi:type-II-A-m-not-n} to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-even}, by following the same construction as in \cref{ssec:grds-osp}. 
+    With respect to the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
+    
+    We will now follow \cref{ssec:undoubling} to undouble $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, constructed with the choices above. % First \D
+    Let $\epsilon \coloneqq \frac{1+\zeta}{2}\in \D$ be a central idempotent, where $\deg \zeta = f$, and consider the $\barr G$-graded-division superalgebra $\D\epsilon$. 
+    By \cref{prop:lemma-for-undoubling-and-fine-gradings}, $\D\epsilon$ has parameters $(\barr T, \barr \beta, \barr p)$, so $\D\epsilon \iso \barr \D$. 
+    From now on, we will identify $\D\epsilon$ with $\barr \D$. 
+    Also, by \cref{eq:fix-eta-undouble}, the map $\barr\mu$ as defined in \cref{eq:defi-mu-undoubled} coincides with the map $\barr\mu$ defined above, \ie, the map associated to the transposition on $\barr \D$. 
+    
+    Let $\Lambda \in M_k(\D)$ be the diagonal matrix with entries $\Lambda_{ii} \coloneqq \chi(\deg u_i)$, for all $i \in \{ 1, \ldots, k \}$, as in \cref{ssec:undoubling}. 
+    Consider the
+    graded basis $\tilde \B = \{ \tilde u_1, \ldots, \tilde u_k \}$ for $\U$, where
     \[\label{eq:tilde-u_i-from-u_i}
         \tilde u_i \coloneqq 
         \begin{cases}
-            \sqrt{\chi(\deg u_i)\inv} u_i, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
-            \hfill \chi(\deg u_i)\inv u_i, & \text{if }(\deg u_i) T < g_0\inv (\deg u_i)\inv T;\\
+            \sqrt{\Lambda_{ii}\inv} u_i, & \text{if }(\deg u_i) T = g_0\inv (\deg u_i)\inv T;\\
+            \hfill \Lambda_{ii}\inv u_i, & \text{if }(\deg u_i) T < g_0\inv (\deg u_i)\inv T;\\
             \hfill u_i, & \text{if }(\deg u_i) T > g_0\inv (\deg u_i)\inv T.
         \end{cases}
     \]
     Let $\tilde \Phi$ be the matrix representing $B$ with respect to the graded basis $\tilde \B$. 
-    Following the procedure in \cref{ssec:undoubling} with $\tilde \Phi$ playing the role of $\Phi$, we get  $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}. 
+    Under the identification $\D\epsilon = \barr \D$, the matrix $\Lambda \tilde\Phi\epsilon$ becomes $\Theta$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A}. 
+    Therefore, all the data in the description of the undoubled model of $\Skew(R, \vphi)$ coincide with with the data in \cref{defi:type-II-A-m-not-n}, concluding the proof.
 \end{proof}
 
 Recall that, for every $\kappa\from G/T \to \ZZ_{\geq 0}$, we defined $\kappa\Star\from G/T \to \ZZ_{\geq 0}$ by $\kappa\Star(x) = \kappa(x)\inv$, for all $x \in G/T$ (see \cref{ssec:superdual}).
@@ -395,8 +405,8 @@ Nevertheless, we can use parameters in terms of the group $G$ to parametrize the
 
 For Type II gradings on $L$,
 set $R \coloneqq S\times S\sop$ and let $\vphi$ be the exchange superinvolution on it. 
-We will follow the parametrization for gradings on $(R, \vphi)$ making $R$ graded-simple introduced in the end of \cref{sec:MxM-and-QxQ-associative}. 
-By  \cref{cor:QxQ-reduced-to-MxM}, $(R, \vphi)$ endowed with such a grading is isomorphic to $Q^{\mathrm{ex}} (T^+, \beta^+, h, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $h\in G$ is an element in $G$ such that $h^2 = f$, $g_0\in G$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $n+1 = |\kappa| \sqrt{|T^+|/2}$. 
+At the end of \cref{sec:MxM-and-QxQ-associative}, just before \cref{cor:QxQ-reduced-to-MxM}, we introduced a parametrization of gradings on $(R, \vphi)$ that make $R$ graded-simple. 
+By \cref{cor:QxQ-reduced-to-MxM}, $(R, \vphi)$ endowed with such a grading is isomorphic to $Q^{\mathrm{ex}} (T^+, \beta^+, h, \kappa, g_0)$, where $T^+ \subseteq G$ is a finite $2$-elementary subgroup, $\beta^+\from T^+\times T^+ \to \FF^\times$ is an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$ for some $e\neq f \in T^+$, $h\in G$ is an element in $G$ such that $h^2 = f$, $g_0\in G$, and $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ is a $g_0$-admissible map (see \cref{defi:odd-D-kappa-g_0-admissible}) such that $n+1 = |\kappa| \sqrt{|T^+|/2}$. 
 
 We will use the parameters $(T^+, \beta^+, h, \kappa, g_0)$ to construct a representative of the corresponding isomorphism class of Type II gradings directly on the superalgebra $L$ instead of going through $\Skew(R, \vphi)$. 
 Recall that the parametrization above for gradings on $\Skew(R, \vphi)$ was obtained by writing $R = R\even \oplus u R\even$, where $0 \neq u \in Z(R)\odd$, and using that $(R\even, \vphi\restriction_{R\even})$ is of type $M\times M\sop$.  
@@ -414,10 +424,11 @@ $,
 that $Z(S) = \FF1 \oplus \FF u$ can be identified with the associative superalgebra $Q(1)$, that $S\even$ can be identified with $M_{n+1}(\FF) = M(n+1, 0)$ and that $S$ can be identified with $Q(1)\tensor S\even$ via Kronecker product. 
 % With these identifications, we have $S \iso Q(1)\tensor S\even$ via Kronecker product. 
 
-We will, first, construct a $\barr G$-grading on $S\even$, where $\barr G \coloneqq G/\langle f \rangle$, following the same steps as we did in \cref{ssec:grds-on-A-m-n}, but with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$. 
-Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq T^+/\langle f \rangle$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$.
+Let $\barr G \coloneqq G/\langle f \rangle$. 
+We will, first, construct a $\barr G$-grading and a (super-)anti-automorphism on $S\even$, following the same steps as in \cref{ssec:grds-on-A-m-n}, but with $T^+$ playing the role of $T$ and $\beta^+$ playing the role of $\beta$, and, then, we will extend the grading and the super-anti-automorphism to $S$. 
+Let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr {T^+} \coloneqq \pi(T^+)$, let $\barr {\beta^+}\from \barr {T^+} \times \barr {T^+} \to \FF^\times$ be the (nondegenerate) bicharacter on $\barr {T^+}$ induced by $\beta^+$, and consider $\kappa$ as a map defined on $\barr G/\barr {T^+} \iso G/{T^+}$.
 
-Let $\barr \D\even$ be the chosen standard realization associated to $(\barr{T^+}, \barr{\beta^+})$, let $\barr {\mu^+}\from \barr{T^+} \to \FF^\times$ be the map associated to the transposition on $\barr \D\even$, and set $\mu^+ \coloneqq \barr {\mu^+} \circ \pi$. 
+Let $\barr \D\even$ be the chosen standard realization associated to $(\barr{T^+}, \barr{\beta^+})$, let $\barr {\mu^+}\from \barr{T^+} \to \FF^\times$ be the map associated to the transposition on $\barr \D\even$, and set $\mu^+ \coloneqq \barr {\mu^+} \circ \pi\restriction_{T^+}$. 
 Fix a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$, and let $\chi\from T^+ \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$. 
 Then define $\eta^+\from T^+ \to \pmone$ by
 \[\label{eq:fix-eta-plus-undouble-Q}
@@ -472,12 +483,13 @@ Finally, we define a $G$-grading on $S^{(1)}$ by
 \]
 and consider the $G$-grading on $L$ by reducing it modulo the center. 
 
-In the next definition, we summarize what have been done for future reference:
+The following definition summarizes the above construction: 
 
 \begin{defi}\label{defi:type-II-Q}
     Let $n \in \ZZ_{> 0}$ and let $S$ denote the associative superalgebra $Q(n+1)$. 
     Let $T^+ \subseteq G$ be a finite $2$-elementary subgroup, let $\beta^+\from {T^+\times T^+} \to \FF^\times$ be an alternating bicharacter with $\rad \beta^+ = \langle f \rangle$, for some element $e \neq f\in T$ and let $h \in G$ be an element such that $h^2=f$. 
-    Set $\barr {T^+} \coloneqq T/\langle f \rangle$, and let $\barr {\beta^+}$ be the (nondegenerate) alternating bicharacter on $\barr {T^+}$ induced by $\beta^+$. 
+    Set $\barr G \coloneqq G/\langle f \rangle$ and let $\pi\from G\to \barr G$ be the natural homomorphism. 
+    Set $\barr {T^+} \coloneqq \pi(T^+)$, and let $\barr {\beta^+}$ be the (nondegenerate) alternating bicharacter on $\barr {T^+}$ induced by $\beta^+$. 
     Consider the chosen standard realization $\barr \D\even$ of a matrix algebra with division grading associated to $(\barr {T^+}, \barr{\beta^+})$, fix a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$, and define $\eta^+\from T \to \pmone$ by \cref{eq:fix-eta-plus-undouble-Q}. 
     Then, let $g_0 \in G$ be any element and let $\kappa\from G/{T^+} \to \ZZ_{\geq 0}$ be a $g_0$-admissible map (\cref{defi:odd-D-kappa-g_0-admissible}) such that $n+1 = |\kappa| \sqrt{|T^+|/2}$. 
     Choose:
@@ -488,7 +500,7 @@ In the next definition, we summarize what have been done for future reference:
         \item a total order $\leq$ on $G/T^+$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T^+$; 
         \label{item:choice-leq-Q}
     \end{enumerate}
-    and construct a tuple $\bar\gamma$ realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}), where $\pi\from G\to \barr G$ is the natural homomorphism. 
+    and construct a tuple $\bar\gamma$ realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
     Consider the $\barr G$-grading $\Gamma_M(\barr {T^+}, \barr {\beta^+}, \kappa)$ on $S\even \iso M_{n+1}(\FF)$ constructed using the choices of $\barr \D\even$ and $\barr \gamma$ above (see \cref{def:Gamma-T-beta-kappa}), and extend it to $S$ by declaring $\deg u \coloneqq \barr h$. 
     Define $\Theta_\bz \in M_{n+1}(\FF)$ by \cref{eq:Theta_bz-for-Q}, $\Theta \in S$ by \cref{eq:Theta-for-Q} and ${\theta\from S \to S}$ by
     \cref{eq:theta-with-matrix-5}
@@ -540,12 +552,10 @@ In the next definition, we summarize what have been done for future reference:
     % (and, hence, also in \cref{def:std-realization-MxM-QxQ}(c)).
     
     % The choices of K and \barr\D\even given us the correct \eta^+, and fix \D as \M\tensor\C
-    By \cref{lemma:barr-D-to-mc-M}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, the choices of $\barr \D\even$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}\eqref{item:choose-mc-M}, and the map associated to the transposition on $\mc M$ is $\mu^+\restriction_K$. 
-    Let $(\D, \vphi_0)$ denote $(\mc M \tensor \mc C, \vphi_{\mc C} \tensor \vphi_{\mc M})$ as in \cref{def:std-realization-MxM-QxQ}(c), and let
-    $\eta\from T \to \pmone$ be the map associated to $\vphi_0$.  
-    By definition, $\eta\restriction_{K} = \mu^+\restriction_K$, and it is clear that $\eta\restriction_{\langle f \rangle} = \chi\inv\restriction_{\langle f \rangle}$. 
-    Since $\chi\inv\restriction_K$ and $\mu\restriction_{\langle f \rangle}$ are trivial, it follows from \cref{eq:fix-eta-plus-undouble-Q} that $\eta\restriction_{T^+} = \eta^+$. 
-    In particular, the condition that $\kappa$ is $g_0$-admissible is the same in both \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}.
+    By \cref{lemma:barr-D-to-mc-M}, with $(T^+, \beta^+)$ playing the role of $(T, \beta)$, the choices of $K$ and $\barr \D\even$  give us the same information as the choices in  of $K$ in item \eqref{item:K-can-be-orthogonal-to-t_1} and $\mc M$ in item \eqref{item:choose-mc-M} of \cref{def:std-realization-MxM-QxQ}(c), and the map associated to the transposition on $\mc M$ is $\mu^+\restriction_K$. 
+    Let $(\D, \vphi_0)$ denote the standard realization of a graded-division superalgebra with superinvolution constructed using these choices. 
+    Note that the map $\eta^+\from T\to \pmone$ defined in \cref{eq:fix-eta-plus-undouble-Q} is such that $\mathrm{d}\eta^+ = \beta^+$, $\eta\restriction_{K} = \mu^+\restriction_K$ and $\eta(f) = -1$, so, by \cref{eq:eta+-unsharpening-QxQ}, $\eta^+$ is the map associated to $\vphi_0\restriction_{\D\even}$. 
+    In particular, the $g_0$-admissibility condition for $\kappa$ is the same in \cref{def:model-grd-MxM-odd-or-QxQ,defi:type-II-Q}. 
     
     % Constructs $(\U, B)$
     In \cref{def:model-grd-MxM-odd-or-QxQ}, we have to choose a graded right $\D$-supermodule $\U$ and a $\vphi_0$-sesquilinear form $B\from \U \times \U \to \D$ such that $(\U, B)$ has inertia determined by $\kappa$. 
@@ -558,7 +568,7 @@ In the next definition, we summarize what have been done for future reference:
     
     % Undoubling what we just constructed
     We will now follow \cref{ssec:undoubling} to undouble $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$, constructed with the choices above. 
-    % $\D$ is what it should be 
+    % $\D$ is what it should be @2
     Let $\epsilon \coloneqq \frac{1+\zeta}{2}\in \D$ be a central idempotent, where $\deg \zeta = f$, and consider the $\barr G$-graded-division superalgebra $\D\epsilon$. 
     By \cref{prop:lemma-for-undoubling-and-fine-gradings}, $\D\epsilon$ has parameters $(\barr T, \barr \beta, \barr p)$. 
     Also, $\rad \barr\beta = \langle \barr t_p \rangle$, so $\D\epsilon$ is isomorphic to a standard realization of type Q associated to $(\barr {T^+}, \barr{\beta^+}, \barr h)$ (see discussion preceding \cref{def:standard-realization-Q}), \ie, it is isomorphic to $\barr \D \coloneqq Q(1) \tensor \barr \D\even$ as in \cref{rmk:change-Q(1)-of-place}. 
@@ -567,24 +577,24 @@ In the next definition, we summarize what have been done for future reference:
     % Undoubling $\eta$
     We need to extend $\chi$ to $G^\#$. 
     Since $\chi(f) = -1$, we can do it in a way such that $\chi(t_p) = \bi$. 
-    Then, it follows that the map $\barr\mu$ as defined in \cref{eq:defi-mu-undoubled} is the map associated to the queer supertranspose on $\barr \D$. 
-    Indeed, we already showed that $\eta\restriction_{T^+} = \eta^+$, hence, by \cref{eq:fix-eta-plus-undouble-Q}, we have that $\barr\mu\restriction_{\barr{T^+}} = \barr{\mu^+}$. 
-    Also, from \cref{def:std-realization-MxM-QxQ}(c), $\eta(t_p) = 1$, so $\barr\mu (\barr t_p) = \eta(t_p) \chi(t_p) = \bi $, as desired. 
+    Let $\eta\from T \to \pmone$ be the map associated to $\vphi_0$ and let $\barr\mu\from \barr T \to \FF^\times$ be as defined in \cref{eq:defi-mu-undoubled}. 
+    % We claim that  is the map associated to the queer supertranspose on $\barr \D$. @1 
+    We have already showed that $\eta\restriction_{T^+} = \eta^+$ and, hence, by \cref{eq:fix-eta-plus-undouble-Q}, we have that $\barr\mu\restriction_{\barr{T^+}} = \barr{\mu^+}$.
+    By \cref{rmk:eta-for-MxM-or-QxQ}(c), we have $\barr\mu (\barr t_p) = \eta(t_p) \chi(t_p) = \bi$. 
+    It follows that $\barr\mu$ is the map associated to the queer supertranspose on $\barr \D$. 
     
     % Undoubling $\Theta$
-    Let $\Lambda \in M_k(\D)$ be as in \cref{ssec:undoubling}. 
-    % We will now describe the matrix $\Lambda\Phi\epsilon$. 
-    As in the proof of \cref{prop:m-not-n-Type-II-correspondence}, we consider a different graded $\D$-basis $\tilde \B = \{ \tilde u_1, \ldots, \tilde u_k \}$ of $\U$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi \in M_k(\D)$ be the matrix representing $B$ with respect to $\tilde \B$. 
+    As in the proof of \cref{prop:m-not-n-Type-II-correspondence}, let $\Lambda \in M_k(\D)$ be the diagonal matrix with entries $\Lambda_{ii} \coloneqq \chi(\deg u_i)$, consider a different graded $\D$-basis $\tilde \B = \{ \tilde u_1, \ldots, \tilde u_k \}$ of $\U$, where $\tilde u_i$ is defined as in \cref{eq:tilde-u_i-from-u_i}, and let $\tilde \Phi \in M_k(\D)$ be the matrix representing $B$ with respect to $\tilde \B$. 
     Clearly, all the entries of $\tilde\Phi$ are in $\barr \D\even$. 
-    We will denote $\tilde\Phi$ by $\tilde\Phi\even$ when seen as a matrix in $M_k(\D\even)$. 
+    We will denote $\tilde\Phi$ by $\tilde\Phi_\bz$ when seen as a matrix in $M_k(\D\even)$. 
     In \cref{ssec:undoubling}, $M_k(\D)\epsilon$ was identified with $M_k(\barr \D)$, so we now identify $M_k(\D\even)\epsilon$ with $M_k(\barr \D\even)$. 
-    In the definition $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$, we identified $M_k(\barr \D\even) = M_k(\FF) \tensor \barr \D\even$ with $S\even = M_{n+1}(\FF)$ via Kronecker product. 
-    It is clear that these identifications send $\Lambda \tilde\Phi\even \epsilon$ to $\Theta\even$. 
+    % In the definition of $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$, we identified $M_k(\barr \D\even) = M_k(\FF) \tensor \barr \D\even$ with $S\even = M_{n+1}(\FF)$ via Kronecker product. 
+    Under this identification, the matrix $\Lambda \tilde\Phi_\bz \epsilon$ becomes $\Theta_\bz$ as in \cref{eq:Theta_bz-for-Q}. 
     Also, following the isomorphisms
     \[
         M_k(\barr \D) \iso M_k(\FF) \tensor \barr \D \iso M_k(\FF) \tensor Q(1) \tensor \barr \D\even \iso Q(1) \tensor M_k(\FF) \tensor \barr \D\even \iso Q(1) \tensor S\even,
     \]
-    the $\barr G$-grading on $M_k(\barr \D)$ becomes the $\barr G$-grading we defined on $S = Q(1) \tensor S\even$, and $\Lambda\tilde\Phi\epsilon$ is sent to $I_2 \tensor \Theta\even = \Theta$. 
+    the $\barr G$-grading on $M_k(\barr \D)$ becomes the $\barr G$-grading we defined on $S = Q(1) \tensor S\even$, and $\Lambda\tilde\Phi\epsilon$ is sent to $I_2 \tensor \Theta_\bz = \Theta$. 
     Therefore, all the data in the description of the undoubled model of $\Skew(R, \vphi)$ coincide with with the data in \cref{defi:type-II-Q}, concluding the proof.
 \end{proof}
 
@@ -665,7 +675,7 @@ If $p_0 = \bar 0$, we will say that the corresponding grading on $L$ is of Type 
 If $p_0 = \bar 1$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{P}. 
 
 \begin{remark}
-    A $G$-grading on the Lie superalgebra $\osp(n+1,n+1)$ (respectively, $P(n)$) gives rise to a $G \times \ZZ_2$-grading on $A(m,n)$ of Type II\textsubscript{osp} (respectively, II\textsubscript{P}). 
+    A $G$-grading on the Lie superalgebra $\osp(n+1,n+1)$ (respectively, $P(n)$) gives rise to a $G \times \ZZ_2$-grading on $A(n,n)$ of Type II\textsubscript{osp} (respectively, II\textsubscript{P}). 
 \end{remark}
 
 Recall that, before \cref{eq:fix-eta-undouble}, we fixed a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$, which was used in \cref{defi:type-II-A-m-not-n}. 
@@ -683,7 +693,7 @@ Also, $\kappa_\bo$ is determined by $\kappa_\bz$ and $h_0$ (recall \cref{inertia
     Choose a $k$-tuple $\gamma_\bz = (g_1, \ldots, g_k)$ of elements in $G$ realizing $\kappa_\bz$. 
     Let $\barr \mu\from \barr T \to \FF^\times$ be the map associated to the transposition on $\barr \D$, 
     let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(f) = -1$, and extend $\chi$ to a character of $G$, which will also be denoted by $\chi$. 
-    Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the natural homomorphism, and fix $\eta\from T \to \pmone$ as in \cref{eq:fix-eta-undouble}. 
+    Then define $\mu \coloneqq \bar\mu \circ \pi\restriction_{T}$, where $\pi\from G \to \barr G$ is the natural homomorphism, and fix $\eta\from T \to \pmone$ as in \cref{eq:fix-eta-undouble}. 
     Also, set $\gamma_\bo = (h_0\inv g_1\inv, \ldots, h_0\inv g_k\inv)$.   
     Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(n+1,n+1)$ using the choices above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction to $S^{(1)}$. % = \bigoplus_{\bar g \in \barr G} S^{(1)}_{\bar g}$. 
     Consider ${\Theta \in S}$ 
@@ -723,279 +733,3 @@ Also, $\kappa_\bo$ is determined by $\kappa_\bz$ and $h_0$ (recall \cref{inertia
 
 \input{chapters/05_Gradings-on-Lie-Superalgebras/04_Ann-odd}
 
-
-
-
-\subsection{Old...}
-
-% % -----------
-
-% Recall that the graded algebra $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ corresponds to $(\eta, \kappa, g_0, \delta) \in \mathbf{I}(T, \beta, p)$, where $\eta\from T \to \pmone$ is fixed, $p\from T \to \ZZ_2$ is the trivial homomorphism, and $\delta = 1$. 
-% The map $\eta$ was determined by fixing a standard realization $\D$ for $(T, \beta, e)$ (see \cref{def:std-realization-MxM-QxQ}), 
-% namely, $\eta$ is the map associated to the superinvolution $\vphi_{\mc C} \tensor \vphi_{\mc M}$ on $\D$. 
-
-% We will use the parameters $(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to construct a representative for the Type II grading in terms of the ``undoubled'' model, \ie, we will construct a $\barr G$-grading on $S$, where $\barr G \coloneqq G/\langle f \rangle$, and a super-anti-automorphism $\theta\from S\to S$, as in \cref{ssec:undoubling}. 
-% As in that subsection, let $\pi\from G \to \barr G$ denote the natural homomorphism, set $\barr T \coloneqq T/\langle f \rangle$, let $\barr \beta$ be the (nondegenerate) bicharacter on $\barr T$ induced by $\beta$, and consider $\kappa_\bz$ and $\kappa_\bo$ as maps defined on $\barr G/\barr T \iso G/T$. 
-
-% Let $\barr \D$ be a standard realization associated to $(\barr T, \bar\beta)$ (see \cref{def:standard-realization}), let $\theta_0\from \barr \D \to \barr \D$ be the transposition map, and let $\bar \mu\from \barr T \to \FF^\times$ be the map associated to $\theta_0$. 
-% (Recall that this also gives us a choice of elements $0 \neq X_{\bar t} \in \barr\D_{\bar t}$, for all $\bar t \in \barr T$.)
-
-% Choose a complement $K$ for $\langle f \rangle$ in $T$, \ie, a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$ (it can be done, since $T$ is a elementary $2$-group). 
-% Let $\chi\from T \to \FF^\times$ be the character defined by $\chi(K) = 1$ and $\chi(f) = -1$, and set $\mu \coloneqq \barr \mu \circ \pi$. 
-% Then set 
-% \[\label{eq:fix-eta-undouble}
-%     \forall t\in T, \quad \eta(t) \coloneqq \mu(t) \chi\inv(t).
-% \]
-% Note that this definition agrees with \cref{def:std-realization-MxM-QxQ} (see the proof of \cref{prop:m-not-n-Type-II-correspondence}). 
-
-% Extend $\chi$ to $G$. 
-% It remains to define a graded right $\barr \D$-supermodule $\barr \U$, and the matrix $\Theta$. 
-% % Note that, once we fixed $\eta$, we can say that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-balanced. 
-% The following is analogous to the construction in \cref{ssec:grds-osp}. 
-
-% Let $\xi\from G/ T \to G$ be a set-theoretic section of the natural homomorphism, and let $\leq$ be a total order on the set $G/T \iso \barr G/ \barr T$ (or just its finite subset $\supp \kappa_\bz \cup \supp \kappa_\bo$) with no elements between $x$ and $\bar g_0\inv x\inv$. 
-% Changing $\xi$ if necessary, we may assume that $\xi(g_0\inv x\inv) = g_0\inv \xi(x)\inv$ if $x < g_0\inv x\inv$. 
-% Set $k_\bz \coloneqq |\kappa_\bz|$ and let $\gamma_\bz$ be the $k_\bz$-tuple given by putting the elements of $\{ \xi(x) \mid x \in \supp \kappa_\bz\} \subseteq G$ following the order $\leq$ and repeating $\kappa_\bz(x)$ times each element $\xi(x)$. 
-% % Clearly, $\gamma_\bz$ realizes $\kappa_\bz$. 
-% Similarly, set $k_\bo \coloneqq |\kappa_\bo|$ and construct the $k_\bo$-tuple $\gamma_\bo$.
-% % , which realizes $\kappa_\bo$. 
-% % We then define $\barr \U\even \coloneqq \barr \D^{[\bar g_1]} \oplus \cdots \oplus \barr \D^{[\bar g_{k_\bz}]}$, $\barr \U\odd \coloneqq \barr \D^{[\bar h_1]} \oplus \cdots \oplus \barr \D^{[\bar h_{k_\bz}]}$ and $\barr \U \coloneqq \barr \U\even \oplus \barr \U\odd$. 
-% Let $\bar \gamma_\bz$ and $\bar \gamma_\bo$ to be the tuples of elements of $\barr G$ consisting of the image under $\pi\from G\to \barr G$ of the entries of $\gamma_\bz$ and $\gamma_\bo$, respectively. 
-% Clearly, $\barr\gamma_\bz$ and $\barr\gamma_\bo$ realize $\kappa_\bz$ and $\kappa_\bo$ (see \cref{defi:gamma-realizes-kappa}). 
-% Consider on $M_{k_\bz | k_\bo}(\FF)$ the elementary grading determined by $(\bar  \gamma_\bz, \bar \gamma_\bo)$ (see \cref{defi:elementary-grd-super}). 
-% We identify the $\barr G$-graded superalgebra $M_{k_\bz | k_\bo}(\barr \D) = M_{k_\bz | k_\bo}(\FF) \tensor \barr\D$ with $S = M(m+1, n+1)$ via Kronecker product. 
-
-% % We have that $S \iso \End_{\barr \D} (\barr \U)$ as $\barr G$-graded superalgebra. 
-% % Using the $\barr G^\#$-graded canonical basis of $\barr \U$, we can identify $\End_{\barr \D} (\barr \U)$ with $M_{k_\bz | k_\bo}(\barr \D)$. 
-% % From now on, we will identify $S$ with $M_{k_\bz | k_\bo}(\barr \D)$. 
-
-% \begin{defi}\label{defi:blocks-of-Theta}
-%     Let $i\in \ZZ_2$ and $x \in G/T$. 
-%     If $g_0x^2 = T$, we put $t \coloneqq g_0 \xi(x)^2 \in T$ and let $\bar t \in \barr T$ be its image under the canonical homomorphism $T \to \barr T$. 
-%     We define $\Theta(i, x)$ to be the following $\kappa(x) \times \kappa(x)$-matrix with entries in $\D$:
-%     %
-%     \begin{enumerate}[(i)]
-%         \item $\chi(\xi(x))\inv I_{\kappa(x)} \tensor X_{\bar t}$ if $(-1)^i \eta(t) = +1$;
-%         %
-% 		\item  $\chi(\xi(x))\inv J_{\kappa(x)} \tensor X_{\bar t}$, where $J_{\kappa(x)} \coloneqq \begin{pmatrix}
-% 				      0                & I_{\kappa(x)/2} \\
-% 				      -I_{\kappa(x)/2} & 0
-% 			      \end{pmatrix}$, if  $(-1)^i \eta(t) = -1$ (recall that, in this case, $\kappa (x)$ is even by \cref{inertia-even-and-odd-case}). 
-% 	\end{enumerate}
-%     %
-%     If $g_0 x^2 \neq T$, we define $\Phi(i, x)$ to be the following $2\kappa(x) \times 2\kappa(x)$-matrix with entries in $\barr\D$:
-%     %
-%     \begin{enumerate}[(i)]
-%         %
-%         \setcounter{enumi}{2}
-%         %
-% 		\item $\begin{pmatrix}
-% 			0                                                  & \chi(\xi(x))\inv I_{\kappa(x)} \\
-% 			(-1)^{i} \chi(\xi(x))\inv I_{\kappa(x)} & 0
-% 		\end{pmatrix} \tensor 1$, where $1$ is the identity element of $\barr\D$. 
-%     \end{enumerate}
-% \end{defi}
-
-
-% % For each $\bar g_i$, $1 \leq i \leq k_\bz$, and for each $\bar h_j$, $1 \leq j \leq k_\bo$, choose representatives $g_i \in G$ and $h_j \in G$, respectively. 
-% % Extend $\chi$ to $G$.
-% % , and define $\Lambda \in M_{k_\bz | k_\bo}(\FF) \subseteq M_{k_\bz | k_\bo}(\barr \D)$ to be the diagonal matrix 
-% % \[\label{eq:Lambda-even-case}
-% %     %
-% %     \sbox0{$\begin{matrix}
-% %         \chi(g_1)\inv && \\
-% %         & \ddots &\\
-% %         && \chi(g_{k_\bz})\inv
-% %     \end{matrix}$}
-% %     %
-% %     \sbox1{$\begin{matrix}
-% %         \chi(h_1)\inv && \\
-% %         & \ddots &\\
-% %         && \chi(h_{k_\bo})\inv
-% %     \end{matrix}$}
-% %     %
-% %     \Lambda \coloneqq
-% %     \left(\begin{array}{c|c}
-% %             \usebox{0} & 0\\
-% %             \hline
-% %             0 & \usebox{1}
-% %         \end{array}\right).
-% % \]
-% % %
-% % For each $\bar t \in \barr T$, choose $0\neq X_{\bar t} \in \barr D_{\bar t}$. 
-
-% Let $x_1 < \ldots < x_{\ell_\bz}$ be the elements of $\{ x \in \supp \kappa_\bz \mid x \leq g_0\inv x^2 \}$ and, similarly, let $y_1 < \ldots < y_{\ell_\bo}$ be the elements of $\{ y \in \supp \kappa_\bo \mid y \leq g_0\inv y^2 \}$. 
-% Then, we define 
-% \[\label{eq:puting-the-blocks-of-Phi-together-version-A}
-%     %
-%     \sbox0{$\begin{matrix}
-%         \Theta(\bar 0, x_1)&& \\
-%         & \ddots &\\
-%         && \Theta(\bar 0, x_{\ell_\bz})
-%     \end{matrix}$}
-%     %
-%     \sbox1{$\begin{matrix}
-%         \Theta(\bar 1, y_1)&& \\
-%         & \ddots &\\
-%         && \Theta(\bar 1, y_{\ell_\bo})
-%     \end{matrix}$}
-%     %
-%     \Theta \coloneqq
-%     \left(\begin{array}{c|c}
-%             \usebox{0} & 0\\
-%             \hline
-%             0 & \usebox{1}
-%         \end{array}\right).
-% \]
-% %
-% Finally, we define the super-anti-automorphism $\theta\from S\to S$ by \cref{eq:theta-with-matrix-2}. 
-% Since $\theta_0$ is the transposition on $\barr \D$, $\theta_0(X)\stransp \in M_{k_\bz \mid k_\bo} (\barr \D)$ in becomes $X\stransp \in M(m+1,n+1)$. 
-% Hence, \cref{eq:theta-with-matrix-2} reduces to 
-% \[\label{eq:theta-with-matrix-3}
-%     \forall X\in M_{k_\bz \mid k_\bo} (\barr \D), \quad \theta(X) = \Theta\inv\, X\stransp\, \Theta.
-% \]
-
-% \begin{defi}\label{defi:type-II-A-m-not-n}
-%     Let $m,n \in \ZZ_{\geq 0}$, $m\neq n$. 
-%     Let $T \subseteq G$ be a finite $2$-elementary subgroup, let $\beta\from {T\times T} \to \FF^\times$ be an alternating bicharacter with $\rad \beta = \langle f \rangle$, for some $f\in T$, and let $g_0 \in G$. 
-%     Set $\barr G \coloneqq G/\langle f \rangle$, $T \coloneqq T/\langle f \rangle$, and let $\bar \beta$ be the nondegenerate alternating bicharacter on $\barr T$ induced by $\beta$. 
-%     Choose:
-%     \begin{enumerate}[(i)]
-%         \item a standard realization $\barr \D$ associated to $(\barr T, \barr \beta)$; 
-%         \item a subgroup $K \subseteq T$ such that $T = K \times \langle f \rangle$; 
-%         \item a set-theoretic section $\xi\from G/T \to G$ for the quotient homomorphism $G \to G/T$;
-%         \item a total order $\leq$ on $G/T$ such that there are no elements between $x$ and $\bar g_0\inv x\inv$, for all $x\in G/T$. 
-%     \end{enumerate}
-%     Let $\barr \mu\from \barr T \to \FF^\times$ be the map determining the transposition on $\barr \D$ (see \cref{ssec:param-D-vphi}), and 
-%     let $\chi \in \widehat{T}$ be the character such that $\chi(K) = 1$ and $\chi(f) = -1$, and extend it to a character on $\widehat{G}$, also denoted by $\chi$. 
-%     Then define $\mu \coloneqq \bar\mu \circ \pi$, where $\pi\from G \to \barr G$ is the canonical homomorphism, and fix $\eta\from T \to \pmone$ as in \cref{eq:fix-eta-undouble}. 
-%     Let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be $g_0$-admissible maps (\cref{inertia-even-and-odd-case}) such that $m+1 = k_\bz \sqrt{|T|/2}$ and $n+1 = k_\bo \sqrt{|T|/2}$, where $k_i \coloneqq |\kappa_i|$, $i\in \ZZ_2$. 
-%     Then construct tuples $\bar\gamma_\bz$ and $\bar\gamma_\bo$ realizing $\kappa_\bz$ and $\kappa_\bo$, respectively, as did before \cref{defi:blocks-of-Theta}. 
-%     Consider the $\barr G$-grading $\Gamma_M(\barr T, \barr \beta, \kappa_\bz, \kappa_\bo)$ on $S \coloneqq M(m+1,n+1)$ using the choices above (see \cref{def:Gamma-T-beta-kappa-even}), and consider its restriction $\Gamma : L = \bigoplus_{\bar g \in \barr G} L_{\bar g}$ to $L \coloneqq S^{(1)}$. 
-%     Consider ${\Theta \in S}$ as in \cref{eq:puting-the-blocks-of-Phi-together-version-A} and ${\theta\from S \to S}$ as in
-%     \cref{eq:theta-with-matrix-3}. 
-%     We define $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the $G$-grading on $L$ given by
-%     \[
-%         L_{g} \coloneqq \{ s\in L_{\bar g} \mid s = - \chi(g) s \},
-%     \]
-%     for all $g\in G$. 
-% \end{defi}
-
-% \begin{prop}\label{prop:m-not-n-Type-II-correspondence}
-%     Consider $(R, \vphi) \coloneqq M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ (\cref{def:model-grd-MxM-even}). 
-%     Then $\Skew (R,\vphi)$ is isomorphic to $M(m+1, n+1)$ endowed with $\Gamma_A^{\mathrm{(II)}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$. 
-% \end{prop}
-
-% \begin{proof}
-%     We will now show how the choices in \cref{defi:type-II-A-m-not-n} correspond to the choices in Definitions \ref{def:std-realization-MxM-QxQ}(a) and \ref{def:model-grd-MxM-even}. 
-    
-%     The choices in items (i) and (ii) give us a way to make to the choices in \ref{def:std-realization-MxM-QxQ}(a)
-%     % First, we note that the choice of $K$ in \ref{def:std-realization-MxM-QxQ}(a)\eqref{item:K-can-be-orthogonal-to-t_1} can be the same as in \cref{defi:type-II-A-m-not-n}(ii). 
-%     Recall that a standard realization $\barr \D$ associated to $(\barr T, \bar \beta)$ (choice \cref{defi:type-II-A-m-not-n}(i)) is obtained by choosing subgroups $\barr A$ and $\barr B$ of $\barr T$ such that $\barr T = \barr A \times \barr B$ and $\beta (\barr A, \barr A) = \beta (\barr B, \barr B) = 1$. 
-%     Note that $\pi\from G \to \barr G$ restricts to an isomorphism $K \to \barr T$, and $\beta(s,t) = \barr\beta(\bar s, \bar t)$, for all $s,t \in K$. 
-%     Hence, the choice of the subsets $\barr  A$, $\barr  B$ as above is, then, equivalent to a choice of subgroups $A,B \subseteq K$ such that $K = A\times B$ and $\beta (A, A) = \beta (B, B) = 1$. 
-%     In other words, our choices of $\barr \D$ and $K$ give us the same information as the choice of $\mc M$ in \cref{def:std-realization-MxM-QxQ}(a)\eqref{item:choose-mc-M}. 
-%     Also, by \cref{lemma:transp-std-realization}, $\bar\mu (ab) = \beta(a,b)$ for all $a\in \barr A$ and $b\in \barr B$, so $\mu\restriction_{K}$ is the map determining $\vphi_{\mc M})$. 
-%     Further, since $\eta\restriction_{K} = \mu\restriction_{K}$ and $\eta\restriction_{\langle f \rangle} = \chi\restriction_{\langle f \rangle}$, the map $\eta$ defined \cref{eq:fix-eta-undouble} is the map determining to $\vphi_{\mc C} \tensor \vphi_{\mc M}$. 
-    
-%     We can use choices in items (iii) and (iv) to choose the pair $(\U, B)$ as in \cref{def:model-grd-MxM-even}, by following the exact same construction done in \cref{ssec:grds-osp}. 
-    
-%     With those choices being made to construct $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, and choosing $\chi \in \widehat{G}$ such that $\chi(K) = 1$ and $\chi(f) = -1$, it is clear that if follow the steps in \cref{ssec:undoubling}, the result follows. 
-% \end{proof}
-
-% For the next result, we will we fix choices (i) and (ii), for each pair $(T, \beta)$ as in \cref{defi:type-II-A-m-not-n}, in the ``Type II'' case. 
-% Recall that, for every $\kappa\Star\from G/T \to \ZZ_{\geq 0}$, we $\kappa\Star\from G/T \to \ZZ_{\geq 0}$ by $\kappa\Star(x) = \kappa(x)\inv$, for all $x \in G/T$ (see \cref{ssec:superdual}).
-
-
-\subsection{Gradings on \texorpdfstring{$A(n,n)$}{A(n,n)}}
-
-Here we can have even and odd gradings. 
-For the even ones, two kappas and define:
-
-\begin{defi}
-    \mbox{}
-    
-    \boxed{\mathrm{Type \,\,I}_M}
-    
-        even type I
-        
-    \boxed{\mathrm{Type \,\,II}_{osp}}
-    
-        even type II with even $g_0$
-        
-    \boxed{\mathrm{Type \,\,II}_P}
-    
-        even type II with odd $g_0$
-\end{defi}
-
-The reference for other types of Lie superalgebras come from ...
-
-For odd gradings, we define: 
-
-\begin{defi}
-    \mbox{}
-    
-    \boxed{\mathrm{Type \,\,I}_Q}
-    
-        odd type I
-        
-    \boxed{\mathrm{Type \,\,II}_Q}
-    
-        odd type II
-\end{defi}
-
-The reference for other Lie superalgebras come from ....
-
-For even gradings, we do standard realizations and $\Phi$ just like on case $m \neq n$. 
-(there is a tiny difference on the isomorphism condition, though)
-
-For odd gradings, 
-
-\begin{defi}
-    Type II gradings, standard realization in terms of $G^\#$. 
-    Choose $t_p$, $t_1$ and $S$ and use it to define $\chi$. 
-\end{defi}
-
-Compare definition with case (b) in previous definition. 
-
-Using $\bar t_1$, we can find another character, $\chi_0$, which is $\beta( t_1, \cdot)$ restricted to $T^+$. 
-It is different than $\chi$ by its values on $t_p$ and $f$. 
-Then we can reduce $(\bar T, \bar \beta)$ to double bars like in Chapter 1, and have a description which is only in terms of $G$. 
-(actually, we first fix $\chi_0$ and then use it to choose a $t_1$ such that $t_1^2 = a$, where $a$ the element such that $\chi^2 = \beta(a, \cdot)$).
-
-\begin{defi}
-    Type II gradings, standard realization in terms of $G$. 
-\end{defi}
-
-We can then find a suitable $\Phi$ from $\kappa$ fixing stuff.
-
-\begin{defi}
-    model for the grading.
-\end{defi}
-
-\begin{thm}
-    \mbox{}
-    
-    \boxed{\mathrm{Type \,\,I}_M}
-    
-        even type I
-        
-    \boxed{\mathrm{Type \,\,I}_Q}
-    
-        odd type I
-        
-    \boxed{\mathrm{Type \,\,II}_{osp}}
-    
-        even type II with even $g_0$
-        
-    \boxed{\mathrm{Type \,\,II}_P}
-    
-        even type II with odd $g_0$
-        
-    \boxed{\mathrm{Type \,\,II}_Q}
-    
-        odd type II
-\end{thm}
-
-As a final remark, we will see what all these different types of gradings mean in therms of the $\widehat{G^\#}$-action. 
-(Another subsection? we need a variable $\chi$ and it does not depend on the undoubled model, it is probably easier in the doubled one.)
