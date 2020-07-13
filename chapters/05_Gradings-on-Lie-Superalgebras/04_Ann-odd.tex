@@ -29,11 +29,6 @@ Set $\mu^+ \coloneqq \barr {\mu^+} \circ \pi\restriction_{T^+}$ and define $\eta
 Since $\mathrm{d} \widetilde\mu = \barr{\beta^+}\restriction_{\barr K \times \barr K}$, we get $\mathrm{d} \overline{\mu^+} = \barr{\beta^+}$ and, hence, $\mathrm{d} \eta^+ = \beta^+$.  
 In the proof of \cref{prop:Ann-Type-II-correspondence}, we will show that $\eta^+$ is the map associated to the superinvolution on the even part of a graded-division superalgebra as in \cref{def:std-realization-MxM-QxQ}(b). 
 
-Set $k \coloneqq |\kappa|$. 
-As we did in \cref{ssec:grds-on-Q(n)}, we follow the construction after \cref{eq:fix-eta-undouble} in \cref{ssec:grds-on-A-m-n} with $\kappa_\bz \coloneqq \kappa$ and $\kappa_\bo$ being the zero map. 
-We get an elementary $\barr G$-grading on $M_k(\FF) = M(k , 0)$. 
-We identify the $\barr G$-graded superalgebra $M_{k}(\widetilde \D) = M_{k}(\FF) \tensor \widetilde \D$ with $\tilde S = M_{n+1}(\FF)$ via Kronecker product. 
-
 Now, consider the (division) $\barr G$-grading on $M(1,1)$ given by:
 %
 \[\label{eq:bar-G-grd-on-M(1-1)}
@@ -60,22 +55,23 @@ Now, consider the (division) $\barr G$-grading on $M(1,1)$ given by:
 \end{aligned}
 \]
 (Compare with \cref{ex:Pauli-2x2,ex:Pauli-2x2-super}.) 
-Using the tensor product of graded (super)algebras, we get a $\barr G$-grading on $S = M(n+1, n+1) = M(1,1) \tensor \tilde S$. 
+Set $k \coloneqq |\kappa|$ and fix a set-theoretic section $\xi\from G/T^+ \to G$of the natural homomorphism $G \to G/T^+$. 
+As we did in \cref{ssec:grds-on-Q(n)}, we follow the construction after \cref{eq:fix-eta-undouble} in \cref{ssec:grds-on-A-m-n} with $\kappa_\bz \coloneqq \kappa$ and $\kappa_\bo$ being the zero map and an elementary $\barr G$-grading on $M_k(\FF) = M(k , 0)$. 
+We identify the $\barr G$-graded superalgebra $M_{k}(\widetilde \D) = M_{k}(\FF) \tensor \widetilde \D$ with $\tilde S = M_{n+1}(\FF)$ via Kronecker product and, then, get a $\barr G$-grading on $S = M(n+1, n+1) = M(1,1) \tensor \tilde S$. 
 
 \begin{remark}\label{rmk:change-M(1-1)-of-place}
     Note that $S = M(1,1) \tensor \tilde S = M(1,1) \tensor M_k(\FF) \tensor \widetilde \D \iso M_k(\FF) \tensor M(1,1) \tensor \widetilde\D$. 
     Hence, this $\barr G$-grading is isomorphic to $\Gamma_M(\barr {T^+}, \barr {\beta^+}, \bar t_p, \kappa)$ (see \cref{def:Gamma_M-only-G}), where the fixed character is taken to be $\chi_0$. 
 \end{remark}
 
-Let $\xi\from \barr G/\barr{T^+} \to \barr G$ be a set-theoretic section of the natural homomorphism $\barr G \to \barr G/\barr{T^+}$. 
-We will construct a super-anti-automorphism on $S$. 
+We will now construct a super-anti-automorphism on $S$. 
 The next definition is similar to \cref{defi:blocks-of-Theta}. 
-Note that, since $\chi_0(f) = 1$, we can see it as a character on $\barr{T^+}$. 
+% Note that, since $\chi_0(f) = 1$, we can see it as a character on $\barr{T^+}$. 
 
 \begin{defi}\label{defi:blocks-of-Theta-Ann}
     Let $x \in G/T^+$. 
-    If $g_0x^2 = T^+$, we put $\bar t \coloneqq \mathrm{pr}_{\barr K} ( \pi(g_0 \xi(x)^2) )$, where $\mathrm{pr}_{\barr K}\from \barr{T^+} \to \barr K$ is the projection on $\barr K$ corresponding to the decomposition ${T^+} = \barr K \times \langle \barr t_p \rangle$. 
-    We define $\Theta_K(x)$ to be the following $\kappa(x) \times \kappa(x)$-matrix with entries in $\widetilde \D$:
+    If $g_0x^2 = T^+$, we put $t \coloneqq g_0 \xi(x)^2 \in T^+$ and $\bar t \coloneqq \pi(\mathrm{pr}_{K} (g_0 \xi(x)^2) )$, where $\mathrm{pr}_{K}\from {T^+} \to K$ is the projection on $K$ corresponding to the decomposition ${T^+} = K \times (\rad \beta^+)$. 
+    We define $\delta_x \coloneqq \chi_0(t)$ and $\Theta_K(x)$ to be the following $\kappa(x) \times \kappa(x)$-matrix with entries in $\widetilde \D$:
     %
     \begin{enumerate}[(i)]
         \item $I_{\kappa(x)} \tensor X_{\bar t}$ if $\eta^+(t) = +1$;
@@ -86,7 +82,7 @@ Note that, since $\chi_0(f) = 1$, we can see it as a character on $\barr{T^+}$.
 			      \end{pmatrix}$, if  $\eta^+(t) = -1$ (recall that, in this case, $\kappa(x)$ is even by \cref{inertia-even-and-odd-case}). 
 	\end{enumerate}
     %
-    If $g_0 x^2 \neq T^+$, we define $\Theta_K(x)$ to be the following $2\kappa(x) \times 2\kappa(x)$-matrix:
+    \noindent If $g_0 x^2 \neq T^+$, we define $\delta_x = 1$ and $\Theta_K(x)$ to be the following $2\kappa(x) \times 2\kappa(x)$-matrix:
     %
     \begin{enumerate}[(i)]
         %
@@ -99,7 +95,7 @@ Note that, since $\chi_0(f) = 1$, we can see it as a character on $\barr{T^+}$.
     \end{enumerate}
 \end{defi}
 
-Then, we define 
+Let $x_1 < \ldots < x_{\ell}$ be the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$, and set $\Theta \in S$ to be the matrix
 \[\label{eq:puting-the-blocks-of-Theta-Ann}
     %
     \sbox0{$\begin{matrix}
@@ -121,37 +117,22 @@ Then, we define
             0 & \usebox{1}
         \end{array}\right).
 \]
-%
-
-We define $\Theta \in S$ by 
-\[\label{eq:Theta_K-for-Ann}
-    \widetilde\Theta \coloneqq \begin{pmatrix}
-        \Theta(\bar 0, x_1)&& \\
-        & \ddots &\\
-        && \Theta(\bar 0, x_{\ell})
-    \end{pmatrix},
-\]
-where $x_1 < \ldots < x_{\ell}$ are the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$, and $\Theta(\bar 0, x)$, for $x\in \barr G/\barr {T^+}$, is as in \cref{defi:blocks-of-Theta}. 
-We, then, define the (super-)anti-automorphism $\tilde\theta\from \tilde S \to \tilde S$ by 
-\[\label{eq:theta-with-matrix-4}
-    \forall X\in M_{n+1}(\FF), \quad \tilde\theta(X) \coloneqq \widetilde\Theta\inv\, X\transp\, \widetilde\Theta.
-\]
-
-
-Let $\theta\from S \to S$ be the tensor product of the queer supertransposition on $M(1,1)$ and $\tilde \theta$ on $\tilde S$. 
-In terms of the Kronecker product, this corresponds to  
+We, then, define the super-anti-automorphism $\theta\from S \to S$ by 
 \[\label{eq:theta-with-matrix-6}
-    \forall X\in M(n+1, n+1), \quad \theta(X) \coloneqq \Theta\inv\, X\sTq\, \Theta,
+    \forall X\in M(n+1, n+1), \quad \theta(X) \coloneqq \Theta\inv\, X\sTq\, \Theta.
 \]
-where 
-\[\label{eq:Theta-for-Ann}
-    \Theta \coloneqq \left(\begin{array}{c|c}
-            \widetilde\Theta & 0\\
-            \hline
-            0 & \widetilde\Theta
-        \end{array}\right).
-\]
-
+%
+%
+% We define $\Theta \in S$ by 
+% \[\label{eq:Theta_K-for-Ann}
+%     \widetilde\Theta \coloneqq \begin{pmatrix}
+%         \Theta(\bar 0, x_1)&& \\
+%         & \ddots &\\
+%         && \Theta(\bar 0, x_{\ell})
+%     \end{pmatrix},
+% \]
+% where $x_1 < \ldots < x_{\ell}$ are the elements of the set $\{ x \in \supp \kappa \mid x \leq g_0\inv x\inv \}$, and $\Theta(\bar 0, x)$, for $x\in \barr G/\barr {T^+}$, is as in \cref{defi:blocks-of-Theta}.
+%
 Finally, we define a $G$-grading on $S^{(1)}$ by 
 \[\label{eq:final-G-grd-on-Ann}
     \forall g\in G, \quad S^{(1)}_g \coloneqq \{ s \in S^{(1)}_{\barr g} \mid \theta(s) = - \chi(g) s\},
@@ -175,10 +156,10 @@ In summary:
         \label{item:choice-leq-Ann}
     \end{enumerate}
     and construct a tuple $\bar\gamma$ realizing $\kappa$ according to $\pi \circ \xi$ and $\leq$ (\cref{defi:tuple-governed}). 
-    Consider the $\barr G$-grading $\Gamma_M(\barr {K}, \barr {\beta^+}\restriction_{\barr K \times \barr K}, \kappa)$ on $M_{n+1}(\FF)$ constructed using the choices of $\widetilde \D$ and $\barr \gamma$ above (see \cref{def:Gamma-T-beta-kappa}),
-    and the $\barr G$-grading on $M(1,1)$ given by \cref{eq:bar-G-grd-on-M(1-1)}.  
+    %@1
+    Consider the $\barr G$-grading on $M(1,1)$ given by \cref{eq:bar-G-grd-on-M(1-1)} and the $\barr G$-grading $\Gamma_M(\barr {K}, \barr {\beta^+}\restriction_{\barr K \times \barr K}, \kappa)$ on $M_{n+1}(\FF)$ constructed using the choices of $\widetilde \D$ and $\barr \gamma$ above (see \cref{def:Gamma-T-beta-kappa}).  
     We, then, identify $S \coloneqq M(n+1, n+1)$ with the graded superalgebra $M(1,1) \tensor M_{n+1}(\FF)$. 
-    Define $\widetilde\Theta \in M_{n+1}(\FF)$ by \cref{eq:Theta_K-for-Ann}, $\Theta \in S$ by \cref{eq:Theta-for-Ann} and ${\theta\from S \to S}$ by
+    Define $\Theta \in S$ by \cref{eq:puting-the-blocks-of-Theta-Ann} and ${\theta\from S \to S}$ by
     \cref{eq:theta-with-matrix-6}
     Finally, we define $\Gamma_A^{\mathrm{(II_Q)}}(T^+, \beta^+, t_p, h, \kappa, g_0)$ to be the $G$-grading on $L = S^{(1)}/Z(S^{(1)})$ induced from the $G$-grading $S^{(1)}$ given by \cref{eq:final-G-grd-on-Ann}.
 \end{defi}
