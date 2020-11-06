@@ -1,112 +1,122 @@
+\section{\texorpdfstring{$G$}{G}-gradings and \texorpdfstring{$\widehat{G}$}{G-hat}-actions}\label{sec:g-hat-action}
 
-\section{\texorpdfstring{$G$}{G}-gradings on and \texorpdfstring{$\widehat{G}$}{G-hat}-actions}\label{sec:g-hat-action}
+In this section, $G$ will be assumed to be an \emph{abelian} group. 
+% In this section, 
+We will introduce an important tool in the theory of gradings: the duality between $G$-gradings and $\widehat G$-actions. 
+Here $\widehat G$ denotes the \emph{group of characters} of $G$, \ie, $\widehat G$ is the group whose elements are the group homomorphisms $\chi\from G \to \FF^\times$, with point-wise multiplication of maps. 
+We will also assume that $\FF$ is an algebraically closed and $\Char \FF = 0$, since this is the only case we need in this work. 
+The reader interested in arbritary fields can refer to \cite{livromicha}. 
 
-In this section we will review the correspondence between $G$-gradings and $\widehat G$-actions, which has been used extensively in the study of gradings.
-It can be found in many places in the literature (see, \eg, ??, ?? and ??), but our goal in this section is to set it up in the context of general algebras.
-% The main purpose of this approach is to transfer gradings between general algebras with different signatures (Theorem ??).% This will allow us to handle algebras and superalgebras, with or without (super)involutions, in a uniform manner. 
+% the main advantage of this approach is to have formal statement \cref{thm:transfer-of-gradings}, in the following subsection, which is a result that has been used informally in the literature for specific cases (see, \eg,  \cite[Remark 1.40]{livromicha}). 
 
-The main advantage of this approach is to have a formal result comparing gradings on general algebras with different signature (Theorem ??).
-This will be used in Chapter ?? to transfer gradings between Lie superalgebras and associative superalgebras with superinvolutions.
-The same sort of transfer has been used in other works (see \cite{livromicha} and Paper with Adrian ??), but without having the result stated formally.
+\begin{defi}
+    Given a $G$-grading $\Gamma : V = \bigoplus_{g\in G} V_g$ on a vector space $V$, we define a $\widehat G$-action by
+    \[
+        \forall \chi \in \widehat G, \, g\in G, \, v_g \in V_g, \quad \chi \cdot v_g \coloneqq \chi(g) v_g. 
+    \]
+    The corresponding representation map will be denotes by $\eta_\Gamma \from \widehat G \to \GL (V)$. 
+\end{defi}
 
-% If $\FF$ is algebraically closed of characteristic $0$ and $G$ is finitely generated abelian group, there is a well known correspondence between $G$-gradings and algebraic (rational) $\widehat G$-actions on vector spaces. 
+With our assumptions on $G$ and $\FF$, it is well known that $\widehat G$ separate points, \ie, given distinct elements $g, g'\in G$, there is a character $\chi \in \widehat G$ such that $\chi(g) \neq \chi(g')$. 
+Hence, we have 
+\[
+    \forall g\in G, \quad V_g = \{ v\in V \mid \forall\, \chi \in \widehat G, \, \chi \cdot v = \chi(g)v \},
+\]
+Thus, we can recover the $G$-grading $\Gamma$ from its corresponding $\widehat G$-action $\eta_\Gamma$. 
 
-The following is well known:
-
-\begin{thm}\label{thm:g-hat-correspondence}
-	Suppose $\FF$ is algebraically closed of characteristic $0$ and let $G$ be a finitely generated abelian group.
-	Then there is a bijective correspondence between $G$-gradings and algebraic $\widehat G$-actions on a vector space $V$, definied as follows:
-	\begin{enumerate}[(i)]
-		\item Given a grading $\Gamma: V = \bigoplus_{g\in G} V_g$, the corresponding action is defined by $\chi\cdot v = \chi(g) v$ for all $v\in V_g$ and all $g\in G$ and extended to all $V$ by linearity;
-		\item Given an algebraic action of $\widehat G$ on $V$, the corresponding grading is defined by declaring $v\in V$ homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g) v$ for all $\chi \in \widehat G$. \label{item:action-to-grading} \qed
-	\end{enumerate}
-\end{thm}
-
-\begin{notation}
-	Given a grading $\Gamma$ on $V$, we will denote the corresponding representation of the algebraic group $\widehat G$ on $V$ by $\eta_\Gamma\from \widehat G \to \GL(V)$.
-\end{notation}
-
-\begin{remark}\label{rmk:G-hat-preserves-degree}
-    It must be noted that the maps $\eta_\Gamma(\chi)\from V \to V$ are degree preserving with respect to $\Gamma$ or any refinement of $\Gamma$, since every nonzero homogeneous element of $V$ is an eigenvector. 
-\end{remark}
-
-% \begin{remark}
-	The correspondence of Theorem \ref{thm:g-hat-correspondence} can be generalized to arbitrary fields and arbitrary abelian groups with the use of group schemes instead of algebraic groups, but this generality is not needed for the current work.
-% \end{remark}
-
-We will now see how this correspondence applies to $\Omega$-algebras:
-
-% We will now consider gradings on universal algebras with arbitrary signature (which should not be confused with Example \ref{ex:omega-graded-algebra}, which realizes graded algebras as a specific type of universal algebra).
-
-% \begin{defi}
-%     A $G$-grading on a $\Omega$-algebra $A$ is a $G$-grading on its vector space underlying such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
-% \end{defi}
-
-% It is straight forward to verify that this notion of grading corresponds to the usual notion of gradings on algebras, superalgebras, algebras with antiautomorphisms and superalgebras with super-anti-automorphisms.
-
-% We will now proceed to generalize the correspondence between $G$-gradings and $\widehat G$-actions (see ?? and ??) to $\Omega$-algebras. 
-% We start focusing on graded vector spaces.
-
-% \begin{defi}
-%     Let $V$ be a vector space. 
-%     Given a $G$-grading $\Gamma\from V= \bigoplus_{g\in G} V_g$ on $V$, we define a $\widehat G$-action in the following way: for $\chi \in \widehat G$ and $a_g \in V_g$, $\chi \cdot v_g = \chi(g)v_g$, and we extend the it by linearity. 
-%     We will denote the corresponding representation by $\eta_\Gamma\from \widehat G \to \GL(V)$.
-% \end{defi}
-
-% It is easy to see that this really defines an action. 
-
-% For this action to capture more information about the grading, we need some assumptions on the field $\FF$. 
-
-% \begin{lemma}
-%     Let $V$ be a $G$-graded vector space. 
-%     A element $v\in V$ is homogeneous of degree $g\in G$ if, and only if, $\chi\cdot v = \chi(g)v$ for all $\chi \in \widehat G$.
-% \end{lemma}
-
-% \begin{proof}
-%     The ``only if'' direction is the definition of the action. 
-%     For the other direction, let $v\in V$ and write $v = \sum_{g\in G} v_g$, where $v_g \in V_g$.
-% \end{proof}
+% As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to itself, and the group of automorphisms is denoted by $\Aut(A)$.
 
 \begin{prop}\label{prop:g-hat-Aut-A}
-	Assume $\FF$ is algebraically closed and $\Char \FF = 0$.
-	Let $A$ be a $\Omega$-algebra and $\Gamma$ be a $G$-grading on its underlying vector space.
-	Then $\Gamma$ is a $G$-grading on $A$ if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
+	Let $A$ be an $\Omega$-algebra and $\Gamma$ be a $G$-grading on its underlying vector space.
+	Then $\Gamma$ is a $G$-grading on $A$ 
+% 	(see \cref{def:grds-on-Omega-algebras}) 
+	if, and only if, $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$.
 \end{prop}
 
 \begin{proof}
-	First, assume $\Gamma$ is a grading on the $\Omega$-algebra $A$.
-	Let $\chi \in \widehat G$ and let $\psi \coloneqq \eta_\Gamma(\chi)$.
-	We already know that $\psi$ is bijective, it only remains to prove it is a homomorphism.
-	Let $\omega \in \Omega_n$ and let $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$, respectively.
+    Let $\omega \in \Omega_n$ and let $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$, respectively. 
+    Note that $a_1\tensor \cdots \tensor a_n \in A^{\tensor n}$ has degree $g_1 \cdots g_n$. 
+    
+% 	First, let us assume that $\Gamma$ is a grading on the $\Omega$-algebra $A$. 
 
-	Then $a_1\tensor \cdots \tensor a_n \in A^{\tensor n}$ has degree $g_1 \cdots g_n$. Hence
+    The element $\omega^A (a_1\tensor \cdots \tensor a_n)$ has degree $g_1 \cdots g_n$ \IFF 
+    \[\label{eq:aut-g-hat}
+        \forall \chi \in \widehat G, \quad
+        \chi \cdot \omega^A (a_1\tensor \cdots \tensor a_n) 
+		= \chi(g_1 \cdots g_n) \, \omega^A(a_1\tensor \cdots \tensor a_n).
+    \]
+	Since we have
 	\begin{align*}
-		\psi(\omega^A(a_1\tensor \cdots \tensor a_n)) & = \chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n)      \\
-		                                              & =\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n) \\
-		                                              & = \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)         \\
-		                                              & = \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n)),
+		\chi(g_1 \cdots g_n) \, \omega^A(a_1\tensor \cdots \tensor a_n) 
+		& =\chi(g_1) \cdots \chi(g_n) \, \omega^A(a_1\tensor \cdots \tensor a_n) \\
+		& = \omega^A \big(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n \big) \\
+		& = \omega^A(\chi \cdot a_1 \tensor \cdots \tensor  \chi \cdot a_n),
 	\end{align*}
-	so $\psi$ is a homomorphism.
-
-	Conversely, let, again, $\omega \in \Omega_n$ and $a_1, \ldots, a_n \in A$ be homogeneous elements of degrees $g_1, \ldots, g_n \in G$.
-	Since $\psi$ is an automorphism, we have:
-	\begin{align*}
-		\psi(\omega^A(a_1\tensor \cdots \tensor a_n)) & = \omega^A(\psi(a_1)\tensor \cdots \tensor \psi(a_n))               \\
-		                                              & = \omega^A(\chi(g_1)a_1\tensor \cdots \tensor \chi(g_n)a_n)         \\
-		                                              & =\chi(g_1) \cdots \chi(g_n) \omega^A(a_1\tensor \cdots \tensor a_n) \\
-		                                              & =\chi(g_1 \cdots g_n) \omega^A(a_1\tensor \cdots \tensor a_n),
-	\end{align*}
-	hence, by item \eqref{item:action-to-grading} in Theorem \ref{thm:g-hat-correspondence}, $\omega^A(a_1\tensor \cdots \tensor a_n)$ is homogeneous of degree $g_1 \cdots g_n$, \ie, $\omega^A$ preserves degrees.
+%	
+	\cref{eq:aut-g-hat} holds for all homogeneous $a_1, \ldots, a_n \in A$ \IFF $\eta_\Gamma (\chi)$ is an automorphism for every $\chi \in \widehat G$.  
 \end{proof}
 
-\begin{remark}
-    Note that, under the conditions of \cref{prop:g-hat-Aut-A}, all elements of $\eta_\Gamma(\widehat G) \subseteq \Aut(A)$ are automorphisms of 
-\end{remark}
+% ---
 
-Now let $A$ be an $\Omega$-algebra and $B$ be an $\Omega'$-algebra.
-If there is a group homomorphism $\theta\from \Aut(A) \to \Aut(B)$, then, as consequence of Proposition \ref{prop:g-hat-Aut-A}, we can use it to transfer $G$-gradings on $A$ to $G$-gradings on $B$, even if $\Omega \neq \Omega'$.
-Explicitly, for a $G$-grading $\Gamma$ on $A$, we consider the group homomorphism $\eta_\Gamma\from \widehat G \to \Aut (A)$ and then take the composition $\theta \circ \eta_\Gamma\from \widehat G \to \Aut(B)$, which in turn corresponds to a $G$-grading on $B$.
-We will denote the grading on $B$ by $\theta(\Gamma)$.
+The following is straightforward:
 
-% --------------------------------------------------
+\begin{prop}\label{prop:iso-g-hat-action}
+    Two $G$-gradings $\Gamma$ and $\Delta$ on an $\Omega$-algebra $A$ are isomorphic \IFF there is an automorphism $\psi \in \Aut(A)$ such that $\eta_\Delta(\chi) = \psi \circ \eta_\Gamma(\chi) \circ \psi\inv$, for all $\chi \in \widehat G$. \qed
+\end{prop}
 
+% \begin{proof}
+%     Let $\chi \in \widehat G$ be a fixed character and set $\vphi_\Gamma = \eta_\Gamma(\chi)$ and $\vphi_\Delta = \eta_\Delta(\chi)$. 
+%     The gradings $\Gamma$ and $\Delta$ are isomorphic \IFF there is $\psi\from (A, \Gamma) \to (A, \Delta)$. 
+    
+%     $\vphi_\Gamma (v_g) = \chi(g) v_g$
+    
+%     $\vphi_\Delta ( \psi(v_g) ) = \chi(g) \psi(v_g)$
+    
+%     Hence, $\vphi_\Delta = \psi \circ \vphi_\Gamma \circ \psi\inv$.
+% \end{proof}
+
+% ---
+
+% \input{chapters/01_Generalities/10_excerpt}
+
+If $G$ is a finite abelian group, it is well known (see, \eg, \cite[\S 1.2]{FultonAndHarris}) that every action by $\widehat G$ on a finite dimensional vector space $V$ is \emph{diagonalizable}, \ie, $V$ can be written as a direct sum of subspaces in which each $\chi \in \widehat G$ acts as a nonzero scalar $\lambda_\chi$. 
+It follows that the map $\chi \mapsto \lambda_\chi$ is a character of $\widehat G$ and, by duality, there is a unique $g \in G$ such that $\lambda_\chi = \chi(g)$, for every $\chi \in \widehat G$. 
+In summary, every $\widehat G$-action corresponds to a $G$-grading.
+
+This can be extended to the case of finitely generated $G$ by considering actions of \emph{algebraic groups} (for a back ground on algebraic groups, we refer to \cite{MR1064110}, \cite{Arzhantsev-notes} or \cite[Appendix A]{livromicha}). 
+Both $\widehat G$ and $\GL (V)$ have natural structures of algebraic groups  (assuming $\dim V < \infty$) and the representation $\eta_\Gamma \from \widehat G \to \GL (V)$ is a homomorphism of algebraic groups. 
+The algebraic group $\widehat G$ is a \emph{quasitorus}, \ie, $\widehat G \iso (\FF^\times)^n \times G_f$ where $G_f$ is a finite abelian group. 
+Every algebraic representation of a quasitorus $H$ on a finite dimensional vector space $V$ is diagonalizable (see, \eg, \cite[Chapter 3, \S 2, Theorem 3]{MR1064110} or \cite[Theorem 1.6.13]{Arzhantsev-notes}), \ie, $V$ can be written as a direct sum of subspaces in which each $h \in H$ acts as a nonzero scalar $\lambda_h$. 
+It can be shown that the map $h \mapsto \lambda_h$ is an \emph{algebraic} character, \ie, a homomorphism of algebraic groups $H \to \FF^\times$. 
+The duality can be extended to this case: for every algebraic character $\lambda\from \widehat G \to \FF^\times$, there is a unique element $g\in G$ such that $\lambda_\chi = \chi(g)$. 
+We then have the following:
+
+\begin{prop}\label{prop:g-hat-1-to-1}
+    Let $V$ be a finite dimensional vector space and assume $G$ is finitely generated. 
+    Then the mapping $\Gamma \mapsto \eta_\Gamma$ is a one-to-one correspondence between $G$-gradings on $V$ and homomorphisms of algebraic groups $\widehat G \to \GL(V)$. \qed
+\end{prop}
+
+% ---
+
+For an $\Omega$-algebra $A$, it is easy to see that $\Aut (A)$ is a (Zariski) closed subgroup of $\GL (A)$, hence an algebraic group.
+Therefore, \cref{prop:g-hat-Aut-A,prop:g-hat-1-to-1} imply that the following is well defined:
+
+\begin{defi}
+    Let $A$ and $B$ be finite dimensional universal algebras, not necessarily with the same signature, and assume $G$ is finitely generated.  
+    Given a homomorphism of algebraic groups $\theta\from \Aut(A) \to \Aut(B)$ and a $G$-grading $\Gamma$ on $A$, we define $\theta(\Gamma)$ to be the $G$-grading on $B$ corresponding to the homomorphism $\theta \circ \eta_\Gamma\from \widehat G \to \Aut(B)$. 
+\end{defi}
+
+Using \cref{prop:iso-g-hat-action}, we get that if $\Gamma$ and $\Delta$ are isomorphic $G$-gradings on $A$, then $\theta(\Gamma)$ and $\theta(\Delta)$ are isomorphic $G$-gradings on $B$. 
+Finally, we note that we can drop the hypothesis that $G$ is finitely generated: every $G$-grading $\Gamma$ on $A$ can be seen as a grading by the subgroup generated by $\supp \Gamma$, which can be used to define $\theta (\Gamma)$. 
+% because, when working with a finite number of finite dimensional graded spaces, we can replace $G$ by its subgroup generated by the supports. 
+We summarize these considerations in the following: 
+
+\begin{thm}\label{thm:transfer-of-gradings}
+    Suppose $\FF$ is an algebraically closed field of characteristic $0$. 
+    Let $G$ be an abelian group and let $A$ and $B$ be finite dimensional universal algebras, not necessarily with the same signature. 
+    If there is a isomorphism of algebraic groups $\Aut(A) \to \Aut(B)$, then there is a bijection between the $G$-gradings on $A$ and the $G$-gradings on $B$ preserving the isomorphism classes. \qed
+\end{thm}
+
+We note that this sort of transfer, between algebras with different signatures, has been used in other works, but without having the result stated formally (see, \eg,  \cite[Remark 1.40]{livromicha}).
+
+% ---

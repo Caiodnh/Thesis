@@ -6,25 +6,29 @@ Let $R \coloneqq S \times S\sop$ where $S$ is a finite dimensional simple supera
 By \cref{lemma:SxSsop-simple}, $(R, \vphi)$ is a superinvolution-simple superalgebra. 
 If we endow $(R, \vphi)$ with a grading, then it becomes, clearly, graded-superinvolution-simple, but not necessarily graded-simple. 
 
-In the case $R$ is not graded-simple, the situation is easier: since the nonzero proper superideals are $S \times \{ 0 \}$ and $\{ 0 \} \times S\sop$, at lest one of them must be a graded superideal, and since $\vphi$ sends graded subsuperspaces onto graded subsuperspaces, $S \times \{ 0 \}$ is a graded superideal if, and only if, so is $\{ 0 \} \times S\sop$. 
-Therefore, we can apply  \cref{cor:SxSsop-with-dcc,thm:iso-D-even-ExEsop,thm:iso-D-odd-ExEsop}, in \cref{grd-sinv-simple}, and specialize them to the case of simple superalgebra $S$, as in  \cref{cor:iso-M-even,cor:iso-M-odd,cor:iso-Q}, in \cref{sec:grd-simple-salg}.
+In the case $R$ is not graded-simple, by \cref{cor:SxSsop-with-dcc}, we have $R \iso \Eex (\D, \U)$. 
+Since $S \times \{ 0 \}$ and $\{ 0 \} \times S\sop$ are the only nonzero proper superideals of $R$, $\End_\D(\U)$ and, hence, $\D$ must be simple. 
+The isomorphism conditions are given by \cref{thm:iso-D-even-ExEsop,thm:iso-D-odd-ExEsop-unsharp}, specialized to the simple case. 
+Recall that gradings on finite dimensional simple superalgebras were classified in \cref{cor:iso-M-even,cor:iso-Q,cor:iso-odd-M-simplified}. 
+For odd gradings on $M(n,n)$, also recall that, for each pair $(T^+,\beta^+)$ with $\rad \beta^+ = \langle t_p \rangle$ of order $2$, we fixed a character $\chi \in \widehat{T^+}$ such that $\chi(t_p) = -1$ (see \cref{fix-chi-odd-M}). 
 
 \begin{thm}\label{thm:MxM-type-I}
     Let $(R, \vphi)$ be a superinvolution-simple superalgebra of type ${M\times M\sop}$ endowed with a $G$-grading and suppose it is not graded-simple. 
     % Then there is a finite subgroup $T \subseteq G^\#$ such that: 
-    Then $(R, \vphi)$ is isomorphic to either $M(T, \beta, \kappa_\bz, \kappa_\bo) \times M(T, \beta, \kappa_\bz, \kappa_\bo)\sop$ (see \cref{def:Gamma-T-beta-kappa-even}), or to $M (T, \beta, p, \kappa) \times M (T, \beta, p, \kappa)\sop$ (see \cref{def:Gamma-T-beta-kappa-odd}), but not both, where we consider the exchange superinvolution in both cases. 
+    Then $(R, \vphi)$ is isomorphic to either $M(T, \beta, \kappa_\bz, \kappa_\bo) \times M(T, \beta, \kappa_\bz, \kappa_\bo)\sop$ (see \cref{def:Gamma-T-beta-kappa-even}), or to ${M (T^+, \beta^+, h, \kappa) \times M (T^+, \beta^+, h, \kappa)\sop}$ (see \cref{def:Gamma_M-only-G}), but not both, where we consider the exchange superinvolution in both cases. 
     
     \noindent
     Moreover, $M(T, \beta, \kappa_\bz, \kappa_\bo) \times M(T, \beta, \kappa_\bz, \kappa_\bo)\sop \iso M(T', \beta', \kappa_\bz', \kappa_\bo') \times M(T', \beta', \kappa_\bz', \kappa_\bo')\sop$ if, and only if, $T = T'$ and one of the following conditions holds:
 	\begin{enumerate}[(i)]
-	    \item $\beta'=\beta$ and there is $g\in G$ such that such that either $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$, or $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 1}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 0}$; 
-	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that either $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$, or $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 1}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 0}\Star$;
+	    \item $\beta'=\beta$ and there is $g\in G$ such that such that either $\kappa_{\bar 0}' = g \cdot \kappa_{\bar 0}$ and $\kappa_{\bar 1}'= g \cdot \kappa_{\bar 1}$, or $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 1}$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 0}$; 
+	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that either $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 0}\Star$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 1}\Star$, or $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 1}\Star$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 0}\Star$;
 	\end{enumerate}
-    and $M (T, \beta, p, \kappa) \times M (T, \beta, p, \kappa)\sop \iso M (T', \beta', p', \kappa') \times M (T', \beta', p', \kappa')\sop$ if, and only if, $T = T'$, $p=p'$ and one of the following conditions holds:
+    and ${M (T^+, \beta^+, h, \kappa) \times M (T^+, \beta^+, h, \kappa)\sop} \iso {M (T'^+, \beta'^+, h', \kappa') \times M (T'^+, \beta'^+, h', \kappa')\sop}$ 
+    if, and only if, $T^+ = T'^+$ and one of the following conditions holds:
     \begin{enumerate}[(i)]
         \setcounter{enumi}{2}
-	    \item $\beta'=\beta$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$;
-	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa\Star$. \qed
+	    \item $\beta'^+=\beta^+$, $h' \in \{h, h t_p \}$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$;
+	    \item $\beta'^+= (\beta^+)\inv$, $h' \in \{h\inv, h\inv t_p \}$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa\Star$. \qed
 	\end{enumerate}
 \end{thm}
 
@@ -257,6 +261,8 @@ We will now adapt the proof of \cref{thm:tensor-prd-decomposition} to construct 
     
     Let $\vphi_{\mc M}$ denote the transposition on $\mc M$, and let $(\mc C, \vphi_{\mc C})$ be as in \cref{thm:tensor-prd-decomposition}: item (a) if $t_p =e$, item (b) if $e \neq t_p \in T^+$, and item (c) if $t_p \in T^-$.
     We say that $(\mc C \tensor \mc M, \vphi_{\mc C} \tensor \vphi_{\mc M})$ is a \emph{standard realization} of a graded-division superalgebra with superinvolution associated to $(T, \tilde\beta, t_p)$. 
+    
+    For any $t\in T$, we choose $X_t$ to be $X_r \tensor X_s$, where $t = rs$, $r\in \supp \mc C$, $s \in \supp \mc M = K$, $X_r$ is the homogeneous element of $\mc C_r$ as in \cref{ex:now-FZ2-is-division,ex:superalgebra-O,ex:now-FZ4-is-division}, and $X_s \in \mc M_s$ is as in \cref{prop:X_t-is-basis}.
 \end{defi}
 
 \begin{remark}\label{rmk:eta-for-MxM-or-QxQ}
@@ -279,7 +285,7 @@ In what follows, for each triple $(T, \tilde\beta, t_p)$, we will fix a standard
 % --- MxMsop even --- %
 
 \begin{defi}\label{def:model-grd-MxM-even}
-    Let $(T, \beta, t_p)$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ = T$ (so $t_p = e$), 
+    Let $T$, $\beta$ and $t_p$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ = T$ (so $t_p = e$), 
     let $g_0 \in G^\#$ be any element, and
     let $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ be  $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}). 
     
@@ -301,14 +307,14 @@ Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, 
     Moreover, $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso M^{\mathrm{ex}} (T', \beta', \kappa_\bz', \kappa_\bo', g_0')$ if, and only if, $T =T'$, $\beta = \beta'$ and there is $g \in G$ such that one of the following conditions holds:
     \begin{enumerate}[(i)]
         \item $\kappa_\bz' = g\cdot\kappa_\bz$, $\kappa_\bo' = g\cdot\kappa_\bo$ and $g_0' = g^{-2}g_0$;
-        \item $\kappa_\bz' = g\cdot\kappa_\bo$, $\kappa_\bz' = g\cdot\kappa_\bo$ and $g_0' = fg^{-2}g_0$. 
+        \item $\kappa_\bz' = g\cdot\kappa_\bo$, $\kappa_\bo' = g\cdot\kappa_\bz$ and $g_0' = fg^{-2}g_0$. 
     \end{enumerate}
 \end{thm}
 
 \begin{proof}
     By \cref{thm:vphi-iff-vphi0-and-B,thm:vphi-involution-iff-delta-pm-1}, our graded superalgebra with superinvolution is isomorphic to $E(\D, \U, B)$, with $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}. 
     Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)$, and define $\kappa_\bz, \kappa_\bo$ from $\kappa$ as usual. 
-    Using \cref{thm:iso-(R-vphi)-with-parameters,lemma:one-eta}, we can assume that $\eta$ is the one from the fixed standard realization associated to $(T, \beta, t_p)$, where $t_p = e$. 
+    Using \cref{thm:iso-(R-vphi)-with-parameters,lemma:one-eta}, we can assume that $\eta$ is the one from the fixed standard realization associated to $(T, \tilde\beta, t_p)$, where $t_p = e$. 
     Then $E(\D, \U, B)$ is isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ by \cref{thm:iso-(R-vphi)-with-parameters,prop:after-fixing-delta}. 
     
     The isomorphism condition follows from \cref{thm:iso-(R-vphi)-with-parameters,prop:after-fixing-delta} and the fact that the group $\mc G$ (see \cref{eq:mathcal-G}) is $\big( \{e\} \times (G \times \{ \bar 0 \}) \big) \cup \big( \{f\} \times (G \times \{ \bar 1 \}) \big)$ in our case.
@@ -336,7 +342,7 @@ In other words, $\kappa$ is $g_0$-admissible if, and only if, there is a pair $(
 In this case, we say that $(\U, B)$ has \emph{inertia determined by} $\kappa$. 
 
 \begin{defi}\label{def:model-grd-MxM-odd-or-QxQ}
-    Let $(T, \beta, t_p)$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ \neq T$, 
+    Let $T$, $\beta$ and $t_p$ be as in \cref{def:std-realization-MxM-QxQ} with $T^+ \neq T$, 
     let $g_0 \in G$ be any element and
     let $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ be a $g_0$-admissible map.
     Choose a graded $\D$-supermodule $\U$ and a nondegenerate sesquilinear form $B\from \U\times \U \to \D$ such that $(\U, B)$ has inertia determined by $\kappa$. 
@@ -361,7 +367,7 @@ In this case, we say that $(\U, B)$ has \emph{inertia determined by} $\kappa$.
 Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso M(n,n)\times M(n,n)\sop$, where $n = |\kappa| \sqrt{|T|/8}$, and $Q^{\mathrm{ex}}(T, \beta, t_p, \kappa, g_0) \iso Q(n)\times Q(n)\sop$, where $n = |\kappa| \sqrt{|T|/4}$.
 
 \begin{thm}\label{thm:MxM-odd}
-    Suppose the superalgebra with superinvolution $M(n,n) \times M(n,n)\sop$ (respectively, $Q(n) \times Q(n)\sop$) is endowed with an odd $G$-grading making it graded-simple. 
+    Suppose the superalgebra with superinvolution $M(n,n) \times M(n,n)\sop$ (respectively, $Q(n) \times Q(n)\sop$) is endowed with a $G$-grading making it graded-simple and odd. 
     Then it is isomorphic, as a graded superalgebra with superinvolution, to $M^{\mathrm{ex}}(T,\beta, t_p, \kappa, g_0)$ (resp., $Q^{\mathrm{ex}}(T,\beta, t_p, \kappa, g_0)$) as in \cref{def:model-grd-MxM-odd-or-QxQ}. 
     Moreover, the graded superalgebras with superinvolution $M^{\mathrm{ex}} (T, \beta,  t_p, \kappa, g_0)$  and $M^{\mathrm{ex}} (T', \beta',  t_p', \kappa', g_0')$ (resp., $Q^{\mathrm{ex}} (T, \beta,  t_p, \kappa, g_0)$ and $Q^{\mathrm{ex}} (T', \beta',  t_p', \kappa', g_0')$) are isomorphic if, and only if, $T =T'$, $\beta = \beta'$, $t_p = t_p'$ and there is $g \in G$ such that $\kappa' = g\cdot\kappa$ and $g_0' = g^{-2}g_0$. 
 \end{thm}
@@ -370,7 +376,7 @@ Note that, as a ungraded superalgebra with superinvolution, $M^{\mathrm{ex}}(T, 
     Suppose $M(n,n) \times M(n,n)\sop$ ($Q(n) \times Q(n)\sop$) is endowed with an odd $G$-grading making it graded-simple. 
     By \cref{thm:vphi-iff-vphi0-and-B,thm:vphi-involution-iff-delta-pm-1}, it is isomorphic to $E(\D, \U, B)$, with $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}. 
     Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)$ and let $t_p$ be its $\eta$-parity element. 
-    Using \cref{thm:iso-(R-vphi)-with-parameters,lemma:2-etas}, we can assume that $\eta$ is the one from the fixed standard realization associated to $(T, \beta, t_p)$. 
+    Using \cref{thm:iso-(R-vphi)-with-parameters,lemma:2-etas}, we can assume that $\eta$ is the one from the fixed standard realization associated to $(T, \tilde\beta, t_p)$. 
     Then $E(\D, \U, B)$ is isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ ($Q^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$) by \cref{thm:iso-(R-vphi)-with-parameters,prop:after-fixing-delta}. 
     
     To prove the isomorphism condition, let  $\tilde\kappa\from G^\#/T \to \ZZ_{\geq 0}$ and  $\tilde\kappa\from G^\#/T' \to \ZZ_{\geq 0}$ be the maps in terms of $G^\#$ corresponding to $\kappa'$ and $\kappa'$, respectively. 
@@ -406,14 +412,14 @@ By \cref{thm:MxM-odd}, we have:
     Moreover, the graded superalgebras with superinvolution $Q^{\mathrm{ex}} (T^+, \beta^+,  h, \kappa, g_0)$ and $Q^{\mathrm{ex}} (T'^+, \beta'^+,  h', \kappa', g_0')$ are isomorphic if, and only if, $T^+ =T'^+$, $\beta^+ = \beta'^+$, $h = h'$ and there is $g \in G$ such that $\kappa' = g\cdot\kappa$ and $g_0' = g^{-2}g_0$. \qed
 \end{cor}
 
-This reparametrization can be interpreted on the level of gradings directly. 
-Let $(R, \vphi) \coloneqq Q^{\mathrm{ex}} (T, \beta, \kappa, g_0)$. 
-Clearly, there is an invertible homogeneous element $u \in Z(\D)\odd$ of degree $t_p$ such that $\vphi_0(u) = u$. 
-Scaling $u$ if necessary, we can suppose $u^2 = \zeta$ where $\zeta \coloneqq (1, -1) \in Z(\D)\even$. 
-By \cref{prop:R-and-D-have-the-same-center-vphi}, we can regard $u$ as an element of $Z(R)\odd$ such that $\vphi(u) = u$. 
-Then $R = R\even \oplus u R\odd$. 
+This reparametrization has the following interpretation in terms of gradings. 
+Let $(R, \vphi) \coloneqq Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$. 
+Clearly, there is an invertible homogeneous element $\omega \in Z(\D)\odd$ of degree $t_p$ such that $\vphi_0(\omega) = \omega$. 
+Scaling $\omega$ if necessary, we can suppose $\omega^2 = \zeta$ where $\zeta \coloneqq (1, -1) \in Z(\D)\even$. 
+By \cref{prop:R-and-D-have-the-same-center-vphi}, we can regard $\omega$ as an element of $Z(R)\odd$, and $\vphi(\omega) = \omega$. 
+Then $R = R\even \oplus \omega R\odd$. 
 Note that ${(R\even, \vphi\restriction_{R\even})} \iso M^{\mathrm{ex}} (T^+, \beta^+, \kappa, 0, g_0)$, where $0$ denotes the identically zero map $G/T^+ \to \ZZ_{\geq 0}$. 
-Conversely, let $(R\even, \vphi\restriction_{R\even}) \coloneqq M^{\mathrm{ex}} (T^+, \beta^+, \kappa, 0, g_0)$ then let $(R, \vphi)$ be the graded superalgebra with superinvolution defined by $R \coloneqq R\even \oplus u R\even$, where $u$ is a new symbol of degree $t_p \coloneqq (h, \bar 1)$, commuting with every element in $R\even$, and satisfying $u^2 = \zeta \in R\even$ and $\vphi(u) = u$. 
-Then $(R, \vphi) \iso Q^{\mathrm{ex}} (T, \tilde\beta, t_p, \kappa, g_0)$. 
+Conversely, let $(R\even, \vphi\restriction_{R\even}) \coloneqq M^{\mathrm{ex}} (T^+, \beta^+, \kappa, 0, g_0)$ then let $(R, \vphi)$ be the graded superalgebra with superinvolution defined by $R \coloneqq R\even \oplus \omega R\even$, where $\omega$ is a new symbol of degree $t_p \coloneqq (h, \bar 1)$ that commutes with every element in $R\even$ and satisfies $\omega^2 = \zeta \in R\even$ and $\vphi(\omega) = \omega$. 
+Then $(R, \vphi) \iso Q^{\mathrm{ex}} (T, \beta, t_p, \kappa, g_0)$. 
 
 \input{chapters/04_Gradings-on-Sinv-Simple/06_Ann-only-G}

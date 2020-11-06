@@ -1,5 +1,4 @@
-
-\section[Gradings on Lie Superalgebras of Series \texorpdfstring{$B$, $C$, $D$ and $P$}{B, C, D and P}]{Gradings on Lie Superalgebras of Series $B$, $C$, $D$ and $P$}\label{sec:grds-osp-and-p}
+\section[Gradings on simple Lie superalgebras of series \texorpdfstring{$B$, $C$, $D$ and $P$}{B, C, D and P}]{Gradings on simple Lie superalgebras of series $B$, $C$, $D$ and $P$}\label{sec:grds-osp-and-p}
 
 We will now classify the gradings on orthosymplectic and peripletic Lie superalgebras, \ie, the Lie superalgebras of the form $L \coloneqq \Skew(R, \vphi)^{(1)}$ where $(R, \vphi) = M^*(m,n, p_0)$ (see \cref{defi:M(m-n-p_0)}). 
 
@@ -20,7 +19,7 @@ Recall that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible (\cref{inertia-even-a
 More precisely, for any map $\kappa_\bz\from G/T \to \ZZ_{\geq 0}$ with finite support, there is a unique map $\kappa_\bo\from G/T \to \ZZ_{\geq 0}$ such that $(\kappa_\bz, \kappa_\bo)$ is $g_0$-admissible, namely, the one defined by $\kappa_\bo (x) \coloneqq \kappa_\bz (h_0\inv x\inv)$. 
 
 The argument above can be seen from the point of view of the graded $\D$-supermodule $\U = \U\even \oplus \U\odd$ and the nondegenerate $\vphi_0$-sesquilinear form $B\from \U\times \U \to \D$ that we have to choose in \cref{def:model-grd-M(m-n-0)}. 
-Recall that, since $\D$ is even, both $\U\even$ and $\U\odd$ are $G$-graded right $\D$-modules. 
+Recall that, since $\D$ is even, both $\U\even$ and $\U\odd$ are $G$-graded right $\D$-supermodules. 
 Since $g_0 = \deg B$ is odd, $B$ defines an isomorphism $(\U\odd)^{[h_0]} \to (\U\even)\Star$ by $u \mapsto B(u, \cdot)$. 
 Recall that $(\U\even)\Star$ is a right $\D$-module by $(f\cdot d) (u) \coloneqq \vphi_0(d) f(u)$, for all $d\in \D$, $f\in (\U\even)\Star$ and $u \in \U\even$ (see \cref{ssec:superdual}).  
 
@@ -80,7 +79,7 @@ The following result is a consequence of \cref{thm:osp-and-p-associative} (compa
 
 \subsection{Gradings on orthosymplectic Lie superalgebras}\label{ssec:grds-osp} 
 
-The gradings on $\osp(m,n)$ correspond to the gradings on $M^*(m, n, \bar 0)$. 
+The gradings on $\osp(m|n)$ correspond to the gradings on $M^*(m, n, \bar 0)$. 
 By \cref{thm:osp-and-p-associative}, if we endow $M^*(m, n, \bar 0)$ with a grading, then it becomes isomorphic to $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:model-grd-M(m-n-0)}, with $|g_0| = \bar 0$. 
 
 Unlike in the case of \cref{ssec:grds-P(n)}, our construction of the pair $(\U, B)$ will be closer to the one in \cref{ssec:parameters-(U-B)}. 
@@ -160,7 +159,7 @@ Nevertheless, disregarding the $G$-grading, $(M(m,n), \vphi)$ must be isomorphic
     We define $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ to be the graded Lie superalgebra $\Skew(R, \vphi)$. 
 \end{defi}
 
-Note that, disregarding the grading, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ is isomorphic to $\osp(m,n)$.
+Note that, disregarding the grading, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ is isomorphic to $\osp(m|n)$.
 The following result is a consequence of \cref{thm:osp-and-p-associative}, since $(R, \vphi)$ in the definition above is isomorphic to $M^*(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ in \cref{def:model-grd-M(m-n-0)}:
 
 \begin{thm}\label{thm:grds-osp-final}
@@ -169,7 +168,7 @@ The following result is a consequence of \cref{thm:osp-and-p-associative}, since
     Moreover, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso \osp(T', \beta', \kappa_\bz', \kappa_\bo', g_0')$ \IFF $T =T'$, $\beta = \beta'$ and there is an element $g \in G$ such that $\kappa_\bz' = g\cdot\kappa_\bz$, $\kappa_\bo' = g\cdot\kappa_\bo$ and $g_0' = g^{-2}g_0$. \qed
 \end{thm}
 
-Recall that the Lie superalgebras $\osp(m,n)$ are separated into series $B$, $C$ and $D$: the ones for which $m$ is odd constitute series $B$, the ones for which $m = 2$ constitute series $C$ and the remaining ones constitute series $D$ (see Definition ??). 
+Recall that the Lie superalgebras $\osp(m|n)$ are separated into series $B$, $C$ and $D$: the ones for which $m$ is odd constitute series $B$, the ones for which $m = 2$ constitute series $C$ and the remaining ones constitute series $D$ (see \cref{defi:B-C-D}). 
 The restriction on the values of $m$ allows us to simplify the classification of $G$-gradings on the Lie superalgebras of series $B$. 
 
 Consider a graded Lie superalgebra $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{defi:Gamma_osp} and, as before, set $m \coloneqq k_\bz \sqrt{|T|}$ and $n \coloneqq k_\bo \sqrt{|T|}$. 
@@ -186,16 +185,16 @@ Therefore $k_\bz = |\kappa_\bz| = \sum_{g \in G} \kappa_\bz(g)$ is an even numbe
 By \cref{thm:grds-osp-final}, $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0) \iso \osp(T, \beta, g\cdot \kappa_\bz, g\cdot \kappa_\bo, e)$, where $g^2 = g_0$. 
 In other words, we can restrict ourselves to the case where $g_0 = e$ and, hence, $(\kappa_\bz, \kappa_\bo)$ is $e$-admissible.
 
-For every $e$-admissible pair $(\kappa_\bz, \kappa_\bo)$, we define $\Gamma_B(\kappa_\bz, \kappa_\bo)$ to be the grading on $\osp(m,n)$ given by the isomorphism with $\osp(\{e\}, \beta, \kappa_\bz, \kappa_\bo, e)$, where $\beta$ is the trivial bicharacter on $T = \{e\}$. 
+For every $e$-admissible pair $(\kappa_\bz, \kappa_\bo)$, we define $\Gamma_B(\kappa_\bz, \kappa_\bo)$ to be the grading on $\osp(m|n)$ given by the isomorphism with $\osp(\{e\}, \beta, \kappa_\bz, \kappa_\bo, e)$, where $\beta$ is the trivial bicharacter on $T = \{e\}$. 
 In \cite{Helens_thesis}, this corresponds to Definition 4.4.3, and the following result corresponds to Theorems 4.4.4 and 4.4.6: 
 
-\begin{cor}
+\begin{cor}\label{cor:grds-on-B}
     Let $m\geq 0$ and $n > 0$. 
-    Every grading on $B(m,n) = \osp(2m+1, 2n)$ is isomorphic to some $\Gamma_B (\kappa_\bz, \kappa_\bo)$. 
+    Every grading on $B(m,n) = \osp(2m+1| 2n)$ is isomorphic to some $\Gamma_B (\kappa_\bz, \kappa_\bo)$. 
     Moreover, two gradings $\Gamma_B (\kappa_\bz, \kappa_\bo)$ and $\Gamma_B (\kappa_\bz', \kappa_\bo')$ are isomorphic \IFF there is an element $g \in G$ such that $g^2 = e$, $\kappa_\bz' = g\cdot \kappa_\bz$ and $\kappa_\bo' = g\cdot \kappa_\bo$. \qed
 \end{cor}
 
 We can define gradings on the Lie superalgebras in the series $C$ and $D$ in a similar fashion. 
-If $m = 2$, we can denote by $\Gamma_C (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ the grading on $\osp (2,n)$ given by the isomorphism with $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$. 
+If $m = 2$, we can denote by $\Gamma_C (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ the grading on $\osp (2|n)$ given by the isomorphism with $\osp(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$. 
 If $m > 2$ is even, we can define $\Gamma_D (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$ analogously. 
 However, in these cases, we cannot simplify the parameters of these gradings, as we have done for series $B$. 

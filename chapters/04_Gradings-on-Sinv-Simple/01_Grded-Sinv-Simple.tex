@@ -7,9 +7,10 @@ Most of the following results are valid for any $\FF$.
 \begin{defi}\label{def:SxSsop}
 	Let $S$ be a $G$-graded superalgebra and consider the $G$-graded superalgebra $S \times S\sop$ with the homogeneous component of degree $g\in G$ being $S_g \times S\sop_g$. 
 	We define the \emph{exchange superinvolution} on $S \times S\sop$ to be the map $\vphi\from S \times S\sop \to S \times S\sop$ given by $\varphi (s_1, \bar s_2) = (s_2, \bar s_1)$ (recall from \cref{ssec:superdual} that $\bar s$ denotes the element $s \in S$ seen as an element of $S\sop$). 
+	Unless stated otherwise, we will always consider $S \times S\sop$ to be endowed with exchange superinvolution. 
 \end{defi}
 
-We will now give two examples where $G$ is trivial, but that will play a role in \cref{sec:sinv-simple}. 
+We will now give two examples where $G$ is trivial, which will play a role in \cref{sec:sinv-simple}. 
 
 \begin{ex}\label{ex:FxF-iso-FZ2}
 	The simplest possible example is to take $S = \FF$, with superalgebra structure. 
@@ -21,7 +22,7 @@ We will now give two examples where $G$ is trivial, but that will play a role in
 	Consider $S = Q(1)$, so $S\even = \FF 1$ and $S\odd = \FF u$ where $u^2 =1$.
 	Note that $S$ is isomorphic to $\FF\ZZ_2$, but this time with the superalgebra structure given by its natural $\ZZ_2$-grading. 
 	If $\Char \FF \neq 2$, we claim that $R \coloneqq S\times S\sop$ is isomorphic to $\FF\ZZ_4$.
-	Indeed, the element $\omega \coloneqq (u, \bar u) \in S\times S\sop$ has order $4$ and generates $S\times S\sop$: $\omega^2 = (1, - \bar 1)$, $\omega^3 = (u, - \bar u)$ and $\omega^4 = (1, 1)$.
+	Indeed, the element $\omega \coloneqq (u, \bar u) \in S\times S\sop$ has order $4$ and generates $S\times S\sop$: $\omega^2 = (1, - 1)$, $\omega^3 = (u, - \bar u)$ and $\omega^4 = (1, 1)$.
 	Hence $R\even = \FF1 \oplus \FF \omega^2$ and $R\odd = \FF \omega \oplus \FF \omega^3$.
 	Also, the exchange superinvolution on $R$ is given by $\vphi(1) = 1$, $\vphi(\omega) = \omega$, $\vphi(\omega^2) = -\omega^2$ and $\vphi(\omega^3) = -\omega^3$.
 \end{ex}
@@ -104,8 +105,8 @@ The classification of the ones that are not graded-simple is a consequence of \c
 	Let $(T, \beta, \kappa_\bz, \kappa_\bo)$ and $(T', \beta', \kappa_\bz', \kappa_\bo')$ be the parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
 	Then $\Eex(\D, \U) \iso \Eex(\D', \U')$ if, and only if, $T=T'$ and one of the following conditions holds:
 	\begin{enumerate}[(i)]
-	    \item $\beta'=\beta$ and there is $g\in G$ such that either $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$, or $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 1}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 0}$;
-	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that either $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$, or $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 1}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 0}\Star$. \qed
+	    \item $\beta'=\beta$ and there is $g\in G$ such that either $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 0}$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 1}$, or $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 1}$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 0}$;
+	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that either $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 0}\Star$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 1}\Star$, or $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 1}\Star$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 0}\Star$. \qed
 	\end{enumerate}
 \end{thm}
 
@@ -118,3 +119,24 @@ The classification of the ones that are not graded-simple is a consequence of \c
 	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa\Star$. \qed
 	\end{enumerate}
 \end{thm}
+
+% ------ 
+% @1
+
+The case where $\D$ and $\D'$ are odd can also be classified in terms of $G$-parameters (see \cref{def:odd-parameters}). 
+We recall the set $\mathbf {O} (T^+, \beta^+)$ and the $T^+$-action on it (see  \cref{def:O(T+-beta+),def:T^+-action}). 
+
+\begin{thm}\label{thm:iso-D-odd-ExEsop-unsharp}
+    Let $(\D, \U)$ and $(\D', \U')$ be pairs as in  \cref{def:odd-parameters}, and let ${(T^+, \beta^+, h, \chi, \kappa)}$ and ${(T'^+, \beta'^+, h', \chi', \kappa')}$ be $G$-parameters of $(\D, \U)$ and $(\D', \U')$, respectively. 
+    Then $\Eex(\D, \U) \iso \Eex(\D', \U')$ if, and only if,  $T^+=T'^+$ and one of the following conditions holds:
+    \begin{enumerate}[(i)]
+	    \item $\beta'^+=\beta^+$, $(h', \chi')$ is in the same $T^+$-orbit of $(h, \chi)$ in $\mathbf {O} (T^+, \beta^+)$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa$;
+	    \item $\beta'^+= (\beta^+)\inv$, $(h', \chi')$ is in the same $T^+$-orbit of $(h\inv, \chi)$ in $\mathbf {O} (T^+, \beta^+)$ and there is $g\in G$ such that $\kappa' = g \cdot \kappa\Star$.
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+    Using \cref{eq:beta-from-h-chi}, it is straightforward that $\D\sop$ is associated to the quadruple $(T^+, (\beta^+)\inv, h\inv, \chi)$ 
+    and, hence, $(T^+, (\beta^+)\inv, h\inv, \chi, \kappa\Star)$ are $G$-parameters for $(\D\sop, \U\Star)$. 
+    The result follows from \cref{cor:classification-odd-general}. 
+\end{proof}

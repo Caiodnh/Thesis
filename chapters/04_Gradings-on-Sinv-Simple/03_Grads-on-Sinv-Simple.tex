@@ -1,15 +1,11 @@
-\section[Gradings on superinvolution-simple superalgebras of type \texorpdfstring{$M$}{M}]{Gradings on superinvolution-simple \\ superalgebras of type $M$}
+\section[Gradings on superinvolution-simple superalgebras of type \texorpdfstring{$M$}{M}]{Gradings on superinvolution-simple \\ superalgebras of type $M$}\label{sec:vphi-grds-on-type-M}
 
-For this section we assume $\FF$ is algebraically closed and $\Char \FF \neq 2$.
-
-Let $(R, \vphi)$ be a finite dimensional graded superalgebra with superinvolution of type $M$. 
-Since $R$ is simple as a superalgebra, $(R, \vphi)$ is graded-simple and, hence, by \cref{subsec:param-(R-phi)}, $(R, \vphi) \iso E(\D, \U, B)$ for some triple $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}. 
-Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)$ and let $\vphi_0$ be the superinvolution on $\D$ determined by $\eta$.
-
-Since $E(\D, \U, B) = \End_\D (\U)$ is of type $M$, by \cref{prop:R-simple-iff-D-simple}, we have that $(\D, \vphi_0)$ is of type $M$ and, by  \cref{cor:D-simple-iff-beta-nondeg}, that $\beta$ is nondegenerate. 
+For this section we assume $\FF$ is algebraically closed and $\Char \FF \neq 2$. 
+The next result can be found in \cite[Theorem 4.3]{TT} (assuming that $G$ is finite and $\Char \FF = 0$). 
 
 \begin{lemma}\label{lemma:sinv-type-M}
-    The graded-division superalgebra $\D$ is even and $T$ is an elementary $2$-group.
+    Let $\D$ be a finite dimensional graded-division superalgebra that is simple as a superalgebra. 
+    If $\D$ admits a degree-preserving superinvolution, then $\D$ is even and $T \coloneqq \supp \D$ is an elementary $2$-group. 
 \end{lemma}
 
 \begin{proof}
@@ -17,6 +13,13 @@ Since $E(\D, \U, B) = \End_\D (\U)$ is of type $M$, by \cref{prop:R-simple-iff-D
     \in \rad\tilde\beta = \{e\}$ for all $t\in T$, so $T$ is an elementary $2$-group. 
     Hence, by \cref{cor:eta-t-square}, $T^-$ is empty. 
 \end{proof}
+
+Let $(R, \vphi)$ be a finite dimensional graded superalgebra with superinvolution of type $M$. 
+Since $R$ is simple as a superalgebra, $(R, \vphi)$ is graded-simple and, hence, by \cref{subsec:param-(R-phi)}, $(R, \vphi) \iso E(\D, \U, B)$ for some triple $(\D, \U, B)$ as in Definition \ref{def:E(D,U,B)}. 
+Let $(T, \beta, p, \eta, \kappa, g_0, \delta)$ be the parameters of $(\D, \U, B)$ and let $\vphi_0$ be the superinvolution on $\D$ determined by $\eta$.
+Since $E(\D, \U, B) = \End_\D (\U)$ is of type $M$, by \cref{prop:R-simple-iff-D-simple}, we have that $(\D, \vphi_0)$ is of type $M$. 
+By \cref{lemma:sinv-type-M}, $\D$ is even and $T$ is an elementary $2$-group. 
+In particular, $\tilde\beta = \beta$. 
 
 Since $\D$ is even and of type $M$, we have that $\D \iso \End_\FF (N)$ as a superalgebra, where $N = N\even$ is a finite dimensional superspace.
 From now on, let us identify $\D$ with $\End_\FF(N)$. 

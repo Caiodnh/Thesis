@@ -4,7 +4,7 @@ In the next section, we will classify all group gradings on the superinvolution-
 To this end, we will first construct division gradings on those. 
 
 We will assume $\FF$ is algebraically closed and $\Char \FF \neq 2$. 
-Fix $i\in \FF$ a primitive fourth-root of unity, \ie, $i^2 = -1$. 
+Fix $\bi \in \FF$ a primitive fourth-root of unity, \ie, $\bi^2 = -1$. 
 
 Next subsection presents some well-known concepts and results from the theory of group extensions (see, for example, \cite{MR1344215}). 
 We put it here for completeness and for fixing notation. 
@@ -47,15 +47,15 @@ We put it here for completeness and for fixing notation.
 \begin{ex}\label{ex:main-extension}
     Let $T = T^+ \cup T^-$ be the support of a finite graded-division superalgebra.  Consider 
     \[
-        E \coloneqq \big(\pmone \times T^+\big) \cup \big(\{\pm i\} \times T^-\big) \subseteq \{ \pm 1, \pm i \} \times T,
+        E \coloneqq \big(\pmone \times T^+\big) \cup \big(\{\pm \bi\} \times T^-\big) \subseteq \{ \pm 1, \pm \bi \} \times T,
     \] 
-    and let $\iota\from \pmone \to E$ and $\pi\from E \to T$ be the homomorphisms given by $\iota(\delta) \coloneqq (\delta, e)$, for all $\delta \in \pmone$,  and $\pi (x, t) \coloneqq t$, for all $x \in \{ \pm 1, \pm i \}$ and $t\in T$.
+    and let $\iota\from \pmone \to E$ and $\pi\from E \to T$ be the homomorphisms given by $\iota(\delta) \coloneqq (\delta, e)$, for all $\delta \in \pmone$,  and $\pi (x, t) \coloneqq t$, for all $x \in \{ \pm 1, \pm \bi \}$ and $t\in T$.
 	Then $\pmone \xrightarrow{\iota} E \xrightarrow{\pi} T$ is an extension of $T$ by $\pmone$.
 \end{ex}
 
 Let us fix the abelian groups $H$ and $K$ for the remainder of the section.
 
-\begin{defi}
+\begin{defi}\label{defi:cocycle}
 	A map $\sigma\from H\times H \to K$ is said to be a \emph{$2$-cocycle} if, for all $a,b,c \in H$, we have $\sigma(a,b) \sigma(ab, c) = \sigma(a, bc) \sigma(b,c)$.
 	If, further, we have that $\sigma(a,b) = \sigma(b,a)$, we say that $\sigma$ is \emph{symmetric}, and if we have $\sigma(a, e) = \sigma(e, a) = e$, we say that $\sigma$ is \emph{normalized}.
 	In the case $\sigma(h_1, h_2) = e$ for all $h_1, h_2 \in H$, we say that $\sigma$ is \emph{trivial}.
@@ -193,7 +193,7 @@ We will need the ones that correspond to quadratic maps.
 In next example, a quadratic map is used to construct a anti-isomorphism between different graded-division superalgebras:
 
 \begin{ex}\label{ex:quadratic-form-polarization-parity}
-	Let $\mu_0\from T \to \FF^\times$ be given by $\mu_0(t) = 1$ for all $t\in T^+$ and $\mu_0(t) = i$ for all $t\in T^-$.
+	Let $\mu_0\from T \to \FF^\times$ be given by $\mu_0(t) = 1$ for all $t\in T^+$ and $\mu_0(t) = \bi$ for all $t\in T^-$.
 	It is clear that $\mu_0(t\inv) = \mu_0(t)$.
 	Also, we have that $\mathrm{d}\mu_0 \, (a,b) = \mu_0(ab) \mu_0(a)\inv \mu_0(b)\inv = (-1)^{p(a)p(b)}$, which is a symmetric bicharacter. 
 	This quadratic map determines an anti-isomorphism $\D \to \D\sop$, $X_t\mapsto \mu_0(t)\overline{X_t}$. 
@@ -206,7 +206,7 @@ In next example, a quadratic map is used to construct a anti-isomorphism between
 	Then:
 	\begin{enumerate}[(i)]
 		\item If $\mathrm{d}\mu = \tilde\beta$, then: \\
-		      $\mu$ is a quadratic map $\iff$ $\mu(t)\in \{ \pm 1 \}$ for all $t \in T^+$ and $\mu(t)\in \{ \pm i \}$ for all $t \in T^-$ $\iff$ $\psi$ is a super-anti-automorphism such that $\psi^2$ is the parity automorphism on $\D$; \label{item:super-anti-auto-quadratic}
+		      $\mu$ is a quadratic map $\iff$ $\mu(t)\in \{ \pm 1 \}$ for all $t \in T^+$ and $\mu(t)\in \{ \pm \bi \}$ for all $t \in T^-$ $\iff$ $\psi$ is a super-anti-automorphism such that $\psi^2$ is the parity automorphism on $\D$; \label{item:super-anti-auto-quadratic}
 		\item If $\mathrm{d}\mu = \beta$, then:\\
 		      $\mu$ is a quadratic map $\iff$ $\mu(t) \in \{\pm 1\}$ for all $t\in T$ $\iff$ $\psi$ is
 		      an involution on $\D$. \label{item:anti-auto-quadratic}
@@ -309,12 +309,17 @@ We are now in position to apply these concepts and results to our original probl
 \end{proof}
 
 \begin{ex}\label{ex:now-FZ2-is-division}
-    The (trivially) graded superalgebra with superinvolution $\FF \times \FF\sop = M(1,0) \times M(1,0)\sop$ of \cref{ex:FxF-iso-FZ2} admits a $\ZZ_2$-grading (refining the trivial grading) that makes it isomorphic to $\FF\ZZ_2$ with superinvolution determined by $\eta(\bar 0) = 1$ and $\eta(\bar 1) = -1$. 
+    The (trivially) graded superalgebra with superinvolution $\FF \times \FF\sop = M(1,0) \times M(1,0)\sop$ of \cref{ex:FxF-iso-FZ2} admits a $\ZZ_2$-grading (refining the trivial grading) that makes it isomorphic to $\FF\ZZ_2$: $\deg (1, 1) = \bar 0$ and $\deg (1, -1) = \bar 1$. 
+    The exchange superinvolution is determined by $\eta(\bar 0) = 1$ and $\eta(\bar 1) = -1$. 
 \end{ex}
 
 \begin{ex}\label{ex:now-FZ4-is-division}
     The graded superalgebra with superinvolution $Q(1) \times Q(1)\sop$ of \cref{ex:FZ2xFZ2sop-iso-FZ4} 
-    admits a $\ZZ_4$-grading (refining the trivial grading) that makes it isomorphic to $\FF\ZZ_4$ with superinvolution determined by $\eta(\bar 0) = 1$, $\eta(\bar 1) = 1$, $\eta(\bar 2) = -1$ and $\eta(\bar 3) = -1$. 
+    admits a $\ZZ_4$-grading (refining the trivial grading) that makes it isomorphic to $\FF\ZZ_4$: $\deg (1,1) = \bar 0$, 
+    $\deg (u, \bar u) = \bar 1$, 
+    $\deg (1,-1) = \bar 2$ and 
+    $\deg (u,- \bar u) = \bar 3$. 
+    The exchange superinvolution is determined by $\eta(\bar 0) = 1$, $\eta(\bar 1) = 1$, $\eta(\bar 2) = -1$ and $\eta(\bar 3) = -1$. 
     By \cref{thm:refinement-DxDsop}, up to relabeling the components, those are the only possible gradings on these superalgebras with superinvolutions. 
 \end{ex}
 
@@ -341,7 +346,7 @@ We can use quadratic forms to replace the extension in \cref{ex:pmone-x-tilde-be
 
 \begin{proof}
     By \cref{lemma:quadratic-form-involutions}, $\mu(T^+) \subseteq \pmone$ and $\mu(T^-) \subseteq \{ \pm \bi \}$. 
-    Hence, by \cref{prop:coboundary}, the map $\alpha'\from \{ \pm 1, \pm i \} \times_{\tilde\beta} T \to \{ \pm 1, \pm i \} \times T$ given by $\alpha'(\lambda, t) \coloneqq (\lambda\mu(t), t)$, for all $\lambda \in \{ \pm 1, \pm \bi \}$ and $t\in T$, is an equivalence between the corresponding extensions. 
+    Hence, by \cref{prop:coboundary}, the map $\alpha'\from \{ \pm 1, \pm \bi \} \times_{\tilde\beta} T \to \{ \pm 1, \pm \bi \} \times T$ given by $\alpha'(\lambda, t) \coloneqq (\lambda\mu(t), t)$, for all $\lambda \in \{ \pm 1, \pm \bi \}$ and $t\in T$, is an equivalence between the corresponding extensions. 
     Restricting $\alpha'$ to $\pmone \times_{\tilde\beta} T$, we get precisely $\alpha$, proving that it is an equivalence. 
     The ``further'' part follows from item \eqref{item:number-of-extensions} in \cref{thm:refinement-DxDsop}. 
 \end{proof}

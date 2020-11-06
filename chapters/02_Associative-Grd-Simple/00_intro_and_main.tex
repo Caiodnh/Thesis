@@ -1,12 +1,46 @@
 \chapter{Graded-Simple Associative Superalgebras}\label{chap:grd-simple-assc}
 
-In this chapter, we will review some basic results about graded associative algebras graded by a group $G$.
-First we will recall the structure of graded-simple associative algebras with a descending chain condition, following \cite{livromicha}, and then its consequences for finite dimensional $G$-graded graded-simple associative superalgebras, following \cite{paper-MAP} and \cite{Helens_thesis}. 
+In this chapter we review some results about graded-simple associative algebras and extend them to superalgebras. 
+Throughout this chapter, $G$ is a fixed group. 
 
-For the main classification results we will assume that the ground field $\FF$ is algebraically closed and the grading group $G$ is abelian. 
-Nevertheless, many results will be presented for arbitrary $\FF$ and $G$. 
-Gradings will be classified for the matrix superalgebras $M(m,n)$ and the so called queer superalgebras $Q(n)$. 
-In the latter case, we will compare our classification with the one obtained in \cite{paper-Qn} using a different method.
+In \cref{sec:gradings-on-matrix-algebras} we recall the theory of graded-simple algebras satisfying the descending chain condition (d.c.c.) on graded left ideals (\cref{def:dcc}), following closely \cite[Chapter 2]{livromicha}, although with some differences in notation (see \cref{defi:gamma-realizes-kappa,rmk:kappa-as-parameter,defi:tuple-governed}) and proofs. 
+In \cref{ssec:D-modules}, we consider graded-division algebras (\cref{def:graded-division-algebra}) and classify their graded modules of finite rank. 
+In \cref{ssec:Grd-Wedderburn-Theory}, we reduce the classification of graded-simple algebras satisfying \dcc on graded left ideals to these objects:  \cref{thm:End-over-D} states that every such graded algebra is isomorphic to $\End_\D (\U)$, where $\D$ is a graded-division algebra and $\U$ is a graded right $\D$-module of finite rank, while \cref{thm:iso-abstract} describes isomorphisms between these endomorphism algebras. 
+In \cref{ssec:grd-div-alg,ssec:param-End_D-U}, we specialize to finite dimensional algebras over an algebraically closed field. 
+In the former we parametrize the graded-division algebras (\cref{prop:T-beta-determines-iso})
+% , characterize their simplicity (as algebras) in terms of these parameters (\cref{cor:D-simple-iff-beta-nondeg})
+and give the construction of the so called standard realizations (\cref{def:standard-realization}), which are models of graded-division algebras that are simple as algebras; in the latter, we extend the parametrization to graded-simple algebras to get a classification result (\cref{thm:iso-End_D-U-with-parameters}), and use it to recover the well-known classifications of gradings on matrix algebras (\cref{cor:grds-matrix-alg}) and of simple associative superalgebras (\cref{thm:fd-simple-SA}). 
+% In the case $G = \ZZ_2$, we deduce from this theory the well-known result that simple finite dimensional associative superalgebras are either isomorphic to $M(m,n)$ or to $Q(n)$
+
+In \cref{sec:grd-simple-salg}, we extend this theory to graded-simple superalgebras, by seeing them as $G^\#$-graded algebras, where $G^\# = G \times \ZZ_2$ (see \cref{sec:grds-and-sa}). 
+The subsections follow the same pattern as in \cref{sec:gradings-on-matrix-algebras}, adapting the definitions and results to the ``super'' setting. 
+In \cref{ssec:supermodules-over-D} we define graded-division superalgebras (\cref{def:grd-div-sa}), which can be even or odd (\cref{defi:even-odd-D}), and parametrize their graded supermodules of finite rank in each case. 
+In \cref{ssec:wedderburn-super}, we apply \cref{thm:End-over-D} to graded-simple superalgebras satisfying \dcc on graded left ideals; these graded superalgebras can also be even or odd depending on the graded-division superalgebra involved (\cref{defi:even-odd-R}). 
+In \cref{ssec:T-beta-p}, we parametrize finite dimensional graded-division superalgebras over an algebraically closed field and give standard realizations of type $Q$ (\cref{def:standard-realization-Q}), which are graded-division superalgebras that are simple as superalgebras but not as algebras. 
+In \cref{ssec:classification-assc-super}, we extend this parametrization to classify even and odd graded-simple superalgebras (\cref{thm:iso-D-even,thm:iso-D-odd}), and obtain as corollaries the classification of gradings on $M(m,n)$ (\cref{cor:iso-M-even,cor:iso-M-odd}) and on $Q(n)$ (\cref{cor:iso-Q}).
+
+The parameters used to classify even gradings in \cref{sec:grd-simple-salg} are in terms of the group $G$, but the parameters used for odd gradings are in terms of the group $G^\#$ (except in the case the underlying superalgebra is $Q(n)$). 
+In \cref{sec:assc-only-G}, we present a parametrization of odd gradings in terms of $G$ (see \cref{def:odd-parameters}). 
+\cref{ssec:odd-div-G-only} handles the general case (\cref{cor:classification-odd-general}), while \cref{ssec:grds-M(m-n)-only-G} handles the case where the underlying superalgebra is $M(m,n)$, giving necessary and sufficient conditions on the parameters for this be the case (\cref{lemma:motivation-O_M,prop:O_M-non-empty}), and also simplifying the parametrization (\cref{cor:iso-odd-M-simplified}). 
+
+We note that in \cite{BS}, a description of gradings on $M(m,n)$ and $Q(n)$ was given, but the isomorphism problem was not considered. 
+A classification of gradings on $M(m,n)$ was obtained in \cite{paper-MAP} (see also \cite{Helens_thesis}). 
+
+
+% In this chapter, we will review some basic results about graded associative algebras graded by a group $G$.
+% First we will recall the structure of graded-simple associative algebras with a descending chain condition, following \cite{livromicha} (\cref{sec:gradings-on-matrix-algebras}), and then its consequences for finite dimensional $G$-graded graded-simple associative superalgebras, following  (\cref{sec:grd-simple-salg}). 
+% For the main classification results we will assume that the ground field $\FF$ is algebraically closed and the grading group $G$ is abelian. 
+% Nevertheless, many results will be presented for arbitrary $\FF$ and $G$. 
+% Gradings will be classified for the matrix superalgebras $M(m,n)$ and the so called queer superalgebras $Q(n)$. 
+% In the latter case, we will compare our classification with the one obtained in \cite{paper-Qn} using a different method. 
+
+% As in \cite{paper-MAP}, we present two ways to parametrize gradings on the superalgebras above: one in terms of the group $G$ and other in terms of the auxiliary group $G^\# = G\times \ZZ_2$ (see ?? in the introduction). 
+% As we will see in \cref{defi:even-odd-D,defi:even-odd-R}, we separate our gradings into two classes: even and odd. 
+% The odd gradings are harder to describe in terms of $G$, and this is achieved in \cref{sec:assc-only-G}. 
+% % Nevertheless, an easier approach can be used for odd gradings on $Q(n)$ (see ).
+
+% Cite: Bahturin and Shestakov \cite{BS}. 
+% It is cited in \cref{sec:grd-simple-salg}. 
 
 % ** Sections:
 

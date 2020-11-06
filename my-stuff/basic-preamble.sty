@@ -48,6 +48,9 @@
 % if then
 \RequirePackage{xstring}
 
+% space in macros \IFF and \dcc
+\RequirePackage{xspace}
+
 % To plug comments in a non final version
 %\RequirePackage{comment}
 %\specialcomment{smalltt}
@@ -82,6 +85,10 @@
 \forcsvlist\restore@Environment{alignat,equation,gather,multline,flalign,align}
 \makeatother
 
+% hide some overfull warnings:
+\hfuzz = 6pt
+
+% ------------
 
 
 %%%       Theorem Styles       %%%
@@ -159,13 +166,15 @@
 %%%        New Commands        %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Undefined
+\newcommand{\Undefined}{\ensuremath{\texttt{??}}}
 
 % Character group
 \newcommand{\dual}{\widehat}
 
 % Descending chain condition
-\newcommand{\dcc}{d.c.c.~}
-\newcommand{\IFF}{if, and only if, }
+\newcommand{\dcc}{d.c.c.\xspace}
+\newcommand{\IFF}{if, and only if,\xspace}
 
 % Colon for maps
 \newcommand{\from}{\colon}

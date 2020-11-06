@@ -1,8 +1,8 @@
-\section{Gradings on the Lie Superalgebras of Type \texorpdfstring{$A$ and $Q$}{A and Q}}
+\section{Gradings on simple Lie superalgebras of series \texorpdfstring{$A$ and $Q$}{A and Q}}\label{sec:grds-A-and-Q}
 
-By the discussion in \cref{sec:Aut-Lie-chap} (\cref{cor:transfer-R-vphi-to-L}), we have a classification of $G$-gradings on the Lie superalgebras of series $A$ and $Q$ in terms of the model $\Skew(R, \vphi)$, where $R = S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
+By the discussion in \cref{sec:Aut-Lie-chap}  (\cref{cor:transfer-R-vphi-to-L}), we have a classification of $G$-gradings on the Lie superalgebras of series $A$ and $Q$ in terms of the model $\Skew(R, \vphi)$, where $R = S\times S\sop$ and $\vphi$ is the exchange superinvolution. 
 We want to describe these gradings in terms of the original model, $S^{(-)}$, where $S$ is either $M(m,n)$ or $Q(n)$ for some positive integers $m$ and $n$. 
-We use the approach similar to \cite[Appendix]{paper-adrian}. 
+We use an approach similar to \cite[Appendix]{paper-adrian}. 
 
 We will also express the parameters of the grading in terms of the group $G$ rather than $G^\# =G \times \ZZ_2$. 
  
@@ -170,10 +170,10 @@ As in \cref{sec:grds-osp-and-p}, we fix a standard realization of a matrix algeb
 
 % ---------------------------
 
-\subsection{Gradings on \texorpdfstring{$A(m,n)$}{A(m,n)} for \texorpdfstring{$m \neq n$}{m different than n}}\label{ssec:grds-on-A-m-n}
+\subsection{Gradings on \texorpdfstring{$A(m,n)$}{A(m,n)} for \texorpdfstring{$m \neq n$}{m different from n}}\label{ssec:grds-on-A-m-n}
 
 We now discuss the case where $S = M(m+1, n+1)$ and $m \neq n$,  
-so $L = \Sl(m+1, n+1) = S^{(1)}$ is a simple Lie superalgebra of type $A(m,n)$. 
+so $L = \Sl(m+1 | n+1) = S^{(1)}$ is a simple Lie superalgebra of type $A(m,n)$. 
 (As seen before, in this case $Z(S^{(1)}) = \{ 0 \}$.)
 
 We first parametrize the Type I gradings. 
@@ -339,8 +339,9 @@ The following is an easy result that will also be used in \cref{ssec:grds-on-Q(n
     With respect to the graded basis $\B = \{ u_1, \ldots, u_k \}$ used there, $B$ is represented by the matrix $\Phi \in M_{k_\bz | k_\bo}(\D)$ as in \cref{eq:puting-the-blocks-of-Phi-together}. 
     
     We will now follow \cref{ssec:undoubling} to undouble $M^{\mathrm{ex}}(T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, constructed with the choices above. % First \D
-    Let $\epsilon \coloneqq \frac{1+\zeta}{2}\in \D$ be a central idempotent, where $\deg \zeta = f$, and consider the $\barr G$-graded-division superalgebra $\D\epsilon$. 
+    Consider the central idempotent $\epsilon \coloneqq \frac{1}{2} (1 + X_f)\in \D$ and the $\barr G$-graded-division superalgebra $\D\epsilon$. 
     By \cref{prop:lemma-for-undoubling-and-fine-gradings}, $\D\epsilon$ has parameters $(\barr T, \barr \beta, \barr p)$, so $\D\epsilon \iso \barr \D$. 
+    Specifically, an isomorphism is given by $X_t\epsilon \mapsto X_{\pi (t)}$, for all $t\in T$. 
     From now on, we will identify $\D\epsilon$ with $\barr \D$. 
     Also, by \cref{eq:fix-eta-undouble}, the map $\barr\mu$ as defined in \cref{eq:defi-mu-undoubled} coincides with the map $\barr\mu$ defined above, \ie, the map associated to the transposition on $\barr \D$. 
     
@@ -364,8 +365,7 @@ Recall that, for every $\kappa\from G/T \to \ZZ_{\geq 0}$, we defined $\kappa\St
 
 \begin{thm}\label{thm:final-m-not-n}
     Let $m,n \in \ZZ_{\geq 0}$, $m \neq n$. 
-    Let $L = \Sl(m+1, n+1)$. 
-    Every grading on $L$ is isomorphic to either $\Gamma_A^{\mathrm{(I)}}(T, \beta, \kappa_\bz, \kappa_\bo)$ or $\Gamma_A^{\mathrm{(II)}}(T,\beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:A-Type-I,defi:type-II-A-m-not-n}. 
+    Every grading on $\Sl(m+1 | n+1)$ is isomorphic to either $\Gamma_A^{\mathrm{(I)}}(T, \beta, \kappa_\bz, \kappa_\bo)$ or $\Gamma_A^{\mathrm{(II)}}(T,\beta, \kappa_\bz, \kappa_\bo, g_0)$ as in \cref{def:A-Type-I,defi:type-II-A-m-not-n}. 
     Gradings belonging to different types are not isomorphic. 
     Within each type, we have:
     
@@ -373,19 +373,21 @@ Recall that, for every $\kappa\from G/T \to \ZZ_{\geq 0}$, we defined $\kappa\St
     
     \noindent $\Gamma_A^{\mathrm{(I)}}(T, \beta, \kappa_\bz, \kappa_\bo) \iso \Gamma_A^{\mathrm{(I)}}(T', \beta', \kappa_\bz', \kappa_\bo')$ \IFF  $T' = T$ and one of the following conditions holds:
 	\begin{enumerate}[(i)]
-	    \item $\beta'=\beta$ and there is $g\in G$ such that $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$; 
-	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that $g \cdot \kappa_{\bar 0}'=\kappa_{\bar 0}\Star$ and $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$.
+	    \item $\beta'=\beta$ and there is $g\in G$ such that $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 0}$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 1}$; 
+	    \item $\beta'=\beta\inv$ and there is $g\in G$ such that $\kappa_{\bar 0}'=g \cdot \kappa_{\bar 0}\Star$ and $\kappa_{\bar 1}'=g \cdot \kappa_{\bar 1}\Star$.
 	\end{enumerate}
 
     \noindent\boxed{\mathrm{Type \,\,II}}
     
     \noindent $\Gamma_A^{\mathrm{(II)}}(T,\beta, \kappa_\bz, \kappa_\bo, g_0) \iso \Gamma_A^{\mathrm{(II)}}(T,\beta, \kappa_\bz, \kappa_\bo, g_0)$ \IFF
-    $T' =T$, $\beta' = \beta$ and there is $g \in G$ such that $g\cdot\kappa_\bz' = \kappa_\bz$, $g\cdot\kappa_\bo' = \kappa_\bo$ and $g_0' = g^{-2}g_0$.
+    $T' =T$, $\beta' = \beta$ and there is $g \in G$ such that $\kappa_\bz' = g\cdot\kappa_\bz$, $\kappa_\bo' = g\cdot\kappa_\bo$ and $g_0' = g^{-2}g_0$.
 \end{thm}
 
 \begin{proof}
-    The result follows from \cref{prop:m-not-n-Type-II-correspondence,thm:MxM-type-I,thm:MxM-even}. 
-    Note that, since $m \neq n$, the isomorphism conditions in \cref{thm:MxM-type-I,thm:MxM-even} simplify: we cannot have $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}$ or $g \cdot \kappa_{\bar 1}'=\kappa_{\bar 1}\Star$. 
+    The result follows from \cref{thm:MxM-type-I} (Type I gradings) and \cref{thm:MxM-even} (Type II gradings). 
+    Indeed, by \cref{cor:transfer-R-vphi-to-L}, the isomorphism classes of gradings on ${\Sl(m+1\, | \, n+1)}$ are in bijection with the isomorphism classes of gradings on ${M(m+1, n+1)} \times M(m+1, n+1)\sop$  endowed with the exchange superinvolution. 
+    Type I gradings are already described in terms of $M(m+1, n+1)$, and Type II gradings are described in \cref{prop:m-not-n-Type-II-correspondence}.  
+    Note that, since $m \neq n$, the isomorphism conditions in \cref{thm:MxM-type-I,thm:MxM-even} simplify: we cannot have $\kappa_{\bar 1}' = g \cdot \kappa_{\bar 0}$ or $\kappa_{\bar 1}' = g \cdot \kappa_{\bar 0}\Star$. 
 \end{proof}
 
 % ----------------------------------
@@ -481,7 +483,7 @@ Finally, we define a $G$-grading on $S^{(1)}$ by
 \[\label{eq:final-G-grd-on-Q}
     \forall g\in G, \quad S^{(1)}_g \coloneqq \{ s \in S^{(1)}_{\barr g} \mid \theta(s) = - \chi(g) s\},
 \]
-and consider the $G$-grading on $L$ by reducing it modulo the center. 
+and reduce it modulo the center to obtain a $G$-grading on $L$. 
 
 The following definition summarizes the above construction: 
 
@@ -510,7 +512,7 @@ The following definition summarizes the above construction:
 % -------------------------------
 
 \begin{remark}
-    We note that in \cite[Theorem 5.1]{paper-Qn} it is described how to extend a $G$-grading $\Gamma$ on $S\even$ to $S$, without using a full description of $\Gamma$. 
+    We note that in \cite[Theorem 5.1]{paper-Qn} it is described how to extend a $G$-grading $\Gamma$ on the even part of the Lie superalgebra $Q(n)$ to the whole superalgebra, without using a full description of $\Gamma$. 
     The construction above corresponds to the case where $\Gamma$ is of Type II. 
 \end{remark}
 
@@ -563,15 +565,15 @@ The following definition summarizes the above construction:
     % (we note that, by \cref{rmk:R-even-identificatios}, the superadjunction with respect to $B\even$ would give us a). 
     To that end, it suffices to follow the same construction as in \cref{ssec:grds-osp}. 
     In other words, define $\D\even \coloneqq (\D\even)^{[g_1]}\oplus \cdots \oplus (\D\even)^{[g_k]}$, where $(g_1, \ldots, g_k)$ is the $k$-tuple of elements in $G$ realizing $\kappa$ according to $\xi$ and $\leq$, and define $B$ by $B(u_i, u_j) \coloneqq \Phi_{ij}$, where $\B \coloneqq \{ u_1, \ldots, u_k \}$ is the canonical graded $\D\even$-basis of $\U\even$ and $\Phi \in M_k(\D\even)$ is the matrix defined by \cref{eq:puting-the-blocks-of-Phi-together}. 
-    We then define $\U\odd \coloneqq \U\even \tensor_{\D\even} \D$. 
+    We then define $\U \coloneqq \U\even \tensor_{\D\even} \D$. 
     Note that $\B$ is an even graded $\D$-basis of $\U$, and let $B\from \U \times \U \to \D$ be the unique $\vphi_0$-sesquilinear extension of $B\even$, which is also represented by $\Phi$, seen as a matrix in $M_k(\D)$.  
     
     % Undoubling what we just constructed
     We will now follow \cref{ssec:undoubling} to undouble $Q^{\mathrm{ex}}(T^+, \beta^+, h, \kappa, g_0)$, constructed with the choices above. 
-    % $\D$ is what it should be @2
-    Let $\epsilon \coloneqq \frac{1+\zeta}{2}\in \D$ be a central idempotent, where $\deg \zeta = f$, and consider the $\barr G$-graded-division superalgebra $\D\epsilon$. 
+    % $\D$ is what it should be 
+    Consider the central idempotent $\epsilon \coloneqq \frac{1}{2}(1 + X_f)\in \D$ and the $\barr G$-graded-division superalgebra $\D\epsilon$. 
     By \cref{prop:lemma-for-undoubling-and-fine-gradings}, $\D\epsilon$ has parameters $(\barr T, \barr \beta, \barr p)$. 
-    Also, $\rad \barr\beta = \langle \barr t_p \rangle$, so $\D\epsilon$ is isomorphic to a standard realization of type Q associated to $(\barr {T^+}, \barr{\beta^+}, \barr h)$ (see discussion preceding \cref{def:standard-realization-Q}), \ie, it is isomorphic to $\barr \D \coloneqq Q(1) \tensor \barr \D\even$ as in \cref{rmk:change-Q(1)-of-place}. 
+    Also, $\rad \barr\beta = \langle \barr t_p \rangle$, so $\D\epsilon$ is isomorphic to a standard realization of type Q associated to $(\barr {T^+}, \barr{\beta^+}, \barr h)$ (see discussion preceding \cref{def:standard-realization-Q}), specifically, it is isomorphic to $\barr \D \coloneqq Q(1) \tensor \barr \D\even$ as in \cref{rmk:change-Q(1)-of-place}. 
     From now on, we will identify $\D\epsilon$ with $\barr \D$. 
     
     % Undoubling $\eta$
@@ -579,7 +581,7 @@ The following definition summarizes the above construction:
     Since $\chi(f) = -1$, we can do it in a way such that $\chi(t_p) = \bi$. 
     Let $\eta\from T \to \pmone$ be the map associated to $\vphi_0$ and let $\barr\mu\from \barr T \to \FF^\times$ be as defined in \cref{eq:defi-mu-undoubled}. 
     % We claim that  is the map associated to the queer supertranspose on $\barr \D$. @1 
-    We have already showed that $\eta\restriction_{T^+} = \eta^+$ and, hence, by \cref{eq:fix-eta-plus-undouble-Q}, we have that $\barr\mu\restriction_{\barr{T^+}} = \barr{\mu^+}$.
+    We have already shown that $\eta\restriction_{T^+} = \eta^+$ and, hence, by \cref{eq:fix-eta-plus-undouble-Q}, we have that $\barr\mu\restriction_{\barr{T^+}} = \barr{\mu^+}$.
     By \cref{rmk:eta-for-MxM-or-QxQ}(c), we have $\barr\mu (\barr t_p) = \eta(t_p) \chi(t_p) = \bi$. 
     It follows that $\barr\mu$ is the map associated to the queer supertranspose on $\barr \D$. 
     
@@ -602,9 +604,8 @@ The following definition summarizes the above construction:
 
 
 \begin{thm}\label{thm:final-Q(n)}
-    Let $n \geq 2$ and 
-    let $L$ denote the simple Lie superalgebra $Q(n)$. 
-    Every grading on $L$ is isomorphic to either $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa)$ or $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ as in \cref{def:Q-Type-I,defi:type-II-Q}. 
+    Let $n \geq 2$. 
+    Every grading on the simple Lie superalgebra $Q(n)$ is isomorphic to either $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa)$ or $\Gamma_Q^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0)$ as in \cref{def:Q-Type-I,defi:type-II-Q}. 
     Gradings belonging to different types are not isomorphic. 
     Within each type, we have:
     
@@ -612,21 +613,21 @@ The following definition summarizes the above construction:
     
     \noindent $\Gamma_Q^{\mathrm{(I)}}(T^+, \beta^+, h, \kappa) \iso \Gamma_Q^{\mathrm{(I)}}(T'^+, \beta'^+, h', \kappa')$ \IFF  $T'^+ = T^+$, $h' = h$ and one of the following conditions holds:
 	\begin{enumerate}[(i)]
-	    \item $\beta'^+ = \beta^+$ and there is $g\in G$ such that $g \cdot \kappa'=\kappa$; 
-	    \item $\beta'^+ = (\beta^+)\inv$ and there is $g\in G$ such that $g \cdot \kappa'= \kappa\Star$.
+	    \item $\beta'^+ = \beta^+$ and there is $g\in G$ such that $\kappa'=g \cdot\kappa$; 
+	    \item $\beta'^+ = (\beta^+)\inv$ and there is $g\in G$ such that $\kappa'= g \cdot \kappa\Star$.
 	\end{enumerate}
 
     \noindent\boxed{\mathrm{Type \,\,II}}
     
     \noindent $\Gamma_A^{\mathrm{(II)}}(T^+, \beta^+, h, \kappa, g_0) \iso \Gamma_A^{\mathrm{(II)}}(T'^+, \beta'^+, h', \kappa', g_0')$ \IFF
-    $T'^+ =T^+$, $\beta'^+ = \beta^+$, $h' = h$ and there is $g \in G$ such that $g\cdot\kappa' = \kappa$ and $g_0' = g^{-2}g_0$. 
+    $T'^+ =T^+$, $\beta'^+ = \beta^+$, $h' = h$ and there is $g \in G$ such that $\kappa' = g\cdot\kappa$ and $g_0' = g^{-2}g_0$. 
 \end{thm}
 
 \begin{proof}
-    By \cref{cor:transfer-R-vphi-to-L}, the isomorphism classes of gradings on the Lie superalgebra $Q(n)$ is in bijection with the isomorphism classes of gradings on associative superalgebra $Q(n+1) \times Q(n+1)\sop$  endowed with the exchange superinvolution. 
-    The correspondence between the Type I gradings is clear, and for Type II gradings is established in \cref{prop:Q-Type-II-correspondence}. 
-    Hence, the result follows from \cref{thm:QxQ-type-I} for Type I gradings and from
-    \cref{cor:QxQ-reduced-to-MxM} for Type II gradings. 
+    The result follows from \cref{thm:QxQ-type-I} (Type I) and
+    \cref{cor:QxQ-reduced-to-MxM} (Type II). 
+    Indeed, by \cref{cor:transfer-R-vphi-to-L}, the isomorphism classes of gradings on the Lie superalgebra $Q(n)$ are in bijection with the isomorphism classes of gradings on the associative superalgebra $Q(n+1) \times Q(n+1)\sop$  endowed with the exchange superinvolution. 
+    Type I gradings are already described in terms of the associative superalgebra $Q(n+1)$, and Type II gradings are described in \cref{prop:Q-Type-II-correspondence}. 
 \end{proof}
 
 
@@ -652,7 +653,7 @@ The gradings on $L$ induced by even gradings on $S$ will be said to be of \emph{
     We define $\Gamma^{\mathrm{(I_M)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ to be the grading on $L$ induced from the grading $\Gamma^{\mathrm{(I)}}_A(T, \beta, \kappa_\bz, \kappa_\bo)$ on $M(n+1, n+1)^{(1)}$ (\cref{def:A-Type-I}) by reduction modulo the center.
 \end{defi}
 
-To parametrize the gradings of Type I\textsubscript{Q}, we recall the parametrization of odd gradings on $S$ in terms of the group $G$ (\cref{sec:assc-only-G}, \cref{cor:iso-odd-M-simplified}). 
+To parametrize the gradings of Type I\textsubscript{Q}, we recall the parametrization of odd gradings on $S$ in terms of the group $G$ (\cref{ssec:grds-M(m-n)-only-G}). 
 The character $\chi_0 \in \widehat{T^+}$ in the next definition plays the role of $\chi$ there. 
 
 \begin{defi}\label{def:Type-I_Q}
@@ -671,21 +672,21 @@ As in the case $m\neq n$ (\cref{ssec:grds-on-A-m-n}), these gradings correspond 
 
 If the grading on $(R,\vphi)$ is even, then, by \cref{thm:MxM-even}, $R$ is isomorphic to $M^{\mathrm{ex}} (T, \beta, \kappa_\bz, \kappa_\bo, g_0)$, where $T$ is a finite elementary $2$-group, $\beta\from {T\times T} \to \FF^\times$ is an alternating bicharacter with $\rad \beta = \langle f \rangle$ for some $e \neq f \in T$, $g_0$ is an element in $G^\#$, and $\kappa_\bz, \kappa_\bo \from G/T \to \ZZ_{\geq 0}$ are $g_0$-admissible maps (see \cref{inertia-even-and-odd-case}) such that $|\kappa_\bz| \sqrt{|T|} = |\kappa_\bo| \sqrt{|T|} = n+1$ (see \cref{def:model-grd-MxM-even}). 
 Write $g_0$ as $(h_0, p_0)$, with $h_0 \in G$ and $p_0 \in \ZZ_2$. 
-If $p_0 = \bar 0$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{osp}. 
+If $p_0 = \bar 0$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{$\mathfrak{osp}$}. 
 If $p_0 = \bar 1$, we will say that the corresponding grading on $L$ is of Type II\textsubscript{P}. 
 
 \begin{remark}
-    A $G$-grading on the Lie superalgebra $\osp(n+1,n+1)$ (respectively, $P(n)$) gives rise to a $G \times \ZZ_2$-grading on $A(n,n)$ of Type II\textsubscript{osp} (respectively, II\textsubscript{P}). 
+    A $G$-grading on the Lie superalgebra $\osp(n+1|n+1)$ (respectively, $P(n)$) gives rise to a $G \times \ZZ_2$-grading on $A(n,n)$ of Type II\textsubscript{$\mathfrak{osp}$} (respectively, II\textsubscript{P}). 
 \end{remark}
 
 Recall that, before \cref{eq:fix-eta-undouble}, we fixed a subgroup $K \subseteq T^+$ such that $T^+ = K \times \langle f \rangle$, which was used in \cref{defi:type-II-A-m-not-n}. 
 
 \begin{defi}\label{def:type-II-osp}
     Let $n\in \ZZ_{> 0}$. 
-    We define $\Gamma^{\mathrm{(II_{osp})}}_A(T, \beta, \kappa_\bz, \kappa_\bo, h_0)$ to be the grading on $L$ induced from the grading $\Gamma^{\mathrm{(II)}}_A(T, \beta, \kappa_\bz, \kappa_\bo, h_0)$ on $M(n+1, n+1)^{(1)}$ (\cref{defi:type-II-A-m-not-n}) by reduction modulo the center.
+    We define $\Gamma^{\mathrm{(II_{\mathfrak{osp}})}}_A(T, \beta, \kappa_\bz, \kappa_\bo, h_0)$ to be the grading on $L$ induced from the grading $\Gamma^{\mathrm{(II)}}_A(T, \beta, \kappa_\bz, \kappa_\bo, h_0)$ on $M(n+1, n+1)^{(1)}$ (\cref{defi:type-II-A-m-not-n}) by reduction modulo the center.
 \end{defi}
 
-To construct a model for gradings of Type II\textsubscript{P}, we follow a similar approach as for Type II\textsubscript{osp}, but it is simpler since we do not need to choose $\xi$ and $\leq$ to define the matrix $\Theta$ (in the same way, these choices were needed in \cref{ssec:grds-osp} but not in \cref{ssec:grds-P(n)}). 
+To construct a model for gradings of Type II\textsubscript{P}, we follow a similar approach as for Type II\textsubscript{$\mathfrak{osp}$}, but it is simpler since we do not need to choose $\xi$ and $\leq$ to define the matrix $\Theta$ (in the same way, these choices were needed in \cref{ssec:grds-osp} but not in \cref{ssec:grds-P(n)}). 
 Also, $\kappa_\bo$ is determined by $\kappa_\bz$ and $h_0$ (recall \cref{inertia-even-and-odd-case}).
 
 \begin{defi}\label{def:type-II-P}

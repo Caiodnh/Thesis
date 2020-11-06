@@ -5,7 +5,7 @@ For any abelian group $G$, we obtain a classification of $G$-graded graded-simpl
 A different (and more complicated) approach was used in \cite{BS} to obtain a description of $G$-gradings (with some restrictions on characteristic), but the isomorphism problem was not solved there. 
 
 Let $G$ be a group. 
-Recall that a $G$-graded superalgebra $R$ can be seen as a $G^\# \coloneqq G\times \ZZ_2$-graded algebra (see \cref{rmk:G-sharp}) by defining $R_{(g,i)} = R_g \cap R^i$, for all $g\in G$ and $i \in \ZZ_2$. 
+Recall that a $G$-graded superalgebra $R$ can be seen as a $G^\# \coloneqq G\times \ZZ_2$-graded algebra (see \cref{sec:grds-and-sa}) by defining $R_{(g,i)} = R_g \cap R^i$, for all $g\in G$ and $i \in \ZZ_2$. 
 We identify $G$ with $G \times \{ \bar 0 \} \subseteq G^\#$. 
 Clearly, $R$ is graded-simple as a $G$-graded superalgebra if, and only if, it is graded-simple as a $G^\#$-graded algebra. 
 This allows us to easily transfer the results of previous section to gradings on superalgebras, but at the cost of working in the group $G^\#$ instead of $G$. 
@@ -18,7 +18,7 @@ This allows us to easily transfer the results of previous section to gradings on
 
 \subsection{Graded-division superalgebras and their supermodules}\label{ssec:supermodules-over-D}
 
-\begin{defi}
+\begin{defi}\label{def:grd-div-sa}
     A $G$-graded superalgebra $\D$ is said to be a \emph{graded-division superalgebra} if every nonzero element which is homogeneous with respect to both the $G$-grading and the canonical $\ZZ_2$-grading is invertible. 
     In this case, we may also refer to the $G$-grading on the superalgebra $\D$ as a \emph{division grading}.
 \end{defi}
@@ -154,8 +154,8 @@ If $G$ is an abelian group, again, this can also be seen from the identification
 The grading on $M_k(\FF)$ is elementary grading defined by a tuple of elements in $G = G \times \{ \bar 0 \}$ and, hence, $R\even = M_k(\D) \tensor \D\even$ and $R\odd = M_k(\D) \tensor \D\odd$. 
 
 \begin{remark}\label{rmk:M(D)=M(FF)-tensor-D}
-	For superalgebras, tensor product is usually defined with a different multiplication on the superspace $M_k(\FF)\tensor \D$, given by \[(r_1 \tensor s_1) (r_2 \tensor s_2) = \sign{r_2}{s_1} (r_1 r_2) \tensor (s_1 s_2).\]
-	If we are following Convention \ref{conv:pick-even-basis}, either $M_k(\FF)$ or $\D$ have trivial canonical $\ZZ_2$-grading, hence the tensor product of superalgebras coincides with that of algebras.
+	Recall that, for superalgebras, the tensor product is defined with a different multiplication on the superspace $M_k(\FF)\tensor \D$ (\cref{defi:tensorSuperalgebras}). 
+	But if we are following Convention \ref{conv:pick-even-basis}, either $M_k(\FF)$ or $\D$ have trivial canonical $\ZZ_2$-grading, hence the tensor product of superalgebras coincides with that of algebras.
 \end{remark}
 
 Note that we already have a description of even gradings only in terms of the group $G$. 
@@ -268,10 +268,10 @@ In view of \cref{lemma:rad-tilde-beta}, if $\Char \FF \neq 2$, the next result c
     By definition of radical, it is clear that $(\rad \beta) \cap T^+ \subseteq \rad \beta^+$, hence if $\beta^+$ is nondegenerate, then $(\rad \beta) \cap T^+ = \{e\}$. 
     
     Conversely, suppose $(\rad \beta) \cap T^+ = \{e\}$. 
-    Since $\rad\beta \neq \{e\}$, there is $t_1 \in (\rad \beta) \cap T^-$ and, hence, $T = (\rad\beta) \times T^+$. 
-    We conclude that $\rad \beta = \langle t_1 \rangle$ and that $t_1$ has order $2$. 
+    Since $\rad\beta \neq \{e\}$, there is $t_1 \in (\rad \beta) \cap T^-$. 
+    For any $t_1' \in (\rad \beta) \cap T^-$, we have $t_1 \, t_1' \in (\rad\beta) \cap T^+ = \{e \}$, so $t_1' = t_1\inv$ and, hence, $t_1$ has order $2$ and $\rad \beta = \langle t_1 \rangle$. 
     To show that $\beta^+$ is nondegenerate, let $t_0 \in \rad \beta^+$. 
-    Then $\beta(t_0, T^+) = 1$ and, clearly, $\beta(t_0, \rad \beta) = 1$. 
+    Then $\beta(t_0, T^+) = 1$ and, clearly, $\beta(t_0, t_1) = 1$. 
     It follows that $t_0 \in \rad \beta$ and, since $t_0 \in T^+$, $t_0 = \{e\}$, concluding the proof. 
 \end{proof}
 
@@ -440,7 +440,7 @@ Note that, if $\Char \FF \neq 2$, then, by \cref{lemma:rad-tilde-beta}, all elem
 \begin{cor}\label{cor:radical-with-parity}
     Let $t_p\in T$ be a parity element. 
     If $t_p\in T^+$, then $\rad \beta = \rad \tilde\beta$ and $\rad \beta^+ = (\rad \tilde\beta) \cup  t_p(\rad \tilde\beta)$. 
-    If $t_p\in T^-$, then $\rad \beta^+ = \rad \tilde\beta$ and $\rad \beta = (\rad \tilde\beta) \cup  t_p(\rad \tilde\beta)$. \qed
+    If $t_p\in T^-$, then $\rad \beta = (\rad \tilde\beta) \cup  t_p(\rad \tilde\beta)$ and $\rad \beta^+ = \rad \tilde\beta$. \qed
 \end{cor}
 
 
@@ -519,11 +519,11 @@ Note that in this case, by \cref{lemma:odd-M-m=n}, we have that $m = n$.
 
 \begin{defi}\label{def:Gamma-T-beta-kappa-odd}
     Let $n > 0$ be a natural number. 
-    Given a finite subgroup $T \subseteq G^\#$, $T\not\subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider 
+    Given a finite subgroup $T \subseteq G^\#$, $T\not\subseteq G$, a nondegenerate alternating bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider 
     \begin{enumerate}[(i)]
         % \item the group homomorphism $p\from T \to \ZZ_2$ given by the projection on the second component of $G^\# = G\times \ZZ_2$;
         \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$, viewed as a $G$-graded superalgebra with canonical $\ZZ_2$-grading given by the projection on the second entry $p\from T \subseteq G^\# \to \ZZ_2$;
-        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}). 
+        \item the elementary grading (see \cref{defi:elementary-grd-matrix}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}). 
     \end{enumerate}
     %
     We define $\Gamma_M (T, \beta, p, \kappa)$ to be the odd grading on $M(n,n)$ given by identifying $M(n,n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product.  
@@ -531,7 +531,7 @@ Note that in this case, by \cref{lemma:odd-M-m=n}, we have that $m = n$.
 \end{defi}
 
 \begin{cor}\label{cor:iso-M-odd}
-    Every odd $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma_M (T, \beta, p, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
+    Every odd $G$-grading on $M(n,n)$ is isomorphic to $\Gamma_M (T, \beta, p, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
     Two such gradings $\Gamma_M (T, \beta, p, \kappa)$ and $\Gamma_M (T', \beta', p, \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$, $p = p'$ and there is a $g\in G$ such that $g\cdot \kappa = \kappa'$. \qed
 \end{cor}
 
@@ -546,7 +546,7 @@ Note that we only have odd gradings in this case.
     Given a finite subgroup $T^+ \subseteq G$, a nondegenerate bicharacter $\beta\from T^+ \times T^+ \to \FF^\times$, an element $h\in G$ such that $h^2 = 1$ and a map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T^+|} = n$, consider 
     \begin{enumerate}[(i)]
         \item a standard realization $\D$ (see \cref{def:standard-realization-Q}) of a superalgebra of type $Q$ with a division grading associated to $(T^+, \beta^+, h)$;
-        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$  of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}).  
+        \item the elementary grading (see \cref{defi:elementary-grd-matrix}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$  of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}).  
     \end{enumerate}
     %
     We define $\Gamma_Q (T^+, \beta^+, h, \kappa)$ to be the grading on $Q(n)$ given by identifying $Q(n)$ with the graded superalgebra $M_k(\FF) \tensor \D$ via Kronecker product. 

@@ -1,95 +1,103 @@
 
-\section{\texorpdfstring{$\Omega$}{Omega}-algebras}\label{sec:Omega-algebras}
+\section{Gradings on universal algebras}\label{sec:Omega-algebras}
+% \texorpdfstring{$\Omega$}{Omega}-algebras
 
-A \emph{general} or \emph{universal algebra} is a set with an arbitrary collection (possibly empty) of operations, which may have different ``arities'' (see Definition \ref{def:universal-algebra} below).
-This is a very general concept (see, \eg, ?? and ??), which includes all classical objects in algebra (groups, rings, etc.), but here we will be interested in the linear case: the objects will be vector spaces over a field $\FF$ and the operations will be assumed multilinear (following ??, book by Razmylov).
-%Our approach to universal algebras differs from the one in most books on the subject (see, \eg, ?? and ??) in the sense we will be working on the (monoidal) category of vector spaces instead of the (monoidal) category of sets. 
-% This is the approach on ?? (Razmylov: book used by Felipe) and it has recently been applied to gradings (and graded identities) on ??.
-This will give us a framework to deal with algebras, superalgebras, superalgebras with superinvolution, etc., in a uniform manner.
+In the \hyperref[chap:intro]{Introduction}, we defined different graded structures: vector spaces, algebras, superspaces, superalgebras and superalgebras endowed with a super-anti-automorphism. 
+The language of \emph{universal algebra} allows us to consider all these in a uniform fashion. 
+It is particularly convenient to formulate results like \cref{thm:transfer-of-gradings} , which allows us to transfer gradings between different structures: in \cref{chap:Lie}, we will use it to transfer our classification of $G$-gradings on superinvolution-simple superalgebras (achieved in \cref{chap:grds-sinv-simple}) to classical Lie superalgebras. 
+We will also use this language in \cref{ssec:universal_group} to give unified definitions for fine gradings and universal group (\cref{defi:fine-grading,defi:universal-group}), which is usually done \emph{ad hoc} for different cases. 
 
-\begin{notation}
-	For a vector space $A$ and a nonnegative integer $n$, we will denote the $n^{th}$-tensor power of $A$ by $A^{\tensor n}$, \ie,
-	$A^{\tensor n} \coloneqq \underbrace{A\otimes\cdots\otimes A}_{n \text{ times}}$.
-	In the case $n = 0$, we will follow the convention that $A^{\tensor 0} \coloneqq \FF$.
-\end{notation}
-
-\begin{defi}\label{def:universal-algebra}
-	A \emph{signature} $\Omega$ is a set together with a family $\{ \Omega_n \}_{n \geq 0}$ of pairwise disjoint subsets such that $\Omega = \bigcup_{n \geq 0} \Omega_n$.
-	An \emph{$n$-ary operation} on a vector space $A$ is a multilinear map $A^n \to A$ or, equivalently, a linear map $A^{\tensor n} \to A$.
-	An \emph{$\Omega$-algebra} or a \emph{(general) algebra with signature $\Omega$} is a vector space $A$ together with operations $\omega^A$, one for each $\omega \in \Omega$, such that $\omega^A$ is $n$-ary if $\omega \in \Omega_n$.
-\end{defi}
-
-We note that $0$-ary operations can be interpreted as constants in the $\Omega$-algebra $A$, since a linear map $\omega^A\from \FF \to A$ is determined by $\omega^A(1)$.
+We note that universal algebras differs are usually defined in the category of sets (see, \eg, \cite{Cohn_universal}), but we will work in the category of vector spaces over $\FF$. 
+This approach was used in \cite{Razmyslov} and has recently been applied to gradings (and graded identities) in \cite{MR3886336}. 
 
 \begin{defi}
-	Let $A$ and $B$ be $\Omega$-algebras.
-	A \emph{homomorphism} $\psi\from A \to B$ is a linear map such that for every $\omega \in \Omega_n$ we have
-	\[
-		\psi( \omega^A (a_1 \tensor \cdots \tensor a_n) ) = \omega^B ( \psi(a_1) \tensor \cdots \tensor \psi(a_n) ),
-	\]
-	for all $a_1, \ldots, a_n \in A$.
-	As usual, an \emph{automorphism} of $A$ is a bijective homomorphism from $A$ to itself, and the group of automorphisms is denoted by $\Aut(A)$.
+    An \emph{$n$-ary operation} on a vector space $V$ is 
+    % a multilinear map $V^n \to V$ or, equivalently, 
+    a linear map $V^{\tensor n} \to V$, where $V^{\tensor n} \coloneqq \underbrace{V\otimes\cdots\otimes V}_{n \text{ times}}$. 
 \end{defi}
 
-When dealing with a fixed $\Omega$-algebra $A$, we will usually identify the signature $\Omega$ with the corresponding set of operations on $A$.
+In other words, an $n$-ary operation is a multilinear map $V^n \to V$. 
+In the case $n = 0$, we will follow the convention that $V^{\tensor 0} \coloneqq \FF$. 
+In particular, a $0$-ary operation is determined by its value on $1 \in \FF$ and, hence, $0$-ary operations are constants in $V$. 
+
+\begin{defi}\label{def:universal-algebra}
+	A \emph{signature} $\Omega$ is a set with a partition $\Omega = \bigcup_{n \geq 0} \Omega_n$.
+	%
+	An \emph{$\Omega$-algebra} or a \emph{universal algebra with signature $\Omega$} is a vector space $A$ endowed with $n$-ary operations $\omega^A$ for each $\omega \in \Omega_n$, for all $n \geq 0$. 
+	%
+	A \emph{homomorphism between $\Omega$-algebras} $A$ and $B$ is a linear map such that for every $\omega \in \Omega_n$ we have
+	\[
+		\forall a_1, \ldots, a_n \in A, \quad 
+		\psi( \omega^A (a_1 \tensor \cdots \tensor a_n) ) = \omega^B ( \psi(a_1) \tensor \cdots \tensor \psi(a_n) ). 
+	\]
+\end{defi}
+
+\begin{notation}
+    When dealing with a fixed $\Omega$-algebra $A$, we will usually drop the superscript $A$ in the operations $\omega$, \ie, we will identify the signature $\Omega$ with its corresponding set of operations on $A$. 
+\end{notation}
 
 \begin{ex}\label{ex:omega-vec-space}
 	A vector space is an $\Omega$-algebra with $\Omega = \emptyset$.
 \end{ex}
 
+\newcommand{\multiplication}{\cdot}
+
 \begin{ex}\label{ex:omega-algebra}
-	An algebra in the usual sense, with product $*$, is an $\Omega$-algebra with $\Omega = \Omega_2 = \{ * \}$.
+	An algebra $A$ in the usual sense, with a bilinear product $\multiplication : A\tensor A \to A$, is an $\Omega$-algebra with $\Omega = \Omega_2 = \{ \multiplication \}$. 
 \end{ex}
 
-\begin{ex}
-	An algebra $A$ with unity $\mathds{1} \in A$ is an  $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_2 = \{ * \}$, $\Omega_0 = \{ \omega_0 \}$, and $\omega_0\from \FF \to A$ is defined by $\omega_0 (1) = \mathds 1$.
+\begin{ex}\label{ex:Omega-unity-inv}
+    A unital algebra $A$ with product $\multiplication$ and unity element $1_A \in A$ is an $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_2$ where $\Omega_0 = \{ \omega_0 \}$, with $\omega_0\from \FF \to A$ determined by $\omega_0 (1) \coloneqq 1_A$, and $\Omega_2 = \{ \multiplication \}$. 
+    An algebra $A$ with product $\multiplication$ and involution $\vphi\from A \to A$ is an $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, where $\Omega_1 = \{ \vphi \}$ and $\Omega_2 = \{ \multiplication \}$. 
+    A unital algebra $A$ with involution $\vphi$ is an $\Omega$-algebra with $\Omega = \Omega_0 \cup \Omega_1 \cup \Omega_2$, where $\Omega_0 = \{ \omega_0 \}$, $\Omega_1 = \{ \vphi \}$ and $\Omega_2 = \{ \multiplication \}$. 
 \end{ex}
 
-\begin{ex}\label{ex:omega-alg-SA}
-	A superalgebra $A = A\even \oplus A\odd$ is an $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, where $\Omega_2 = \{ * \}$, $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$, and $\pi_{\bar 0}, \pi_{\bar 1}\from A \to A$ are the projection on the $A\even$ and $A\odd$, respectively.
-	More precisely, an algebra $A$ with such signature is a superalgebra if, and only if,
+
+\begin{ex}\label{ex:omega-superspace}
+	A superspace $V = V\even \oplus V\odd$ can be seen as an $\Omega$-algebra by taking $\Omega = \Omega_1 = \{ \pi_\bz, \pi_\bo \}$, where $\pi_\bz, \pi_\bo \from V \to V$ are the projections onto the components $V\even$ and $V\odd$, respectively. 
+	A universal algebra $V$ with this signature is a superspace \IFF for all $x \in V$, we have:
+	%
 	\begin{enumerate}[(i)]
-		\item $\pi_{\bar 0}^{} + \pi_{\bar 1}^{} = \id$; \label{item:sum-projections}
-		\item $\pi_{\bar 0}^{}\pi_{\bar 1}^{} = \pi_{\bar 1}^{}\pi_{\bar 0}^{} = 0$
-		      %\item $\pi_{\bar 0}^2 = \pi_{\bar 0}^{}$ and $\pi_{\bar 1}^2 = \pi_{\bar 1}^{}$;
-		\item For every $x,y \in A$ and $i, j\in \ZZ_2$, we have that $\pi_{i+j}^{}( \pi_i^{} (x)*\pi_j^{} (y) ) = \pi_i^{} (x)*\pi_j^{} (y)$.
+		\item $\pi_{\bar 0}(x) + \pi_{\bar 1}(x) = x$; \label{item:sum-projections}
+% 		\item $(\pi_{\bar 0} \circ \pi_{\bar 1}) (v)
+% 		= (\pi_{\bar 1} \circ \pi_{\bar 0}) (v)
+% 		= 0$.
+		\item $\pi_{\bar 0} ( \pi_{\bar 1} (x) )
+		= \pi_{\bar 1} ( \pi_{\bar 0} (x) )
+		= 0$. \label{item:orthogonal-projections}
 	\end{enumerate}
 \end{ex}
 
-% \begin{ex}\label{ex:omega-graded-algebra}
-%     A $G$-graded algebra $A = \bigoplus_{g\in G}$, with operation $*$, is a $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, with $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \pi_g \mid g\in G\}$, where $\pi_g\from A \to A$ is the projection in the component $A_g$. 
-%     As a particular case, superalgebras can be viewed as $\Omega$-algebras.
-% \end{ex}
 
-\begin{ex}
-	A superalgebra with super-anti-automorphism $(A, \vphi)$ an $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_2 = \{ * \}$ and $\Omega_1 = \{ \vphi, \pi_{\bar 0}, \pi_{\bar 1} \}$.
-	In a similar fashion, algebras with anti-automorphism can be viewed as $\Omega$-algebras.
+\begin{ex}\label{ex:omega-alg-SA}
+	A superalgebra $A = A\even \oplus A\odd$ is an $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$, where $\Omega_2 = \{ \multiplication \}$, $\Omega_1 = \{ \pi_{\bar 0}, \pi_{\bar 1} \}$.
+	An algebra $A$ with this signature is a superalgebra if, and only if, we have identities \eqref{item:sum-projections} and \eqref{item:orthogonal-projections} as above and, for all $x,y\in A$ and $i, j\in \ZZ_2$,
+	\begin{enumerate}[(i)]
+        \setcounter{enumi}{2}
+		\item $\pi_i^{} (x) \multiplication \pi_j^{} (y) = \pi_{i+j}^{}( \pi_i^{} (x) \multiplication \pi_j^{} (y) )$.
+	\end{enumerate}
 \end{ex}
 
-It is straightforward to check that, in each of the examples above, the usual notion of homomorphism coincides with the notion of homomorphism as $\Omega$-algebras.
+\begin{ex}\label{ex:omega-alg-SA-sinv}
+    Similarly to \cref{ex:Omega-unity-inv}, a superalgebra $A = A\even \oplus A\odd$ with superinvolution $\vphi\from A \to A$ is an  $\Omega$-algebra with $\Omega = \Omega_1 \cup \Omega_2$ where $\Omega_1 = \{\pi_{\bar 0}, \pi_{\bar 1}, \vphi \}$ and  $\Omega_2 = \{ \multiplication \}$.
+\end{ex}
 
 \begin{remark}
-	Example \ref{ex:omega-alg-SA} could be generalized to encompass all $G$-graded algebras for a fixed group $G$.
-	Such generalization has been used in the study of graded identities (see ??), but we will not follow this approach.
+    The signatures in \cref{ex:omega-superspace,ex:omega-alg-SA} can be generalized for $G$-graded spaces/algebras, and, if $G$ is finite, the axioms can be stated as identities, which allows one to define these objects as varieties of algebras (see \cite[Section 2]{MR3886336}), but this is not the approach we are going to follow. 
 \end{remark}
 
-Finally, we can define gradings on $\Omega$-algebras:
-
 \begin{defi}\label{def:grds-on-Omega-algebras}
-	A \emph{$G$-grading} on an $\Omega$-algebra $A$ is a $G$-grading on its underlying vector space such that, if we consider the usual grading on the tensor powers $A^{\tensor n}$, all the operations $\omega^A$ for $\omega \in \Omega$ are degree preserving.
+	A \emph{$G$-grading on an $\Omega$-algebra $A$} is a $G$-grading on its underlying vector space such that, for all $\omega \in \Omega$, the operation $\omega^A\from A^{\tensor n} \to A$ is degree preserving if we consider $G$-gradings on tensor products $A^{\tensor n}$ induced by the $G$-grading on $A$ (see \cref{defi:tensorProduct}). 
+	If $\Gamma$ is fixed, we say that $A$ is a \emph{$G$-graded $\Omega$-algebra}. 
+	A \emph{homomorphism of $G$-graded $\Omega$-algebras} is a degree-preserving homomorphism of the underlying $\Omega$-algebras. 
+	Given two $G$-gradings $\Gamma$ and $\Delta$ on a fixed $\Omega$-algebra $A$, we say that $\Gamma$ is \emph{isomorphic} to $\Delta$ if $(A, \Gamma) \iso (A, \Delta)$.  
 \end{defi}
 
-It is easy to verify that this notion of grading coincides with to the usual notion for algebras, superalgebras, superalgebras with superinvolution, etc.
+\phantomsection\label{lemma:1-has-deg-e}
 
-% It should be noted that among these examples, only in Examples \ref{ex:omega-vec-space} and \ref{ex:omega-algebra} the correspondence is bijective. 
-% In the other cases, the original structures correspond to proper subclasses of the $\Omega$-algebras described, which can be axiomitized. 
-% We will present axioms for Example \ref{ex:omega-graded-algebra}, since gradings are not usually describe in terms of the projection maps, we will
+It is straightforward to check that, for each of the \cref{ex:omega-vec-space,ex:omega-algebra,ex:Omega-unity-inv,ex:omega-superspace,ex:omega-alg-SA,ex:omega-alg-SA-sinv}, the notions of homomorphism and $G$-grading as $\Omega$-algebras coincide with the notions of homomorphism and $G$-grading we had before. 
+Note that \cref{def:grds-on-Omega-algebras} entails that, in a unital algebra, the unity element is homogeneous of degree $e$, but this is automatic according to \cref{def:grading}: 
+if we write $1 = \sum_{g\in G} a_g$, with $a_g \in A_g$, then, for any $h\in G$, $a_h = a_h 1 = \sum_{g\in G} a_h a_g \in A_h$ and, since $a_h a_g \in A_{hg}$, the only nonzero element in this sum $a_h a_e$. 
+It follows that $a_h = a_h a_e$ and, hence, $1 = \sum_{g\in G} a_g = \sum_{g\in G} a_g a_e = 1 a_e = a_e \in A_e$. 
 
-% \begin{itemize}
-%     \item[\done] paragraph-remark stating only exs 1 and 2 are ``precisely'', the other are proper inclusions.
-%     \item discuss, in a remark, the axioms of graded algebras, noting that one of them is not first-order if the group is not finite.
-% \end{itemize}
-
-\begin{thm}\label{thm:transfer-of-gradings}
-    transfer
-\end{thm}
+% , note that, by it is easy to verify that $1_A$ automatically belongs to the homogeneous component $A_e$.

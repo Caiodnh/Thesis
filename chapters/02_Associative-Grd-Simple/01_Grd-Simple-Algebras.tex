@@ -7,19 +7,19 @@ We will follow the exposition of \cite[Chapter 2]{livromicha} but use slightly d
 Our main interest is in finite dimensional graded algebras. 
 It is clear that they satisfy the following condition:
 
-\begin{defi}
+\begin{defi}\label{def:dcc}
     We say that a graded algebra $R$ satisfies the \emph{descending chain condition} (or \emph{\dcc}) on graded left ideals if, for every sequence $\{I_k\}_{k\in \NN}$ of graded left ideals such that \[k \leq \ell \implies I_k \supseteq I_\ell,\] there is $n\in \NN$ such that \[n \leq \ell \implies I_n = I_\ell.\]
 \end{defi}
 
 As we will see in \cref{thm:End-over-D}, a graded-simple algebra satisfying this condition can be described, up to isomorphism, by a graded-division algebra $\D$ and a graded right $\D$-module of finite rank. 
-This is the graded analog of the classical result of Wedderburn.
+This is the graded analog of a classical result of Wedderburn.
 
 \subsection{Graded-division algebras and their modules}\label{ssec:D-modules}
 
 It is easy to see that if a $G$-graded algebra $R$ has the unit element $1$, then $1 \in R_e$. 
 Also, if an element $r\in R_g$ is invertible, then $r\inv \in R_{g\inv}$.
 
-\begin{defi}
+\begin{defi}\label{def:graded-division-algebra}
     A \emph{graded-division algebra} is a unital graded algebra $\D$ such that every nonzero homogeneous element has an inverse. 
     In this case, we may also refer to the $G$-grading on the algebra $\D$ as a \emph{division grading}.
 \end{defi}
@@ -78,9 +78,46 @@ Also, if an element $r\in R_g$ is invertible, then $r\inv \in R_{g\inv}$.
     One can check that setting $\deg A = (\bar 1, \bar 0)$ and $\deg B = (\bar 0, \bar 1)$ defines a grading making $M_\ell (\FF)$ a graded-division algebra.
 \end{ex}
 
-For what follows, let us fix a graded-division algebra $\D$.
-Observe that $T \coloneqq \supp \D \subseteq G$ is a subgroup of $G$. 
-Also, it is clear that $\D_e$ is a division algebra in the usual sense. 
+For what follows, let us fix a graded-division algebra $\D$. 
+We note that $\D_e$ is a division algebra in the usual sense and that, if $0\neq X_t \in \D_t$, then $\D_t = X_t \, \D_e$. 
+
+\begin{lemma}
+    The support $T \coloneqq \supp \D$ is a subgroup of $G$. 
+\end{lemma}
+
+\begin{proof}
+    As noted in \cref{lemma:1-has-deg-e}, $1 \in \D_e$, so $e \in T$. 
+    Given $s,t \in T$, take $0 \neq X_s \in \D_s$ and $0 \neq X_t \in \D_t$. 
+    Since $X_s X_t$ is invertible, it is a nonzero element in $\D_{st}$, hence $st \in T$. 
+    Finally, write $X_t\inv =  \sum_{g\in G} d_g$. 
+    Then $1 = X_t X_t\inv = \sum_{g\in G} X_t d_g$ and $1 = X_t\inv X_t = \sum_{g\in G} d_g X_t$. 
+    Since $1 \in \D_e$, it follows that $1 = X_t d_{t\inv}$ and $1 = d_{t\inv} X_t$, so $X_t\inv = d_{t\inv} \in \D_{t\inv}$. 
+\end{proof}
+
+
+
+    % To show that $e \in T$, we will prove that $1 \in \D_e$. 
+    % Let us write $1 = \sum_{g\in G} a_g$, where $a_g \in \D_g$. 
+    % For any $h\in G$, $a_h = a_h 1 = \sum_{g\in G} a_h a_g \in D_h$ and, since $a_h a_g \in \D_{hg}$, the only nonzero element in this sum $a_h a_e$. 
+    % It follows that $a_h = a_h a_e$ and, hence, $1 = \sum_{g\in G} a_g a_e = 1 a_e = a_e \in \D_e$. 
+    
+    % Finally, take $t \in T$ and $0\neq X_t \in \D_t$ and write $X_t\inv =  \sum_{g\in G} b_g$. 
+    % Then $1 = X_t X_t\inv = \sum_{g\in G} X_t b_g$ and $1 = X_t\inv X_t = \sum_{g\in G} b_g X_t$. 
+    % Since $1 \in \D_e$, it follows that $1 = X_t b_{t\inv}$ and $1 = b_{t\inv} X_t$, so $X_t\inv = b_{t\inv} \in \D_{t\inv}$. 
+    
+
+\begin{lemma}\label{lemma:div-grd-unvrsl-grp}
+    The group $T$ is the universal group of the grading on $\D$. 
+\end{lemma}
+
+\begin{proof}
+    Denote the division grading on $\D$ by $\Gamma : \D = \bigoplus_{t\in T} \D_t$,  considered as a set grading, and set $\iota\from T \to T$ to be the identity map. 
+    Let $G'$ be a group and let $\iota'\from T \to G'$ be a (set-theoretic) map such that ${}^{\iota'}\Gamma$ is a $G'$-grading. 
+    It is straightforward that $T$, together with $\iota$, satisfies the universal property in \cref{defi:universal-group} \IFF $\iota'$ is a group homomorphism. 
+    To prove the latter, let $0 \neq X_s \in \D_s$ and $0 \neq X_t \in \D_t$ and note that $X_s X_t$ is a nonzero element of $\D_{st}$.  
+    When considering the grading ${}^{\iota'}\Gamma$, the elements $X_s$, $X_t$ and $X_s X_t$ have degrees $\iota'(s), \iota'(t),\iota'(st) \in G'$, respectively. 
+    Since ${}^{\iota'}\Gamma$ is a group grading, it also follows that $X_s X_t$ has degree $\iota'(s) \iota'(t)$, so we conclude that $\iota'(st) = \iota'(s) \iota'(t)$, as desired. 
+\end{proof}
 
 Graded $\D$-modules will play an important role in this work. 
 We will now recall their classification up to isomorphism. 
@@ -204,19 +241,19 @@ Clearly $|\kappa| = \dim_\D (\U)$.
 \end{defi}
 
 Clearly, we can always choose a $k$-tuple $\gamma = (g_1, \ldots, g_k)$ realizing $\kappa$. 
-We can use $\gamma$ to construct the graded $\D$-module $\U \coloneqq {}^{[g_1]}\D \oplus \cdots \oplus {}^{[g_k]}\D$, which is clearly a representative of the isomorphism class of graded $\D$-modules determined by $\kappa$. 
+We can use any such $\gamma$ to construct the graded $\D$-module $\U \coloneqq {}^{[g_1]}\D \oplus \cdots \oplus {}^{[g_k]}\D$, which is a representative of the isomorphism class of graded $\D$-modules determined by $\kappa$. 
 
-\begin{remark}
+\begin{remark}\label{rmk:kappa-as-parameter}
 	Both parameters, the map $\kappa$ and the the $k$-tuple $\gamma$ realizing it, have been used in previous works. 
-	Sometimes both are present, as in \cite{livromicha} (where the tuple is defined so that all elements belong to different left cosets and the multiplicities are recorded as a separate tuple) and \cite{paper-Qn,paper-MAP}; sometimes only the tuple, as in \cite{BK10}; sometimes only the multiset, as in \cite{paper-adrian,felipe-misha}.
+	Sometimes both are present, as in \cite{livromicha} (where the tuple is defined so that all elements belong to different left cosets and the multiplicities are recorded as a separate tuple) and \cite{paper-Qn,paper-MAP}; sometimes only the tuple, as in \cite{BK10}; sometimes only the multiset, as in \cite{paper-adrian,Misha-Felipe}.
 	Here we follow the notation of the latter.
 \end{remark}
 
-A systematic way to obtain $\gamma$ from $\kappa$ is using a set-theoretic section $\xi\from G/T \to G$ of the natural homomorphism $\pi\from G \to G/T$ (\ie, a map such that $\pi(\xi(x)) = x$ for all $x \in G/T$) and a total order $\leq$ on $G/T$. 
+A systematic way to obtain $\gamma$ from $\kappa$ is using a set-theoretic section $\xi\from G/T \to G$ of the natural homomorphism $\pi\from G \to G/T$ (\ie, a map such that $\pi(\xi(x)) = x$ for all $x \in G/T$) and a total order $\leq$ on the set $G/T$. 
 
 \begin{defi}\label{defi:tuple-governed}
     Let $\xi\from G/T \to G$ be a set-theoretic section of the natural homomorphism $\pi\from G \to G/T$ and let $\leq$ be a total order on $G/T$. 
-    Given a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support, set $k \coloneqq |\kappa|$ and let $\gamma$ be the $k$-tuple given by putting the elements of $\{ \xi(x) \mid x \in \supp \kappa\} \subseteq G$ following the order $\leq$ and repeating $\kappa_\bz(x)$ times each element $\xi(x)$. 
+    Given a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support, set $k \coloneqq |\kappa|$ and let $\gamma$ be the $k$-tuple given by putting the elements of $\{ \xi(x) \mid x \in \supp \kappa\} \subseteq G$ following the order $\leq$ and repeating $\kappa(x)$ times each element $\xi(x)$. 
     We will call $\gamma$ the \emph{$k$-tuple realizing $\kappa$ according to $\xi$ and $\leq$}.
 \end{defi}
 
@@ -230,15 +267,15 @@ Of course, $\Hom_\D(\U,\V) \subseteq \Hom_\FF (\U, \V)$.
 If $\dim_\D (\U) < \infty$, we can say more: 
 
 \begin{prop}\label{prop:Hom_D-is-graded}
-    Let $\U$ and $\V$ be graded right $\D$-modules and suppose $\dim_\D \U < \infty$. 
+    Let $\U$ and $\V$ be graded right $\D$-modules and suppose ${\dim_\D \U < \infty}$. 
     Then $\Hom_\D(\U,\V) = \Hom_\D^{\mathrm{gr}} (\U, \V)$ is a graded subspace of $\Hom_\FF^{\mathrm{gr}} (\U, \V)$ (see \cref{defi:elementary-grd-abstract}).
 \end{prop}
 
 \begin{proof}
-    Let $\B = \{ u_1, \ldots, u_l \}$ be a graded basis for $\U$ and $\mc C = \{v_i\}_{i\in I}$ be a graded basis for $\V$, set $g_j \coloneqq \deg u_j$ and $h_i \coloneqq \deg v_i$, for $1\leq j \leq l$ and $i\in I$. 
+    Let $\B = \{ u_1, \ldots, u_\ell \}$ be a graded basis for $\U$ and $\mc C = \{v_i\}_{i\in I}$ be a graded basis for $\V$, set $g_j \coloneqq \deg u_j$ and $h_i \coloneqq \deg v_i$, for $1\leq j \leq \ell$ and $i\in I$. 
     
     Since $\B$ is, in particular, a basis for $\D$ as a free $\D$-module, a $\D$-linear map $f\from \U \to \U$ can be defined by its values on the elements of $\B$. 
-    Given $1\leq j \leq l$, $i\in I$, $t\in T$ and $0\neq d \in \D_t$, define $f_{i, j, d}\from \U \to \V$ to be the $\D$-linear map defined by $f_{i, j, d}(u_r) = \delta_{jr} v_i d$, for every $r \in \{1, \ldots, l \}$. 
+    Given $1\leq j \leq \ell$, $i\in I$, $t\in T$ and $0\neq d \in \D_t$, define $f_{i, j, d}\from \U \to \V$ to be the $\D$-linear map defined by $f_{i, j, d}(u_r) = \delta_{jr} v_i d$, for every $r \in \{1, \ldots, \ell\}$. 
     It is easy to see that $f_{i, j, d}\from \U \to \V$ is a homogeneous element in $\Hom_\FF^{\mathrm{gr}} (\U, \V)$ with
     \[\label{eq:grd-M_k(D)-nonabelian}
         \deg f_{i,j,d} = h_i t g_j\inv.
@@ -254,12 +291,12 @@ Note that, in the case $\U = \V$, this makes $\End_\D (\U)$ a graded algebra and
 % We will follow the convention of writing $\D$-linear maps on the left and $R$-linear maps on the right. 
 
 As usual, if both $\U$ and $\V$ have finite rank over $\D$, we can represent the elements of $\Hom_\D(\U, \V)$ as matrices with entries in $\D$. 
-More precisely, given graded bases $\B = \{ u_1, \ldots, u_l \}$ and $\mc C = \{v_1, \ldots, v_k\}$ for $\U$ and $\V$, respectively, we have an isomorphism of vector spaces $\Hom_\D(\U, \V) \to M_{k\times \ell}(\D)$ given by $f\mapsto (d_{ij})$, where $f(u_j) = \sum_i v_i d_{ij}$. 
+More precisely, given graded bases $\B = \{ u_1, \ldots, u_\ell \}$ and $\mc C = \{v_1, \ldots, v_k\}$ for $\U$ and $\V$, respectively, we have an isomorphism of vector spaces $\Hom_\D(\U, \V) \to M_{k\times \ell}(\D)$ given by $f\mapsto (d_{ij})$, where $f(u_j) = \sum_i v_i d_{ij}$. 
 Under this isomorphism, the map $f_{i, j, d}$ defined in the proof of \cref{prop:Hom_D-is-graded}, corresponds to the matrix $E_{ij}(d) \in M_{k\times \ell}(\D)$, \ie, the matrix which has $d$ in the position $(i,j)$ and $0$ elsewhere. 
 
 \begin{remark}\label{rmk:M_k(F)-tensor-D}
-    Note that we can identify $M_{k \times \ell}(\D) = M_{k \times \ell}(\FF) \tensor_\FF \D$, with $E_{ij}(d)$ corresponding to $E_{ij}\tensor d$. 
-    In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_{k\times \ell}(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_{k\times \ell}(\FF)$ has an elementary grading (see \cref{defi:elementary-grd-matrix}).
+    Note that we can identify $M_{k}(\D) = M_{k}(\FF) \tensor_\FF \D$, with $E_{ij}(d)$ corresponding to $E_{ij}\tensor d$. 
+    In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_{k}(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see \cref{defi:tensor-algebras}), where $M_{k}(\FF)$ has an elementary grading (see \cref{defi:elementary-grd-matrix}).
 \end{remark}
 
 % As usual, if both $\U$ and $\V$ have finite rank over $\D$, we can represent the elements of $\Hom_\D(\U, \V)$ as matrices with entries in $\D$. 
@@ -276,10 +313,7 @@ Special cases of this result appeared in several works, \eg, \cite{BSZ01,MR20463
 Here we follow \cite[Theorem 2.6]{livromicha}, the converse of which also holds (see \cite[page 31]{livromicha}).
 
 \begin{thm}\label{thm:End-over-D}
-    %   Let $G$ be a group and let $R$ be a $G$-graded associative algebra. 
-    % 	Then $R$ is graded-simple and satisfies the \dcc on graded left ideals if, and only if,	there is a $G$-graded division algebra $\D$ and a graded right $\D$-module $\mc{U}$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
-	%
-	Let $G$ be a group and let $R$ be a $G$-graded graded-simple associative algebra satisfying the \dcc on graded left ideals. 
+    Let $G$ be a group and let $R$ be a $G$-graded graded-simple associative algebra satisfying the \dcc on graded left ideals. 
 	Then a $G$-graded division algebra $\D$ and a nonzero graded right $\D$-module $\mc{U}$ of finite rank such that $R \simeq \End_{\D} (\mc{U})$ as graded algebras. \qed
 \end{thm}
 
@@ -423,12 +457,9 @@ For gradings on (super)involution-simple associative (super)algebras or simple L
 Also, we will restrict ourselves to finite dimensional algebras over an algebraically closed field. 
 Hence, for the remainder of this subsection, we will assume that $G$ is abelian and that $\FF$ is algebraically closed.
 
-Let $\D$ be a finite dimensional graded-division algebra and let $T \coloneqq \supp \D$. 
-We then have that $T$ is a finite subgroup of $G$.
+Let $\D$ be a finite dimensional graded-division algebra and set $T \coloneqq \supp \D$, so $T$ is a finite subgroup of $G$.
 For every $t\in T$, let us fix $0 \neq X_t\in D_t$. 
-Then it is easy to see that $\D_t = \D_e X_t$. 
-Since $\D_e$ is a finite dimensional division algebra and $\FF$ is algebraically closed, $\D_e = \FF$. 
-It follows that $\dim_\FF \D_t = 1$ for all $t\in T$.
+Since $\D_e$ is a finite dimensional division algebra and $\FF$ is algebraically closed, $\D_e = \FF$ and, hence, $\dim_\FF \D_t = \dim_\FF X_t\D_e = 1$ for all $t\in T$. 
 
 \begin{defi}\label{def:bicharacter}
     A map $b\from T\times T \to \FF^\times$ is said to be a \emph{bicharacter} if, for every $t\in T$, both maps $b(t, \cdot)\from T \to \FF^\times$ and $b(\cdot, t)\from T \to \FF^\times$ are characters. 
@@ -439,7 +470,7 @@ It follows that $\dim_\FF \D_t = 1$ for all $t\in T$.
         \item \emph{alternating} if $b(t,t) = 1$ for all $t\in T$.
     \end{itemize}
     Clearly, every alternating bicharacter is skew-symmetric. 
-    The \emph{radical} of a (skew-)symmetric bicharacter is the subgroup of $T$ defined by
+    The \emph{radical} of a {(skew-)sym}\-metric bicharacter is the subgroup of $T$ defined by
     \[
         \rad b \coloneqq \{ t \in T \mid b(t, T) =1 \}.
     \]
@@ -540,7 +571,7 @@ and, for each $b\in B$, define $X_b\in \End(V)$ by
 \]
 Finally, we define $X_{ab} \coloneqq X_a X_b$, for all $a\in A$ and $b\in B$. 
 
-\begin{prop}
+\begin{prop}\label{prop:X_t-is-basis}
     The operators $X_t$, $t\in T$ form a basis of the algebra $\End(V)$ and define a division grading associated to $(T, \beta)$. 
 \end{prop}
 
@@ -634,7 +665,7 @@ If this is the case, \cref{thm:iso-End_D-U-with-parameters} gives us the classif
     Given a finite subgroup $T \subseteq G$, a nondegenerate bicharacter $\beta\from T\times T \to \FF^\times$ and a map $\kappa\from G/T \to \ZZ_{\geq 0}$ with finite support such that $|\kappa| \sqrt{|T|} = n$, consider
     \begin{enumerate}[(i)]
         \item a standard realization $\D$ (see \cref{def:standard-realization}) of a matrix algebra with a division grading associated to $(T,\beta)$;
-        \item the elementary grading (see \cref{defi:elementary-grd}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}).  
+        \item the elementary grading (see \cref{defi:elementary-grd-matrix}) on $M_{k}(\FF)$ defined by a $k$-tuple $\gamma$ of elements of $G$ realizing $\kappa$, where $k \coloneqq |\kappa|$ (see \cref{defi:gamma-realizes-kappa}).  
     \end{enumerate}
     We define $\Gamma_M (T, \beta, \kappa)$ to be the grading on $M_n(\FF)$ given by identifying $M_n(\FF)$ with the graded algebra $M_k(\FF) \tensor \D$ via Kronecker product, \ie,
     \[
@@ -648,7 +679,7 @@ Note that we are abusing notation in \cref{def:Gamma-T-beta-kappa}.
 The grading $\Gamma_M (T, \beta, \kappa)$ actually depends on the choices of the standard realization $\D$ and of the $k$-tuple $\gamma$ realizing $\kappa$. 
 Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$. 
 
-\begin{cor}[{\cite[Theorem 2.6]{BK10},\cite[Theorem 2.27]{livromicha}}]
+\begin{cor}[{\cite[Theorem 2.6]{BK10},\cite[Theorem 2.27]{livromicha}}]\label{cor:grds-matrix-alg}
     Every $G$-grading on $M_n(\FF)$ is isomorphic to $\Gamma_M (T, \beta, \kappa)$ as in \cref{def:Gamma-T-beta-kappa}. 
     Two such gradings $\Gamma_M (T, \beta, \kappa)$ and $\Gamma_M (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and there is $g\in G$ such that  $g \cdot \kappa = \kappa'$. \qed
 \end{cor}

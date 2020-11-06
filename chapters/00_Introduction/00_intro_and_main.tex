@@ -1,320 +1,728 @@
-\chapter*{Introduction}
+\chapter*{Introduction}\label{chap:intro}
 
-\section{Basic Concepts}
+The use of group gradings in Lie theory can be traced back to 1888 (see \cite{MR1510529}), when W.~Killing introduced the root space decomposition of a complex semisimple Lie algebra $L$, which gives us a $\ZZ^n$-grading, where $n$ is the rank of $L$.  
+Later, $\ZZ_2$-gradings appeared in the work of E.~Cartan on real semisimple Lie algebras (see \cite{Cartan-1914}). 
+The interest in gradings increased in the 1960's, in connection with the works of J.~Tits, I.L.~Kantor, and M.~Koecher (see \cite{Tit62,Kan64,Koe67}). 
+V.~Kac classified gradings by cyclic groups on complex semisimple Lie algebras and used them in the theory of symmetric spaces in differential geometry in \cite{Kac68}, and later for the construction of the so called twisted loop algebras, which are fundamental for the theory of the famous affine Kac--Moody Lie algebras (see, \eg, \cite{Kac90}). 
+A systematic classification of group gradings on Lie algebras started with \cite{PZ} and remains an active area in the theory of Lie algebras and their representations.
 
-\subsection{Gradings and superalgebras} Throughout this paper we will be always talking about group gradings and superalgebras, so we start defining these. For our purposes, all algebras and vector spaces are over a fixed algebraically closed field $\mathbb{F}$ such that $\operatorname{char} \mathbb{F}=0$.
+The first appearances of Lie superalgebras were related to cohomology (see \cite{FN56,Gen63,Gen64,MM65}), but they were independently introduced in physics, in relation to the so called supersymmetries (see \cite{GN64,Miy68,Mic69}). 
+They became a mainstream topic in theoretical physics with the development of string theory in the 1970's. 
+
+In the present work, our main goal is to classify, up to isomorphism, the group gradings (see \cref{defi:grd-sa}) on nonexceptional classical Lie superalgebras (see \cref{sec:defi-classical-SA}) over an algebraically closed field of characteristic $0$.  
+To achieve this in \cref{chap:Lie}, we first classify group gradings on finite dimensional simple (\cref{chap:grd-simple-assc}) and superinvolution-simple associative superalgebras (\cref{chap:super-inv,chap:grds-sinv-simple}). 
+In this Introduction and in \cref{sec:generalities}, we give the basic definitions and tools we will use throughout the thesis. 
+
+% A POSSIBLE APPLICATIONS:
+
+% \begin{itemize}
+%     \item Quantum numbers, see \cite{Helens_thesis};
+%     \item Another motivation is that the classification problem for Lie colored superalgebras can be reduced to the classification of the gradings on Lie superalgebras, see \cite{MR2497949} and also [Sch79], BM99 and \cite[Theorem 0.10]{livromicha}
+%     \item Graded identities, see \cite{MR3611462};
+%     \item Graded contractions (compare with \cite{livromicha})
+% \end{itemize}
+
+
+\section{Gradings and superalgebras}\label{sec:grds-and-sa}
+
+The main concepts in this work are group gradings and superalgebras, so let us define these first.
+Gradings are usually defined for algebras, but it is useful to consider, more generally, gradings on vector spaces. 
+All vector spaces under consideration will be over a fixed field $\FF$. 
+
+\begin{defi}\label{defi:grading}
+    Let $G$ be a group. 
+	A $G$-\emph{grading on a vector space} $V$ is a direct sum decomposition
+	\[\label{eq:grading}
+	    \Gamma : V= \bigoplus_{g \in G} V_g,
+	\]
+	indexed by the elements of $G$.
+	When endowed with a fixed $G$-grading $\Gamma$, $V$ will be called a \emph{$G$-graded vector space}. 
+\end{defi}
+
+For each $g\in G$, the subspace $V_g$ is called the \emph{homogeneous component of degree $g$}. 
+An element $v \in V$ is said to be \emph{homogeneous} if it belongs to a homogeneous component. 
+Clearly, a nonzero homogeneous element $v$ belongs to a unique component $V_g$ and, in this case, we say that $g$ is the \emph{degree} of $v$ and write $\deg v = g$. 
+Whenever we refer to the degree of an element, we will assume that it is a nonzero homogeneous element. 
+\phantomsection
+\label{homogeneousMap} Given $G$-graded spaces $V$ and $W$, we say that a linear map $\psi\from V \to W$ is \emph{degree-preserving} or a \emph{homomorphism of graded vector spaces}
+if $\psi(V_g) \subseteq W_g$. 
+A subspace $U\subseteq V$ is said to be a \emph{graded subspace} if $U = \bigoplus_{g\in G} (U\cap V_g)$, \ie, if every element in $U$ is a sum of homogeneous elements in $U$. 
 
 % defi: grading
 \begin{defi}\label{def:grading}
-	Let $G$ be a group. A $G$-\emph{grading} on an algebra $A$ is a vector space decomposition indexed by the elements of $G$
-	\[\Gamma : A= \bigoplus_{g \in G} A_g,\]
-	such that $ab \in A_{gh}$, for all $a \in A_{g}$ and $b \in A_{h}$. We say that the elements elements of $A_g$ are \emph{homogeneous of degree $g$}.
+	Let $G$ be a group. 
+	A $G$-\emph{grading on an algebra} $A$ is 
+% 	a vector space decomposition indexed by the elements of $G$
+    a grading 
+	$
+	    \Gamma : A= \bigoplus_{g \in G} A_g
+	$ on the vector space underlying $A$
+	such that 
+	\[
+	    \forall g, h\in G, \quad
+	    A_g A_h \subseteq A_{gh}.
+	   % \forall a \in A_g, \forall b\in A_h, \quad ab \in A_{gh}.
+	\]
+% 	$ab \in A_{gh}$, for all $g,h \in G$, $a \in A_{g}$ and $b \in A_{h}$. 
+	When endowed with a fixed $G$-grading $\Gamma$, $A$ is called a \emph{$G$-graded algebra}. 
+% 	Given a grading $\Gamma$ on $A$, we say that the pair $(A, \Gamma)$ is a \emph{graded algebra}. 
 \end{defi}
+
+A \emph{homomorphism of $G$-graded algebras} is a homomorphism of algebras that is also a degree-preserving map. 
+If $V$ is a finite dimensional graded vector space, then $\End(V)$ can be considered as a $G$-graded algebra by setting 
+\[\label{eq:elementary-1st}
+    \End(V)_g \coloneqq \{ T\in \End(V) \mid \forall h\in G,\, T(V_h) \subseteq V_{gh} \}.
+\]
+(Compare with \cref{defi:elementary-grd-abstract,defi:elementary-grd-matrix}).
+Note that $\End(V)$ consists of all linear maps and $\End(V)_e$ consists of the degree-preserving linear maps.
+
+% spaces $V = \bigoplus_{g \in G} V_g$ and $W = \bigoplus_{g \in G} W_g$ is a linear map $\psi\from V \to W$ such that $\psi(V_g) \subseteq W_g$. 
+
+% Elementary grading, abstract
+
+% If $U$ and $V$ are graded vector spaces and $T\from U \to V$ is a linear map, we say that $T$ is \emph{homogeneous of degree $g$}, for some $g \in G$, if 
+
+% (see more in ...)
 
 % defi: graded algebra and superalgebra
-It is usual to fix a grading on an algebra, considering the pair $(A, \Gamma)$ as one object, called \emph{$G$-graded algebra}. A \emph{superalgebra} is simply a $\Zmod2$-graded algebra; however, the concept of superalgebra of a certain variety (e.g., associative, Lie, Jordan) is less straightforward, as we will see at Subsection \ref{subsec:super-analog}.
-
-% superscripts and names even, odd
-To distinguish the canonical $\mathbb{Z}_2$-grading of a superalgebra from any other $G$-grading that it may carry, we will use superscripts to label the components: $A=A\even \oplus A\odd$. Also, the homogeneous elements of degree $\bar0$ are called \emph{even} and the homogeneous elements of degree $\bar1$ are called \emph{odd}.
-
-\subsection{Superalgebra of a variety}\label{subsec:super-analog}
-
-We will show now a general way to define the ``super'' analog of a class of algebras. We start defining what is the Grassman superalgebra of vector space:
-
-\begin{defi}\label{def:Grassmann-algebra}
-	Let $V$ be a vector space. The Grassmann algebra of $V$ is
-	%
-	\[\mc G(V) = \sum_{k=0}^{+\infty} \Exterior^k V\]
-	%
-	with product given by the ``$\wedge$'' operation.
-
-	It has a natural $\Zmod2$-grading, given by $\mc G(V)\even = \sum_{i=0}^{+\infty}\Exterior^{2i} V$ and $\mc G(V)\odd = \sum_{i=0}^{+\infty}\Exterior^{2i+1} V$, so we can consider it as a superalgebra.
+\begin{defi}\label{def:superalgebra}
+    A \emph{super vector space} or \emph{superspace} is a $\ZZ_2$-graded vector space. 
+    A \emph{superalgebra} is a $\ZZ_2$-graded algebra. 
 \end{defi}
 
-For the scope of this subsection, $V$ will be a fixed vector space with a infinite enumerable basis and will denote its Grassmann algebra simply by $\mc G$. If $A=A\even\oplus A\odd$ is a superalgebra we define its \emph{Grassmann envelope} by $A\even\tensor \mc G\even + A\odd\tensor \mc G\odd$, considered as an algebra.
+% superscripts and names even, odd
+The $\ZZ_2$-grading in \cref{def:superalgebra} will be called the \emph{canonical $\ZZ_2$-grading}.
+We will index the homogeneous components of the canonical $\ZZ_2$-grading by superscripts, \ie, for a superspace $V$, we will write \cref{eq:grading} as $V = V\even \oplus V\odd$. 
+The elements of $V\even$ are said to be \emph{even} and the elements of $V\odd$ are said to be \emph{odd}; we may use the word ``\emph{parity}'' instead of ``degree'' and write $|v|$ instead of $\deg v$. 
+Also, in this situation, we refer to graded subspaces as \emph{subsuperspaces}. 
+The subalgebras of a superalgebra that are also subsuperspaces are called \emph{subsuperalgebras}. 
+This special notation and nomenclature will serve to distinguish the canonical $\ZZ_2$-grading from an additional group grading we may consider on $A$:  
 
-Let $\mc R$ be a class of algebras (\eg, associative, Lie, Jordan). We define the class of $R$-superalgebras, denoted by $\mc R_S$ the class of superalgebras $A$ such that its Grassmann envelope is in $R$ and call its elements $\mc R$-superalgebras. In the case of $R$ being the class of Lie algebras we call the elements of $R_S$ Lie superalgebras.
+\begin{defi}\label{defi:grd-sa}
+    Let $G$ be a group. 
+    A \emph{$G$-grading on a superalgebra} $A = A\even \oplus A\odd$ is a $G$-grading $\Gamma: A = \bigoplus_{g\in G} A_g$ on the algebra underlying $A$ such that all homogeneous components $A_g$ are subsuperspaces or, equivalently, $A\even$ and $A\odd$ are $G$-graded subspaces. 
+    % \[
+    %     \forall g\in G, \quad A_g = (A_g \cap A\even) \oplus (A_g \cap A\odd).
+    % \]
+    When endowed with a fixed grading $\Gamma$, $A$ is called a \emph{$G$-graded superalgebra}. 
+    Two $G$-gradings, $\Gamma$ and $\Gamma'$, on a superalgebra $A$ are said to be \emph{isomorphic} if $(A, \Gamma)$ and $(A, \Gamma')$ are isomorphic as graded superalgebras. 
+\end{defi}
 
-% Lie superalgebras
+\phantomsection\label{defi:G-sharp}
+% Def of $G^\#$
+Given a $G$-graded superalgebra $A$, we can combine the $G$-grading with the canonical $\ZZ_2$-grading:
+we set $G^\#\coloneqq G\times \ZZ_2$ and define a $G^\#$-grading on the algebra underlying $A$ by setting $A_{(g,i)} \coloneqq A_g \cap A^i$, for all $g\in G$ and $i\in \ZZ_2$. 
+Conversely, it is clear that any $G^\#$-graded algebra can be seen as a $G$-graded superalgebra. 
 
-\subsection{Lie Superalgebras}
-Following the procedure of last subsection, one can see that a \emph{Lie superalgebra} is not (in general) a $\Zmod2$-graded Lie algebra. The notion can be axiomatized as follows (with product denoted by brackets)
+\section{Varieties of superalgebras}\label{sec:Grassmann}
 
-\begin{defi}
-	A \emph{Lie superalgebra} is a superalgebra $L=L\even\oplus L\odd$ that satisfies, for all $a \in L^{\alpha}$ and $b \in L^{\beta}$, $\,\alpha,\beta\in\Zmod2$, the following two axioms\footnote{However, in characteristics  2 and 3 there are further requirements, see \cite[Subsection 1.2]{MR1192546} }:
+Now we are going to define the variety of superalgebras we are mainly interested in:
 
+\begin{defi}\label{def:Lie-sa}
+	A superalgebra $L=L\even\oplus L\odd$, with product denoted by $[\cdot, \cdot]\from L\times L \to L$, is said to be a \emph{Lie superalgebra} if, for all nonzero homogeneous elements $a, b, c \in L$, we have\footnote{Some authors require additional conditions if $\Char \FF = 2$ or $3$ (\eg, \cite[Subsection 1.2]{MR1192546}).}:
+	%
 	\begin{enumerate}[(i)]
-		\item \makebox[6.8cm][l]{$[ a, b ] = - (-1)^{\alpha \beta} [b, a]$}(super anticommutativity)
-		\item \makebox[6.8cm][l]{$[a,[b,c]] = [[a,b],c] + (-1)^{\alpha \beta} [b, [a,c]]$}(super Jacoby identity)
+		\item $[ a, b ] = - \sign{a}{b} [b, a]$ (\emph{super-anti-commutativity});
+		\item $[a,[b,c]] = [[a,b],c] + \sign{a}{b} [b, [a,c]]$ (\emph{super Jacoby identity}).
 	\end{enumerate}
 \end{defi}
 
-A important remark is that, by definition, the even component $L\even$ is a Lie algebra and the odd component $L\odd$ is an $L\even$-module. This does not encode the Lie superalgebra structure entirely, but it is very helpful.
+Note that if $L\even = L$, then we have the usual definition of a Lie algebra. 
 
-\subsection{Gradings on superalgebras}
+It is easier to define the variety of associative superalgebras:
 
-% granding on superalgebra
-By a \emph{$G$-grading on a superalgebra $A = A\even\oplus A\odd$} we mean a $G$-grading $\Gamma : A= \bigoplus_{g \in G} A_g$ that is also compatible with its canonical $\Zmod2$-grading, \ie, $A_g=\left(A_g\cap A\even\right)\oplus\left(A_g\cap A\odd\right)$ for every $g\in G$.
-
-\begin{remark}\label{rmk:G-sharp}
-    Note that a $G$-grading on a superalgebra is the same of a $G^\#$-grading on an algebra.
-\end{remark}
-
-To avoid confusion, we may refer to the degree with respect the canonical $\ZZ_2$-grading by \emph{parity}. 
-
-In particular, a $G$-grading on a Lie superalgebra $L=L\even\oplus L\odd$ can be restricted to its even and odd parts, in the sense that $L\even = \bigoplus_{g\in G} L_g\cap L\even$ and $L\odd = \bigoplus_{g\in G} L_g\cap L\odd$. This makes a $L\even$ a graded Lie algebra and makes $L\odd$ a graded module:
-
-\begin{defi}
-	Let $G$ be a group, $L = \bigoplus_{g\in G} L_g$ be a $G$-graded Lie algebra and $V$ is a module over $L$. A $G$-grading on $V$ is a vector space decomposition $V=\bigoplus_{g\in G} V_g$ such that $L_a\cdot V_b \subseteq V_{ab}$ for all $a,b\in G$.
+\begin{defi}\label{def:associative-sa}
+    A superalgebra $R$ is said to be an \emph{associative superalgebra} if the algebra underlying $R$ is associative. 
 \end{defi}
 
-\section{Motivation}
+The reader may be curious why we introduce signs in \cref{def:Lie-sa} but not in \cref{def:associative-sa}. 
+This has to do with the so called \emph{rule of signs}. 
+Roughly speaking, every time two elements $a$ and $b$ exchange positions in a product in one of the identities that define the variety, we have to introduce the sign $\sign{a}{b}$. 
+To make this more precise, we will use the notion of Grassmann envelope.\footnote{Another framework in which the rule of signs can be formulated is the symmetric monoidal category of super vector spaces (see, \eg, \cite[Chapter 3]{MR2069561}).} 
 
-Gradings on Lie algebras first appeared in W.~ Killing’s 1888 paper \cite{MR1510529}, where the root space decomposition of a complex semisimple Lie algebra $L$ was introduced. This is a grading by $\ZZ^n$, where $n$ is the rank of $L$, and it turned out to be of fundamental importance in the theory of Lie algebras. Gradings by the cyclic group $\ZZ_2$ appeared in the work of E.~Cartan on real semisimple Lie algebras \cite{Cartan-1914}. The interest in gradings increased in the 1960's, in connection with the works of J.~Tits, I.L.~Kantor, and M.~Koecher \cite{Tit62,Kan64,Koe67}. V.~Kac classified gradings by cyclic groups on complex semisimple Lie algebras and used them in the theory of symmetric spaces in differential geometry \cite{Kac68} and later for the construction of the so called twisted loop algebras, which are fundamental for the theory of the famous affine Kac--Moody Lie algebras \cite{Kac90}. Gradings remain important in the theory of Lie algebras and their representations ever since.
+\begin{defi}\label{def:Grassmann-algebra}
+	Let $V$ be a vector space. 
+	The \emph{exterior} or \emph{Grassmann superalgebra} of $V$ is the algebra
+	%
+	\[\mc G(V) = \bigoplus_{k=0}^{+\infty} \Exterior^k V,\]
+	%
+	with product given by $\wedge$ and $\ZZ_2$-grading given by 
+	\[
+	    \mc G(V)\even = \bigoplus_{i=0}^{+\infty}\Exterior^{2i} V \,\AND\, \mc G(V)\odd = \bigoplus_{i=0}^{+\infty}\Exterior^{2i+1} V.
+	\]
+\end{defi}
 
-According to \cite{Freund:1986ws}, Lie superalgebras' first appearances were related to cohomology (see  \cite{FN56}, \cite{Gen63}, \cite{Gen64} and \cite{MM65}). About the same time, they were independently introduced in physics, in connection with the so called supersymmetries (see \cite{GN64}, \cite{Miy68} and \cite{Mic69}). They become a mainstream topic in theoretical physics with the development of string theory in the 1970's.
+% Given a vector space $V$, the \emph{Grassmann superalgebra} of $V$ is the algebra
+% \[
+%     \mc G(V) = \sum_{k=0}^{+\infty} \Exterior^k V,
+% \]
+% with product given by the ``$\wedge$'' operation, endowed with the $\ZZ_2$-grading given by 
+% \[
+%     \mc G(V)\even = \sum_{i=0}^{+\infty}\Exterior^{2i} V \,\AND\, \mc G(V)\odd = \sum_{i=0}^{+\infty}\Exterior^{2i+1} V.
+% \]
+Note that, if $a,b \in \mc G(V)$ are homogeneous elements, then $a \wedge b = \sign{a}{b} b \wedge a$. 
+Superalgebras with this property are called \emph{(super)commutative}. 
 
-In one of the earliest papers on gradings on Lie superalgebras (\cite{MR974693}), J.~Van der Jeugt wrote:
+\begin{defi}\label{Grassmann-envelope}
+    Let $V$ be a fixed vector space with a countably infinite basis. 
+    Given a superalgebra $A = A\even \oplus A\odd$, we define the \emph{Grassmann envelope} of $A$ to be the algebra $(A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd)$. 
+    If $\mathfrak{V}$ is any class of algebras, we say that $A$ is a \emph{$\mathfrak{V}$-superalgebra} if the Grassmann envelope of $A$ belongs to $\mathfrak{V}$. 
+\end{defi}
 
-\begin{quote}\emph{Gradings for Lie (super)algebras are important because they give rise to preferred bases of the algebra which admit `additive quantum numbers'.}\end{quote}
+One can easily see that, if $\mathfrak{V}$ is the class of all Lie (respectively associative, commutative) algebras, then the $\mathfrak{V}$-superalgebras are precisely the Lie (respectively associative, commutative) superalgebras. 
+This approach can be used to define other varieties of superalgebras (\eg, Jordan). 
 
-Another motivation is that the classification problem for Lie colored superalgebras can be reduced to the classification of the gradings on Lie superalgebras, see \cite{MR2497949}.
+Another kind of object that plays a major role in this work is associative superalgebras with superinvolution:
 
-\section{Simple Lie superalgebras}
+\begin{defi}\label{def:super-anti-automorphism}
+    Let $A = A\even \oplus A\odd$ be a superalgebra. 
+    We say that a bijective linear map $\vphi\from A \to A$ is a \emph{super-anti-automorphism} if $\vphi(A\even) = A\even$, $\vphi(A\odd) = A\odd$ and
+    \[\label{eq:super-anti-automorphism}
+        \forall a,b \in A\even \cup A\odd, \quad \vphi(ab) = \sign{a}{b} \vphi(b)\vphi(a).
+    \]
+    If, further, $\vphi^2 = \id$, we say that $\vphi$ is a \emph{superinvolution}. 
+\end{defi}
 
-An \emph{ideal} $I$ of a Lie superalgebra $L=L\even\oplus L\odd$ is an ideal of the underlying algebra that is compatible with the canonical $\Zmod2$-grading in the sense that $I=\left(I\cap A\even \right) \oplus \left(I\cap A\odd \right)$. The superalgebra $L$ is said to be \emph{simple} if it has no proper nonzero ideals and $[L,L]\neq 0$.
+For example, the identity map $\id\from \mc G(V) \to \mc G(V)$ is a superinvolution. 
+For comparison with \cref{Grassmann-envelope}, note that a parity-preserving bijective linear map $\vphi\from A \to A$ satisfies \cref{eq:super-anti-automorphism} \IFF the map $\vphi \tensor \id \from (A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd) \to (A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd)$ is an antiautomorphism. 
 
-The simple finite dimensional Lie superalgebras (that are not Lie algebras) were classified by V. G. Kac, see \cite{artigokac}, \cite{livrosuperalgebra}. They are divided in two big classes:
+\begin{defi}\label{defi:grd-superinv}
+    Let $(R, \vphi)$ be a superalgebra $R$ endowed with a super\--anti\--auto\-mor\-phism $\vphi$. 
+    A $G$-grading on $(R, \vphi)$ is a $G$-grading $\Gamma : R = \bigoplus_{g \in G} R_g$ on the superalgebra $R$ such that $\vphi(R_g) = R_g$, for all $g\in G$. 
+\end{defi}
+
+We can always get a Lie superalgebra from an associative one by considering the supercommutator:
+
+\begin{defi}\label{defi:supercommutator}
+    Let $R$ be an associative superalgebra. 
+    We define the \emph{supercommutator} $[\cdot, \cdot]\from R \to R$ to be the bilinear map such that
+    \[
+        \forall a,b\in R\even \cup R\odd, \quad [a,b] = ab - \sign{a}{b} ba.
+    \]
+    The superalgebra $R^{(-)}$ is defined to be the superspace $R$ endowed with the product $[\cdot, \cdot]$. 
+    If $\vphi\from R\to R$ is a super-anti-automorphism, then we define
+    \[
+        \Skew(R, \vphi) \coloneqq \{a \in R^{(-)} \mid \vphi(a) = -a \}.
+    \]
+\end{defi}
+
+It is straightforward to check that $R^{(-)}$ is a Lie superalgebra and that $\Skew(R, \vphi)$ is a subsuperalgebra of $R^{(-)}$. 
+If $G$ is an abelian group, then a $G$-grading on $R$ is also a $G$-grading on $R^{(-)}$. 
+Moreover, if $(R, \vphi)$ is $G$-graded, then $\Skew (R, \vphi)$ is a graded subsuperalgebra of $R^{(-)}$. 
+
+% ----
+\section{Simple superalgebras}\label{sec:simple-algebras}
+
+\begin{defi}
+    Let $A = A\even \oplus A\odd$ be a superalgebra. 
+    A \emph{superideal} of $A$ is an ideal $I \subseteq A$ that is also a subsuperspace. 
+    We say that $A$ is a  \emph{simple superalgebra} if $A\cdot A \neq 0$ and the only superideals are $0$ and $A$.
+\end{defi}
+
+
+% \begin{defi}
+%     Let $A = \bigoplus_{g\in G} A_g$ be a graded algebra. 
+%     A \emph{graded ideal} is an ideal $I \subseteq A$ such that $I = \bigoplus_{g\in G} (I \cap A_g)$. 
+%     We say that $A$ is \emph{graded-simple} if $A\cdot A \neq 0$ and the only graded ideals in $A$ are $0$ and $A$.
+% \end{defi}
+
+% \begin{defi}
+%     A superalgebra is said to be \emph{simple} if it is simple as a $\ZZ_2$-graded algebra. 
+%     A graded superalgebra is said to be \emph{graded-simple} if it is graded as
+% \end{defi}
+
+We are mainly interested in simple Lie superalgebras in this work, but many of them are closely related to simple associative superalgebras, so we start with these. 
+If $\FF$ is algebraically closed, the finite dimensional simple associative superalgebras are:
+%
+\begin{itemize}
+    \item the matrix superalgebras $M(m,n)$;
+    
+    \item the queer superalgebras $Q(n)$.
+\end{itemize}
+
+This is a well known result, which we obtain in \cref{chap:grd-simple-assc} as a special case of the classification of graded-simple associative algebras (see \cref{thm:fd-simple-SA}). 
+The definitions are given in \cref{subsec:simple-associative}, below. 
+
+If $\FF$ is algebraically closed and $\Char \FF = 0$, 
+the simple finite dimensional Lie superalgebras (that are not Lie algebras) were classified by V. G. Kac (see \cite{artigokac} and \cite{livrosuperalgebra}). 
+They are divided into two big classes according to the action of $L\even$ on $L\odd$ (note that, for any Lie superalgebra $L=L\even \oplus L\odd$, $L\even$ is a Lie algebra and $L\odd$ is an $L\even$-module). 
 
 \begin{defi}
 	Let $L=L\even \oplus L\odd$ be a simple Lie superalgebra.
 	\begin{enumerate}[(i)]
-		\item We say that $L$ is \emph{classical} if $L\odd$ is a semisimple module over $L\even$.
-		\item We say that $L$ is of \emph{Cartan type} if $L\odd$ has a largest proper submodule, \ie, a proper submodule that contains all proper submodules.
+		\item We say that $L$ is \emph{classical} if $L\odd$ is a semisimple $L\even$-module.
+		\item We say that $L$ is of \emph{Cartan type} if $L\odd$ has a nonzero largest proper submodule, \ie, a proper submodule that contains all proper submodules.
 	\end{enumerate}
-
 \end{defi}
 
-Every simple finite dimensional Lie superalgebra (that is not a Lie algebra) are either classical or of Cartan type. The classical ones are, in their turn,  divided as follows:
+Every simple finite dimensional Lie superalgebra (that is not a Lie algebra) is either classical or of Cartan type. 
+The classical ones are, in their turn, divided as follows:
 
 \begin{itemize}
-	\item 4 series, $A(m,n)$, $B(m,n)$, $C(n)$, $D(m,n)$, which are generalizations of the corresponding series of simple Lie algebras;
+	\item 4 series, $A(m,n)$, $B(m,n)$, $C(n)$, $D(m,n)$, which are analogous to the corresponding series of simple Lie algebras;
 
 	\item 2 series, $P(n)$ and $Q(n)$, which are called the \emph{strange Lie superalgebras};
 
-	\item 3 exceptional cases: $F(4)$, $G(3)$ and the family $D(2,1,\alpha)$, $\alpha \in \mathbb{F}\setminus \{0,1\}$.
+	\item 3 exceptional cases: $F(4)$, $G(3)$ and the family $D(2,1,\alpha)$, $\alpha \in \mathbb{F}\setminus \{0,-1\}$.
 \end{itemize}
 
-The Lie superalgebras of Cartan type are divided in 4 series:
-%
-\begin{itemize}
-	\item the \emph{Witt algebras} $W(n)$;
-	\item the \emph{special algebras} $S(n)$ and their deformations, $\tilde S(n)$;
-	\item the \emph{Hamiltonian algebras} $H(n)$.
-\end{itemize}
-
-This algebras are the analogous of the corresponding simple infinite dimensional Lie algebras of Cartan type, as well as the simple restricted Lie algebras of Cartan type.
-
-It is important to say that there are restrictions to the parameters above. We are going to explicit them together with the definitions of these Lie superalgebras.
-
-\subsection{The classical Lie superalgebras}\label{sec:defi-classical-SA}
-
-Through all this subsection $m, n$ are always non-negative integers and $U$ is a finite dimensional vector space with fixed decomposition $U=U\even\oplus U\odd$.
-
-Before we define the classical Lie superalgebras we need to define an important non-simple Lie superalgebra that is related to most of them: the \emph{general linear Lie Superalgebra} $\gl(U)$. Its underlying set is
-%
-\[\End(U)=\left(\begin{matrix}
-			\End(U\even)       & \Hom(U\odd,U\even) \\
-			\Hom(U\even,U\odd) & \End(U\odd)        \\
-		\end{matrix}
-	\right).\]
-%
-We define the $\Zmod2$-grading on $\gl(m|n)$ by declaring
-\[\gl(m|n)\even = \left(\begin{matrix}
-			\End(U\even) & 0           \\
-			0            & \End(U\odd) \\
-		\end{matrix}
-	\right)\] and
-\[\gl(m|n)\odd = \left(\begin{matrix}
-			0                  & \Hom(U\odd,U\even) \\
-			\Hom(U\even,U\odd) & 0                  \\
-		\end{matrix}
-	\right).\]
-%
-We define the product of $a\in\gl(U)^{\alpha}$ and $b\in\gl(U)^{\beta}$, for all $\alpha,\beta\in\Zmod2$, by
-\[ [a,b] = ab - (-1)^{\alpha\beta}ba\]
-and extend it to the whole algebra by linearity.
-
-If $U\even = \FF^m$ and $U\odd = \FF^n$ we denote $\gl(U)$ by $\gl(m|n)$.
-
-\subsubsection{The series $A(m,n)$} The \emph{special linear Lie superalgebra}, denoted by $\Sl (m|n)$, is the derived algebra of $\gl(m|n)$. Following the matrix notation we had above, we can write:
-%
-\[ \Sl(m,n) =\left\{
-	\left(\begin{matrix}
-			a & b \\
-			c & d \\
-		\end{matrix}\right) \mid \tr a = \tr d\right\}.
-\]
-%
-If $m\neq n$ then $\Sl(m|n)$ is already a simple Lie superalgebra. However, if $m=n$, the identity map $1\in \Sl(n|n)$ is a central element and hence $\Sl(n|n)$ is not simple, but the quotient $\Sl(n|n)/ \FF 1$ is.
-
-For $m$,$n\geq 0$, the simple Lie superalgebra $A(m,n)$ is defined to be $\Sl(m+1|n+1)$ if $m\neq n$, and to be $\Sl(n+1|n+1)/ \FF 1_U$ if $m=n$.
-
-We have that $A(m,n)\iso A(n,m)$, so we also ask $m\geq n$ to avoid repetitions.
-
-\subsubsection{The series $B(m,n)$, $C(n)$ and $D(m,n)$}
-
-Let $B:U\times U \rightarrow \FF$ be a bilinear form on $U$. We say that $B$ is \emph{supersymmetric} if, for all $\alpha,\beta\in\Zmod2$, $x\in U^{\alpha}$ and $y\in U^{\beta}$ we have that
-\[B(x,y) = (-1)^{\alpha\beta}B(y,x).\]
-One can also define a super-skew-symmetric form by putting an extra minus sign in the right-hand side. 
-
-Also, we say that $B$ is \emph{even} if $F(V^0,V^1) = F(V^1,V^0)=0$ and \emph{odd} if $F(V^0,V^0) = F(V^1,V^1)=0$.
-
-If $B$ is a nondegenerate, supersymmetric and even bilinear form on $V$, we define
+The Lie superalgebras of Cartan type are analogs of the corresponding simple (infinite dimensional) Lie algebras of Cartan type, as well as the simple restricted Lie algebras of Cartan type.
+They are divided in the following series:
 
 \begin{itemize}
-	\item $\osp(m|n)\even = \{T\in \End (V)^{0} \mid F(T(x),y) = - F(x,T   (y))\,\, \forall x,y\in V\}$;
-	\item $\osp(m|n)\odd = \{T\in \End (V)^{1} \mid F(T(x),y) = -(-1)^{\alpha} F(x,T(y))
-		      \,\, \forall x\in V^{\alpha}, \alpha\in\mathbb{Z}_2 \text{ and } \forall y\in V\}$.
+	\item the Witt superalgebras $W(n)$;
+	\item the special superalgebras $S(n)$ and their deformations $\tilde S(n)$;
+	\item the Hamiltonian superalgebras $H(n)$.
 \end{itemize}
 
-We then define
+It is important to mention that there are restrictions on the parameters $m$ and $n$ above. 
+We are going to make them explicit when we give the corresponding definitions in \cref{sec:defi-classical-SA,subsec:Cartan}. 
+Also note that the symbol $Q(n)$ denotes both an associative superalgebra and a Lie superalgebra; we will explicitly use the words ``associative'' and ``Lie'' if there is a chance of confusion. 
 
-\begin{itemize}
-	\item $B(m,n) = \osp(2m+1,2n)$, for $n\geq 0$ and $m\geq 1$;
-	\item $C(n) = \osp(2, 2(n-1))$, for $n\geq 2$;
-	\item $D(m,n) = \osp(2m,2n)$, for $m\geq 2$ and $n\geq 1$.
-\end{itemize}
-But we have that $C(2)\iso A(1,0)$, so, to avoid repetition, we ask for $n\geq 3$ in the $C(n)$ case.
+To define some of the simple Lie superalgebras listed above we will need superinvolutions on simple associative superalgebras (which will be described in \cref{subsec:simple-associative}) and also the following concepts:
 
-\subsubsection{The series $P(n)$}
-From now on, we suppose that $B$ is non-degenerate, supersymmetric and odd. In this case, it is clear that $U\odd$ is isomorphic to $(U\even)^*$ by means of the map $u \mapsto B(u, \cdot)$. %Again supposing $U$ to be finite dimensional, let us put $n + 1 = \Dim (U\even) = \Dim (U\odd)$.
+\begin{defi}
+    Let $L$ be a Lie superalgebra. 
+    The \emph{(super)center} of $L$ is the superideal $Z(L) \coloneqq \{ x\in L \mid [x, L] = 0\}$. 
+    The \emph{derived superalgebra} of $L$ is $L^{(1)} \coloneqq [L, L]$. 
+    In the case $L = R^{(-)}$ for an associative superalgebra $R$, we may also denote $L^{(1)}$ by $R^{(1)}$. 
+\end{defi}
 
-\subsubsection{The series $Q(n)$}
+The notions of simplicity for superalgebras endowed with a super-anti-automorphism and/or a grading will play a major role in this work:
 
-This series, called \emph{queer}, is different in that we have to start from an associative superalgebra that is simple as a superalgebra but not as an algebra. Namely, let $A=R\times R$, with component-wise product, where $R=M_{n+1}$, $n\ge 1$. Then $(x,y)\mapsto(y,x)$ is an automorphism of $A$ of order $2$ and hence its eigenspace decomposition is a $\mathbb{Z}_2$-grading on $A$, with $A^\bz=\{(x,x)\;|\;x\in R\}$ and $A^\bo=\{(x,-x)\;|\;x\in R\}$. Note that $A^\bz$ is isomorphic to $R$ as an algebra and $A^\bo=uA^\bz$ where $u=(1,-1)$, so we may write $A=R\oplus uR$ where $u$ is odd, commutes with the elements of $R$ and satisfies $u^2=1$. This latter definition works even if $\mathrm{char}\,\mathbb{F}=2$. The associative superalgebra $A$ can be identified with a subalgebra of $M(n+1,n+1)$ as follows:
-\[
-	\left\{
-	\left[
-		\begin{matrix}
-			a & b \\
-			b & a \\
-		\end{matrix}
-		\right] \in M(n+1,n+1) \; \Big| \;
-	a,b \in M_{n+1} \right\}\stackrel{\sim}{\to}A,\quad
-	\left[\begin{matrix}
-			a & b \\
-			b & a \\
-		\end{matrix}\right]\mapsto a+ub.
-\]
-Let $\widetilde{Q}(n)$ be the derived superalgebra of $A^{(-)}$. Then
-\[
-	\widetilde{Q} (n) = \left\{
-	\left[
-		\begin{matrix}
-			a & b \\
-			b & a \\
-		\end{matrix}
-		\right] \in M(n+1,n+1) \; \Big| \;
-	a,b \in M_{n+1},\,\tr(b)=0 \right\}.
-\]
-Set $Q(n)$ to be the quotient of $\widetilde{Q}(n)$ by its center, which is spanned by the identity matrix:
-\[
-	Q(n)=\frac{\widetilde{Q} (n)}{\mathbb{F}1}.
-\]
+\begin{defi}\label{defi:superinvolution-simple}
+    Let $A = A\even \oplus A\odd$ be a superalgebra endowed with a super-anti-automorphism $\vphi\from A \to A$. 
+    A superideal $I$ is said to be \emph{$\vphi$-invariant} if $\vphi(I) \subseteq I$. 
+    We say that $A$ is \emph{simple as a superalgebra with super-anti-automorphism} if $A\cdot A \neq 0$ and the only $\vphi$-invariant superideals in $A$ are $0$ and $A$. 
+    In the case $\vphi$ is a superinvolution, we say that $A$ is \emph{superinvolution-simple}.
+\end{defi}
 
-The Lie superalgebra $Q(n)$ is simple for $n\geq 3$.
+The classification of superinvolution-simple associative superalgebras is well known (see, \eg, \cite{racine}) and will be proved in \cref{sec:sinv-simple} as a special case of the theory we develop in this work. 
 
-The \emph{periplectic Lie superalgebra} $\mathfrak{p}(U)$ is defined as $\mathfrak{p}(U)\even \oplus \mathfrak{p}(U)\odd$ where \[\begin{aligned}
-		\mathfrak{p}(U)^{i} = \{T\in \gl(U)^i\mid&\,\, B(T(x),y) = - (-1)^{i\alpha}B(x,T(y))\\ &\text{for all}\,\,\alpha\in\Zmod2,\,\, x\in U^{\alpha} \AND y\in U\}\end{aligned}\] for all $i\in\Zmod2$. The superalgebra $\mathfrak{p}(U)$ is not simple, but its derived superalgebra is.
+\begin{defi}\label{defi:graded-simple}
+    Let $A$ be a $G$-graded superalgebra. 
+    A \emph{graded superideal} is a superideal that is also a $G$-graded subspace. 
+    We say that $A$ is a  \emph{graded-simple superalgebra} if $A\cdot A \neq 0$ and the only graded superideals in $A$ are $0$ and $A$. 
+    If $A$ is endowed with a super-anti-automorphism $\vphi\from A \to A$, we say that $A$ is \emph{simple as a graded superalgebra with super-anti-automorphism} if the only $\vphi$-invariant graded superideals in $A$ are $0$ and $A$. 
+    In the case $\vphi$ is a superinvolution, we say that $A$ is \emph{graded-superinvolution-simple}.
+\end{defi}
 
-The Lie superalgebra $P(n)$ is defined to be $[\mathfrak{p}(U),\mathfrak{p}(U)]$ in the case \\ $\dim (U\even) =$ $\dim (U\odd) = n+1$.
+\subsection{Simple associative superalgebras}\label{subsec:simple-associative}
 
-The isomorphism class of $P(n)$ does not depend on the choice of the bilinear form $B$. %Since $U\even$ and $U\odd$ are in duality by $B$, we see that, as vector space with bilinear form, $U$ is isomorphic to $V = V\even\oplus V\odd$ where $V\even=U\even$ and $V\odd=(U\even)^*$ and the bilinear form $B':V\times V\rightarrow \FF$ is given by
-$U\odd$ can be identified with $(U\even)^*$ and with this identification we can write $U=V\oplus V^*$, $\operatorname{dim} V = n+1$, and $B$ is given by
-\[B(v_1+v^*_1,v_2 + v_2^*) = \langle v_1^*, v_2\rangle + \langle v_2^*, v_1\rangle\] for all $v_1, v_2\in V$ and $v_1^*, v_2^*\in V^*$,%
-%\smallskip
-%\noindent for all $u_1, u_2\in U\even$ and $u_1^*, u_2^*\in U\odd = (U\even)^*$,
+\subsubsection{The series \texorpdfstring{$M(m,n)$}{M(m,n)}}
+
+Let $m, n \geq 0$ be integers that are not both zero.
+The \emph{matrix superalgebra} $M(m,n)$ is defined to be the matrix algebra $M_{m+n}(\FF)$ endowed with the following $\ZZ_2$-grading:
 %
-%In this new setting it is easy to see that
+\begin{align}
+    M(m,n)\even &\coloneqq \left\{ \left(\begin{array}{c|c}
+        A & 0\\
+        \hline
+        0 & D
+    \end{array}\right)
+    \mid A\in M_{m}(\FF),\, D\in M_n(\FF) \right\},\\
+    %
+    M(m,n)\odd &\coloneqq \left\{
+    \left(\begin{array}{c|c}
+        0 & B\\
+        \hline
+        C & 0
+    \end{array}\right)
+    \mid B \in M_{m\times n}(\FF), \, D\in M_{n\times m}(\FF) \right\}.
+\end{align}
 %
-\[\mathfrak{p}(U) = \left\{\left(\begin{matrix}
-			a & b         \\
-			c & -a\transp \\
-		\end{matrix}
-	\right) \Big| \, b=b\transp \AND c=-c\transp\right\}\]
+\phantomsection\label{def:grd-superspace-canonical}
+
+Note that this is nothing but the matrix representation of the superalgebra $\End(\FF^{m|n})$, as in \cref{eq:elementary-1st}, where $\FF^{m|n}$ is defined to be the superspace $V = V\even \oplus V\odd$ with $V\even \coloneqq \FF^m$ and $V\odd \coloneqq \FF^n$. 
+
+% As an alternative definition, we first set $\FF^{m|n}$ to be the superspace $V = V\even \oplus V\odd$ where $V\even \coloneqq \FF^m$ and $V\odd \coloneqq \FF^n$; then, we define $M(m,n)$ to be $\End(\FF^{m|n})$ endowed with the $\ZZ_2$-grading given by
+% %
+% \begin{align}
+%     \End(\FF^{m|n})\even &\coloneqq \{ T\in \End(\FF^{m|n}) \mid  T(V\even) \subseteq V\even \,\AND\, T(V\odd) \subseteq V\odd\},\\
+%     %
+%     \End(\FF^{m|n})\odd &\coloneqq \{ T\in \End(\FF^{m|n}) \mid T(V\even) \subseteq V\odd \,\AND\, T(V\odd) \subseteq V\even\}.
+% \end{align}
 % 
-%\smallskip
-and
-% 
-%\smallskip
-\[P(n) = \left\{\left(\begin{matrix}
-			a & b         \\
-			c & -a\transp \\
-		\end{matrix}
-	\right)\Big| \tr a = 0,\, b=b\transp \AND c=-c\transp\right\}.\]
+Clearly, $M(m,n)$ is simple. 
+We note that $M(m,n) \iso M(m',n')$ \IFF $m=m'$ and $n=n'$, or $m=n'$ and $n=m'$ (see \cref{thm:fd-simple-SA}). 
 
-We have that $P(n)$ is simple if $n\geq 3$.
+There is an important super-anti-automorphism on $M(m,n)$:
 
-\subsubsection{Exceptional Lie Superalgebras} Since defining them here would be a long detour we refer to see \cite{artigokac}.
+\begin{defi}
+    We define the \emph{supertranspose} of a matrix in $M(m,n)$ to be
+    \[
+        \left(\begin{array}{c|c}
+            A & B\\
+            \hline
+            C & D
+        \end{array}\right)\stransp \coloneqq
+        \left(\begin{array}{c|c}
+            A\transp & -C\transp\\
+            \hline
+            B\transp & \phantom{-}D\transp
+        \end{array}\right).
+    \]
+\end{defi}
 
-\subsection{Lie superalgebras of Cartan type}
+Note that, if $\Char \FF \neq 2$, the map $X \mapsto X\stransp$ is not a superinvolution, it has order~$4$. 
+We also note that some authors define supertranspose differently, by putting the negative sign in the bottom left block (see, \eg, \cite[Subsection 1.1.2]{MR3012224}). 
 
-\subsubsection{The series $W(n)$}
-Consider the Grassmann algebra $\mc G(V)$ of a vector space $V$ of dimension $n$. We define a \emph{superderivation} of degree $\gamma\in\Zmod2$ is as a linear map $D\colon \mc{G} \mapsto \mc G$ such that $D (a\wedge b)= D (a)\wedge b + (-1)^{\alpha\gamma} a\wedge D (b)$ for all $a \in \mc G^{\alpha}$ and $b\in \mc G.$
+If there is an element $\bi\in \FF$ such that $\bi^2 = -1$, there is a variation of supertranspose that will be useful when working with $Q(n)$ and $A(n,n)$:
 
-We define $W(n)$ to be the \emph{algebra of superderivations} of $\mc G$, ie, $W(n)$ is a subsuperalgebra of $\gl $ direct sum of the space of even derivations and the space of odd derivations inside $\End(\mc G(V)\even\oplus\mc G(V)\odd)$.
+\begin{defi}\label{def:queer-stp}
+    We define the \emph{queer supertranspose} of a matrix in $M(m,n)$ to be
+    \[
+        \left(\begin{array}{c|c}
+            A & B\\
+            \hline
+            C & D
+        \end{array}\right)\sTq \coloneqq
+        \left(\begin{array}{c|c}
+            \phantom{\bi}A\transp & \bi C\transp\\
+            \hline
+            \bi B\transp & \phantom{\bi} D\transp
+        \end{array}\right).
+    \]
+\end{defi}
 
-From now on we fix a basis $\{e_1,\ldots,e_n\}$ for $V$. For $i\in \{1,\ldots ,n\}$ a derivation \[\partial_i \colon \mc G(V) \rightarrow \mc G(V)\] of degree $\bar 1$ is uniquely determined by \[\partial_i (e_j) =  \delta_{ij},\] for all $j\in \{1,\ldots ,n\}.$
+Superinvolutions on $M(m,n)$ only exist for certain values of $m$ and $n$: either $m=n$ or at least one of them is even (see, \eg, \cref{prop:iso-M-with-vphi}). 
+They can be described in matrix terms (see \cref{defi:M(m-n-p_0)}), but it is worth describing them more abstractly, in the model $M(m,n) = \End(\FF^{m|n})$. 
+To simplify notation, we will write $V$ for $\FF^{m|n}$, as above. 
 
-Every element of $W(n)$ is of the form $\sum_{i=1}^{n} f_i \partial_i$ where $f_i \in \mc G$ for all $i\in\{1,\, ...\, ,n\}$.
-
-The Lie superalgebra $W(n)$ is simple for all $n\geq 2$, but $W(2)\iso A(1,0)\iso C(2)$, so it is not even of Cartan type, hence we impose $n\geq 3$ in our list of simple Lie superalgebras.
-
-\subsubsection{The series $S(n)$}
-
-We define $S(n)$ as the subsuperalgebra of $W(n)$ given by
-
+\begin{defi}
+Let $\langle \cdot, \cdot \rangle \from V\times V \to \FF$ be a bilinear form. 
+We say that $\langle \cdot, \cdot \rangle$ is  \emph{supersymmetric} if
 \[
-	S(n) = \left\{ \sum_{i=1}^{n} f_i \partial_i \in W(n) \mid
+    \forall u,v \in V\even \cup V\odd, \quad \langle u, v \rangle 
+    %
+    = \sign{u}{v} \langle v, u \rangle,
+\]
+and \emph{super-skew-symmetric} if
+\[
+    \forall u,v \in V\even \cup V\odd, \quad \langle u, v \rangle 
+    %
+    = -\sign{u}{v} \langle v, u \rangle.
+\]
+Also, we say that $\langle \cdot, \cdot \rangle$ is \emph{even} if $\langle V\even, V\odd \rangle = \langle V\odd, V\even \rangle = 0$, \emph{odd} if $\langle V\even, V\even \rangle = \langle V\odd, V\odd \rangle = 0$, and \emph{homogeneous} if it is either even or odd. 
+If $\langle \cdot, \cdot \rangle$ is homogeneous and nondegenerate, we define the \emph{superadjunction} to be the unique linear map $\vphi\from M(m,n) \to M(m,n)$ such that 
+\[
+    \forall u,v \in V\even \cup V\odd,\,
+    %
+    \forall T\in M(m,n)\even \cup M(m,n)\odd, \quad
+    %
+    \langle T(u), v \rangle = \sign{T}{u} \langle u, \vphi(T)(v) \rangle. 
+\]
+\end{defi}
+
+The superadjunction is always a super-anti-automorphism, and it is a superinvolution \IFF $\langle \cdot, \cdot \rangle$ is supersymmetric or super-skew-symmetric (see, \eg, \cref{thm:vphi-involution-iff-delta-pm-1}). 
+In fact, all super-anti-automorphisms on $M(m,n)$ arise in this way. 
+We note that using the isomorphism $M(m,n) \iso M(n,m)$ if necessary, we can avoid super-skew-symmetric bilinear forms altogether. 
+This is because if we exchange the degrees of the components $V\even$ and $V\odd$ (\ie, change $\FF^{m|n}$ to $\FF^{n|m}$), a super-skew-symmetric form becomes supersymmetric. 
+
+\subsubsection{The (associative) series \texorpdfstring{$Q(n)$}{Q(n)}}
+
+Let $n > 0$ be an integer. 
+The \emph{queer associative superalgebra} $Q(n)$ is the subsuperalgebra of $M(n,n)$ defined by
+\[
+    Q(n) \coloneqq \left\{ \left(\begin{array}{c|c}
+        A & B\\
+        \hline
+        B & A
+    \end{array}\right)
+    \mid A,B\in M_{n}(\FF)
+    \right\}.
+\]
+
+% Differently from $M(m,n)$, 
+While $Q(n)$ is not simple as an algebra. 
+Also, $Q(n) \iso Q(n')$ \IFF $n=n'$ (see, \eg, \cref{thm:fd-simple-SA}). 
+
+The queer supertranspose on $M(n,n)$ restricts to $Q(n)$, but, if $\Char \FF \neq 2$,
+$Q(n)$ does not admit any superinvolution (see, \eg, \cref{cor:Q-no-sinv-center}). 
+
+% \section{Simple Lie superalgebras}
+
+% An \emph{ideal} $I$ of a Lie superalgebra $L=L\even\oplus L\odd$ is an ideal of the underlying algebra that is compatible with the canonical $\Zmod2$-grading in the sense that $I=\left(I\cap A\even \right) \oplus \left(I\cap A\odd \right)$. The superalgebra $L$ is said to be \emph{simple} if it has no proper nonzero ideals and $[L,L]\neq 0$.
+
+\subsection{Classical Lie superalgebras}\label{sec:defi-classical-SA}
+
+\subsubsection{The series $A$} 
+
+Let $m,n > 0$. 
+The \emph{general linear Lie superalgebra} $\gl(m|n)$ is defined to be $M(m,n)^{(-)}$. 
+The \emph{special linear Lie superalgebra} $\Sl (m|n)$ is the derived superalgebra of $\gl(m|n)$. 
+One can check that this is equivalent to
+%
+\[
+    \Sl(m|n) = \left\{
+    \left(\begin{array}{c|c}
+        A & B\\
+        \hline
+        C & D
+    \end{array}\right)
+	\in \gl(m|n)
+	\mid \tr A = \tr D
+	\right\}.
+\]
+%
+If $m\neq n$ then $\Sl(m|n)$ is a simple Lie superalgebra. 
+However, if $m=n$, then
+\[
+    Z(\Sl(m|n)) = \FF 1 = \left\{
+    \left(\begin{array}{c|c}
+        \lambda I & 0\\
+        \hline
+        0 & \lambda I
+    \end{array}\right)
+	\mid \lambda \in \FF
+	\right\}
+\]
+is a nontrivial superideal. 
+The quotient $\Sl(n|n)/ \FF 1$ is a simple superalgebra \IFF $n > 1$. 
+
+For $m,n\geq 0$, the Lie superalgebra $A(m,n)$ is defined to be $\Sl(m+1 \,|\, n+1)$ if $m\neq n$, and $\mathfrak{psl}(n+1 \,|\, n+1) \coloneqq \Sl(n+1 \,|\, n+1)/ \FF 1$ if $m=n$. 
+
+Since $A(m,n)\iso A(n,m)$, one may impose $m\geq n$ to avoid repetition. 
+
+\subsubsection{The series $B$, $C$ and $D$}
+
+The \emph{orthosymplectic Lie superalgebra} $\osp(m|n)$ is defined to be $\Skew(M(m,n),\vphi)$, where $\vphi$ is the superadjunction with respect to an \emph{even} nondegenerate supersymmetric bilinear form. 
+Since we are assuming that $\FF$ is algebraically closed and $\Char \FF = 0$, we do not need to specify the form: this is well defined up to isomorphism (see, \eg, \cref{prop:iso-M-with-vphi}). 
+
+Since $\langle V\even, V\odd \rangle = 0$, any even nondegenerate supersymmetric bilinear form $\langle \cdot, \cdot \rangle$ restricts to a nondegenerate symmetric bilinear form on $V\even = \FF^m$ and to a a nondegenerate skew-symmetric bilinear form on $V\odd = \FF^n$. 
+Hence the name ``orthosymplectic'': the superinvolution $\vphi$ is a hybrid between orthogonal and symplectic involutions on matrix algebras. 
+
+\phantomsection\label{defi:B-C-D}
+
+If $m,n > 0$, the Lie superalgebra $\osp(m|n)$ is simple. 
+We define:
+%
+\begin{itemize}
+	\item $B(m,n) \coloneqq \osp(2m+1 \,|\, 2n)$, for $m \geq 0$ and $n \geq 1$;
+	\item $C(n) \coloneqq \osp(2 \,|\,  2n - 2)$, for $n\geq 2$;
+	\item $D(m,n) \coloneqq \osp(2m \,|\, 2n)$, for $m\geq 2$ and $n\geq 1$.
+\end{itemize}
+%
+Since $C(2)\iso A(1,0)$, one may impose $n\geq 3$ in the $C(n)$ case to avoid repetition.
+
+\subsubsection{The series $P$}
+
+The \emph{periplectic Lie superalgebra} $\mathfrak{p}(n)$ is defined to be $\Skew(M(n,n), \vphi)$, where $\vphi$ is the superinvolution with respect to an \emph{odd} nondegenerate supersymmetric bilinear form.
+% \footnote{We note that there are no nondegenerate odd supersymmetric bilinear forms on $\FF^{m|n}$ if $m\neq n$.}
+
+As in the orthosymplectic case, the isomorphism class of $\mathfrak{p}(n)$ does not depend on the choice of the bilinear form, but in this case it is easier to prove and does not depend on the hypothesis that $\FF$ is algebraically closed. 
+Let $\langle \cdot, \cdot \rangle$ be an odd nondegenerate supersymmetric bilinear form on $V = \FF^{m|n}$. 
+Since $\langle V\even, V\even \rangle = \langle V\odd, V\odd \rangle = 0$, we must have $V\odd \iso (V\even)^*$ via the map $v \mapsto \langle v, \cdot \rangle$, hence, in particular, $m = n$. 
+Using this isomorphism to identify $V\odd$ with $(V\even)^*$, we see that $V$ is isomorphic to $V\even \oplus (V\even)^*$ endowed with the following form:
+\[
+    \forall u,v\in V\even, \forall u^*,v^*\in (V\even)^*, \quad \langle u+u^*,v + v^* \rangle \coloneqq u^*(v) + v^*(u). 
+\]
+Using the canonical basis of $V\even = \FF^n$, we can identify $(V\even)^* = (\FF^n)^*$ with $\FF^n$ and obtain:  
+\[
+    \mathfrak{p}(n) = \left\{
+    \left(\begin{array}{c|c}
+        A & B\\
+        \hline
+        \phantom{-}C\phantom{\transp} & -A\transp
+    \end{array}\right) \in M(n,n)^{(-)} \mid B=B\transp \AND C=-C\transp\right\}. 
+\]
+
+The superalgebra $\mathfrak{p}(n)$ is not simple.
+We define $P(n)$ to be the derived superalgebra of $\mathfrak{p}(n+1)$. 
+In the model above, we have:
+\[
+    P(n) = \left\{
+    \left(\begin{array}{c|c}
+        A & B\\
+        \hline
+        \phantom{-}C\phantom{\transp} & -A\transp
+    \end{array}\right) \in M(n+1,n+1)^{(-)} \mid \tr A =0, \, B=B\transp \AND C=-C\transp\right\}. 
+\]
+
+It is known that $P(n)$ is simple \IFF $n\geq 2$. 
+
+\subsubsection{The (Lie) series $Q$}
+
+Let $R$ denote the associative superalgebra $Q(n+1)$. 
+Its derived Lie superalgebra is
+\[
+    R^{(1)} = \left\{
+    \left(\begin{array}{c|c}
+        A & B\\
+        \hline
+        B & A
+    \end{array}\right) \in R^{(-)} \mid \tr A = \tr B = 0\right\}. 
+\]
+Since $Z(R^{(1)}) = \FF1$, we define the \emph{queer Lie superalgebra} $Q(n)$ to be $R^{(1)}/\FF1$. 
+It is simple \IFF $n\geq 2$. 
+
+\subsubsection{Exceptional Lie Superalgebras} 
+
+Since defining $F(4)$, $G(3)$ and $D(2,1, \alpha)$ here would be a long detour, we refer the reader to \cite{artigokac} or \cite{MR1773773}. 
+We do not consider them in this work except $D(2, 1, \alpha)$ for $\alpha \in \{1, -\frac{1}{2}, -2 \}$, which are isomorphic to $D(2,1)$. 
+
+\subsection{Lie superalgebras of Cartan type}\label{subsec:Cartan}
+
+\subsubsection{The series $W$}
+
+Consider the Grassmann superalgebra $\mc G(\FF^n)$, as in \cref{def:Grassmann-algebra}. 
+A homogeneous map $D\in \End(\mc G(\FF^n))$ is said to be a \emph{superderivation} if 
+\[
+    \forall a,b \in \mc{G}(\FF^n)\even \cup \mc{G}(\FF^n)\odd, \quad 
+    D (a\wedge b)= D (a)\wedge b + \sign{D}{a} a\wedge D (b).
+\]
+One can check that, if $D_1$ and $D_2$ are superderivations, then the supercommutator $[D_1, D_2]$ is also a superderivation. 
+
+We define the \emph{Witt superalgebra} $W(n)$ to be the linear span of the superderivations in $\End(\mc G(\FF^n))^{(-)}$. 
+It is simple for $n\geq 2$, but $W(2)\iso A(1,0)\iso C(2)$, so we impose $n\geq 3$ in the list of simple Lie superalgebras of Cartan type. 
+
+To see what $W(n)$ is in more concrete terms, let $\{e_1,\ldots,e_n\}$ be the canonical basis of $\FF^n$. 
+For $i\in \{1, \ldots ,n\}$, we define $\partial_i \in W(n)$ to be the unique (odd) superderivation such that 
+\[
+    \forall j\in \{1,\ldots ,n\}, \quad 
+    \partial_i (e_j) \coloneqq  \delta_{ij}.
+\]
+% Note that $|\partial_i| = \bar 1$. 
+It is easy to see that every element of $W(n)$ is of the form $\sum_{i=1}^{n} f_i \wedge \partial_i$, where $f_i \in \mc G(\FF^n)$ for all $i\in\{1, \ldots , n\}$.
+
+% The Lie superalgebra $W(n)$ is simple for all $n\geq 2$, but $W(2)\iso A(1,0)\iso C(2)$, hence we impose $n\geq 3$ in our list of simple Lie superalgebras.
+
+\subsubsection{The series $S$}
+
+We define the \emph{special superalgebra} $S(n)$ to be the subsuperalgebra of $W(n)$ given by
+\[
+	S(n) \coloneqq \left\{ \sum_{i=1}^{n} f_i \wedge \partial_i \in W(n) \mid
 	\sum_{i=1}^{n} \partial_i (f_i) =0
 	\right\}.
 \]
+$S(n)$ is simple for $n\geq 3$ but $S(3)\iso P(2)$, so we impose $n\geq 4$. 
 
-If $n\geq 3$, then $S(n)$ is simple. However, $S(3)\iso P(2)$), hence we only consider the case $n\geq 4$ in our list.
+\subsubsection{The series $\tilde S$}
 
-\subsubsection{The series $\tilde S(n)$}
-
-Let $n$ be even and fix $\omega = 1 - e_1\wedge e_2\wedge \, ...\, \wedge e_n$. We then define $\tilde S(n)$ by
-
+Let $n$ be even and fix $\omega = 1 - e_1\wedge e_2\wedge \, ...\, \wedge e_n$. We define $\tilde S(n)$ by
 \[
-	\tilde S(n) = \left\{ \sum_{i=1}^{n} f_i \partial_i \in W(n) \mid
-	\sum_{i=1}^{n} \partial_i (\omega f_i) =0
+	\tilde S(n) = \left\{ \sum_{i=1}^{n} f_i \wedge \partial_i \in W(n) \mid
+	\sum_{i=1}^{n} \partial_i (\omega \wedge f_i) =0
 	\right\}.
 \]
+% It is good to notice that if we change the $\omega$ above by any other element in $W(n)$ the result would be isomorphic to $S(n)$ or $\tilde S(n)$. 
+$\tilde S(n)$ is simple for $n\geq 4$.
 
-It is good to notice that if we change the $\omega$ above by any other element in $W(n)$ the result would be isomorphic to $S(n)$ or $\tilde S(n)$.
-We have that $\tilde S(n)$ is simple for $n\geq 4$.
+\subsubsection{The series $H$}
 
-\subsubsection{The series $H(n)$}
-
-We now define another multiplication on $\mc G(V)$. For every $\alpha \in \Zmod2$, all  $f\in \mc G(V)^{\alpha}$ and all $g\in \mc G$, we define the \emph{Poisson bracket} by
-
+Let us define another multiplication on $\mc G(\FF^n)$, the \emph{Poisson bracket}:
 \[
-	\{f,g\}=(-1)^{|f|} \sum_{i=1}^{n} \partial_i(f)\wedge \partial_i(g)
+    \forall f,g \in \mc G(\FF^n)\even \cup \mc G(\FF^n)\odd, \quad
+	\{f,g\}=(-1)^{|f|} \sum_{i=1}^{n} \partial_i(f)\wedge \partial_i(g).
 \]
+This bracket turns $\mc G(\FF^n)$ into a Lie superalgebra, which we denote by $\tilde{H}(n)$. 
+We have $Z(\tilde{H}(n)) = \FF1$ and, hence, define the \emph{Hamiltonian superalgebra $H(n)$} to be the derived superalgebra of $\tilde{H}(n)/\FF 1$. 
 
-and we extend it to the whole superalgebra by linearity. The Poisson bracket makes $\mc G$ into a Lie superalgebra which  we will denote by $\tilde{H} (n)$. This superalgebra has a center, generated by $1$. Moding out the center is not enough to make it simple: The Hamiltonian superalgebra $H(n)$ is definied to be the derived superalgebra of $\frac{\tilde{H}(n)}{\FF 1}$, which is simple for $n\geq 4$.
+We can see $H(n)$ as a subsuperalgebra of $W(n)$: we send every homogeneous ${f\in \tilde H(n)}$ to $(-1)^{|f|}\sum_{i=1}^n \partial_i(f) \wedge \partial_i$, extend this map linearly and induce an embedding $H(n) \to W(n)$. 
 
-The algebra $H(n)$ can be seen as a subalgebra of $W(n)$. We define an embedding as follows: for every $\alpha\in\Zmod2$ and every $f\in W(n)^{\alpha}$ we send $f$ to $(-1)^{\alpha}\sum_{i=1}^n \partial_i(f)\partial_i$ and then extend it by linearity.
+Though the superalgebra $H(n)$ is simple for $n\geq 4$, we have $H(4)\iso A(1,1)$, so we impose $n\geq 5$ in this case.
 
-Though the superalgebra $H(n)$ is simple for $n\geq 4$, we have $H(4)\iso A(1,1)$, so we have to impose $n\geq 5$ in our list.
+% ---------------
 
-% sec:What's already known
-\section{Overview of known results}
+\section{An overview of known results}
 
-The classification of gradings on classical Lie algebras (over an algebracally closed field of characteristic different than 2) is essencially complete (see \cite{livromicha}, \cite{EK_d4}). Over characteristic $p$ we also have a classification of the gradings on the restricted Cartan type Lie algebras in the Witt and special series.  There is also a classification of graded simple modules over semisimple graded Lie algebras \cite{EK15}.
+The classification of gradings is best understood over algebraically closed fields, so in this section we assume that $\FF$ is algebraically closed, unless stated otherwise. 
 
-In the realm of Lie superalgebras, the  $\mathbb{Z}$-gradings on classical Lie superalgebras is known, see \cite{kacZ}. In \cite{serganova} gradings by finite cyclic groups are considered and the corresponding twisted loop superalgebras were classified. More recently, the fine gradings on the exceptional Lie superalgebras were also classified, see \cite{artigoelduque}.
+\phantomsection\label{intro-equiv}
 
-It should also be mentioned that gradings by arbitrary groups on simple and $*$-simple associative superalgebras were studied in \cite{BS} and \cite{MR2535573}, but classification up to isomorphism remains open.
+In the case $\Char \FF = 0$, there is a bijective correspondence between gradings by a finitely generated abelian group $G$ and actions of the character group $\widehat G$ by automorphisms (see \cref{sec:g-hat-action}). 
+Using this, a classification of \emph{fine abelian group gradings} up to \emph{equivalence} (see \cref{defi:fine-grading,defi:equivalence}) on the associative algebra $M_n(\FF)$ was obtained in \cite{HPP}, in terms of \emph{maximal abelian diagonalizible (MAD) subgroups} of $\operatorname{PGL}_n(\FF) \iso \Aut( M_n(\FF) )$. 
+% In \cite{Zol02}, a classification of projective representations of finite abelian group $G$ (\ie, homomorphisms $G \to \operatorname{PGL}_n(\FF)$) was given, and this corresponds to a classification of $\widehat G$-gradings up to isomorphism. 
+In \cite{BSZ01, BZ02}, $G$-gradings on $M_n(\FF)$ were described intrinsically, and those descriptions were extended to arbitrary characteristic in \cite{BZ03}.
+% In \cref{chap:grd-simple-assc}, we review a generalized version of the classification up to isomorphism, following \cite[Chapter 2]{livromicha}. 
+Degree-preserving involutions on graded matrix algebras were described in \cite{BZ07, BG08a} and classified up to isomorphism in \cite{BK10}. 
+
+For classical simple Lie algebras, 
+% still assuming $\FF$ algebraically closed and
+assuming $\Char \FF = 0$, a description of fine gradings was obtained in \cite{HPP}, and an incomplete description of $G$-gradings was obtained in \cite{BSZ05,BZ06}. 
+The questions of equivalence and isomorphism of gradings were left open. 
+The equivalence problem for fine gradings was solved in \cite{Eld10}. 
+The description of $G$-gradings was completed in \cite{BK10} in any characteristic different from $2$; the isomorphism problem was also solved there. 
+It is worth mentioning that \cite{BSZ05} introduced the idea of obtaining all gradings on non-exceptional simple Lie and Jordan algebras from associative algebras. 
+In this work we follow the same idea for Lie superalgebras. 
+
+The classification of fine group gradings (up to equivalence) on finite dimensional simple Lie algebras has recently been completed in characteristic $0$ by the efforts of many authors: see \cite[Chapters 3–6]{livromicha} and the references therein, \cite{E14} and \cite{YuExc} for types $E_6, E_7 \AND E_8$; an overview can be found in \cite{MR3601079}.    
+
+The classification of all $G$-gradings (up to isomorphism) is complete for the classical simple Lie algebras and also for types $G_2$ and $F_4$, in characteristic different from $2$: see \cite[Chapters 3–6]{livromicha} and the references therein, also \cite{EK_d4} for type $D_4$. 
+Note that, in positive characteristic, there are many more finite dimensional simple Lie algebras than in characteristic $0$, including Lie algebras of Cartan type (see \cite{MR2059133,MR2573283,MR3025870}). 
+A classification of gradings in the restricted case for the Witt and special series was obtained in \cite{MR2878812} (see also \cite[Chapter 7]{livromicha}). 
+
+% -- Check $Char \FF = 0$ in what follows: 
+
+Gradings have been classified for some non-simple algebras. 
+For example, the classification of $G$-gradings on semisimple algebras reduces to the classification of graded-simple algebras, and this latter, if $G$ is abelian, can be obtained using the generalization of loop algebra construction introduced in \cite{MR2418198} if we know the gradings by quotients of $G$ on simple algebras (see, \eg, \cite{MR3857543}). 
+Other examples include the upper triangular matrices, considered as an associative \cite{MR2322777}, Lie \cite{MR3614154} or Jordan algebra \cite{MR3697052}, and certain nilpotent Lie algebras \cite{MR3413670}. 
+
+The situation is more complicated if the base field is not algebraically closed. 
+For real closed fields (for example, the field of real numbers), all group gradings on classical central simple and type $G_2$ Lie algebras were classified in \cite{paper-adrian} and \cite{MR3841529}. 
+
+Abelian group gradings on finite dimensional simple associative superalgebras were described in \cite{BS}, and those on superinvolution-simple but not simple associative superalgebras were described in \cite{BTT}. 
+Both papers imposed some restrictions on characteristic and did not consider the isomorphism problem. 
+
+The $\mathbb{Z}$-gradings on classical Lie superalgebras where classified in \cite{kacZ}. 
+In \cite{serganova}, gradings by finite cyclic groups were considered and the corresponding twisted loop superalgebras were classified. 
+Fine gradings on the exceptional Lie superalgebras were classified up to equivalence in \cite{artigoelduque}.
+
+For a given graded associative or Lie algebra, there is a natural concept of graded module (see \cref{defi:grdModule}). 
+A classification of graded-simple modules over semisimple graded Lie algebras was obtained in \cite{EK15,EK_d4,MR3707906} and further studied in \cite{grdd-modules-loop}. 
+Gradings on a Lie superalgebra $L = L\even \oplus L\odd$ can be approached by considering $L
+\odd$ as a graded module over the graded algebra $L\even$. 
+This was used in \cite{paper-Qn} for the series $Q$ and in \cite{paper-MAP} for the series $P$ and $A$ (only Type I gradings for the latter, see \cref{defi:types-I-and-II}). 
+As already mentioned, here we will follow a different approach to all series of classical Lie superalgebras, namely, the reduction of the problem to a suitable associative superalgebra with superinvolution (see \cref{sec:Aut-Lie-chap}). 
+The easiest case for this  approach is series $B$, which was treated in \cite{Helens_thesis}. 
+
+% --------
+
+\section{Some applications of gradings}
+
+% -----
+
+Given the role of Lie superalgebras in Physics, gradings on Lie superalgebras have applications in this field. 
+In a quantum system, quantum numbers are eigenvalues of operators that commute with the Hamiltonian. 
+If the symmetries of the system are described by a Lie (super)algebra $L$, then a grading on $L$ gives rise to \emph{additive quantum numbers} (see \cite{MR974693,MR1025215,MR1940451}). 
+
+% -----
+
+Physicists are also interested in \emph{contractions} of Lie (super)algebras, to compare phenomena in system with different symmetries (see \cite{MR55352}). 
+Many interesting contractions arise from gradings (see \cite{MR1098200}): if $L = \bigoplus_{g \in G} L_g$ is a $G$-graded (super)algebra, with product denoted by $[\cdot, \cdot]$, and $\sigma\from G\times G \to \FF$ is any map, we define $L^\sigma$ to be $G$-graded (super)algebra with product determined by
+\[
+    \forall g,h\in G, \,
+    \forall a\in L_g, \,
+    \forall b\in L_h, \quad
+    [a, b]^\sigma 
+    \coloneqq \sigma(g, h)\, [a, b].
+\]
+If $L$ is a Lie (super)algebra, $G$ is abelian and $\sigma\from G\times G \to \FF^\times$ is a symmetric $2$-cocycle (see \cref{defi:cocycle}), then $L^\sigma$ is again a Lie (super)algebra. 
+In this case, the operation is invertible: $(L^\sigma)^{\sigma\inv} = L$; it is known as \emph{cocycle twist}. 
+
+% -----
+
+The twist with a non-symmetric $2$-cocycle can be used to transform color Lie algebras into Lie superalgebras. 
+Given an abelian group $G$ and a skew-symmetric bicharacter $\epsilon\from G\times G \to \FF^\times$ (see \cref{def:bicharacter}), a \emph{color Lie algebra} with commutation factor $\epsilon$ is a $G$-graded algebra, with product $[\cdot, \cdot]$, such that, for all $g, h \in G$, $a \in L_g$, $b \in L_h$ and $c \in L$,
+\begin{enumerate}[(i)]
+    \item $[a, b] 
+    = -\epsilon(g, h)\,[b,a]$;
+    \item $[a, [b, c]] 
+    = [[a,b],c] + \epsilon(g, h)\,[b,[a,c]]$.
+\end{enumerate}
+%
+Note that if $G$ is trivial, we get a Lie algebra, and if $G = \ZZ_2$ and $\epsilon(i,j) = (-1)^{ij}$ for all $i,j \in \ZZ_2$, we get a Lie superalgebra. 
+It was proven in \cite{MR529734} (for the case $G$ is finitely generated) and in \cite{MR1600092} (in general) that, for any color Lie algebra $L$, there exists a $2$-cocycle $\sigma\from G\times G \to \FF^\times$ such that $L^\sigma$ is a Lie superalgebra. 
+% \cite[Theorem 0.10]{livromicha}
+% So gradings on Lie superalgebras can be used as a tool to study Lie color algebras.
+Hence, one possible approach to classify simple color Lie algebras is using gradings on Lie superalgebras (see \cite{MR2497949}).
+
+% -----
+
+The identities defining Lie superalgebras and color Lie algebras are examples of the so called \emph{graded polynomial identities}, which are polynomial identities that hold for all elements of specified degrees in a graded algebra. 
+Recently, the theory of such identities and their combinatorial characteristics have been extensively studied, especially in the associative case (see, \eg, \cite{MR1935223,MR2176105,MR2680170,MR2639274,MR3068959,MR3030542,MR3152711,MR3271263,MR3773068}). 
+% ,MR3920905,MR3886336
+Graded identities for certain gradings on $P(n)$ were recently considered in \cite{MR3611462}. 
+A classification of all gradings on simple Lie superalgebras opens paths for further research in this area. 
+
+% -----
