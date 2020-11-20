@@ -3,9 +3,6 @@
 %% * Require Packages * %% 
 %  ********************  %
 
-% Because BibLaTeX asked for it
-\RequirePackage{csquotes}
-
 \RequirePackage[T1]{fontenc}
 % \RequirePackage[utf8]{inputenc}
 \RequirePackage{lmodern}
@@ -42,8 +39,6 @@
 % Crazy accents for Math
 %\RequirePackage{accents}
 
-% screeches letters to avoid hbox underfull
-\RequirePackage{microtype}
 
 % if then
 \RequirePackage{xstring}
@@ -56,34 +51,6 @@
 %\specialcomment{smalltt}
 %{\begingroup\ttfamily\footnotesize\color{Grey}}{\endgroup}
 
-% * References (they must be called in this order)
-\RequirePackage[hypertexnames=false]{hyperref}
-\RequirePackage[capitalise,noabbrev]{cleveref}
-% ** The next two commands are to remove a strange warning from using autonum
-\expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}
-\let\globcount\newcount
-\RequirePackage{autonum}
-
-% ** for some reason, subsections don't work with cref out of the box
-\crefname{subsection}{Subsection}{Subsections}  
-\Crefname{subsection}{Subsection}{Subsections}
-
-% I was using
-% \mathtoolsset{showonlyrefs}
-% before using autonum, but it is incompatible with cleverref
-% On the other hand, autonum breaks all starred environments because they are "useless".
-% This causes many errors since it is incompatible with old files.
-% Below is a attempt to correct it:
-
-\makeatletter
-\newcommand{\restore@Environment}[1]{%
-  \AtBeginDocument{%
-    \csletcs{#1*}{#1}%
-    \csletcs{end#1*}{end#1}%
-  }%
-}
-\forcsvlist\restore@Environment{alignat,equation,gather,multline,flalign,align}
-\makeatother
 
 % hide some overfull warnings:
 \hfuzz = 6pt
