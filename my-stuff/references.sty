@@ -58,3 +58,6 @@
 }
 \forcsvlist\restore@Environment{alignat,equation,gather,multline,flalign,align}
 \makeatother
+
+% Refer to a specific line on a align enviorment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}

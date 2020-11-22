@@ -91,50 +91,14 @@
 \crefname{claim}{Claim}{Claims}
 
 
-\theoremstyle{plain} % Thms, props, cors and lemmas
 
-\newtheorem{thm}{Theorem}[chapter]
-\newtheorem{theorem}[thm]{Theorem}
-
-\newtheorem{lemma}[thm]{Lemma}
-
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{proposition}[thm]{Proposition}
-
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{corollary}[thm]{Corollary}
-
-\newtheorem*{thm*}{Theorem}
-\newtheorem*{theorem*}{Theorem}
-
-\theoremstyle{definition}
-
-\newtheorem{ex}[thm]{Example}
-\newtheorem{example}[thm]{Example}
-
-\newtheorem{defi}[thm]{Definition}
-\newtheorem{definition}[thm]{Definition}
-
-\theoremstyle{remark}
-
-\newtheorem{rmk}[thm]{Remark}
-\newtheorem{remark}[thm]{Remark}
-
-\newtheorem{notation}[thm]{Notation}
-\newtheorem{convention}[thm]{Convention}
-\newtheorem{claim}{Claim}
-\newtheorem*{claim*}{Claim}
-
-\newcommand{\qedclaim}{\vspace{3mm}}
-
-\newcommand{\newclaims}{\setcounter{claim}{0}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%        New Commands        %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Undefined
-\newcommand{\Undefined}{\ensuremath{\texttt{??}}}
+\newcommand{\UNDEF}{\ensuremath{\texttt{\textbb{UNDEF}}}}
 
 % Character group
 \newcommand{\dual}{\widehat}
@@ -175,16 +139,6 @@
 % Gradings
 \newcommand{\Star}{^\star}
 
-% Field "F"
-\newcommand{\FF}{\mathbb{F}}
-\newcommand{\Char}{\operatorname{char}}
-
-% Common sets
-\newcommand{\NN}{\mathbb{N}}
-\newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\CC}{\mathbb{C}}
 
 % Bold matrices
 \newcommand{\M}{M}
@@ -199,10 +153,6 @@
 \newcommand{\Zmod}[1]{\ensuremath{\mathbb{Z}_{#1}}}
 
 % Matrices
-\newcommand{\End}{\operatorname{End}}
-\newcommand{\Hom}{\operatorname{Hom}}
-\newcommand{\Aut}{\operatorname{Aut}}
-\newcommand{\op}{^{\mathrm{op}}}
 \newcommand{\sop}{^{\mathrm{sop}}}
 \newcommand{\Span}{\operatorname{span}}
 
@@ -223,7 +173,7 @@
 % Lie algebras
 \newcommand{\gl}{\mathfrak{gl}}
 \newcommand{\Sl}{\mathfrak{sl}}
-\newcommand{\Gl}{\mathfrak{Gl}}
+\newcommand{\Gl}{\mathfrak{gl}}
 \newcommand{\GL}{\operatorname{GL}}
 \newcommand{\osp}{\mathfrak{osp}}
 
@@ -264,16 +214,13 @@
 \newcommand{\supp}{\operatorname{supp}}
 \newcommand{\wt}{\mathcal}
 
-% Automorphisms
-\newcommand{\Inn}{\operatorname{Inn}}
+
 
 % Superconjugation
 \newcommand{\sconj}{\operatorname{sconj}}
 
 \newcommand{\ideal}{\vartriangleleft}
 
-% Comments with "\tmp"
-\newcommand{\tmp}[1]{\tt #1}
 
 % bar vs overline
 
@@ -296,27 +243,3 @@
 }
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Commands
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% TO-DO Lists %%
-
-\RequirePackage{pifont}
-\newcommand{\cmark}{\ding{51}}%
-\newcommand{\xmark}{\ding{55}}%
-
-\newcommand{\done}{\rlap{\raisebox{1pt}{\large\hspace{-5pt}\cmark}}}
-
-\newcommand{\cancel}{\rlap{\raisebox{0pt}{\large\hspace{-5pt}\xmark}}}
-%\newcommand{\donebox}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
-% end checklist
-
-\newcommand{\Eex}{E^{\mathrm{ex}}}
-
-\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-
-\newcommand{\bi}{\mathbf{i}}
-
-\renewcommand{\setminus}{\smallsetminus}
