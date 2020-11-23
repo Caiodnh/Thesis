@@ -8,7 +8,7 @@ Let $G$ be a group.
 Recall that a $G$-graded superalgebra $R$ can be seen as a $G^\# \coloneqq G\times \ZZ_2$-graded algebra (see \cref{sec:grds-and-sa}) by defining $R_{(g,i)} = R_g \cap R^i$, for all $g\in G$ and $i \in \ZZ_2$. 
 We identify $G$ with $G \times \{ \bar 0 \} \subseteq G^\#$. 
 Clearly, $R$ is graded-simple as a $G$-graded superalgebra if, and only if, it is graded-simple as a $G^\#$-graded algebra. 
-This allows us to easily transfer the results of previous section to gradings on superalgebras, but at the cost of working in the group $G^\#$ instead of $G$. 
+This allows us to easily transfer the results of the previous section to gradings on superalgebras, but at the cost of working in the group $G^\#$ instead of $G$. 
 
 \begin{remark}
 	If the canonical $\ZZ_2$-grading is a coarsening of the $G$-grading by means of a homomorphism $p\colon G\rightarrow \ZZ_2$ (referred to as the \emph{parity homomorphism}), then we could work with the pair $(G, p)$ instead of the group $G^\#$. 
@@ -23,7 +23,7 @@ This allows us to easily transfer the results of previous section to gradings on
     In this case, we may also refer to the $G$-grading on the superalgebra $\D$ as a \emph{division grading}.
 \end{defi}
 
-In other words, the graded-division superalgebras with respect the $G$-grading are precisely the graded-division algebras with respect the $G^\#$-grading. 
+In other words, the graded-division superalgebras with respect to the $G$-grading are precisely the graded-division algebras with respect to the $G^\#$-grading. 
 Recall that $T \coloneqq \supp \D$ is a subgroup of $G^\#$, so we can see $\D$ as a $T$-graded algebra and the canonical $\ZZ_2$-grading is the coarsening by the group homomorphism $p\from T \subseteq G^\# \to \ZZ_2$ given by $p (g, i) = i$ for all $(g,i)\in G^\#$. 
 We will denote the kernel of $p$ by $T^+$, \ie, $T^+ \coloneqq T\cap (G\times \{ \bar 0 \}) = \supp \D\even$. 
 Similarly, we define $T^- \coloneqq T\cap (G\times \{ \bar 1 \}) =  \supp \D\odd$. 
@@ -97,7 +97,7 @@ It should be noted that, even though $\U\even$ and $\U\odd$ are not $\D$-submodu
 Clearly, the map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ above is the map associated to both $\U\even$ and $\U\odd$, and an even graded $\D$-basis for $\U$ is a graded $\D\even$-basis for $\U\even$. 
 
 \begin{remark}\label{rmk:R-even-identificatios}
-    Letn $R \coloneqq \End_{\D}(\U)$. 
+    Set $R \coloneqq \End_{\D}(\U)$. 
     If $\D$ is even, then we can identify $R\even$ with $\End_{\D}(\U\even) \oplus \End_{\D} (\U\odd)$. 
     If $\D$ is odd, then we can identify $R\even$ with $\End_{\D\even}(\U\even)$. 
 \end{remark}
@@ -105,7 +105,7 @@ Clearly, the map $\kappa\from G/T^+ \to \ZZ_{\geq 0}$ above is the map associate
 \subsection{Graded Wedderburn theory for superalgebras}\label{ssec:wedderburn-super}
 
 Let $R$ be a $G$-graded superalgebra. 
-Note that the graded (left) superideals of $R$ are precisely the graded (left) ideals of $R$ as an $G^\#$-graded superalgebra. 
+Note that the graded (left) superideals of $R$ are precisely the graded (left) ideals of $R$ as a $G^\#$-graded superalgebra. 
 Hence, \cref{thm:End-over-D,thm:iso-abstract} translate to graded superalgebras by simply attaching the ``super'' prefix wherever it is needed. 
 
 % \begin{thm}\label{thm:super-End-over-D}
@@ -123,7 +123,7 @@ Hence, \cref{thm:End-over-D,thm:iso-abstract} translate to graded superalgebras 
 % 	Another triple $(g', \psi_0', \psi_1')$ defines the same isomorphism $\psi$ if, and only if, there are $t\in \supp \D'$ and $0 \neq d\in \D'_t$ such that $g'= gt$, $\psi_0' = \mathrm{Int}_{d\inv} \circ \psi_0$ and $\psi_1' (u) = \psi_1 (u) d$ for all $u \in \U$. \qed
 % \end{thm}
 
-Let $R$ be graded-simple superalgebra satisfying the \dcc on graded left superideals and write, as in \cref{thm:End-over-D}, $R\iso \End_\D (\U)$ where $\D$ is a graded-division superalgebra and $\U$ is a graded right $\D$-supermodule of finite rank. 
+Let $R$ be a graded-simple superalgebra satisfying the \dcc on graded left superideals and write, as in \cref{thm:End-over-D}, $R\iso \End_\D (\U)$ where $\D$ is a graded-division superalgebra and $\U$ is a graded right $\D$-supermodule of finite rank. 
 Since the property of being an even or an odd a graded-division superalgebra is invariant under isomorphism, by \cref{thm:iso-abstract}, we can extend \cref{defi:even-odd-D} to $R$:
 
 \begin{defi}\label{defi:even-odd-R}
@@ -349,7 +349,7 @@ By \cref{lemma:colour-tensor-product}, $\D \coloneqq Q(1)\tensor \D\even$ is the
 \end{proof}
 
 \begin{remark}\label{rmk:D-simple-iff-tilde-beta-nondeg}
-    Clearly, if $\Char \FF \neq 2$, \cref{lemma:rad-tilde-beta,cor:tilde-beta-nondeg} implies that $\D$ is simple as a superalgebra if, and only if, $\tilde\beta $ is nondegenerate (compare with \cref{cor:D-simple-iff-beta-nondeg}). 
+    Clearly, if $\Char \FF \neq 2$, \cref{lemma:rad-tilde-beta,cor:tilde-beta-nondeg} imply that $\D$ is simple as a superalgebra if, and only if, $\tilde\beta $ is nondegenerate (compare with \cref{cor:D-simple-iff-beta-nondeg}). 
 \end{remark}
 
 Recall that, any nonzero $G^\#$-homogeneous element $d\in \D$ gives rise to the inner automorphism $\operatorname{Int}_d\from \D \to \D$ defined by $\operatorname{Int}_d (c) \coloneqq dcd\inv$, for all $c\in \D$ (Definition \ref{def:inner-automorphism}). 
@@ -376,7 +376,7 @@ We will now generalize this to graded superalgebras:
     Therefore the map $\barr T \to \widehat{\barr T}$ given by $t \mapsto b(t, \cdot)$ is a group isomorphism.
     
     Since $\chi$ is trivial on $\rad \tilde\beta$, there is $\barr \chi \in \widehat{\barr T}$ such that $\chi = \barr \chi \circ \pi$ and, since $b$ is nondegenerate, there is an element $t\in T$ such that $b(\pi(t), \cdot ) = \barr \chi$. 
-    An straightforward computation shows that $\psi_0 = \operatorname{sInt}_{X_t}$.
+    A straightforward computation shows that $\psi_0 = \operatorname{sInt}_{X_t}$.
 \end{proof}
 
 \begin{defi}\label{def:parity-element}
@@ -449,7 +449,7 @@ Note that, if $\Char \FF \neq 2$, then, by \cref{lemma:rad-tilde-beta}, all elem
 \subsection{Finite dimensional graded-simple superalgebras over an algebraically closed field}\label{ssec:classification-assc-super}
 
 We are now going to specialize the main results of \cref{ssec:param-End_D-U} to the superalgebra case, so we continue assuming that $\FF$ is algebraically closed and that $G$ is abelian. 
-Recall from \cref{ssec:supermodules-over-D} that our classification a graded $\D$-modules of finite rank depend on $\D$ being even or odd.
+Recall from \cref{ssec:supermodules-over-D} that our classification of graded $\D$-modules of finite rank depend on $\D$ being even or odd.
 
 \begin{defi}\label{def:E(D,U)-super}
     Let $\D$ be a finite dimensional graded-division superalgebra over an algebraically closed field $\FF$, associated to the triple $(T, \beta, p)$, and let $\U$ be a graded right $\D$-supermodule of finite rank. 
