@@ -10,8 +10,8 @@ Add 11 to the page number to find in Pike's file
 * 39           - He didn't like the \qed with no proof
 * 89           - It suffices to consider such X
 * 107          - ... but the description of general gradings in this preprint is incorrect.  
-* 143          - Thinking involved, close to Eq (4.2):
-                 "Let C be the image of S under the projection G#→G. By Corollary 4.59, f is thesquare of every element in S and, hence, in C."
+* 143          - close to Eq (4.2):
+                 "$f$ is the square of every element in $S$ and, hence, the square of every element in $C$."
 * 169          - Bibtex error from MathSciNet:
                  https://mathscinet-ams-org.qe2a-proxy.mun.ca/mathscinet/search/publications.html?fmt=bibtex&pg1=MR&s1=146231
                  https://doi.org/10.1016/S1385-7258(62)50051-6
