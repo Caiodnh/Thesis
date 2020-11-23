@@ -11,7 +11,7 @@ It is clear that $\D\even$ is a graded-division algebra associated to $(T^+, \be
 Also, given any $t_1 \in T^-$, then $t_1 = (h, \bar 1)$ for some $h\in G$ such that $h^2\in T^+$ and the map $\chi \from T^+ \to \FF^\times$ given by $\chi(t) \coloneqq \beta(t_1, t)$ is a character in $\widehat{T^+}$ such that $\chi(h^2) = 1$ and $\chi^2 = \beta^+ (h^2, \cdot)$. 
 
 \begin{defi}\label{def:odd-parameters}
-    We say that the odd graded-division superalgebra $\D$ is a \emph{associated} to the quadruple $(T^+, \beta^+, h,\chi)$. 
+    We say that the odd graded-division superalgebra $\D$ is \emph{associated} to the quadruple $(T^+, \beta^+, h,\chi)$. 
     If $\U$ is a graded right $\D$-supermodule of finite rank associated to the map $\kappa\from G/T^+ \to \FF^\times$, we say that $(T^+, \beta^+, h, \chi, \kappa)$ are the \emph{$G$-parameters} of the pair $(\D, \U)$. 
 \end{defi}
 
@@ -64,7 +64,7 @@ Combining this with \cref{lemma:colour-tensor-product}, we obtain:
 
 \begin{prop}\label{prop:D-defined-by-quadruple}
     Let $(h, \chi) \in \mathbf{O}(T^+, \beta^+)$. 
-    Then there exist an odd graded-division superalgebra $\D$ associated to the quadruple $(T^+, \beta^+, h,\chi)$. \qed
+    Then there exists an odd graded-division superalgebra $\D$ associated to the quadruple $(T^+, \beta^+, h,\chi)$. \qed
 \end{prop}
 
 We now have a parametrization of odd graded-division superalgebras in terms of the group $G$. 
@@ -186,7 +186,7 @@ We note that $t_p$ is the (unique) parity element of $(T, \beta, p)$ (see \cref{
 
 % -- Existence, necessary condition --
 
-As we will see in \cref{ex:T+-but-no-T}, not every pair $(T^+, \beta^+)$ with $|\rad \beta^+| = 2$ is restriction of a triple $(T, \beta, p)$ with $\beta$ nondegenerate (see \cref{ex:T+-but-no-T}). 
+As we will see in \cref{ex:T+-but-no-T}, not every pair $(T^+, \beta^+)$ with $|\rad \beta^+| = 2$ is a restriction of a triple $(T, \beta, p)$ with $\beta$ nondegenerate (see \cref{ex:T+-but-no-T}). 
 Roughly speaking, this is because some information about the \emph{squares} of elements in $T^-$ is encoded in $(T^+, \beta^+)$. 
 To make this precise, we will need the following: 
 
@@ -311,7 +311,7 @@ Since $t_p\in \rad \beta^+$, we see that the $T^+$-action on $\mathbf{O}(T^+, \b
 
 \begin{lemma}\label{lemma:chi-defines-a}
     Given $\chi \in Y$, there is a unique element $a \in T^+$ such that $\chi^2 = \beta^+(a, \cdot)$ and $\chi(a) = 1$. 
-    Further, a element $h\in G$ is such that $(h, \chi) \in \mathbf{O}_M(T^+, \beta^+)$ if, and only if, $h^2 = a$. 
+    Further, an element $h\in G$ is such that $(h, \chi) \in \mathbf{O}_M(T^+, \beta^+)$ if, and only if, $h^2 = a$. 
 \end{lemma}
 
 \begin{proof}
@@ -384,7 +384,7 @@ To this end, define a $T^+$-action on $Y$ by $t\cdot \chi = \beta^+(t, \cdot) \c
 
 \begin{proof}
     Let $\chi, \chi' \in Y$. 
-    We have $(\chi' \chi\inv) (t_p) = 1$, hence $(\chi' \chi\inv)$ can be seen as character on $\barr{T^+} = T^+/ \langle t_p \rangle$. 
+    We have $(\chi' \chi\inv) (t_p) = 1$, hence $(\chi' \chi\inv)$ can be seen as a character on $\barr{T^+} = T^+/ \langle t_p \rangle$. 
     By nondegeneracy of $\barr {\beta^+}$, there is $t\in T^+$ such that $(\chi' \chi\inv) = \barr {\beta^+} (\bar t, \cdot)$ as a character on $\barr{T^+}$. 
     It follows that $(\chi' \chi\inv) = \beta^+(t, \cdot)$ as a character on $T^+$, so $\chi' = \beta(t, \cdot)\chi$. 
     We conclude that $\chi' = t \cdot \chi$, as desired. 

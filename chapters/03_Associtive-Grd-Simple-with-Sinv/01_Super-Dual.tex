@@ -31,7 +31,7 @@ In particular, if $\U$ is as in \cref{def:superdual-supermodule}, then the left 
 
 \begin{defi}\label{defi:superdual-map}
     Let $\U$ and $\V$ be graded right $\D$-modules of finite rank. 
-    Given a homogeneous $\D$-linear
+    Given a homogeneous $\D$-linear map
     $L:\U \rightarrow \V$, we define the \emph{superdual of $L$} to be the $\FF$-linear map $L\Star\from \V\Star \rightarrow \U\Star$ defined by
     \[
         L\Star (f) = (-1)^{|L||f|} f \circ L,
@@ -83,7 +83,7 @@ As with finite dimensional vector spaces, there is a canonical isomorphism $\U \
         \epsilon(ud) &= \sign{d}{u} \bar d \epsilon(u) = \epsilon(u)d.
     \end{align}
 
-    To see that $\epsilon$ is a isomorphism, let $\{u_1, \ldots, u_k\}$ be a graded basis of $\U$. 
+    To see that $\epsilon$ is an isomorphism, let $\{u_1, \ldots, u_k\}$ be a graded basis of $\U$. 
     We have that $\epsilon(u_i)(u_j\Star) = \sign{u_i}{u_j}\, \overline{u_j\Star(u_i)} = \delta_{ij}$, \ie, $\epsilon(u_i) = {}\Star (u_i \Star) = ({}\Star u_i) \Star$. 
     Therefore, $\epsilon$ sends a graded basis to a graded basis, concluding the proof.
 \end{proof}
@@ -111,7 +111,7 @@ If $\D$ is even and $\kappa_\bz, \kappa_\bo$ are the maps associated to $\U$, th
 If $\D$ is odd and $\kappa$ is the map associated to $\U$, then $\kappa\Star$ is the map associated to $\U\Star$.
 
 Finally, let us assume that $\FF$ is algebraically closed and $\D$ is finite dimensional. 
-Then, if $(T, \beta, p)$ is the triple associated to $\D$, then it is clear that $\supp \D\sop = T$ and that the parity map for $\D\sop$ is also $p$. 
+If $(T, \beta, p)$ is the triple associated to $\D$, then it is clear that $\supp \D\sop = T$ and that the parity map for $\D\sop$ is also $p$. 
 Moreover, if $s,t \in T$, $0 \neq X_s \in \D_s$ and $0 \neq X_t \in \D_t$, then, following the notation in \cref{def:superopposite}, we have:
 \[
     \overline{X_s} \, \overline{X_t} = \sign{s}{t} \, \overline{X_tX_s} = \sign{s}{t}\,  \beta(t, s) \overline{X_sX_t} = \beta(t, s) \overline{X_t} \, \overline{X_s} = \beta(s, t)\inv \, \overline{X_t} \, \overline{X_s}.
