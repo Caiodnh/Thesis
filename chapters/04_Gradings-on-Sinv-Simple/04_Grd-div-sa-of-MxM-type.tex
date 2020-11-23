@@ -71,13 +71,13 @@ Let us fix the abelian groups $H$ and $K$ for the remainder of the section.
 \end{ex}
 
 \begin{ex}\label{ex:bicharacter-is-cocycle}
-    Let $T$ be a abelian group and let $b\from T\times T \to \FF^\times$ be a symmetric bicharacter. 
+    Let $T$ be an abelian group and let $b\from T\times T \to \FF^\times$ be a symmetric bicharacter. 
     It is also easy to see that $b$ is a normalized symmetric $2$-cocycle. 
 \end{ex}
 
 \begin{ex}\label{ex:beta-is-cocycle}
     Let $\D$ be a finite dimensional graded-division superalgebra associated to $(T, \beta, p)$. 
-    If $\beta$ and $\tilde\beta$ only takes values in $\pmone$, then both are symmetric and, hence, normalized symmetric $2$-cocycles. 
+    If $\beta$ and $\tilde\beta$ only take values in $\pmone$, then both are symmetric and, hence, normalized symmetric $2$-cocycles. 
     This is not only a particular case of \cref{ex:bicharacter-is-cocycle}, but also of \cref{ex:coboundary-is-cocycle} (by \cref{prop:superpolarization}). 
 \end{ex}
 
@@ -109,14 +109,14 @@ The next result tells us that, essentially, these are all abelian group extensio
 
 \begin{proof}
 	Fix $\tau\from H \to E$ a set- theoretic section of $\tau$ such that $\tau(e) = e$.
-	For every $x \in E$, we have that $x (\tau(\pi(x)))\inv$ is in $\ker \pi$ and, hence, it equal to $\iota(k)$ for a unique $k_x\in K$.
+	For every $x \in E$, we have that $x (\tau(\pi(x)))\inv$ is in $\ker \pi$ and, hence, it is equal to $\iota(k)$ for a unique $k_x\in K$.
 	It follows that $x = \iota(k_x) \tau(\pi(x))$.
 	Define $\alpha\from E \to K\times H$ by $\alpha(x) = (k_x, \tau(\pi(x)) )$.
 	Clearly, $\alpha$ is bijective, so we can make it an isomorphism by using it to define a product on $K\times H$.
 	It is easy to check that this product is the one on $K \times_\sigma H$ where $\sigma\from H\times H \to K$ is given by $\sigma(h_1, h_2) = \tau(h_1) \tau(h_2) \tau(h_1 h_2)\inv$ and $\alpha$ is the desired equivalence.
 \end{proof}
 
-We will now see to know when two extensions determined by different normalized symmetric $2$-cocycles are equivalent. 
+We will now see when two extensions determined by different normalized symmetric $2$-cocycles are equivalent. 
 
 \begin{prop}\label{prop:coboundary}
 	Let $\sigma, \sigma' \from H\times H \to K$ be normalized symmetric $2$-cocycles.
@@ -157,7 +157,7 @@ We will now see to know when two extensions determined by different normalized s
 		\alpha ((h_1, t_1)) *_{\sigma'} \alpha ((h_2, t_2) ) & = ( f(t_1) h_1, t_1) *_{\sigma'} ( f(t_2) h_2, t_2) \\&=
 		(\sigma'(t_1, t_2) f(t_1) f(t_2) h_1 h_2, t_1 t_2).
 	\end{align*}
-	Comparing both, we conclude that $\alpha$ is an homomorphism if, and only if, $\mathrm{d}f = \sigma' \sigma\inv$.
+	Comparing both, we conclude that $\alpha$ is a homomorphism if, and only if, $\mathrm{d}f = \sigma' \sigma\inv$.
 \end{proof}
 
 \begin{cor}\label{cor:self-equivalences-are-homomorphisms}
@@ -175,7 +175,7 @@ Let $\D$ be a finite dimensional graded-division superalgebra associated to $(T,
 Recall from \cref{prop:superpolarization} that super-anti-automorphisms of $\D$ are in bijection with maps $\eta\from T \to \FF^\times$ such that $\mathrm{d}\eta = \tilde\beta$. 
 The same computation with $p$ trivial shows that anti-automorphisms of $\D$ are in bijection with maps $\eta\from T \to \FF^\times$ such that $\mathrm{d}\eta = \beta$ (see also \cite{livromicha}). 
 
-Even though we are mainly interested in superinvolutions, some su\-per-an\-ti-au\-to\-mor\-phisms which are not involutive (and even some an\-ti-au\-to\-mor\-phisms) will useful in what follows and also in \cref{chap:Lie}. 
+Even though we are mainly interested in superinvolutions, some su\-per-an\-ti-au\-to\-mor\-phisms which are not involutive (and even some an\-ti-au\-to\-mor\-phisms) will be useful in what follows and also in \cref{chap:Lie}. 
 We will need the ones that correspond to quadratic maps.
 
 \begin{defi}
@@ -190,7 +190,7 @@ We will need the ones that correspond to quadratic maps.
 	In the case of abelian groups (\ie, $\mathbb K = \ZZ$), the first condition is equivalent to $q(-x) = q(x)$, justifying our nomenclature. 
 \end{remark}
 
-In next example, a quadratic map is used to construct a anti-isomorphism between different graded-division superalgebras:
+In next example, a quadratic map is used to construct an anti-isomorphism between different graded-division superalgebras:
 
 \begin{ex}\label{ex:quadratic-form-polarization-parity}
 	Let $\mu_0\from T \to \FF^\times$ be given by $\mu_0(t) = 1$ for all $t\in T^+$ and $\mu_0(t) = \bi$ for all $t\in T^-$.
@@ -483,7 +483,7 @@ The next result gives us a characterization of graded-division superalgebras wit
     Then the map $\alpha\from T_{\mc E} \to \{ \pm 1 \} \times_{\tilde\beta} T$ given by $\alpha(\tau(t)) = (1, t)$ and $\alpha(f\tau(t)) = (-1, t)$, for all $t\in T$, is an equivalence from $T_{\mc E}$ to the extension in item \eqref{item:pmone-x-T} in \cref{thm:refinement-DxDsop} (compare with the proof of \cref{prop:all-ext-are-cocycle}). 
 \end{proof}
 
-We conclude with a result will be useful in \cref{chap:Lie}. 
+We conclude with a result that will be useful in \cref{chap:Lie}. 
 
 \begin{prop}\label{prop:lemma-for-undoubling-and-fine-gradings}
     Let $(\mc E, \vphi_0)$ be as in \cref{lemma:undoubling-D}, with $f\in \ker \tilde \beta$ and $\eta(f) = -1$. 
@@ -530,7 +530,7 @@ We conclude with a result will be useful in \cref{chap:Lie}.
     We claim that $\mc B = \{v_1 \epsilon , \ldots, v_k \epsilon \}$ is a $\barr G^\#$-graded $\D$-basis for $\U$. 
     Indeed, for every $v \in \V$, write $v = v_1 d_1 + \cdots + v_k d_k$, where $d_1, \ldots, d_k \in \mc E$. 
     Then $v \epsilon = v_1 d_1 \epsilon + \cdots + v_k d_k \epsilon = (v_1 \epsilon) (d_1 \epsilon) + \cdots + (v_k \epsilon) (d_k \epsilon)$. 
-    We conclude that $\U$ the $\D$-span of $\mc B$. 
+    We conclude that $\U$ is the $\D$-span of $\mc B$. 
     For the $\D$-linear independence, we note that if
     $(v_1 \epsilon) (d_1 \epsilon) + \cdots + (v_k \epsilon) (d_k \epsilon) = 0$, then $v_1 d_1 \epsilon + \cdots + v_k d_k \epsilon = 0$, so $d_1 \epsilon = \cdots = d_k \epsilon = 0$. 
 \end{proof}
