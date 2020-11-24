@@ -8,7 +8,6 @@ A systematic classification of group gradings on Lie algebras started with \cite
 
 The first appearances of Lie superalgebras were related to cohomology (see \cite{FN56,Gen63,Gen64,MM65}), but they were independently introduced in physics, in relation to the so called supersymmetries (see \cite{GN64,Miy68,Mic69}). 
 They became a mainstream topic in theoretical physics with the development of string theory in the 1970s. 
-\Cref{item:A(m-n)-choose-chi}
 
 In the present work, our main goal is to classify, up to isomorphism, the group gradings (see \cref{defi:grd-sa}) on nonexceptional classical Lie superalgebras (see \cref{sec:defi-classical-SA}) over an algebraically closed field of characteristic $0$.  
 To achieve this in \cref{chap:Lie}, we first classify group gradings on finite dimensional simple (\cref{chap:grd-simple-assc}) and superinvolution-simple associative superalgebras (\cref{chap:super-inv,chap:grds-sinv-simple}). 
@@ -70,7 +69,7 @@ A subspace $U\subseteq V$ is said to be a \emph{graded subspace} if $U = \bigopl
 \end{defi}
 
 A \emph{homomorphism of $G$-graded algebras} is a homomorphism of algebras that is also a degree-preserving map. 
-If $V$ is a finite dimensional graded vector space, then $\End(V)$ can be considered as a $G$-graded algebra by setting 
+If $V$ is a finite dimensional graded vector space, then the endomorphism algebra $\End(V)$ can be considered as a $G$-graded algebra by setting 
 \[\label{eq:elementary-1st}
     \End(V)_g \coloneqq \{ T\in \End(V) \mid \forall h\in G,\, T(V_h) \subseteq V_{gh} \}.
 \]
@@ -185,7 +184,7 @@ Another kind of object that plays a major role in this work is associative super
 \end{defi}
 
 For example, the identity map $\id\from \mc G(V) \to \mc G(V)$ is a superinvolution. 
-For comparison with \cref{Grassmann-envelope}, note that a parity-preserving bijective linear map $\vphi\from A \to A$ satisfies \cref{eq:super-anti-automorphism} \IFF the map $\vphi \tensor \id \from (A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd) \to (A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd)$ is an antiautomorphism. 
+For comparison with \cref{Grassmann-envelope}, note that a parity-preserving bijective linear map $\vphi\from A \to A$ satisfies \cref{eq:super-anti-automorphism} \IFF the map $\vphi \tensor \id \from (A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd) \to (A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd)$ is an anti-automorphism. 
 
 \begin{defi}\label{defi:grd-superinv}
     Let $(R, \vphi)$ be a superalgebra $R$ endowed with a super\--anti\--auto\-mor\-phism $\vphi$. 
@@ -727,3 +726,10 @@ Graded identities for certain gradings on $P(n)$ were recently considered in \ci
 A classification of all gradings on simple Lie superalgebras opens paths for further research in this area. 
 
 % -----
+
+\section{Future Research}
+
+In this work, we classify, up to isomorphism, all group gradings on the $6$ series of classical simple Lie superalgebras, with the exception of type $A(1,1)$. 
+The most difficult case turns out to be gradings on the series $A(m,n)$, which contain, in a sense, all gradings on the other $5$ series (see \cref{ssec:grds-on-A-m-n,ssec:grds-on-Ann}). 
+The remaining cases to complete the classification of gradings up to isomorphism on finite dimensional simple Lie superalgebras are types $A(1,1)$, $F(4)$, $G(3)$, $D(2,1, \alpha)$ and the Cartan types. 
+Finally, the classification of fine gradings up to equivalence is known only for series $B$, $P$, $Q$ and types $F(4)$, $G(3)$, $D(2,1, \alpha)$. 
