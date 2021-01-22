@@ -208,8 +208,8 @@ Since $\U$ is the direct sum of its isotypic components, we conclude that $\U$ h
 
 \begin{prop}\label{prop:dim-U_x}
     Let $\U$ be a graded right $\D$-module. 
-    Let $\mc B$ be a graded basis and set $\B_x \coloneqq B \cap B_x$ for any $x\in G/T$. 
-    Then the sets $B_x$ form a partition of $\B$ and the cardinality $|B_x|$ is independent of the choice of $\B$ and equal to $\dim_{\D_e} \U_g$ for any $g\in x$. 
+    Let $\mc B$ be a graded basis and set $\B_x \coloneqq \B \cap \U_x$ for any $x\in G/T$. 
+    Then the sets $\B_x$ form a partition of $\B$ and the cardinality $|\B_x|$ is independent of the choice of $\B$ and equal to $\dim_{\D_e} \U_g$ for any $g\in x$. 
 \end{prop}
 
 \begin{proof}
@@ -333,7 +333,7 @@ Here we follow \cite[Theorem 2.6]{livromicha}, the converse of which also holds 
 %     In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_k(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_k(\FF)$ is given the elementary grading defined by the $k$-tuple $(g_1, \ldots, g_k)$ (see \cref{defi:elementary-grd-matrix}).
 % \end{remark}
 
-The next question is when two graded algebras $\End_\D (\U)$ and $\End_{\D'} (\U')$ are isomorphic. 
+The next question is: when two graded algebras $\End_\D (\U)$ and $\End_{\D'} (\U')$ are isomorphic? 
 We will need the following two definitions:
 
 \begin{defi}\label{def:inner-automorphism}
@@ -343,7 +343,7 @@ We will need the following two definitions:
 
 \begin{defi}\label{def:twist}
 	Let $\psi_0\from \D' \to \D$ be a homomorphism of graded algebras and let $\U$ be a graded right $\D$-module.
-	The \emph{module induced by $\psi$} is the graded right $\D'$-module $\U^{\psi_0}$ which is $\U$ as a vector space, but with $\D'$-action defined by $u\cdot d \coloneqq u\,\psi_0 (d)$, for all $u\in \U$ and $d\in \D'$.
+	The \emph{module induced by $\psi_0$} is the graded right $\D'$-module $\U^{\psi_0}$ which is $\U$ as a vector space, but with $\D'$-action defined by $u\cdot d \coloneqq u\,\psi_0 (d)$, for all $u\in \U$ and $d\in \D'$.
 	In the case $\psi_0\from \D \to \D$ is an automorphism, $\U^{\psi_0}$ is again a graded right $\D$-module, called the \emph{twist of $\U$ by $\psi_0$}.
 \end{defi}
 
