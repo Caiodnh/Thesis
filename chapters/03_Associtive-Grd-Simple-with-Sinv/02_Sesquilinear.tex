@@ -17,12 +17,15 @@ Hence, we can consider $\mc U\Star$ as a graded left $R\sop$-supermodule via $\b
 and $\mc U\Star$ becomes a $(R\sop, \D\sop)$-superbimodule.
 
 \begin{lemma}\label{lemma:U-star-R-sop}
-	The left $R\sop$-supermodule $\mc U\Star$ is graded-simple, and the action of $\D\sop$ gives an isomorphism $\D\sop \to \End_{R\sop}(\mc U\Star)$.
+    As a left $R\sop$-supermodule, $\mc U\Star$ is graded-simple. Also, the right action of $\D\sop$ on $\mc U\Star$ gives an isomorphism $\D\sop \to \End_{R\sop}(\mc U\Star)$.
 \end{lemma}
 
 \begin{proof}
-	By definition of superadjoint operator, the above $R\sop$-action corresponds to the representation $\rho\from R\sop \to \End_{\D\sop} (\mc U\Star)$ given by $ \rho(r) = r\Star$, which is an isomorphism since $\U$ is of finite rank.
-	If we use $\rho$ to identify $R\sop$ with $\End_{\D\sop} (\mc U\Star)$, the result follows from \cref{lemma:converse-density-thm}.
+	By definition of superdual of an operator, the above $R\sop$-action corresponds to the representation $R\sop \to \End_{\D\sop} (\mc U\Star)$ given by $r \mapsto r\Star$, which is an isomorphism since $\U$ is of finite rank. 
+	Using the converse of
+	\cref{thm:End-over-D} (see \cite[page 31]{livromicha}), we conclude that $\mc U\Star$ is simple as a graded left $R\sop$-module. 
+	For the ``also'' part, we identify $R\sop$ with $\End_{\D\sop} (\mc U\Star)$ with the isomorphism above, and then apply
+	\cref{lemma:converse-density-thm}.
 \end{proof}
 
 %Note that the $R\sop$-action correspond to the representation $\rho: R\sop \to \End_{\D\sop} (\mc U\Star)$ given by $ \rho(r) = r\Star$, which is an isomorphism. If we use it to identify $R\sop$ with $\End_{\D\sop} (\mc U\Star)$, we can then apply Proposition \ref{lemma:converse-density-thm} again and conclude that $\mc U\Star$ is a graded simple left $R\sop$-module and that we naturally can identify $\D\sop$ with $\End_{R\sop}(\mc U\Star)$.
