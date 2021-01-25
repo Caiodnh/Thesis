@@ -241,7 +241,7 @@ If $\FF$ is algebraically closed, the finite dimensional simple associative supe
 \end{itemize}
 
 This is a well known result, obtained in \cite{MR167498}. 
-We will also deduce it in \cref{chap:grd-simple-assc} as a special case of the classification of graded-simple associative algebras (see \cref{thm:fd-simple-SA}). 
+We will also deduce it in \cref{chap:grd-simple-assc} (\cref{thm:fd-simple-SA}) as a special case of the classification of graded-simple associative algebras. 
 The definitions are given in \cref{subsec:simple-associative}, below. 
 
 If $\FF$ is algebraically closed and $\Char \FF = 0$, 
@@ -434,9 +434,12 @@ The \emph{queer associative superalgebra} $Q(n)$ is the subsuperalgebra of $M(n,
     \right\}.
 \]
 
+Another realization of $Q(n)$ is as $R\even \oplus u\, R\even$, where $R\even \coloneqq M_n(\FF)$ and $u$ is an odd variable commuting with all elements in $R\even$ such that $u^2 = 1$. 
+
 % Differently from $M(m,n)$, 
-While $Q(n)$ is not simple as an algebra, it is simple as an superalgebra. 
-Also, $Q(n) \iso Q(n')$ \IFF $n=n'$ (see, \eg, \cref{thm:fd-simple-SA}). 
+While $Q(n)$ is not simple as an algebra, it is simple as a superalgebra. 
+Also, $Q(n) \iso Q(n')$ \IFF $n=n'$.
+% (see, \eg, \cref{thm:fd-simple-SA}). 
 
 The queer supertranspose on $M(n,n)$ restricts to $Q(n)$, but, if $\Char \FF \neq 2$,
 $Q(n)$ does not admit any superinvolution (see, \eg, \cref{cor:Q-no-sinv-center}). 
@@ -450,22 +453,35 @@ $Q(n)$ does not admit any superinvolution (see, \eg, \cref{cor:Q-no-sinv-center}
 \subsubsection{The series $A$} 
 
 Let $m,n > 0$. 
-The \emph{general linear Lie superalgebra} $\gl(m|n)$ is defined to be $M(m,n)^{(-)}$. 
-The \emph{special linear Lie superalgebra} $\Sl (m|n)$ is the derived superalgebra of $\gl(m|n)$. 
-One can check that this is equivalent to
-%
+We define the \emph{supertrace} of a matrix in $M(m,n)$ by
 \[
-    \Sl(m|n) = \left\{
+    \operatorname{str} 
     \left(\begin{array}{c|c}
         A & B\\
         \hline
         C & D
     \end{array}\right)
-	\in \gl(m|n)
-	\mid \tr A = \tr D
+    \coloneqq \tr A - \tr D.
+\]
+%
+The \emph{general linear Lie superalgebra} $\gl(m|n)$ is defined to be $M(m,n)^{(-)}$. 
+The \emph{special linear Lie superalgebra} $\Sl (m|n)$ is the derived superalgebra of $\gl(m|n)$. 
+% One can check that this is equivalent to
+Equivalently, we have:
+%
+\[
+    \Sl(m|n) = \left\{
+    % \left(\begin{array}{c|c}
+    %     A & B\\
+    %     \hline
+    %     C & D
+    % \end{array}\right)
+	T \in \gl(m|n)
+	\mid \str T = 0
 	\right\}.
 \]
 %
+
 If $m\neq n$ then $\Sl(m|n)$ is a simple Lie superalgebra. 
 However, if $m=n$, then
 \[
@@ -563,6 +579,8 @@ Since defining $F(4)$, $G(3)$ and $D(2,1, \alpha)$ here would be a long detour, 
 We do not consider them in this work except $D(2, 1, \alpha)$ for $\alpha \in \{1, -\frac{1}{2}, -2 \}$, which are isomorphic to $D(2,1)$. 
 
 \subsection{Lie superalgebras of Cartan type}\label{subsec:Cartan}
+
+Lie superalgebras of Cartan Type are also not considered in this work, but we give here their definitions for completeness.
 
 \subsubsection{The series $W$}
 
@@ -725,6 +743,8 @@ Recently, the theory of such identities and their combinatorial characteristics 
 % ,MR3920905,MR3886336
 Graded identities for certain gradings on $P(n)$ were recently considered in \cite{MR3611462}. 
 A classification of all gradings on simple Lie superalgebras opens paths for further research in this area. 
+
+Also cite \cite{MR3886336} and \cite{Felipe_Yuri_SPJournal} around here.
 
 % -----
 

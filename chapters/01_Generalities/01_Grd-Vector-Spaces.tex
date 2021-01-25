@@ -98,8 +98,8 @@ A \emph{$G$-graded left $R$-supermodule} is a $G^\#$-graded $R$-module (recall t
 
 \begin{defi}
     Let $\Gamma: V = \bigoplus_{h\in G} V_h$ be a grading on a vector space $V$. 
-    For an element $g\in G$, the \emph{right shift of $\Gamma$ by $g$}, denoted by $\Gamma^{[g]}$, is the grading obtained by replacing every index $h \in G$ by $hg$, \ie, $\Gamma^{[g]} : V = \bigoplus_{h\in G} V_h'$ where $V_{g}' \coloneqq V_{hg\inv}$, for all $h\in G$. 
-    Analogously, the \emph{left shift of $\Gamma$ by $g$} is defined to be ${}^{[g]}\Gamma : V = \bigoplus_{h\in G} V_h''$ where $V_{h}'' \coloneqq V_{hg\inv}$, for all $h\in G$. 
+    For an element $g\in G$, the \emph{right shift of $\Gamma$ by $g$}, denoted by $\Gamma^{[g]}$, is the grading obtained by replacing every index $h \in G$ by $hg$, \ie, $\Gamma^{[g]} : V = \bigoplus_{h\in G} V_h'$ where $V_{h}' \coloneqq V_{h g\inv}$, for all $h\in G$. 
+    Analogously, the \emph{left shift of $\Gamma$ by $g$} is defined to be ${}^{[g]}\Gamma : V = \bigoplus_{h\in G} V_h''$ where $V_{h}'' \coloneqq V_{g\inv h}$, for all $h\in G$. 
     If $\Gamma$ is fixed, we define the \emph{right (respectively, left) shift of $V$} to be $V$ endowed with $\Gamma^{[g]}$ (respectively, ${}^{[g]}\Gamma$) and denote it by $V^{[g]}$ (respectively, ${}^{[g]}V$).
 \end{defi}
 
@@ -189,7 +189,7 @@ We will encounter this situation in \cref{chap:grd-simple-assc} (see \cref{rmk:M
 % The proof of \cref{lemma:center-is-graded} can be easily adapted to show that, if $G$ is abelian, then the supercenter of a graded superalgebra is a graded subsuperalgebra. 
 
 \begin{lemma}\label{lemma:center-is-graded}
-	Let $G$ be an abelian group and let $R$ be a $G$-graded superalgebra.
+	Let $G$ be an abelian group and let $R$ be an associative $G$-graded superalgebra.
 	Then the center $Z(R)$ and the supercenter $sZ(R)$ are $G$-graded subsuperalgebras of $R$.
 \end{lemma}
 

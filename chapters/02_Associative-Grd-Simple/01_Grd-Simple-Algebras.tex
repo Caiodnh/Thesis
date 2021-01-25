@@ -1,7 +1,9 @@
 
 \section{Graded-simple associative algebras}\label{sec:gradings-on-matrix-algebras}
 
-In this section we will recall the classification of gradings on matrix algebras \cite{BSZ01, BZ02, BK10}. 
+In this section, the term
+algebra refers to an associative algebra.
+We will recall the classification of gradings on matrix algebras \cite{BSZ01, BZ02, BK10}. 
 We will follow the exposition of \cite[Chapter 2]{livromicha} but use slightly different notation, which will be extended to superalgebras in \cref{sec:grd-simple-salg}.
 
 Our main interest is in finite dimensional graded algebras. 
@@ -193,8 +195,9 @@ Note that $\D$ can be regarded as a left $\D_e$-module.
 %     Clearly we can extend it to an isomorphism $\tilde\vphi \from \U_g\tensor_{\D_e} \D \to \V_g\tensor_{\D_e} \D$ by $ $
 % \end{proof}
 
+Since $\D_e$ is a (ungraded) division algebra, every right $\D_e$-module has a $\D_e$-basis. 
 By \cref{prop:U_g-is-D_e-form}, a $\D_e$-basis for $\U_g$ is a $\D$-basis for $\U_{gT}$. 
-Since $\D_e$ is a division algebra, we conclude that every isotypic component has a $\D$-basis consisting of elements of the same degree. 
+It follows that every isotypic component has a $\D$-basis consisting of elements of the same degree. 
 Since $\U$ is the direct sum of its isotypic components, we conclude that $\U$ has a graded basis:
 
 \begin{defi}
@@ -583,7 +586,7 @@ Finally, we define $X_{ab} \coloneqq X_a X_b$, for all $a\in A$ and $b\in B$.
 
     It remains to show that the operators $X_t$, $t\in T$, form a basis of $\End(V)$. 
     Since $|T| = |A||B| = |B|^2$ and $\dim V = |B|$, it suffices to prove linear independence. 
-    Supposes $\sum_{a,b} \lambda_{ab} X_{ab} = 0$, for some $\lambda_{ab} \in \FF$. 
+    Suppose $\sum_{a,b} \lambda_{ab} X_{ab} = 0$, for some $\lambda_{ab} \in \FF$. 
     Then for each $b' \in B$, we have that
     \[
         \sum_{a,b} \lambda_{ab} X_{ab} (e_{b'}) = \lambda_{ab} \beta(a, b) \beta(a,b') e_{bb'} = 0.
@@ -684,7 +687,7 @@ Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$.
     Two such gradings $\Gamma_M (T, \beta, \kappa)$ and $\Gamma_M (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and there is $g\in G$ such that  $g \cdot \kappa = \kappa'$. \qed
 \end{cor}
 
-As an application of \cref{thm:End-over-D,thm:iso-End_D-U-with-parameters}, we can obtain the well-known classification of finite dimensional simple superalgebras over an algebraically closed field. 
+As an application of \cref{thm:End-over-D,thm:iso-End_D-U-with-parameters}, we can obtain the classification of finite dimensional simple superalgebras over an algebraically closed field (see \cite{MR167498}). 
 
 \begin{thm}\label{thm:fd-simple-SA}
     Let $R$ be a finite dimensional simple superalgebra over an algebraically closed field $\FF$. 
