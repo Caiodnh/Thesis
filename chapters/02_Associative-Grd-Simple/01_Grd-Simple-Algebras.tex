@@ -195,7 +195,7 @@ Note that $\D$ can be regarded as a left $\D_e$-module.
 %     Clearly we can extend it to an isomorphism $\tilde\vphi \from \U_g\tensor_{\D_e} \D \to \V_g\tensor_{\D_e} \D$ by $ $
 % \end{proof}
 
-Since $\D_e$ is a (ungraded) division algebra, every right $\D_e$-module has a $\D_e$-basis. 
+Since $\D_e$ is an (ungraded) division algebra, every right $\D_e$-module has a $\D_e$-basis. 
 By \cref{prop:U_g-is-D_e-form}, a $\D_e$-basis for $\U_g$ is a $\D$-basis for $\U_{gT}$. 
 It follows that every isotypic component has a $\D$-basis consisting of elements of the same degree. 
 Since $\U$ is the direct sum of its isotypic components, we conclude that $\U$ has a graded basis:
@@ -336,7 +336,7 @@ Here we follow \cite[Theorem 2.6]{livromicha}, the converse of which also holds 
 %     In the case $G$ is abelian, \cref{eq:grd-M_k(D)-nonabelian} implies that the grading on $M_k(\FF) \tensor_\FF \D$ is the one of the tensor product of graded algebras (see ??), where $M_k(\FF)$ is given the elementary grading defined by the $k$-tuple $(g_1, \ldots, g_k)$ (see \cref{defi:elementary-grd-matrix}).
 % \end{remark}
 
-The next question is: when two graded algebras $\End_\D (\U)$ and $\End_{\D'} (\U')$ are isomorphic? 
+The next question is: when are two graded algebras $\End_\D (\U)$ and $\End_{\D'} (\U')$ isomorphic? 
 We will need the following two definitions:
 
 \begin{defi}\label{def:inner-automorphism}
@@ -375,6 +375,7 @@ The next result is \cite[Theorem 2.10]{livromicha} with a slightly different not
 % \end{defi}
 
 For the remainder of this subsection, fix a graded-division algebra $\D$ and a nonzero graded right $\D$-module of finite rank $\U$, and set $R \coloneqq \End_{\D} (\U)$. 
+Thus, $\U$ is a graded $(R, \D)$-bimodule.
 
 First, we state here a well-known result about ungraded algebras, for future reference:
 
@@ -386,34 +387,34 @@ First, we state here a well-known result about ungraded algebras, for future ref
 %     If $\U \neq 0$ and using that it has a graded basis, it is easy to see that the $\D$-action on $\U$ gives rise to an isomorphism of graded algebras $\D \to \End_R(\U)$. 
 % \end{remark}
 
-The following result is \cite[Exercise 3 on page 60]{livromicha}.
+The following result is essentially \cite[Exercise 3 on page 60]{livromicha}.
 
 % \begin{prop}
 %     The $\D$-action on $\U$ gives rise to an isomorphism of graded algebras between $\D$ and $\End_R (\U)$. \qed
 % \end{prop}
 
 \begin{lemma}\label{lemma:converse-density-thm}
-    The representation map $\rho\from \D \to \End_R (\U)$ corresponding to the right $\D$-action on $\U$
-    % given by $u \rho(d) = ud$, for all $d\in \D$ and $u \in \U$, 
-    is an isomorphism of graded algebras.
+    As a left $R$-module, $\U$ is graded-simple. 
+    Also, the right action of $\D$ on $\U$ gives an isomorphism $\rho\from \D \to \End_R(\U)$. 
 \end{lemma}
 
 \begin{proof}
     By the definition of a graded module, $\rho$ is a homomorphism of graded algebras $\D \to \End_{R}^{\mathrm{gr}} (\U)$. 
     Since $\D$ is graded-simple and $\rho(1) = \id_{\U} \neq 0$, $\rho$ is injective.
 
-    Let $\{u_1, \ldots, u_k \}$ be a graded basis of $\U$. 
+    Let $\{u_1, \ldots, u_k \}$ be a graded $\D$-basis of $\U$. 
     Given $u\in \U$, define $r\in R = \End_\D (\U)$ to be the $\D$-linear map such that $r u_1 = u$ and $r u_i = 0$ for $1< i \leq k$. 
     Let $f\in \End_R (\U)$ and write $u_1 f = \sum_i u_i d_i$ for $d_1, \ldots, d_k\in \D$. 
     Then
     \[
         u f = (r u_1) f = r (u_1 f) = r\big( \sum_i u_i d_i \big) = u d_1.
     \]
-    Therefore $f = \rho(d_1)$, proving that the image of $\rho$ is the whole $\End_\D (\U)$.
+    Therefore $f = \rho(d_1)$, proving that the image of $\rho$ is the whole $\End_R (\U)$. 
+    
+    Finally, since any nonzero homogeneous element $u_1 \in \U$ can be included in a graded $\D$-basis $\{u_1, \ldots, u_k \}$, the maps $r$ defined as above show that $\U = R u_1$ and, hence, $\U$ is graded-simple as an $R$-module. 
 \end{proof}
- 
-Finally, we will assume $G$ is abelian. 
-Recall that, in this case, the center of a graded algebra is a graded subalgebra (\cref{lemma:center-is-graded}). 
+
+Recall that, if $G$ is abelian, the center of a graded algebra is a graded subalgebra (\cref{lemma:center-is-graded}). 
 % Also, note that if $d\in Z(\D)$, then the map $\rho(d)$ is not only $R$-linear, but also $\D$-linear. 
 
 \begin{prop}\label{prop:R-and-D-have-the-same-center}
@@ -687,11 +688,11 @@ Nevertheless, its isomorphism class depends only on $(T, \beta, \kappa)$.
     Two such gradings $\Gamma_M (T, \beta, \kappa)$ and $\Gamma_M (T', \beta', \kappa')$ are isomorphic if, and only if, $T = T'$, $\beta = \beta'$ and there is $g\in G$ such that  $g \cdot \kappa = \kappa'$. \qed
 \end{cor}
 
-As an application of \cref{thm:End-over-D,thm:iso-End_D-U-with-parameters}, we can obtain the classification of finite dimensional simple superalgebras over an algebraically closed field (see \cite{MR167498}). 
+As an application of \cref{thm:End-over-D,thm:iso-End_D-U-with-parameters}, we can obtain the classification of finite dimensional simple superalgebras over an algebraically closed field. 
 
-\begin{thm}\label{thm:fd-simple-SA}
+\begin{thm}[\cite{MR167498}]\label{thm:fd-simple-SA}
     Let $R$ be a finite dimensional simple superalgebra over an algebraically closed field $\FF$. 
-    Then $R \iso M(m,n)$ or $R \iso Q(n)$, for some $m,n \in \ZZ_{\geq 0}$. 
+    Then $R$ is isomorphic to either $M(m,n)$ or $Q(n)$, where $m,n \in \ZZ_{\geq 0}$. 
     Moreover,
     \begin{enumerate}[(i)]
         \item $M(m,n) \not\iso Q(n')$;
@@ -718,7 +719,7 @@ As an application of \cref{thm:End-over-D,thm:iso-End_D-U-with-parameters}, we c
     To conclude the proof, we will show that $\End_{Q(1)}(\U) \iso Q(n)$.  
     By \cref{prop:U_g-is-D_e-form}, we can take a graded basis $\B$ for $\U$ with all elements having degree $\bar 0$.
     We, then, can write $\End_{Q(1)}(\U) \iso M_n(Q(1)) \iso \M_n(\FF) \tensor Q(1)$ as graded algebras (\cref{rmk:M_k(F)-tensor-D}), where the grading on $\M_n(\FF)$ is trivial. 
-    Finally, using the Kronecker product, $M_n(\FF) \tensor Q(1) \iso Q(1)\tensor M_n(\FF) \iso Q(n)$. 
+    Finally, using the Kronecker product, we get $M_n(\FF) \tensor Q(1) \iso Q(1)\tensor M_n(\FF) \iso Q(n)$. 
 \end{proof}
 
 \begin{defi}

@@ -9,18 +9,13 @@ A systematic classification of group gradings on Lie algebras started with \cite
 The first appearances of Lie superalgebras were related to cohomology (see \cite{FN56,Gen63,Gen64,MM65}), but they were independently introduced in physics, in relation to the so called supersymmetries (see \cite{GN64,Miy68,Mic69}). 
 They became a mainstream topic in theoretical physics with the development of string theory in the 1970s. 
 
-In the present work, our main goal is to classify, up to isomorphism, the group gradings (see \cref{defi:grd-sa}) on nonexceptional classical Lie superalgebras (see \cref{sec:defi-classical-SA}) over an algebraically closed field of characteristic $0$.  
-To achieve this in \cref{chap:Lie}, we first classify group gradings on finite dimensional simple (\cref{chap:grd-simple-assc}) and superinvolution-simple associative superalgebras (\cref{chap:super-inv,chap:grds-sinv-simple}). 
-In this Introduction and in \cref{sec:generalities}, we give the basic definitions and tools we will use throughout the thesis. 
-
-% A POSSIBLE APPLICATIONS:
-
-% \begin{itemize}
-%     \item Quantum numbers, see \cite{Helens_thesis};
-%     \item Another motivation is that the classification problem for Lie colored superalgebras can be reduced to the classification of the gradings on Lie superalgebras, see \cite{MR2497949} and also [Sch79], BM99 and \cite[Theorem 0.10]{livromicha}
-%     \item Graded identities, see \cite{MR3611462};
-%     \item Graded contractions (compare with \cite{livromicha})
-% \end{itemize}
+In the present work, our main goal is to classify, up to isomorphism, the group gradings (see \cref{defi:grd-sa}) on nonexceptional classical Lie superalgebras (see \cref{sec:defi-classical-SA}) over an algebraically closed field of characteristic $0$. 
+These Lie superalgebras are defined in terms of associative superalgebras and  superinvolutions. 
+In \cref{sec:generalities}, we will give the basic definitions and tools we will use throughout the thesis. 
+In particular, in \cref{sec:g-hat-action}, we will present a result that will allow us to transfer the classification of gradings on associative superalgebras with superinvolution to Lie superalgebras (see \cref{thm:transfer-of-gradings}). 
+\Cref{chap:grd-simple-assc} is devoted to graded-simple associative superalgebras, which not only will give us a model for some of the gradings on Lie superalgebras in series $A$ and $Q$, but will also be the foundation for \cref{chap:super-inv,chap:grds-sinv-simple}. 
+In the former, we will study superinvolutions on graded-simple associative superalgebras and, in the latter, we will classify gradings on superinvolution-simple superalgebras (\cref{thm:osp-and-p-associative,thm:MxM-type-I,thm:QxQ-type-I,thm:MxM-even,thm:MxM-odd}).  
+Finally, in \cref{chap:Lie}, we prove that, except for type $A(1,1)$, the classification of group gradings on nonexceptional classical Lie superalgebras is the same as on the finite dimensional superinvolution-simple associative superalgebras (see \cref{cor:transfer-R-vphi-to-L}), and we specialize it to each series of Lie superalgebras, giving explicit realizations for the gradings (see \cref{thm:last-one-for-P,thm:grds-osp-final,thm:final-m-not-n,thm:final-Q(n),thm:final-A(n-n)}).
 
 
 \section{Gradings and superalgebras}\label{sec:grds-and-sa}
@@ -87,8 +82,12 @@ Note that $\End(V)$ consists of all linear maps and $\End(V)_e$ consists of the 
 % defi: graded algebra and superalgebra
 \begin{defi}\label{def:superalgebra}
     A \emph{super vector space} or \emph{superspace} is a $\ZZ_2$-graded vector space. 
-    A \emph{superalgebra} is a $\ZZ_2$-graded algebra. 
+    A (general) \emph{superalgebra} is a $\ZZ_2$-graded algebra. 
 \end{defi}
+
+%Comment about definition
+It should be noted that this definition can be misleading, since it does not account for different \emph{varieties} of superalgebras; for example, a Lie superalgebra is not simply a $\ZZ_2$-graded Lie algebra. 
+We will expand on this in the next section.
 
 % superscripts and names even, odd
 The $\ZZ_2$-grading in \cref{def:superalgebra} will be called the \emph{canonical $\ZZ_2$-grading}.
@@ -100,7 +99,8 @@ This special notation and nomenclature will serve to distinguish the canonical $
 
 \begin{defi}\label{defi:grd-sa}
     Let $G$ be a group. 
-    A \emph{$G$-grading on a superalgebra} $A = A\even \oplus A\odd$ is a $G$-grading $\Gamma: A = \bigoplus_{g\in G} A_g$ on the algebra underlying $A$ such that all homogeneous components $A_g$ are subsuperspaces or, equivalently, $A\even$ and $A\odd$ are $G$-graded subspaces. 
+    A \emph{$G$-grading on a superalgebra} $A = A\even \oplus A\odd$ is a $G$-grading $\Gamma: A = \bigoplus_{g\in G} A_g$ on the underlying algebra such that $\Gamma$ is compatible with the canonical $\ZZ_2$-grading, \ie,
+    all homogeneous components $A_g$ are subsuperspaces or, equivalently, $A\even$ and $A\odd$ are $G$-graded subspaces. 
     % \[
     %     \forall g\in G, \quad A_g = (A_g \cap A\even) \oplus (A_g \cap A\odd).
     % \]
@@ -116,7 +116,10 @@ Conversely, it is clear that any $G^\#$-graded algebra can be seen as a $G$-grad
 
 \section{Varieties of superalgebras}\label{sec:Grassmann}
 
-Now we are going to define the variety of superalgebras we are mainly interested in:
+A \emph{variety of algebras} is a class of algebras defined by polynomial identities or, equivalently, a class of algebras closed under subalgebras, homomorphic images and arbitrary products (see, \eg, \cite{MR2176105,Cohn_universal}). 
+One can define a \emph{variety of superalgebras} in a similar fashion by considering $\ZZ_2$-graded polynomial identities (see, \eg, \cite{MR886063,MR1192546}).
+
+We now define the variety of superalgebras we are mainly interested in:
 
 \begin{defi}\label{def:Lie-sa}
 	A superalgebra $L=L\even\oplus L\odd$, with product denoted by $[\cdot, \cdot]\from L\times L \to L$, is said to be a \emph{Lie superalgebra} if, for all nonzero homogeneous elements $a, b, c \in L$, we have\footnote{Some authors require additional conditions if $\Char \FF = 2$ or $3$ (\eg, \cite[Subsection 1.2]{MR1192546}).}:
@@ -166,13 +169,14 @@ Superalgebras with this property are called \emph{(super)commutative}.
 \begin{defi}\label{Grassmann-envelope}
     Let $V$ be a fixed vector space with a countably infinite basis. 
     Given a superalgebra $A = A\even \oplus A\odd$, we define the \emph{Grassmann envelope} of $A$ to be the algebra $(A\even\tensor \mc G(V)\even) \oplus (A\odd\tensor \mc G(V)\odd)$. 
-    If $\mathfrak{V}$ is any class of algebras, we say that $A$ is a \emph{$\mathfrak{V}$-superalgebra} if the Grassmann envelope of $A$ belongs to $\mathfrak{V}$. 
+    If $\mathfrak{V}$ is a class of algebras, we say that $A$ is a \emph{$\mathfrak{V}$-superalgebra} if the Grassmann envelope of $A$ belongs to $\mathfrak{V}$. 
 \end{defi}
 
 One can easily see that, if $\mathfrak{V}$ is the class of all Lie (respectively associative, commutative) algebras, then the $\mathfrak{V}$-superalgebras are precisely the Lie (respectively associative, commutative) superalgebras. 
 This approach can be used to define other varieties of superalgebras (\eg, Jordan). 
 
-Another kind of object that plays a major role in this work is associative superalgebras with superinvolution:
+Another kind of object that plays a major role in this work is associative superalgebras with superinvolution. 
+By an \emph{involution} on an algebra $A$ we mean an involutive anti-automorphism, \ie, a linear map $\vphi\from A \to A$ such that $\vphi(ab) = \vphi(b) \vphi(a)$, for all $a,b \in A$, and $\vphi^2 = \id_A$.
 
 \begin{defi}\label{def:super-anti-automorphism}
     Let $A = A\even \oplus A\odd$ be a superalgebra. 
@@ -180,7 +184,7 @@ Another kind of object that plays a major role in this work is associative super
     \[\label{eq:super-anti-automorphism}
         \forall a,b \in A\even \cup A\odd, \quad \vphi(ab) = \sign{a}{b} \vphi(b)\vphi(a).
     \]
-    If, further, $\vphi^2 = \id$, we say that $\vphi$ is a \emph{superinvolution}. 
+    If, further, $\vphi^2 = \id_A$, we say that $\vphi$ is a \emph{superinvolution}. 
 \end{defi}
 
 For example, the identity map $\id\from \mc G(V) \to \mc G(V)$ is a superinvolution. 
@@ -242,7 +246,7 @@ If $\FF$ is algebraically closed, the finite dimensional simple associative supe
 
 This is a well known result, obtained in \cite{MR167498}. 
 We will also deduce it in \cref{chap:grd-simple-assc} (\cref{thm:fd-simple-SA}) as a special case of the classification of graded-simple associative algebras. 
-The definitions are given in \cref{subsec:simple-associative}, below. 
+The definitions of $M(m, n)$ and $Q(n)$ are given in \cref{subsec:simple-associative}, below. 
 
 If $\FF$ is algebraically closed and $\Char \FF = 0$, 
 the simple finite dimensional Lie superalgebras (that are not Lie algebras) were classified by V. G. Kac (see \cite{artigokac} and \cite{livrosuperalgebra}). 
@@ -434,7 +438,7 @@ The \emph{queer associative superalgebra} $Q(n)$ is the subsuperalgebra of $M(n,
     \right\}.
 \]
 
-Another realization of $Q(n)$ is as $R\even \oplus u\, R\even$, where $R\even \coloneqq M_n(\FF)$ and $u$ is an odd variable commuting with all elements in $R\even$ such that $u^2 = 1$. 
+Another realization of $Q(n)$ is $M_n(\FF) \oplus u\, M_n(\FF)$, where $M_n(\FF)$ is the even part and $u$ is an odd element commuting with all elements of $M_n(\FF)$ and satisfying $u^2 = 1$. 
 
 % Differently from $M(m,n)$, 
 While $Q(n)$ is not simple as an algebra, it is simple as a superalgebra. 
@@ -465,12 +469,10 @@ We define the \emph{supertrace} of a matrix in $M(m,n)$ by
 \]
 %
 The \emph{general linear Lie superalgebra} $\gl(m|n)$ is defined to be $M(m,n)^{(-)}$. 
-The \emph{special linear Lie superalgebra} $\Sl (m|n)$ is the derived superalgebra of $\gl(m|n)$. 
-% One can check that this is equivalent to
-Equivalently, we have:
+The \emph{special linear Lie superalgebra} $\Sl (m|n)$ is the derived superalgebra of $\gl(m|n)$ or, equivalently,
 %
 \[
-    \Sl(m|n) = \left\{
+    \Sl(m|n) \coloneqq \left\{
     % \left(\begin{array}{c|c}
     %     A & B\\
     %     \hline
@@ -580,7 +582,8 @@ We do not consider them in this work except $D(2, 1, \alpha)$ for $\alpha \in \{
 
 \subsection{Lie superalgebras of Cartan type}\label{subsec:Cartan}
 
-Lie superalgebras of Cartan Type are also not considered in this work, but we give here their definitions for completeness.
+Lie superalgebras of Cartan type are not considered in this work either. 
+Since their definitions do not require much background, we will briefly introduce them here.
 
 \subsubsection{The series $W$}
 
@@ -739,18 +742,15 @@ Hence, one possible approach to classify simple color Lie algebras is using grad
 % -----
 
 The identities defining Lie superalgebras and color Lie algebras are examples of the so called \emph{graded polynomial identities}, which are polynomial identities that hold for all elements of specified degrees in a graded algebra. 
-Recently, the theory of such identities and their combinatorial characteristics have been extensively studied, especially in the associative case (see, \eg, \cite{MR1935223,MR2176105,MR2680170,MR2639274,MR3068959,MR3030542,MR3152711,MR3271263,MR3773068}). 
-% ,MR3920905,MR3886336
+Recently, the theory of such identities and their combinatorial characteristics have been extensively studied, especially in the associative case (see, \eg, \cite{MR1935223,MR2176105,MR2680170,MR2639274,MR3068959,MR3030542,MR3152711,MR3271263,MR3773068,MR3920905,MR3886336}). 
 Graded identities for certain gradings on $P(n)$ were recently considered in \cite{MR3611462}. 
 A classification of all gradings on simple Lie superalgebras opens paths for further research in this area. 
-
-Also cite \cite{MR3886336} and \cite{Felipe_Yuri_SPJournal} around here.
 
 % -----
 
 \section{Future Research}
 
-In this work, we classify, up to isomorphism, all group gradings on the $6$ series of classical simple Lie superalgebras, with the exception of type $A(1,1)$. 
+As mentioned before, in this work we classify, up to isomorphism, all group gradings on the $6$ series of classical simple Lie superalgebras, with the exception of type $A(1,1)$. 
 The most difficult case turns out to be gradings on the series $A(m,n)$, which contain, in a sense, all gradings on the other $5$ series (see \cref{ssec:grds-on-A-m-n,ssec:grds-on-Ann}). 
 The remaining cases to complete the classification of gradings up to isomorphism on finite dimensional simple Lie superalgebras are types $A(1,1)$, $F(4)$, $G(3)$, $D(2,1, \alpha)$ and the Cartan types. 
 Finally, the classification of fine gradings up to equivalence is known only for series $B$, $P$, $Q$ and types $F(4)$, $G(3)$, $D(2,1, \alpha)$. 

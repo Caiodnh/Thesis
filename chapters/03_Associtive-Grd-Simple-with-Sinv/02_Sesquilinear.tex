@@ -14,17 +14,15 @@ we have a natural identification between $\D$ and $\End_R(\mc U)$.
 As we saw on \cref{ssec:superdual}, $\mc U\Star = \Hom_\D (\mc U, \D)$ is a graded right $\D\sop$-supermodule, through $f \bar d = \sign{f}{d} df$.
 Also, we can make $\mc U\Star$ a graded right $R$-supermodule by defining $(f r) (u) := f(r u)$ for all $f\in \mc U\Star$, $r\in R$ and $u\in \mc U$ (i.e., $f r = f \circ r$, since $R = \End_\D(\mc U)$).
 Hence, we can consider $\mc U\Star$ as a graded left $R\sop$-supermodule via $\bar r f = (-1)^{|r||f|} f r$, % (i.e., $r\cdot f = r\Star (f)$)
-and $\mc U\Star$ becomes a $(R\sop, \D\sop)$-superbimodule.
+and, in this way, $\mc U\Star$ becomes an $(R\sop, \D\sop)$-superbimodule.
 
 \begin{lemma}\label{lemma:U-star-R-sop}
     As a left $R\sop$-supermodule, $\mc U\Star$ is graded-simple. Also, the right action of $\D\sop$ on $\mc U\Star$ gives an isomorphism $\D\sop \to \End_{R\sop}(\mc U\Star)$.
 \end{lemma}
 
 \begin{proof}
-	By definition of superdual of an operator, the above $R\sop$-action corresponds to the representation $R\sop \to \End_{\D\sop} (\mc U\Star)$ given by $r \mapsto r\Star$, which is an isomorphism since $\U$ is of finite rank. 
-	Using the converse of
-	\cref{thm:End-over-D} (see \cite[page 31]{livromicha}), we conclude that $\mc U\Star$ is simple as a graded left $R\sop$-module. 
-	For the ``also'' part, we identify $R\sop$ with $\End_{\D\sop} (\mc U\Star)$ with the isomorphism above, and then apply
+	By definition of the superdual of an operator, the left $R\sop$-action on $\U\Star$ corresponds to the representation $R\sop \to \End_{\D\sop} (\mc U\Star)$ given by $r \mapsto r\Star$, which is an isomorphism since $\U$ is a graded $\D$-supermodule of finite rank (\cref{prop:dual-super-anti-iso}). 
+	Identifying $R\sop$ and $\End_{\D\sop} (\mc U\Star)$ via this isomorphism, we can apply
 	\cref{lemma:converse-density-thm}.
 \end{proof}
 
