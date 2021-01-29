@@ -14,8 +14,8 @@ These Lie superalgebras are defined in terms of associative superalgebras and  s
 In \cref{sec:generalities}, we will give the basic definitions and tools we will use throughout the thesis. 
 In particular, in \cref{sec:g-hat-action}, we will present a result that will allow us to transfer the classification of gradings on associative superalgebras with superinvolution to Lie superalgebras (see \cref{thm:transfer-of-gradings}). 
 \Cref{chap:grd-simple-assc} is devoted to graded-simple associative superalgebras, which not only will give us a model for some of the gradings on Lie superalgebras in series $A$ and $Q$, but will also be the foundation for \cref{chap:super-inv,chap:grds-sinv-simple}. 
-In the former, we will study superinvolutions on graded-simple associative superalgebras and, in the latter, we will classify gradings on superinvolution-simple superalgebras (\cref{thm:osp-and-p-associative,thm:MxM-type-I,thm:QxQ-type-I,thm:MxM-even,thm:MxM-odd}).  
-Finally, in \cref{chap:Lie}, we prove that, except for type $A(1,1)$, the classification of group gradings on nonexceptional classical Lie superalgebras is the same as on the finite dimensional superinvolution-simple associative superalgebras (see \cref{cor:transfer-R-vphi-to-L}), and we specialize it to each series of Lie superalgebras, giving explicit realizations for the gradings (see \cref{thm:last-one-for-P,thm:grds-osp-final,thm:final-m-not-n,thm:final-Q(n),thm:final-A(n-n)}).
+In the former, we will study super-anti-automorphisms and, in particular, superinvolutions on graded-simple associative superalgebras (\cref{thm:vphi-iff-vphi0-and-B,thm:iso-abstract-vphi,thm:vphi-involution-iff-delta-pm-1}); in the latter, we will classify gradings on superinvolution-simple superalgebras (\cref{thm:osp-and-p-associative,thm:MxM-type-I,thm:QxQ-type-I,thm:MxM-even,thm:MxM-odd}).  
+Finally, in \cref{chap:Lie}, we prove that, except for type $A(1,1)$, the classification of group gradings on nonexceptional classical Lie superalgebras is the same as on the finite dimensional superinvolution-simple associative superalgebras (see \cref{cor:transfer-R-vphi-to-L}), and we work it out for each series of Lie superalgebras, giving explicit models for the gradings (\cref{thm:last-one-for-P,thm:grds-osp-final,thm:final-m-not-n,thm:final-Q(n),thm:final-A(n-n)}).
 
 
 \section{Gradings and superalgebras}\label{sec:grds-and-sa}
@@ -438,7 +438,15 @@ The \emph{queer associative superalgebra} $Q(n)$ is the subsuperalgebra of $M(n,
     \right\}.
 \]
 
-Another realization of $Q(n)$ is $M_n(\FF) \oplus u\, M_n(\FF)$, where $M_n(\FF)$ is the even part and $u$ is an odd element commuting with all elements of $M_n(\FF)$ and satisfying $u^2 = 1$. 
+Another model of $Q(n)$ is $M_n(\FF) \oplus u\, M_n(\FF)$, where $M_n(\FF)$ is the even part and $u$ is an odd element commuting with all elements of $M_n(\FF)$ and satisfying $u^2 = 1$. 
+In the first model, $u$ corresponds to the matrix
+$
+    \left(\begin{array}{c|c}
+        0 & I\\
+        \hline
+        I & 0
+    \end{array}\right).
+$
 
 % Differently from $M(m,n)$, 
 While $Q(n)$ is not simple as an algebra, it is simple as a superalgebra. 
